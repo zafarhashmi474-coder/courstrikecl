@@ -1,1 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainStation® | AI Training & Certification Courses</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <style>
+    :root {
+      --bg-dark: #090a0f;
+      --bg-card: #12141c;
+      --bg-card-hover: #181b26;
+      --text-primary: #ffffff;
+      --text-secondary: #9499ad;
+      --text-muted: #62677b;
+      --accent-blue: #0052ff;
+      --accent-blue-hover: #0045d8;
+      --accent-cyan: #00e5ff;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-color-light: rgba(255, 255, 255, 0.05);
+      --pill-bg: rgba(255, 255, 255, 0.06);
+      --pill-border: rgba(255, 255, 255, 0.12);
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4, h5 {
+      color: var(--text-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 82, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-blue-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 82, 255, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Pill Badges */
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--pill-bg);
+      border: 1px solid var(--pill-border);
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .pill-badge .dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-cyan);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 10, 15, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color-light);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-logo-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .city-selector {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .city-selector option {
+      background: #141722;
+      color: #fff;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      padding: 100px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 450px;
+      background: radial-gradient(ellipse at center, rgba(0, 82, 255, 0.22) 0%, rgba(121, 40, 202, 0.1) 50%, transparent 75%);
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+      font-weight: 800;
+      margin: 20px 0;
+      line-height: 1.1;
+      background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.65) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .ticker-label {
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .tools-ticker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tool-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .tool-chip:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+    }
+
+    /* What We Do & Stats */
+    .overview-section {
+      padding: 70px 0;
+      border-top: 1px solid var(--border-color-light);
+      border-bottom: 1px solid var(--border-color-light);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .overview-text h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .overview-text p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #ffffff, #a5b4fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* Program Catalog */
+    .catalog-section {
+      padding: 90px 0;
+    }
+
+    .catalog-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 9px 20px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-tab:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .filter-tab.active {
+      background: #ffffff;
+      color: #090a0f;
+      border-color: #ffffff;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+
+    .course-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .course-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+    }
+
+    .course-tag-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .course-type-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(0, 82, 255, 0.12);
+      color: #4d8aff;
+    }
+
+    .course-cert-badge {
+      background: rgba(121, 40, 202, 0.15);
+      color: #c084fc;
+    }
+
+    .course-status {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .course-title {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .course-description {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .course-tools-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .course-tool-tag {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .course-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color-light);
+    }
+
+    .course-format {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .course-action {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .course-action:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Enterprise Callout Banner */
+    .enterprise-section {
+      padding: 40px 0 80px;
+    }
+
+    .enterprise-banner {
+      background: linear-gradient(135deg, #131724 0%, #0d1a36 100%);
+      border: 1px solid rgba(0, 82, 255, 0.3);
+      border-radius: 24px;
+      padding: 56px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .enterprise-banner::before {
+      content: '';
+      position: absolute;
+      right: -100px;
+      top: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0, 82, 255, 0.25) 0%, transparent 70%);
+      filter: blur(50px);
+    }
+
+    .enterprise-content h3 {
+      font-size: 2.1rem;
+      margin-bottom: 14px;
+    }
+
+    .enterprise-content p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 620px;
+      line-height: 1.6;
+    }
+
+    /* Trusted By Section */
+    .trusted-section {
+      padding: 60px 0;
+      text-align: center;
+      border-top: 1px solid var(--border-color-light);
+    }
+
+    .trusted-title {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      font-weight: 600;
+    }
+
+    .trusted-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+
+    .brand-logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #9499ad;
+      transition: var(--transition);
+    }
+
+    .brand-logo-text:hover {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    /* Events Section */
+    .events-section {
+      padding: 80px 0;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+
+    .event-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 28px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .event-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+
+    .event-date-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .event-date-badge {
+      background: #ffffff;
+      color: #090a0f;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+    }
+
+    .event-location {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .event-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .event-desc {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-bottom: 24px;
+    }
+
+    .event-speakers {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .speakers-note {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #06070a;
+      border-top: 1px solid var(--border-color);
+      padding: 80px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      max-width: 320px;
+      margin-bottom: 20px;
+    }
+
+    .footer-studios {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-studios span {
+      color: var(--text-secondary);
+      display: block;
+      margin-top: 4px;
+    }
+
+    .footer-column h5 {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-color-light);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(4, 6, 12, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #141724;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 500px;
+      padding: 36px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: #fff;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .modal-desc {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-blue);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.25);
+    }
+
+    @media (max-width: 992px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .enterprise-banner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-cta-group .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-brand">
+        <span class="brand-logo-icon">B</span>
+        BrainStation®
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#catalog" class="nav-link">Workshops</a></li>
+        <li><a href="#catalog" class="nav-link">Certifications</a></li>
+        <li><a href="#enterprise" class="nav-link">Enterprise Training</a></li>
+        <li><a href="#events" class="nav-link">Events</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <select class="city-selector" id="citySelector" onchange="updateLocation(this.value)">
+          <option value="New York">New York (HQ)</option>
+          <option value="London">London</option>
+          <option value="Toronto">Toronto</option>
+        </select>
+        <button class="btn btn-outline" style="padding: 8px 18px; font-size: 0.875rem;" onclick="openModal('Sign In', 'Access your BrainStation Student & Enterprise Portal')">Sign In</button>
+        <button class="btn btn-primary" style="padding: 8px 18px; font-size: 0.875rem;" onclick="openModal('Get Started', 'Schedule an admissions or syllabus consultation')">Get Started</button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="pill-badge">
+        <span class="dot"></span>
+        Skills for the AI Economy
+      </div>
+      
+      <h1 class="hero-title">Skills for the AI Economy</h1>
+      <p class="hero-subtitle">
+        Expert-led AI and digital skills training for teams, enterprises, and professionals.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#catalog" class="btn btn-primary">Browse Training</a>
+        <a href="#events" class="btn btn-secondary">View Upcoming Events</a>
+      </div>
+
+      <div class="ticker-label">Master Industry Standard AI Frameworks & Tools</div>
+      <div class="tools-ticker">
+        <span class="tool-chip">Claude 3.5</span>
+        <span class="tool-chip">ChatGPT-4o</span>
+        <span class="tool-chip">GitHub Copilot</span>
+        <span class="tool-chip">Google Gemini</span>
+        <span class="tool-chip">Figma AI</span>
+        <span class="tool-chip">Cursor</span>
+        <span class="tool-chip">Adobe Firefly</span>
+        <span class="tool-chip">Lovable</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do / Stats Section -->
+  <section class="overview-section" id="about">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-text">
+          <div class="pill-badge" style="margin-bottom: 16px;">What We Do</div>
+          <h2>Transforming careers and modern enterprises since 2012</h2>
+          <p>
+            BrainStation is the global leader in AI and digital skills training for professionals and enterprise teams. Established in 2012, BrainStation has certified over 40,000 professionals and empowered Fortune 500 corporations through expert-led, in-person training at state-of-the-art studios in New York, London, and Toronto.
+          </p>
+          <div style="display: flex; gap: 12px;">
+            <button class="btn btn-outline" onclick="openModal('Our Story', 'Learn about BrainStation\'s journey in tech education')">Watch Studio Tour</button>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">2012</div>
+            <div class="stat-label">Year Established</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">40K+</div>
+            <div class="stat-label">Professionals Trained</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2,000+</div>
+            <div class="stat-label">Tech Events Hosted</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Global Studios (NYC • LON • TOR)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Catalog (Workshops & Certifications) -->
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">AI Workshops & Certification Courses</h2>
+        <p class="section-subtitle">
+          Hands-on programs led by industry practitioners at top tech companies.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="catalog-controls">
+        <button class="filter-tab active" onclick="filterCourses('all', this)">All Programs</button>
+        <button class="filter-tab" onclick="filterCourses('ai', this)">AI & Machine Learning</button>
+        <button class="filter-tab" onclick="filterCourses('product', this)">Product Management</button>
+        <button class="filter-tab" onclick="filterCourses('design', this)">Design & UX</button>
+        <button class="filter-tab" onclick="filterCourses('marketing', this)">Marketing & Growth</button>
+      </div>
+
+      <!-- Courses Grid -->
+      <div class="catalog-grid" id="coursesGrid">
+        <!-- AI Fundamentals -->
+        <div class="course-card" data-category="ai">
+          <div>
+            <div class="course-tag-row">
+              <span class="course-type-badge">Core Workshop</span>
+              <span class="course-status">Enrolling</span>
+            </div>
+            <h3 class="course-title">AI Fundamentals</h3>
+            <p class="course-description">
+              Work faster, smarter, and more effectively with modern generative AI tools and workflow automation.
+            </p>
+            <div class="course-tools-list">
+              <span class="course-tool-tag">Claude</span>
+              <span class="course-tool-tag">ChatGPT</span>
+              <span class="course-tool-tag">Copilot</span>
+              <span class="course-tool-tag">Gemini</span>
+            </div>
+          </div>
+          <div class="course-card-footer">
+            <span class="course-format">In-Person & Live Online</span>
+            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI Fundamentals', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
+          </div>
+        </div>
+
+        <!-- AI Product Managers -->
+        <div class="course-card" data-category="product">
+          <div>
+            <div class="course-tag-row">
+              <span class="course-type-badge">Specialized Workshop</span>
+              <span class="course-status">Enrolling</span>
+            </div>
+            <h3 class="course-title">AI for Product Managers</h3>
+            <p class="course-description">
+              Reduce time to value with AI tools. Build PRDs, prototypes, and user flows with automated agent frameworks.
+            </p>
+            <div class="course-tools-list">
+              <span class="course-tool-tag">Lovable</span>
+              <span class="course-tool-tag">Claude</span>
+              <span class="course-tool-tag">Cursor</span>
+            </div>
+          </div>
+          <div class="course-card-footer">
+            <span class="course-format">Evening & Weekend cohorts</span>
+            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI for Product Managers', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
+          </div>
+        </div>
+
+        <!-- AI for Designers -->
+        <div class="course-card" data-category="design">
+          <div>
+            <div class="course-tag-row">
+              <span class="course-type-badge">Core Workshop</span>
+              <span class="course-status">Enrolling</span>
+            </div>
+            <h3 class="course-title">AI for Designers</h3>
+            <p class="course-description">
+              Accelerate the creative workflow. Leverage generative design systems, UI scaffolding, and design token automation.
+            </p>
+            <div class="course-tools-list">
+              <span class="course-tool-tag">Figma AI</span>
+              <span class="course-tool-tag">Midjourney</span>
+              <span class="course-tool-tag">Firefly</span>
+            </div>
+          </div>
+          <div class="course-card-footer">
+            <span class="course-format">Studio & Hybrid</span>
+            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI for Designers', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
+          </div>
+        </div>
+
+        <!-- Artificial Intelligence Certification -->
+        <div class="course-card" data-category="ai">
+          <div>
+            <div class="course-tag-row">
+              <span class="course-type-badge course-cert-badge">AIC™ Certification</span>
+              <span class="course-status">Flagship Program</span>
+            </div>
+            <h3 class="course-title">Artificial Intelligence Certification</h3>
+            <p class="course-description">
+              Earn your AIC™ credential and turn AI into your organization's core competitive edge through end-to-end implementation.
+            </p>
+            <div class="course-tools-list">
+              <span class="course-tool-tag">Python</span>
+              <span class="course-tool-tag">LLM Evals</span>
+              <span class="course-tool-tag">AI Agents</span>
+              <span class="course-tool-tag">RAG</span>
+            </div>
+          </div>
+          <div class="course-card-footer">
+            <span class="course-format">10-Week Immersive</span>
+            <a href="javascript:void(0)" class="course-action" onclick="openModal('Artificial Intelligence Certification (AIC™)', 'Request admissions handbook and curriculum')">Explore Syllabus →</a>
+          </div>
+        </div>
+
+        <!-- AI Product Design Certification -->
+        <div class="course-card" data-category="design">
+          <div>
+            <div class="course-tag-row">
+              <span class="course-type-badge course-cert-badge">PDC™ Certification</span>
+              <span class="course-status">Enrolling</span>
+            </div>
+            <h3 class="course-title">AI Product Design Certification</h3>
+            <p class="course-description">
+              Earn your PDC™ certification and design high-conversion, intuitive, and beautiful digital products powered by modern AI.
+            </p>
+            <div class="course-tools-list">
+              <span class="course-tool-tag">UX Research</span>
+              <span class="course-tool-tag">Figma</span>
+              <span class="course-tool-tag">Design Systems</span>
+            </div>
+          </div>
+          <div class="course-card-footer">
+            <span class="course-format">Part-time / Full-time</span>
+            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI Product Design Certification (PDC™)', 'Request admissions handbook and curriculum')">Explore Syllabus →</a>
+          </div>
+        </div>
+
+        <!-- AI for Marketing -->
+        <div class="course-card" data-category="marketing">
+          <div>
+            <div class="course-tag-row">
+              <span class="course-type-badge">Specialized Workshop</span>
+              <span class="course-status">Enrolling</span>
+            </div>
+            <h3 class="course-title">AI for Marketing & Growth</h3>
+            <p class="course-description">
+              Supercharge your multi-channel marketing campaigns, SEO strategy, and personalized customer messaging with predictive AI.
+            </p>
+            <div class="course-tools-list">
+              <span class="course-tool-tag">ChatGPT</span>
+              <span class="course-tool-tag">Adobe Firefly</span>
+              <span class="course-tool-tag">Analytics</span>
+            </div>
+          </div>
+          <div class="course-card-footer">
+            <span class="course-format">Live Studio Sessions</span>
+            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI for Marketing & Growth', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Training Banner -->
+  <section class="enterprise-section" id="enterprise">
+    <div class="container">
+      <div class="enterprise-banner">
+        <div class="enterprise-content">
+          <div class="pill-badge" style="margin-bottom: 12px;">Train Your Team</div>
+          <h3>Custom-Built Enterprise Training</h3>
+          <p>
+            Go beyond individual workshops to build scalable, enterprise-wide AI and digital capabilities within your organization. Receive a tailored enablement program tuned to your people, security standards, and tech stack.
+          </p>
+        </div>
+        <div>
+          <button class="btn btn-primary" onclick="openModal('Enterprise Solutions', 'Connect with our enterprise transformation advisors')">
+            Explore Enterprise Training
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By Section -->
+  <section class="trusted-section">
+    <div class="container">
+      <div class="trusted-title">Trusted by 100,000+ professionals and leading tech innovators</div>
+      <div class="trusted-logos">
+        <span class="brand-logo-text">Google</span>
+        <span class="brand-logo-text">NVIDIA</span>
+        <span class="brand-logo-text">Citi</span>
+        <span class="brand-logo-text">PayPal</span>
+        <span class="brand-logo-text">Disney</span>
+        <span class="brand-logo-text">Meta</span>
+        <span class="brand-logo-text">Mastercard</span>
+        <span class="brand-logo-text">Figma</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events & Summits -->
+  <section class="events-section" id="events">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Upcoming Summits & Events in <span id="eventCityLabel">New York</span></h2>
+        <p class="section-subtitle">
+          Join executive panels, live prototyping demos, and networking summits at BrainStation studios.
+        </p>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card">
+          <div>
+            <div class="event-date-row">
+              <span class="event-date-badge">OCT 29</span>
+              <span class="event-location">3:00 PM – 7:00 PM EDT • Studio & Stream</span>
+            </div>
+            <h3 class="event-title">Horizons: AI + Digital Innovation Summit</h3>
+            <p class="event-desc">
+              A premier summit gathering engineering leaders, AI researchers, and executives to unpack autonomous agent architectures and production-grade LLM governance.
+            </p>
+          </div>
+          <div class="event-speakers">
+            <span class="speakers-note">Featuring speakers from: <strong>Google, NVIDIA, Citi</strong></span>
+            <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8125rem;" onclick="openModal('Horizons Summit Registration', 'Register your in-person or virtual seat')">Register</button>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div>
+            <div class="event-date-row">
+              <span class="event-date-badge">DEC 10</span>
+              <span class="event-location">3:00 PM – 7:00 PM EST • BrainStation Studio</span>
+            </div>
+            <h3 class="event-title">AI Product Leadership Summit</h3>
+            <p class="event-desc">
+              Unpack practical frameworks for turning AI prototypes into sticky enterprise products with top product executives from Disney, Stripe, and Figma.
+            </p>
+          </div>
+          <div class="event-speakers">
+            <span class="speakers-note">Featuring speakers from: <strong>Disney, Figma, Stripe</strong></span>
+            <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8125rem;" onclick="openModal('AI Product Summit Registration', 'Register your in-person seat')">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>BrainStation®</h4>
+          <p>
+            The global leader in AI and digital skills training for teams, enterprises, and ambitious tech professionals.
+          </p>
+          <div class="footer-studios">
+            Global Campuses:
+            <span>New York Studio: 138 5th Ave, NY</span>
+            <span>London Studio: Shoreditch, London</span>
+            <span>Toronto Studio: 460 King St W, Toronto</span>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h5>Courses & Certifications</h5>
+          <ul class="footer-links">
+            <li><a href="#catalog">AI Fundamentals</a></li>
+            <li><a href="#catalog">AI for Product Managers</a></li>
+            <li><a href="#catalog">AI for Designers</a></li>
+            <li><a href="#catalog">Artificial Intelligence (AIC™)</a></li>
+            <li><a href="#catalog">Product Management (PMC™)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Enterprise</h5>
+          <ul class="footer-links">
+            <li><a href="#enterprise">Custom Enablement</a></li>
+            <li><a href="#enterprise">Executive AI Briefings</a></li>
+            <li><a href="#enterprise">Corporate Workshops</a></li>
+            <li><a href="#events">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="#about">About BrainStation</a></li>
+            <li><a href="#about">Careers</a></li>
+            <li><a href="#about">Press & Media</a></li>
+            <li><a href="#about">Testimonials</a></li>
+            <li><a href="#about">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© BrainStation Inc. 2012–2026. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lead Capture / Information Modal -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 class="modal-title" id="modalTitle">Get Started</h3>
+      <p class="modal-desc" id="modalDesc">Speak with an admissions advisor or request our comprehensive syllabus.</p>
+      
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control" required placeholder="Jane Doe" />
+        </div>
+        <div class="form-group">
+          <label>Work Email</label>
+          <input type="email" class="form-control" required placeholder="jane@company.com" />
+        </div>
+        <div class="form-group">
+          <label>Location Preference</label>
+          <select class="form-control" id="modalLocation">
+            <option value="New York">New York Studio</option>
+            <option value="London">London Studio</option>
+            <option value="Toronto">Toronto Studio</option>
+            <option value="Online">Live Online (Global)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Goal / Interest</label>
+          <input type="text" class="form-control" id="modalGoal" placeholder="e.g. AI Certification, Enterprise Team Training" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Update City Selection
+    function updateLocation(city) {
+      document.getElementById('eventCityLabel').textContent = city;
+      const modalLoc = document.getElementById('modalLocation');
+      if (modalLoc) {
+        modalLoc.value = city;
+      }
+    }
+
+    // Filter Courses by Category
+    function filterCourses(category, btnElement) {
+      const tabs = document.querySelectorAll('.filter-tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.course-card');
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Control
+    function openModal(title, desc) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('modalGoal').value = title;
+      document.getElementById('leadModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('leadModal').classList.remove('active');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('leadModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Form Submission Handling
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert('Thank you! Your request has been received. A BrainStation advisor will reach out shortly.');
+      closeModal();
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      if (navMenu.style.display === 'flex') {
+        navMenu.style.display = 'none';
+      } else {
+        navMenu.style.display = 'flex';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '72px';
+        navMenu.style.left = '0';
+        navMenu.style.width = '100%';
+        navMenu.style.background = '#090a0f';
+        navMenu.style.padding = '24px';
+        navMenu.style.borderBottom = '1px solid var(--border-color)';
+      }
+    }
+  </script>
+</body>
+</html>
