@@ -137,15 +137,15 @@
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--accent-cyan);
+      color: #ffb347;
     }
 
     .pill-badge .dot {
       width: 6px;
       height: 6px;
-      background-color: var(--accent-cyan);
+      background-color: #ffb347;;
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(255, 179, 71, 0.7);
     }
 
     /* Navbar */
@@ -175,7 +175,7 @@
       letter-spacing: -0.03em;
     }
 
-    .brand-logo-icon {<img src="Logo.svg.svg" alt="Logo.svg.svg" style="height: 40px; width: auto;" />
+    .brand-logo-icon {<img src="Logo_png.png" alt="Logo" style="height: 40px; width: auto;" />
       width: 28px;
       height: 28px;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
@@ -332,8 +332,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 25px;
       flex-wrap: wrap;
+    }
+
+    .tool-logo {
+      width: 70px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tool-logo img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+      transition: 0.3s ease;
+    }
+
+    .tool-logo img:hover {
+      opacity: 1;
+      transform: scale(1.08);
     }
 
     .tool-chip {
@@ -1464,16 +1486,39 @@
       </div>
 
       <div class="ticker-label">Master Industry Standard AI Frameworks & Tools</div>
-      <div class="tools-ticker">
-        <span class="tool-chip">Claude 3.5</span>
-        <span class="tool-chip">ChatGPT-4o</span>
-        <span class="tool-chip">GitHub Copilot</span>
-        <span class="tool-chip">Google Gemini</span>
-        <span class="tool-chip">Figma AI</span>
-        <span class="tool-chip">Cursor</span>
-        <span class="tool-chip">Adobe Firefly</span>
-        <span class="tool-chip">Lovable</span>
-      </div>
+        <div class="tools-ticker">
+          <div class="tool-logo">
+            <img src="images/chatgpt_PNG13.png" alt="ChatGPT">
+          </div>
+
+          <div class="tool-logo">
+            <img src="images/Claude-Logo-PNG-SVG-Vector.png" alt="Claude">
+          </div>
+
+          <div class="tool-logo">
+            <img src="images/github-copilot-logo.webp" alt="GitHub Copilot">
+          </div>
+
+          <div class="tool-logo">
+            <img src="images/Google_Gemini_logo.svg.webp" alt="Google Gemini">
+          </div>
+
+          <div class="tool-logo">
+            <img src="images/Figma-Logo-PNG-Photos.png" alt="Figma AI">
+          </div>
+
+          <div class="tool-logo">
+            <img src="images/Cursor_logo.svg.webp" alt="Cursor">
+          </div>
+
+          <div class="tool-logo">
+            <img src="images/lg-66cb1819333c2-Adobe-Firefly-Logo.webp" alt="Adobe Firefly">
+          </div>
+
+          <div class="tool-logo">
+            <img src="images/Lovable-Ai-Logo-PNG-SVG-Vector.png" alt="Lovable">
+          </div>
+        </div>
     </div>
   </section>
 
