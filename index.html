@@ -938,6 +938,223 @@
         width: 100%;
       }
     }
+
+    /* Workshops Mega Menu */
+    .workshops-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 92px 20px 24px;
+      overflow-y: auto;
+    }
+
+    .workshops-overlay.active {
+      display: flex;
+    }
+
+    .workshops-panel {
+      width: min(1120px, 100%);
+      max-height: calc(100vh - 116px);
+      overflow: auto;
+      background: #090a0f;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+      display: grid;
+      grid-template-columns: 34% 66%;
+      position: relative;
+    }
+
+    .workshops-intro {
+      background: #12141c;
+      padding: 48px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: 18px 0 0 18px;
+    }
+
+    .workshops-intro h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 22px;
+    }
+
+    .workshops-intro p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 18px;
+      max-width: 360px;
+    }
+
+    .workshops-list {
+      padding: 42px 48px;
+    }
+
+    .workshop-group {
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .workshop-group:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .workshop-group h3 {
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+    }
+
+    .workshop-group > p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .workshop-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 34px;
+    }
+
+    .workshop-option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      transition: var(--transition);
+      min-width: 0;
+    }
+
+    .workshop-option:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-1px);
+    }
+
+    .workshop-icon {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      border-radius: 11px;
+      background: var(--accent-blue);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .workshop-option:nth-child(n+7) .workshop-icon {
+      background: #30343b;
+    }
+
+    .workshop-option-text strong {
+      display: block;
+      color: #fff;
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+
+    .workshop-option-text span {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      margin-top: 2px;
+    }
+
+    .workshops-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 50%;
+      background: #12141c;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      z-index: 3;
+    }
+
+    .workshops-close:hover {
+      background: var(--accent-blue);
+    }
+
+    @media (max-width: 900px) {
+      .workshops-overlay {
+        padding: 82px 12px 16px;
+      }
+
+      .workshops-panel {
+        grid-template-columns: 1fr;
+        max-height: calc(100vh - 98px);
+      }
+
+      .workshops-intro {
+        padding: 30px;
+        min-height: auto;
+        border-radius: 18px 18px 0 0;
+      }
+
+      .workshops-intro h2 {
+        font-size: 2rem;
+      }
+
+      .workshops-list {
+        padding: 28px 30px 34px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .workshops-overlay {
+        padding: 76px 8px 8px;
+      }
+
+      .workshops-panel {
+        border-radius: 14px;
+      }
+
+      .workshops-intro {
+        padding: 26px 22px;
+      }
+
+      .workshops-list {
+        padding: 24px 18px 28px;
+      }
+
+      .workshop-options {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .workshop-option {
+        padding: 9px;
+      }
+
+      .workshop-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+      }
+
+      .workshop-group {
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -951,8 +1168,8 @@
         </a>
 
       <ul class="nav-menu">
-        <li><a href="workshop.html" class="nav-link">Workshops</a></li>
-        <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+        <li><a href="javascript:void(0)" class="nav-link" onclick="openWorkshopsMenu()">Workshops <span style="font-size:.75rem;">⌄</span></a></li>
+        <li><a href="#catalog" class="nav-link">Certifications</a></li>
         <li><a href="#enterprise" class="nav-link">Enterprise Training</a></li>
         <li><a href="#events" class="nav-link">Events</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
@@ -971,6 +1188,88 @@
     </div>
   </header>
 
+
+  <!-- Workshops Mega Menu -->
+  <div class="workshops-overlay" id="workshopsMenu" aria-hidden="true">
+    <div class="workshops-panel" onclick="event.stopPropagation()">
+      <button class="workshops-close" type="button" onclick="closeWorkshopsMenu()" aria-label="Close workshops menu">✕</button>
+
+      <div class="workshops-intro">
+        <div class="pill-badge" style="margin-bottom:18px; width:max-content;">Workshops</div>
+        <h2>Enterprise Workshops</h2>
+        <p>Build essential skills for the AI era with expert-led, in-person workshops.</p>
+        <p>Available for enterprise teams.</p>
+      </div>
+
+      <div class="workshops-list">
+        <section class="workshop-group">
+          <h3>Core Workshops</h3>
+          <p>In-depth workshops designed to help teams and professionals build lasting AI capabilities.</p>
+          <div class="workshop-options">
+            <a class="workshop-option" href="ai-fundamentals.html">
+              <span class="workshop-icon">⌘</span>
+              <span class="workshop-option-text"><strong>AI Fundamentals</strong><span>Work smarter with AI tools.</span></span>
+            </a>
+            <a class="workshop-option" href="ai-product-managers.html">
+              <span class="workshop-icon">▣</span>
+              <span class="workshop-option-text"><strong>AI for Product Managers</strong><span>Reduce time to value with AI tools.</span></span>
+            </a>
+            <a class="workshop-option" href="ai-marketing.html">
+              <span class="workshop-icon">⚑</span>
+              <span class="workshop-option-text"><strong>AI for Marketing</strong><span>Accelerate the marketing workflow.</span></span>
+            </a>
+            <a class="workshop-option" href="ai-designers.html">
+              <span class="workshop-icon">✦</span>
+              <span class="workshop-option-text"><strong>AI for Designers</strong><span>Accelerate the design workflow.</span></span>
+            </a>
+            <a class="workshop-option" href="ai-leaders.html">
+              <span class="workshop-icon">♙</span>
+              <span class="workshop-option-text"><strong>AI for Leaders</strong><span>Learn to lead in the AI era.</span></span>
+            </a>
+            <a class="workshop-option" href="ai-brand.html">
+              <span class="workshop-icon">◇</span>
+              <span class="workshop-option-text"><strong>AI for Brand</strong><span>Brand-building for the AI era.</span></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="workshop-group">
+          <h3>Specialized Workshops</h3>
+          <p>Targeted, deep-dive sessions focused on mastering specific AI skills.</p>
+          <div class="workshop-options">
+            <a class="workshop-option" href="ai-evals.html">
+              <span class="workshop-icon">✓</span>
+              <span class="workshop-option-text"><strong>AI Evals</strong><span>Measure &amp; improve AI performance.</span></span>
+            </a>
+            <a class="workshop-option" href="ai-search-optimization.html">
+              <span class="workshop-icon">⌕</span>
+              <span class="workshop-option-text"><strong>AI Search Optimization</strong><span>Optimize your content for AI search.</span></span>
+            </a>
+            <a class="workshop-option" href="ai-agents.html">
+              <span class="workshop-icon">⬡</span>
+              <span class="workshop-option-text"><strong>AI Agents</strong><span>Build autonomous agents.</span></span>
+            </a>
+            <a class="workshop-option" href="agile.html">
+              <span class="workshop-icon">↻</span>
+              <span class="workshop-option-text"><strong>Agile</strong><span>Accelerate delivery and reduce risk.</span></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="workshop-group">
+          <h3>Innovation Workshops</h3>
+          <p>Strategic workshops to transform your organization's capabilities for the AI era.</p>
+          <div class="workshop-options">
+            <a class="workshop-option" href="ai-innovation.html">
+              <span class="workshop-icon">♧</span>
+              <span class="workshop-option-text"><strong>AI Innovation</strong><span>Transform your organization with AI.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-glow"></div>
@@ -986,7 +1285,7 @@
       </p>
 
       <div class="hero-cta-group">
-        <a href="#catalog" class="btn btn-primary">Browse Training</a>
+        <a href="javascript:void(0)" class="btn btn-primary" onclick="openWorkshopsMenu()">Browse Training</a>
         <a href="#events" class="btn btn-secondary">View Upcoming Events</a>
       </div>
 
@@ -1412,6 +1711,36 @@
         }
       });
     }
+
+
+    // Workshops Mega Menu
+    function openWorkshopsMenu() {
+      const menu = document.getElementById('workshopsMenu');
+      if (!menu) return;
+      menu.classList.add('active');
+      menu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeWorkshopsMenu() {
+      const menu = document.getElementById('workshopsMenu');
+      if (!menu) return;
+      menu.classList.remove('active');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('workshopsMenu')?.addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeWorkshopsMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeWorkshopsMenu();
+      }
+    });
 
     // Modal Control
     function openModal(title, desc) {
