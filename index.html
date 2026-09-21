@@ -297,7 +297,7 @@
       font-size: clamp(2.5rem, 5.5vw, 4.25rem);
       font-weight: 800;
       margin: 20px 0;
-      line-height: 1.1;
+      line-height: 1.25;
       background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.65) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -324,7 +324,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       font-weight: 600;
     }
 
@@ -616,44 +616,6 @@
       font-size: 1.05rem;
       max-width: 620px;
       line-height: 1.6;
-    }
-
-    /* Trusted By Section */
-    .trusted-section {
-      padding: 60px 0;
-      text-align: center;
-      border-top: 1px solid var(--border-color-light);
-    }
-
-    .trusted-title {
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-bottom: 36px;
-      font-weight: 600;
-    }
-
-    .trusted-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-      opacity: 0.7;
-    }
-
-    .brand-logo-text {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #9499ad;
-      transition: var(--transition);
-    }
-
-    .brand-logo-text:hover {
-      color: #ffffff;
-      opacity: 1;
     }
 
     /* Events Section */
@@ -1155,6 +1117,139 @@
       }
     }
 
+    /* Events Mega Menu */
+    .events-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 92px 20px 24px;
+      overflow-y: auto;
+    }
+    .events-overlay.active { display: flex; }
+    .events-panel {
+      width: min(1120px, 100%);
+      max-height: calc(100vh - 116px);
+      overflow: auto;
+      background: #090a0f;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+      display: grid;
+      grid-template-columns: 34% 66%;
+      position: relative;
+    }
+    .events-intro {
+      background: #12141c;
+      padding: 42px 48px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: 18px 0 0 18px;
+    }
+    .events-intro h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 18px; }
+    .events-intro p { color: var(--text-secondary); font-size: .9rem; line-height: 1.6; margin-bottom: 16px; max-width: 360px; }
+    .events-list { padding: 34px 48px; }
+    .event-city-group { padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px solid var(--border-color); }
+    .event-city-group:last-child { margin-bottom:0; padding-bottom:0; border-bottom:0; }
+    .event-city-title {
+      display:flex; align-items:center; gap:10px; margin-bottom:14px;
+      color:#fff; font-size:.95rem; font-weight:700;
+    }
+    .event-city-title::after { content:'→'; font-size:1rem; margin-left:2px; transition:transform .2s ease; }
+    .event-city-title:hover::after { transform:translateX(4px); }
+    .event-city-title:hover { text-decoration:underline; text-underline-offset:4px; }
+    .event-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 30px; }
+    .event-option {
+      display:flex; align-items:center; gap:10px; min-width:0;
+      padding:7px 0; color:#fff; font-size:.82rem; font-weight:600;
+      transition:color .2s ease, transform .2s ease;
+    }
+    .event-option:hover { text-decoration:underline; text-underline-offset:4px; transform:translateX(2px); }
+    .event-option::after { content:'→'; margin-left:auto; opacity:0; transform:translateX(-5px); transition:all .2s ease; }
+    .event-option:hover::after { opacity:1; transform:translateX(0); }
+
+    .events-logos {
+      grid-column: 1 / -1;
+      padding: 28px 70px 34px;
+      border-top: 1px solid var(--border-color);
+      background: #090a0f;
+      border-radius: 0 0 18px 18px;
+    }
+    .events-logos-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #a7abb7;
+      margin-bottom: 14px;
+    }
+    .events-logo-marquee {
+      overflow: hidden;
+      width: 100%;
+      padding: 0 18px;
+      box-sizing: border-box;
+    }
+    .events-logo-track {
+      display: flex;
+      width: max-content;
+      animation: eventsLogoScroll 44s linear infinite;
+    }
+    .events-logo-set {
+      display: flex;
+      align-items: center;
+      gap: 58px;
+      padding-right: 58px;
+    }
+    .events-logo-set img {
+      width: 128px;
+      height: 44px;
+      object-fit: contain;
+      filter: grayscale(1) brightness(0) invert(1);
+      opacity: .82;
+    }
+    @keyframes eventsLogoScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .events-logo-marquee:hover .events-logo-track {
+      animation-play-state: paused;
+    }
+    .event-icon { width:22px; min-width:22px; text-align:center; color:#cfd3dc; font-size:.9rem; }
+    .events-close {
+      position:absolute; top:14px; right:14px; width:36px; height:36px;
+      border:1px solid rgba(255,255,255,.14); border-radius:50%;
+      background:#12141c; color:#fff; cursor:pointer; font-size:1rem; z-index:3;
+    }
+    .events-close:hover { background:var(--accent-blue); }
+
+    @media (max-width:900px) {
+      .events-logos { padding: 20px 30px 24px; }
+      .events-logo-set { gap: 34px; padding-right: 34px; }
+      .events-logo-set img { width: 90px; height: 30px; }
+      .events-overlay { padding:82px 12px 16px; }
+      .events-panel { grid-template-columns:1fr; max-height:calc(100vh - 98px); }
+      .events-intro { padding:30px; min-height:auto; border-radius:18px 18px 0 0; }
+      .events-list { padding:28px 30px 34px; }
+    }
+    @media (max-width:600px) {
+      .events-overlay { padding:76px 8px 8px; }
+      .events-panel { border-radius:14px; }
+      .events-intro { padding:26px 22px; }
+      .events-list { padding:24px 18px 28px; }
+      .event-options { grid-template-columns:1fr; gap:4px; }
+      .event-option { font-size:.78rem; }
+      .events-logos { padding: 18px 18px 22px; }
+      .events-logo-set { gap: 26px; padding-right: 26px; }
+      .events-logo-set img { width: 78px; height: 28px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1168,10 +1263,10 @@
         </a>
 
       <ul class="nav-menu">
-        <li><a href="javascript:void(0)" class="nav-link" onclick="openWorkshopsMenu()">Workshops <span style="font-size:.75rem;">⌄</span></a></li>
+        <li><a href="javascript:void(0)" class="nav-link" onclick="openWorkshopsMenu()">Workshops </a></li>
         <li><a href="#catalog" class="nav-link">Certifications</a></li>
         <li><a href="#enterprise" class="nav-link">Enterprise Training</a></li>
-        <li><a href="#events" class="nav-link">Events</a></li>
+        <li><a href="javascript:void(0)" class="nav-link" onclick="openEventsMenu()">Events </a></li>
         <li><a href="#about" class="nav-link">About</a></li>
       </ul>
 
@@ -1266,6 +1361,85 @@
             </a>
           </div>
         </section>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Events Mega Menu -->
+  <div class="events-overlay" id="eventsMenu" aria-hidden="true">
+    <div class="events-panel" onclick="event.stopPropagation()">
+      <button class="events-close" type="button" onclick="closeEventsMenu()" aria-label="Close events menu">✕</button>
+      <div class="events-intro">
+        <div class="pill-badge" style="margin-bottom:18px; width:max-content;">Events</div>
+        <h2>Events</h2>
+        <p><strong>2,000+ Events Hosted. 80,000+ Attendees.</strong></p>
+        <p>Join leaders driving innovation across AI, product management, design, and marketing. Connect with professionals, unlock new insights, and stay ahead of what's next.</p>
+        <a href="events.html" class="btn btn-primary" style="width:max-content; margin-top:10px;">View All Events&nbsp; →</a>
+      </div>
+      <div class="events-list">
+        <section class="event-city-group">
+          <a class="event-city-title" href="events-new-york.html"><span>🇺🇸</span> New York Events</a>
+          <div class="event-options">
+            <a class="event-option" href="ai-events-new-york.html"><span class="event-icon">AI</span><span>AI Events in NYC</span></a>
+            <a class="event-option" href="product-management-events-new-york.html"><span class="event-icon">▧</span><span>Product Management Events in NYC</span></a>
+            <a class="event-option" href="design-events-new-york.html"><span class="event-icon">♧</span><span>Design Events in NYC</span></a>
+            <a class="event-option" href="marketing-events-new-york.html"><span class="event-icon">⌁</span><span>Marketing Events in NYC</span></a>
+          </div>
+        </section>
+        <section class="event-city-group">
+          <a class="event-city-title" href="events-london.html"><span>🇬🇧</span> London Events</a>
+          <div class="event-options">
+            <a class="event-option" href="ai-events-london.html"><span class="event-icon">AI</span><span>AI Events in London</span></a>
+            <a class="event-option" href="product-management-events-london.html"><span class="event-icon">▧</span><span>Product Management Events in London</span></a>
+            <a class="event-option" href="design-events-london.html"><span class="event-icon">♧</span><span>Design Events in London</span></a>
+            <a class="event-option" href="marketing-events-london.html"><span class="event-icon">⌁</span><span>Marketing Events in London</span></a>
+          </div>
+        </section>
+        <section class="event-city-group">
+          <a class="event-city-title" href="events-toronto.html"><span>🇨🇦</span> Toronto Events</a>
+          <div class="event-options">
+            <a class="event-option" href="ai-events-toronto.html"><span class="event-icon">AI</span><span>AI Events in Toronto</span></a>
+            <a class="event-option" href="product-management-events-toronto.html"><span class="event-icon">▧</span><span>Product Management Events in Toronto</span></a>
+            <a class="event-option" href="design-events-toronto.html"><span class="event-icon">♧</span><span>Design Events in Toronto</span></a>
+            <a class="event-option" href="marketing-events-toronto.html"><span class="event-icon">⌁</span><span>Marketing Events in Toronto</span></a>
+          </div>
+        </section>
+      </div>
+      <div class="events-logos">
+        <div class="events-logos-title">Past speakers from:</div>
+        <div class="events-logo-marquee" aria-label="Past speakers and partner companies">
+          <div class="events-logo-track">
+            <div class="events-logo-set">
+              <img src="https://cdn.simpleicons.org/google/ffffff" alt="Google">
+              <img src="https://cdn.simpleicons.org/nvidia/ffffff" alt="NVIDIA">
+              <img src="https://cdn.simpleicons.org/disney/ffffff" alt="Disney">
+              <img src="https://cdn.simpleicons.org/mastercard/ffffff" alt="Mastercard">
+              <img src="https://cdn.simpleicons.org/paypal/ffffff" alt="PayPal">
+              <img src="https://cdn.simpleicons.org/meta/ffffff" alt="Meta">
+              <img src="https://cdn.simpleicons.org/figma/ffffff" alt="Figma">
+              <img src="https://cdn.simpleicons.org/stripe/ffffff" alt="Stripe">
+              <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe">
+              <img src="https://cdn.simpleicons.org/microsoft/ffffff" alt="Microsoft">
+              <img src="https://cdn.simpleicons.org/mcdonalds/ffffff" alt="McDonald's">
+              <img src="https://cdn.simpleicons.org/citi/ffffff" alt="Citi">
+            </div>
+            <div class="events-logo-set" aria-hidden="true">
+              <img src="https://cdn.simpleicons.org/google/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/nvidia/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/disney/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/mastercard/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/paypal/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/meta/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/figma/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/stripe/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/microsoft/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/mcdonalds/ffffff" alt="">
+              <img src="https://cdn.simpleicons.org/citi/ffffff" alt="">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1524,23 +1698,6 @@
     </div>
   </section>
 
-  <!-- Trusted By Section -->
-  <section class="trusted-section">
-    <div class="container">
-      <div class="trusted-title">Trusted by 100,000+ professionals and leading tech innovators</div>
-      <div class="trusted-logos">
-        <span class="brand-logo-text">Google</span>
-        <span class="brand-logo-text">NVIDIA</span>
-        <span class="brand-logo-text">Citi</span>
-        <span class="brand-logo-text">PayPal</span>
-        <span class="brand-logo-text">Disney</span>
-        <span class="brand-logo-text">Meta</span>
-        <span class="brand-logo-text">Mastercard</span>
-        <span class="brand-logo-text">Figma</span>
-      </div>
-    </div>
-  </section>
-
   <!-- Upcoming Events & Summits -->
   <section class="events-section" id="events">
     <div class="container">
@@ -1733,6 +1890,7 @@
     document.getElementById('workshopsMenu')?.addEventListener('click', function(event) {
       if (event.target === this) {
         closeWorkshopsMenu();
+        closeEventsMenu();
       }
     });
 
@@ -1740,6 +1898,27 @@
       if (event.key === 'Escape') {
         closeWorkshopsMenu();
       }
+    });
+
+    // Events Mega Menu
+    function openEventsMenu() {
+      const menu = document.getElementById('eventsMenu');
+      if (!menu) return;
+      menu.classList.add('active');
+      menu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeEventsMenu() {
+      const menu = document.getElementById('eventsMenu');
+      if (!menu) return;
+      menu.classList.remove('active');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('eventsMenu')?.addEventListener('click', function(event) {
+      if (event.target === this) closeEventsMenu();
     });
 
     // Modal Control
