@@ -1,2014 +1,881 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Courstrike | AI Training & Certifications</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --bg-dark: #090a0f;
-      --bg-card: #12141c;
-      --bg-card-hover: #181b26;
-      --text-primary: #ffffff;
-      --text-secondary: #9499ad;
-      --text-muted: #62677b;
-      --accent-blue: #ff0000;
-      --accent-blue-hover: #ff9d00;
-      --accent-cyan: #ff0000;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-color-light: rgba(255, 255, 255, 1.0);
-      --pill-bg: rgba(255, 255, 255, 0.06);
-      --pill-border: rgba(255, 255, 255, 0.12);
-      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+    <title>Courstrike</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-primary);
-      font-family: var(--font-family);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    h1, h2, h3, h4, h5 {
-      color: var(--text-primary);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: var(--transition);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 24px;
-      border-radius: 13000px;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      cursor: pointer;
-      border: 08px solid transparent;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
-      color: #ffffff; 
-      box-shadow: 0 4px 20px rgba(117, 0, 17, 0.35);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-yellow);
-      color: var(--accent-red);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(155, 109, 0, 0.5);
-    }
-
-    .btn-secondary, 
-    .btn-outline {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid var(--accent-orange); 
-      transition: var(--transition);
-      box-shadow: 0 4px 20px rgba(117, 0, 17, 0.35);
-    }
-
-    .btn-secondary:hover, 
-    .btn-outline:hover {
-      background: var(--accent-yellow); 
-      color: var(--accent-red); 
-      border-color: var(--accent-yellow);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(155, 109, 0, 0.5); 
-    }
-
-    /* .btn-outline {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid var(--border-color);
-    } */
-
-    /* .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.3);
-    } */
-
-    /* Pill Badges */
-    .pill-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: var(--pill-bg);
-      border: 1px solid var(--pill-border);
-      border-radius: 9999px;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #ffb347;
-    }
-
-    .pill-badge .dot {
-      width: 6px;
-      height: 6px;
-      background-color: #ffb347;;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(255, 179, 71, 0.7);
-    }
-
-    /* Navbar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(9, 10, 15, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-color-light);
-    }
-
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-logo-icon {<img src="Logo_png.png" alt="Logo" style="height: 40px; width: auto;" />
-      width: 28px;
-      height: 28px;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: #fff;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-link {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-    }
-
-    .nav-link:hover {
-      color: #ffffff;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    /* City Selector Dropdown ne elegant banavva mate */
-    .city-selector {
-      appearance: none; /* Default browser style remove karva */
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      
-      /* Orange custom arrow add karva mate SVG url */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FF6600' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      background-size: 16px;
-      background-color: rgba(255, 255, 255, 0.03);
-      
-      color: #ffffff;
-      border: 1px solid var(--accent-orange);
-      border-radius: 9999px;
-      padding: 8px 40px 8px 18px; /* Arrow mate right side jagya rakheli che */
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      outline: none;
-      font-family: inherit;
-      transition: var(--transition);
-      box-shadow: 0 0 10px rgba(255, 102, 0, 0.1);
-    }
-
-    .city-selector:hover, 
-    .city-selector:focus {
-      border-color: var(--accent-yellow);
-      color: var(--accent-yellow);
-      background-color: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 0 15px rgba(255, 209, 0, 0.25);
-      
-      /* Hover par arrow no color yellow karva */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFD100' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    }
-
-    /* Khulela dropdown options no dark look */
-    .city-selector option {
-      background-color: #12141c; /* Background ne theme sathe match kare che */
-      color: #ffffff;
-      font-weight: 500;
-      padding: 10px;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      position: relative;
-      padding: 100px 0 80px;
-      overflow: hidden;
-    }
-
-    .hero-glow {
-      position: absolute;
-      top: -120px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 450px;
-      background: radial-gradient(ellipse at center, rgba(0, 82, 255, 0.22) 0%, rgba(121, 40, 202, 0.1) 50%, transparent 75%);
-      filter: blur(80px);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 860px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .hero-title {
-      font-size: clamp(2.5rem, 5.5vw, 4.25rem);
-      font-weight: 800;
-      margin: 20px 0;
-      line-height: 1.25;
-      background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.65) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      color: var(--text-secondary);
-      max-width: 640px;
-      margin: 0 auto 36px;
-      font-weight: 400;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 56px;
-    }
-
-    .ticker-label {
-      font-size: 0.8125rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-      font-weight: 600;
-    }
-
-    .tools-ticker {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .tool-logo {
-      width: 70px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .tool-logo img {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.85;
-      transition: 0.3s ease;
-    }
-
-    .tool-logo img:hover {
-      opacity: 1;
-      transform: scale(1.08);
-    }
-
-    .tool-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-color);
-      border-radius: 9999px;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: var(--transition);
-    }
-
-    .tool-chip:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-    }
-
-    /* Section Header */
-    .section-header {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 48px;
-    }
-
-    .section-title {
-      font-size: 2.25rem;
-      margin-bottom: 12px;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-    }
-
-    /* What We Do & Stats */
-    .overview-section {
-      padding: 70px 0;
-      border-top: 1px solid var(--border-color-light);
-      border-bottom: 1px solid var(--border-color-light);
-    }
-
-    .overview-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .overview-text h2 {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .overview-text p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: left;
-      transition: var(--transition);
-    }
-
-    .stat-card:hover {
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-3px);
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 6px;
-      background: linear-gradient(135deg, #ffffff, #a5b4fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .stat-label {
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-
-    /* Program Catalog */
-    .catalog-section {
-      padding: 90px 0;
-    }
-
-    .catalog-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .filter-tab {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: var(--text-secondary);
-      padding: 9px 20px;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .filter-tab:hover {
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .filter-tab.active {
-      background: #ffffff;
-      color: #090a0f;
-      border-color: #ffffff;
-    }
-
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 24px;
-    }
-
-    .course-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 18px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: var(--transition);
-    }
-
-    .course-card:hover {
-      border-color: rgba(255, 255, 255, 0.25);
-      background: var(--bg-card-hover);
-      transform: translateY(-4px);
-    }
-
-    .course-tag-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-
-    .course-type-badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: rgba(0, 82, 255, 0.12);
-      color: #4d8aff;
-    }
-
-    .course-cert-badge {
-      background: rgba(121, 40, 202, 0.15);
-      color: #c084fc;
-    }
-
-    .course-status {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .course-title {
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-
-    .course-description {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      margin-bottom: 24px;
-      flex-grow: 1;
-    }
-
-    .course-tools-list {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .course-tool-tag {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      background: rgba(255, 255, 255, 0.05);
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .course-card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-color-light);
-    }
-
-    .course-format {
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-    }
-
-    .course-action {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .course-action:hover {
-      color: var(--accent-cyan);
-    }
-
-    /* Enterprise Callout Banner */
-    .enterprise-section {
-      padding: 40px 0 80px;
-    }
-
-    .enterprise-banner {
-      background: linear-gradient(135deg, #131724 0%, #0d1a36 100%);
-      border: 1px solid rgba(0, 82, 255, 0.3);
-      border-radius: 24px;
-      padding: 56px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .enterprise-banner::before {
-      content: '';
-      position: absolute;
-      right: -100px;
-      top: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(0, 82, 255, 0.25) 0%, transparent 70%);
-      filter: blur(50px);
-    }
-
-    .enterprise-content h3 {
-      font-size: 2.1rem;
-      margin-bottom: 14px;
-    }
-
-    .enterprise-content p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      max-width: 620px;
-      line-height: 1.6;
-    }
-
-    /* Events Section */
-    .events-section {
-      padding: 80px 0;
-    }
-
-    .events-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 24px;
-    }
-
-    .event-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 18px;
-      padding: 28px;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .event-card:hover {
-      border-color: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-    }
-
-    .event-date-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .event-date-badge {
-      background: #ffffff;
-      color: #090a0f;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 0.8125rem;
-      letter-spacing: 0.05em;
-    }
-
-    .event-location {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .event-title {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-
-    .event-desc {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      margin-bottom: 24px;
-    }
-
-    .event-speakers {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-color-light);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .speakers-note {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-    }
-
-    /* Footer */
-    .site-footer {
-      background: #06070a;
-      border-top: 1px solid var(--border-color);
-      padding: 80px 0 40px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr repeat(3, 1fr);
-      gap: 48px;
-      margin-bottom: 60px;
-    }
-
-    .footer-brand h4 {
-      font-size: 1.35rem;
-      margin-bottom: 16px;
-    }
-
-    .footer-brand p {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      max-width: 320px;
-      margin-bottom: 20px;
-    }
-
-    .footer-studios {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-
-    .footer-studios span {
-      color: var(--text-secondary);
-      display: block;
-      margin-top: 4px;
-    }
-
-    .footer-column h5 {
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 12px;
-    }
-
-    .footer-links a {
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 32px;
-      border-top: 1px solid var(--border-color-light);
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-    }
-
-    /* Modal */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(4, 6, 12, 0.8);
-      backdrop-filter: blur(8px);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal-box {
-      background: #141724;
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      width: 100%;
-      max-width: 500px;
-      padding: 36px;
-      position: relative;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-      animation: modalFadeIn 0.25s ease-out;
-    }
-
-    @keyframes modalFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.97);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: transparent;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .modal-close:hover {
-      color: #fff;
-    }
-
-    .modal-title {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .modal-desc {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      margin-bottom: 24px;
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 12px 16px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      color: #fff;
-      font-size: 0.9375rem;
-      font-family: inherit;
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .form-control:focus {
-      border-color: var(--accent-blue);
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.25);
-    }
-
-    @media (max-width: 992px) {
-      .overview-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .enterprise-banner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .nav-menu {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-cta-group {
-        flex-direction: column;
-        width: 100%;
-      }
-      .hero-cta-group .btn {
-        width: 100%;
-      }
-    }
-
-    /* Workshops Mega Menu */
-    .workshops-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background: rgba(0, 0, 0, 0.62);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      display: none;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 92px 20px 24px;
-      overflow-y: auto;
-    }
-
-    .workshops-overlay.active {
-      display: flex;
-    }
-
-    .workshops-panel {
-      width: min(1120px, 100%);
-      max-height: calc(100vh - 116px);
-      overflow: auto;
-      background: #090a0f;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
-      display: grid;
-      grid-template-columns: 34% 66%;
-      position: relative;
-    }
-
-    .workshops-intro {
-      background: #12141c;
-      padding: 48px;
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      border-radius: 18px 0 0 18px;
-    }
-
-    .workshops-intro h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 22px;
-    }
-
-    .workshops-intro p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 18px;
-      max-width: 360px;
-    }
-
-    .workshops-list {
-      padding: 42px 48px;
-    }
-
-    .workshop-group {
-      padding-bottom: 28px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .workshop-group:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .workshop-group h3 {
-      font-size: 1.15rem;
-      margin-bottom: 2px;
-    }
-
-    .workshop-group > p {
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-    }
-
-    .workshop-options {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px 34px;
-    }
-
-    .workshop-option {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      transition: var(--transition);
-      min-width: 0;
-    }
-
-    .workshop-option:hover {
-      background: var(--bg-card-hover);
-      transform: translateY(-1px);
-    }
-
-    .workshop-icon {
-      width: 50px;
-      height: 50px;
-      min-width: 50px;
-      border-radius: 11px;
-      background: var(--accent-blue);
-      color: #ffffff;
-      display: grid;
-      place-items: center;
-      font-size: 1.35rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .workshop-option:nth-child(n+7) .workshop-icon {
-      background: #30343b;
-    }
-
-    .workshop-option-text strong {
-      display: block;
-      color: #fff;
-      font-size: 0.80rem;
-      line-height: 1.35;
-    }
-
-    .workshop-option-text span {
-      display: block;
-      color: var(--text-secondary);
-      font-size: 0.7rem;
-      line-height: 1.45;
-      margin-top: 2px;
-    }
-
-    .workshops-close {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 50%;
-      background: #12141c;
-      color: #fff;
-      cursor: pointer;
-      font-size: 1rem;
-      z-index: 3;
-    }
-
-    .workshops-close:hover {
-      background: var(--accent-blue);
-    }
-
-    @media (max-width: 900px) {
-      .workshops-overlay {
-        padding: 82px 12px 16px;
-      }
-
-      .workshops-panel {
-        grid-template-columns: 1fr;
-        max-height: calc(100vh - 98px);
-      }
-
-      .workshops-intro {
-        padding: 30px;
-        min-height: auto;
-        border-radius: 18px 18px 0 0;
-      }
-
-      .workshops-intro h2 {
-        font-size: 2rem;
-      }
-
-      .workshops-list {
-        padding: 28px 30px 34px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .workshops-overlay {
-        padding: 76px 8px 8px;
-      }
-
-      .workshops-panel {
-        border-radius: 14px;
-      }
-
-      .workshops-intro {
-        padding: 26px 22px;
-      }
-
-      .workshops-list {
-        padding: 24px 18px 28px;
-      }
-
-      .workshop-options {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .workshop-option {
-        padding: 9px;
-      }
-
-      .workshop-icon {
-        width: 50px;
-        height: 50px;
-        min-width: 50px;
-      }
-
-      .workshop-group {
-        padding-bottom: 22px;
-        margin-bottom: 22px;
-      }
-    }
-
-    /* Events Mega Menu */
-    .events-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background: rgba(0, 0, 0, 0.62);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      display: none;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 92px 20px 24px;
-      overflow-y: auto;
-    }
-    .events-overlay.active { display: flex; }
-    .events-panel {
-      width: min(1120px, 100%);
-      max-height: calc(100vh - 116px);
-      overflow: auto;
-      background: #090a0f;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
-      box-shadow: 0 30px 90px rgba(0,0,0,.65);
-      display: grid;
-      grid-template-columns: 34% 66%;
-      position: relative;
-    }
-    .events-intro {
-      background: #12141c;
-      padding: 42px 48px;
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      border-radius: 18px 0 0 18px;
-    }
-    .events-intro h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 18px; }
-    .events-intro p { color: var(--text-secondary); font-size: .9rem; line-height: 1.6; margin-bottom: 16px; max-width: 360px; }
-    .events-list { padding: 34px 48px; }
-    .event-city-group { padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px solid var(--border-color); }
-    .event-city-group:last-child { margin-bottom:0; padding-bottom:0; border-bottom:0; }
-    .event-city-title {
-      display:flex; align-items:center; gap:10px; margin-bottom:14px;
-      color:#fff; font-size:.95rem; font-weight:700;
-    }
-    .event-city-title::after { content:'→'; font-size:1rem; margin-left:2px; transition:transform .2s ease; }
-    .event-city-title:hover::after { transform:translateX(4px); }
-    .event-city-title:hover { text-decoration:underline; text-underline-offset:4px; }
-    .event-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 30px; }
-    .event-option {
-      display:flex; align-items:center; gap:10px; min-width:0;
-      padding:7px 0; color:#fff; font-size:.82rem; font-weight:600;
-      transition:color .2s ease, transform .2s ease;
-    }
-    .event-option:hover { text-decoration:underline; text-underline-offset:4px; transform:translateX(2px); }
-    .event-option::after { content:'→'; margin-left:auto; opacity:0; transform:translateX(-5px); transition:all .2s ease; }
-    .event-option:hover::after { opacity:1; transform:translateX(0); }
-
-    .events-logos {
-      grid-column: 1 / -1;
-      padding: 28px 70px 34px;
-      border-top: 1px solid var(--border-color);
-      background: #090a0f;
-      border-radius: 0 0 18px 18px;
-    }
-    .events-logos-title {
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #a7abb7;
-      margin-bottom: 14px;
-    }
-    .events-logo-marquee {
-      overflow: hidden;
-      width: 100%;
-      padding: 0 18px;
-      box-sizing: border-box;
-    }
-    .events-logo-track {
-      display: flex;
-      width: max-content;
-      animation: eventsLogoScroll 44s linear infinite;
-    }
-    .events-logo-set {
-      display: flex;
-      align-items: center;
-      gap: 58px;
-      padding-right: 58px;
-    }
-    .events-logo-set img {
-      width: 128px;
-      height: 44px;
-      object-fit: contain;
-      filter: grayscale(1) brightness(0) invert(1);
-      opacity: .82;
-    }
-    @keyframes eventsLogoScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    .events-logo-marquee:hover .events-logo-track {
-      animation-play-state: paused;
-    }
-    .event-icon { width:22px; min-width:22px; text-align:center; color:#cfd3dc; font-size:.9rem; }
-    .events-close {
-      position:absolute; top:14px; right:14px; width:36px; height:36px;
-      border:1px solid rgba(255,255,255,.14); border-radius:50%;
-      background:#12141c; color:#fff; cursor:pointer; font-size:1rem; z-index:3;
-    }
-    .events-close:hover { background:var(--accent-blue); }
-
-    @media (max-width:900px) {
-      .events-logos { padding: 20px 30px 24px; }
-      .events-logo-set { gap: 34px; padding-right: 34px; }
-      .events-logo-set img { width: 90px; height: 30px; }
-      .events-overlay { padding:82px 12px 16px; }
-      .events-panel { grid-template-columns:1fr; max-height:calc(100vh - 98px); }
-      .events-intro { padding:30px; min-height:auto; border-radius:18px 18px 0 0; }
-      .events-list { padding:28px 30px 34px; }
-    }
-    @media (max-width:600px) {
-      .events-overlay { padding:76px 8px 8px; }
-      .events-panel { border-radius:14px; }
-      .events-intro { padding:26px 22px; }
-      .events-list { padding:24px 18px 28px; }
-      .event-options { grid-template-columns:1fr; gap:4px; }
-      .event-option { font-size:.78rem; }
-      .events-logos { padding: 18px 18px 22px; }
-      .events-logo-set { gap: 26px; padding-right: 26px; }
-      .events-logo-set img { width: 78px; height: 28px; }
-    }
-
-  </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <!-- Sticky Navbar -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="nav-brand">
-          <img src="images/Logo_png.png" alt="BrainStation Logo" style="height: 75px; width: auto; object-fit: contain;" />
-          
-        </a>
-
-      <ul class="nav-menu">
-        <li><a href="javascript:void(0)" class="nav-link" onclick="openWorkshopsMenu()">Workshops </a></li>
-        <li><a href="#catalog" class="nav-link">Certifications</a></li>
-        <li><a href="#enterprise" class="nav-link">Enterprise Training</a></li>
-        <li><a href="javascript:void(0)" class="nav-link" onclick="openEventsMenu()">Events </a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <select class="city-selector" id="citySelector" onchange="updateLocation(this.value)">
-          <option value="New York">New York (HQ)</option>
-          <option value="London">London</option>
-          <option value="Toronto">Toronto</option>
-        </select>
-        <button class="btn btn-outline" style="padding: 8px 18px; font-size: 0.875rem;" onclick="openModal('Sign In', 'Access your BrainStation Student & Enterprise Portal')">Sign In</button>
-        <button class="btn btn-primary" style="padding: 8px 18px; font-size: 0.875rem;" onclick="openModal('Get Started', 'Schedule an admissions or syllabus consultation')">Get Started</button>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-      </div>
-    </div>
-  </header>
+    <!-- Header -->
+    <div id="header"></div>
 
 
-  <!-- Workshops Mega Menu -->
-  <div class="workshops-overlay" id="workshopsMenu" aria-hidden="true">
-    <div class="workshops-panel" onclick="event.stopPropagation()">
-      <button class="workshops-close" type="button" onclick="closeWorkshopsMenu()" aria-label="Close workshops menu">✕</button>
+    <!-- ==============================
+         HERO
+    =============================== -->
 
-      <div class="workshops-intro">
-        <div class="pill-badge" style="margin-bottom:18px; width:max-content;">Workshops</div>
-        <h2>Enterprise Workshops</h2>
-        <p>Build essential skills for the AI era with expert-led, in-person workshops.</p>
-        <p>Available for enterprise teams.</p>
-      </div>
+    <main>
 
-      <div class="workshops-list">
-        <section class="workshop-group">
-          <h3>Core Workshops</h3>
-          <p>In-depth workshops designed to help teams and professionals build lasting AI capabilities.</p>
-          <div class="workshop-options">
-            <a class="workshop-option" href="ai-fundamentals.html">
-              <span class="workshop-icon">⌘</span>
-              <span class="workshop-option-text"><strong>AI Fundamentals</strong><span>Work smarter with AI tools.</span></span>
-            </a>
-            <a class="workshop-option" href="ai-product-managers.html">
-              <span class="workshop-icon">▣</span>
-              <span class="workshop-option-text"><strong>AI for Product Managers</strong><span>Reduce time to value with AI tools.</span></span>
-            </a>
-            <a class="workshop-option" href="ai-marketing.html">
-              <span class="workshop-icon">⚑</span>
-              <span class="workshop-option-text"><strong>AI for Marketing</strong><span>Accelerate the marketing workflow.</span></span>
-            </a>
-            <a class="workshop-option" href="ai-designers.html">
-              <span class="workshop-icon">✦</span>
-              <span class="workshop-option-text"><strong>AI for Designers</strong><span>Accelerate the design workflow.</span></span>
-            </a>
-            <a class="workshop-option" href="ai-leaders.html">
-              <span class="workshop-icon">♙</span>
-              <span class="workshop-option-text"><strong>AI for Leaders</strong><span>Learn to lead in the AI era.</span></span>
-            </a>
-            <a class="workshop-option" href="ai-brand.html">
-              <span class="workshop-icon">◇</span>
-              <span class="workshop-option-text"><strong>AI for Brand</strong><span>Brand-building for the AI era.</span></span>
-            </a>
-          </div>
-        </section>
+        <section class="hero">
 
-        <section class="workshop-group">
-          <h3>Specialized Workshops</h3>
-          <p>Targeted, deep-dive sessions focused on mastering specific AI skills.</p>
-          <div class="workshop-options">
-            <a class="workshop-option" href="ai-evals.html">
-              <span class="workshop-icon">✓</span>
-              <span class="workshop-option-text"><strong>AI Evals</strong><span>Measure &amp; improve AI performance.</span></span>
-            </a>
-            <a class="workshop-option" href="ai-search-optimization.html">
-              <span class="workshop-icon">⌕</span>
-              <span class="workshop-option-text"><strong>AI Search Optimization</strong><span>Optimize your content for AI search.</span></span>
-            </a>
-            <a class="workshop-option" href="ai-agents.html">
-              <span class="workshop-icon">⬡</span>
-              <span class="workshop-option-text"><strong>AI Agents</strong><span>Build autonomous agents.</span></span>
-            </a>
-            <a class="workshop-option" href="agile.html">
-              <span class="workshop-icon">↻</span>
-              <span class="workshop-option-text"><strong>Agile</strong><span>Accelerate delivery and reduce risk.</span></span>
-            </a>
-          </div>
-        </section>
-
-        <section class="workshop-group">
-          <h3>Innovation Workshops</h3>
-          <p>Strategic workshops to transform your organization's capabilities for the AI era.</p>
-          <div class="workshop-options">
-            <a class="workshop-option" href="ai-innovation.html">
-              <span class="workshop-icon">♧</span>
-              <span class="workshop-option-text"><strong>AI Innovation</strong><span>Transform your organization with AI.</span></span>
-            </a>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
+            <div class="hero-overlay"></div>
 
 
-  <!-- Events Mega Menu -->
-  <div class="events-overlay" id="eventsMenu" aria-hidden="true">
-    <div class="events-panel" onclick="event.stopPropagation()">
-      <button class="events-close" type="button" onclick="closeEventsMenu()" aria-label="Close events menu">✕</button>
-      <div class="events-intro">
-        <div class="pill-badge" style="margin-bottom:18px; width:max-content;">Events</div>
-        <h2>Events</h2>
-        <p><strong>2,000+ Events Hosted. 80,000+ Attendees.</strong></p>
-        <p>Join leaders driving innovation across AI, product management, design, and marketing. Connect with professionals, unlock new insights, and stay ahead of what's next.</p>
-        <a href="events.html" class="btn btn-primary" style="width:max-content; margin-top:10px;">View All Events&nbsp; →</a>
-      </div>
-      <div class="events-list">
-        <section class="event-city-group">
-          <a class="event-city-title" href="events-new-york.html"><span>🇺🇸</span> New York Events</a>
-          <div class="event-options">
-            <a class="event-option" href="ai-events-new-york.html"><span class="event-icon">AI</span><span>AI Events in NYC</span></a>
-            <a class="event-option" href="product-management-events-new-york.html"><span class="event-icon">▧</span><span>Product Management Events in NYC</span></a>
-            <a class="event-option" href="design-events-new-york.html"><span class="event-icon">♧</span><span>Design Events in NYC</span></a>
-            <a class="event-option" href="marketing-events-new-york.html"><span class="event-icon">⌁</span><span>Marketing Events in NYC</span></a>
-          </div>
-        </section>
-        <section class="event-city-group">
-          <a class="event-city-title" href="events-london.html"><span>🇬🇧</span> London Events</a>
-          <div class="event-options">
-            <a class="event-option" href="ai-events-london.html"><span class="event-icon">AI</span><span>AI Events in London</span></a>
-            <a class="event-option" href="product-management-events-london.html"><span class="event-icon">▧</span><span>Product Management Events in London</span></a>
-            <a class="event-option" href="design-events-london.html"><span class="event-icon">♧</span><span>Design Events in London</span></a>
-            <a class="event-option" href="marketing-events-london.html"><span class="event-icon">⌁</span><span>Marketing Events in London</span></a>
-          </div>
-        </section>
-        <section class="event-city-group">
-          <a class="event-city-title" href="events-toronto.html"><span>🇨🇦</span> Toronto Events</a>
-          <div class="event-options">
-            <a class="event-option" href="ai-events-toronto.html"><span class="event-icon">AI</span><span>AI Events in Toronto</span></a>
-            <a class="event-option" href="product-management-events-toronto.html"><span class="event-icon">▧</span><span>Product Management Events in Toronto</span></a>
-            <a class="event-option" href="design-events-toronto.html"><span class="event-icon">♧</span><span>Design Events in Toronto</span></a>
-            <a class="event-option" href="marketing-events-toronto.html"><span class="event-icon">⌁</span><span>Marketing Events in Toronto</span></a>
-          </div>
-        </section>
-      </div>
-      <div class="events-logos">
-        <div class="events-logos-title">Past speakers from:</div>
-        <div class="events-logo-marquee" aria-label="Past speakers and partner companies">
-          <div class="events-logo-track">
-            <div class="events-logo-set">
-              <img src="https://cdn.simpleicons.org/google/ffffff" alt="Google">
-              <img src="https://cdn.simpleicons.org/nvidia/ffffff" alt="NVIDIA">
-              <img src="https://cdn.simpleicons.org/disney/ffffff" alt="Disney">
-              <img src="https://cdn.simpleicons.org/mastercard/ffffff" alt="Mastercard">
-              <img src="https://cdn.simpleicons.org/paypal/ffffff" alt="PayPal">
-              <img src="https://cdn.simpleicons.org/meta/ffffff" alt="Meta">
-              <img src="https://cdn.simpleicons.org/figma/ffffff" alt="Figma">
-              <img src="https://cdn.simpleicons.org/stripe/ffffff" alt="Stripe">
-              <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe">
-              <img src="https://cdn.simpleicons.org/microsoft/ffffff" alt="Microsoft">
-              <img src="https://cdn.simpleicons.org/mcdonalds/ffffff" alt="McDonald's">
-              <img src="https://cdn.simpleicons.org/citi/ffffff" alt="Citi">
+            <div class="hero-content">
+
+                <!-- Badge -->
+
+                <div class="hero-badge">
+                    <span>●</span>
+                    FUTURE-PROOFING IN THE AGE OF INTELLIGENCE
+                </div>
+
+
+                <!-- Heading -->
+
+                <h1>
+                    Mastery Beyond the
+                    <br>
+
+                    <span>Algorithm</span>
+                </h1>
+
+
+                <!-- Description -->
+
+                <p>
+                    Expert-led AI and digital skills training for teams,
+                    enterprises, and professionals.
+                </p>
+
+
+                <!-- Buttons -->
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="btn btn-primary">
+                        Browse Training
+                    </a>
+
+                    <a href="#" class="btn btn-secondary">
+                        View Upcoming Events
+                    </a>
+
+                </div>
+
+
+                <!-- Framework heading -->
+                <div class="framework-heading">
+                    MASTER INDUSTRY STANDARD AI FRAMEWORKS &amp; TOOLS
+                </div>
+
+
+                <!-- AI Logos -->
+
+                <!-- AI Logos -->
+
+                <div class="ai-logos">
+
+                    <div class="ai-logo">
+                        <img src="images/chatgpt_PNG13.png" alt="ChatGPT">
+                    </div>
+
+                    <div class="ai-logo">
+                        <img src="images/Claude-Logo-PNG-SVG-Vector.png" alt="Claude">
+                    </div>
+
+                    <div class="ai-logo">
+                        <img src="images/Google_Gemini_logo.svg.webp" alt="Gemini">
+                    </div>
+
+                    <div class="ai-logo">
+                        <img src="images/Figma-Logo-PNG-Photos.png" alt="Figma">
+                    </div>
+
+                    <div class="ai-logo">
+                        <img src="images/Cursor_logo.svg.webp" alt="Cursor">
+                    </div>
+
+                    <div class="ai-logo">
+                        <img src="images/lg-66cb1819333c2-Adobe-Firefly-Logo.webp" alt="Adobe Firefly">
+                    </div>
+
+                    <div class="ai-logo">
+                        <img src="images/Lovable-Ai-Logo-PNG-SVG-Vector.png" alt="Lovable">
+                    </div>
+
+                </div>
+
             </div>
-            <div class="events-logo-set" aria-hidden="true">
-              <img src="https://cdn.simpleicons.org/google/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/nvidia/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/disney/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/mastercard/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/paypal/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/meta/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/figma/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/stripe/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/microsoft/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/mcdonalds/ffffff" alt="">
-              <img src="https://cdn.simpleicons.org/citi/ffffff" alt="">
+
+        </section>
+
+
+        <!-- Extra section -->
+
+        <!-- ==============================
+         WHAT WE DO
+         ================================ -->
+
+        <section class="what-we-do">
+
+            <div class="what-we-do-container">
+
+                <!-- LEFT CONTENT -->
+                <div class="what-we-do-content">
+
+                    <div class="section-label">WHAT WE DO</div>
+
+                    <h2>
+                        Transforming careers and modern
+                        enterprises since 2021
+                    </h2>
+
+                    <p>
+                        Courstrike is the global leader in AI and digital skills training
+                        for professionals and enterprise teams. Established in 2012,
+                        Courstrike has certified over 40,000 professionals and empowered
+                        Fortune 500 corporations through expert-led, in-person training
+                        at state-of-the-art studios in New York, London, and Toronto.
+                    </p>
+
+                    <a href="#" class="studio-btn">
+                        Watch Studio Tour
+                    </a>
+
+                </div>
+
+
+                <!-- RIGHT STATS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <h3>2012</h3>
+                        <p>Year Established</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>40K+</h3>
+                        <p>Professionals Trained</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>2,000+</h3>
+                        <p>Tech Events Hosted</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>3</h3>
+                        <p>Global Studios (NYC • LON • TOR)</p>
+                    </div>
+
+                </div>
+
             </div>
-          </div>
+
+        </section>
+
+        <!-- ==============================
+     WORKSHOPS & COURSES
+================================ -->
+
+<section class="workshops-section">
+
+    <div class="workshops-container">
+
+        <!-- SECTION HEADING -->
+        <div class="workshops-heading">
+
+            <h2>
+                AI Workshops &amp; Courses in
+
+                <button
+                    class="location-selector"
+                    id="locationSelector"
+                    type="button"
+                >
+                    <span id="selectedLocationFlag">🇺🇸</span>
+                    <span id="selectedLocation">New York</span>
+                    <span class="location-arrow">⌃</span>
+                </button>
+            </h2>
+
+
+            <!-- LOCATION DROPDOWN -->
+
+            <div
+                class="location-dropdown"
+                id="locationDropdown"
+            >
+
+                <a
+                    href="#"
+                    class="location-option active"
+                    data-location="New York"
+                    data-flag="🇺🇸"
+                >
+                    <span>🇺🇸</span>
+                    <span>New York</span>
+                </a>
+
+                <a
+                    href="#"
+                    class="location-option"
+                    data-location="London"
+                    data-flag="🇬🇧"
+                >
+                    <span>🇬🇧</span>
+                    <span>London</span>
+                </a>
+
+                <a
+                    href="#"
+                    class="location-option"
+                    data-location="Toronto"
+                    data-flag="🇨🇦"
+                >
+                    <span>🇨🇦</span>
+                    <span>Toronto</span>
+                </a>
+
+                <a
+                    href="#"
+                    class="location-option"
+                    data-location="Online"
+                    data-flag="🌐"
+                >
+                    <span>🌐</span>
+                    <span>Online</span>
+                </a>
+
+            </div>
+
         </div>
-      </div>
+
+
+        <!-- ==============================
+             WORKSHOPS CARD
+        =============================== -->
+
+        <div class="workshops-card">
+
+
+            <!-- LEFT INTRO CARD -->
+
+            <div class="workshops-intro">
+
+                <div class="intro-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Enterprise Workshops
+                </h3>
+
+                <p>
+                    Build essential skills for the AI era with
+                    expert-led, in-person workshops
+                </p>
+
+                <a
+                    href="enterprise-workshops.html"
+                    class="intro-arrow"
+                >
+                    →
+                </a>
+
+            </div>
+
+
+            <!-- RIGHT WORKSHOP LIST -->
+
+            <div class="workshops-list">
+
+
+                <!-- ==============================
+                     AI FUNDAMENTALS
+                =============================== -->
+
+                <a
+                    href="workshops/ai-fundamentals.html"
+                    class="workshop-item"
+                >
+
+                    <div class="workshop-icon yellow">
+                        ⚿
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="workshop-badge">
+                            ✧
+                        </div>
+
+                        <h3>
+                            AI Fundamentals
+                        </h3>
+
+                        <p>
+                            Work smarter with AI tools.
+                        </p>
+
+                        <div class="tool-logos">
+
+                            <span>✳ Claude</span>
+                            <span>◎ ChatGPT</span>
+                            <span>▰ Copilot</span>
+                            <span>✦ Gemini</span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- ==============================
+                     AI PRODUCT MANAGERS
+                =============================== -->
+
+                <a
+                    href="workshops/ai-for-product-managers.html"
+                    class="workshop-item"
+                >
+
+                    <div class="workshop-icon yellow">
+                        ▤
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI for Product Managers
+                        </h3>
+
+                        <p>
+                            Reduce time to value with AI tools.
+                        </p>
+
+                        <div class="tool-logos">
+
+                            <span>✳ Claude</span>
+                            <span>◎ ChatGPT</span>
+                            <span>▰ Copilot</span>
+                            <span>✦ Gemini</span>
+                            <span>♥ Lovable</span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- ==============================
+                     AI MARKETING
+                =============================== -->
+
+                <a
+                    href="workshops/ai-for-marketing.html"
+                    class="workshop-item"
+                >
+
+                    <div class="workshop-icon yellow">
+                        ▱
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI for Marketing
+                        </h3>
+
+                        <p>
+                            Accelerate the marketing workflow with AI.
+                        </p>
+
+                        <div class="tool-logos">
+
+                            <span>✳ Claude</span>
+                            <span>◎ ChatGPT</span>
+                            <span>▰ Copilot</span>
+                            <span>✦ Gemini</span>
+                            <span>Fi Adobe Firefly</span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- ==============================
+                     AI DESIGNERS
+                =============================== -->
+
+                <a
+                    href="workshops/ai-for-designers.html"
+                    class="workshop-item"
+                >
+
+                    <div class="workshop-icon yellow">
+                        ◇
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI for Designers
+                        </h3>
+
+                        <p>
+                            Accelerate the design workflow with AI.
+                        </p>
+
+                        <div class="tool-logos">
+
+                            <span>✳ Claude</span>
+                            <span>◎ ChatGPT</span>
+                            <span>▰ Copilot</span>
+                            <span>✦ Gemini</span>
+                            <span>Figma</span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- ==============================
+                     AI LEADERS
+                =============================== -->
+
+                <a
+                    href="workshops/ai-for-leaders.html"
+                    class="workshop-item"
+                >
+
+                    <div class="workshop-icon yellow">
+                        ♧
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI for Leaders
+                        </h3>
+
+                        <p>
+                            Lead with greater speed and impact in the AI era.
+                        </p>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- ==============================
+                     AI BRAND
+                =============================== -->
+
+                <a
+                    href="workshops/ai-for-brand.html"
+                    class="workshop-item"
+                >
+
+                    <div class="workshop-icon yellow">
+                        ◇
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI for Brand
+                        </h3>
+
+                        <p>
+                            Brand-building for the AI era.
+                        </p>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- =================================
+                     HIDDEN WORKSHOPS
+                     SHOW AFTER SHOW MORE
+                ================================== -->
+
+
+                <!-- AI EVALS -->
+
+                <a
+                    href="workshops/ai-evals.html"
+                    class="workshop-item hidden-workshop"
+                >
+
+                    <div class="workshop-icon dark">
+                        ✓
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI Evals
+                        </h3>
+
+                        <p>
+                            Measure and improve AI systems.
+                        </p>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- AI SEARCH OPTIMIZATION -->
+
+                <a
+                    href="workshops/ai-search-optimization.html"
+                    class="workshop-item hidden-workshop"
+                >
+
+                    <div class="workshop-icon dark">
+                        ⌕
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI Search Optimization
+                        </h3>
+
+                        <p>
+                            Optimize your content for AI search.
+                        </p>
+
+                        <div class="tool-logos">
+
+                            <span>◎ ChatGPT</span>
+                            <span>◌ Perplexity</span>
+                            <span>✳ Claude</span>
+                            <span>✦ Gemini</span>
+                            <span>▰ Copilot</span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- AI AGENTS -->
+
+                <a
+                    href="workshops/ai-agents.html"
+                    class="workshop-item hidden-workshop"
+                >
+
+                    <div class="workshop-icon dark">
+                        ◈
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI Agents
+                        </h3>
+
+                        <p>
+                            Build autonomous AI agents.
+                        </p>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- AGILE -->
+
+                <a
+                    href="workshops/agile.html"
+                    class="workshop-item hidden-workshop"
+                >
+
+                    <div class="workshop-icon dark">
+                        ◔
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            Agile
+                        </h3>
+
+                        <p>
+                            Accelerate delivery and reduce risk.
+                        </p>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- AI INNOVATION -->
+
+                <a
+                    href="workshops/ai-innovation.html"
+                    class="workshop-item hidden-workshop"
+                >
+
+                    <div class="workshop-icon dark">
+                        ♧
+                    </div>
+
+                    <div class="workshop-content">
+
+                        <div class="reservation-badge">
+                            ↗ RESERVATIONS OPEN
+                        </div>
+
+                        <h3>
+                            AI Innovation
+                        </h3>
+
+                        <p>
+                            Transform your organization's AI maturity.
+                        </p>
+
+                    </div>
+
+                    <span class="workshop-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- SHOW MORE -->
+
+                <button
+                    type="button"
+                    class="show-more-btn"
+                    id="showMoreBtn"
+                >
+                    <span>Show More</span>
+                    <span>⌄</span>
+                </button>
+
+
+                <!-- SHOW LESS -->
+
+                <button
+                    type="button"
+                    class="show-less-btn"
+                    id="showLessBtn"
+                >
+                    <span>Show Less</span>
+                    <span>⌃</span>
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-glow"></div>
-    <div class="container hero-content">
-      <div class="pill-badge">
-        <span class="dot"></span>
-        Future-Proofing in the Age of Intelligence
-      </div>
-      
-      <h1 class="hero-title">Mastery Beyond the Algorithm</h1>
-      <p class="hero-subtitle">
-        Expert-led AI and digital skills training for teams, enterprises, and professionals.
-      </p>
+</section>
 
-      <div class="hero-cta-group">
-        <a href="javascript:void(0)" class="btn btn-primary" onclick="openWorkshopsMenu()">Browse Training</a>
-        <a href="#events" class="btn btn-secondary">View Upcoming Events</a>
-      </div>
+<!-- ==============================
+     ENTERPRISE TRAINING
+================================ -->
 
-      <div class="ticker-label">Master Industry Standard AI Frameworks & Tools</div>
-        <div class="tools-ticker">
-          <div class="tool-logo">
-            <img src="images/chatgpt_PNG13.png" alt="ChatGPT">
-          </div>
+<section class="enterprise-training">
 
-          <div class="tool-logo">
-            <img src="images/Claude-Logo-PNG-SVG-Vector.png" alt="Claude">
-          </div>
+    <div class="enterprise-training-container">
 
-          <div class="tool-logo">
-            <img src="images/github-copilot-logo.webp" alt="GitHub Copilot">
-          </div>
-
-          <div class="tool-logo">
-            <img src="images/Google_Gemini_logo.svg.webp" alt="Google Gemini">
-          </div>
-
-          <div class="tool-logo">
-            <img src="images/Figma-Logo-PNG-Photos.png" alt="Figma AI">
-          </div>
-
-          <div class="tool-logo">
-            <img src="images/Cursor_logo.svg.webp" alt="Cursor">
-          </div>
-
-          <div class="tool-logo">
-            <img src="images/lg-66cb1819333c2-Adobe-Firefly-Logo.webp" alt="Adobe Firefly">
-          </div>
-
-          <div class="tool-logo">
-            <img src="images/Lovable-Ai-Logo-PNG-SVG-Vector.png" alt="Lovable">
-          </div>
+        <!-- LEFT IMAGE -->
+        <div class="enterprise-training-image">
+            <img
+                src="images/enterprise-training.jpg"
+                alt="Enterprise Training"
+            >
         </div>
+
+
+        <!-- RIGHT CONTENT -->
+        <div class="enterprise-training-content">
+
+            <div class="enterprise-label">
+                TRAIN YOUR TEAM
+            </div>
+
+            <h2>
+                Custom-Built Enterprise
+                <br>
+                Training
+            </h2>
+
+            <p>
+                Go beyond workshops to build scalable, enterprise-wide AI
+                and digital capabilities within your organization. Work with
+                Courstrike to receive a tailored enablement program tuned
+                to your people, processes, and technology.
+            </p>
+
+            <a href="#" class="enterprise-btn">
+                Explore Enterprise Training
+            </a>
+
+        </div>
+
     </div>
-  </section>
 
-  <!-- What We Do / Stats Section -->
-  <section class="overview-section" id="about">
-    <div class="container">
-      <div class="overview-grid">
-        <div class="overview-text">
-          <div class="pill-badge" style="margin-bottom: 16px;">What We Do</div>
-          <h2>Transforming careers and modern enterprises since 2021</h2>
-          <p>
-            Courstrike is the global leader in AI and digital skills training for professionals and enterprise teams. Established in 2012, Courstrike has certified over 40,000 professionals and empowered Fortune 500 corporations through expert-led, in-person training at state-of-the-art studios in New York, London, and Toronto.
-          </p>
-          <div style="display: flex; gap: 12px;">
-            <button class="btn btn-outline" onclick="openModal('Our Story', 'Learn about BrainStation\'s journey in tech education')">Watch Studio Tour</button>
-          </div>
-        </div>
+</section>
 
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">2012</div>
-            <div class="stat-label">Year Established</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">40K+</div>
-            <div class="stat-label">Professionals Trained</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">2,000+</div>
-            <div class="stat-label">Tech Events Hosted</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Global Studios (NYC • LON • TOR)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ==============================
+     TRUSTED COMPANIES
+================================ -->
 
-  <!-- Program Catalog (Workshops & Certifications) -->
-  <section class="catalog-section" id="catalog">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">AI Workshops & Certification Courses</h2>
-        <p class="section-subtitle">
-          Hands-on programs led by industry practitioners at top tech companies.
+<section class="trusted-companies">
+
+    <div class="trusted-container">
+
+        <!-- HEADING -->
+
+        <h2 class="trusted-title">
+            Trusted by 100,000+ Professionals and Top Global
+            <br>
+            Companies
+        </h2>
+
+
+        <!-- DIVIDER -->
+
+        <div class="trusted-divider"></div>
+
+
+        <!-- DESCRIPTION -->
+
+        <p class="trusted-description">
+            Courstrike is proud to work with the world's leading digital and AI
+            brands and professionals<br>
+            to power our events, workshops, and certification courses.
         </p>
-      </div>
 
-      <!-- Filter Tabs -->
-      <div class="catalog-controls">
-        <button class="filter-tab active" onclick="filterCourses('all', this)">All Programs</button>
-        <button class="filter-tab" onclick="filterCourses('ai', this)">AI & Machine Learning</button>
-        <button class="filter-tab" onclick="filterCourses('product', this)">Product Management</button>
-        <button class="filter-tab" onclick="filterCourses('design', this)">Design & UX</button>
-        <button class="filter-tab" onclick="filterCourses('marketing', this)">Marketing & Growth</button>
-      </div>
 
-      <!-- Courses Grid -->
-      <div class="catalog-grid" id="coursesGrid">
-        <!-- AI Fundamentals -->
-        <div class="course-card" data-category="ai">
-          <div>
-            <div class="course-tag-row">
-              <span class="course-type-badge">Core Workshop</span>
-              <span class="course-status">Enrolling</span>
+        <!-- LOGO SLIDER -->
+
+        <div class="trusted-slider">
+
+            <div class="trusted-track" id="trustedTrack">
+
+                <!-- Logos will be generated by JS -->
+
             </div>
-            <h3 class="course-title">AI Fundamentals</h3>
-            <p class="course-description">
-              Work faster, smarter, and more effectively with modern generative AI tools and workflow automation.
-            </p>
-            <div class="course-tools-list">
-              <span class="course-tool-tag">Claude</span>
-              <span class="course-tool-tag">ChatGPT</span>
-              <span class="course-tool-tag">Copilot</span>
-              <span class="course-tool-tag">Gemini</span>
-            </div>
-          </div>
-          <div class="course-card-footer">
-            <span class="course-format">In-Person & Live Online</span>
-            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI Fundamentals', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
-          </div>
+
         </div>
 
-        <!-- AI Product Managers -->
-        <div class="course-card" data-category="product">
-          <div>
-            <div class="course-tag-row">
-              <span class="course-type-badge">Specialized Workshop</span>
-              <span class="course-status">Enrolling</span>
-            </div>
-            <h3 class="course-title">AI for Product Managers</h3>
-            <p class="course-description">
-              Reduce time to value with AI tools. Build PRDs, prototypes, and user flows with automated agent frameworks.
-            </p>
-            <div class="course-tools-list">
-              <span class="course-tool-tag">Lovable</span>
-              <span class="course-tool-tag">Claude</span>
-              <span class="course-tool-tag">Cursor</span>
-            </div>
-          </div>
-          <div class="course-card-footer">
-            <span class="course-format">Evening & Weekend cohorts</span>
-            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI for Product Managers', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
-          </div>
-        </div>
-
-        <!-- AI for Designers -->
-        <div class="course-card" data-category="design">
-          <div>
-            <div class="course-tag-row">
-              <span class="course-type-badge">Core Workshop</span>
-              <span class="course-status">Enrolling</span>
-            </div>
-            <h3 class="course-title">AI for Designers</h3>
-            <p class="course-description">
-              Accelerate the creative workflow. Leverage generative design systems, UI scaffolding, and design token automation.
-            </p>
-            <div class="course-tools-list">
-              <span class="course-tool-tag">Figma AI</span>
-              <span class="course-tool-tag">Midjourney</span>
-              <span class="course-tool-tag">Firefly</span>
-            </div>
-          </div>
-          <div class="course-card-footer">
-            <span class="course-format">Studio & Hybrid</span>
-            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI for Designers', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
-          </div>
-        </div>
-
-        <!-- Artificial Intelligence Certification -->
-        <div class="course-card" data-category="ai">
-          <div>
-            <div class="course-tag-row">
-              <span class="course-type-badge course-cert-badge">AIC™ Certification</span>
-              <span class="course-status">Flagship Program</span>
-            </div>
-            <h3 class="course-title">Artificial Intelligence Certification</h3>
-            <p class="course-description">
-              Earn your AIC™ credential and turn AI into your organization's core competitive edge through end-to-end implementation.
-            </p>
-            <div class="course-tools-list">
-              <span class="course-tool-tag">Python</span>
-              <span class="course-tool-tag">LLM Evals</span>
-              <span class="course-tool-tag">AI Agents</span>
-              <span class="course-tool-tag">RAG</span>
-            </div>
-          </div>
-          <div class="course-card-footer">
-            <span class="course-format">10-Week Immersive</span>
-            <a href="javascript:void(0)" class="course-action" onclick="openModal('Artificial Intelligence Certification (AIC™)', 'Request admissions handbook and curriculum')">Explore Syllabus →</a>
-          </div>
-        </div>
-
-        <!-- AI Product Design Certification -->
-        <div class="course-card" data-category="design">
-          <div>
-            <div class="course-tag-row">
-              <span class="course-type-badge course-cert-badge">PDC™ Certification</span>
-              <span class="course-status">Enrolling</span>
-            </div>
-            <h3 class="course-title">AI Product Design Certification</h3>
-            <p class="course-description">
-              Earn your PDC™ certification and design high-conversion, intuitive, and beautiful digital products powered by modern AI.
-            </p>
-            <div class="course-tools-list">
-              <span class="course-tool-tag">UX Research</span>
-              <span class="course-tool-tag">Figma</span>
-              <span class="course-tool-tag">Design Systems</span>
-            </div>
-          </div>
-          <div class="course-card-footer">
-            <span class="course-format">Part-time / Full-time</span>
-            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI Product Design Certification (PDC™)', 'Request admissions handbook and curriculum')">Explore Syllabus →</a>
-          </div>
-        </div>
-
-        <!-- AI for Marketing -->
-        <div class="course-card" data-category="marketing">
-          <div>
-            <div class="course-tag-row">
-              <span class="course-type-badge">Specialized Workshop</span>
-              <span class="course-status">Enrolling</span>
-            </div>
-            <h3 class="course-title">AI for Marketing & Growth</h3>
-            <p class="course-description">
-              Supercharge your multi-channel marketing campaigns, SEO strategy, and personalized customer messaging with predictive AI.
-            </p>
-            <div class="course-tools-list">
-              <span class="course-tool-tag">ChatGPT</span>
-              <span class="course-tool-tag">Adobe Firefly</span>
-              <span class="course-tool-tag">Analytics</span>
-            </div>
-          </div>
-          <div class="course-card-footer">
-            <span class="course-format">Live Studio Sessions</span>
-            <a href="javascript:void(0)" class="course-action" onclick="openModal('AI for Marketing & Growth', 'Request syllabus & upcoming cohort dates')">Explore Syllabus →</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Enterprise Training Banner -->
-  <section class="enterprise-section" id="enterprise">
-    <div class="container">
-      <div class="enterprise-banner">
-        <div class="enterprise-content">
-          <div class="pill-badge" style="margin-bottom: 12px;">Train Your Team</div>
-          <h3>Custom-Built Enterprise Training</h3>
-          <p>
-            Go beyond individual workshops to build scalable, enterprise-wide AI and digital capabilities within your organization. Receive a tailored enablement program tuned to your people, security standards, and tech stack.
-          </p>
-        </div>
-        <div>
-          <button class="btn btn-primary" onclick="openModal('Enterprise Solutions', 'Connect with our enterprise transformation advisors')">
-            Explore Enterprise Training
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <!-- Upcoming Events & Summits -->
-  <section class="events-section" id="events">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Upcoming Summits & Events in <span id="eventCityLabel">New York</span></h2>
-        <p class="section-subtitle">
-          Join executive panels, live prototyping demos, and networking summits at BrainStation studios.
-        </p>
-      </div>
-
-      <div class="events-grid">
-        <div class="event-card">
-          <div>
-            <div class="event-date-row">
-              <span class="event-date-badge">OCT 29</span>
-              <span class="event-location">3:00 PM – 7:00 PM EDT • Studio & Stream</span>
-            </div>
-            <h3 class="event-title">Horizons: AI + Digital Innovation Summit</h3>
-            <p class="event-desc">
-              A premier summit gathering engineering leaders, AI researchers, and executives to unpack autonomous agent architectures and production-grade LLM governance.
-            </p>
-          </div>
-          <div class="event-speakers">
-            <span class="speakers-note">Featuring speakers from: <strong>Google, NVIDIA, Citi</strong></span>
-            <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8125rem;" onclick="openModal('Horizons Summit Registration', 'Register your in-person or virtual seat')">Register</button>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div>
-            <div class="event-date-row">
-              <span class="event-date-badge">DEC 10</span>
-              <span class="event-location">3:00 PM – 7:00 PM EST • BrainStation Studio</span>
-            </div>
-            <h3 class="event-title">AI Product Leadership Summit</h3>
-            <p class="event-desc">
-              Unpack practical frameworks for turning AI prototypes into sticky enterprise products with top product executives from Disney, Stripe, and Figma.
-            </p>
-          </div>
-          <div class="event-speakers">
-            <span class="speakers-note">Featuring speakers from: <strong>Disney, Figma, Stripe</strong></span>
-            <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8125rem;" onclick="openModal('AI Product Summit Registration', 'Register your in-person seat')">Register</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h4>BrainStation®</h4>
-          <p>
-            The global leader in AI and digital skills training for teams, enterprises, and ambitious tech professionals.
-          </p>
-          <div class="footer-studios">
-            Global Campuses:
-            <span>New York Studio: 138 5th Ave, NY</span>
-            <span>London Studio: Shoreditch, London</span>
-            <span>Toronto Studio: 460 King St W, Toronto</span>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h5>Courses & Certifications</h5>
-          <ul class="footer-links">
-            <li><a href="#catalog">AI Fundamentals</a></li>
-            <li><a href="#catalog">AI for Product Managers</a></li>
-            <li><a href="#catalog">AI for Designers</a></li>
-            <li><a href="#catalog">Artificial Intelligence (AIC™)</a></li>
-            <li><a href="#catalog">Product Management (PMC™)</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5>Enterprise</h5>
-          <ul class="footer-links">
-            <li><a href="#enterprise">Custom Enablement</a></li>
-            <li><a href="#enterprise">Executive AI Briefings</a></li>
-            <li><a href="#enterprise">Corporate Workshops</a></li>
-            <li><a href="#events">Case Studies</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5>Company</h5>
-          <ul class="footer-links">
-            <li><a href="#about">About Courstrike</a></li>
-            <li><a href="#about">Careers</a></li>
-            <li><a href="#about">Press & Media</a></li>
-            <li><a href="#about">Testimonials</a></li>
-            <li><a href="#about">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>© BrainStation Inc. 2012–2026. All rights reserved.</div>
-        <div style="display: flex; gap: 20px;">
-          <a href="#">Terms of Service</a>
-          <a href="#">Privacy</a>
-          <a href="#">Security</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Lead Capture / Information Modal -->
-  <div class="modal-overlay" id="leadModal">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <h3 class="modal-title" id="modalTitle">Get Started</h3>
-      <p class="modal-desc" id="modalDesc">Speak with an admissions advisor or request our comprehensive syllabus.</p>
-      
-      <form onsubmit="handleFormSubmit(event)">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" class="form-control" required placeholder="Jane Doe" />
-        </div>
-        <div class="form-group">
-          <label>Work Email</label>
-          <input type="email" class="form-control" required placeholder="jane@company.com" />
-        </div>
-        <div class="form-group">
-          <label>Location Preference</label>
-          <select class="form-control" id="modalLocation">
-            <option value="New York">New York Studio</option>
-            <option value="London">London Studio</option>
-            <option value="Toronto">Toronto Studio</option>
-            <option value="Online">Live Online (Global)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Goal / Interest</label>
-          <input type="text" class="form-control" id="modalGoal" placeholder="e.g. AI Certification, Enterprise Team Training" />
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Submit Request</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Interactive JavaScript Logic -->
-  <script>
-    // Update City Selection
-    function updateLocation(city) {
-      document.getElementById('eventCityLabel').textContent = city;
-      const modalLoc = document.getElementById('modalLocation');
-      if (modalLoc) {
-        modalLoc.value = city;
-      }
-    }
-
-    // Filter Courses by Category
-    function filterCourses(category, btnElement) {
-      const tabs = document.querySelectorAll('.filter-tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      btnElement.classList.add('active');
-
-      const cards = document.querySelectorAll('.course-card');
-      cards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (category === 'all' || cardCategory === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
+    </main>
 
 
-    // Workshops Mega Menu
-    function openWorkshopsMenu() {
-      const menu = document.getElementById('workshopsMenu');
-      if (!menu) return;
-      menu.classList.add('active');
-      menu.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
+    <!-- Footer -->
 
-    function closeWorkshopsMenu() {
-      const menu = document.getElementById('workshopsMenu');
-      if (!menu) return;
-      menu.classList.remove('active');
-      menu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
+    <div id="footer"></div>
 
-    document.getElementById('workshopsMenu')?.addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeWorkshopsMenu();
-        closeEventsMenu();
-      }
-    });
 
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeWorkshopsMenu();
-      }
-    });
+    <script src="js/components.js"></script>
+    <script src="js/workshop.js"></script>
+    <script src="js/trusted-companies.js"></script>
 
-    // Events Mega Menu
-    function openEventsMenu() {
-      const menu = document.getElementById('eventsMenu');
-      if (!menu) return;
-      menu.classList.add('active');
-      menu.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeEventsMenu() {
-      const menu = document.getElementById('eventsMenu');
-      if (!menu) return;
-      menu.classList.remove('active');
-      menu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('eventsMenu')?.addEventListener('click', function(event) {
-      if (event.target === this) closeEventsMenu();
-    });
-
-    // Modal Control
-    function openModal(title, desc) {
-      document.getElementById('modalTitle').textContent = title;
-      document.getElementById('modalDesc').textContent = desc;
-      document.getElementById('modalGoal').value = title;
-      document.getElementById('leadModal').classList.add('active');
-    }
-
-    function closeModal() {
-      document.getElementById('leadModal').classList.remove('active');
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('leadModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
-
-    // Form Submission Handling
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      alert('Thank you! Your request has been received. A BrainStation advisor will reach out shortly.');
-      closeModal();
-    }
-
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const navMenu = document.querySelector('.nav-menu');
-      if (navMenu.style.display === 'flex') {
-        navMenu.style.display = 'none';
-      } else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '72px';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.background = '#090a0f';
-        navMenu.style.padding = '24px';
-        navMenu.style.borderBottom = '1px solid var(--border-color)';
-      }
-    }
-  </script>
 </body>
+
 </html>

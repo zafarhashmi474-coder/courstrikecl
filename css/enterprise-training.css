@@ -1,0 +1,719 @@
+/* =========================================
+   ENTERPRISE TRAINING PAGE
+========================================= */
+
+.enterprise-hero {
+
+    position: relative;
+
+    min-height: calc(100vh - 80px);
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #090a0b;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
+.enterprise-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../images/enterprise-ai-training.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.03);
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.enterprise-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 5, 6, 0.96) 0%,
+            rgba(5, 6, 7, 0.91) 38%,
+            rgba(5, 6, 7, 0.82) 62%,
+            rgba(5, 6, 7, 0.90) 100%
+        );
+}
+
+
+/* =========================================
+   RED / ORANGE / YELLOW GLOWS
+========================================= */
+
+.enterprise-glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: 0.25;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.enterprise-glow-red {
+
+    width: 430px;
+
+    height: 430px;
+
+    background: #ff3b30;
+
+    left: -180px;
+
+    top: 180px;
+}
+
+
+.enterprise-glow-orange {
+
+    width: 360px;
+
+    height: 360px;
+
+    background: #ff7a00;
+
+    right: 250px;
+
+    top: 100px;
+
+    opacity: 0.15;
+}
+
+
+.enterprise-glow-yellow {
+
+    width: 300px;
+
+    height: 300px;
+
+    background: #ffd400;
+
+    right: -100px;
+
+    bottom: -100px;
+
+    opacity: 0.12;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.enterprise-container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(
+        960px,
+        calc(100% - 50px)
+    );
+
+    min-height: calc(100vh - 80px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(390px, 450px);
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 130px 0 70px;
+}
+
+
+/* =========================================
+   LEFT
+========================================= */
+
+.enterprise-left {
+
+    max-width: 530px;
+
+    padding-bottom: 15px;
+}
+
+
+.enterprise-plus {
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    color: #ffffff;
+}
+
+
+.enterprise-plus::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 8px;
+
+    height: 8px;
+
+    margin-left: 7px;
+
+    border-radius: 50%;
+
+    background: #ff7a00;
+
+    box-shadow:
+        0 0 10px rgba(255, 122, 0, 0.8);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.enterprise-left h1 {
+
+    margin: 0;
+
+    font-size: 64px;
+
+    line-height: 1.02;
+
+    font-weight: 500;
+
+    letter-spacing: -2.8px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.enterprise-subtitle {
+
+    max-width: 550px;
+
+    margin: 25px 0 0;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: rgba(255,255,255,0.90);
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.enterprise-stats {
+
+    display: flex;
+
+    gap: 85px;
+
+    margin-top: 45px;
+}
+
+
+.enterprise-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 160px;
+}
+
+
+.enterprise-stat strong {
+
+    font-size: 44px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -1.5px;
+
+    color: #ffffff;
+}
+
+
+.enterprise-stat span {
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,0.70);
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.enterprise-form-card {
+
+    position: relative;
+
+    width: 100%;
+
+    background:
+        rgba(15, 18, 20, 0.94);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.45);
+
+    border-radius: 2px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TOP COLOR LINE
+========================================= */
+
+.form-top-line {
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3b30 0%,
+            #ff6b00 45%,
+            #ffd400 100%
+        );
+}
+
+
+.enterprise-form-inner {
+
+    padding: 28px 30px 30px;
+}
+
+
+/* =========================================
+   FORM HEADING
+========================================= */
+
+.enterprise-form-inner h2 {
+
+    margin: 0;
+
+    font-size: 21px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+.form-description {
+
+    margin: 12px 0 22px;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    font-weight: 500;
+
+    color: rgba(255,255,255,0.88);
+}
+
+
+/* =========================================
+   FORM ROW
+========================================= */
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =========================================
+   FORM FIELD
+========================================= */
+
+.form-field {
+
+    width: 100%;
+
+    margin-bottom: 12px;
+}
+
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.20);
+
+    background: #2b3033;
+
+    color: #ffffff;
+
+    border-radius: 2px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-field input,
+.form-field select {
+
+    height: 44px;
+
+    padding: 0 13px;
+}
+
+
+.form-field textarea {
+
+    min-height: 72px;
+
+    padding: 12px 13px;
+
+    resize: vertical;
+}
+
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+
+    color: #b8bec4;
+}
+
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+
+    border-color: #ff7a00;
+
+    box-shadow:
+        0 0 0 2px rgba(255,122,0,0.12);
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+.phone-field {
+
+    display: grid;
+
+    grid-template-columns: 82px 1fr;
+
+    gap: 8px;
+}
+
+
+.phone-field select {
+
+    cursor: pointer;
+
+    appearance: none;
+
+    padding: 0 8px;
+}
+
+
+/* =========================================
+   TERMS
+========================================= */
+
+.form-terms {
+
+    margin: 2px 0 17px;
+
+    font-size: 10px;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    color: rgba(255,255,255,0.85);
+}
+
+
+.form-terms a {
+
+    color: #ffffff;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.consultation-btn {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #ffffff;
+
+    color: #090a0b;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.consultation-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: #fff7e8;
+
+    box-shadow:
+        0 8px 25px rgba(255,122,0,0.20);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .enterprise-container {
+
+        width: calc(100% - 50px);
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(350px, 420px);
+
+        gap: 45px;
+    }
+
+
+    .enterprise-left h1 {
+
+        font-size: 54px;
+    }
+
+
+    .enterprise-stats {
+
+        gap: 45px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .enterprise-hero {
+
+        min-height: auto;
+    }
+
+
+    .enterprise-background {
+
+        background-position: center;
+    }
+
+
+    .enterprise-container {
+
+        width: calc(100% - 35px);
+
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 70px 0;
+    }
+
+
+    .enterprise-left {
+
+        max-width: 650px;
+    }
+
+
+    .enterprise-left h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .enterprise-form-card {
+
+        max-width: 520px;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .enterprise-container {
+
+        width: calc(100% - 28px);
+
+        padding: 55px 0;
+    }
+
+
+    .enterprise-plus {
+
+        font-size: 16px;
+    }
+
+
+    .enterprise-left h1 {
+
+        font-size: 39px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .enterprise-subtitle {
+
+        font-size: 15px;
+    }
+
+
+    .enterprise-stats {
+
+        gap: 25px;
+
+        margin-top: 35px;
+    }
+
+
+    .enterprise-stat strong {
+
+        font-size: 34px;
+    }
+
+
+    .enterprise-stat span {
+
+        font-size: 12px;
+    }
+
+
+    .enterprise-form-inner {
+
+        padding: 24px 18px 22px;
+    }
+
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+}
