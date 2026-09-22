@@ -1,51 +1,209 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.getElementById("enterpriseForm");
+    const mainHeader =
+        document.getElementById("header");
 
-    if (!form) return;
+    const secondaryNav =
+        document.getElementById("enterpriseSubnav");
 
-
-    form.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-
-        const button =
-            form.querySelector(".consultation-btn");
+    const whySection =
+        document.getElementById("why-brainstation");
 
 
-        const originalText =
-            button.textContent;
+    /* =========================================
+       MAIN HEADER → HIDE WHEN WHY SECTION ARRIVES
+    ========================================= */
+
+    if (
+        mainHeader &&
+        secondaryNav &&
+        whySection
+    ) {
+
+        function updateMainHeader() {
+
+            const navRect =
+                secondaryNav.getBoundingClientRect();
+
+            /*
+                When secondary navigation reaches
+                the top of the screen, hide main header.
+            */
+
+            if (navRect.top <= 0) {
+
+                mainHeader.classList.add(
+                    "enterprise-header-hidden"
+                );
+
+            } else {
+
+                mainHeader.classList.remove(
+                    "enterprise-header-hidden"
+                );
+
+            }
+
+        }
 
 
-        button.textContent =
-            "Request Sent ✓";
+        window.addEventListener(
+            "scroll",
+            updateMainHeader,
+            { passive: true }
+        );
 
 
-        button.style.background =
-            "#ffd400";
+        updateMainHeader();
+
+    }
 
 
-        button.style.color =
-            "#090a0b";
+    /* =========================================
+       SECONDARY NAV LINKS
+    ========================================= */
+
+    const navLinks =
+        document.querySelectorAll(
+            ".enterprise-nav-link"
+        );
 
 
-        /*
-            Reset after 3 seconds
-        */
+    navLinks.forEach(function (link) {
 
-        setTimeout(function () {
+        link.addEventListener(
+            "click",
+            function (event) {
 
-            button.textContent =
-                originalText;
+                const targetId =
+                    link.getAttribute("href");
 
-            button.style.background =
-                "";
 
-            button.style.color =
-                "";
+                if (
+                    !targetId ||
+                    !targetId.startsWith("#")
+                ) {
+                    return;
+                }
 
-        }, 3000);
+
+                const target =
+                    document.querySelector(targetId);
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+
+                navLinks.forEach(function (item) {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+                link.classList.add("active");
+
+            }
+        );
+
+    });
+
+
+    /* =========================================
+       ACTIVE NAV WHILE SCROLLING
+    ========================================= */
+
+    const sections = [
+
+        document.getElementById(
+            "why-brainstation"
+        ),
+
+        document.getElementById(
+            "offerings"
+        ),
+
+        document.getElementById(
+            "benefits"
+        ),
+
+        document.getElementById(
+            "testimonials"
+        ),
+
+        document.getElementById(
+            "locations"
+        )
+
+    ].filter(Boolean);
+
+
+    const observer =
+        new IntersectionObserver(
+
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+
+                    const id =
+                        entry.target.id;
+
+
+                    navLinks.forEach(function (link) {
+
+                        link.classList.remove(
+                            "active"
+                        );
+
+
+                        if (
+                            link.getAttribute("href") ===
+                            "#" + id
+                        ) {
+
+                            link.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    });
+
+                });
+
+            },
+
+            {
+                rootMargin:
+                    "-25% 0px -65% 0px",
+
+                threshold: 0
+            }
+
+        );
+
+
+    sections.forEach(function (section) {
+
+        observer.observe(section);
 
     });
 
