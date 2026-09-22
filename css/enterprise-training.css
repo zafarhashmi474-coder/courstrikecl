@@ -768,106 +768,75 @@
 ========================================= */
 
 .enterprise-subnav-logo {
-
-    width: 40px;
-
-    height: 40px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    text-decoration: none;
-
+    width: 150px;
+    height: 55px;
     flex-shrink: 0;
+    overflow: hidden;
+    text-decoration: none;
 }
 
+.enterprise-logo-image {
+    display: block;
+    width: 145px;
+    height: 50px;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    transform: none !important;
+    rotate: none !important;
+}
 
 .enterprise-logo-mark {
-
     width: 32px;
-
     height: 32px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     color: #ffffff;
-
     font-size: 31px;
-
     line-height: 1;
-
     transform: rotate(45deg);
 }
-
 
 /* =========================================
    NAV LINKS
 ========================================= */
 
 .enterprise-subnav-links {
-
     display: flex;
-
     align-items: center;
-
     gap: 30px;
-
     margin-left: 0;
-
     margin-right: auto;
-
     padding-left: 20px;
 }
 
-
 .enterprise-nav-link {
-
     position: relative;
-
     padding: 28px 0;
-
     color: #ffffff;
-
     text-decoration: none;
-
     font-size: 13px;
-
     line-height: 1;
-
     font-weight: 600;
-
     white-space: nowrap;
-
     transition:
         color 0.2s ease;
 }
 
-
 .enterprise-nav-link::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     right: 0;
-
     bottom: 17px;
-
     height: 2px;
-
     transform: scaleX(0);
-
     transform-origin: center;
-
     background:
         linear-gradient(
             90deg,
@@ -875,139 +844,90 @@
             #ff7a00,
             #ffd400
         );
-
     transition:
         transform 0.25s ease;
 }
 
-
 .enterprise-nav-link:hover {
-
     color: #ffffff;
 }
 
-
 .enterprise-nav-link.active::after {
-
     transform: scaleX(1);
 }
-
 
 /* =========================================
    GET IN TOUCH
 ========================================= */
 
 .enterprise-contact-btn {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     min-width: 95px;
-
     height: 38px;
-
     padding: 0 18px;
-
     border-radius: 22px;
-
     background: #ffffff;
-
     color: #080808;
-
     text-decoration: none;
-
     font-size: 12px;
-
     font-weight: 600;
-
     transition:
         transform 0.2s ease,
         background 0.2s ease;
 }
 
-
 .enterprise-contact-btn:hover {
-
     transform: translateY(-1px);
-
     background: #fff4df;
 }
-
 
 /* =========================================
    WHY BRAINSTATION SECTION
 ========================================= */
 
 .enterprise-content-section {
-
     position: relative;
-
     width: 100%;
-
     min-height: 820px;
-
     overflow: hidden;
-
     background: #080808;
-
     color: #ffffff;
-
     scroll-margin-top: 76px;
 }
 
-
 .enterprise-content-container {
-
     width: min(
         900px,
         calc(100% - 40px)
     );
-
     margin: 0 auto;
-
     padding: 95px 0 80px;
 }
-
 
 /* =========================================
    CONTENT HEADING
 ========================================= */
 
 .enterprise-content-heading {
-
     text-align: center;
-
     max-width: 780px;
-
     margin: 0 auto;
 }
 
-
 .enterprise-content-heading h2 {
-
     margin: 0;
-
     font-size: 38px;
-
     line-height: 1.15;
-
     font-weight: 500;
-
     letter-spacing: -1.5px;
-
     color: #ffffff;
 }
 
-
 .enterprise-content-heading p {
-
     max-width: 670px;
-
     margin: 22px auto 0;
-
     font-size: 14px;
 
     line-height: 1.55;

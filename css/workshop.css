@@ -1,0 +1,996 @@
+/* ==========================================================================
+   WORKSHOP PAGE - EXACT MATCH WITH ENTERPRISE PAGE
+   ========================================================================== */
+
+.workshop-page {
+    background-color: #0b0c0e;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   MAIN HEADER - HIDE LOGIC (Exact Enterprise Pattern)
+   ========================================================================== */
+body.workshop-page #header {
+    position: relative;
+    z-index: 1100;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+body.workshop-page #header.workshop-header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 90vh;
+    padding: 40px 24px 100px;
+    background-color: #0c0d10;
+    overflow: hidden;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(255, 69, 0, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(255, 170, 0, 0.12) 0%, transparent 40%),
+        linear-gradient(180deg, rgba(12, 13, 16, 0.8) 0%, #0c0d10 100%);
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 5;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #9aa0a6;
+    margin-bottom: 40px;
+    margin-top: 70px;
+}
+
+.breadcrumbs a {
+    color: #9aa0a6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #ffaa00;
+}
+
+.crumb-separator {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.crumb-current {
+    color: #ffffff;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.hero-title-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.badge-shield-hero {
+    width: 90px;
+    height: 100px;
+    background: linear-gradient(145deg, #181b20, #0f1013);
+    border: 2px solid #ff7700;
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.25);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 6px;
+}
+
+.badge-dot { color: #ffcc00; font-size: 0.85rem; }
+.badge-title { font-size: 0.58rem; font-weight: 700; color: #ffffff; margin-top: 2px; }
+.badge-sub { font-size: 0.5rem; color: #8c939d; }
+.badge-divider { width: 60%; height: 1px; background: rgba(255, 255, 255, 0.2); margin: 4px 0; }
+.badge-status { font-size: 0.48rem; font-weight: 800; color: #ff5500; }
+
+.eyebrow-tag {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: #ffaa00;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.hero-headline {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    margin: 0;
+    color: #ffffff;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #c0c6ce;
+    max-width: 580px;
+    margin: 0 0 32px 0;
+}
+
+.location-picker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.location-label { font-size: 1.05rem; font-weight: 700; color: #ffffff; }
+
+.location-select-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1.5px solid #ffffff;
+    padding-bottom: 4px;
+}
+
+.location-select-wrap .flag { margin-right: 6px; }
+
+.location-select {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    appearance: none;
+    padding-right: 20px;
+    outline: none;
+}
+
+.location-select option { background: #14171c; color: #ffffff; }
+.select-chevron { position: absolute; right: 0; pointer-events: none; }
+
+.trust-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.trust-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #d1d6dc;
+}
+
+.trust-icon-check {
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    color: #0c0d10;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+/* Form Card */
+.hero-form-card {
+    background-color: #16181d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 36px 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-form-card h2 { font-size: 1.5rem; font-weight: 700; color: #ffffff; margin: 0 0 10px 0; }
+.form-subheading { font-size: 0.85rem; color: #9aa1a9; margin: 0 0 24px 0; }
+.workshop-lead-form { display: flex; flex-direction: column; gap: 14px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.form-group input, .form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #20242b;
+    border: 1px solid #2d333c;
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: #ffffff;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #ff5500;
+    box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.2);
+}
+
+.phone-group {
+    display: flex;
+    align-items: center;
+    background-color: #20242b;
+    border: 1px solid #2d333c;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.phone-group input { border: none; background: transparent; }
+.phone-prefix { display: flex; align-items: center; gap: 4px; padding-left: 12px; color: #9aa1a9; }
+.terms-text { font-size: 0.72rem; color: #7a828d; margin: 4px 0 8px 0; }
+.terms-text a { color: #ffaa00; text-decoration: underline; }
+
+.form-submit-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(90deg, #e63946 0%, #ff5500 50%, #ffaa00 100%);
+    box-shadow: 0 4px 15px rgba(255, 85, 0, 0.35);
+}
+
+/* ==========================================================================
+   STICKY SECONDARY NAV (Exact Enterprise Subnav Architecture)
+   ========================================================================== */
+.workshop-subnav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 72px;
+    background: rgba(8, 9, 10, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(12px);
+}
+
+.workshop-subnav-inner {
+    width: min(100%, 1240px);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.workshop-subnav-left {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.workshop-subnav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.workshop-subnav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.workshop-nav-link {
+    position: relative;
+    padding: 26px 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.workshop-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background: linear-gradient(90deg, #ff3b30, #ff7a00, #ffd400);
+    transition: transform 0.25s ease;
+}
+
+.workshop-nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.workshop-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 95px;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 22px;
+    background: #ffffff;
+    color: #080808 !important;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.workshop-contact-btn:hover {
+    transform: translateY(-1px);
+    background: #fff4df;
+}
+
+/* ==========================================================================
+   DATES BANNER SECTION
+   ========================================================================== */
+.dates-banner-section {
+    background-color: #080808;
+    padding: 40px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dates-banner-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    background-color: #14171c;
+    border-radius: 12px;
+    padding: 28px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.dates-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #ffaa00;
+    text-transform: uppercase;
+}
+
+.dates-banner-left h2 {
+    font-size: 1.55rem;
+    color: #ffffff;
+    margin: 6px 0 4px 0;
+    font-weight: 700;
+}
+
+.dates-sub {
+    font-size: 0.9rem;
+    color: #c9d1d9;
+    margin: 0 0 10px 0;
+}
+
+.dates-location {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+.dates-cards-wrapper {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.date-card {
+    background: #1e2229;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 14px 18px;
+    min-width: 96px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-month { font-size: 1.2rem; font-weight: 700; color: #ffffff; }
+.date-year { font-size: 0.75rem; color: #adb5bd; margin-bottom: 8px; }
+.date-status {
+    font-size: 0.62rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.date-status.closed { background: rgba(255, 255, 255, 0.08); color: #adb5bd; }
+.date-status.limited { background: #3e2d00; color: #ffcc00; border: 1px solid #cca300; }
+.date-status.reserving { background: #0d4420; color: #3fb950; border: 1px solid #238636; }
+
+/* ==========================================================================
+   OVERVIEW SECTION (Pure White Background & Equal Side Alignments)
+   ========================================================================== */
+.section-overview {
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff !important;
+    color: #0b0c0e !important;
+    padding: 90px 0 100px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Same max-width & auto margin as hero container to align edges */
+.overview-container {
+    width: min(1240px, calc(100% - 48px));
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: start;
+    width: 100%;
+}
+
+.section-badge-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ff5500 !important;
+    margin-bottom: 14px;
+}
+
+.overview-title {
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    line-height: 1.15;
+    font-weight: 800;
+    color: #0b0c0e !important;
+    margin: 0 0 24px 0;
+    letter-spacing: -1px;
+}
+
+.overview-lead-text {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #495057 !important;
+    margin: 0 0 40px 0;
+}
+
+/* Industry Tools Badges */
+.tools-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.tools-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tool-pill {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 8px 18px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #212529 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Agenda Card */
+.agenda-card {
+    background: #111317 !important;
+    color: #ffffff !important;
+    border-radius: 16px;
+    padding: 38px 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.agenda-header {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin: 0 0 28px 0;
+}
+
+.agenda-timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.agenda-timeline::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 7px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 26px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #111317;
+    border: 2.5px solid #ffaa00;
+    margin-top: 4px;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.timeline-time {
+    font-size: 0.78rem;
+    color: #adb5bd !important;
+    font-weight: 700;
+}
+
+.timeline-content h4 {
+    font-size: 0.98rem;
+    margin: 2px 0 4px 0;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #9aa0a6 !important;
+    margin: 0;
+}
+
+/* ==========================================================================
+   WHY TAKE THIS WORKSHOP (Exact Alignment with Left Content)
+   ========================================================================== */
+.why-workshop-block {
+    width: 100%;
+    margin-top: 100px;
+    padding-top: 75px;
+    border-top: 1px solid #edf0f2;
+    box-sizing: border-box;
+}
+
+.why-workshop-title {
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #0b0c0e !important;
+    margin: 0 0 50px 0;
+    letter-spacing: -0.8px;
+}
+
+.why-workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.why-feature-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.why-feature-icon {
+    color: #0b0c0e;
+    margin-bottom: 22px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.why-feature-col h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0b0c0e !important;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.4px;
+}
+
+.why-feature-col p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #555b62 !important;
+    margin: 0;
+}
+
+/* ==========================================================================
+   TRAIN AN ENTIRE TEAM (Centered Floating Dark Card)
+   ========================================================================== */
+.team-training-cta {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 90px;
+    background-color: #08090a;
+    border-radius: 16px;
+    padding: 65px 40px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.team-training-cta h2 {
+    font-size: clamp(1.7rem, 2.4vw, 2.3rem);
+    font-weight: 700;
+    color: #ffffff !important;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+}
+
+.team-cta-divider {
+    width: 48px;
+    height: 3px;
+    margin: 0 auto 22px auto;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff3b30, #ff7a00, #ffd400);
+}
+
+.team-training-cta p {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: #cfd4dc !important;
+    max-width: 640px;
+    margin: 0 auto 34px auto;
+}
+
+.team-cta-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0b0c0e !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 13px 36px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-cta-btn:hover {
+    transform: translateY(-2px);
+    background-color: #fff4df;
+    box-shadow: 0 8px 24px rgba(255, 122, 0, 0.25);
+}
+
+/* Mobile & Tablet Alignment */
+@media (max-width: 960px) {
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .why-workshop-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .why-workshop-block {
+        margin-top: 60px;
+        padding-top: 40px;
+    }
+
+    .team-training-cta {
+        margin-top: 60px;
+        padding: 45px 20px;
+    }
+}
+
+/* ==========================================================================
+   WORKSHOP CURRICULUM SECTION (Dark Continuous 3-Part Timeline)
+   ========================================================================== */
+.section-curriculum {
+    width: 100%;
+    background-color: #07080a !important;
+    color: #ffffff !important;
+    padding: 100px 0 120px;
+    position: relative;
+    z-index: 10;
+    scroll-margin-top: 72px;
+}
+
+.curriculum-container {
+    width: min(1240px, calc(100% - 48px));
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Curriculum Header Banner */
+.curriculum-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 90px auto;
+}
+
+.curriculum-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ff7a00;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.curriculum-main-title {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #ffffff !important;
+    margin: 0 0 14px 0;
+    letter-spacing: -1px;
+}
+
+.curriculum-sub-title {
+    font-size: 1.05rem;
+    color: #9aa0a6;
+    margin: 0 0 28px 0;
+}
+
+.curriculum-tools-pills {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Timeline Layout */
+.curriculum-timeline-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+}
+
+/* Left Vertical Continuous Spine Line */
+.curriculum-timeline-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    bottom: 40px;
+    left: 8px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.curriculum-part-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+}
+
+/* Timeline Ring Marker */
+.part-indicator {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+.part-marker-ring {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #07080a;
+    border: 2px solid #8b949e;
+    box-shadow: 0 0 0 4px #07080a;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.curriculum-part-block:hover .part-marker-ring {
+    border-color: #ff7a00;
+    transform: scale(1.15);
+}
+
+.part-body {
+    flex-grow: 1;
+}
+
+/* Hero Top Split of Each Part (Text + SVG Graphic) */
+.part-hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.part-number-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #8b949e;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.part-title {
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff !important;
+    margin: 0 0 18px 0;
+    letter-spacing: -0.5px;
+}
+
+.part-description {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: #9aa0a6;
+    margin: 0 0 28px 0;
+    max-width: 620px;
+}
+
+/* Key Skills Row */
+.part-skills-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.skills-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #8b949e;
+    letter-spacing: 1px;
+}
+
+.skills-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e5e7eb;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Isometric SVG Card */
+.part-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iso-svg {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+}
+
+/* 3 Sub Feature Columns */
+.part-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.part-feature-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-icon-box {
+    color: #ffffff;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.part-feature-col h4 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.2px;
+}
+
+.part-feature-col p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #8b949e;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .part-hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .part-features-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .curriculum-part-block {
+        gap: 20px;
+    }
+    .curriculum-timeline-wrapper::before {
+        left: 4px;
+    }
+    .part-marker-ring {
+        width: 14px;
+        height: 14px;
+    }
+}

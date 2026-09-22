@@ -28,9 +28,16 @@
                     <span class="workshops-arrow">⌄</span>
                 </button>
 
-                <a href="#">
+                <button
+                    type="button"
+                    class="certifications-trigger"
+                    id="certificationsButton"
+                    aria-expanded="false"
+                    aria-controls="certificationsMegaMenu"
+                >
                     Certifications
-                </a>
+                    <span class="certifications-arrow">⌄</span>
+                </button>
 
                 <a href="enterprise-training.html">
                     Enterprise Training
@@ -47,10 +54,16 @@
                     <span class="events-arrow">⌄</span>
                 </button>
 
-                <a href="#">
+                <button
+                    type="button"
+                    class="about-trigger"
+                    id="aboutButton"
+                    aria-expanded="false"
+                    aria-controls="aboutMegaMenu"
+                >
                     About
-                </a>
-
+                    <span class="about-arrow">⌄</span>
+                </button>
 
                 <!-- LOCATION -->
                 <div class="location-wrapper">
@@ -166,30 +179,14 @@
                         <div class="workshop-grid">
 
 
-                            <a
-                                href="workshops/ai-fundamentals.html"
-                                class="workshop-item core-workshop"
-                            >
-
-                                <span class="workshop-icon yellow">
-                                    ◉
-                                </span>
-
+                            <!-- Inside components/header.html under Core Workshops -->
+                            <a href="workshops/ai-fundamentals.html" class="workshop-item core-workshop">
+                                <span class="workshop-icon yellow">&#x25C9;</span>
                                 <span class="workshop-text">
-
-                                    <strong>
-                                        AI Fundamentals
-                                    </strong>
-
-                                    <small>
-                                        Work smarter with AI tools.
-                                    </small>
-
+                                    <strong>AI Fundamentals</strong>
+                                    <small>Work smarter with AI tools.</small>
                                 </span>
-
                             </a>
-
-
 
                             <a
                                 href="workshops/ai-for-product-managers.html"
@@ -921,6 +918,188 @@
             </div>
 
         </div>
+        <!-- =====================================================
+            ABOUT MEGA MENU
+        ===================================================== -->
+        <div class="about-mega-menu" id="aboutMegaMenu">
+            <!-- LEFT PANEL -->
+            <div class="about-sidebar">
+                <h2>About</h2>
+                <p>
+                    BrainStation is the global leader in AI and digital skills training, empowering professionals, businesses, and brands to succeed in the digital age.
+                </p>
+                <a href="#" class="about-contact-btn">
+                    Contact Us &rarr;
+                </a>
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="about-content">
+                <!-- Section 1 -->
+                <div class="about-section">
+                    <h3>About BrainStation</h3>
+                    <div class="about-grid">
+                        <div class="about-col">
+                            <a href="#">About Us</a>
+                            <a href="#">Testimonials</a>
+                        </div>
+                        <div class="about-col">
+                            <a href="#">Press and Media</a>
+                        </div>
+                        <div class="about-col">
+                            <a href="#">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="about-section">
+                    <h3>Work at BrainStation</h3>
+                    <div class="about-grid">
+                        <div class="about-col">
+                            <a href="#">Careers</a>
+                        </div>
+                        <div class="about-col">
+                            <a href="#">Speak at an Event</a>
+                        </div>
+                        <div class="about-col">
+                            <a href="#">Apply to Teach</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="about-section">
+                    <h3>Our Cities</h3>
+                    <div class="about-grid cities-grid">
+                        <div class="about-col">
+                            <span class="country-label">🇺🇸 UNITED STATES</span>
+                            <a href="#">New York (HQ)</a>
+                        </div>
+                        <div class="about-col">
+                            <span class="country-label">🇬🇧 UNITED KINGDOM</span>
+                            <a href="#">London</a>
+                        </div>
+                        <div class="about-col">
+                            <span class="country-label">🇨🇦 CANADA</span>
+                            <a href="#">Toronto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+    CERTIFICATIONS MEGA MENU
+===================================================== -->
+<div class="certifications-mega-menu" id="certificationsMegaMenu">
+
+    <!-- LEFT PANEL -->
+    <div class="cert-sidebar">
+        <h2>Professional<br>Certifications</h2>
+        <p>
+            Join 40,000+ Courstrike® certified professionals, and accelerate your career today.
+        </p>
+        <a href="testimonials.html" target="_blank" class="cert-testimonials-link">
+            View Testimonials &rarr;
+        </a>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="cert-content">
+
+        <!-- AI Certification -->
+        <a href="certifications/artificial-intelligence.html" target="_blank" class="cert-card">
+            <div class="cert-category">
+                <span class="cert-cat-icon">✨</span>
+                <span>AI</span>
+            </div>
+            <div class="cert-badge">
+                <div class="badge-shield">
+                    <span class="badge-code">AIC</span>
+                    <span class="badge-check">✓</span>
+                </div>
+            </div>
+            <div class="cert-info">
+                <h3>Artificial Intelligence Certification <span class="cert-arrow">&rarr;</span></h3>
+                <p>Earn your AIC™ certification and make AI your competitive edge.</p>
+            </div>
+        </a>
+
+        <!-- Product Management Certification -->
+        <a href="certifications/product-management.html" target="_blank" class="cert-card">
+            <div class="cert-category">
+                <span class="cert-cat-icon">📋</span>
+                <span>Product</span>
+            </div>
+            <div class="cert-badge">
+                <div class="badge-shield">
+                    <span class="badge-code">PMC</span>
+                    <span class="badge-check">✓</span>
+                </div>
+            </div>
+            <div class="cert-info">
+                <h3>AI Product Management Certification <span class="cert-arrow">&rarr;</span></h3>
+                <p>Earn your PMC™ certification and take ownership of the product lifecycle.</p>
+            </div>
+        </a>
+
+        <!-- Data Analytics Certification -->
+        <a href="certifications/data-analytics.html" target="_blank" class="cert-card">
+            <div class="cert-category">
+                <span class="cert-cat-icon">🗄️</span>
+                <span>Data</span>
+            </div>
+            <div class="cert-badge">
+                <div class="badge-shield">
+                    <span class="badge-code">DAC</span>
+                    <span class="badge-check">✓</span>
+                </div>
+            </div>
+            <div class="cert-info">
+                <h3>AI Data Analytics Certification <span class="cert-arrow">&rarr;</span></h3>
+                <p>Earn your DAC™ certification and turn numbers into insights.</p>
+            </div>
+        </a>
+
+        <!-- Product Design Certification -->
+        <a href="certifications/product-design.html" target="_blank" class="cert-card">
+            <div class="cert-category">
+                <span class="cert-cat-icon">✒️</span>
+                <span>Design</span>
+            </div>
+            <div class="cert-badge">
+                <div class="badge-shield">
+                    <span class="badge-code">PDC</span>
+                    <span class="badge-check">✓</span>
+                </div>
+            </div>
+            <div class="cert-info">
+                <h3>AI Product Design Certification <span class="cert-arrow">&rarr;</span></h3>
+                <p>Earn your PDC™ certification and design effective and beautiful products.</p>
+            </div>
+        </a>
+
+        <!-- Digital Marketing Certification -->
+        <a href="certifications/digital-marketing.html" target="_blank" class="cert-card">
+            <div class="cert-category">
+                <span class="cert-cat-icon">📢</span>
+                <span>Marketing</span>
+            </div>
+            <div class="cert-badge">
+                <div class="badge-shield">
+                    <span class="badge-code">DMC</span>
+                    <span class="badge-check">✓</span>
+                </div>
+            </div>
+            <div class="cert-info">
+                <h3>AI Digital Marketing Certification <span class="cert-arrow">&rarr;</span></h3>
+                <p>Earn your DMC™ certification and lead growth across digital channels.</p>
+            </div>
+        </a>
+
+    </div>
+</div>
     </nav>
 
 </header>

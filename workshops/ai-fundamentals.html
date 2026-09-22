@@ -1,118 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>AI Fundamentals | Courstrike</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
-
-    <style>
-
-        .workshop-page {
-
-            min-height: 100vh;
-
-            padding:
-                170px 30px 100px;
-
-            max-width: 1120px;
-
-            margin: auto;
-
-        }
-
-        .workshop-page-label {
-
-            display: inline-block;
-
-            padding:
-                8px 15px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.2);
-
-            border-radius: 30px;
-
-            color: #ffd429;
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            margin-bottom: 25px;
-        }
-
-        .workshop-page h1 {
-
-            font-size:
-                clamp(45px, 7vw, 80px);
-
-            line-height: 1;
-
-            letter-spacing: -3px;
-
-            margin-bottom: 25px;
-
-        }
-
-        .workshop-page p {
-
-            max-width: 700px;
-
-            font-size: 20px;
-
-            line-height: 1.6;
-
-            color: #c9c9c9;
-
-        }
-
-    </style>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fundamentals Workshop | Courstrike</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/workshop.css">
 </head>
+<body class="workshop-page">
 
+    <!-- DYNAMIC HEADER INJECTION CONTAINER -->
+    <header id="header"></header>
 
-<body>
+    <!-- =======================================================
+         HERO SECTION
+    ======================================================== -->
+    <section class="hero-section">
+        <!-- Background Overlay with Red-Orange-Yellow Gradient Glow -->
+        <div class="hero-bg-overlay"></div>
 
-    <div id="header"></div>
+        <div class="hero-container">
 
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="../index.html">New York</a>
+                <span class="crumb-separator">&gt;</span>
+                <a href="../enterprise-training.html">Enterprise Workshops</a>
+                <span class="crumb-separator">&gt;</span>
+                <span class="crumb-current">AI Fundamentals</span>
+            </nav>
 
-    <main class="workshop-page">
+            <div class="hero-layout">
 
-        <div class="workshop-page-label">
-            CORE WORKSHOP
+                <!-- LEFT HERO CONTENT -->
+                <div class="hero-info">
+                    
+                    <div class="hero-title-row">
+                        <!-- Hexagonal Completed Badge -->
+                        <div class="badge-shield-hero">
+                            <span class="badge-dot">&#x25C9;</span>
+                            <span class="badge-title">AI Fundamentals</span>
+                            <span class="badge-sub">Workshop</span>
+                            <div class="badge-divider"></div>
+                            <span class="badge-status">COMPLETED</span>
+                        </div>
+
+                        <div>
+                            <span class="eyebrow-tag">ENTERPRISE WORKSHOP</span>
+                            <h1 class="hero-headline">AI Fundamentals</h1>
+                        </div>
+                    </div>
+
+                    <p class="hero-description">
+                        Work faster, smarter, and more effectively with modern AI tools. In this workshop, you'll go hands-on applying today's leading AI tools to real tasks across your workflow.
+                    </p>
+
+                    <!-- LOCATION SELECTOR -->
+                    <div class="location-picker">
+                        <span class="location-label">Training Location:</span>
+                        <div class="location-select-wrap">
+                            <span class="flag">🇺🇸</span>
+                            <select class="location-select" id="trainingLocationSelect">
+                                <option value="ny">New York</option>
+                                <option value="london">London</option>
+                                <option value="toronto">Toronto</option>
+                                <option value="remote">Online / Remote</option>
+                            </select>
+                            <span class="select-chevron">⌄</span>
+                        </div>
+                    </div>
+
+                    <!-- SOCIAL PROOF / STATS -->
+                    <ul class="trust-list">
+                        <li>
+                            <span class="trust-icon">&#x1F4C8;</span>
+                            <span>40,000+ professionals trained</span>
+                        </li>
+                        <li>
+                            <span class="trust-icon-check">&#x2713;</span>
+                            <span>Learn from industry experts</span>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- RIGHT FLOATING FORM CARD -->
+                <aside class="hero-form-card">
+                    <h2>Get Started</h2>
+                    <p class="form-subheading">
+                        Get in touch with our team to discuss training details and to reserve a workshop date.
+                    </p>
+
+                    <form action="#" method="POST" class="workshop-lead-form">
+                        
+                        <div class="form-row two-col">
+                            <div class="form-group">
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="businessEmail" name="businessEmail" placeholder="Business Email" required>
+                        </div>
+
+                        <div class="form-group phone-group">
+                            <div class="phone-prefix">
+                                <span>🇺🇸</span>
+                                <span class="prefix-arrow">⌄</span>
+                            </div>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(201) 555-0123" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="companyName" name="companyName" placeholder="Company" required>
+                        </div>
+
+                        <div class="form-group select-group">
+                            <select id="participants" name="participants" required>
+                                <option value="" disabled selected>Number of Participants</option>
+                                <option value="1-5">1 - 5 participants</option>
+                                <option value="6-20">6 - 20 participants</option>
+                                <option value="20-50">20 - 50 participants</option>
+                                <option value="50+">50+ Enterprise team</option>
+                            </select>
+                            <span class="custom-select-arrow">⌄</span>
+                        </div>
+
+                        <div class="form-group select-group">
+                            <select id="targetDate" name="targetDate" required>
+                                <option value="" disabled selected>Target Date</option>
+                                <option value="immediately">Within next 2 weeks</option>
+                                <option value="1month">Next month</option>
+                                <option value="nextQuarter">Next Quarter</option>
+                                <option value="exploring">Just exploring</option>
+                            </select>
+                            <span class="custom-select-arrow">⌄</span>
+                        </div>
+
+                        <p class="terms-text">
+                            By clicking "Submit", you confirm that you accept our <a href="#">Terms</a>.
+                        </p>
+
+                        <button type="submit" class="form-submit-btn">Submit</button>
+
+                    </form>
+                </aside>
+
+            </div>
         </div>
+    </section>
 
-        <h1>
-            AI Fundamentals
-        </h1>
+    <!-- =======================================================
+         STICKY SUB-NAVIGATION (Scroll thaye etle Top par aavshe)
+    ======================================================== -->
+    <nav class="workshop-subnav" id="workshopSubnav">
+        <div class="workshop-subnav-inner">
+            <div class="workshop-subnav-left">
+                <a href="../index.html" class="workshop-subnav-logo">
+                    <!-- <span class="sub-logo-icon"></span> -->
+                    <span class="sub-logo-text">Courstrike</span>
+                </a>
+                <div class="workshop-subnav-links">
+                    <a href="#overview" class="workshop-nav-link active">Overview</a>
+                    <a href="#curriculum" class="workshop-nav-link">Curriculum</a>
+                    <a href="#testimonials" class="workshop-nav-link">Testimonials</a>
+                    <a href="#our-space" class="workshop-nav-link">Our Space</a>
+                    <a href="#faq" class="workshop-nav-link">FAQ</a>
+                </div>
+            </div>
+            <div class="workshop-subnav-right">
+                <a href="#header" class="workshop-contact-btn">Get Started</a>
+            </div>
+        </div>
+    </nav>
 
-        <p>
-            Work smarter with AI tools. Build practical
-            AI capabilities and learn how to use modern
-            AI tools effectively in your workflow.
-        </p>
+    <!-- =======================================================
+         UPCOMING DATES BAR (Dark Banner)
+    ======================================================== -->
+    <section class="dates-banner-section">
+        <div class="dates-banner-container">
+            <div class="dates-banner-left">
+                <span class="dates-eyebrow">UPCOMING WORKSHOPS</span>
+                <h2>Reserve an Upcoming Date</h2>
+                <p class="dates-sub">Full-Day, In-Person Training</p>
+                <div class="dates-location">
+                    <span class="loc-pin">📍</span>
+                    <span>136 Crosby St, 4th Floor, New York City, NY</span>
+                </div>
+            </div>
 
-    </main>
+            <div class="dates-cards-wrapper">
+                <!-- Aug Card -->
+                <div class="date-card">
+                    <span class="date-month">Aug</span>
+                    <span class="date-year">2026</span>
+                    <span class="date-status closed">• CLOSED</span>
+                </div>
+
+                <!-- Sep Card -->
+                <div class="date-card">
+                    <span class="date-month">Sep</span>
+                    <span class="date-year">2026</span>
+                    <span class="date-status limited">LIMITED DATES</span>
+                </div>
+
+                <!-- Oct Card -->
+                <div class="date-card active-date">
+                    <span class="date-month">Oct</span>
+                    <span class="date-year">2026</span>
+                    <span class="date-status reserving">• NOW RESERVING</span>
+                </div>
+
+                <!-- Nov Card -->
+                <div class="date-card">
+                    <span class="date-month">Nov</span>
+                    <span class="date-year">2026</span>
+                    <span class="date-status reserving">• NOW RESERVING</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 1: OVERVIEW
+    ======================================================== -->
+    <!-- =======================================================
+         SECTION 1: OVERVIEW
+    ======================================================== -->
+    <section class="section-overview" id="overview">
+        <div class="overview-container">
+
+            <!-- Top Split Grid (Text + Timeline Card) -->
+            <div class="overview-grid">
+                
+                <!-- Left Details -->
+                <div class="overview-info">
+                    <span class="section-badge-tag">WHY YOU SHOULD ATTEND</span>
+                    <h2 class="overview-title">
+                        Professional, in-person training to work faster, smarter, and more effectively with AI.
+                    </h2>
+                    <p class="overview-lead-text">
+                        Build the AI fluency you and your team need in a single day. Attendees get hands-on with leading AI tools and apply proven techniques to real business tasks, grounded in the work they do every day, so they leave with new AI skills they can apply immediately.
+                    </p>
+
+                    <!-- Industry Tools -->
+                    <div class="industry-tools-block">
+                        <span class="tools-label">INDUSTRY TOOLS</span>
+                        <div class="tools-badges">
+                            <div class="tool-pill">
+                                <span class="tool-icon">✳️</span>
+                                <span>Claude</span>
+                            </div>
+                            <div class="tool-pill">
+                                <span class="tool-icon">🌀</span>
+                                <span>ChatGPT</span>
+                            </div>
+                            <div class="tool-pill">
+                                <span class="tool-icon">🐙</span>
+                                <span>Copilot</span>
+                            </div>
+                            <div class="tool-pill">
+                                <span class="tool-icon">✨</span>
+                                <span>Gemini</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Agenda Timeline Card -->
+                <div class="agenda-card">
+                    <h3 class="agenda-header">Example Workshop Agenda</h3>
+                    <div class="agenda-timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">9:00 AM</span>
+                                <h4>Arrival, coffee and breakfast</h4>
+                                <p>Get settled and prepared for your workshop.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">9:30 AM</span>
+                                <h4>Workshop kick-off & morning session</h4>
+                                <p>Introductions, AI fundamentals, and getting hands-on with the leading AI tools.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">12:00 PM</span>
+                                <h4>Lunch break</h4>
+                                <p>Casual networking over a catered lunch.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">1:00 PM</span>
+                                <h4>Afternoon session</h4>
+                                <p>Hands-on prompting practice and putting AI to work in your daily workflow.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">4:30 PM</span>
+                                <h4>Wrap-up and networking</h4>
+                                <p>Enjoy drinks and refreshments while connecting with your peers from the workshop.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> <!-- /.overview-grid -->
 
 
-    <div id="footer"></div>
+            <!-- =======================================================
+                 WHY TAKE THIS WORKSHOP? (Aligned directly inside container)
+            ======================================================== -->
+            <div class="why-workshop-block">
+                <h2 class="why-workshop-title">Why Take This Workshop?</h2>
+
+                <div class="why-workshop-grid">
+                    <!-- Column 1 -->
+                    <div class="why-feature-col">
+                        <div class="why-feature-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Build a Shared Foundation in AI</h3>
+                        <p>
+                            Attendees develop a common understanding of how today's AI tools work and how they add value, so they can bring the best of AI back to their daily workflows.
+                        </p>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="why-feature-col">
+                        <div class="why-feature-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                <path d="M7 14l2-6 2 6"></path>
+                                <path d="M7.8 12h2.4"></path>
+                                <path d="M15 8v6"></path>
+                                <path d="M17 14v-2"></path>
+                                <path d="M13 14v-4"></path>
+                            </svg>
+                        </div>
+                        <h3>Get Hands-On With Leading AI Tools</h3>
+                        <p>
+                            Attendees work directly with the leading AI tools, applying prompting techniques to real tasks like research, writing, and analysis, enabling them to accomplish more in less time.
+                        </p>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="why-feature-col">
+                        <div class="why-feature-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="9 12 11 14 15 10"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Receive Live, In-Person Training Led by AI Experts</h3>
+                        <p>
+                            Attendees learn side-by-side with expert instructors who guide them through applying AI to the work they do every day.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =======================================================
+                 TRAIN AN ENTIRE TEAM CARD (Aligned directly inside container)
+            ======================================================== -->
+            <div class="team-training-cta">
+                <h2>Want to Train an Entire Team?</h2>
+                <div class="team-cta-divider"></div>
+                <p>
+                    Book a call to discuss rapidly upskilling an entire team with customized corporate training options tailored to your organization's specific needs and goals.
+                </p>
+                <a href="#header" class="team-cta-btn">Book a Call</a>
+            </div>
+
+        </div> <!-- /.overview-container -->
+    </section>
 
 
+
+    <!-- =======================================================
+         SECTION 2: WORKSHOP CURRICULUM (3 PARTS CONTINUOUS)
+    ======================================================== -->
+    <section class="section-curriculum" id="curriculum">
+        <div class="curriculum-container">
+
+            <!-- CURRICULUM TOP HEADER -->
+            <div class="curriculum-header">
+                <span class="curriculum-tag">ENTERPRISE WORKSHOP</span>
+                <h2 class="curriculum-main-title">Workshop Curriculum</h2>
+                <p class="curriculum-sub-title">Hands-On Training With Leading Industry Tools</p>
+                <div class="curriculum-tools-pills">
+                    <div class="tool-pill"><span class="tool-icon">✳️</span><span>Claude</span></div>
+                    <div class="tool-pill"><span class="tool-icon">🌀</span><span>ChatGPT</span></div>
+                    <div class="tool-pill"><span class="tool-icon">🐙</span><span>Copilot</span></div>
+                    <div class="tool-pill"><span class="tool-icon">✨</span><span>Gemini</span></div>
+                </div>
+            </div>
+
+            <!-- TIMELINE WRAPPER (Line goes through all 3 parts) -->
+            <div class="curriculum-timeline-wrapper">
+
+                <!-- ===================================================
+                     PART 1: UNDERSTANDING AI
+                ==================================================== -->
+                <div class="curriculum-part-block">
+                    <div class="part-indicator">
+                        <span class="part-marker-ring"></span>
+                    </div>
+
+                    <div class="part-body">
+                        <div class="part-hero-grid">
+                            <div class="part-hero-text">
+                                <span class="part-number-label">PART 1</span>
+                                <h3 class="part-title">Understanding AI</h3>
+                                <p class="part-description">
+                                    Build the AI fluency every modern professional needs to work smarter, faster, and more effectively. Understand how generative AI works, what it can and can't do, and where it can drive efficiency for your team.
+                                </p>
+                                <div class="part-skills-row">
+                                    <span class="skills-label">KEY SKILLS:</span>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">AI FUNDAMENTALS</span>
+                                        <span class="skill-tag">MACHINE LEARNING &amp; NEURAL NETWORKS</span>
+                                        <span class="skill-tag">LARGE LANGUAGE MODELS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Graphic Illustration -->
+                            <div class="part-illustration">
+                                <svg class="iso-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M200 65 L270 105 L200 145 L130 105 Z" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
+                                    <path d="M130 105 L200 145 L200 160 L130 120 Z" fill="#1d4ed8" opacity="0.8"/>
+                                    <path d="M270 105 L200 145 L200 160 L270 120 Z" fill="#1e40af" opacity="0.8"/>
+                                    <line x1="130" y1="105" x2="80" y2="70" stroke="#38bdf8" stroke-width="1.8"/>
+                                    <circle cx="80" cy="70" r="14" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                                    <line x1="270" y1="105" x2="320" y2="70" stroke="#34d399" stroke-width="1.8"/>
+                                    <circle cx="320" cy="70" r="14" fill="#059669" stroke="#34d399" stroke-width="2"/>
+                                    <line x1="200" y1="145" x2="250" y2="190" stroke="#38bdf8" stroke-width="1.8"/>
+                                    <circle cx="250" cy="190" r="14" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                                    <line x1="170" y1="130" x2="110" y2="180" stroke="#34d399" stroke-width="1.8"/>
+                                    <circle cx="110" cy="180" r="14" fill="#059669" stroke="#34d399" stroke-width="2"/>
+                                    <circle cx="200" cy="30" r="12" fill="#38bdf8"/>
+                                    <line x1="200" y1="42" x2="200" y2="65" stroke="#38bdf8" stroke-width="1.8"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- 3 Sub Columns -->
+                        <div class="part-features-grid">
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 14l2-6 2 6"/><path d="M7.8 12h2.4"/><path d="M15 8v6"/></svg>
+                                </div>
+                                <h4>AI in Plain Language</h4>
+                                <p>Learn how generative AI and large language models actually work. Through real examples, understand how leading teams use AI systems to process data, generate outputs, and create business value.</p>
+                            </div>
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                </div>
+                                <h4>Meet the Tools</h4>
+                                <p>Get hands-on with the leading AI assistants, including ChatGPT, Claude, Gemini, and Copilot. Explore their strengths and learn to choose the right tool for your specific tasks.</p>
+                            </div>
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                </div>
+                                <h4>Ethics &amp; Responsible AI</h4>
+                                <p>Understand the ethical, legal, and governance considerations when deploying AI tools. Learn how organizations navigate common challenges to ensure a responsible AI rollout.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================================================
+                     PART 2: PROMPTING THAT WORKS
+                ==================================================== -->
+                <div class="curriculum-part-block">
+                    <div class="part-indicator">
+                        <span class="part-marker-ring"></span>
+                    </div>
+
+                    <div class="part-body">
+                        <div class="part-hero-grid">
+                            <div class="part-hero-text">
+                                <span class="part-number-label">PART 2</span>
+                                <h3 class="part-title">Prompting That Works</h3>
+                                <p class="part-description">
+                                    Develop the essential prompting skills that drive reliable, high-quality results from AI tools. Learn the repeatable frameworks you can apply to any task in your workflow.
+                                </p>
+                                <div class="part-skills-row">
+                                    <span class="skills-label">KEY SKILLS:</span>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">PROMPT ENGINEERING</span>
+                                        <span class="skill-tag">PROMPT CHAINING</span>
+                                        <span class="skill-tag">MULTI-STEP AI WORKFLOWS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Graphic Illustration -->
+                            <div class="part-illustration">
+                                <svg class="iso-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M150 40 L210 70 L170 95 L110 65 Z" fill="#3b82f6" opacity="0.9"/>
+                                    <path d="M110 65 L170 95 L170 115 L110 85 Z" fill="#1d4ed8"/>
+                                    <path d="M210 70 L170 95 L170 115 L210 90 Z" fill="#1e3a8a"/>
+                                    <path d="M270 90 L330 120 L290 145 L230 115 Z" fill="#2563eb" opacity="0.9"/>
+                                    <path d="M230 115 L290 145 L290 165 L230 135 Z" fill="#1d4ed8"/>
+                                    <path d="M330 120 L290 145 L290 165 L330 140 Z" fill="#1e3a8a"/>
+                                    <path d="M340 140 L400 170 L360 195 L300 165 Z" fill="#10b981" opacity="0.9"/>
+                                    <path d="M300 165 L360 195 L360 215 L300 185 Z" fill="#059669"/>
+                                    <path d="M400 170 L360 195 L360 215 L400 190 Z" fill="#047857"/>
+                                    <path d="M110 120 L170 150 L130 175 L70 145 Z" fill="#06b6d4" opacity="0.9"/>
+                                    <path d="M70 145 L130 175 L130 195 L70 165 Z" fill="#0891b2"/>
+                                    <path d="M170 150 L130 175 L130 195 L170 170 Z" fill="#0e7490"/>
+                                    <path d="M150 100 Q 180 135 240 130" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="3 3"/>
+                                    <path d="M270 150 Q 280 180 310 180" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="3 3"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- 3 Sub Columns -->
+                        <div class="part-features-grid">
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                </div>
+                                <h4>The Anatomy of a Great Prompt</h4>
+                                <p>Learn the advanced prompting techniques that drive the best results from AI tools. Learn to embed your business context into AI, ensuring outputs align with your goals and constraints.</p>
+                            </div>
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                </div>
+                                <h4>Hands-On Practice</h4>
+                                <p>Apply your prompting skills to real business tasks, from drafting and summarizing to research and problem-solving, with exercises grounded in real work.</p>
+                            </div>
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                                </div>
+                                <h4>Develop Reusable Skills</h4>
+                                <p>Develop repeatable AI systems aligned with your unique workflows. Learn how to package your prompt chains and other instructions into reusable AI skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================================================
+                     PART 3: AI AGENTS & WORKFLOWS
+                ==================================================== -->
+                <div class="curriculum-part-block">
+                    <div class="part-indicator">
+                        <span class="part-marker-ring"></span>
+                    </div>
+
+                    <div class="part-body">
+                        <div class="part-hero-grid">
+                            <div class="part-hero-text">
+                                <span class="part-number-label">PART 3</span>
+                                <h3 class="part-title">AI Agents &amp; Workflows</h3>
+                                <p class="part-description">
+                                    Move beyond individual prompts to AI agents and connected workflows. Learn to automate multi-step work, and leave with a clear plan for where to apply what you've learned.
+                                </p>
+                                <div class="part-skills-row">
+                                    <span class="skills-label">KEY SKILLS:</span>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">AI WORKFLOWS</span>
+                                        <span class="skill-tag">AI AGENTS</span>
+                                        <span class="skill-tag">WORKFLOW AUTOMATION</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Graphic Illustration -->
+                            <div class="part-illustration">
+                                <svg class="iso-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M190 20 L250 50 L210 75 L150 45 Z" fill="#0284c7" opacity="0.9"/>
+                                    <path d="M150 45 L210 75 L210 95 L150 65 Z" fill="#0369a1"/>
+                                    <path d="M250 50 L210 75 L210 95 L250 70 Z" fill="#075985"/>
+                                    <path d="M290 60 L350 90 L310 115 L250 85 Z" fill="#2563eb" opacity="0.9"/>
+                                    <path d="M250 85 L310 115 L310 135 L250 105 Z" fill="#1d4ed8"/>
+                                    <path d="M350 90 L310 115 L310 135 L350 110 Z" fill="#1e3a8a"/>
+                                    <path d="M230 110 L290 140 L250 165 L190 135 Z" fill="#0284c7" opacity="0.9"/>
+                                    <path d="M190 135 L250 165 L250 185 L190 155 Z" fill="#0369a1"/>
+                                    <path d="M290 140 L250 165 L250 185 L290 160 Z" fill="#075985"/>
+                                    <path d="M300 160 L360 190 L320 215 L260 185 Z" fill="#10b981" opacity="0.9"/>
+                                    <path d="M260 185 L320 215 L320 235 L260 205 Z" fill="#059669"/>
+                                    <path d="M360 190 L320 215 L320 235 L360 210 Z" fill="#047857"/>
+                                    <path d="M110 120 L170 150 L130 175 L70 145 Z" fill="#1d4ed8" opacity="0.9"/>
+                                    <path d="M70 145 L130 175 L130 195 L70 165 Z" fill="#1e40af"/>
+                                    <path d="M170 150 L130 175 L130 195 L170 170 Z" fill="#172554"/>
+                                    <line x1="170" y1="80" x2="220" y2="120" stroke="#ffffff" stroke-width="1.8"/>
+                                    <line x1="260" y1="150" x2="290" y2="180" stroke="#ffffff" stroke-width="1.8"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- 3 Sub Columns -->
+                        <div class="part-features-grid">
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+                                </div>
+                                <h4>From Prompts to Workflows</h4>
+                                <p>Learn to combine prompts, tools, and automations into structured, repeatable workflows that handle recurring multi-step tasks, moving AI from one-off outputs to reliable processes.</p>
+                            </div>
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                </div>
+                                <h4>Discover AI Agents</h4>
+                                <p>See what happens when AI moves from answering questions to completing tasks end to end, handling the steps in between so you can focus on the outcome.</p>
+                            </div>
+                            <div class="part-feature-col">
+                                <div class="feature-icon-box">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/><polyline points="20 12 12 20"/></svg>
+                                </div>
+                                <h4>Your AI Action Plan</h4>
+                                <p>Turn the day into action. Leave with a concrete, personalized plan for where to apply AI in your role, starting the next day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /.curriculum-timeline-wrapper -->
+
+        </div> <!-- /.curriculum-container -->
+    </section>
+
+    <!-- FLOATING 'HAVE QUESTIONS?' ACTION PILL -->
+    <!-- <a href="#header" class="floating-help-btn">
+        <span class="phone-icon">&#x1F4DE;</span>
+        <span>Have Questions?</span>
+    </a> -->
+
+    <!-- FOOTER INJECTION CONTAINER -->
+    <footer id="footer"></footer>
+
+    <!-- SHARED SCRIPT -->
     <script src="../js/components.js"></script>
 
+    <!-- WORKSHOP SCRIPT -->
+    <script src="../js/workshop.js"></script>
 </body>
-
 </html>

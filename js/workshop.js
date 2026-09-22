@@ -1,158 +1,150 @@
 /* =========================================================
-   WORKSHOPS SECTION
+   WORKSHOP CONTROLLERS (Location Dropdown + Sticky Nav)
+   File Path: js/workshop.js
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
-       LOCATION DROPDOWN
+       1. LOCATION DROPDOWN
     ===================================================== */
-
-    const locationSelector =
-        document.getElementById("locationSelector");
-
-    const locationDropdown =
-        document.getElementById("locationDropdown");
-
-    const selectedLocation =
-        document.getElementById("selectedLocation");
-
-    const selectedLocationFlag =
-        document.getElementById("selectedLocationFlag");
-
+    const locationSelector = document.getElementById("locationSelector");
+    const locationDropdown = document.getElementById("locationDropdown");
+    const selectedLocation = document.getElementById("selectedLocation");
+    const selectedLocationFlag = document.getElementById("selectedLocationFlag");
 
     if (locationSelector && locationDropdown) {
-
         locationSelector.addEventListener("click", function (event) {
-
             event.stopPropagation();
-
             locationDropdown.classList.toggle("open");
-
         });
 
-
-        const locationOptions =
-            document.querySelectorAll(".location-option");
-
-
+        const locationOptions = document.querySelectorAll(".location-option");
         locationOptions.forEach(function (option) {
-
             option.addEventListener("click", function (event) {
-
                 event.preventDefault();
+                if (selectedLocation) selectedLocation.textContent = option.dataset.location;
+                if (selectedLocationFlag) selectedLocationFlag.textContent = option.dataset.flag;
 
-                const location =
-                    option.dataset.location;
-
-                const flag =
-                    option.dataset.flag;
-
-
-                selectedLocation.textContent =
-                    location;
-
-                selectedLocationFlag.textContent =
-                    flag;
-
-
-                locationOptions.forEach(function (item) {
-
-                    item.classList.remove("active");
-
-                });
-
-
+                locationOptions.forEach(item => item.classList.remove("active"));
                 option.classList.add("active");
-
                 locationDropdown.classList.remove("open");
-
             });
-
         });
-
 
         document.addEventListener("click", function () {
-
             locationDropdown.classList.remove("open");
-
         });
-
     }
-
 
     /* =====================================================
-       SHOW MORE / SHOW LESS
+       2. SHOW MORE / SHOW LESS
     ===================================================== */
+    const workshopsList = document.querySelector(".workshops-list");
+    const showMoreBtn = document.getElementById("showMoreBtn");
+    const showLessBtn = document.getElementById("showLessBtn");
 
-    const workshopsList =
-        document.querySelector(".workshops-list");
-
-    const showMoreBtn =
-        document.getElementById("showMoreBtn");
-
-    const showLessBtn =
-        document.getElementById("showLessBtn");
-
-
-    if (
-        workshopsList &&
-        showMoreBtn &&
-        showLessBtn
-    ) {
-
-
+    if (workshopsList && showMoreBtn && showLessBtn) {
         showMoreBtn.addEventListener("click", function () {
-
             workshopsList.classList.add("expanded");
+        });
+        showLessBtn.addEventListener("click", function () {
+            workshopsList.classList.remove("expanded");
+            workshopsList.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }
 
+    /* =====================================================
+       3. MAIN HEADER HIDE WHEN SECONDARY NAV REACHES TOP
+       (Exact pattern as enterprise-training.js)
+    ===================================================== */
+    const mainHeader = document.getElementById("header");
+    const secondaryNav = document.getElementById("workshopSubnav");
+    const overviewSection = document.getElementById("overview");
 
-            /*
-             * Scroll slightly so the newly opened
-             * workshops become visible naturally.
-             */
+    if (mainHeader && secondaryNav && overviewSection) {
 
-            setTimeout(function () {
+        function updateMainHeader() {
+            const navRect = secondaryNav.getBoundingClientRect();
 
-                const firstHidden =
-                    document.querySelector(".hidden-workshop");
+            // When secondary navigation reaches top of the screen (0px), hide main header
+            if (navRect.top <= 0) {
+                mainHeader.classList.add("workshop-header-hidden");
+            } else {
+                mainHeader.classList.remove("workshop-header-hidden");
+            }
+        }
 
+        window.addEventListener("scroll", updateMainHeader, { passive: true });
+        updateMainHeader();
+    }
 
-                if (firstHidden) {
+    /* =====================================================
+       4. SECONDARY NAV SMOOTH SCROLL LINKS
+    ===================================================== */
+    const navLinks = document.querySelectorAll(".workshop-nav-link");
 
-                    firstHidden.scrollIntoView({
-                        behavior: "smooth",
-                        block: "nearest"
-                    });
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            const targetId = link.getAttribute("href");
 
+            if (!targetId || !targetId.startsWith("#")) {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            navLinks.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            link.classList.add("active");
+        });
+    });
+
+    /* =====================================================
+       5. ACTIVE NAV ON SCROLL (IntersectionObserver)
+    ===================================================== */
+    const sections = [
+        document.getElementById("overview"),
+        document.getElementById("curriculum")
+    ].filter(Boolean);
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                    return;
                 }
 
-            }, 100);
+                const id = entry.target.id;
 
-        });
-
-
-        showLessBtn.addEventListener("click", function () {
-
-            workshopsList.classList.remove("expanded");
-
-
-            /*
-             * Return the user near the top
-             * of the workshop list.
-             */
-
-            setTimeout(function () {
-
-                workshopsList.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+                navLinks.forEach(function (link) {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + id) {
+                        link.classList.add("active");
+                    }
                 });
+            });
+        },
+        {
+            rootMargin: "-25% 0px -65% 0px",
+            threshold: 0
+        }
+    );
 
-            }, 100);
-
-        });
-
-    }
+    sections.forEach(function (section) {
+        observer.observe(section);
+    });
 
 });
