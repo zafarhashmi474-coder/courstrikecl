@@ -77,9 +77,9 @@ a {
 
 .brand-logo,
 .brand img {
-    height: 48px !important;
+    height: 70px !important;
     width: auto !important;
-    max-height: 56px !important;
+    max-height: 75px !important;
     object-fit: contain;
     display: block;
 }
