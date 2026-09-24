@@ -52,92 +52,30 @@
             isolation: isolate;
 
             background:
-                radial-gradient(
-                    circle at 80% 25%,
-                    rgba(255, 106, 0, 0.20),
-                    transparent 32%
-                ),
-                radial-gradient(
-                    circle at 15% 75%,
-                    rgba(239, 35, 60, 0.16),
-                    transparent 35%
-                ),
-                #080808;
+                #080808
+        }
+
+        .hero-video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .about-hero-bg {
             position: absolute;
             inset: 0;
-            z-index: -4;
-
-            background-image:
-                linear-gradient(
-                    180deg,
-                    rgba(0, 0, 0, 0.48) 0%,
-                    rgba(0, 0, 0, 0.50) 35%,
-                    rgba(0, 0, 0, 0.82) 75%,
-                    #050505 100%
-                ),
-                url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=90");
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            transform: scale(1.02);
+            overflow: hidden;
         }
 
         /* Orange glow */
         .about-hero::before {
-            content: "";
-            position: absolute;
-
-            width: 620px;
-            height: 620px;
-
-            right: -180px;
-            top: -170px;
-
-            border-radius: 50%;
-
-            background: radial-gradient(
-                circle,
-                rgba(255, 174, 0, 0.25) 0%,
-                rgba(255, 106, 0, 0.13) 35%,
-                transparent 70%
-            );
-
-            filter: blur(20px);
-
-            z-index: -2;
-            pointer-events: none;
-        }
+    display: none;
+}
 
         /* Red glow */
         .about-hero::after {
-            content: "";
-            position: absolute;
-
-            width: 520px;
-            height: 520px;
-
-            left: -180px;
-            bottom: -220px;
-
-            border-radius: 50%;
-
-            background: radial-gradient(
-                circle,
-                rgba(239, 35, 60, 0.20) 0%,
-                rgba(255, 106, 0, 0.08) 42%,
-                transparent 72%
-            );
-
-            filter: blur(24px);
-
-            z-index: -2;
-            pointer-events: none;
-        }
+    display: none;
+}
 
         .about-hero-content {
             width: min(1120px, calc(100% - 48px));
@@ -167,7 +105,7 @@
 
             background: rgba(0, 0, 0, 0.30);
 
-            color: #ffd36a;
+            color: #ffffff;
 
             font-size: 12px;
             font-weight: 700;
@@ -176,20 +114,8 @@
         }
 
         .eyebrow-dot {
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: linear-gradient(
-                135deg,
-                #ef233c,
-                #ff6a00,
-                #ffc400
-            );
-
-            box-shadow:
-                0 0 14px rgba(255, 106, 0, 0.65);
+    background: #ffffff;
+    box-shadow: none;
         }
 
         /* Main heading */
@@ -211,22 +137,11 @@
         }
 
         .about-hero h1 span {
-            display: block;
-
-            font-weight: 300;
-
-            background: linear-gradient(
-                90deg,
-                #ffffff 0%,
-                #ffd58a 45%,
-                #ff8a3d 75%,
-                #ffcf33 100%
-            );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            -webkit-text-fill-color: transparent;
+    display: block;
+    font-weight: 300;
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
         }
 
         .about-hero p {
@@ -276,8 +191,8 @@
             transform: translateY(-3px);
 
             box-shadow:
-                0 12px 35px rgba(255, 106, 0, 0.22),
-                0 0 0 1px rgba(255, 193, 7, 0.18);
+                0 12px 35px rgba(0, 0, 0, 0.28),
+                0 0 0 1px rgba(255, 255, 255, 0.12);
         }
 
         /* =========================================
@@ -289,15 +204,7 @@
 
             padding: 38px 0 44px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(239, 35, 60, 0.08),
-                    transparent 22%,
-                    transparent 78%,
-                    rgba(255, 193, 7, 0.08)
-                ),
-                #050505;
+            background: #050505;
 
             border-top: 1px solid rgba(255, 255, 255, 0.06);
             border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -989,29 +896,7 @@
 ========================================= */
 
 .what-we-do::before {
-    content: "";
-
-    position: absolute;
-
-    width: 550px;
-    height: 550px;
-
-    right: -250px;
-    top: 180px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 106, 0, 0.08),
-            rgba(239, 35, 60, 0.03),
-            transparent 70%
-        );
-
-    filter: blur(30px);
-
-    pointer-events: none;
+    display: none;
 }
 
 
@@ -1117,18 +1002,7 @@
 
     padding: 115px 0 90px;
 
-    background:
-        radial-gradient(
-            circle at 15% 25%,
-            rgba(239, 35, 60, 0.07),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(255, 106, 0, 0.07),
-            transparent 30%
-        ),
-        #050505;
+    background: #050505;
 
     overflow: hidden;
 }
@@ -1867,18 +1741,7 @@
 
     padding: 115px 0 125px;
 
-    background:
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(239, 35, 60, 0.045),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 80% 50%,
-            rgba(255, 106, 0, 0.045),
-            transparent 32%
-        ),
-        #050505;
+    background: #050505;
 
     overflow: hidden;
 }
@@ -2176,39 +2039,7 @@
 ========================================= */
 
 .location-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    z-index: 2;
-
-    width: 180px;
-    height: 180px;
-
-    right: -90px;
-    top: -90px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                255,
-                106,
-                0,
-                0.14
-            ),
-            transparent 70%
-        );
-
-    opacity: 0;
-
-    transition:
-        opacity 0.4s ease;
-
-    pointer-events: none;
+    display: none;
 }
 
 
@@ -2417,18 +2248,7 @@
 
     padding: 105px 0 120px;
 
-    background:
-        radial-gradient(
-            circle at 15% 35%,
-            rgba(239, 35, 60, 0.045),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 85% 70%,
-            rgba(255, 106, 0, 0.045),
-            transparent 32%
-        ),
-        #050505;
+    background: #050505;
 
     overflow: hidden;
 }
@@ -2573,64 +2393,12 @@
 ========================================= */
 
 .community-section::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    top: 20%;
-    left: -300px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                239,
-                35,
-                60,
-                0.06
-            ),
-            transparent 70%
-        );
-
-    filter: blur(35px);
-
-    pointer-events: none;
+    display: none;
 }
 
 
 .community-section::after {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    right: -300px;
-    bottom: 5%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                255,
-                106,
-                0,
-                0.06
-            ),
-            transparent 70%
-        );
-
-    filter: blur(35px);
-
-    pointer-events: none;
+    display: none;
 }
 
 
@@ -3419,7 +3187,11 @@
 
         <section class="about-hero">
 
-            <div class="about-hero-bg"></div>
+            <div class="about-hero-bg">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="images/1114823_Team_Man_1280x720.mp4" type="video/mp4">
+                </video>
+            </div>
 
             <div class="about-hero-content">
 
@@ -3669,15 +3441,15 @@
             </div>
 
             <div class="image-box image-4">
-                <img src="images/what-we-do-4.jpg" alt="">
+                <img src="images/img-6-D6d52sTz.avif" alt="">
             </div>
 
             <div class="image-box image-5">
-                <img src="images/what-we-do-5.jpg" alt="">
+                <img src="images/img-5-Rt-tByro.avif" alt="">
             </div>
 
             <div class="image-box image-6">
-                <img src="images/what-we-do-6.jpg" alt="">
+                <img src="images/img-7-CUHIhtsi.avif" alt="">
             </div>
 
         </div>
@@ -3732,7 +3504,7 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-1.jpg"
+                    src="images/tsan-tsai-DczbvHnW.avif"
                     alt="Tsai Tsai"
                     class="professional-image"
                 >
@@ -3762,7 +3534,7 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-2.jpg"
+                    src="images/michael-johnston-DmJ_04EC.avif"
                     alt="Michael Johnston"
                     class="professional-image"
                 >
@@ -3794,7 +3566,7 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-3.jpg"
+                    src="images/sabrina-von-allmen-CrpFDDL2.avif"
                     alt="Sabrina von Allmen"
                     class="professional-image"
                 >
@@ -3826,7 +3598,7 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-4.jpg"
+                    src="images/steve-woods-CtL0_5mG.avif"
                     alt="Steve Woods"
                     class="professional-image"
                 >
@@ -3864,7 +3636,7 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-5.jpg"
+                    src="images/kazden-cattapan-CeG2_KNe.avif"
                     alt="Kazden Cattapan"
                     class="professional-image"
                 >
@@ -3902,7 +3674,7 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-6.jpg"
+                    src="images/alison-su-DnPA3Fb6.avif"
                     alt="Alison Su"
                     class="professional-image"
                 >
@@ -3942,24 +3714,24 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-1.jpg"
+                    src="images/ariel-sultan-D9Sqk4zO.avif"
                     alt="Tsai Tsai"
                     class="professional-image"
                 >
 
                 <div class="professional-info">
 
-                    <h3>Tsai Tsai</h3>
+                    <h3>Ariel Sultan</h3>
 
                     <p>
-                        Senior Product Designer at
-                        Apple
+                        Product Marketing Manager at
+                        Abobe
                     </p>
 
                 </div>
 
                 <div class="professional-company">
-                    <span class="apple-logo">●</span>
+                    <span class="apple-logo">● Adobe</span>
                 </div>
 
             </div>
@@ -3968,25 +3740,25 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-2.jpg"
-                    alt="Michael Johnston"
+                    src="images/alexia-belisle-CCyg1_F6.avif"
+                    alt="alexia-belisle"
                     class="professional-image"
                 >
 
                 <div class="professional-info">
 
-                    <h3>Michael Johnston</h3>
+                    <h3>Alexia Belisle</h3>
 
                     <p>
-                        Senior Product Designer at
-                        Intuit
+                        VP, Product at
+                        Meta
                     </p>
 
                 </div>
 
                 <div class="professional-company">
                     <span class="company-wordmark">
-                        INTUIT
+                        Meta
                     </span>
                 </div>
 
@@ -3996,25 +3768,25 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-3.jpg"
-                    alt="Sabrina von Allmen"
+                    src="images/andrew-gosine-D0P_cM98.avif"
+                    alt="andrew-gosine"
                     class="professional-image"
                 >
 
                 <div class="professional-info">
 
-                    <h3>Sabrina von Allmen</h3>
+                    <h3>Andrew Gosine</h3>
 
                     <p>
-                        VP, Social at
-                        JPMorganChase
+                        Principal Product Designer at
+                        Slack
                     </p>
 
                 </div>
 
                 <div class="professional-company">
                     <span class="company-wordmark jpmorgan">
-                        JPMorganChase
+                        Slack
                     </span>
                 </div>
 
@@ -4024,18 +3796,18 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-4.jpg"
-                    alt="Steve Woods"
+                    src="images/leah-xia-BJNFIpor.avif"
+                    alt="Leah Xia"
                     class="professional-image"
                 >
 
                 <div class="professional-info">
 
-                    <h3>Steve Woods</h3>
+                    <h3>Leah Xia</h3>
 
                     <p>
-                        Global Marketing Manager at
-                        Spotify
+                        Software Engineer II at
+                        Microsoft
                     </p>
 
                 </div>
@@ -4047,7 +3819,7 @@
                     </span>
 
                     <span class="spotify-text">
-                        Spotify
+                        Microsoft
                     </span>
 
                 </div>
@@ -4058,18 +3830,18 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-5.jpg"
-                    alt="Kazden Cattapan"
+                    src="images/mosope-adebowale-BIsicjm4.avif"
+                    alt="Mosope Adebowale"
                     class="professional-image"
                 >
 
                 <div class="professional-info">
 
-                    <h3>Kazden Cattapan</h3>
+                    <h3>Mosope Adebowale</h3>
 
                     <p>
-                        Staff Product Designer at
-                        Shopify
+                        Product Designer at
+                        Meta
                     </p>
 
                 </div>
@@ -4081,7 +3853,7 @@
                     </span>
 
                     <span class="shopify-text">
-                        shopify
+                        Meta
                     </span>
 
                 </div>
@@ -4092,18 +3864,18 @@
             <div class="professional-card">
 
                 <img
-                    src="images/professional-6.jpg"
-                    alt="Alison Su"
+                    src="images/dayna-tran-CznS8Ell.avif"
+                    alt="dayna-tran"
                     class="professional-image"
                 >
 
                 <div class="professional-info">
 
-                    <h3>Alison Su</h3>
+                    <h3>Dayna Tran</h3>
 
                     <p>
-                        Senior Solutions Architect at
-                        Slack
+                        Global Product Marketing Lead at
+                        Spotify
                     </p>
 
                 </div>
@@ -4115,7 +3887,7 @@
                     </span>
 
                     <span class="slack-text">
-                        slack
+                        Spotify
                     </span>
 
                 </div>
@@ -4294,7 +4066,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-1-1-CxXKTSKN.webp"
+                    src="images/event-1-1-DmvKJL0n.avif"
                     alt="BrainStation community event"
                     loading="lazy"
                 >
@@ -4302,7 +4074,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-1-2-RB_bVoC4.webp"
+                    src="images/event-1-2-CIydzcFy.avif"
                     alt="BrainStation community discussion"
                     loading="lazy"
                 >
@@ -4310,7 +4082,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-1-3-Razqydtq.webp"
+                    src="images/event-1-3-D-8Vcvsb.avif"
                     alt="BrainStation event audience"
                     loading="lazy"
                 >
@@ -4318,7 +4090,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-1-4-ByF0k7ER.webp"
+                    src="images/event-1-4-DgThEdrr.avif"
                     alt="BrainStation community event"
                     loading="lazy"
                 >
@@ -4329,7 +4101,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-2-1-C9xTdqSN.webp"
+                    src="images/event-2-1-6wU9DUeN.avif"
                     alt="BrainStation audience"
                     loading="lazy"
                 >
@@ -4337,7 +4109,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-2-2-DHv43XVy.webp"
+                    src="images/event-2-2-C50lOBUn.avif"
                     alt="BrainStation learning event"
                     loading="lazy"
                 >
@@ -4345,7 +4117,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-2-3-DezGgfh3.webp"
+                    src="images/event-2-3-BtqAH9hS.avif"
                     alt="BrainStation speaker event"
                     loading="lazy"
                 >
@@ -4353,7 +4125,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-2-4-B0xpBhn6.webp"
+                    src="images/event-2-4-Ddp1b1ge.avif"
                     alt="BrainStation panel event"
                     loading="lazy"
                 >
@@ -4364,7 +4136,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-3-1-CrFxAFKx.webp"
+                    src="images/event-3-1-Cwb0tLak.avif"
                     alt="BrainStation industry speaker"
                     loading="lazy"
                 >
@@ -4372,7 +4144,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-3-2-Px6Vhaxb.webp"
+                    src="images/event-3-2-B2sRS0Wo.avif"
                     alt="BrainStation presentation"
                     loading="lazy"
                 >
@@ -4380,7 +4152,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-3-3-DZGe4zWm.webp"
+                    src="images/event-3-3-CA_-ujgp.avif"
                     alt="BrainStation community"
                     loading="lazy"
                 >
@@ -4388,7 +4160,7 @@
 
             <div class="community-image">
                 <img
-                    src="https://brainstation.io/assets/event-3-4-Du-ngwIL.webp"
+                    src="images/event-3-4-Dw1IoT7A.avif"
                     alt="BrainStation logo"
                     loading="lazy"
                 >
