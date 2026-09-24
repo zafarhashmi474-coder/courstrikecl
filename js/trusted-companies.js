@@ -1,7 +1,5 @@
 /* =========================================
    TRUSTED COMPANIES
-   7 x 6 LOGO SLIDER
-   42 LOGOS PER SLIDE
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11,10 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!track) return;
 
 
-    /* =========================================
-       SCREEN 1 (EXACTLY 42 LOGOS)
-       Format: [Display Name, Iconify Slug, SimpleIcon Backup Slug]
-    ========================================= */
 
     const pageOne = [
         // ROW 1
