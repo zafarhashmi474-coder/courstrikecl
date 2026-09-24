@@ -1,0 +1,4798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Courstrike</title>
+
+    <!-- Your existing main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================
+           ABOUT US PAGE
+        ========================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #050505;
+            color: #fff;
+        }
+
+        .about-page {
+            width: 100%;
+            overflow: hidden;
+            background: #050505;
+        }
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .about-hero {
+            position: relative;
+            min-height: 760px;
+            height: 100vh;
+            max-height: 900px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+            isolation: isolate;
+
+            background:
+                radial-gradient(
+                    circle at 80% 25%,
+                    rgba(255, 106, 0, 0.20),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 15% 75%,
+                    rgba(239, 35, 60, 0.16),
+                    transparent 35%
+                ),
+                #080808;
+        }
+
+        .about-hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -4;
+
+            background-image:
+                linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0.48) 0%,
+                    rgba(0, 0, 0, 0.50) 35%,
+                    rgba(0, 0, 0, 0.82) 75%,
+                    #050505 100%
+                ),
+                url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=90");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            transform: scale(1.02);
+        }
+
+        /* Orange glow */
+        .about-hero::before {
+            content: "";
+            position: absolute;
+
+            width: 620px;
+            height: 620px;
+
+            right: -180px;
+            top: -170px;
+
+            border-radius: 50%;
+
+            background: radial-gradient(
+                circle,
+                rgba(255, 174, 0, 0.25) 0%,
+                rgba(255, 106, 0, 0.13) 35%,
+                transparent 70%
+            );
+
+            filter: blur(20px);
+
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Red glow */
+        .about-hero::after {
+            content: "";
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            left: -180px;
+            bottom: -220px;
+
+            border-radius: 50%;
+
+            background: radial-gradient(
+                circle,
+                rgba(239, 35, 60, 0.20) 0%,
+                rgba(255, 106, 0, 0.08) 42%,
+                transparent 72%
+            );
+
+            filter: blur(24px);
+
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .about-hero-content {
+            width: min(1120px, calc(100% - 48px));
+
+            margin: 0 auto;
+
+            padding: 150px 0 90px;
+
+            text-align: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Small label */
+
+        .about-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 9px 15px;
+            margin-bottom: 28px;
+
+            border: 1px solid rgba(255, 166, 0, 0.32);
+            border-radius: 999px;
+
+            background: rgba(0, 0, 0, 0.30);
+
+            color: #ffd36a;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #ef233c,
+                #ff6a00,
+                #ffc400
+            );
+
+            box-shadow:
+                0 0 14px rgba(255, 106, 0, 0.65);
+        }
+
+        /* Main heading */
+
+        .about-hero h1 {
+            max-width: 1030px;
+
+            margin: 0 auto 26px;
+
+            color: #ffffff;
+
+            font-size: clamp(46px, 5.6vw, 78px);
+
+            line-height: 1.04;
+
+            font-weight: 300;
+
+            letter-spacing: -3.5px;
+        }
+
+        .about-hero h1 span {
+            display: block;
+
+            font-weight: 300;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff 0%,
+                #ffd58a 45%,
+                #ff8a3d 75%,
+                #ffcf33 100%
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-hero p {
+            max-width: 720px;
+
+            margin: 0 auto 38px;
+
+            color: rgba(255, 255, 255, 0.82);
+
+            font-size: clamp(17px, 2vw, 21px);
+
+            line-height: 1.55;
+
+            font-weight: 400;
+        }
+
+        /* Button */
+
+        .about-hero-button {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 12px;
+
+            padding: 14px 24px;
+
+            border-radius: 999px;
+
+            background: #ffffff;
+            color: #111111;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .about-hero-button span {
+            font-size: 17px;
+        }
+
+        .about-hero-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 35px rgba(255, 106, 0, 0.22),
+                0 0 0 1px rgba(255, 193, 7, 0.18);
+        }
+
+        /* =========================================
+           TRUSTED COMPANIES
+        ========================================== */
+
+        .about-trusted {
+            position: relative;
+
+            padding: 38px 0 44px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(239, 35, 60, 0.08),
+                    transparent 22%,
+                    transparent 78%,
+                    rgba(255, 193, 7, 0.08)
+                ),
+                #050505;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .trusted-heading {
+            text-align: center;
+
+            margin-bottom: 24px;
+
+            color: rgba(255, 255, 255, 0.48);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        /* Logo container */
+
+        .logo-marquee {
+            width: 100%;
+
+            overflow: hidden;
+
+            position: relative;
+
+            mask-image: linear-gradient(
+                to right,
+                transparent,
+                #000 8%,
+                #000 92%,
+                transparent
+            );
+
+            -webkit-mask-image: linear-gradient(
+                to right,
+                transparent,
+                #000 8%,
+                #000 92%,
+                transparent
+            );
+        }
+
+        .logo-track {
+            width: max-content;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 10px 35px;
+
+            animation: aboutLogoScroll 42s linear infinite;
+
+            will-change: transform;
+        }
+
+        .company-logo {
+            flex: 0 0 auto;
+
+            min-width: 120px;
+
+            color: rgba(255, 255, 255, 0.66);
+
+            white-space: nowrap;
+
+            text-align: center;
+
+            font-size: 25px;
+
+            line-height: 1;
+
+            font-weight: 700;
+
+            filter: grayscale(1);
+
+            opacity: 0.82;
+
+            transition:
+                opacity 0.25s ease,
+                filter 0.25s ease;
+        }
+
+        .logo-marquee:hover .logo-track {
+            animation-play-state: paused;
+        }
+
+        .logo-marquee:hover .company-logo {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        /* Company names */
+
+        .company-logo.disney {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 27px;
+
+            font-weight: 600;
+
+            font-style: italic;
+        }
+
+        .company-logo.amazon {
+            font-size: 26px;
+
+            font-weight: 700;
+
+            letter-spacing: -1px;
+        }
+
+        .company-logo.nike {
+            font-size: 23px;
+
+            font-style: italic;
+
+            letter-spacing: 2px;
+        }
+
+        .company-logo.walmart {
+            font-size: 22px;
+
+            letter-spacing: -0.5px;
+        }
+
+        .company-logo.walmart span {
+            margin-left: 6px;
+
+            color: #ffc400;
+        }
+
+        .company-logo.shopify {
+            font-size: 24px;
+
+            letter-spacing: -1px;
+        }
+
+        .company-logo.apple {
+            font-size: 23px;
+        }
+
+        .company-logo.openai {
+            font-size: 22px;
+
+            letter-spacing: -0.8px;
+        }
+
+        .company-logo.mastercard {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 0;
+
+            min-width: 170px;
+        }
+
+        .company-logo.mastercard i {
+            width: 22px;
+            height: 22px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.70);
+
+            display: block;
+        }
+
+        .company-logo.mastercard i + i {
+            margin-left: -7px;
+
+            background: rgba(255, 193, 7, 0.55);
+        }
+
+        .company-logo.mastercard b {
+            margin-left: 9px;
+
+            font-size: 15px;
+
+            font-weight: 700;
+        }
+
+        .company-logo.anthropic {
+            font-size: 18px;
+
+            letter-spacing: 1.5px;
+        }
+
+        /* =========================================
+           INFINITE LOGO ANIMATION
+        ========================================== */
+
+        @keyframes aboutLogoScroll {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(-50% - 35px));
+            }
+
+        }
+
+        /* =========================================
+           TABLET
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            .about-hero {
+                min-height: 720px;
+            }
+
+            .about-hero-content {
+                padding-top: 155px;
+            }
+
+            .about-hero h1 {
+                letter-spacing: -2.4px;
+            }
+
+            .logo-track {
+                gap: 48px;
+
+                animation-duration: 34s;
+            }
+
+            .company-logo {
+                min-width: 100px;
+
+                font-size: 21px;
+            }
+
+            .company-logo.disney {
+                font-size: 23px;
+            }
+
+            .company-logo.mastercard {
+                min-width: 145px;
+            }
+
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            .about-hero {
+                min-height: 680px;
+
+                height: 100svh;
+            }
+
+            .about-hero-content {
+                width: calc(100% - 32px);
+
+                padding-top: 135px;
+
+                padding-bottom: 60px;
+            }
+
+            .about-eyebrow {
+                font-size: 10px;
+
+                letter-spacing: 1.1px;
+
+                padding: 8px 12px;
+            }
+
+            .about-hero h1 {
+                font-size: clamp(39px, 11vw, 55px);
+
+                line-height: 1.05;
+
+                letter-spacing: -2px;
+
+                margin-bottom: 20px;
+            }
+
+            .about-hero p {
+                font-size: 16px;
+
+                line-height: 1.5;
+
+                margin-bottom: 28px;
+            }
+
+            .about-hero-button {
+                padding: 13px 20px;
+            }
+
+            .about-trusted {
+                padding: 30px 0 35px;
+            }
+
+            .trusted-heading {
+                padding: 0 18px;
+
+                line-height: 1.5;
+
+                margin-bottom: 18px;
+            }
+
+            .logo-track {
+                gap: 38px;
+
+                padding: 8px 22px;
+
+                animation-duration: 28s;
+            }
+
+            .company-logo {
+                min-width: 85px;
+
+                font-size: 18px;
+            }
+
+            .company-logo.disney {
+                font-size: 20px;
+            }
+
+            .company-logo.amazon {
+                font-size: 20px;
+            }
+
+            .company-logo.nike {
+                font-size: 17px;
+            }
+
+            .company-logo.walmart {
+                font-size: 17px;
+            }
+
+            .company-logo.shopify {
+                font-size: 19px;
+            }
+
+            .company-logo.apple,
+            .company-logo.openai {
+                font-size: 17px;
+            }
+
+            .company-logo.anthropic {
+                font-size: 14px;
+            }
+
+            .company-logo.mastercard {
+                min-width: 125px;
+            }
+
+            .company-logo.mastercard i {
+                width: 18px;
+                height: 18px;
+            }
+
+            .company-logo.mastercard b {
+                font-size: 12px;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .logo-track {
+                animation: none;
+            }
+
+        }
+
+        /* =========================================
+   WHAT WE DO
+========================================= */
+
+.what-we-do {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+
+    padding: 110px 0 120px;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+.what-we-do-container {
+    width: min(1180px, calc(100% - 70px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 43% 57%;
+
+    gap: 0;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.what-we-do-content {
+    position: relative;
+    z-index: 5;
+
+    padding-top: 35px;
+}
+
+.what-we-do-content h2 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.what-we-do-intro {
+    width: 90%;
+
+    margin: 0 0 62px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.what-we-do-label {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.what-card {
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    padding: 22px 20px 18px;
+
+    background: #15191b;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.what-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(255, 135, 45, 0.45);
+}
+
+.what-card-icon {
+    width: 34px;
+    height: 34px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    filter:
+        grayscale(1)
+        brightness(1.7);
+}
+
+.what-card h3 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.what-card p {
+    margin: 0 0 14px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.what-card a {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.what-card a:hover {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =========================================
+   IMAGE COLLAGE
+========================================= */
+
+.what-we-do-images {
+    position: relative;
+
+    height: 790px;
+
+    margin-left: -10px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+        155px
+        180px
+        350px
+        190px;
+
+    gap: 4px;
+
+    /* Fade the left side into black */
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+}
+
+
+/* Image boxes */
+
+.image-box {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   COLLAGE POSITIONS
+========================================= */
+
+.image-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.image-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-3 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.image-4 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.image-5 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.image-6 {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+
+/* Dark overlay on images */
+
+.image-box::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   RED / ORANGE / YELLOW BRAND GLOW
+========================================= */
+
+.what-we-do::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -250px;
+    top: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 106, 0, 0.08),
+            rgba(239, 35, 60, 0.03),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .what-we-do {
+        padding: 80px 0;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .what-we-do-content {
+        padding-top: 0;
+    }
+
+    .what-we-do-intro {
+        width: 100%;
+    }
+
+    .what-we-do-images {
+        margin-left: 0;
+
+        height: 600px;
+
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .what-we-do {
+        padding: 70px 0 80px;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 30px);
+
+        display: block;
+    }
+
+    .what-we-do-content h2 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .what-we-do-intro {
+        font-size: 13px;
+
+        margin-bottom: 45px;
+    }
+
+    .what-card {
+        padding: 20px 17px;
+
+        margin-bottom: 12px;
+    }
+
+    .what-card p {
+        font-size: 10px;
+    }
+
+    .what-we-do-images {
+        height: 500px;
+
+        margin-top: 35px;
+
+        grid-template-rows:
+            95px
+            120px
+            210px
+            120px;
+    }
+
+}
+
+/* =========================================
+   TRUSTED PROFESSIONALS
+========================================= */
+
+.trusted-professionals {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 0 90px;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(239, 35, 60, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255, 106, 0, 0.07),
+            transparent 30%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TOP CONTENT
+========================================= */
+
+.trusted-professionals-container {
+
+    width: min(920px, calc(100% - 40px));
+
+    margin: 0 auto;
+}
+
+
+.trusted-professionals-heading {
+
+    text-align: left;
+
+    margin-bottom: 70px;
+}
+
+
+.trusted-professionals-heading h2 {
+
+    margin: 0 0 16px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        40px,
+        4.2vw,
+        58px
+    );
+
+    line-height: 1.08;
+
+    font-weight: 400;
+
+    letter-spacing: -2.5px;
+}
+
+
+.trusted-professionals-heading p {
+
+    max-width: 680px;
+
+    margin: 0 0 30px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 16px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   BROWSE BUTTON
+========================================= */
+
+.browse-training-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 148px;
+
+    padding: 13px 22px;
+
+    border: 1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.85
+        );
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.browse-training-btn:hover {
+
+    background: #ffffff;
+
+    color: #111111;
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.professionals-slider {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+    padding: 0 0 10px;
+}
+
+
+/* LEFT FADE */
+
+.professionals-slider::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 190px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050505 0%,
+            rgba(
+                5,
+                5,
+                5,
+                0.92
+            ) 35%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* RIGHT FADE */
+
+.professionals-slider::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 10;
+
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 190px;
+
+    background:
+        linear-gradient(
+            270deg,
+            #050505 0%,
+            rgba(
+                5,
+                5,
+                5,
+                0.92
+            ) 35%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MOVING TRACK
+========================================= */
+
+.professionals-track {
+
+    display: flex;
+
+    width: max-content;
+
+    gap: 7px;
+
+    padding-left: 190px;
+
+    animation:
+        professionalsScroll
+        55s
+        linear
+        infinite;
+
+    will-change: transform;
+}
+
+
+/* Pause on hover */
+
+.professionals-slider:hover
+.professionals-track {
+
+    animation-play-state: paused;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.professional-card {
+
+    flex: 0 0 230px;
+
+    width: 230px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PERSON IMAGE
+========================================= */
+
+.professional-image {
+
+    display: block;
+
+    width: 230px;
+
+    height: 235px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #181818;
+}
+
+
+/* =========================================
+   PERSON DETAILS
+========================================= */
+
+.professional-info {
+
+    padding: 12px 22px 0;
+}
+
+
+.professional-info h3 {
+
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    font-weight: 600;
+}
+
+
+.professional-info p {
+
+    margin: 0;
+
+    max-width: 190px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.75
+    );
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   COMPANY LOGO
+========================================= */
+
+.professional-company {
+
+    min-height: 75px;
+
+    padding: 20px 22px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.90
+    );
+}
+
+
+/* Apple */
+
+.apple-logo {
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    color: #ffffff;
+}
+
+
+/* Intuit */
+
+.company-wordmark {
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+/* JPMorgan */
+
+.company-wordmark.jpmorgan {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Spotify */
+
+.spotify-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 16px;
+}
+
+
+.spotify-text {
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* Shopify */
+
+.shopify-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.shopify-text {
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+/* Slack */
+
+.slack-icon {
+
+    font-size: 26px;
+
+    line-height: 1;
+}
+
+
+.slack-text {
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CONTINUOUS ANIMATION
+========================================= */
+
+@keyframes professionalsScroll {
+
+    from {
+
+        transform:
+            translateX(0);
+
+    }
+
+    to {
+
+        transform:
+            translateX(
+                calc(
+                    -50% - 3.5px
+                )
+            );
+
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .trusted-professionals {
+
+        padding:
+            90px
+            0
+            75px;
+    }
+
+
+    .trusted-professionals-heading {
+
+        margin-bottom: 55px;
+    }
+
+
+    .trusted-professionals-heading h2 {
+
+        font-size: 44px;
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .trusted-professionals-heading p {
+
+        font-size: 15px;
+    }
+
+
+    .professional-card {
+
+        flex-basis: 210px;
+
+        width: 210px;
+    }
+
+
+    .professional-image {
+
+        width: 210px;
+
+        height: 220px;
+    }
+
+
+    .professionals-track {
+
+        padding-left: 120px;
+
+        animation-duration: 48s;
+    }
+
+
+    .professionals-slider::before,
+    .professionals-slider::after {
+
+        width: 120px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .trusted-professionals {
+
+        padding:
+            70px
+            0
+            60px;
+    }
+
+
+    .trusted-professionals-container {
+
+        width:
+            calc(
+                100% - 32px
+            );
+    }
+
+
+    .trusted-professionals-heading {
+
+        margin-bottom: 45px;
+    }
+
+
+    .trusted-professionals-heading h2 {
+
+        font-size: 36px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .trusted-professionals-heading p {
+
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+
+    .browse-training-btn {
+
+        padding:
+            12px
+            19px;
+
+        font-size: 12px;
+    }
+
+
+    .professional-card {
+
+        flex-basis: 190px;
+
+        width: 190px;
+    }
+
+
+    .professional-image {
+
+        width: 190px;
+
+        height: 200px;
+    }
+
+
+    .professional-info {
+
+        padding:
+            11px
+            16px
+            0;
+    }
+
+
+    .professional-info h3 {
+
+        font-size: 13px;
+    }
+
+
+    .professional-info p {
+
+        font-size: 11px;
+
+        max-width: 160px;
+    }
+
+
+    .professional-company {
+
+        min-height: 65px;
+
+        padding:
+            15px
+            16px
+            0;
+    }
+
+
+    .company-wordmark {
+
+        font-size: 20px;
+    }
+
+
+    .company-wordmark.jpmorgan {
+
+        font-size: 14px;
+    }
+
+
+    .spotify-text {
+
+        font-size: 14px;
+    }
+
+
+    .shopify-text {
+
+        font-size: 15px;
+    }
+
+
+    .slack-text {
+
+        font-size: 15px;
+    }
+
+
+    .professionals-track {
+
+        padding-left: 45px;
+
+        gap: 5px;
+
+        animation-duration: 40s;
+    }
+
+
+    .professionals-slider::before,
+    .professionals-slider::after {
+
+        width: 45px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .professionals-track {
+
+        animation: none;
+    }
+
+}
+
+/* =========================================
+   EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= */
+
+.in-person-experiences {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 0 125px;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(239, 35, 60, 0.045),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 106, 0, 0.045),
+            transparent 32%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+.in-person-container {
+
+    width: min(
+        1000px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.in-person-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 48px;
+}
+
+
+.in-person-heading h2 {
+
+    margin: 0 0 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        40px,
+        4vw,
+        58px
+    );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2.5px;
+}
+
+
+.in-person-heading p {
+
+    margin: 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   LOCATION GRID
+========================================= */
+
+.locations-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   LOCATION CARD
+========================================= */
+
+.location-card {
+
+    position: relative;
+
+    height: 315px;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    background: #151515;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.location-card img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease,
+        filter 0.55s ease;
+}
+
+
+/* =========================================
+   DARK GRADIENT
+========================================= */
+
+.location-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.35) 42%,
+            rgba(0, 0, 0, 0.12) 100%
+        );
+
+    transition:
+        background 0.45s ease;
+}
+
+
+/* =========================================
+   LOCATION CONTENT
+========================================= */
+
+.location-bottom {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 24px 22px;
+
+    z-index: 3;
+
+    transform:
+        translateY(
+            0
+        );
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+.location-bottom h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    transition:
+        margin 0.45s ease;
+}
+
+
+/* =========================================
+   HIDDEN DESCRIPTION
+========================================= */
+
+.location-description {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(
+            15px
+        );
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.35s ease,
+        transform 0.45s ease;
+}
+
+
+.location-description p {
+
+    margin: 14px 0 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.88
+    );
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.location-card:hover img {
+
+    transform: scale(1.04);
+
+    filter:
+        brightness(0.62)
+        saturate(0.85);
+}
+
+
+.location-card:hover .location-overlay {
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.68) 52%,
+            rgba(0, 0, 0, 0.30) 100%
+        );
+}
+
+
+.location-card:hover .location-bottom {
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+.location-card:hover .location-bottom h3 {
+
+    margin-bottom: 0;
+}
+
+
+.location-card:hover .location-description {
+
+    max-height: 180px;
+
+    opacity: 1;
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+/* =========================================
+   SUBTLE BRAND GLOW
+========================================= */
+
+.location-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                255,
+                106,
+                0,
+                0.14
+            ),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+.location-card:hover::before {
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .in-person-experiences {
+
+        padding:
+            90px
+            0
+            100px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 40px
+            );
+    }
+
+
+    .in-person-heading {
+
+        max-width: 600px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 45px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 14px;
+    }
+
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            20px
+            18px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 21px;
+    }
+
+
+    .location-description p {
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .in-person-experiences {
+
+        padding:
+            75px
+            0
+            80px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 30px
+            );
+    }
+
+
+    .in-person-heading {
+
+        margin-bottom: 32px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 37px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+
+    /*
+       On mobile cards become
+       one below another.
+    */
+
+    .locations-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .location-card {
+
+        height: 330px;
+
+        width: 100%;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            22px
+            20px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 24px;
+    }
+
+
+    /*
+       On mobile description is
+       shown when user taps/hover.
+    */
+
+    .location-description p {
+
+        font-size: 12px;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 33px;
+    }
+
+}
+
+/* =========================================
+   A COMMUNITY THAT INSPIRES
+========================================= */
+
+.community-section {
+    position: relative;
+    width: 100%;
+
+    padding: 105px 0 120px;
+
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(239, 35, 60, 0.045),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(255, 106, 0, 0.045),
+            transparent 32%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.community-container {
+    width: min(1000px, calc(100% - 40px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+
+   Heading is intentionally narrower and
+   shifted slightly inward like screenshot.
+========================================= */
+
+.community-heading {
+    width: min(650px, 100%);
+
+    margin-left: 125px;
+
+    margin-bottom: 40px;
+}
+
+
+.community-heading h2 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        38px,
+        4vw,
+        50px
+    );
+
+    line-height: 1.08;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+
+.community-heading p {
+    width: 370px;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   IMAGE GALLERY
+========================================= */
+
+.community-gallery {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-template-rows:
+        repeat(3, 190px);
+
+    gap: 4px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   IMAGE BOX
+========================================= */
+
+.community-image {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #111111;
+}
+
+
+.community-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* =========================================
+   SUBTLE HOVER
+========================================= */
+
+.community-image:hover img {
+    transform: scale(1.035);
+
+    filter:
+        brightness(0.82)
+        saturate(1.05);
+}
+
+
+/* =========================================
+   RED / ORANGE BRAND GLOW
+========================================= */
+
+.community-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: 20%;
+    left: -300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                239,
+                35,
+                60,
+                0.06
+            ),
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+
+.community-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -300px;
+    bottom: 5%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                255,
+                106,
+                0,
+                0.06
+            ),
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .community-section {
+        padding:
+            85px
+            0
+            100px;
+    }
+
+
+    .community-container {
+        width:
+            calc(
+                100% - 40px
+            );
+    }
+
+
+    .community-heading {
+        margin-left: 60px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .community-heading h2 {
+        font-size: 42px;
+    }
+
+
+    .community-gallery {
+        grid-template-rows:
+            repeat(3, 165px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .community-section {
+        padding:
+            70px
+            0
+            80px;
+    }
+
+
+    .community-container {
+        width:
+            calc(
+                100% - 28px
+            );
+    }
+
+
+    .community-heading {
+        width: 100%;
+
+        margin-left: 0;
+
+        margin-bottom: 30px;
+    }
+
+
+    .community-heading h2 {
+        font-size: 35px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.4px;
+    }
+
+
+    .community-heading p {
+        width: 100%;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+
+    /*
+       Mobile keeps the gallery grid,
+       but changes it to 2 columns.
+    */
+
+    .community-gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows:
+            repeat(6, 150px);
+
+        gap: 3px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .community-heading h2 {
+        font-size: 31px;
+    }
+
+
+    .community-gallery {
+        grid-template-rows:
+            repeat(6, 125px);
+    }
+
+}
+
+/* =========================
+   INDUSTRY PARTNERS
+========================= */
+
+.industry-partners {
+    width: 100%;
+    background: #ffffff;
+    color: #111111;
+    padding: 85px 0 95px;
+    overflow: hidden;
+}
+
+.industry-partners-inner {
+    width: 100%;
+    text-align: center;
+}
+
+/* Heading */
+
+.industry-partners h2 {
+    margin: 0;
+    padding: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 54px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -2.5px;
+}
+
+.partners-line {
+    width: 60px;
+    height: 5px;
+    background: #111111;
+    margin: 32px auto 38px;
+}
+
+.partners-description {
+    max-width: 1250px;
+    margin: 0 auto 55px;
+    padding: 0 30px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+.partners-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-track {
+    display: flex;
+    width: max-content;
+
+    animation: partnersSlide 65s linear infinite;
+}
+
+
+/* =========================
+   7 × 3 GRID
+========================= */
+
+.partners-grid {
+    width: 1540px;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 95px);
+
+    column-gap: 25px;
+    row-gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   EACH LOGO
+========================= */
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 95px;
+    padding: 15px 20px;
+
+    background: #ffffff;
+}
+
+.partner-logo img {
+    display: block;
+
+    max-width: 145px;
+    max-height: 45px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    opacity: 0.95;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.partner-logo:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+
+/* =========================
+   INFINITE LOOP
+========================= */
+
+@keyframes partnersSlide {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .industry-partners {
+        padding: 70px 0 80px;
+    }
+
+    .industry-partners h2 {
+        font-size: 43px;
+    }
+
+    .partners-description {
+        font-size: 18px;
+        max-width: 900px;
+    }
+
+    .partners-grid {
+        width: 1250px;
+
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(3, 85px);
+
+        column-gap: 15px;
+    }
+
+    .partner-logo {
+        height: 85px;
+        padding: 10px;
+    }
+
+    .partner-logo img {
+        max-width: 120px;
+        max-height: 38px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .industry-partners {
+        padding: 60px 0 65px;
+    }
+
+    .industry-partners h2 {
+        font-size: 34px;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+    }
+
+    .partners-line {
+        width: 50px;
+        height: 4px;
+        margin: 24px auto 28px;
+    }
+
+    .partners-description {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 0 25px;
+        margin-bottom: 40px;
+    }
+
+    .partners-grid {
+        width: 900px;
+
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(3, 75px);
+
+        column-gap: 8px;
+        row-gap: 5px;
+    }
+
+    .partner-logo {
+        height: 75px;
+        padding: 8px;
+    }
+
+    .partner-logo img {
+        max-width: 90px;
+        max-height: 30px;
+    }
+
+    .partners-track {
+        animation-duration: 50s;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .industry-partners h2 {
+        font-size: 29px;
+    }
+
+    .partners-description {
+        font-size: 15px;
+    }
+
+    .partners-grid {
+        width: 760px;
+
+        grid-template-rows: repeat(3, 65px);
+    }
+
+    .partner-logo {
+        height: 65px;
+    }
+
+    .partner-logo img {
+        max-width: 75px;
+        max-height: 26px;
+    }
+
+}
+
+/* =========================
+   JOIN OUR TEAM SECTION
+========================= */
+
+.join-team-section {
+    width: 100%;
+    background: #080909;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.join-team-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 350px;
+
+    background-image: url("https://brainstation.io/assets/classroom-background-zk11EPU5.webp");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Dark overlay */
+
+.join-team-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.48) 0%,
+            rgba(0, 0, 0, 0.62) 45%,
+            #080909 100%
+        );
+}
+
+
+/* Content */
+
+.join-team-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 980px;
+
+    margin: 0 auto;
+    padding: 0 30px 55px;
+}
+
+
+.join-team-content h2 {
+    margin: 0 0 18px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: 600;
+
+    letter-spacing: -1.5px;
+}
+
+
+.join-team-content p {
+    max-width: 650px;
+
+    margin: 0 0 18px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.join-team-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.team-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 23px;
+
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+
+    color: #ffffff;
+    background: transparent;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.team-btn:hover {
+    background: #ffffff;
+    color: #111111;
+    transform: translateY(-2px);
+}
+
+
+.team-btn-primary {
+    background: #ffffff;
+    color: #111111;
+}
+
+
+.team-btn-primary:hover {
+    background: #eeeeee;
+    color: #111111;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.join-team-cards {
+    width: min(985px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 40px 0 75px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.team-card {
+    min-height: 280px;
+
+    padding: 25px 30px 28px;
+
+    background: #15191a;
+
+    border: 1px solid #303638;
+    border-radius: 6px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: #555b5d;
+    background: #191d1e;
+}
+
+
+/* Icons */
+
+.team-card-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+}
+
+
+.team-card-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Card heading */
+
+.team-card h3 {
+    margin: 0 0 14px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 19px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Card paragraph */
+
+.team-card p {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 400;
+
+    color: #eeeeee;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .join-team-hero {
+        min-height: 400px;
+    }
+
+    .join-team-content {
+        padding: 0 30px 45px;
+    }
+
+    .join-team-content h2 {
+        font-size: 36px;
+    }
+
+    .join-team-cards {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .team-card {
+        min-height: auto;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .join-team-hero {
+        min-height: 470px;
+
+        background-position: center;
+    }
+
+
+    .join-team-overlay {
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.42),
+                rgba(0, 0, 0, 0.75) 55%,
+                #080909 100%
+            );
+    }
+
+
+    .join-team-content {
+        padding: 0 22px 35px;
+    }
+
+
+    .join-team-content h2 {
+        font-size: 32px;
+        letter-spacing: -1px;
+        margin-bottom: 15px;
+    }
+
+
+    .join-team-content p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+
+    .join-team-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+
+    .team-btn {
+        width: 100%;
+        min-height: 46px;
+    }
+
+
+    .join-team-cards {
+        width: calc(100% - 30px);
+
+        padding: 30px 0 55px;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .team-card {
+        padding: 23px 22px 25px;
+    }
+
+
+    .team-card-icon {
+        margin-bottom: 20px;
+    }
+
+
+    .team-card h3 {
+        font-size: 18px;
+    }
+
+
+    .team-card p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .join-team-content h2 {
+        font-size: 29px;
+    }
+
+    .join-team-content p {
+        font-size: 14px;
+    }
+
+}
+    </style>
+
+    
+</head>
+
+<body>
+
+    <!-- Existing shared header -->
+    <div id="header"></div>
+
+
+    <main class="about-page">
+
+        <!-- =========================================
+             ABOUT HERO
+        ========================================== -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-bg"></div>
+
+            <div class="about-hero-content">
+
+                <div class="about-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    ABOUT COURSTRIKE
+                </div>
+
+                <h1>
+                    The global leader in AI and digital
+                    <span>skills training for professionals.</span>
+                </h1>
+
+                <p>
+                    Empowering professionals and modern teams with the
+                    skills, knowledge, and confidence to thrive in the
+                    age of intelligence.
+                </p>
+
+                <a
+                    href="#trusted-companies"
+                    class="about-hero-button"
+                >
+                    Explore Courstrike
+                    <span>↓</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             COMPANY LOGOS
+        ========================================== -->
+
+        <section
+            class="about-trusted"
+            id="trusted-companies"
+        >
+
+            <div class="trusted-heading">
+                TRUSTED BY TEAMS AT LEADING COMPANIES
+            </div>
+
+
+            <div class="logo-marquee">
+
+                <div class="logo-track">
+
+                    <!-- FIRST SET -->
+
+                    <div class="company-logo disney">
+                        Disney
+                    </div>
+
+                    <div class="company-logo amazon">
+                        amazon
+                    </div>
+
+                    <div class="company-logo nike">
+                        NIKE
+                    </div>
+
+                    <div class="company-logo walmart">
+                        Walmart<span>✦</span>
+                    </div>
+
+                    <div class="company-logo shopify">
+                        shopify
+                    </div>
+
+                    <div class="company-logo apple">
+                        ● Apple
+                    </div>
+
+                    <div class="company-logo openai">
+                        ◉ OpenAI
+                    </div>
+
+                    <div class="company-logo mastercard">
+
+                        <i></i>
+                        <i></i>
+
+                        <b>mastercard</b>
+
+                    </div>
+
+                    <div class="company-logo anthropic">
+                        ANTHROPIC
+                    </div>
+
+
+                    <!-- SECOND SET
+                         Required for seamless loop -->
+
+                    <div class="company-logo disney">
+                        Disney
+                    </div>
+
+                    <div class="company-logo amazon">
+                        amazon
+                    </div>
+
+                    <div class="company-logo nike">
+                        NIKE
+                    </div>
+
+                    <div class="company-logo walmart">
+                        Walmart<span>✦</span>
+                    </div>
+
+                    <div class="company-logo shopify">
+                        shopify
+                    </div>
+
+                    <div class="company-logo apple">
+                        ● Apple
+                    </div>
+
+                    <div class="company-logo openai">
+                        ◉ OpenAI
+                    </div>
+
+                    <div class="company-logo mastercard">
+
+                        <i></i>
+                        <i></i>
+
+                        <b>mastercard</b>
+
+                    </div>
+
+                    <div class="company-logo anthropic">
+                        ANTHROPIC
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+     WHAT WE DO SECTION
+========================================= -->
+
+<section class="what-we-do">
+
+    <div class="what-we-do-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="what-we-do-content">
+
+            <h2>What We Do</h2>
+
+            <p class="what-we-do-intro">
+                Established in 2012, BrainStation empowers professionals
+                and leading companies to build essential skills in AI,
+                data, product management, marketing, and design through
+                live, instructor-led training.
+            </p>
+
+            <div class="what-we-do-label">
+                POWERFUL LEARNING EXPERIENCES:
+            </div>
+
+
+            <!-- CARD 1 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    💡
+                </div>
+
+                <h3>Thought Leadership Events</h3>
+
+                <p>
+                    Connect with industry leaders at the forefront of
+                    their fields. Join us for in-person panels, keynotes,
+                    and community events featuring leaders from the
+                    world's most innovative brands.
+                </p>
+
+                <a href="#">
+                    View Upcoming Events
+                </a>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ♧
+                </div>
+
+                <h3>Enterprise Training</h3>
+
+                <p>
+                    Accelerate digital transformation. BrainStation
+                    delivers professional, in-depth workshops designed
+                    to help teams and individuals build lasting AI
+                    capability.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ▤
+                </div>
+
+                <h3>Professional Certifications</h3>
+
+                <p>
+                    Master the skills driving the modern economy. From
+                    AI and Data to Product Management, Marketing, and UX
+                    Design, our certifications provide the hands-on
+                    mentorship and training to level up your professional
+                    skills and advance your career.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE COLLAGE -->
+        <div class="what-we-do-images">
+
+            <div class="image-box image-1">
+                <img src="images/what-we-do-1.jpg" alt="">
+            </div>
+
+            <div class="image-box image-2">
+                <img src="images/what-we-do-2.jpg" alt="">
+            </div>
+
+            <div class="image-box image-3">
+                <img src="images/what-we-do-3.jpg" alt="">
+            </div>
+
+            <div class="image-box image-4">
+                <img src="images/what-we-do-4.jpg" alt="">
+            </div>
+
+            <div class="image-box image-5">
+                <img src="images/what-we-do-5.jpg" alt="">
+            </div>
+
+            <div class="image-box image-6">
+                <img src="images/what-we-do-6.jpg" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     TRUSTED PROFESSIONALS SECTION
+========================================= -->
+
+<section class="trusted-professionals">
+
+    <div class="trusted-professionals-container">
+
+        <!-- TOP CONTENT -->
+
+        <div class="trusted-professionals-heading">
+
+            <h2>
+                Trusted by 40,000+ Certified Professionals
+            </h2>
+
+            <p>
+                Since 2012, BrainStation has certified professionals
+                from around the world and from top global brands.
+            </p>
+
+            <a href="#" class="browse-training-btn">
+                Browse Training
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         INFINITE TESTIMONIAL SLIDER
+    ========================================== -->
+
+    <div class="professionals-slider">
+
+        <div class="professionals-track">
+
+
+            <!-- =================================
+                 CARD 1
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-1.jpg"
+                    alt="Tsai Tsai"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Tsai Tsai</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Apple
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="apple-logo">●</span>
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 2
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-2.jpg"
+                    alt="Michael Johnston"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Michael Johnston</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Intuit
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark">
+                        INTUIT
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 3
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-3.jpg"
+                    alt="Sabrina von Allmen"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Sabrina von Allmen</h3>
+
+                    <p>
+                        VP, Social at
+                        JPMorganChase
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark jpmorgan">
+                        JPMorganChase
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 4
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-4.jpg"
+                    alt="Steve Woods"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Steve Woods</h3>
+
+                    <p>
+                        Global Marketing Manager at
+                        Spotify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="spotify-icon">
+                        ◉
+                    </span>
+
+                    <span class="spotify-text">
+                        Spotify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 5
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-5.jpg"
+                    alt="Kazden Cattapan"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Kazden Cattapan</h3>
+
+                    <p>
+                        Staff Product Designer at
+                        Shopify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="shopify-icon">
+                        S
+                    </span>
+
+                    <span class="shopify-text">
+                        shopify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 6
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-6.jpg"
+                    alt="Alison Su"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Alison Su</h3>
+
+                    <p>
+                        Senior Solutions Architect at
+                        Slack
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="slack-icon">
+                        ✣
+                    </span>
+
+                    <span class="slack-text">
+                        slack
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 DUPLICATE CARDS
+                 FOR SEAMLESS INFINITE LOOP
+            ================================== -->
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-1.jpg"
+                    alt="Tsai Tsai"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Tsai Tsai</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Apple
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="apple-logo">●</span>
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-2.jpg"
+                    alt="Michael Johnston"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Michael Johnston</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Intuit
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark">
+                        INTUIT
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-3.jpg"
+                    alt="Sabrina von Allmen"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Sabrina von Allmen</h3>
+
+                    <p>
+                        VP, Social at
+                        JPMorganChase
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark jpmorgan">
+                        JPMorganChase
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-4.jpg"
+                    alt="Steve Woods"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Steve Woods</h3>
+
+                    <p>
+                        Global Marketing Manager at
+                        Spotify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="spotify-icon">
+                        ◉
+                    </span>
+
+                    <span class="spotify-text">
+                        Spotify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-5.jpg"
+                    alt="Kazden Cattapan"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Kazden Cattapan</h3>
+
+                    <p>
+                        Staff Product Designer at
+                        Shopify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="shopify-icon">
+                        S
+                    </span>
+
+                    <span class="shopify-text">
+                        shopify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-6.jpg"
+                    alt="Alison Su"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Alison Su</h3>
+
+                    <p>
+                        Senior Solutions Architect at
+                        Slack
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="slack-icon">
+                        ✣
+                    </span>
+
+                    <span class="slack-text">
+                        slack
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= -->
+
+<section class="in-person-experiences">
+
+    <div class="in-person-container">
+
+        <!-- Heading -->
+
+        <div class="in-person-heading">
+
+            <h2>
+                Exceptional In-Person Experiences
+            </h2>
+
+            <p>
+                BrainStation's global spaces are custom-built for real
+                learning, deep collaboration and building connections.
+                Located in key cities, our spaces bring industry
+                professionals together to learn and build.
+            </p>
+
+        </div>
+
+
+        <!-- Locations -->
+
+        <div class="locations-grid">
+
+
+            <!-- NEW YORK -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/new-york.jpg"
+                    alt="BrainStation New York"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>New York</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in the heart of New York's
+                            vibrant tech and creative community,
+                            BrainStation New York brings
+                            professionals together to learn,
+                            collaborate, and build.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LONDON -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/london.jpg"
+                    alt="BrainStation London"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>London</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Based in the tech district of Shoreditch,
+                            BrainStation is at the heart of London's
+                            digital scene, surrounded by the most
+                            cutting-edge companies in the city.
+                            In addition to courses, BrainStation London
+                            offers training sessions, industry events,
+                            expert panel discussions, and more.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TORONTO -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/toronto.jpg"
+                    alt="BrainStation Toronto"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>Toronto</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in Toronto's vibrant technology
+                            community, BrainStation Toronto provides
+                            a modern space where professionals can
+                            learn, connect, and build new skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     A COMMUNITY THAT INSPIRES
+========================================= -->
+
+<section class="community-section">
+
+    <div class="community-container">
+
+        <!-- Heading -->
+
+        <div class="community-heading">
+
+            <h2>
+                A Community That Inspires
+            </h2>
+
+            <p>
+                Join a diverse global network of professional learners
+                and industry expert instructors and speakers.
+            </p>
+
+        </div>
+
+
+        <!-- IMAGE GRID -->
+
+        <div class="community-gallery">
+
+            <!-- ROW 1 -->
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-1-1-CxXKTSKN.webp"
+                    alt="BrainStation community event"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-1-2-RB_bVoC4.webp"
+                    alt="BrainStation community discussion"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-1-3-Razqydtq.webp"
+                    alt="BrainStation event audience"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-1-4-ByF0k7ER.webp"
+                    alt="BrainStation community event"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <!-- ROW 2 -->
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-2-1-C9xTdqSN.webp"
+                    alt="BrainStation audience"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-2-2-DHv43XVy.webp"
+                    alt="BrainStation learning event"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-2-3-DezGgfh3.webp"
+                    alt="BrainStation speaker event"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-2-4-B0xpBhn6.webp"
+                    alt="BrainStation panel event"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <!-- ROW 3 -->
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-3-1-CrFxAFKx.webp"
+                    alt="BrainStation industry speaker"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-3-2-Px6Vhaxb.webp"
+                    alt="BrainStation presentation"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-3-3-DZGe4zWm.webp"
+                    alt="BrainStation community"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="community-image">
+                <img
+                    src="https://brainstation.io/assets/event-3-4-Du-ngwIL.webp"
+                    alt="BrainStation logo"
+                    loading="lazy"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     INDUSTRY PARTNERS SECTION
+========================= -->
+
+<section class="industry-partners">
+
+    <div class="industry-partners-inner">
+
+        <h2>Our Network of Industry Partners and Experts</h2>
+
+        <div class="partners-line"></div>
+
+        <p class="partners-description">
+            BrainStation is proud to work with the world's leading digital and AI brands
+            and professionals to power our events, workshops, and certification courses.
+        </p>
+
+        <div class="partners-slider">
+
+            <div class="partners-track">
+
+                <!-- ===== FIRST 7 × 3 GRID ===== -->
+                <div class="partners-grid">
+
+                    <!-- ROW 1 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/figma" alt="Figma">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amd" alt="AMD">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amazon" alt="Amazon">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ey" alt="EY">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/oracle" alt="Oracle">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pinterest" alt="Pinterest">
+                    </div>
+
+
+                    <!-- ROW 2 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/mckinseyandcompany" alt="McKinsey">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ibm" alt="IBM">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/expedia" alt="Expedia">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/nvidia" alt="NVIDIA">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/disney" alt="Disney">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/openai" alt="OpenAI">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ikea" alt="IKEA">
+                    </div>
+
+
+                    <!-- ROW 3 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/monzo" alt="Monzo">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/airbnb" alt="Airbnb">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/x" alt="X">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/barclays" alt="Barclays">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pwc" alt="PwC">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/public" alt="Public">
+                    </div>
+
+                </div>
+
+
+                <!-- ===== DUPLICATE GRID FOR INFINITE LOOP ===== -->
+                <div class="partners-grid">
+
+                    <!-- ROW 1 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/figma" alt="Figma">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amd" alt="AMD">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amazon" alt="Amazon">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ey" alt="EY">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/oracle" alt="Oracle">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pinterest" alt="Pinterest">
+                    </div>
+
+
+                    <!-- ROW 2 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/mckinseyandcompany" alt="McKinsey">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ibm" alt="IBM">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/expedia" alt="Expedia">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/nvidia" alt="NVIDIA">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/disney" alt="Disney">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/openai" alt="OpenAI">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ikea" alt="IKEA">
+                    </div>
+
+
+                    <!-- ROW 3 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/monzo" alt="Monzo">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/airbnb" alt="Airbnb">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/x" alt="X">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/barclays" alt="Barclays">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pwc" alt="PwC">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/public" alt="Public">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     JOIN OUR TEAM SECTION
+========================= -->
+
+<section class="join-team-section">
+
+    <!-- Top Hero -->
+    <div class="join-team-hero">
+
+        <div class="join-team-overlay"></div>
+
+        <div class="join-team-content">
+
+            <h2>Join Our Team</h2>
+
+            <p>
+                BrainStation is defining the future of professional learning.
+                From our state-of-the-art spaces to our professional certifications
+                and industry-leading events, we are setting the standard for how
+                the world learns.
+            </p>
+
+            <div class="join-team-buttons">
+
+                <a href="careers.html" class="team-btn team-btn-primary">
+                    Work at BrainStation
+                </a>
+
+                <a href="speak-at-event.html" class="team-btn">
+                    Speak at an Event
+                </a>
+
+                <a href="apply-to-teach.html" class="team-btn">
+                    Apply to Teach
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Cards -->
+    <div class="join-team-cards">
+
+        <!-- Card 1 -->
+        <div class="team-card">
+
+            <div class="team-card-icon">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="17" y="8" width="30" height="20"
+                          fill="none" stroke="currentColor" stroke-width="3"/>
+                    <line x1="32" y1="28" x2="32" y2="38"
+                          stroke="currentColor" stroke-width="3"/>
+                    <line x1="20" y1="38" x2="44" y2="38"
+                          stroke="currentColor" stroke-width="3"/>
+
+                    <circle cx="13" cy="48" r="5"
+                            fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="32" cy="48" r="5"
+                            fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="51" cy="48" r="5"
+                            fill="none" stroke="currentColor" stroke-width="3"/>
+                </svg>
+            </div>
+
+            <h3>Collaborate with the Best</h3>
+
+            <p>
+                Work alongside a high-performance team of industry experts
+                and leaders. We foster a collaborative culture defined by
+                speed, precision, and a shared obsession with excellence.
+            </p>
+
+        </div>
+
+
+        <!-- Card 2 -->
+        <div class="team-card">
+
+            <div class="team-card-icon">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                    <polyline
+                        points="8,48 22,34 32,41 51,20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                    />
+
+                    <polyline
+                        points="43,20 51,20 51,28"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                    />
+
+                    <line x1="8" y1="52" x2="56" y2="52"
+                          stroke="currentColor" stroke-width="3"/>
+
+                    <line x1="8" y1="10" x2="8" y2="52"
+                          stroke="currentColor" stroke-width="3"/>
+
+                </svg>
+            </div>
+
+            <h3>Innovate at Scale</h3>
+
+            <p>
+                Redefine the professional education experience. Help us
+                deliver a rigorous, industry-tested curriculum and immersive
+                learning environment that evolves at the speed of the tech industry.
+            </p>
+
+        </div>
+
+
+        <!-- Card 3 -->
+        <div class="team-card">
+
+            <div class="team-card-icon">
+
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                    <circle cx="22" cy="21" r="7"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"/>
+
+                    <circle cx="45" cy="34" r="7"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"/>
+
+                    <path
+                        d="M10 48c0-8 5-13 12-13s12 5 12 13"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                    />
+
+                    <path
+                        d="M33 58c0-8 5-13 12-13s12 5 12 13"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                    />
+
+                </svg>
+
+            </div>
+
+            <h3>Shape the Future</h3>
+
+            <p>
+                Make a tangible impact on the global economy. Through our
+                certification courses and industry-leading events, you will
+                help empower the next generation of leaders.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+    </main>
+
+
+    <!-- Existing shared footer -->
+    <div id="footer"></div>
+
+
+    <!-- Existing component loader -->
+    <script src="js/components.js"></script>
+
+</body>
+</html>

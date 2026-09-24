@@ -1,0 +1,4984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Become an Instructor | Courstrike</title>
+
+    <!-- EXISTING MAIN CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           APPLY TO TEACH PAGE
+        ====================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #050505;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* =====================================================
+           PAGE
+        ====================================================== */
+
+        .apply-teach-page {
+            width: 100%;
+            overflow: hidden;
+            background: #050505;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .apply-teach-hero {
+            position: relative;
+
+            min-height: 690px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background-image:
+
+                linear-gradient(
+                    180deg,
+                    rgba(8, 12, 20, 0.50) 0%,
+                    rgba(5, 5, 5, 0.48) 38%,
+                    rgba(5, 5, 5, 0.82) 72%,
+                    #050505 100%
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(5, 8, 15, 0.72) 0%,
+                    rgba(5, 8, 15, 0.42) 55%,
+                    rgba(5, 5, 5, 0.45) 100%
+                ),
+
+                url("https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=2200&q=90");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+        }
+
+
+        /* =====================================================
+           ORANGE / RED / YELLOW GLOW
+        ====================================================== */
+
+        .apply-teach-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            top: -220px;
+            right: -100px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255, 174, 0, 0.18),
+                    rgba(255, 106, 0, 0.10) 40%,
+                    transparent 72%
+                );
+
+            filter: blur(30px);
+
+            pointer-events: none;
+        }
+
+
+        .apply-teach-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            left: -220px;
+            bottom: -300px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(239, 35, 60, 0.16),
+                    rgba(255, 72, 0, 0.08) 42%,
+                    transparent 72%
+                );
+
+            filter: blur(35px);
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           HERO CONTENT
+        ====================================================== */
+
+        .apply-teach-hero-content {
+            position: relative;
+
+            z-index: 2;
+
+            width: min(
+                960px,
+                calc(100% - 50px)
+            );
+
+            margin: 0 auto;
+
+            padding-top: 75px;
+        }
+
+
+        .apply-teach-hero h1 {
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: clamp(
+                48px,
+                6vw,
+                70px
+            );
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            letter-spacing: -3px;
+        }
+
+
+        .apply-teach-hero h1 span {
+            font-weight: 300;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    #ffd27a 42%,
+                    #ff8a3d 72%,
+                    #ffc400 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .apply-teach-hero-subtitle {
+            max-width: 900px;
+
+            margin: 24px 0 38px;
+
+            color: #ffffff;
+
+            font-size: clamp(
+                17px,
+                1.8vw,
+                20px
+            );
+
+            line-height: 1.5;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           GET STARTED BUTTON
+        ====================================================== */
+
+        .apply-teach-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 13px;
+
+            min-width: 148px;
+
+            min-height: 50px;
+
+            padding: 0 25px;
+
+            border-radius: 999px;
+
+            background: #ffffff;
+
+            color: #111111;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+
+        .apply-teach-button:hover {
+            transform: translateY(-2px);
+
+            background: #f2f2f2;
+        }
+
+
+        .apply-teach-button-arrow {
+            font-size: 20px;
+
+            line-height: 1;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =====================================================
+           HERO BOTTOM FADE
+        ====================================================== */
+
+        .apply-teach-hero-fade {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            height: 260px;
+
+            z-index: 1;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    rgba(5, 5, 5, 0.48) 42%,
+                    #050505 100%
+                );
+        }
+
+
+        /* =====================================================
+           STATS
+        ====================================================== */
+
+        .apply-teach-stats {
+            position: relative;
+
+            width: 100%;
+
+            padding: 30px 0 105px;
+
+            background: #050505;
+
+            overflow: hidden;
+        }
+
+
+        /* subtle brand gradient */
+
+        .apply-teach-stats::before {
+            content: "";
+
+            position: absolute;
+
+            width: 700px;
+            height: 260px;
+
+            left: 50%;
+            top: -170px;
+
+            transform: translateX(-50%);
+
+            background:
+                radial-gradient(
+                    ellipse,
+                    rgba(255, 92, 0, 0.08),
+                    rgba(255, 190, 0, 0.03),
+                    transparent 72%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .apply-teach-stats-container {
+            position: relative;
+
+            z-index: 2;
+
+            width: min(
+                1080px,
+                calc(100% - 50px)
+            );
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            align-items: center;
+        }
+
+
+        /* =====================================================
+           STAT ITEM
+        ====================================================== */
+
+        .apply-teach-stat {
+            min-height: 85px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 0 30px;
+
+            text-align: center;
+
+            border-right:
+                1px solid
+                rgba(255, 255, 255, 0.65);
+        }
+
+
+        .apply-teach-stat:last-child {
+            border-right: none;
+        }
+
+
+        .apply-teach-stat-number {
+            margin: 0 0 7px;
+
+            color: #ffffff;
+
+            font-size: clamp(
+                36px,
+                4vw,
+                43px
+            );
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            letter-spacing: -1.5px;
+        }
+
+
+        .apply-teach-stat-label {
+            margin: 0;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.78
+                );
+
+            font-size: 18px;
+
+            line-height: 1.3;
+
+            font-weight: 500;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 1000px) {
+
+            .apply-teach-hero {
+                min-height: 620px;
+            }
+
+
+            .apply-teach-hero-content {
+                width:
+                    calc(100% - 70px);
+            }
+
+
+            .apply-teach-hero h1 {
+                font-size: 56px;
+            }
+
+
+            .apply-teach-hero-subtitle {
+                font-size: 17px;
+            }
+
+
+            .apply-teach-stats-container {
+                width:
+                    calc(100% - 70px);
+            }
+
+
+            .apply-teach-stat {
+                padding: 0 20px;
+            }
+
+
+            .apply-teach-stat-label {
+                font-size: 16px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            .apply-teach-hero {
+                min-height: 610px;
+
+                background-position:
+                    center center;
+            }
+
+
+            .apply-teach-hero-content {
+                width:
+                    calc(100% - 36px);
+
+                padding-top: 45px;
+            }
+
+
+            .apply-teach-hero h1 {
+                font-size: 43px;
+
+                letter-spacing: -1.8px;
+            }
+
+
+            .apply-teach-hero-subtitle {
+                margin-top: 18px;
+
+                margin-bottom: 30px;
+
+                font-size: 16px;
+
+                line-height: 1.5;
+            }
+
+
+            .apply-teach-button {
+                min-height: 48px;
+
+                min-width: 140px;
+
+                font-size: 14px;
+            }
+
+
+            .apply-teach-hero-fade {
+                height: 250px;
+            }
+
+
+            /* =========================
+               STATS
+            ========================== */
+
+            .apply-teach-stats {
+                padding:
+                    15px 0 80px;
+            }
+
+
+            .apply-teach-stats-container {
+                width:
+                    calc(100% - 36px);
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .apply-teach-stat {
+                min-height: 110px;
+
+                padding: 25px 10px;
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        0.25
+                    );
+            }
+
+
+            .apply-teach-stat:last-child {
+                border-bottom: none;
+            }
+
+
+            .apply-teach-stat-number {
+                font-size: 38px;
+            }
+
+
+            .apply-teach-stat-label {
+                font-size: 16px;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 430px) {
+
+            .apply-teach-hero {
+                min-height: 590px;
+            }
+
+
+            .apply-teach-hero-content {
+                width:
+                    calc(100% - 28px);
+            }
+
+
+            .apply-teach-hero h1 {
+                font-size: 38px;
+
+                letter-spacing: -1.4px;
+            }
+
+
+            .apply-teach-hero-subtitle {
+                font-size: 15px;
+            }
+
+
+            .apply-teach-stats-container {
+                width:
+                    calc(100% - 28px);
+            }
+
+
+            .apply-teach-stat-number {
+                font-size: 35px;
+            }
+
+
+            .apply-teach-stat-label {
+                font-size: 15px;
+            }
+
+        }
+
+        /* =========================================
+   TRUSTED PROFESSIONALS
+========================================= */
+
+.trusted-professionals {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 0 90px;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(239, 35, 60, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255, 106, 0, 0.07),
+            transparent 30%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TOP CONTENT
+========================================= */
+
+.trusted-professionals-container {
+
+    width: min(920px, calc(100% - 40px));
+
+    margin: 0 auto;
+}
+
+
+.trusted-professionals-heading {
+
+    text-align: left;
+
+    margin-bottom: 70px;
+}
+
+
+.trusted-professionals-heading h2 {
+
+    margin: 0 0 16px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        40px,
+        4.2vw,
+        58px
+    );
+
+    line-height: 1.08;
+
+    font-weight: 400;
+
+    letter-spacing: -2.5px;
+}
+
+
+.trusted-professionals-heading p {
+
+    max-width: 680px;
+
+    margin: 0 0 30px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 16px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   BROWSE BUTTON
+========================================= */
+
+.browse-training-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 148px;
+
+    padding: 13px 22px;
+
+    border: 1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.85
+        );
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.browse-training-btn:hover {
+
+    background: #ffffff;
+
+    color: #111111;
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.professionals-slider {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+    padding: 0 0 10px;
+}
+
+
+/* LEFT FADE */
+
+.professionals-slider::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 190px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050505 0%,
+            rgba(
+                5,
+                5,
+                5,
+                0.92
+            ) 35%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* RIGHT FADE */
+
+.professionals-slider::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 10;
+
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 190px;
+
+    background:
+        linear-gradient(
+            270deg,
+            #050505 0%,
+            rgba(
+                5,
+                5,
+                5,
+                0.92
+            ) 35%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MOVING TRACK
+========================================= */
+
+.professionals-track {
+
+    display: flex;
+
+    width: max-content;
+
+    gap: 7px;
+
+    padding-left: 190px;
+
+    animation:
+        professionalsScroll
+        55s
+        linear
+        infinite;
+
+    will-change: transform;
+}
+
+
+/* Pause on hover */
+
+.professionals-slider:hover
+.professionals-track {
+
+    animation-play-state: paused;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.professional-card {
+
+    flex: 0 0 230px;
+
+    width: 230px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PERSON IMAGE
+========================================= */
+
+.professional-image {
+
+    display: block;
+
+    width: 230px;
+
+    height: 235px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #181818;
+}
+
+
+/* =========================================
+   PERSON DETAILS
+========================================= */
+
+.professional-info {
+
+    padding: 12px 22px 0;
+}
+
+
+.professional-info h3 {
+
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    font-weight: 600;
+}
+
+
+.professional-info p {
+
+    margin: 0;
+
+    max-width: 190px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.75
+    );
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   COMPANY LOGO
+========================================= */
+
+.professional-company {
+
+    min-height: 75px;
+
+    padding: 20px 22px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.90
+    );
+}
+
+
+/* Apple */
+
+.apple-logo {
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    color: #ffffff;
+}
+
+
+/* Intuit */
+
+.company-wordmark {
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+/* JPMorgan */
+
+.company-wordmark.jpmorgan {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Spotify */
+
+.spotify-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 16px;
+}
+
+
+.spotify-text {
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* Shopify */
+
+.shopify-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.shopify-text {
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+/* Slack */
+
+.slack-icon {
+
+    font-size: 26px;
+
+    line-height: 1;
+}
+
+
+.slack-text {
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CONTINUOUS ANIMATION
+========================================= */
+
+@keyframes professionalsScroll {
+
+    from {
+
+        transform:
+            translateX(0);
+
+    }
+
+    to {
+
+        transform:
+            translateX(
+                calc(
+                    -50% - 3.5px
+                )
+            );
+
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .trusted-professionals {
+
+        padding:
+            90px
+            0
+            75px;
+    }
+
+
+    .trusted-professionals-heading {
+
+        margin-bottom: 55px;
+    }
+
+
+    .trusted-professionals-heading h2 {
+
+        font-size: 44px;
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .trusted-professionals-heading p {
+
+        font-size: 15px;
+    }
+
+
+    .professional-card {
+
+        flex-basis: 210px;
+
+        width: 210px;
+    }
+
+
+    .professional-image {
+
+        width: 210px;
+
+        height: 220px;
+    }
+
+
+    .professionals-track {
+
+        padding-left: 120px;
+
+        animation-duration: 48s;
+    }
+
+
+    .professionals-slider::before,
+    .professionals-slider::after {
+
+        width: 120px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .trusted-professionals {
+
+        padding:
+            70px
+            0
+            60px;
+    }
+
+
+    .trusted-professionals-container {
+
+        width:
+            calc(
+                100% - 32px
+            );
+    }
+
+
+    .trusted-professionals-heading {
+
+        margin-bottom: 45px;
+    }
+
+
+    .trusted-professionals-heading h2 {
+
+        font-size: 36px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .trusted-professionals-heading p {
+
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+
+    .browse-training-btn {
+
+        padding:
+            12px
+            19px;
+
+        font-size: 12px;
+    }
+
+
+    .professional-card {
+
+        flex-basis: 190px;
+
+        width: 190px;
+    }
+
+
+    .professional-image {
+
+        width: 190px;
+
+        height: 200px;
+    }
+
+
+    .professional-info {
+
+        padding:
+            11px
+            16px
+            0;
+    }
+
+
+    .professional-info h3 {
+
+        font-size: 13px;
+    }
+
+
+    .professional-info p {
+
+        font-size: 11px;
+
+        max-width: 160px;
+    }
+
+
+    .professional-company {
+
+        min-height: 65px;
+
+        padding:
+            15px
+            16px
+            0;
+    }
+
+
+    .company-wordmark {
+
+        font-size: 20px;
+    }
+
+
+    .company-wordmark.jpmorgan {
+
+        font-size: 14px;
+    }
+
+
+    .spotify-text {
+
+        font-size: 14px;
+    }
+
+
+    .shopify-text {
+
+        font-size: 15px;
+    }
+
+
+    .slack-text {
+
+        font-size: 15px;
+    }
+
+
+    .professionals-track {
+
+        padding-left: 45px;
+
+        gap: 5px;
+
+        animation-duration: 40s;
+    }
+
+
+    .professionals-slider::before,
+    .professionals-slider::after {
+
+        width: 45px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .professionals-track {
+
+        animation: none;
+    }
+
+}
+
+/* =========================================================
+   BECOME AN EVENT SPEAKER
+========================================================= */
+
+.event-speaker-section {
+    width: 100%;
+    background: #050505;
+    color: #ffffff;
+    padding: 100px 0 120px;
+    box-sizing: border-box;
+}
+
+.event-speaker-container {
+    width: min(1100px, calc(100% - 50px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(480px, 1fr);
+    gap: 90px;
+    align-items: start;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.event-speaker-info {
+    padding-top: 5px;
+}
+
+.event-speaker-info h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(38px, 4vw, 48px);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -1.8px;
+}
+
+.event-speaker-divider {
+    width: 60px;
+    height: 5px;
+    margin: 32px 0 30px;
+    background: #ffffff;
+}
+
+.event-speaker-intro {
+    margin: 0 0 30px;
+    max-width: 520px;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.event-speaker-benefits {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.event-speaker-benefits li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 17px;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.event-speaker-check {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-speaker-check svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.event-speaker-form-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 4px;
+    border-top: 5px solid #8c9498;
+    background: #15191a;
+}
+
+.event-speaker-form-card h3 {
+    margin: 0 0 30px;
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.event-speaker-form {
+    width: 100%;
+}
+
+.event-speaker-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.event-speaker-field {
+    width: 100%;
+    box-sizing: border-box;
+    height: 60px;
+    padding: 0 20px;
+    border: 1px solid #566067;
+    border-radius: 3px;
+    outline: none;
+    background: #303538;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.event-speaker-field::placeholder {
+    color: #c3c7ca;
+    opacity: 1;
+}
+
+.event-speaker-field:focus {
+    border-color: #ffffff;
+    background: #34393c;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.event-speaker-form > .event-speaker-field {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.event-speaker-submit {
+    width: 100%;
+    height: 60px;
+    margin-top: 0;
+    border: none;
+    border-radius: 35px;
+    background: #ffffff;
+    color: #080808;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.event-speaker-submit:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+.event-speaker-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .event-speaker-container {
+        grid-template-columns: minmax(0, 1fr) minmax(400px, 1fr);
+        gap: 50px;
+    }
+
+    .event-speaker-form-card {
+        padding: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .event-speaker-section {
+        padding: 80px 0 90px;
+    }
+
+    .event-speaker-container {
+        width: calc(100% - 34px);
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .event-speaker-info {
+        padding-top: 0;
+    }
+
+    .event-speaker-info h2 {
+        font-size: 38px;
+    }
+
+    .event-speaker-divider {
+        margin: 25px 0;
+    }
+
+    .event-speaker-intro {
+        font-size: 16px;
+    }
+
+    .event-speaker-benefits li {
+        font-size: 16px;
+        gap: 13px;
+    }
+
+    .event-speaker-form-card {
+        padding: 30px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .event-speaker-section {
+        padding: 65px 0 75px;
+    }
+
+    .event-speaker-container {
+        width: calc(100% - 28px);
+        gap: 45px;
+    }
+
+    .event-speaker-info h2 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .event-speaker-divider {
+        width: 50px;
+        height: 4px;
+        margin: 22px 0;
+    }
+
+    .event-speaker-intro {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .event-speaker-benefits li {
+        font-size: 15px;
+        line-height: 1.45;
+        margin-bottom: 15px;
+    }
+
+    .event-speaker-form-card {
+        padding: 25px 18px 30px;
+    }
+
+    .event-speaker-form-card h3 {
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+
+    .event-speaker-form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .event-speaker-field {
+        height: 56px;
+        font-size: 15px;
+        padding: 0 17px;
+    }
+
+    .event-speaker-form > .event-speaker-field {
+        margin-bottom: 15px;
+    }
+
+    .event-speaker-submit {
+        height: 56px;
+        font-size: 15px;
+    }
+
+}
+
+/* =========================================================
+   INSTRUCTOR BENEFITS / ZIG-ZAG SECTIONS
+========================================================= */
+
+.instructor-benefits {
+    width: 100%;
+    background: #050505;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   COMMON ROW
+========================================================= */
+
+.instructor-benefit-row {
+    width: min(1200px, calc(100% - 80px));
+    min-height: 520px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 70px;
+
+    padding: 70px 0;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.instructor-benefit-image {
+    position: relative;
+    width: 100%;
+    height: 430px;
+
+    overflow: hidden;
+    border-radius: 2px;
+
+    background: #111;
+}
+
+
+.instructor-benefit-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.instructor-benefit-row:hover
+.instructor-benefit-image img {
+    transform: scale(1.025);
+}
+
+
+/* Dark gradient over images */
+
+.instructor-benefit-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.02),
+            rgba(0, 0, 0, 0.18)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.instructor-benefit-content {
+    max-width: 560px;
+}
+
+
+.instructor-benefit-content h2 {
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-size: clamp(34px, 4vw, 48px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 500;
+}
+
+
+.instructor-benefit-content p {
+    margin: 0;
+
+    max-width: 540px;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* Small brand line */
+
+.instructor-benefit-content::before {
+    content: "";
+
+    display: block;
+
+    width: 58px;
+    height: 3px;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3b30,
+            #ff8a00,
+            #ffd000
+        );
+}
+
+
+/* =========================================================
+   ZIG-ZAG
+========================================================= */
+
+/* 1 = image left */
+.instructor-benefit-row.image-left
+.instructor-benefit-image {
+    grid-column: 1;
+}
+
+.instructor-benefit-row.image-left
+.instructor-benefit-content {
+    grid-column: 2;
+}
+
+
+/* 2 = content left */
+.instructor-benefit-row.content-left
+.instructor-benefit-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.instructor-benefit-row.content-left
+.instructor-benefit-image {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* =========================================================
+   SECTION 4 — FULL IMAGE
+========================================================= */
+
+.instructor-experience {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #050505;
+}
+
+
+.instructor-experience-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.instructor-experience-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* Dark overlay */
+
+.instructor-experience::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.30) 0%,
+            rgba(0, 0, 0, 0.18) 35%,
+            rgba(0, 0, 0, 0.65) 100%
+        );
+}
+
+
+/* Full image title */
+
+.instructor-experience-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.instructor-experience-content h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        42px,
+        6vw,
+        72px
+    );
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+    text-shadow:
+        0 3px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================================
+   BRAND GLOW BETWEEN SECTIONS
+========================================================= */
+
+.instructor-benefit-row {
+    position: relative;
+}
+
+
+.instructor-benefit-row::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 220px;
+
+    opacity: 0.18;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 90, 0, 0.5),
+            transparent 70%
+        );
+}
+
+
+.instructor-benefit-row:nth-child(odd)::before {
+    left: -250px;
+    bottom: -80px;
+}
+
+
+.instructor-benefit-row:nth-child(even)::before {
+    right: -250px;
+    top: -80px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .instructor-benefit-row {
+        width: min(100% - 50px, 700px);
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        min-height: auto;
+
+        padding: 55px 0;
+    }
+
+
+    .instructor-benefit-row.image-left
+    .instructor-benefit-image,
+
+    .instructor-benefit-row.image-left
+    .instructor-benefit-content,
+
+    .instructor-benefit-row.content-left
+    .instructor-benefit-image,
+
+    .instructor-benefit-row.content-left
+    .instructor-benefit-content {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+
+    /* Keep image first on mobile */
+
+    .instructor-benefit-row.image-left
+    .instructor-benefit-image {
+        order: 1;
+    }
+
+    .instructor-benefit-row.image-left
+    .instructor-benefit-content {
+        order: 2;
+    }
+
+
+    /* Content first on mobile */
+
+    .instructor-benefit-row.content-left
+    .instructor-benefit-content {
+        order: 1;
+    }
+
+    .instructor-benefit-row.content-left
+    .instructor-benefit-image {
+        order: 2;
+    }
+
+
+    .instructor-benefit-image {
+        height: 390px;
+    }
+
+
+    .instructor-benefit-content {
+        max-width: 100%;
+    }
+
+
+    .instructor-benefit-content h2 {
+        font-size: 38px;
+    }
+
+
+    .instructor-experience {
+        min-height: 500px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .instructor-benefit-row {
+        width: calc(100% - 32px);
+
+        gap: 28px;
+
+        padding: 45px 0;
+    }
+
+
+    .instructor-benefit-image {
+        height: 280px;
+
+        border-radius: 1px;
+    }
+
+
+    .instructor-benefit-content h2 {
+        margin-bottom: 17px;
+
+        font-size: 32px;
+
+        line-height: 1.12;
+
+        letter-spacing: -1px;
+    }
+
+
+    .instructor-benefit-content p {
+        font-size: 16px;
+
+        line-height: 1.55;
+    }
+
+
+    .instructor-benefit-content::before {
+        width: 45px;
+
+        height: 2px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .instructor-experience {
+        min-height: 430px;
+    }
+
+
+    .instructor-experience-content {
+        padding: 20px;
+    }
+
+
+    .instructor-experience-content h2 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .instructor-benefit-row {
+        width: calc(100% - 24px);
+    }
+
+
+    .instructor-benefit-image {
+        height: 250px;
+    }
+
+
+    .instructor-benefit-content h2 {
+        font-size: 29px;
+    }
+
+
+    .instructor-benefit-content p {
+        font-size: 15px;
+    }
+
+
+    .instructor-experience {
+        min-height: 380px;
+    }
+
+
+    .instructor-experience-content h2 {
+        font-size: 36px;
+    }
+
+}
+
+/* =====================================
+   SECTION 1 - IMAGE COLLAGE
+===================================== */
+
+.brand-collage-section {
+    width: 100%;
+    background: #080909;
+    padding: 0;
+    overflow: hidden;
+}
+
+.brand-collage {
+    width: min(930px, 100%);
+    height: 340px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 170px 170px;
+    gap: 3px;
+}
+
+.collage-item {
+    overflow: hidden;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* Top left */
+
+.collage-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Top middle */
+
+.collage-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* Big center image */
+
+.collage-3 {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+
+/* Top right */
+
+.collage-4 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+
+/* Bottom left */
+
+.collage-5 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+/* =========================================
+   EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= */
+
+.in-person-experiences {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 0 125px;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(239, 35, 60, 0.045),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 106, 0, 0.045),
+            transparent 32%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+.in-person-container {
+
+    width: min(
+        1000px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.in-person-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 48px;
+}
+
+
+.in-person-heading h2 {
+
+    margin: 0 0 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        40px,
+        4vw,
+        58px
+    );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2.5px;
+}
+
+
+.in-person-heading p {
+
+    margin: 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   LOCATION GRID
+========================================= */
+
+.locations-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   LOCATION CARD
+========================================= */
+
+.location-card {
+
+    position: relative;
+
+    height: 315px;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    background: #151515;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.location-card img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease,
+        filter 0.55s ease;
+}
+
+
+/* =========================================
+   DARK GRADIENT
+========================================= */
+
+.location-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.35) 42%,
+            rgba(0, 0, 0, 0.12) 100%
+        );
+
+    transition:
+        background 0.45s ease;
+}
+
+
+/* =========================================
+   LOCATION CONTENT
+========================================= */
+
+.location-bottom {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 24px 22px;
+
+    z-index: 3;
+
+    transform:
+        translateY(
+            0
+        );
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+.location-bottom h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    transition:
+        margin 0.45s ease;
+}
+
+
+/* =========================================
+   HIDDEN DESCRIPTION
+========================================= */
+
+.location-description {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(
+            15px
+        );
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.35s ease,
+        transform 0.45s ease;
+}
+
+
+.location-description p {
+
+    margin: 14px 0 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.88
+    );
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.location-card:hover img {
+
+    transform: scale(1.04);
+
+    filter:
+        brightness(0.62)
+        saturate(0.85);
+}
+
+
+.location-card:hover .location-overlay {
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.68) 52%,
+            rgba(0, 0, 0, 0.30) 100%
+        );
+}
+
+
+.location-card:hover .location-bottom {
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+.location-card:hover .location-bottom h3 {
+
+    margin-bottom: 0;
+}
+
+
+.location-card:hover .location-description {
+
+    max-height: 180px;
+
+    opacity: 1;
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+/* =========================================
+   SUBTLE BRAND GLOW
+========================================= */
+
+.location-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                255,
+                106,
+                0,
+                0.14
+            ),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+.location-card:hover::before {
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .in-person-experiences {
+
+        padding:
+            90px
+            0
+            100px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 40px
+            );
+    }
+
+
+    .in-person-heading {
+
+        max-width: 600px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 45px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 14px;
+    }
+
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            20px
+            18px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 21px;
+    }
+
+
+    .location-description p {
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .in-person-experiences {
+
+        padding:
+            75px
+            0
+            80px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 30px
+            );
+    }
+
+
+    .in-person-heading {
+
+        margin-bottom: 32px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 37px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+
+    /*
+       On mobile cards become
+       one below another.
+    */
+
+    .locations-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .location-card {
+
+        height: 330px;
+
+        width: 100%;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            22px
+            20px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 24px;
+    }
+
+
+    /*
+       On mobile description is
+       shown when user taps/hover.
+    */
+
+    .location-description p {
+
+        font-size: 12px;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 33px;
+    }
+
+}
+
+/* =========================
+   INDUSTRY PARTNERS
+========================= */
+
+.industry-partners {
+    width: 100%;
+    background: #ffffff;
+    color: #111111;
+    padding: 85px 0 95px;
+    overflow: hidden;
+}
+
+.industry-partners-inner {
+    width: 100%;
+    text-align: center;
+}
+
+/* Heading */
+
+.industry-partners h2 {
+    margin: 0;
+    padding: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 54px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -2.5px;
+}
+
+.partners-line {
+    width: 60px;
+    height: 5px;
+    background: #111111;
+    margin: 32px auto 38px;
+}
+
+.partners-description {
+    max-width: 1250px;
+    margin: 0 auto 55px;
+    padding: 0 30px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+.partners-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-track {
+    display: flex;
+    width: max-content;
+
+    animation: partnersSlide 65s linear infinite;
+}
+
+
+/* =========================
+   7 × 3 GRID
+========================= */
+
+.partners-grid {
+    width: 1540px;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 95px);
+
+    column-gap: 25px;
+    row-gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   EACH LOGO
+========================= */
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 95px;
+    padding: 15px 20px;
+
+    background: #ffffff;
+}
+
+.partner-logo img {
+    display: block;
+
+    max-width: 145px;
+    max-height: 45px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    opacity: 0.95;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.partner-logo:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+
+/* =========================
+   INFINITE LOOP
+========================= */
+
+@keyframes partnersSlide {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .industry-partners {
+        padding: 70px 0 80px;
+    }
+
+    .industry-partners h2 {
+        font-size: 43px;
+    }
+
+    .partners-description {
+        font-size: 18px;
+        max-width: 900px;
+    }
+
+    .partners-grid {
+        width: 1250px;
+
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(3, 85px);
+
+        column-gap: 15px;
+    }
+
+    .partner-logo {
+        height: 85px;
+        padding: 10px;
+    }
+
+    .partner-logo img {
+        max-width: 120px;
+        max-height: 38px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .industry-partners {
+        padding: 60px 0 65px;
+    }
+
+    .industry-partners h2 {
+        font-size: 34px;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+    }
+
+    .partners-line {
+        width: 50px;
+        height: 4px;
+        margin: 24px auto 28px;
+    }
+
+    .partners-description {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 0 25px;
+        margin-bottom: 40px;
+    }
+
+    .partners-grid {
+        width: 900px;
+
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(3, 75px);
+
+        column-gap: 8px;
+        row-gap: 5px;
+    }
+
+    .partner-logo {
+        height: 75px;
+        padding: 8px;
+    }
+
+    .partner-logo img {
+        max-width: 90px;
+        max-height: 30px;
+    }
+
+    .partners-track {
+        animation-duration: 50s;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .industry-partners h2 {
+        font-size: 29px;
+    }
+
+    .partners-description {
+        font-size: 15px;
+    }
+
+    .partners-grid {
+        width: 760px;
+
+        grid-template-rows: repeat(3, 65px);
+    }
+
+    .partner-logo {
+        height: 65px;
+    }
+
+    .partner-logo img {
+        max-width: 75px;
+        max-height: 26px;
+    }
+
+}
+
+/* =========================================================
+   BECOME AN EVENT SPEAKER
+========================================================= */
+
+.event-speaker-section {
+    width: 100%;
+    background: #050505;
+    color: #ffffff;
+    padding: 100px 0 120px;
+    box-sizing: border-box;
+}
+
+.event-speaker-container {
+    width: min(1100px, calc(100% - 50px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(480px, 1fr);
+    gap: 90px;
+    align-items: start;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.event-speaker-info {
+    padding-top: 5px;
+}
+
+.event-speaker-info h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(38px, 4vw, 48px);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -1.8px;
+}
+
+.event-speaker-divider {
+    width: 60px;
+    height: 5px;
+    margin: 32px 0 30px;
+    background: #ffffff;
+}
+
+.event-speaker-intro {
+    margin: 0 0 30px;
+    max-width: 520px;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.event-speaker-benefits {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.event-speaker-benefits li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 17px;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.event-speaker-check {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-speaker-check svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.event-speaker-form-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 4px;
+    border-top: 5px solid #8c9498;
+    background: #15191a;
+}
+
+.event-speaker-form-card h3 {
+    margin: 0 0 30px;
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.event-speaker-form {
+    width: 100%;
+}
+
+.event-speaker-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.event-speaker-field {
+    width: 100%;
+    box-sizing: border-box;
+    height: 60px;
+    padding: 0 20px;
+    border: 1px solid #566067;
+    border-radius: 3px;
+    outline: none;
+    background: #303538;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.event-speaker-field::placeholder {
+    color: #c3c7ca;
+    opacity: 1;
+}
+
+.event-speaker-field:focus {
+    border-color: #ffffff;
+    background: #34393c;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.event-speaker-form > .event-speaker-field {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.event-speaker-submit {
+    width: 100%;
+    height: 60px;
+    margin-top: 0;
+    border: none;
+    border-radius: 35px;
+    background: #ffffff;
+    color: #080808;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.event-speaker-submit:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+.event-speaker-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .event-speaker-container {
+        grid-template-columns: minmax(0, 1fr) minmax(400px, 1fr);
+        gap: 50px;
+    }
+
+    .event-speaker-form-card {
+        padding: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .event-speaker-section {
+        padding: 80px 0 90px;
+    }
+
+    .event-speaker-container {
+        width: calc(100% - 34px);
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .event-speaker-info {
+        padding-top: 0;
+    }
+
+    .event-speaker-info h2 {
+        font-size: 38px;
+    }
+
+    .event-speaker-divider {
+        margin: 25px 0;
+    }
+
+    .event-speaker-intro {
+        font-size: 16px;
+    }
+
+    .event-speaker-benefits li {
+        font-size: 16px;
+        gap: 13px;
+    }
+
+    .event-speaker-form-card {
+        padding: 30px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .event-speaker-section {
+        padding: 65px 0 75px;
+    }
+
+    .event-speaker-container {
+        width: calc(100% - 28px);
+        gap: 45px;
+    }
+
+    .event-speaker-info h2 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .event-speaker-divider {
+        width: 50px;
+        height: 4px;
+        margin: 22px 0;
+    }
+
+    .event-speaker-intro {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .event-speaker-benefits li {
+        font-size: 15px;
+        line-height: 1.45;
+        margin-bottom: 15px;
+    }
+
+    .event-speaker-form-card {
+        padding: 25px 18px 30px;
+    }
+
+    .event-speaker-form-card h3 {
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+
+    .event-speaker-form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .event-speaker-field {
+        height: 56px;
+        font-size: 15px;
+        padding: 0 17px;
+    }
+
+    .event-speaker-form > .event-speaker-field {
+        margin-bottom: 15px;
+    }
+
+    .event-speaker-submit {
+        height: 56px;
+        font-size: 15px;
+    }
+
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         EXISTING SHARED HEADER
+         
+         components.js automatically loads:
+         components/header.html
+    ====================================================== -->
+
+    <div id="header"></div>
+
+
+    <main class="apply-teach-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="apply-teach-hero">
+
+            <div class="apply-teach-hero-content">
+
+                <h1>
+                    Become an
+                    <span>Instructor</span>
+                </h1>
+
+
+                <p class="apply-teach-hero-subtitle">
+                    Share your expertise, grow your network,
+                    and help professionals thrive in the AI
+                    and digital era.
+                </p>
+
+
+                <a
+                    href="#apply-teach-stats"
+                    class="apply-teach-button"
+                >
+
+                    <span>
+                        Get Started
+                    </span>
+
+                    <span class="apply-teach-button-arrow">
+                        ↓
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="apply-teach-hero-fade"></div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATS
+        ================================================== -->
+
+        <section
+            class="apply-teach-stats"
+            id="apply-teach-stats"
+        >
+
+            <div class="apply-teach-stats-container">
+
+
+                <!-- STAT 1 -->
+
+                <div class="apply-teach-stat">
+
+                    <p class="apply-teach-stat-number">
+                        2012
+                    </p>
+
+                    <p class="apply-teach-stat-label">
+                        Founded
+                    </p>
+
+                </div>
+
+
+                <!-- STAT 2 -->
+
+                <div class="apply-teach-stat">
+
+                    <p class="apply-teach-stat-number">
+                        500+
+                    </p>
+
+                    <p class="apply-teach-stat-label">
+                        Team Members
+                    </p>
+
+                </div>
+
+
+                <!-- STAT 3 -->
+
+                <div class="apply-teach-stat">
+
+                    <p class="apply-teach-stat-number">
+                        40,000+
+                    </p>
+
+                    <p class="apply-teach-stat-label">
+                        Professionals Certified
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+     TRUSTED PROFESSIONALS SECTION
+========================================= -->
+
+<section class="trusted-professionals">
+
+    <div class="trusted-professionals-container">
+
+        <!-- TOP CONTENT -->
+
+        <div class="trusted-professionals-heading">
+
+            <h2>
+                Join an Exclusive Group of Digital Leaders
+            </h2>
+
+            <p>
+                Grow your network working alongside our roster of Instructors from the world’s leading companies.
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         INFINITE TESTIMONIAL SLIDER
+    ========================================== -->
+
+    <div class="professionals-slider">
+
+        <div class="professionals-track">
+
+
+            <!-- =================================
+                 CARD 1
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-1.jpg"
+                    alt="Tsai Tsai"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Tsai Tsai</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Apple
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="apple-logo">●</span>
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 2
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-2.jpg"
+                    alt="Michael Johnston"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Michael Johnston</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Intuit
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark">
+                        INTUIT
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 3
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-3.jpg"
+                    alt="Sabrina von Allmen"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Sabrina von Allmen</h3>
+
+                    <p>
+                        VP, Social at
+                        JPMorganChase
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark jpmorgan">
+                        JPMorganChase
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 4
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-4.jpg"
+                    alt="Steve Woods"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Steve Woods</h3>
+
+                    <p>
+                        Global Marketing Manager at
+                        Spotify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="spotify-icon">
+                        ◉
+                    </span>
+
+                    <span class="spotify-text">
+                        Spotify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 5
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-5.jpg"
+                    alt="Kazden Cattapan"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Kazden Cattapan</h3>
+
+                    <p>
+                        Staff Product Designer at
+                        Shopify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="shopify-icon">
+                        S
+                    </span>
+
+                    <span class="shopify-text">
+                        shopify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CARD 6
+            ================================== -->
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-6.jpg"
+                    alt="Alison Su"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Alison Su</h3>
+
+                    <p>
+                        Senior Solutions Architect at
+                        Slack
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="slack-icon">
+                        ✣
+                    </span>
+
+                    <span class="slack-text">
+                        slack
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 DUPLICATE CARDS
+                 FOR SEAMLESS INFINITE LOOP
+            ================================== -->
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-1.jpg"
+                    alt="Tsai Tsai"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Tsai Tsai</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Apple
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="apple-logo">●</span>
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-2.jpg"
+                    alt="Michael Johnston"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Michael Johnston</h3>
+
+                    <p>
+                        Senior Product Designer at
+                        Intuit
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark">
+                        INTUIT
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-3.jpg"
+                    alt="Sabrina von Allmen"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Sabrina von Allmen</h3>
+
+                    <p>
+                        VP, Social at
+                        JPMorganChase
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+                    <span class="company-wordmark jpmorgan">
+                        JPMorganChase
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-4.jpg"
+                    alt="Steve Woods"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Steve Woods</h3>
+
+                    <p>
+                        Global Marketing Manager at
+                        Spotify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="spotify-icon">
+                        ◉
+                    </span>
+
+                    <span class="spotify-text">
+                        Spotify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-5.jpg"
+                    alt="Kazden Cattapan"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Kazden Cattapan</h3>
+
+                    <p>
+                        Staff Product Designer at
+                        Shopify
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="shopify-icon">
+                        S
+                    </span>
+
+                    <span class="shopify-text">
+                        shopify
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="professional-card">
+
+                <img
+                    src="images/professional-6.jpg"
+                    alt="Alison Su"
+                    class="professional-image"
+                >
+
+                <div class="professional-info">
+
+                    <h3>Alison Su</h3>
+
+                    <p>
+                        Senior Solutions Architect at
+                        Slack
+                    </p>
+
+                </div>
+
+                <div class="professional-company">
+
+                    <span class="slack-icon">
+                        ✣
+                    </span>
+
+                    <span class="slack-text">
+                        slack
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="event-speaker-section">
+
+    <div class="event-speaker-container">
+
+
+        <!-- =================================================
+             LEFT CONTENT
+        ================================================== -->
+
+        <div class="event-speaker-info">
+
+            <h2>
+                Become an Event Speaker
+            </h2>
+
+            <div class="event-speaker-divider"></div>
+
+            <p class="event-speaker-intro">
+                Interested in speaking at one of our events?
+                Fill out the form.
+            </p>
+
+
+            <ul class="event-speaker-benefits">
+
+                <li>
+
+                    <span class="event-speaker-check">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12.5l4 4L19 7"></path>
+                        </svg>
+                    </span>
+
+                    <span>
+                        Become a thought leader and grow your
+                        professional presence
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="event-speaker-check">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12.5l4 4L19 7"></path>
+                        </svg>
+                    </span>
+
+                    <span>
+                        Join an exclusive community of leaders
+                        and experts from top companies
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="event-speaker-check">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12.5l4 4L19 7"></path>
+                        </svg>
+                    </span>
+
+                    <span>
+                        Get complimentary access to industry
+                        events, networking, and thought
+                        leadership panels
+                    </span>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT FORM
+        ================================================== -->
+
+        <div class="event-speaker-form-card">
+
+            <h3>
+                Apply to Speak at An Event
+            </h3>
+
+
+            <form
+                class="event-speaker-form"
+                action="#"
+                method="post"
+            >
+
+                <!-- First + Last Name -->
+
+                <div class="event-speaker-form-row">
+
+                    <input
+                        type="text"
+                        name="first_name"
+                        class="event-speaker-field"
+                        placeholder="First Name"
+                        autocomplete="given-name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        name="last_name"
+                        class="event-speaker-field"
+                        placeholder="Last Name"
+                        autocomplete="family-name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <input
+                    type="email"
+                    name="email"
+                    class="event-speaker-field"
+                    placeholder="Email Address"
+                    autocomplete="email"
+                    required
+                >
+
+
+                <!-- LinkedIn -->
+
+                <input
+                    type="url"
+                    name="linkedin"
+                    class="event-speaker-field"
+                    placeholder="Your LinkedIn Profile URL"
+                    autocomplete="url"
+                >
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="event-speaker-submit"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="instructor-benefits">
+
+
+    <!-- =====================================================
+         1. BUILD YOUR INDUSTRY PRESENCE
+         IMAGE LEFT / CONTENT RIGHT
+    ====================================================== -->
+
+    <div class="instructor-benefit-row image-left">
+
+        <div class="instructor-benefit-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=85"
+                alt="Industry professionals speaking at an event"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="instructor-benefit-content">
+
+            <h2>
+                Build Your Industry Presence
+            </h2>
+
+            <p>
+                As a BrainStation Instructor, gain access to private
+                industry events, connect with senior leaders, and
+                unlock opportunities to share your expertise on stage
+                at BrainStation panels and summits.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         2. CONNECT WITH DRIVEN PEERS
+         CONTENT LEFT / IMAGE RIGHT
+    ====================================================== -->
+
+    <div class="instructor-benefit-row content-left">
+
+        <div class="instructor-benefit-content">
+
+            <h2>
+                Connect With Driven Peers
+            </h2>
+
+            <p>
+                Join an exclusive network of AI and digital practitioners
+                from top companies. Through dedicated instructor socials
+                and cross-disciplinary events, you'll trade insights and
+                build lasting relationships with professionals who share
+                your drive.
+            </p>
+
+        </div>
+
+
+        <div class="instructor-benefit-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1400&q=85"
+                alt="Professionals connecting at an event"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         3. DRIVE REAL-WORLD IMPACT
+         IMAGE LEFT / CONTENT RIGHT
+    ====================================================== -->
+
+    <div class="instructor-benefit-row image-left">
+
+        <div class="instructor-benefit-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"
+                alt="Professionals collaborating together"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="instructor-benefit-content">
+
+            <h2>
+                Drive Real-World Impact
+            </h2>
+
+            <p>
+                Help shape the future of professionals and organizations
+                by empowering them with new AI and digital skills. Lend
+                your expertise to the conversations that matter most and
+                help give back to the community.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         4. FULL WIDTH IMAGE
+    ====================================================== -->
+
+    <section class="instructor-experience">
+
+        <div class="instructor-experience-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=2200&q=90"
+                alt="Instructor speaking at an event"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="instructor-experience-content">
+
+            <h2>
+                Your Experience as an Instructor
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         5. CUSTOM-BUILT, INDUSTRY-LEADING COURSES
+         CONTENT LEFT / IMAGE RIGHT
+    ====================================================== -->
+
+    <div class="instructor-benefit-row content-left">
+
+        <div class="instructor-benefit-content">
+
+            <h2>
+                Custom-Built, Industry-Leading Courses
+            </h2>
+
+            <p>
+                You bring the real-world expertise; we provide the
+                blueprint. BrainStation courses are expertly designed
+                and continuously updated to reflect current industry
+                standards, so you can focus on engaging students,
+                not writing lesson plans.
+            </p>
+
+        </div>
+
+
+        <div class="instructor-benefit-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85"
+                alt="Instructor teaching students"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         6. FLEXIBLE, PART-TIME SCHEDULES
+         IMAGE LEFT / CONTENT RIGHT
+    ====================================================== -->
+
+    <div class="instructor-benefit-row image-left">
+
+        <div class="instructor-benefit-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85"
+                alt="Professionals collaborating in a classroom"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="instructor-benefit-content">
+
+            <h2>
+                Flexible, Part-Time Schedules
+            </h2>
+
+            <p>
+                We know your primary career comes first. Our part-time
+                teaching schedules are built around your lifestyle,
+                making it easy to balance your professional commitments
+                with your passion for giving back.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         7. DEDICATED SUPPORT
+         CONTENT LEFT / IMAGE RIGHT
+    ====================================================== -->
+
+    <div class="instructor-benefit-row content-left">
+
+        <div class="instructor-benefit-content">
+
+            <h2>
+                Dedicated Support
+            </h2>
+
+            <p>
+                From personalized 1-on-1 onboarding to ongoing support,
+                our Experience Team manages the behind-the-scenes
+                details. We ensure you have everything you need to
+                confidently lead your course.
+            </p>
+
+        </div>
+
+
+        <div class="instructor-benefit-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85"
+                alt="Professional team working together"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- =========================
+     SECTION 1 - IMAGE COLLAGE
+========================= -->
+
+<section class="brand-collage-section">
+
+    <div class="brand-collage">
+
+        <div class="collage-item collage-1">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-2">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-3">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-4">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-5">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= -->
+
+<section class="in-person-experiences">
+
+    <div class="in-person-container">
+
+        <!-- Heading -->
+
+        <div class="in-person-heading">
+
+            <h2>
+                Teach in Beautiful Spaces
+            </h2>
+
+            <p>
+               BrainStation’s custom-built spaces are designed for in-person connection, deep collaboration and hands-on learning. Teach from one of our flagship spaces in New York, London, or Toronto.
+            </p>
+
+        </div>
+
+
+        <!-- Locations -->
+
+        <div class="locations-grid">
+
+
+            <!-- NEW YORK -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/new-york.jpg"
+                    alt="BrainStation New York"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>New York</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in the heart of New York's
+                            vibrant tech and creative community,
+                            BrainStation New York brings
+                            professionals together to learn,
+                            collaborate, and build.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LONDON -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/london.jpg"
+                    alt="BrainStation London"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>London</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Based in the tech district of Shoreditch,
+                            BrainStation is at the heart of London's
+                            digital scene, surrounded by the most
+                            cutting-edge companies in the city.
+                            In addition to courses, BrainStation London
+                            offers training sessions, industry events,
+                            expert panel discussions, and more.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TORONTO -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/toronto.jpg"
+                    alt="BrainStation Toronto"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>Toronto</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in Toronto's vibrant technology
+                            community, BrainStation Toronto provides
+                            a modern space where professionals can
+                            learn, connect, and build new skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     INDUSTRY PARTNERS SECTION
+========================= -->
+
+<section class="industry-partners">
+
+    <div class="industry-partners-inner">
+
+        <h2>Our Network of Industry Partners and Experts</h2>
+
+        <div class="partners-line"></div>
+
+        <p class="partners-description">
+            BrainStation is proud to work with the world's leading digital and AI brands
+            and professionals to power our events, workshops, and certification courses.
+        </p>
+
+        <div class="partners-slider">
+
+            <div class="partners-track">
+
+                <!-- ===== FIRST 7 × 3 GRID ===== -->
+                <div class="partners-grid">
+
+                    <!-- ROW 1 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/figma" alt="Figma">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amd" alt="AMD">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amazon" alt="Amazon">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ey" alt="EY">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/oracle" alt="Oracle">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pinterest" alt="Pinterest">
+                    </div>
+
+
+                    <!-- ROW 2 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/mckinseyandcompany" alt="McKinsey">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ibm" alt="IBM">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/expedia" alt="Expedia">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/nvidia" alt="NVIDIA">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/disney" alt="Disney">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/openai" alt="OpenAI">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ikea" alt="IKEA">
+                    </div>
+
+
+                    <!-- ROW 3 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/monzo" alt="Monzo">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/airbnb" alt="Airbnb">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/x" alt="X">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/barclays" alt="Barclays">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pwc" alt="PwC">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/public" alt="Public">
+                    </div>
+
+                </div>
+
+
+                <!-- ===== DUPLICATE GRID FOR INFINITE LOOP ===== -->
+                <div class="partners-grid">
+
+                    <!-- ROW 1 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/figma" alt="Figma">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amd" alt="AMD">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amazon" alt="Amazon">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ey" alt="EY">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/oracle" alt="Oracle">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pinterest" alt="Pinterest">
+                    </div>
+
+
+                    <!-- ROW 2 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/mckinseyandcompany" alt="McKinsey">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ibm" alt="IBM">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/expedia" alt="Expedia">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/nvidia" alt="NVIDIA">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/disney" alt="Disney">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/openai" alt="OpenAI">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/ikea" alt="IKEA">
+                    </div>
+
+
+                    <!-- ROW 3 -->
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/monzo" alt="Monzo">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/airbnb" alt="Airbnb">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/x" alt="X">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/barclays" alt="Barclays">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/pwc" alt="PwC">
+                    </div>
+
+                    <div class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/public" alt="Public">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="event-speaker-section">
+
+    <div class="event-speaker-container">
+
+
+        <!-- =================================================
+             LEFT CONTENT
+        ================================================== -->
+
+        <div class="event-speaker-info">
+
+            <h2>
+                Become an Event Speaker
+            </h2>
+
+            <div class="event-speaker-divider"></div>
+
+            <p class="event-speaker-intro">
+                Interested in speaking at one of our events?
+                Fill out the form.
+            </p>
+
+
+            <ul class="event-speaker-benefits">
+
+                <li>
+
+                    <span class="event-speaker-check">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12.5l4 4L19 7"></path>
+                        </svg>
+                    </span>
+
+                    <span>
+                        Become a thought leader and grow your
+                        professional presence
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="event-speaker-check">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12.5l4 4L19 7"></path>
+                        </svg>
+                    </span>
+
+                    <span>
+                        Join an exclusive community of leaders
+                        and experts from top companies
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="event-speaker-check">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12.5l4 4L19 7"></path>
+                        </svg>
+                    </span>
+
+                    <span>
+                        Get complimentary access to industry
+                        events, networking, and thought
+                        leadership panels
+                    </span>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT FORM
+        ================================================== -->
+
+        <div class="event-speaker-form-card">
+
+            <h3>
+                Apply to Speak at An Event
+            </h3>
+
+
+            <form
+                class="event-speaker-form"
+                action="#"
+                method="post"
+            >
+
+                <!-- First + Last Name -->
+
+                <div class="event-speaker-form-row">
+
+                    <input
+                        type="text"
+                        name="first_name"
+                        class="event-speaker-field"
+                        placeholder="First Name"
+                        autocomplete="given-name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        name="last_name"
+                        class="event-speaker-field"
+                        placeholder="Last Name"
+                        autocomplete="family-name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <input
+                    type="email"
+                    name="email"
+                    class="event-speaker-field"
+                    placeholder="Email Address"
+                    autocomplete="email"
+                    required
+                >
+
+
+                <!-- LinkedIn -->
+
+                <input
+                    type="url"
+                    name="linkedin"
+                    class="event-speaker-field"
+                    placeholder="Your LinkedIn Profile URL"
+                    autocomplete="url"
+                >
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="event-speaker-submit"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+
+
+    <div id="footer"></div>
+
+
+    <!-- EXISTING COMPONENT LOADER -->
+    <script src="js/components.js"></script>
+
+</body>
+
+</html>

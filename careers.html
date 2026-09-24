@@ -1,0 +1,3857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careers | Courstrike</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =========================================
+           CAREERS PAGE
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #080808;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .careers-hero {
+            position: relative;
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(5, 5, 5, 0.78) 0%,
+                    rgba(8, 8, 8, 0.62) 45%,
+                    rgba(8, 8, 8, 0.48) 100%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(255, 92, 0, 0.12),
+                    rgba(0, 0, 0, 0.92) 92%
+                ),
+                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* Orange glow */
+
+        .careers-hero::before {
+            content: "";
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            top: -180px;
+            left: -130px;
+
+            background: rgba(255, 72, 0, 0.20);
+
+            filter: blur(100px);
+            border-radius: 50%;
+        }
+
+
+        /* Yellow glow */
+
+        .careers-hero::after {
+            content: "";
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            right: -120px;
+            bottom: -150px;
+
+            background: rgba(255, 190, 0, 0.15);
+
+            filter: blur(100px);
+            border-radius: 50%;
+        }
+
+
+        /* Content */
+
+        .careers-hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(1100px, calc(100% - 50px));
+
+            margin: 0 auto;
+
+            padding-top: 70px;
+        }
+
+
+        .careers-hero h1 {
+            margin: 0;
+
+            font-size: clamp(48px, 6vw, 72px);
+            line-height: 1.05;
+
+            font-weight: 500;
+            letter-spacing: -2.5px;
+        }
+
+
+        .careers-hero h1 span {
+            font-weight: 300;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #ffb300,
+                #ff5a00
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        .careers-hero-subtitle {
+            max-width: 900px;
+
+            margin: 25px 0 38px;
+
+            font-size: 20px;
+            line-height: 1.5;
+
+            font-weight: 600;
+
+            color: #ffffff;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .careers-buttons {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .career-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 52px;
+
+            padding: 0 28px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* Primary */
+
+        .career-btn-primary {
+            color: #111111;
+
+            background: linear-gradient(
+                100deg,
+                #ffffff,
+                #ffd65a
+            );
+
+            border: 1px solid #ffffff;
+        }
+
+
+        .career-btn-primary:hover {
+            transform: translateY(-2px);
+
+            background: linear-gradient(
+                100deg,
+                #ffd65a,
+                #ff7a00
+            );
+
+            color: #ffffff;
+
+            box-shadow:
+                0 10px 30px rgba(255, 100, 0, 0.25);
+        }
+
+
+        /* Secondary */
+
+        .career-btn-secondary {
+            color: #ffffff;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+
+        .career-btn-secondary:hover {
+            transform: translateY(-2px);
+
+            border-color: #ff8a00;
+
+            background: rgba(255, 105, 0, 0.12);
+
+            box-shadow:
+                0 10px 30px rgba(255, 75, 0, 0.15);
+        }
+
+
+        /* =========================================
+           STATS
+        ========================================= */
+
+        .careers-stats {
+            position: relative;
+            z-index: 3;
+
+            margin-top: -1px;
+
+            background: #080808;
+
+            padding: 70px 30px 60px;
+        }
+
+
+        .careers-stats-inner {
+            width: min(1100px, 100%);
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            align-items: stretch;
+        }
+
+
+        .career-stat {
+            text-align: center;
+
+            position: relative;
+
+            padding: 0 30px;
+        }
+
+
+        .career-stat:not(:last-child)::after {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+            top: 0;
+
+            width: 1px;
+            height: 95px;
+
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                #666,
+                transparent
+            );
+        }
+
+
+        .career-stat-number {
+            margin: 0 0 6px;
+
+            font-size: clamp(42px, 5vw, 54px);
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #ffb000,
+                #ff5a00
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        .career-stat-label {
+            margin: 0;
+
+            font-size: 18px;
+
+            color: #d8d8d8;
+
+            font-weight: 500;
+        }
+
+
+        /* =========================================
+           SMALL ORANGE LINE
+        ========================================= */
+
+        .careers-accent-line {
+            width: 45px;
+            height: 3px;
+
+            margin: 0 auto 55px;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                90deg,
+                #ff3d00,
+                #ffb300,
+                #ffe000
+            );
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .careers-hero {
+                min-height: 600px;
+            }
+
+            .careers-hero-content {
+                width: min(760px, calc(100% - 45px));
+            }
+
+            .careers-hero h1 {
+                font-size: 58px;
+            }
+
+            .careers-hero-subtitle {
+                font-size: 18px;
+                max-width: 700px;
+            }
+
+            .careers-stats {
+                padding: 60px 20px;
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 650px) {
+
+            .careers-hero {
+                min-height: 650px;
+
+                background-position: center;
+            }
+
+
+            .careers-hero-content {
+                width: calc(100% - 36px);
+
+                padding-top: 65px;
+            }
+
+
+            .careers-hero h1 {
+                font-size: 44px;
+
+                letter-spacing: -1.5px;
+            }
+
+
+            .careers-hero-subtitle {
+                margin-top: 20px;
+
+                font-size: 17px;
+                line-height: 1.5;
+            }
+
+
+            .careers-buttons {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                width: 100%;
+            }
+
+
+            .career-btn {
+                width: 100%;
+                max-width: 260px;
+            }
+
+
+            .careers-stats {
+                padding: 55px 20px;
+            }
+
+
+            .careers-stats-inner {
+                grid-template-columns: 1fr;
+                gap: 42px;
+            }
+
+
+            .career-stat {
+                padding: 0;
+            }
+
+
+            .career-stat:not(:last-child)::after {
+                display: none;
+            }
+
+
+            .career-stat-number {
+                font-size: 45px;
+            }
+
+
+            .career-stat-label {
+                font-size: 16px;
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .careers-hero {
+                min-height: 620px;
+            }
+
+            .careers-hero-content {
+                width: calc(100% - 28px);
+            }
+
+            .careers-hero h1 {
+                font-size: 39px;
+            }
+
+            .careers-hero-subtitle {
+                font-size: 15px;
+            }
+
+            .career-btn {
+                min-height: 48px;
+                font-size: 14px;
+            }
+
+        }
+
+         /* =========================================
+   WHAT WE DO
+========================================= */
+
+.what-we-do {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+
+    padding: 110px 0 120px;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+.what-we-do-container {
+    width: min(1180px, calc(100% - 70px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 43% 57%;
+
+    gap: 0;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.what-we-do-content {
+    position: relative;
+    z-index: 5;
+
+    padding-top: 35px;
+}
+
+.what-we-do-content h2 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.what-we-do-intro {
+    width: 90%;
+
+    margin: 0 0 62px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.what-we-do-label {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.what-card {
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    padding: 22px 20px 18px;
+
+    background: #15191b;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.what-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(255, 135, 45, 0.45);
+}
+
+.what-card-icon {
+    width: 34px;
+    height: 34px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    filter:
+        grayscale(1)
+        brightness(1.7);
+}
+
+.what-card h3 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.what-card p {
+    margin: 0 0 14px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.what-card a {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.what-card a:hover {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =========================================
+   IMAGE COLLAGE
+========================================= */
+
+.what-we-do-images {
+    position: relative;
+
+    height: 790px;
+
+    margin-left: -10px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+        155px
+        180px
+        350px
+        190px;
+
+    gap: 4px;
+
+    /* Fade the left side into black */
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+}
+
+
+/* Image boxes */
+
+.image-box {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   COLLAGE POSITIONS
+========================================= */
+
+.image-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.image-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-3 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.image-4 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.image-5 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.image-6 {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+
+/* Dark overlay on images */
+
+.image-box::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   RED / ORANGE / YELLOW BRAND GLOW
+========================================= */
+
+.what-we-do::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -250px;
+    top: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 106, 0, 0.08),
+            rgba(239, 35, 60, 0.03),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .what-we-do {
+        padding: 80px 0;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .what-we-do-content {
+        padding-top: 0;
+    }
+
+    .what-we-do-intro {
+        width: 100%;
+    }
+
+    .what-we-do-images {
+        margin-left: 0;
+
+        height: 600px;
+
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .what-we-do {
+        padding: 70px 0 80px;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 30px);
+
+        display: block;
+    }
+
+    .what-we-do-content h2 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .what-we-do-intro {
+        font-size: 13px;
+
+        margin-bottom: 45px;
+    }
+
+    .what-card {
+        padding: 20px 17px;
+
+        margin-bottom: 12px;
+    }
+
+    .what-card p {
+        font-size: 10px;
+    }
+
+    .what-we-do-images {
+        height: 500px;
+
+        margin-top: 35px;
+
+        grid-template-rows:
+            95px
+            120px
+            210px
+            120px;
+    }
+
+}
+/* =========================================
+   EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= */
+
+.in-person-experiences {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 0 125px;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(239, 35, 60, 0.045),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 106, 0, 0.045),
+            transparent 32%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+.in-person-container {
+
+    width: min(
+        1000px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.in-person-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 48px;
+}
+
+
+.in-person-heading h2 {
+
+    margin: 0 0 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        40px,
+        4vw,
+        58px
+    );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2.5px;
+}
+
+
+.in-person-heading p {
+
+    margin: 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   LOCATION GRID
+========================================= */
+
+.locations-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   LOCATION CARD
+========================================= */
+
+.location-card {
+
+    position: relative;
+
+    height: 315px;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    background: #151515;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.location-card img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease,
+        filter 0.55s ease;
+}
+
+
+/* =========================================
+   DARK GRADIENT
+========================================= */
+
+.location-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.35) 42%,
+            rgba(0, 0, 0, 0.12) 100%
+        );
+
+    transition:
+        background 0.45s ease;
+}
+
+
+/* =========================================
+   LOCATION CONTENT
+========================================= */
+
+.location-bottom {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 24px 22px;
+
+    z-index: 3;
+
+    transform:
+        translateY(
+            0
+        );
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+.location-bottom h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    transition:
+        margin 0.45s ease;
+}
+
+
+/* =========================================
+   HIDDEN DESCRIPTION
+========================================= */
+
+.location-description {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(
+            15px
+        );
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.35s ease,
+        transform 0.45s ease;
+}
+
+
+.location-description p {
+
+    margin: 14px 0 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.88
+    );
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.location-card:hover img {
+
+    transform: scale(1.04);
+
+    filter:
+        brightness(0.62)
+        saturate(0.85);
+}
+
+
+.location-card:hover .location-overlay {
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.68) 52%,
+            rgba(0, 0, 0, 0.30) 100%
+        );
+}
+
+
+.location-card:hover .location-bottom {
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+.location-card:hover .location-bottom h3 {
+
+    margin-bottom: 0;
+}
+
+
+.location-card:hover .location-description {
+
+    max-height: 180px;
+
+    opacity: 1;
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+/* =========================================
+   SUBTLE BRAND GLOW
+========================================= */
+
+.location-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                255,
+                106,
+                0,
+                0.14
+            ),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+.location-card:hover::before {
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .in-person-experiences {
+
+        padding:
+            90px
+            0
+            100px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 40px
+            );
+    }
+
+
+    .in-person-heading {
+
+        max-width: 600px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 45px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 14px;
+    }
+
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            20px
+            18px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 21px;
+    }
+
+
+    .location-description p {
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .in-person-experiences {
+
+        padding:
+            75px
+            0
+            80px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 30px
+            );
+    }
+
+
+    .in-person-heading {
+
+        margin-bottom: 32px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 37px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+
+    /*
+       On mobile cards become
+       one below another.
+    */
+
+    .locations-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .location-card {
+
+        height: 330px;
+
+        width: 100%;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            22px
+            20px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 24px;
+    }
+
+
+    /*
+       On mobile description is
+       shown when user taps/hover.
+    */
+
+    .location-description p {
+
+        font-size: 12px;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 33px;
+    }
+
+}
+.brand-collage-section {
+    width: 100%;
+    background: #080909;
+    padding: 0;
+    overflow: hidden;
+}
+
+.brand-collage {
+    width: min(930px, 100%);
+    height: 340px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 170px 170px;
+    gap: 3px;
+}
+
+.collage-item {
+    overflow: hidden;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* Top left */
+
+.collage-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Top middle */
+
+.collage-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* Big center image */
+
+.collage-3 {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+
+/* Top right */
+
+.collage-4 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+
+/* Bottom left */
+
+.collage-5 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+/* =========================================
+   CULTURE & BENEFITS
+========================================= */
+
+.culture-benefits {
+    width: 100%;
+    background: #080808;
+    color: #ffffff;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+
+.culture-container {
+    width: min(900px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   LEFT IMAGE
+========================================= */
+
+.culture-image {
+    position: relative;
+    min-height: 780px;
+
+    overflow: hidden;
+    border-radius: 3px 0 0 3px;
+}
+
+
+.culture-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    position: absolute;
+    inset: 0;
+}
+
+
+/* Dark gradient at bottom */
+
+.culture-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 35%,
+            rgba(0, 0, 0, 0.15) 55%,
+            rgba(0, 0, 0, 0.85) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.culture-content {
+    padding-left: 18px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.culture-heading {
+    margin-bottom: 28px;
+}
+
+
+.culture-heading h2 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+    line-height: 1.15;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ffd05a,
+        #ff6815
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.culture-heading p {
+    max-width: 470px;
+
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: #eeeeee;
+}
+
+
+/* =========================================
+   FOUR CARDS
+========================================= */
+
+.culture-cards {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+.culture-card {
+    min-height: 175px;
+
+    padding: 17px;
+
+    background: #15191b;
+
+    border: 1px solid #34383a;
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.culture-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #ff7518;
+
+    background: #1a1a1a;
+}
+
+
+/* ICON */
+
+.culture-icon {
+    width: 24px;
+    height: 24px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffb52e;
+
+    font-size: 23px;
+}
+
+
+/* CARD HEADING */
+
+.culture-card h3 {
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    line-height: 1.3;
+
+    font-weight: 600;
+}
+
+
+/* CARD TEXT */
+
+.culture-card p {
+    margin: 0;
+
+    font-size: 9px;
+    line-height: 1.5;
+
+    color: #eeeeee;
+}
+
+
+/* =========================================
+   BENEFITS BOX
+========================================= */
+
+.benefits-box {
+    margin-top: 14px;
+
+    padding: 18px 20px 20px;
+
+    background: #15191b;
+
+    border: 1px solid #34383a;
+
+    border-radius: 5px;
+}
+
+
+/* BENEFITS TITLE */
+
+.benefits-title {
+    margin-bottom: 14px;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    color: #ffb52e;
+}
+
+
+/* BENEFITS GRID */
+
+.benefits-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.benefits-grid ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.benefits-grid li {
+    position: relative;
+
+    padding-left: 18px;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+    line-height: 1.3;
+
+    color: #ffffff;
+}
+
+
+.benefits-grid li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* CHECK */
+
+.benefits-grid li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    color: #ff9d00;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .culture-container {
+        width: min(750px, 100%);
+
+        grid-template-columns: 42% 58%;
+    }
+
+    .culture-image {
+        min-height: 760px;
+    }
+
+    .culture-content {
+        padding-left: 14px;
+    }
+
+    .culture-heading h2 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .culture-benefits {
+        padding: 55px 18px;
+    }
+
+
+    .culture-container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* Image comes first */
+
+    .culture-image {
+        width: 100%;
+        height: 350px;
+        min-height: 350px;
+
+        border-radius: 5px;
+
+        position: relative;
+    }
+
+
+    .culture-image img {
+        position: absolute;
+    }
+
+
+    /* Content */
+
+    .culture-content {
+        padding: 35px 0 0;
+    }
+
+
+    .culture-heading h2 {
+        font-size: 28px;
+    }
+
+
+    .culture-heading p {
+        font-size: 12px;
+        max-width: 100%;
+    }
+
+
+    .culture-cards {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .culture-card {
+        min-height: auto;
+
+        padding: 20px;
+    }
+
+
+    .culture-card h3 {
+        font-size: 14px;
+    }
+
+
+    .culture-card p {
+        font-size: 11px;
+    }
+
+
+    .benefits-box {
+        padding: 20px;
+    }
+
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .benefits-grid li {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .culture-benefits {
+        padding: 45px 14px;
+    }
+
+
+    .culture-image {
+        height: 300px;
+        min-height: 300px;
+    }
+
+
+    .culture-heading h2 {
+        font-size: 25px;
+    }
+
+}
+/* =========================================
+   BECOME AN INSTRUCTOR
+========================================= */
+
+.become-instructor {
+    width: 100%;
+    background: #080808;
+    color: #ffffff;
+    padding: 95px 20px 90px;
+    overflow: hidden;
+}
+
+.become-instructor-container {
+    width: min(1020px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 62px;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   LEFT IMAGE
+========================================= */
+
+.instructor-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+    border-radius: 4px;
+
+    background: #151515;
+}
+
+.instructor-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.instructor-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.instructor-content {
+    width: 100%;
+}
+
+.instructor-content h2 {
+    margin: 0 0 42px;
+
+    color: #ffffff;
+
+    font-size: clamp(38px, 3.2vw, 46px);
+    line-height: 1.05;
+
+    font-weight: 500;
+    letter-spacing: -1.8px;
+}
+
+
+/* =========================================
+   BENEFIT ITEM
+========================================= */
+
+.instructor-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+}
+
+.instructor-benefit {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+
+    column-gap: 17px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.instructor-benefit-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+}
+
+.instructor-benefit-icon svg {
+    width: 28px;
+    height: 28px;
+
+    display: block;
+
+    stroke: currentColor;
+    fill: none;
+
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================
+   BENEFIT TEXT
+========================================= */
+
+.instructor-benefit-content h3 {
+    margin: 0 0 14px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    line-height: 1.2;
+
+    font-weight: 600;
+    letter-spacing: -0.4px;
+}
+
+.instructor-benefit-content p {
+    margin: 0;
+
+    max-width: 440px;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   LEARN MORE BUTTON
+========================================= */
+
+.instructor-learn-more {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 125px;
+    height: 48px;
+
+    margin-top: 38px;
+    padding: 0 24px;
+
+    border: 1px solid #ffffff;
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.instructor-learn-more:hover {
+    transform: translateY(-2px);
+
+    background: transparent;
+    color: #ffffff;
+
+    border-color: #ffffff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .become-instructor {
+        padding: 80px 25px;
+    }
+
+    .become-instructor-container {
+        width: min(850px, 100%);
+
+        grid-template-columns: 46% 54%;
+
+        gap: 40px;
+    }
+
+    .instructor-content h2 {
+        font-size: 38px;
+        margin-bottom: 34px;
+    }
+
+    .instructor-benefits {
+        gap: 27px;
+    }
+
+    .instructor-benefit {
+        grid-template-columns: 34px 1fr;
+        column-gap: 13px;
+    }
+
+    .instructor-benefit-content h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .instructor-benefit-content p {
+        font-size: 13px;
+    }
+
+    .instructor-learn-more {
+        margin-top: 30px;
+    }
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+    .become-instructor {
+        padding: 70px 20px 75px;
+    }
+
+    .become-instructor-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .instructor-image {
+        width: 100%;
+        max-width: 560px;
+
+        margin: 0 auto;
+
+        aspect-ratio: 1 / 1;
+    }
+
+    .instructor-content {
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .instructor-content h2 {
+        font-size: 38px;
+    }
+
+    .instructor-benefit-content p {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .become-instructor {
+        padding: 60px 18px 65px;
+    }
+
+    .become-instructor-container {
+        gap: 38px;
+    }
+
+    .instructor-content h2 {
+        margin-bottom: 32px;
+
+        font-size: 34px;
+        line-height: 1.08;
+        letter-spacing: -1.2px;
+    }
+
+    .instructor-benefits {
+        gap: 28px;
+    }
+
+    .instructor-benefit {
+        grid-template-columns: 32px 1fr;
+        column-gap: 12px;
+    }
+
+    .instructor-benefit-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .instructor-benefit-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .instructor-benefit-content h3 {
+        margin-bottom: 9px;
+
+        font-size: 17px;
+        line-height: 1.25;
+    }
+
+    .instructor-benefit-content p {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .instructor-learn-more {
+        width: 125px;
+        height: 46px;
+
+        margin-top: 32px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .become-instructor {
+        padding: 50px 15px 55px;
+    }
+
+    .instructor-content h2 {
+        font-size: 31px;
+    }
+
+    .instructor-benefit-content h3 {
+        font-size: 16px;
+    }
+
+    .instructor-benefit-content p {
+        font-size: 12px;
+    }
+}
+
+/* =========================================
+   AVAILABLE POSITIONS
+========================================= */
+
+.available-positions {
+    width: 100%;
+    background: #f7f7f7;
+    color: #080808;
+    padding: 105px 20px 110px;
+    overflow: hidden;
+}
+
+.available-positions-container {
+    width: min(850px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.positions-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.positions-header h2 {
+    margin: 0;
+
+    color: #080808;
+
+    font-size: clamp(36px, 4vw, 42px);
+    line-height: 1.1;
+
+    font-weight: 500;
+    letter-spacing: -1.5px;
+}
+
+.positions-accent {
+    width: 44px;
+    height: 4px;
+
+    margin: 25px auto 24px;
+
+    border-radius: 999px;
+
+    background: #111111;
+}
+
+.positions-header p {
+    max-width: 670px;
+
+    margin: 0 auto;
+
+    color: #111111;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   CITY TABS
+========================================= */
+
+.positions-tabs-wrapper {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 37px;
+}
+
+.positions-tabs {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px;
+
+    background: #ffffff;
+
+    border: 1px solid #dedede;
+    border-radius: 999px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.position-tab {
+    border: 0;
+    outline: 0;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: #111111;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.position-tab:hover {
+    background: #eeeeee;
+}
+
+.position-tab.active {
+    background: #050505;
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+.position-tab:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   JOBS BOX
+========================================= */
+
+.positions-list-box {
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 30px 30px 25px;
+
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.01);
+}
+
+
+/* =========================================
+   DEPARTMENT
+========================================= */
+
+.position-department {
+    margin: 0 0 20px;
+
+    color: #111111;
+
+    font-size: 12px;
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   JOB LIST
+========================================= */
+
+.position-jobs {
+    width: 100%;
+}
+
+.position-job {
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 0 23px;
+
+    border-bottom: 1px solid #bfc3c6;
+
+    transition:
+        background 0.2s ease,
+        padding 0.2s ease;
+}
+
+.position-job:first-child {
+    border-top: 0;
+}
+
+.position-job:hover {
+    background: #fafafa;
+}
+
+
+/* =========================================
+   JOB TITLE
+========================================= */
+
+.position-job-title {
+    color: #111111;
+
+    font-size: 15px;
+    line-height: 1.4;
+
+    font-weight: 400;
+
+    text-decoration: none;
+}
+
+.position-job-title:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   APPLY
+========================================= */
+
+.position-apply {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #080808;
+
+    font-size: 14px;
+    line-height: 1;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        gap 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.position-apply:hover {
+    gap: 10px;
+}
+
+.position-apply-arrow {
+    display: inline-flex;
+
+    width: 10px;
+    height: 10px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.position-apply-arrow svg {
+    width: 9px;
+    height: 9px;
+
+    display: block;
+
+    stroke: currentColor;
+    fill: none;
+
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================
+   MULTIPLE DEPARTMENTS
+========================================= */
+
+.position-department-group + .position-department-group {
+    margin-top: 34px;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.position-empty {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #666666;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .available-positions {
+        padding: 85px 20px 90px;
+    }
+
+    .available-positions-container {
+        width: min(700px, 100%);
+    }
+
+    .positions-header {
+        margin-bottom: 42px;
+    }
+
+    .positions-header p {
+        font-size: 14px;
+    }
+
+    .positions-list-box {
+        padding: 28px 25px 23px;
+    }
+
+    .position-job {
+        padding: 0 18px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .available-positions {
+        padding: 65px 15px 70px;
+    }
+
+    .positions-header h2 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .positions-accent {
+        margin: 20px auto 20px;
+    }
+
+    .positions-header p {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .positions-tabs-wrapper {
+        margin-bottom: 28px;
+    }
+
+    .positions-tabs {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .position-tab {
+        padding: 9px 15px;
+
+        font-size: 13px;
+    }
+
+    .positions-list-box {
+        padding: 24px 15px 20px;
+    }
+
+    .position-department {
+        font-size: 11px;
+        margin-bottom: 14px;
+    }
+
+    .position-job {
+        min-height: 58px;
+
+        padding: 8px 5px;
+
+        gap: 12px;
+    }
+
+    .position-job-title {
+        font-size: 13px;
+    }
+
+    .position-apply {
+        font-size: 12px;
+
+        gap: 5px;
+    }
+
+    .position-apply:hover {
+        gap: 5px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .available-positions {
+        padding: 55px 12px 60px;
+    }
+
+    .positions-header h2 {
+        font-size: 30px;
+    }
+
+    .positions-tabs {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .position-tab {
+        flex: 1;
+
+        padding: 9px 10px;
+
+        font-size: 12px;
+    }
+
+    .positions-list-box {
+        padding: 22px 12px 18px;
+    }
+
+    .position-job {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .position-job-title {
+        font-size: 12px;
+    }
+
+    .position-apply {
+        font-size: 11px;
+    }
+}
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER COMPONENT
+    ========================================== -->
+
+    <div id="header"></div>
+
+
+    <!-- =========================================
+         CAREERS HERO
+    ========================================== -->
+
+    <main>
+
+        <section class="careers-hero">
+
+            <div class="careers-hero-content">
+
+                <h1>
+                    Courstrike <span>Careers</span>
+                </h1>
+
+                <p class="careers-hero-subtitle">
+                    Join a team of innovators driving AI and digital
+                    innovation for teams, enterprises, and professionals.
+                </p>
+
+
+                <div class="careers-buttons">
+
+                    <!-- OPEN POSITIONS -->
+
+                    <a
+                        href="#open-positions"
+                        class="career-btn career-btn-primary"
+                    >
+                        View Open Positions
+                    </a>
+
+
+                    <!-- INSTRUCTOR PAGE -->
+
+                    <a
+                        href="apply-to-teach.html"
+                        class="career-btn career-btn-secondary"
+                    >
+                        Become an Instructor
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             STATS
+        ========================================== -->
+
+        <section class="careers-stats" id="open-positions">
+
+            <div class="careers-stats-inner">
+
+                <div class="career-stat">
+
+                    <p class="career-stat-number">
+                        2012
+                    </p>
+
+                    <p class="career-stat-label">
+                        Founded
+                    </p>
+
+                </div>
+
+
+                <div class="career-stat">
+
+                    <p class="career-stat-number">
+                        500+
+                    </p>
+
+                    <p class="career-stat-label">
+                        Team Members
+                    </p>
+
+                </div>
+
+
+                <div class="career-stat">
+
+                    <p class="career-stat-number">
+                        40,000+
+                    </p>
+
+                    <p class="career-stat-label">
+                        Certified Professionals
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+                <!-- =========================================
+     WHAT WE DO SECTION
+========================================= -->
+
+<section class="what-we-do">
+
+    <div class="what-we-do-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="what-we-do-content">
+
+            <h2>What We Do</h2>
+
+            <p class="what-we-do-intro">
+                Established in 2012, BrainStation empowers professionals
+                and leading companies to build essential skills in AI,
+                data, product management, marketing, and design through
+                live, instructor-led training.
+            </p>
+
+            <div class="what-we-do-label">
+                POWERFUL LEARNING EXPERIENCES:
+            </div>
+
+
+            <!-- CARD 1 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    💡
+                </div>
+
+                <h3>Thought Leadership Events</h3>
+
+                <p>
+                    Connect with industry leaders at the forefront of
+                    their fields. Join us for in-person panels, keynotes,
+                    and community events featuring leaders from the
+                    world's most innovative brands.
+                </p>
+
+                <a href="#">
+                    View Upcoming Events
+                </a>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ♧
+                </div>
+
+                <h3>Enterprise Training</h3>
+
+                <p>
+                    Accelerate digital transformation. BrainStation
+                    delivers professional, in-depth workshops designed
+                    to help teams and individuals build lasting AI
+                    capability.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ▤
+                </div>
+
+                <h3>Professional Certifications</h3>
+
+                <p>
+                    Master the skills driving the modern economy. From
+                    AI and Data to Product Management, Marketing, and UX
+                    Design, our certifications provide the hands-on
+                    mentorship and training to level up your professional
+                    skills and advance your career.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE COLLAGE -->
+        <div class="what-we-do-images">
+
+            <div class="image-box image-1">
+                <img src="images/what-we-do-1.jpg" alt="">
+            </div>
+
+            <div class="image-box image-2">
+                <img src="images/what-we-do-2.jpg" alt="">
+            </div>
+
+            <div class="image-box image-3">
+                <img src="images/what-we-do-3.jpg" alt="">
+            </div>
+
+            <div class="image-box image-4">
+                <img src="images/what-we-do-4.jpg" alt="">
+            </div>
+
+            <div class="image-box image-5">
+                <img src="images/what-we-do-5.jpg" alt="">
+            </div>
+
+            <div class="image-box image-6">
+                <img src="images/what-we-do-6.jpg" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= -->
+
+<section class="in-person-experiences">
+
+    <div class="in-person-container">
+
+        <!-- Heading -->
+
+        <div class="in-person-heading">
+
+            <h2>
+                Exceptional In-Person Experiences
+            </h2>
+
+            <p>
+                BrainStation's global spaces are custom-built for real
+                learning, deep collaboration and building connections.
+                Located in key cities, our spaces bring industry
+                professionals together to learn and build.
+            </p>
+
+        </div>
+
+
+        <!-- Locations -->
+
+        <div class="locations-grid">
+
+
+            <!-- NEW YORK -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/new-york.jpg"
+                    alt="BrainStation New York"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>New York</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in the heart of New York's
+                            vibrant tech and creative community,
+                            BrainStation New York brings
+                            professionals together to learn,
+                            collaborate, and build.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LONDON -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/london.jpg"
+                    alt="BrainStation London"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>London</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Based in the tech district of Shoreditch,
+                            BrainStation is at the heart of London's
+                            digital scene, surrounded by the most
+                            cutting-edge companies in the city.
+                            In addition to courses, BrainStation London
+                            offers training sessions, industry events,
+                            expert panel discussions, and more.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TORONTO -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/toronto.jpg"
+                    alt="BrainStation Toronto"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>Toronto</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in Toronto's vibrant technology
+                            community, BrainStation Toronto provides
+                            a modern space where professionals can
+                            learn, connect, and build new skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     SECTION 1 - IMAGE COLLAGE
+========================= -->
+
+<section class="brand-collage-section">
+
+    <div class="brand-collage">
+
+        <div class="collage-item collage-1">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-2">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-3">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-4">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-5">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     CULTURE & BENEFITS
+========================================= -->
+
+<section class="culture-benefits">
+
+    <div class="culture-container">
+
+        <!-- LEFT CONTINUOUS IMAGE -->
+
+        <div class="culture-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85"
+                alt="Team gathering"
+            >
+
+            <div class="culture-image-overlay"></div>
+
+        </div>
+
+
+        <!-- RIGHT CONTENT -->
+
+        <div class="culture-content">
+
+            <div class="culture-heading">
+
+                <h2>Culture &amp; Benefits</h2>
+
+                <p>
+                    We foster a culture built on ownership, curiosity,
+                    and high standards—supported by benefits that
+                    prioritize wellbeing, growth, and balance.
+                </p>
+
+            </div>
+
+
+            <!-- FOUR CARDS -->
+
+            <div class="culture-cards">
+
+
+                <!-- CARD 1 -->
+
+                <div class="culture-card">
+
+                    <div class="culture-icon">✧</div>
+
+                    <h3>Excellence + Innovation</h3>
+
+                    <p>
+                        These are core values that influence everything
+                        we do – from the learning experiences we deliver
+                        to our culture and workspaces.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="culture-card">
+
+                    <div class="culture-icon">▯</div>
+
+                    <h3>Learning + Education</h3>
+
+                    <p>
+                        Team members are encouraged to improve their
+                        skills through continued learning, including
+                        access to courses.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="culture-card">
+
+                    <div class="culture-icon">♧</div>
+
+                    <h3>Leadership + Development</h3>
+
+                    <p>
+                        We are committed to developing our team members
+                        into thought leaders through mentorship and
+                        direct engagement.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+
+                <div class="culture-card">
+
+                    <div class="culture-icon">♧</div>
+
+                    <h3>Communities + Families</h3>
+
+                    <p>
+                        Through fundraising, benefits, and outreach
+                        programs, we support our team members, their
+                        families, and their communities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BENEFITS BOX -->
+
+            <div class="benefits-box">
+
+                <div class="benefits-title">
+                    BENEFITS INCLUDE:
+                </div>
+
+
+                <div class="benefits-grid">
+
+                    <ul>
+
+                        <li>Excellent Vacation Policy</li>
+                        <li>Parental Leave Program</li>
+                        <li>Technology Budget</li>
+                        <li>Mentorship + Development</li>
+                        <li>Service Recognition Programs</li>
+                        <li>Flexible Working Hours</li>
+                        <li>Retirement Planning</li>
+
+                    </ul>
+
+
+                    <ul>
+
+                        <li>Socials, Outings + Retreats</li>
+                        <li>Work From Home Flexibility</li>
+                        <li>Annual Travel Budget</li>
+                        <li>Access to Learning Opportunities</li>
+                        <li>Health Benefits</li>
+                        <li>Team Lunches</li>
+                        <li>Sports Teams + Clubs</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     BECOME AN INSTRUCTOR
+========================================= -->
+
+<section class="become-instructor">
+
+    <div class="become-instructor-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="instructor-image">
+
+            <img
+                src="images/become-instructor.jpg"
+                alt="Become an Instructor"
+            >
+
+        </div>
+
+
+        <!-- RIGHT CONTENT -->
+        <div class="instructor-content">
+
+            <h2>
+                Become an Instructor
+            </h2>
+
+
+            <div class="instructor-benefits">
+
+                <!-- BENEFIT 1 -->
+                <div class="instructor-benefit">
+
+                    <div class="instructor-benefit-icon">
+
+                        <svg viewBox="0 0 32 32" aria-hidden="true">
+                            <rect x="10" y="4" width="12" height="8" rx="1"></rect>
+
+                            <path d="M6 28v-3c0-2.2 1.8-4 4-4h12c2.2 0 4 1.8 4 4v3"></path>
+
+                            <path d="M16 12v4"></path>
+
+                            <path d="M5 17h2"></path>
+                            <path d="M25 17h2"></path>
+                        </svg>
+
+                    </div>
+
+                    <div class="instructor-benefit-content">
+
+                        <h3>
+                            Contribute to your Community
+                        </h3>
+
+                        <p>
+                            Help shape the future of driven professionals by
+                            empowering them with digital skills training.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BENEFIT 2 -->
+                <div class="instructor-benefit">
+
+                    <div class="instructor-benefit-icon">
+
+                        <svg viewBox="0 0 32 32" aria-hidden="true">
+
+                            <rect
+                                x="6"
+                                y="8"
+                                width="20"
+                                height="19"
+                                rx="2">
+                            </rect>
+
+                            <path d="M10 4v7"></path>
+                            <path d="M22 4v7"></path>
+
+                            <path d="M6 14h20"></path>
+
+                            <path d="M11 19h3"></path>
+                            <path d="M18 19h3"></path>
+
+                            <path d="M11 23h3"></path>
+                            <path d="M18 23h3"></path>
+
+                        </svg>
+
+                    </div>
+
+                    <div class="instructor-benefit-content">
+
+                        <h3>
+                            Elevate your Professional Profile
+                        </h3>
+
+                        <p>
+                            Get support from BrainStation to succeed as an
+                            instructor and gain the opportunity to become a
+                            thought leader by speaking at BrainStation events.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BENEFIT 3 -->
+                <div class="instructor-benefit">
+
+                    <div class="instructor-benefit-icon">
+
+                        <svg viewBox="0 0 32 32" aria-hidden="true">
+
+                            <circle cx="10" cy="8" r="3"></circle>
+                            <circle cx="22" cy="8" r="3"></circle>
+
+                            <path d="M4 25v-4c0-2.2 1.8-4 4-4h4c2.2 0 4 1.8 4 4v4"></path>
+
+                            <path d="M16 25v-4c0-2.2 1.8-4 4-4h4c2.2 0 4 1.8 4 4v4"></path>
+
+                            <path d="M13 13h6"></path>
+                            <path d="M16 10v6"></path>
+
+                        </svg>
+
+                    </div>
+
+                    <div class="instructor-benefit-content">
+
+                        <h3>
+                            Join an Exclusive Community
+                        </h3>
+
+                        <p>
+                            Work alongside an exceptional team of passionate
+                            industry experts and build your professional network.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+            <a
+                href="apply-to-teach.html"
+                class="instructor-learn-more"
+            >
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+
+<!-- BECOME AN INSTRUCTOR -->
+<section class="become-instructor">
+    ...
+</section>
+
+
+<!-- AVAILABLE POSITIONS -->
+<section class="available-positions">
+
+    <div class="available-positions-container">
+
+        <!-- HEADER -->
+        <div class="positions-header">
+
+            <h2>
+                Available Positions
+            </h2>
+
+            <div class="positions-accent"></div>
+
+            <p>
+                Explore open roles across our global teams and find where your
+                expertise fits. Join a team focused on raising the standard
+                for digital education worldwide.
+            </p>
+
+        </div>
+
+
+        <!-- CITY TABS -->
+        <div class="positions-tabs-wrapper">
+
+            <div class="positions-tabs">
+
+                <button
+                    type="button"
+                    class="position-tab active"
+                    data-city="new-york"
+                >
+                    New York
+                </button>
+
+                <button
+                    type="button"
+                    class="position-tab"
+                    data-city="london"
+                >
+                    London
+                </button>
+
+                <button
+                    type="button"
+                    class="position-tab"
+                    data-city="toronto"
+                >
+                    Toronto
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- JOBS -->
+        <div class="positions-list-box">
+
+            <div id="positionsContent">
+                <!-- JS will insert jobs here -->
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER COMPONENT
+    ========================================== -->
+
+    <div id="footer"></div>
+
+    <script>
+/* =========================================
+   AVAILABLE POSITIONS DATA
+========================================= */
+
+const availablePositions = {
+
+    "new-york": [
+        {
+            department: "Growth",
+            jobs: [
+                {
+                    title: "Account Executive",
+                    url: "#"
+                },
+                {
+                    title: "Associate Learning Advisor",
+                    url: "#"
+                },
+                {
+                    title: "Business Development Representative",
+                    url: "#"
+                },
+                {
+                    title: "Sales Development Representative",
+                    url: "#"
+                },
+                {
+                    title: "Specialist, Community",
+                    url: "#"
+                }
+            ]
+        }
+    ],
+
+
+    "london": [
+        {
+            department: "Growth",
+            jobs: [
+                {
+                    title: "Account Executive",
+                    url: "https://brainstation.io/careers/jobs/account-executive_8000820003"
+                },
+                {
+                    title: "Associate Learning Advisor",
+                    url: "https://brainstation.io/careers/jobs/associate-learning-advisor_8000821003"
+                },
+                {
+                    title: "Business Development Representative",
+                    url: "https://brainstation.io/careers/jobs/business-development-representative_8000822003"
+                },
+                {
+                    title: "Coordinator, Growth Operations",
+                    url: "https://brainstation.io/careers/jobs/coordinator-growth-operations_6091576003"
+                },
+                {
+                    title: "Sales Development Representative",
+                    url: "https://brainstation.io/careers/jobs/sales-development-representative_8000826003"
+                },
+                {
+                    title: "Specialist, Community",
+                    url: "https://brainstation.io/careers/jobs/specialist-community_8000827003"
+                }
+            ]
+        }
+    ],
+
+
+    "toronto": [
+        {
+            department: "Growth",
+            jobs: [
+                {
+                    title: "Account Executive",
+                    url: "https://brainstation.io/careers/jobs/account-executive_8000807003"
+                },
+                {
+                    title: "Business Development Representative",
+                    url: "https://brainstation.io/careers/jobs/business-development-representative_8000809003"
+                },
+                {
+                    title: "Coordinator, Growth Operations",
+                    url: "https://brainstation.io/careers/jobs/coordinator-growth-operations_6308469003"
+                },
+                {
+                    title: "Learning Advisor",
+                    url: "https://brainstation.io/careers/jobs/learning-advisor_8000810003"
+                },
+                {
+                    title: "Sales Development Representative",
+                    url: "https://brainstation.io/careers/jobs/sales-development-representative_8000800003"
+                },
+                {
+                    title: "Specialist, Community",
+                    url: "https://brainstation.io/careers/jobs/specialist-community_8000801003"
+                }
+            ]
+        },
+
+        {
+            department: "Operations (Part-time)",
+            jobs: [
+                {
+                    title: "Event Coordinator",
+                    url: "https://brainstation.io/careers/jobs/event-coordinator_7697136003"
+                }
+            ]
+        }
+    ]
+
+};
+
+
+/* =========================================
+   ARROW SVG
+========================================= */
+
+function positionArrow() {
+
+    return `
+        <span class="position-apply-arrow" aria-hidden="true">
+
+            <svg viewBox="0 0 12 12">
+                <path d="M4 2.5L8 6L4 9.5"></path>
+            </svg>
+
+        </span>
+    `;
+}
+
+
+/* =========================================
+   RENDER JOBS
+========================================= */
+
+function renderPositions(city) {
+
+    const container = document.getElementById("positionsContent");
+
+    const cityData = availablePositions[city];
+
+    if (!container || !cityData) {
+        return;
+    }
+
+
+    let html = "";
+
+
+    cityData.forEach(group => {
+
+        html += `
+            <div class="position-department-group">
+
+                <div class="position-department">
+                    ${group.department}
+                </div>
+
+                <div class="position-jobs">
+        `;
+
+
+        group.jobs.forEach(job => {
+
+            html += `
+                <div class="position-job">
+
+                    <a
+                        href="${job.url}"
+                        class="position-job-title"
+                        ${job.url !== "#" ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                    >
+                        ${job.title}
+                    </a>
+
+                    <a
+                        href="${job.url}"
+                        class="position-apply"
+                        ${job.url !== "#" ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                    >
+                        Apply
+
+                        ${positionArrow()}
+
+                    </a>
+
+                </div>
+            `;
+
+        });
+
+
+        html += `
+                </div>
+
+            </div>
+        `;
+
+    });
+
+
+    container.innerHTML = html;
+
+}
+
+
+/* =========================================
+   CITY TAB SWITCHING
+========================================= */
+
+const positionTabs = document.querySelectorAll(".position-tab");
+
+positionTabs.forEach(tab => {
+
+    tab.addEventListener("click", function () {
+
+        const selectedCity = this.dataset.city;
+
+
+        /* Remove active from all */
+        positionTabs.forEach(item => {
+            item.classList.remove("active");
+        });
+
+
+        /* Add active to clicked tab */
+        this.classList.add("active");
+
+
+        /* Change jobs */
+        renderPositions(selectedCity);
+
+    });
+
+});
+
+
+/* =========================================
+   INITIAL CITY
+========================================= */
+
+renderPositions("new-york");
+</script>
+
+    <!-- COMPONENT LOADER -->
+    <script src="js/components.js"></script>
+
+</body>
+</html>

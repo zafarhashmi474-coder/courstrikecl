@@ -1,0 +1,3237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Press & Media | Courstrike</title>
+
+    <!-- YOUR EXISTING GLOBAL CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           PRESS & MEDIA PAGE ONLY
+        ========================================= */
+
+        .press-hero {
+            position: relative;
+            width: 100%;
+            min-height: 830px;
+
+            overflow: hidden;
+
+            background-image:
+                url("https://brainstation.io/assets/press-video-Cr3042qj.webp");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .press-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(15, 18, 28, 0.58) 0%,
+                    rgba(8, 10, 18, 0.72) 45%,
+                    rgba(0, 0, 0, 0.96) 100%
+                );
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .press-container {
+            position: relative;
+            z-index: 2;
+
+            width: min(1160px, calc(100% - 50px));
+
+            margin: 0 auto;
+
+            padding-top: 140px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 400px;
+
+            gap: 95px;
+
+            align-items: start;
+        }
+
+
+        /* =========================================
+           LEFT SIDE
+        ========================================= */
+
+        .press-content {
+            padding-top: 5px;
+        }
+
+        .press-content h1 {
+            margin: 0 0 18px;
+
+            font-size: 62px;
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            letter-spacing: -2.5px;
+
+            color: #fff;
+        }
+
+
+        .press-content p {
+            max-width: 600px;
+
+            margin: 0 0 38px;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            color: #fff;
+        }
+
+
+        /* =========================================
+           BRAND ASSETS BUTTON
+        ========================================= */
+
+        .brand-assets-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 18px;
+
+            min-width: 195px;
+
+            height: 46px;
+
+            padding: 0 22px;
+
+            border-radius: 30px;
+
+            background: #fff;
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+
+        .brand-assets-btn:hover {
+            background: #eee;
+
+            transform: translateY(-2px);
+        }
+
+
+        .brand-assets-btn .arrow {
+            font-size: 21px;
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .press-form-wrapper {
+            width: 100%;
+
+            padding: 26px 30px 30px;
+
+            background: #15191a;
+
+            border-top: 4px solid #858b8e;
+
+            border-radius: 4px;
+        }
+
+
+        .press-form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+
+        .press-form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+
+        .press-form input,
+        .press-form textarea {
+            width: 100%;
+
+            border: 1px solid #5c6569;
+
+            background: #2a3032;
+
+            color: #fff;
+
+            outline: none;
+
+            border-radius: 2px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+        }
+
+
+        .press-form input {
+            height: 45px;
+
+            padding: 0 15px;
+        }
+
+
+        .press-form textarea {
+            height: 75px;
+
+            padding: 13px 15px;
+
+            resize: vertical;
+        }
+
+
+        .press-form input::placeholder,
+        .press-form textarea::placeholder {
+            color: #bfc6cb;
+        }
+
+
+        .press-form input:focus,
+        .press-form textarea:focus {
+            border-color: #fff;
+        }
+
+
+        /* =========================================
+           PHONE
+        ========================================= */
+
+        .phone-field {
+            width: 100%;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            background: #2a3032;
+
+            border: 1px solid #5c6569;
+
+            border-radius: 2px;
+        }
+
+
+        .country {
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding-left: 14px;
+
+            padding-right: 10px;
+        }
+
+
+        .country-flag {
+            font-size: 19px;
+        }
+
+
+        .phone-field input {
+            height: 100%;
+
+            flex: 1;
+
+            border: none;
+
+            padding-left: 3px;
+        }
+
+
+        /* =========================================
+           SUBMIT
+        ========================================= */
+
+        .press-form button {
+            width: 100%;
+
+            height: 45px;
+
+            margin-top: 8px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #fff;
+
+            color: #111;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+
+        .press-form button:hover {
+            background: #eee;
+        }
+
+
+        /* =========================================
+           STATS
+        ========================================= */
+
+        .press-stats {
+            position: relative;
+
+            z-index: 2;
+
+            width: min(1160px, calc(100% - 50px));
+
+            margin: 150px auto 0;
+
+            padding-bottom: 55px;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+        .press-stat {
+            position: relative;
+
+            min-height: 85px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .press-stat:not(:last-child)::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            right: 0;
+
+            width: 1px;
+
+            height: 82px;
+
+            background: #aaa;
+        }
+
+
+        .press-stat-number {
+            font-size: 40px;
+
+            line-height: 1;
+
+            margin-bottom: 8px;
+
+            font-weight: 500;
+
+            color: #fff;
+        }
+
+
+        .press-stat-label {
+            font-size: 17px;
+
+            font-weight: 600;
+
+            color: #ddd;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 750px) {
+
+            .press-hero {
+                min-height: auto;
+            }
+
+
+            .press-container {
+                width: calc(100% - 35px);
+
+                padding-top: 65px;
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+
+            .press-content h1 {
+                font-size: 44px;
+
+                letter-spacing: -1.5px;
+            }
+
+
+            .press-content p {
+                font-size: 15px;
+            }
+
+
+            .press-form-wrapper {
+                padding: 22px 20px 25px;
+            }
+
+
+            .press-form-row {
+                grid-template-columns: 1fr;
+            }
+
+
+            .press-stats {
+                width: calc(100% - 35px);
+
+                margin-top: 70px;
+
+                padding-bottom: 60px;
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+
+            .press-stat:not(:last-child)::after {
+                display: none;
+            }
+
+
+            .press-stat-number {
+                font-size: 36px;
+            }
+
+
+            .press-stat-label {
+                font-size: 16px;
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .press-container {
+                width: calc(100% - 28px);
+            }
+
+
+            .press-content h1 {
+                font-size: 37px;
+            }
+
+
+            .press-form-wrapper {
+                padding: 20px 15px 22px;
+            }
+
+
+            .press-stats {
+                width: calc(100% - 28px);
+            }
+
+        }
+
+        /* =========================================
+   EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= */
+
+.in-person-experiences {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 0 125px;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(239, 35, 60, 0.045),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 106, 0, 0.045),
+            transparent 32%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+.in-person-container {
+
+    width: min(
+        1000px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.in-person-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 48px;
+}
+
+
+.in-person-heading h2 {
+
+    margin: 0 0 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        40px,
+        4vw,
+        58px
+    );
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2.5px;
+}
+
+
+.in-person-heading p {
+
+    margin: 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   LOCATION GRID
+========================================= */
+
+.locations-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   LOCATION CARD
+========================================= */
+
+.location-card {
+
+    position: relative;
+
+    height: 315px;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    background: #151515;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.location-card img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease,
+        filter 0.55s ease;
+}
+
+
+/* =========================================
+   DARK GRADIENT
+========================================= */
+
+.location-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.35) 42%,
+            rgba(0, 0, 0, 0.12) 100%
+        );
+
+    transition:
+        background 0.45s ease;
+}
+
+
+/* =========================================
+   LOCATION CONTENT
+========================================= */
+
+.location-bottom {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 24px 22px;
+
+    z-index: 3;
+
+    transform:
+        translateY(
+            0
+        );
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+.location-bottom h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    transition:
+        margin 0.45s ease;
+}
+
+
+/* =========================================
+   HIDDEN DESCRIPTION
+========================================= */
+
+.location-description {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(
+            15px
+        );
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.35s ease,
+        transform 0.45s ease;
+}
+
+
+.location-description p {
+
+    margin: 14px 0 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.88
+    );
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.location-card:hover img {
+
+    transform: scale(1.04);
+
+    filter:
+        brightness(0.62)
+        saturate(0.85);
+}
+
+
+.location-card:hover .location-overlay {
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.68) 52%,
+            rgba(0, 0, 0, 0.30) 100%
+        );
+}
+
+
+.location-card:hover .location-bottom {
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+.location-card:hover .location-bottom h3 {
+
+    margin-bottom: 0;
+}
+
+
+.location-card:hover .location-description {
+
+    max-height: 180px;
+
+    opacity: 1;
+
+    transform:
+        translateY(
+            0
+        );
+}
+
+
+/* =========================================
+   SUBTLE BRAND GLOW
+========================================= */
+
+.location-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                255,
+                106,
+                0,
+                0.14
+            ),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+.location-card:hover::before {
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .in-person-experiences {
+
+        padding:
+            90px
+            0
+            100px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 40px
+            );
+    }
+
+
+    .in-person-heading {
+
+        max-width: 600px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 45px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 14px;
+    }
+
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            20px
+            18px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 21px;
+    }
+
+
+    .location-description p {
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .in-person-experiences {
+
+        padding:
+            75px
+            0
+            80px;
+    }
+
+
+    .in-person-container {
+
+        width:
+            calc(
+                100% - 30px
+            );
+    }
+
+
+    .in-person-heading {
+
+        margin-bottom: 32px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 37px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .in-person-heading p {
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+
+    /*
+       On mobile cards become
+       one below another.
+    */
+
+    .locations-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .location-card {
+
+        height: 330px;
+
+        width: 100%;
+    }
+
+
+    .location-bottom {
+
+        padding:
+            22px
+            20px;
+    }
+
+
+    .location-bottom h3 {
+
+        font-size: 24px;
+    }
+
+
+    /*
+       On mobile description is
+       shown when user taps/hover.
+    */
+
+    .location-description p {
+
+        font-size: 12px;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .location-card {
+
+        height: 300px;
+    }
+
+
+    .in-person-heading h2 {
+
+        font-size: 33px;
+    }
+
+}
+     /* =========================================
+   WHAT WE DO
+========================================= */
+
+.what-we-do {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+
+    padding: 110px 0 120px;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+.what-we-do-container {
+    width: min(1180px, calc(100% - 70px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 43% 57%;
+
+    gap: 0;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.what-we-do-content {
+    position: relative;
+    z-index: 5;
+
+    padding-top: 35px;
+}
+
+.what-we-do-content h2 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.what-we-do-intro {
+    width: 90%;
+
+    margin: 0 0 62px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.what-we-do-label {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.what-card {
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    padding: 22px 20px 18px;
+
+    background: #15191b;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.what-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(255, 135, 45, 0.45);
+}
+
+.what-card-icon {
+    width: 34px;
+    height: 34px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    filter:
+        grayscale(1)
+        brightness(1.7);
+}
+
+.what-card h3 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.what-card p {
+    margin: 0 0 14px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.what-card a {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.what-card a:hover {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =========================================
+   IMAGE COLLAGE
+========================================= */
+
+.what-we-do-images {
+    position: relative;
+
+    height: 790px;
+
+    margin-left: -10px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+        155px
+        180px
+        350px
+        190px;
+
+    gap: 4px;
+
+    /* Fade the left side into black */
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+}
+
+
+/* Image boxes */
+
+.image-box {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   COLLAGE POSITIONS
+========================================= */
+
+.image-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.image-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-3 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.image-4 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.image-5 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.image-6 {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+
+/* Dark overlay on images */
+
+.image-box::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   RED / ORANGE / YELLOW BRAND GLOW
+========================================= */
+
+.what-we-do::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -250px;
+    top: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 106, 0, 0.08),
+            rgba(239, 35, 60, 0.03),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .what-we-do {
+        padding: 80px 0;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .what-we-do-content {
+        padding-top: 0;
+    }
+
+    .what-we-do-intro {
+        width: 100%;
+    }
+
+    .what-we-do-images {
+        margin-left: 0;
+
+        height: 600px;
+
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .what-we-do {
+        padding: 70px 0 80px;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 30px);
+
+        display: block;
+    }
+
+    .what-we-do-content h2 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .what-we-do-intro {
+        font-size: 13px;
+
+        margin-bottom: 45px;
+    }
+
+    .what-card {
+        padding: 20px 17px;
+
+        margin-bottom: 12px;
+    }
+
+    .what-card p {
+        font-size: 10px;
+    }
+
+    .what-we-do-images {
+        height: 500px;
+
+        margin-top: 35px;
+
+        grid-template-rows:
+            95px
+            120px
+            210px
+            120px;
+    }
+
+}
+/* =====================================================
+   A WORD FROM OUR FOUNDER
+===================================================== */
+
+.founder-message {
+    width: 100%;
+    background: #080909;
+    color: #ffffff;
+
+    padding: 95px 0 85px;
+
+    overflow: hidden;
+}
+
+.founder-container {
+    width: min(950px, calc(100% - 50px));
+
+    margin: 0 auto;
+}
+
+
+/* TITLE */
+
+.founder-title {
+    text-align: center;
+
+    font-size: 43px;
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    margin: 0 0 65px;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* MAIN CONTENT */
+
+.founder-content {
+    display: grid;
+
+    grid-template-columns: 1fr 420px;
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+
+/* LEFT SIDE */
+
+.founder-text {
+    position: relative;
+
+    padding-left: 18px;
+}
+
+
+/* QUOTATION MARK */
+
+.founder-quote-mark {
+    position: absolute;
+
+    top: -48px;
+    left: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 115px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: #353c40;
+
+    z-index: 0;
+}
+
+
+.founder-quote {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 28px;
+
+    max-width: 540px;
+
+    font-size: 25px;
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+/* FOUNDER NAME */
+
+.founder-name {
+    margin: 0 0 6px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+.founder-role {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #c9c9c9;
+}
+
+
+/* LOGO */
+
+.founder-logo {
+    margin-top: 32px;
+
+    width: 245px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.founder-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+.founder-image {
+    display: block;
+
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    object-position: center top;
+}
+
+
+/* ANGLED BOTTOM STRIP */
+
+.founder-image-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+
+    bottom: -25px;
+
+    height: 85px;
+
+    background: #59656c;
+
+    transform: rotate(9deg);
+
+    transform-origin: center;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .founder-container {
+        width: min(760px, calc(100% - 45px));
+    }
+
+    .founder-content {
+        grid-template-columns: 1fr 350px;
+
+        gap: 40px;
+    }
+
+    .founder-title {
+        font-size: 38px;
+
+        margin-bottom: 55px;
+    }
+
+    .founder-quote {
+        font-size: 22px;
+    }
+
+    .founder-image {
+        height: 400px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .founder-message {
+        padding: 70px 0 65px;
+    }
+
+    .founder-container {
+        width: calc(100% - 35px);
+    }
+
+    .founder-title {
+        font-size: 34px;
+
+        margin-bottom: 55px;
+    }
+
+    .founder-content {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .founder-text {
+        padding-left: 10px;
+    }
+
+    .founder-quote-mark {
+        top: -40px;
+
+        font-size: 90px;
+    }
+
+    .founder-quote {
+        font-size: 21px;
+
+        line-height: 1.4;
+
+        max-width: 100%;
+    }
+
+    .founder-logo {
+        width: 210px;
+
+        margin-top: 28px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 430px;
+
+        margin: 0 auto;
+    }
+
+    .founder-image {
+        height: 430px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .founder-message {
+        padding: 60px 0;
+    }
+
+    .founder-container {
+        width: calc(100% - 28px);
+    }
+
+    .founder-title {
+        font-size: 30px;
+    }
+
+    .founder-quote {
+        font-size: 19px;
+    }
+
+    .founder-image {
+        height: 360px;
+    }
+
+    .founder-logo {
+        width: 190px;
+    }
+
+}
+/* =====================================
+   SECTION 1 - IMAGE COLLAGE
+===================================== */
+
+.brand-collage-section {
+    width: 100%;
+    background: #080909;
+    padding: 0;
+    overflow: hidden;
+}
+
+.brand-collage {
+    width: min(930px, 100%);
+    height: 340px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 170px 170px;
+    gap: 3px;
+}
+
+.collage-item {
+    overflow: hidden;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* Top left */
+
+.collage-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Top middle */
+
+.collage-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* Big center image */
+
+.collage-3 {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+
+/* Top right */
+
+.collage-4 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+
+/* Bottom left */
+
+.collage-5 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+
+/* =====================================
+   SECTION 2 - BRAND ASSETS
+===================================== */
+
+.brand-assets-section {
+    width: 100%;
+    background: #080909;
+    color: #ffffff;
+    padding: 55px 20px 35px;
+}
+
+.brand-assets-container {
+    width: min(680px, 100%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* Heading */
+
+.brand-assets-container h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+}
+
+.brand-title-line {
+    width: 30px;
+    height: 2px;
+    background: #ffffff;
+    margin: 18px auto 30px;
+}
+
+
+/* Small heading */
+
+.brand-assets-container h3 {
+    margin: 0 0 22px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Cards */
+
+.brand-assets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: left;
+}
+
+.brand-card {
+    min-width: 0;
+}
+
+.brand-card-image {
+    width: 100%;
+    height: 155px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.brand-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.brand-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* Card text */
+
+.brand-card h4 {
+    margin: 0 0 5px;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.brand-card p {
+    margin: 0;
+    font-size: 9px;
+    line-height: 1.45;
+    color: #ffffff;
+    min-height: 40px;
+}
+
+
+/* Download */
+
+.download-link {
+    display: inline-block;
+    margin-top: 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 8px;
+    font-weight: 500;
+}
+
+.download-link span {
+    color: #a8a8a8;
+    margin-left: 4px;
+}
+
+
+/* Bottom button */
+
+.download-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 32px;
+
+    padding: 8px 18px;
+
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.download-all-btn:hover {
+    background: #ffffff;
+    color: #080909;
+}
+
+
+/* Bottom note */
+
+.assets-note {
+    margin: 10px 0 0;
+    font-size: 8px;
+    color: #aaa;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 800px) {
+
+    .brand-collage {
+        width: 100%;
+        height: 300px;
+        grid-template-rows: 150px 150px;
+    }
+
+    .brand-assets-section {
+        padding-top: 45px;
+    }
+
+    .brand-assets-container {
+        width: min(650px, 100%);
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .brand-collage {
+        height: 230px;
+        grid-template-rows: 115px 115px;
+        gap: 2px;
+    }
+
+    .brand-assets-section {
+        padding: 45px 18px 30px;
+    }
+
+    .brand-assets-container h2 {
+        font-size: 24px;
+    }
+
+    .brand-assets-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .brand-card-image {
+        height: 210px;
+    }
+
+    .brand-card h4 {
+        font-size: 13px;
+    }
+
+    .brand-card p {
+        font-size: 11px;
+        min-height: auto;
+    }
+
+    .download-link {
+        font-size: 10px;
+    }
+
+    .assets-note {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 420px) {
+
+    .brand-collage {
+        height: 190px;
+        grid-template-rows: 95px 95px;
+    }
+
+    .brand-assets-container h2 {
+        font-size: 22px;
+    }
+
+}
+/* =====================================
+   BRAINSTATION LOGOS SECTION
+===================================== */
+
+.brainstation-logos-section {
+    width: 100%;
+    background: #080909;
+    color: #ffffff;
+    padding: 70px 20px 80px;
+}
+
+.brainstation-logos-container {
+    width: min(890px, 100%);
+    margin: 0 auto;
+}
+
+
+/* HEADING */
+
+.brainstation-logos-container > h2 {
+    margin: 0 0 38px;
+    text-align: center;
+
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+
+/* GRID */
+
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 27px;
+}
+
+
+/* CARD */
+
+.logo-card-wrapper {
+    min-width: 0;
+}
+
+
+/* IMAGE BOX */
+
+.logo-card {
+    width: 100%;
+    height: 280px;
+
+    background: #15191b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+
+/* LOGO */
+
+.logo-card img {
+    width: 58%;
+    max-width: 310px;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+
+/* ICON CARD */
+
+.logo-card-wrapper:nth-child(2) .logo-card img {
+    width: 105px;
+    max-width: 105px;
+    max-height: 105px;
+}
+
+
+/* TEXT */
+
+.logo-card-wrapper h3 {
+    margin: 28px 0 7px;
+
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.logo-card-wrapper p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.45;
+    color: #ffffff;
+}
+
+
+/* DOWNLOAD */
+
+.logo-download {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.logo-download span {
+    margin-left: 7px;
+    color: #aaaaaa;
+    font-weight: 400;
+}
+
+
+/* DOWNLOAD ALL */
+
+.logos-download-all {
+    display: flex;
+    width: fit-content;
+
+    margin: 55px auto 0;
+    padding: 15px 28px;
+
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.logos-download-all:hover {
+    background: #ffffff;
+    color: #080909;
+}
+
+
+/* NOTE */
+
+.logos-note {
+    margin: 15px 0 0;
+
+    text-align: center;
+
+    font-size: 13px;
+    color: #b5b5b5;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 800px) {
+
+    .brainstation-logos-section {
+        padding: 60px 20px 70px;
+    }
+
+    .brainstation-logos-container {
+        width: min(700px, 100%);
+    }
+
+    .logo-card {
+        height: 240px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .brainstation-logos-section {
+        padding: 50px 18px 60px;
+    }
+
+    .brainstation-logos-container > h2 {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .logos-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .logo-card {
+        height: 220px;
+    }
+
+    .logo-card img {
+        width: 65%;
+    }
+
+    .logo-card-wrapper h3 {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .logo-card-wrapper p {
+        font-size: 13px;
+    }
+
+    .logo-download {
+        margin-top: 22px;
+        font-size: 12px;
+    }
+
+    .logos-download-all {
+        margin-top: 45px;
+        font-size: 13px;
+    }
+
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         EXISTING HEADER
+    ========================================= -->
+
+    <div id="header"></div>
+
+    <!-- =========================================
+         PRESS & MEDIA
+    ========================================= -->
+
+    <main>
+
+        <section class="press-hero">
+
+            <div class="press-overlay"></div>
+
+
+            <div class="press-container">
+
+
+                <!-- LEFT -->
+
+                <div class="press-content">
+
+                    <h1>
+                        Press &amp; Media
+                    </h1>
+
+
+                    <p>
+                        Tell us what you’re looking for and a member
+                        of our team will reach out.
+                    </p>
+
+
+                    <a
+                        href="#brand-assets"
+                        class="brand-assets-btn"
+                    >
+
+                        <span>
+                            Go To Brand Assets
+                        </span>
+
+                        <span class="arrow">
+                            ↓
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- RIGHT FORM -->
+
+                <div class="press-form-wrapper">
+
+                    <form class="press-form">
+
+
+                        <div class="press-form-row">
+
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                required
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="Last Name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="text"
+                            placeholder="Company"
+                            required
+                        >
+
+
+                        <div class="phone-field">
+
+                            <div class="country">
+
+                                <span class="country-flag">
+                                    🇺🇸
+                                </span>
+
+                                <span>
+                                    ▼
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="tel"
+                                placeholder="(201) 555-0123"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            required
+                        >
+
+
+                        <textarea
+                            placeholder="How can we help?"
+                            required
+                        ></textarea>
+
+
+                        <button type="submit">
+                            Submit
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 STATS
+            ====================================== -->
+
+            <div class="press-stats">
+
+
+                <div class="press-stat">
+
+                    <div class="press-stat-number">
+                        2012
+                    </div>
+
+                    <div class="press-stat-label">
+                        Founded
+                    </div>
+
+                </div>
+
+
+                <div class="press-stat">
+
+                    <div class="press-stat-number">
+                        500+
+                    </div>
+
+                    <div class="press-stat-label">
+                        Team Members
+                    </div>
+
+                </div>
+
+
+                <div class="press-stat">
+
+                    <div class="press-stat-number">
+                        40,000+
+                    </div>
+
+                    <div class="press-stat-label">
+                        Professionals Certified
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BRAND ASSETS
+        ====================================== -->
+
+        <section id="brand-assets">
+
+            <!-- Ahiya next section add karishu -->
+
+        </section>
+
+        <!-- =========================================
+     EXCEPTIONAL IN-PERSON EXPERIENCES
+========================================= -->
+
+<section class="in-person-experiences">
+
+    <div class="in-person-container">
+
+        <!-- Heading -->
+
+        <div class="in-person-heading">
+
+            <h2>
+                The Global Leader in AI & Digital Skills Training
+            </h2>
+
+            <p>
+                BrainStation's global spaces are custom-built for real learning, deep collaboration and building connections. Located in key cities, our spaces bring industry professionals together to learn and build.
+            </p>
+
+        </div>
+
+
+        <!-- Locations -->
+
+        <div class="locations-grid">
+
+
+            <!-- NEW YORK -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/new-york.jpg"
+                    alt="BrainStation New York"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>New York</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in the heart of New York's
+                            vibrant tech and creative community,
+                            BrainStation New York brings
+                            professionals together to learn,
+                            collaborate, and build.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LONDON -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/london.jpg"
+                    alt="BrainStation London"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>London</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Based in the tech district of Shoreditch,
+                            BrainStation is at the heart of London's
+                            digital scene, surrounded by the most
+                            cutting-edge companies in the city.
+                            In addition to courses, BrainStation London
+                            offers training sessions, industry events,
+                            expert panel discussions, and more.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TORONTO -->
+
+            <div class="location-card">
+
+                <img
+                    src="images/toronto.jpg"
+                    alt="BrainStation Toronto"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-bottom">
+
+                    <h3>Toronto</h3>
+
+                    <div class="location-description">
+
+                        <p>
+                            Located in Toronto's vibrant technology
+                            community, BrainStation Toronto provides
+                            a modern space where professionals can
+                            learn, connect, and build new skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     WHAT WE DO SECTION
+========================================= -->
+
+<section class="what-we-do">
+
+    <div class="what-we-do-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="what-we-do-content">
+
+            <h2>What We Do</h2>
+
+            <p class="what-we-do-intro">
+                Established in 2012, BrainStation empowers professionals
+                and leading companies to build essential skills in AI,
+                data, product management, marketing, and design through
+                live, instructor-led training.
+            </p>
+
+            <div class="what-we-do-label">
+                POWERFUL LEARNING EXPERIENCES:
+            </div>
+
+
+            <!-- CARD 1 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    💡
+                </div>
+
+                <h3>Thought Leadership Events</h3>
+
+                <p>
+                    Connect with industry leaders at the forefront of
+                    their fields. Join us for in-person panels, keynotes,
+                    and community events featuring leaders from the
+                    world's most innovative brands.
+                </p>
+
+                <a href="#">
+                    View Upcoming Events
+                </a>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ♧
+                </div>
+
+                <h3>Enterprise Training</h3>
+
+                <p>
+                    Accelerate digital transformation. BrainStation
+                    delivers professional, in-depth workshops designed
+                    to help teams and individuals build lasting AI
+                    capability.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ▤
+                </div>
+
+                <h3>Professional Certifications</h3>
+
+                <p>
+                    Master the skills driving the modern economy. From
+                    AI and Data to Product Management, Marketing, and UX
+                    Design, our certifications provide the hands-on
+                    mentorship and training to level up your professional
+                    skills and advance your career.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE COLLAGE -->
+        <div class="what-we-do-images">
+
+            <div class="image-box image-1">
+                <img src="images/what-we-do-1.jpg" alt="">
+            </div>
+
+            <div class="image-box image-2">
+                <img src="images/what-we-do-2.jpg" alt="">
+            </div>
+
+            <div class="image-box image-3">
+                <img src="images/what-we-do-3.jpg" alt="">
+            </div>
+
+            <div class="image-box image-4">
+                <img src="images/what-we-do-4.jpg" alt="">
+            </div>
+
+            <div class="image-box image-5">
+                <img src="images/what-we-do-5.jpg" alt="">
+            </div>
+
+            <div class="image-box image-6">
+                <img src="images/what-we-do-6.jpg" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="press-hero">
+
+            <div class="press-overlay"></div>
+
+
+            <div class="press-container">
+
+
+                <!-- LEFT -->
+
+                <div class="press-content">
+
+                    <h1>
+                        Media Inquiries
+                    </h1>
+
+
+                    <p>
+                        For any questions about BrainStation or media-related inquiries, please fill out the form.
+                    </p>
+
+                </div>
+
+
+
+                <!-- RIGHT FORM -->
+
+                <div class="press-form-wrapper">
+
+                    <form class="press-form">
+
+
+                        <div class="press-form-row">
+
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                required
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="Last Name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="text"
+                            placeholder="Company"
+                            required
+                        >
+
+
+                        <div class="phone-field">
+
+                            <div class="country">
+
+                                <span class="country-flag">
+                                    🇺🇸
+                                </span>
+
+                                <span>
+                                    ▼
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="tel"
+                                placeholder="(201) 555-0123"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            required
+                        >
+
+
+                        <textarea
+                            placeholder="How can we help?"
+                            required
+                        ></textarea>
+
+
+                        <button type="submit">
+                            Submit
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+     A WORD FROM OUR FOUNDER
+===================================================== -->
+
+<section class="founder-message">
+
+    <div class="founder-container">
+
+        <h2 class="founder-title">
+            A Word From Our Founder
+        </h2>
+
+
+        <div class="founder-content">
+
+
+            <!-- LEFT CONTENT -->
+
+            <div class="founder-text">
+
+                <div class="founder-quote-mark">
+                    “
+                </div>
+
+                <p class="founder-quote">
+                    Since the beginning, we've been driven by a
+                    single mission: to enable professionals and
+                    organizations to thrive in the digital era.
+                    We design and deliver immersive and
+                    accelerated learning experiences that push
+                    capability, performance, and ambition to
+                    new levels.
+                </p>
+
+
+                <h3 class="founder-name">
+                    Jason Field
+                </h3>
+
+                <p class="founder-role">
+                    Founder &amp; CEO, BrainStation
+                </p>
+
+
+                <!-- LOGO -->
+
+                <img
+                    class="founder-logo"
+                    src="https://brainstation.io/assets/logo-white-CYj0hL9v.svg"
+                    alt="BrainStation"
+                >
+
+            </div>
+
+
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="founder-image-wrapper">
+
+                <img
+                    class="founder-image"
+                    src="https://brainstation.io/assets/jason-field-CQszyBnu.webp"
+                    alt="Jason Field, Founder and CEO"
+                >
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==============================
+     TRUSTED COMPANIES
+================================ -->
+
+<section class="trusted-companies">
+
+    <div class="trusted-container">
+
+        <!-- HEADING -->
+
+        <h2 class="trusted-title">
+            Our Network of Industry Partners and Experts
+        </h2>
+
+        <!-- DIVIDER -->
+
+        <div class="trusted-divider"></div>
+
+        <!-- DESCRIPTION -->
+
+        <p class="trusted-description">
+            Courstrike is proud to work with the world's leading digital and AI
+            brands and professionals<br>
+            to power our events, workshops, and certification courses.
+        </p>
+
+
+        <!-- LOGO SLIDER -->
+
+        <div class="trusted-slider">
+
+            <div class="trusted-track" id="trustedTrack">
+
+                <!-- Logos will be generated by JS -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     SECTION 1 - IMAGE COLLAGE
+========================= -->
+
+<section class="brand-collage-section">
+
+    <div class="brand-collage">
+
+        <div class="collage-item collage-1">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-2">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-3">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-4">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+        <div class="collage-item collage-5">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SECTION 2 - BRAND ASSETS
+========================= -->
+
+<section class="brand-assets-section">
+
+    <div class="brand-assets-container">
+
+        <h2>BrainStation Brand Assets</h2>
+
+        <div class="brand-title-line"></div>
+
+        <h3>Brand, Experience, &amp; Founder Photos</h3>
+
+
+        <div class="brand-assets-grid">
+
+            <!-- CARD 1 -->
+            <div class="brand-card">
+
+                <div class="brand-card-image">
+                    <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=85" alt="">
+                </div>
+
+                <h4>Global Spaces</h4>
+
+                <p>
+                    High-res photos of BrainStation's state-of-the-art
+                    global spaces.
+                </p>
+
+                <a href="#" class="download-link">
+                    ↓ &nbsp; Download Zip
+                    <span>48.5 MB</span>
+                </a>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="brand-card">
+
+                <div class="brand-card-image">
+                    <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=900&q=85" alt="">
+                </div>
+
+                <h4>Learning Experiences and Events</h4>
+
+                <p>
+                    Images of BrainStation's world-class learning
+                    experiences and events.
+                </p>
+
+                <a href="#" class="download-link">
+                    ↓ &nbsp; Download Zip
+                    <span>16.7 MB</span>
+                </a>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="brand-card">
+
+                <div class="brand-card-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85" alt="">
+                </div>
+
+                <h4>BrainStation's Founder and CEO</h4>
+
+                <p>
+                    Headshots of Jason Field, BrainStation's Founder
+                    and CEO.
+                </p>
+
+                <a href="#" class="download-link">
+                    ↓ &nbsp; Download Zip
+                    <span>2.1 MB</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM BUTTON -->
+
+        <a href="#" class="download-all-btn">
+            Download All Assets
+        </a>
+
+        <p class="assets-note">
+            BrainStation Photos in JPG (87.3 MB)
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     BRAINSTATION LOGOS
+========================= -->
+
+<section class="brainstation-logos-section">
+
+    <div class="brainstation-logos-container">
+
+        <h2>BrainStation Logos</h2>
+
+        <div class="logos-grid">
+
+            <!-- PRIMARY LOGO -->
+            <div class="logo-card-wrapper">
+
+                <div class="logo-card">
+                    <img
+                        src="https://brainstation.io/assets/logo-white-CYj0hL9v.svg"
+                        alt="BrainStation Logo"
+                    >
+                </div>
+
+                <h3>Primary BrainStation Logo</h3>
+
+                <p>
+                    The logo (in PNG &amp; EPS) can either be black or white.
+                </p>
+
+                <a href="#" class="logo-download">
+                    ↓ &nbsp; Download Zip
+                    <span>1.5 MB</span>
+                </a>
+
+            </div>
+
+
+            <!-- ICON -->
+            <div class="logo-card-wrapper">
+
+                <div class="logo-card">
+                    <img
+                        src="https://brainstation.io/assets/icon-white-D6Wz0W6H.svg"
+                        alt="BrainStation Icon"
+                    >
+                </div>
+
+                <h3>BrainStation Icon</h3>
+
+                <p>
+                    The icon (in PNG &amp; EPS) can either be black or white.
+                </p>
+
+                <a href="#" class="logo-download">
+                    ↓ &nbsp; Download Zip
+                    <span>2.5 MB</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <a href="#" class="logos-download-all">
+            Download All Assets
+        </a>
+
+        <p class="logos-note">
+            BrainStation Logos in PNG &amp; EPS (4.0 MB)
+        </p>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         EXISTING FOOTER
+    ========================================= -->
+
+    <div id="footer"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/trusted-companies.js"></script>
+
+
+</body>
+
+</html>

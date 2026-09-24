@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contact us | Courstrike</title>
+
+    <!-- YOUR EXISTING GLOBAL CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+        /* =========================================
+           PRESS & MEDIA PAGE ONLY
+        ========================================= */
+
+        .press-hero {
+            position: relative;
+            width: 100%;
+            min-height: 830px;
+
+            overflow: hidden;
+
+            background-image:
+                url("https://brainstation.io/assets/press-video-Cr3042qj.webp");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .press-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(15, 18, 28, 0.58) 0%,
+                    rgba(8, 10, 18, 0.72) 45%,
+                    rgba(0, 0, 0, 0.96) 100%
+                );
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .press-container {
+            position: relative;
+            z-index: 2;
+
+            width: min(1160px, calc(100% - 50px));
+
+            margin: 0 auto;
+
+            padding-top: 140px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 400px;
+
+            gap: 95px;
+
+            align-items: start;
+        }
+
+
+        /* =========================================
+           LEFT SIDE
+        ========================================= */
+
+        .press-content {
+            padding-top: 5px;
+        }
+
+        .press-content h1 {
+            margin: 0 0 18px;
+
+            font-size: 42px;
+
+            line-height: 1.05;
+
+            font-weight: 400;
+
+            letter-spacing: -2.5px;
+
+            color: #fff;
+        }
+
+
+        .press-content p {
+            max-width: 600px;
+
+            margin: 0 0 38px;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            color: #fff;
+        }
+        /* =========================================
+           BRAND ASSETS BUTTON
+        ========================================= */
+
+        .brand-assets-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 18px;
+
+            min-width: 195px;
+
+            height: 46px;
+
+            padding: 0 22px;
+
+            border-radius: 30px;
+
+            background: #fff;
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+
+        .brand-assets-btn:hover {
+            background: #eee;
+
+            transform: translateY(-2px);
+        }
+
+
+        .brand-assets-btn .arrow {
+            font-size: 21px;
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .press-form-wrapper {
+            width: 100%;
+
+            padding: 26px 30px 30px;
+
+            background: #15191a;
+
+            border-top: 4px solid #858b8e;
+
+            border-radius: 4px;
+        }
+
+
+        .press-form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+
+        .press-form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+
+        .press-form input,
+        .press-form textarea {
+            width: 100%;
+
+            border: 1px solid #5c6569;
+
+            background: #2a3032;
+
+            color: #fff;
+
+            outline: none;
+
+            border-radius: 2px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+        }
+
+
+        .press-form input {
+            height: 45px;
+
+            padding: 0 15px;
+        }
+
+
+        .press-form textarea {
+            height: 75px;
+
+            padding: 13px 15px;
+
+            resize: vertical;
+        }
+
+
+        .press-form input::placeholder,
+        .press-form textarea::placeholder {
+            color: #bfc6cb;
+        }
+
+
+        .press-form input:focus,
+        .press-form textarea:focus {
+            border-color: #fff;
+        }
+
+
+        /* =========================================
+           PHONE
+        ========================================= */
+
+        .phone-field {
+            width: 100%;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            background: #2a3032;
+
+            border: 1px solid #5c6569;
+
+            border-radius: 2px;
+        }
+
+
+        .country {
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding-left: 14px;
+
+            padding-right: 10px;
+        }
+
+
+        .country-flag {
+            font-size: 19px;
+        }
+
+
+        .phone-field input {
+            height: 100%;
+
+            flex: 1;
+
+            border: none;
+
+            padding-left: 3px;
+        }
+
+
+        /* =========================================
+           SUBMIT
+        ========================================= */
+
+        .press-form button {
+            width: 100%;
+
+            height: 45px;
+
+            margin-top: 8px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #fff;
+
+            color: #111;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+
+        .press-form button:hover {
+            background: #eee;
+        }
+
+         /* =========================================
+   WHAT WE DO
+========================================= */
+
+.what-we-do {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+
+    padding: 110px 0 120px;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+.what-we-do-container {
+    width: min(1180px, calc(100% - 70px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 43% 57%;
+
+    gap: 0;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.what-we-do-content {
+    position: relative;
+    z-index: 5;
+
+    padding-top: 35px;
+}
+
+.what-we-do-content h2 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.what-we-do-intro {
+    width: 90%;
+
+    margin: 0 0 62px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.what-we-do-label {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.what-card {
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    padding: 22px 20px 18px;
+
+    background: #15191b;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.what-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(255, 135, 45, 0.45);
+}
+
+.what-card-icon {
+    width: 34px;
+    height: 34px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    filter:
+        grayscale(1)
+        brightness(1.7);
+}
+
+.what-card h3 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.what-card p {
+    margin: 0 0 14px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.what-card a {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.what-card a:hover {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =========================================
+   IMAGE COLLAGE
+========================================= */
+
+.what-we-do-images {
+    position: relative;
+
+    height: 790px;
+
+    margin-left: -10px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+        155px
+        180px
+        350px
+        190px;
+
+    gap: 4px;
+
+    /* Fade the left side into black */
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+}
+
+
+/* Image boxes */
+
+.image-box {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   COLLAGE POSITIONS
+========================================= */
+
+.image-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.image-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-3 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.image-4 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.image-5 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.image-6 {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+
+/* Dark overlay on images */
+
+.image-box::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   RED / ORANGE / YELLOW BRAND GLOW
+========================================= */
+
+.what-we-do::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -250px;
+    top: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 106, 0, 0.08),
+            rgba(239, 35, 60, 0.03),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .what-we-do {
+        padding: 80px 0;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .what-we-do-content {
+        padding-top: 0;
+    }
+
+    .what-we-do-intro {
+        width: 100%;
+    }
+
+    .what-we-do-images {
+        margin-left: 0;
+
+        height: 600px;
+
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .what-we-do {
+        padding: 70px 0 80px;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 30px);
+
+        display: block;
+    }
+
+    .what-we-do-content h2 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .what-we-do-intro {
+        font-size: 13px;
+
+        margin-bottom: 45px;
+    }
+
+    .what-card {
+        padding: 20px 17px;
+
+        margin-bottom: 12px;
+    }
+
+    .what-card p {
+        font-size: 10px;
+    }
+
+    .what-we-do-images {
+        height: 500px;
+
+        margin-top: 35px;
+
+        grid-template-rows:
+            95px
+            120px
+            210px
+            120px;
+    }
+
+}
+    </style>
+
+    </head>
+
+    <body>
+
+
+    <!-- =========================================
+         EXISTING HEADER
+    ========================================= -->
+
+    <div id="header"></div>
+
+    <!-- =========================================
+         PRESS & MEDIA
+    ========================================= -->
+
+    <main>
+
+        <section class="press-hero">
+
+            <div class="press-overlay"></div>
+
+
+            <div class="press-container">
+
+
+                <!-- LEFT -->
+
+                <div class="press-content">
+
+                    <h1>    
+                    Have questions about BrainStation? <br>Connect with us.
+                    </h1>
+
+
+                    <p>
+                        Tell us what you’re looking for and a member
+                        of our team will reach out.
+                    </p>
+                </div>
+
+
+
+                <!-- RIGHT FORM -->
+
+                <div class="press-form-wrapper">
+
+                    <form class="press-form">
+
+
+                        <div class="press-form-row">
+
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                required
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="Last Name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="text"
+                            placeholder="Company"
+                            required
+                        >
+
+
+                        <div class="phone-field">
+
+                            <div class="country">
+
+                                <span class="country-flag">
+                                    🇺🇸
+                                </span>
+
+                                <span>
+                                    ▼
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="tel"
+                                placeholder="(201) 555-0123"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            required
+                        >
+
+
+                        <textarea
+                            placeholder="How can we help?"
+                            required
+                        ></textarea>
+
+
+                        <button type="submit">
+                            Submit
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+     WHAT WE DO SECTION
+========================================= -->
+
+<section class="what-we-do">
+
+    <div class="what-we-do-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="what-we-do-content">
+
+            <h2>Our Global Spaces</h2>
+
+            <p class="what-we-do-intro">
+                BrainStation’s global spaces are custom-built for real learning, deep collaboration and building connections. Located in key cities, our spaces bring industry professionals together to learn and build. Contact us if you would like to learn more.
+            </p>
+
+            <div class="what-we-do-label">
+                POWERFUL LEARNING EXPERIENCES:
+            </div>
+
+
+            <!-- CARD 1 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    💡
+                </div>
+
+                <h3>New York</h3>
+
+                <p>
+                    Our global headquarters is conveniently located in SoHo, surrounded by some of New York's leading digital and AI companies, along with world-class shopping and dining.
+                </p>
+
+                <a href="#">
+                    View Upcoming Events
+                </a>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ♧
+                </div>
+
+                <h3>London</h3>
+
+                <p>
+                   Located on vibrant Rivington Street in Shoreditch, BrainStation London is steps away from the Silicon Roundabout, home to the city's top startups and leading tech companies.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="what-card">
+
+                <div class="what-card-icon">
+                    ▤
+                </div>
+
+                <h3>Toronto</h3>
+
+                <p>
+                    Located at The Well, BrainStation Toronto is anchored in the city's premier tech and lifestyle hub alongside leading global companies and world-class dining. Near Union Station and the King/Spadina transit lines, our space is easily accessible for those in the downtown core and beyond.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE COLLAGE -->
+        <div class="what-we-do-images">
+
+            <div class="image-box image-1">
+                <img src="images/what-we-do-1.jpg" alt="">
+            </div>
+
+            <div class="image-box image-2">
+                <img src="images/what-we-do-2.jpg" alt="">
+            </div>
+
+            <div class="image-box image-3">
+                <img src="images/what-we-do-3.jpg" alt="">
+            </div>
+
+            <div class="image-box image-4">
+                <img src="images/what-we-do-4.jpg" alt="">
+            </div>
+
+            <div class="image-box image-5">
+                <img src="images/what-we-do-5.jpg" alt="">
+            </div>
+
+            <div class="image-box image-6">
+                <img src="images/what-we-do-6.jpg" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="press-hero">
+
+            <div class="press-overlay"></div>
+
+
+            <div class="press-container">
+
+
+                <!-- LEFT -->
+
+                <div class="press-content">
+
+                    <h1>    
+                    Have questions about BrainStation? <br>Connect with us.
+                    </h1>
+
+
+                    <p>
+                        Tell us what you’re looking for and a member
+                        of our team will reach out.
+                    </p>
+                </div>
+
+
+
+                <!-- RIGHT FORM -->
+
+                <div class="press-form-wrapper">
+
+                    <form class="press-form">
+
+
+                        <div class="press-form-row">
+
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                required
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="Last Name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="text"
+                            placeholder="Company"
+                            required
+                        >
+
+
+                        <div class="phone-field">
+
+                            <div class="country">
+
+                                <span class="country-flag">
+                                    🇺🇸
+                                </span>
+
+                                <span>
+                                    ▼
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="tel"
+                                placeholder="(201) 555-0123"
+                                required
+                            >
+
+                        </div>
+
+
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            required
+                        >
+                        <textarea
+                            placeholder="How can we help?"
+                            required
+                        ></textarea>
+
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        </main>
+            <div id="footer"></div>
+
+
+        <script src="js/components.js"></script>
+    </body>
+
+    </html>
