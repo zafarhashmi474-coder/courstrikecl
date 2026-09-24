@@ -57,42 +57,43 @@
         ====================================================== */
 
         .apply-teach-hero {
-            position: relative;
+    position: relative;
+    min-height: 690px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #050505;
+}
 
-            min-height: 690px;
+/* Background video styling */
+.apply-teach-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
 
-            display: flex;
-            align-items: center;
-
-            overflow: hidden;
-
-            background-image:
-
-                linear-gradient(
-                    180deg,
-                    rgba(8, 12, 20, 0.50) 0%,
-                    rgba(5, 5, 5, 0.48) 38%,
-                    rgba(5, 5, 5, 0.82) 72%,
-                    #050505 100%
-                ),
-
-                linear-gradient(
-                    90deg,
-                    rgba(5, 8, 15, 0.72) 0%,
-                    rgba(5, 8, 15, 0.42) 55%,
-                    rgba(5, 5, 5, 0.45) 100%
-                ),
-
-                url("https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=2200&q=90");
-
-            background-size: cover;
-
-            background-position: center;
-
-            background-repeat: no-repeat;
-        }
-
-
+/* Hero Overlay - Video clear dekhase ane content readable rehse */
+.apply-teach-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 5, 5, 0.40) 0%,
+            rgba(5, 5, 5, 0.60) 65%,
+            #050505 100%
+        );
+    pointer-events: none;
+}
         /* =====================================================
            ORANGE / RED / YELLOW GLOW (REMOVED)
         ====================================================== */
@@ -3324,6 +3325,13 @@
         ================================================== -->
 
         <section class="apply-teach-hero">
+            <video class="apply-teach-bg-video" autoplay muted loop playsinline>
+                <source src="images/5122649_Person_Human_1280x720.mp4" type="video/mp4">
+                Tamaru browser video support nathi kartu.
+            </video>
+
+            <!-- Video Overlay -->
+            <div class="apply-teach-hero-overlay"></div>
 
             <div class="apply-teach-hero-content">
 
