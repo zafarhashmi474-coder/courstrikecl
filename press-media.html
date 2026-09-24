@@ -29,30 +29,36 @@
             position: relative;
             width: 100%;
             min-height: 830px;
-
             overflow: hidden;
-
-            background-image:
-                url("https://brainstation.io/assets/press-video-Cr3042qj.webp");
-
-            background-size: cover;
-            background-position: center;
+            background-color: #000; 
         }
 
+        .press-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
 
         .press-overlay {
             position: absolute;
             inset: 0;
-
+            z-index: 1; 
             background:
                 linear-gradient(
                     to bottom,
-                    rgba(15, 18, 28, 0.58) 0%,
-                    rgba(8, 10, 18, 0.72) 45%,
-                    rgba(0, 0, 0, 0.96) 100%
+                    rgba(0, 0, 0, 0.25) 0%,
+                    rgba(0, 0, 0, 0.40) 50%,
+                    rgba(0, 0, 0, 0.65) 100%
                 );
         }
-
 
         /* =========================================
            MAIN CONTENT
@@ -2350,6 +2356,11 @@
 
         <section class="press-hero">
 
+            <video class="press-bg-video" autoplay muted loop playsinline>
+                <source src="images/7011703_Filmmaking_Directing_1280x720.mp4" type="video/mp4">
+                Tamarun browser video support nathi kartu.
+            </video>
+
             <div class="press-overlay"></div>
 
 
@@ -2787,6 +2798,11 @@
 </section>
 
 <section class="press-hero">
+        <video class="press-bg-video" autoplay muted loop playsinline>
+                <source src="images/7011703_Filmmaking_Directing_1280x720.mp4" type="video/mp4">
+                <!-- Example: src="videos/hero-bg.mp4" -->
+                Tamarun browser video support nathi kartu.
+        </video>
 
             <div class="press-overlay"></div>
 
