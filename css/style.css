@@ -426,56 +426,53 @@ a {
    AI LOGOS
 ========================================= */
 
-.ai-logos {
+.ai-logos-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 35px;
     flex-wrap: wrap;
+    gap: 38px;
     margin-top: 30px;
 }
 
-.ai-logo {
-    width: 115px;
-    height: 45px;
-
-    display: flex;
+.logo-box {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 9px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: inherit;
+    letter-spacing: -0.3px;
+    line-height: 1;
+}
 
+.brand-svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    fill: #ffffff;
     flex-shrink: 0;
 }
 
-.ai-logo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    /* Makes dark/colored logos appear white */
-    filter: brightness(0) invert(1);
-
+/* Normal logos */
+.brand-svg {
+    width: 22px;
+    height: 22px;
     display: block;
+    fill: #ffffff;
+    flex-shrink: 0;
 }
 
-
-/* ==============================
-   MOBILE
-============================== */
-
-@media (max-width: 768px) {
-
-    .ai-logos {
-        gap: 20px;
-        margin-top: 25px;
-    }
-
-    .ai-logo {
-        width: 90px;
-        height: 38px;
-    }
-
-}
+/* Amazon wordmark logo */
+/* .amazon-svg {
+    width: 76px;
+    height: 22px;
+    display: block;
+    fill: #ffffff;
+    flex-shrink: 0;
+    transform: translateY(1px);
+} */
 
 /* =========================================
    OLD COMPANY LOGOS SUPPORT
