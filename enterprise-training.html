@@ -2,1482 +2,525 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enterprise AI Training | Courstrike</title>
 
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/enterprise-training.css"
-    >
-
-    <style>
-        /* Shade and glow reset overrides */
-        .enterprise-glow,
-        .enterprise-glow-red,
-        .enterprise-glow-orange,
-        .enterprise-glow-yellow,
-        .enterprise-testimonial-image-accent {
-            display: none !important;
-            background: none !important;
-            box-shadow: none !important;
-            filter: none !important;
-        }
-
-        .offering-icon.yellow-icon {
-            color: #ffffff !important;
-            background: rgba(255, 255, 255, 0.08) !important;
-            border-color: rgba(255, 255, 255, 0.15) !important;
-        }
-    </style>
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enterprise-training.css">
 </head>
-
 
 <body class="enterprise-page">
 
     <!-- ==============================
          HEADER
     ============================== -->
-
     <div id="header"></div>
-
 
     <!-- ==============================
          ENTERPRISE HERO
     ============================== -->
-
     <main>
-
         <section class="enterprise-hero">
 
-            <!-- Decorative color glows removed -->
+            <!-- Background Video -->
+            <div class="enterprise-video-wrapper">
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    preload="auto"
+                    class="enterprise-hero-video"
+                >
+                    <source src="images/0_Business_Meeting_1280x720.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
-            <!-- Background image -->
-
-            <div class="enterprise-background"></div>
-
-
-            <!-- Dark overlay -->
-
+            <!-- Soft Cinema-Grade Dark Overlay -->
             <div class="enterprise-overlay"></div>
-
 
             <div class="enterprise-container">
 
-
-                <!-- ==============================
-                     LEFT CONTENT
-                ============================== -->
-
+                <!-- LEFT CONTENT -->
                 <div class="enterprise-left">
+                    <!-- Breadcrumbs -->
+                    <div class="enterprise-breadcrumbs">
+                        <span>Courstrike</span>
+                        <span class="crumb-sep">&gt;</span>
+                        <span>Enterprise</span>
+                        <span class="crumb-sep">&gt;</span>
+                        <span class="crumb-active">AI Training</span>
+                    </div>
 
                     <div class="enterprise-plus">
                         Courstrike+
                     </div>
 
-
                     <h1>
-                        Enterprise AI
-                        <br>
-                        Training
+                        Enterprise AI<br>Training
                     </h1>
 
-
                     <p class="enterprise-subtitle">
-                        Engage our experts to build scalable,
-                        enterprise-wide AI capabilities.
+                        Engage our experts to build scalable, enterprise-wide AI capabilities.
                     </p>
 
-
                     <!-- Stats -->
-
                     <div class="enterprise-stats">
-
                         <div class="enterprise-stat">
-
                             <strong>15+</strong>
-
-                            <span>
-                                Years of Experience
-                            </span>
-
+                            <span>Years of Experience</span>
                         </div>
-
-
                         <div class="enterprise-stat">
-
                             <strong>40,000+</strong>
-
-                            <span>
-                                Professionals Trained
-                            </span>
-
+                            <span>Professionals Trained</span>
                         </div>
-
                     </div>
-
                 </div>
 
-
-                <!-- ==============================
-                     FORM
-                ============================== -->
-
+                <!-- RIGHT FORM CARD (Clean Monochrome BrainStation Style) -->
                 <div class="enterprise-form-card">
-
                     <div class="form-top-line"></div>
 
-
                     <div class="enterprise-form-inner">
-
-                        <h2>
-                            Speak With Our Team
-                        </h2>
-
-
+                        <h2>Speak With Our Team</h2>
                         <p class="form-description">
-                            To get started, speak with our team to learn
-                            how we can enable your AI transformation.
+                            To get started, speak with our team to learn how we can enable your AI transformation.
                         </p>
 
-
-                        <form id="enterpriseForm">
-
-
-                            <!-- First + Last -->
-
+                        <form id="enterpriseForm" onsubmit="event.preventDefault(); alert('Consultation request sent!');">
                             <div class="form-row">
-
                                 <div class="form-field">
-
-                                    <input
-                                        type="text"
-                                        id="firstName"
-                                        name="firstName"
-                                        placeholder="First Name"
-                                        required
-                                    >
-
+                                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
                                 </div>
-
-
                                 <div class="form-field">
-
-                                    <input
-                                        type="text"
-                                        id="lastName"
-                                        name="lastName"
-                                        placeholder="Last Name"
-                                        required
-                                    >
-
+                                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
                                 </div>
-
                             </div>
-
-
-                            <!-- Email -->
 
                             <div class="form-field">
-
-                                <input
-                                    type="email"
-                                    id="businessEmail"
-                                    name="businessEmail"
-                                    placeholder="Business Email"
-                                    required
-                                >
-
+                                <input type="email" id="businessEmail" name="businessEmail" placeholder="Business Email" required>
                             </div>
-
-
-                            <!-- Phone -->
 
                             <div class="form-field phone-field">
-
-                                <select
-                                    id="countryCode"
-                                    name="countryCode"
-                                >
-
-                                    <option value="+1">
-                                        🇺🇸 +1
-                                    </option>
-
-                                    <option value="+91">
-                                        🇮🇳 +91
-                                    </option>
-
-                                    <option value="+44">
-                                        🇬🇧 +44
-                                    </option>
-
-                                    <option value="+1-CA">
-                                        🇨🇦 +1
-                                    </option>
-
-                                </select>
-
-
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="Phone Number"
-                                    required
-                                >
-
+                                <div class="custom-flag-field">
+                                    <svg class="flag-icon" viewBox="0 0 640 480">
+                                        <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+                                        <path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"/>
+                                        <path fill="#192f5d" d="M0 0h260v258.5H0z"/>
+                                    </svg>
+                                    <svg class="dropdown-chevron" viewBox="0 0 10 6">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    </svg>
+                                </div>
+                                <input type="tel" id="phone" name="phone" placeholder="(201) 555-0123" required>
                             </div>
-
-
-                            <!-- Company -->
 
                             <div class="form-field">
-
-                                <input
-                                    type="text"
-                                    id="company"
-                                    name="company"
-                                    placeholder="Company"
-                                    required
-                                >
-
+                                <input type="text" id="company" name="company" placeholder="Company" required>
                             </div>
-
-
-                            <!-- Message -->
 
                             <div class="form-field">
-
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    placeholder="How Can We Help?"
-                                    rows="4"
-                                ></textarea>
-
+                                <textarea id="message" name="message" placeholder="How Can We Help?" rows="3"></textarea>
                             </div>
-
-
-                            <!-- Terms -->
 
                             <p class="form-terms">
-
-                                By clicking
-                                <strong>
-                                    “Request a Consultation”
-                                </strong>,
-                                you confirm that you accept our
-                                <a href="#">
-                                    Terms
-                                </a>.
-
+                                By clicking <strong>“Request a Consultation”</strong>, you confirm that you accept our <a href="#">Terms</a>.
                             </p>
 
-
-                            <!-- Submit -->
-
-                            <button
-                                type="submit"
-                                class="consultation-btn"
-                            >
-
+                            <button type="submit" class="consultation-btn">
                                 Request a Consultation
-
                             </button>
-
-
                         </form>
-
                     </div>
-
                 </div>
 
             </div>
-
         </section>
 
         <!-- =========================================
-     ENTERPRISE SUB NAV
-========================================= -->
+             ENTERPRISE SUB NAV
+        ========================================= -->
+        <nav class="enterprise-subnav" id="enterpriseSubnav">
+            <div class="enterprise-subnav-inner">
+                <a href="index.html" class="enterprise-subnav-logo"></a>
 
-<nav class="enterprise-subnav" id="enterpriseSubnav">
-
-    <div class="enterprise-subnav-inner">
-
-        <!-- Logo -->
-
-        <a href="index.html" class="enterprise-subnav-logo">
-
-            <!-- <span class="enterprise-logo-mark">
-                <img
-                    src="images/Logo"
-                    alt="Courstrike"
-                    class="enterprise-logo-image"
-                >
-            </span> -->
-
-        </a>
-
-
-        <!-- Navigation -->
-
-        <div class="enterprise-subnav-links">
-
-            <a
-                href="#why-brainstation"
-                class="enterprise-nav-link active"
-            >
-                Why Courstrike
-            </a>
-
-            <a
-                href="#offerings"
-                class="enterprise-nav-link"
-            >
-                Offerings
-            </a>
-
-            <a
-                href="#benefits"
-                class="enterprise-nav-link"
-            >
-                Benefits
-            </a>
-
-            <a
-                href="#testimonials"
-                class="enterprise-nav-link"
-            >
-                Testimonials
-            </a>
-
-            <a
-                href="#locations"
-                class="enterprise-nav-link"
-            >
-                Locations
-            </a>
-
-        </div>
-
-
-        <!-- Contact button -->
-
-        <a
-            href="#enterprise-contact"
-            class="enterprise-contact-btn"
-        >
-            Get In Touch
-        </a>
-
-    </div>
-
-</nav>
-
-
-
-<!-- =========================================
-     WHY BRAINSTATION
-========================================= -->
-
-<section
-    class="enterprise-content-section why-brainstation-section"
-    id="why-brainstation"
->
-
-    <div class="enterprise-content-container">
-
-        <!-- Heading -->
-
-        <div class="enterprise-content-heading">
-
-            <h2>
-                Custom-Built Enterprise Training
-            </h2>
-
-            <p>
-                Every organization is different, and so is its AI opportunity.
-                Courstrike analyzes your people, processes, and technology
-                in order to build a custom AI transformation program that
-                finds high-leverage opportunities across your business and
-                makes them reality.
-            </p>
-
-        </div>
-
-
-        <!-- AI Opportunity Diagram -->
-
-        <div class="ai-opportunity-diagram">
-
-
-            <!-- PEOPLE -->
-
-            <div class="opportunity-card opportunity-card-people">
-
-                <div class="opportunity-icon">
-                    ♧
+                <div class="enterprise-subnav-links">
+                    <a href="#why-brainstation" class="enterprise-nav-link active">Why Courstrike</a>
+                    <a href="#offerings" class="enterprise-nav-link">Offerings</a>
+                    <a href="#benefits" class="enterprise-nav-link">Benefits</a>
+                    <a href="#testimonials" class="enterprise-nav-link">Testimonials</a>
+                    <a href="#locations" class="enterprise-nav-link">Locations</a>
                 </div>
 
-                <span>
-                    People
-                </span>
-
+                <a href="#enterprise-contact" class="enterprise-contact-btn">
+                    Get In Touch
+                </a>
             </div>
-
-
-            <!-- PROCESSES -->
-
-            <div class="opportunity-card opportunity-card-processes">
-
-                <div class="opportunity-icon">
-                    ◇
-                </div>
-
-                <span>
-                    Processes
-                </span>
-
-            </div>
-
-
-            <!-- TECHNOLOGY -->
-
-            <div class="opportunity-card opportunity-card-technology">
-
-                <div class="opportunity-icon">
-                    ⚯
-                </div>
-
-                <span>
-                    Technology
-                </span>
-
-            </div>
-
-
-            <!-- CONNECTING LINES -->
-
-            <div class="diagram-line diagram-line-left"></div>
-
-            <div class="diagram-line diagram-line-center"></div>
-
-            <div class="diagram-line diagram-line-right"></div>
-
-
-            <!-- CENTER -->
-
-            <div class="ai-opportunity-center">
-
-                <span>
-                    Your AI
-                </span>
-
-                <span>
-                    Opportunity
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     FUTURE SECTIONS
-========================================= -->
-
-<!-- =========================================
-     OFFERINGS
-========================================= -->
-
-<section class="offerings-section" id="offerings">
-
-    <div class="offerings-container">
-
-        <!-- PAGE TITLE -->
-
-        <div class="offerings-header">
-
-            <h2>
-                Enterprise AI Training
-            </h2>
-
-            <p>
-                BrainStation delivers expert-led, hands-on AI training
-                that equips your teams to implement AI across every
-                function: from product to marketing, design, and
-                executive leadership.
-            </p>
-
-        </div>
-
-
-        <!-- =================================
-             CORE WORKSHOPS
-        ================================== -->
-
-        <div class="offerings-group">
-
-            <div class="offerings-group-heading">
-
-                <h3>
-                    Core Workshops
-                </h3>
-
-                <p>
-                    In-depth workshops designed to help teams and
-                    professionals build lasting AI capabilities.
-                </p>
-
-            </div>
-
-
-            <div class="offerings-grid">
-
-
-                <!-- AI FUNDAMENTALS -->
-
-                <a
-                    href="workshops/ai-fundamentals.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon">
-                        ⚿
-                        <span>✦</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI Fundamentals
-                        </h4>
-
-                        <p>
-                            Work smarter with AI tools.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AI PRODUCT MANAGERS -->
-
-                <a
-                    href="workshops/ai-for-product-managers.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon">
-                        ▤
-                        <span>✦</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI for Product Managers
-                        </h4>
-
-                        <p>
-                            Reduce time to value with AI tools.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AI MARKETING -->
-
-                <a
-                    href="workshops/ai-for-marketing.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon">
-                        ◫
-                        <span>✦</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI for Marketing
-                        </h4>
-
-                        <p>
-                            Accelerate the marketing workflow.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AI DESIGNERS -->
-
-                <a
-                    href="workshops/ai-for-designers.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon">
-                        ◇
-                        <span>✦</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI for Designers
-                        </h4>
-
-                        <p>
-                            Accelerate the design workflow.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AI LEADERS -->
-
-                <a
-                    href="workshops/ai-for-leaders.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon">
-                        ♧
-                        <span>✦</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI for Leaders
-                        </h4>
-
-                        <p>
-                            Lead with greater speed and impact.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AI BRAND -->
-
-                <a
-                    href="workshops/ai-for-brand.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon">
-                        ◇
-                        <span>✦</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI for Brand
-                        </h4>
-
-                        <p>
-                            Brand-building for the AI era.
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================
-             SPECIALIZED WORKSHOPS
-        ================================== -->
-
-        <div class="offerings-group">
-
-            <div class="offerings-group-heading">
-
-                <h3>
-                    Specialized Workshops
-                </h3>
-
-                <p>
-                    Targeted, deep-dive sessions focused on
-                    mastering specific AI skills.
-                </p>
-
-            </div>
-
-
-            <div class="offerings-grid">
-
-
-                <!-- AI EVALS -->
-
-                <a
-                    href="workshops/ai-evals.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon dark-icon">
-                        ✓
-                        <span>●</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI Evals
-                        </h4>
-
-                        <p>
-                            Measure &amp; improve AI performance.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AI SEARCH -->
-
-                <a
-                    href="workshops/ai-search-optimization.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon dark-icon">
-                        ⌕
-                        <span>●</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI Search Optimization
-                        </h4>
-
-                        <p>
-                            Optimize your content for AI search.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AI AGENTS -->
-
-                <a
-                    href="workshops/ai-agents.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon dark-icon">
-                        ◈
-                        <span>●</span>
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI Agents
-                        </h4>
-
-                        <p>
-                            Build autonomous agents.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- AGILE -->
-
-                <a
-                    href="workshops/agile.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon dark-icon">
-                        ◔
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            Agile
-                        </h4>
-
-                        <p>
-                            Accelerate delivery and reduce risk.
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================
-             INNOVATION WORKSHOPS
-        ================================== -->
-
-        <div class="offerings-group">
-
-            <div class="offerings-group-heading">
-
-                <h3>
-                    Innovation Workshops
-                </h3>
-
-                <p>
-                    Strategic workshops to transform your
-                    organization's capabilities for the AI era.
-                </p>
-
-            </div>
-
-
-            <div class="offerings-grid">
-
-
-                <!-- AI INNOVATION -->
-
-                <a
-                    href="workshops/ai-innovation.html"
-                    class="offering-card"
-                >
-
-                    <div class="offering-icon dark-icon">
-                        ♧
-                    </div>
-
-                    <div class="offering-content">
-
-                        <h4>
-                            AI Innovation
-                        </h4>
-
-                        <p>
-                            Transform your organization with AI.
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================================
-     BENEFITS
-========================================= -->
-
-<section class="benefits-section" id="benefits">
-
-    <div class="benefits-container">
-
-        <!-- Heading -->
-
-        <div class="benefits-header">
-
-            <h2>
-                Make AI Your Organization's
-                Competitive Advantage
-            </h2>
-
-            <p>
-                Navigating from AI pilot to real AI capability is hard.
-                BrainStation builds the skills, systems, and fluency
-                your organization needs to succeed.
-            </p>
-
-        </div>
-
-
-        <!-- Benefits Grid -->
-
-        <div class="benefits-grid">
-
-
-            <!-- =================================
-                 CARD 1
-            ================================== -->
-
-            <div class="benefit-card benefit-card-large">
-
-                <div class="benefit-icon">
-
-                    <svg
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-
-                        <rect
-                            x="9"
-                            y="10"
-                            width="28"
-                            height="28"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M17 28V20H21C23.2 20 25 21.8 25 24C25 26.2 23.2 28 21 28H17Z"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M28 17H34"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M31 14V20"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                    </svg>
-
-                </div>
-
-
-                <div class="benefit-content">
-
-                    <h3>
-                        Build enterprise-wide AI fluency
-                    </h3>
-
+        </nav>
+
+        <!-- =========================================
+             WHY COURSTRIKE SECTION
+        ========================================= -->
+        <section class="enterprise-content-section why-brainstation-section" id="why-brainstation">
+            <div class="enterprise-content-container">
+                <div class="enterprise-content-heading">
+                    <h2>Custom-Built Enterprise Training</h2>
                     <p>
-                        Create a shared understanding of AI capabilities,
-                        limitations, and responsible use cases across teams.
+                        Every organization is different, and so is its AI opportunity.
+                        Courstrike analyzes your people, processes, and technology
+                        in order to build a custom AI transformation program that
+                        finds high-leverage opportunities across your business and
+                        makes them reality.
                     </p>
-
                 </div>
 
+                <div class="ai-opportunity-diagram">
+                    <div class="opportunity-card opportunity-card-people">
+                        <div class="opportunity-icon">♧</div>
+                        <span>People</span>
+                    </div>
+
+                    <div class="opportunity-card opportunity-card-processes">
+                        <div class="opportunity-icon">◇</div>
+                        <span>Processes</span>
+                    </div>
+
+                    <div class="opportunity-card opportunity-card-technology">
+                        <div class="opportunity-icon">⚯</div>
+                        <span>Technology</span>
+                    </div>
+
+                    <div class="diagram-line diagram-line-left"></div>
+                    <div class="diagram-line diagram-line-center"></div>
+                    <div class="diagram-line diagram-line-right"></div>
+
+                    <div class="ai-opportunity-center">
+                        <span>Your AI</span>
+                        <span>Opportunity</span>
+                    </div>
+                </div>
             </div>
+        </section>
 
-
-            <!-- =================================
-                 CARD 2
-            ================================== -->
-
-            <div class="benefit-card">
-
-                <div class="benefit-icon">
-
-                    <svg
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-
-                        <circle
-                            cx="17"
-                            cy="17"
-                            r="5"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <circle
-                            cx="31"
-                            cy="27"
-                            r="5"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M21 20L27 24"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M17 22V30"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M13 30C13 26.7 15.7 24 19 24"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                    </svg>
-
-                </div>
-
-
-                <div class="benefit-content">
-
-                    <h3>
-                        Enable role-based, practical application
-                    </h3>
-
+        <!-- =========================================
+             OFFERINGS SECTION
+        ========================================= -->
+        <section class="offerings-section" id="offerings">
+            <div class="offerings-container">
+                <div class="offerings-header">
+                    <h2>Enterprise AI Training</h2>
                     <p>
-                        Equip teams with hands-on workflows and use cases
-                        tailored to your specific business roles.
+                        Courstrike delivers expert-led, hands-on AI training
+                        that equips your teams to implement AI across every
+                        function: from product to marketing, design, and
+                        executive leadership.
                     </p>
-
                 </div>
 
+                <!-- Core Workshops -->
+                <div class="offerings-group">
+                    <div class="offerings-group-heading">
+                        <h3>Core Workshops</h3>
+                        <p>In-depth workshops designed to help teams and professionals build lasting AI capabilities.</p>
+                    </div>
+
+                    <div class="offerings-grid">
+                        <a href="workshops/ai-fundamentals.html" class="offering-card">
+                            <div class="offering-icon">⚿</div>
+                            <div class="offering-content">
+                                <h4>AI Fundamentals</h4>
+                                <p>Work smarter with AI tools.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/ai-for-product-managers.html" class="offering-card">
+                            <div class="offering-icon">▤</div>
+                            <div class="offering-content">
+                                <h4>AI for Product Managers</h4>
+                                <p>Reduce time to value with AI tools.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/ai-for-marketing.html" class="offering-card">
+                            <div class="offering-icon">◫</div>
+                            <div class="offering-content">
+                                <h4>AI for Marketing</h4>
+                                <p>Accelerate the marketing workflow.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/ai-for-designers.html" class="offering-card">
+                            <div class="offering-icon">◇</div>
+                            <div class="offering-content">
+                                <h4>AI for Designers</h4>
+                                <p>Accelerate the design workflow.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/ai-for-leaders.html" class="offering-card">
+                            <div class="offering-icon">♧</div>
+                            <div class="offering-content">
+                                <h4>AI for Leaders</h4>
+                                <p>Lead with greater speed and impact.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/ai-for-brand.html" class="offering-card">
+                            <div class="offering-icon">◇</div>
+                            <div class="offering-content">
+                                <h4>AI for Brand</h4>
+                                <p>Brand-building for the AI era.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Specialized Workshops -->
+                <div class="offerings-group">
+                    <div class="offerings-group-heading">
+                        <h3>Specialized Workshops</h3>
+                        <p>Targeted, deep-dive sessions focused on mastering specific AI skills.</p>
+                    </div>
+
+                    <div class="offerings-grid">
+                        <a href="workshops/ai-evals.html" class="offering-card">
+                            <div class="offering-icon dark-icon">✓</div>
+                            <div class="offering-content">
+                                <h4>AI Evals</h4>
+                                <p>Measure &amp; improve AI performance.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/ai-search-optimization.html" class="offering-card">
+                            <div class="offering-icon dark-icon">⌕</div>
+                            <div class="offering-content">
+                                <h4>AI Search Optimization</h4>
+                                <p>Optimize your content for AI search.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/ai-agents.html" class="offering-card">
+                            <div class="offering-icon dark-icon">◈</div>
+                            <div class="offering-content">
+                                <h4>AI Agents</h4>
+                                <p>Build autonomous agents.</p>
+                            </div>
+                        </a>
+
+                        <a href="workshops/agile.html" class="offering-card">
+                            <div class="offering-icon dark-icon">◔</div>
+                            <div class="offering-content">
+                                <h4>Agile</h4>
+                                <p>Accelerate delivery and reduce risk.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Innovation Workshops -->
+                <div class="offerings-group">
+                    <div class="offerings-group-heading">
+                        <h3>Innovation Workshops</h3>
+                        <p>Strategic workshops to transform your organization's capabilities for the AI era.</p>
+                    </div>
+
+                    <div class="offerings-grid">
+                        <a href="workshops/ai-innovation.html" class="offering-card">
+                            <div class="offering-icon dark-icon">♧</div>
+                            <div class="offering-content">
+                                <h4>AI Innovation</h4>
+                                <p>Transform your organization with AI.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-
-            <!-- =================================
-                 CARD 3
-            ================================== -->
-
-            <div class="benefit-card">
-
-                <div class="benefit-icon">
-
-                    <svg
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-
-                        <path
-                            d="M12 27C12 20.4 17.4 15 24 15C30.6 15 36 20.4 36 27"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M16 27V31"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M32 27V31"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <circle
-                            cx="24"
-                            cy="27"
-                            r="3"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M27 31L31 35"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                    </svg>
-
-                </div>
-
-
-                <div class="benefit-content">
-
-                    <h3>
-                        Increase productivity and speed to insight
-                    </h3>
-
+        <!-- =========================================
+             BENEFITS SECTION
+        ========================================= -->
+        <section class="benefits-section" id="benefits">
+            <div class="benefits-container">
+                <div class="benefits-header">
+                    <h2>Make AI Your Organization's Competitive Advantage</h2>
                     <p>
-                        Reduce low-value work and accelerate analysis,
-                        iteration, and decision-making.
+                        Navigating from AI pilot to real AI capability is hard.
+                        Courstrike builds the skills, systems, and fluency
+                        your organization needs to succeed.
                     </p>
-
                 </div>
 
+                <div class="benefits-grid">
+                    <div class="benefit-card benefit-card-large">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="9" y="10" width="28" height="28" stroke="currentColor" stroke-width="2"/>
+                                <path d="M17 28V20H21C23.2 20 25 21.8 25 24C25 26.2 23.2 28 21 28H17Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M28 17H34" stroke="currentColor" stroke-width="2"/>
+                                <path d="M31 14V20" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Build enterprise-wide AI fluency</h3>
+                            <p>Create a shared understanding of AI capabilities, limitations, and responsible use cases across teams.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="17" cy="17" r="5" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="31" cy="27" r="5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M21 20L27 24" stroke="currentColor" stroke-width="2"/>
+                                <path d="M17 22V30" stroke="currentColor" stroke-width="2"/>
+                                <path d="M13 30C13 26.7 15.7 24 19 24" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Enable role-based, practical application</h3>
+                            <p>Equip teams with hands-on workflows and use cases tailored to your specific business roles.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <path d="M12 27C12 20.4 17.4 15 24 15C30.6 15 36 20.4 36 27" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 27V31" stroke="currentColor" stroke-width="2"/>
+                                <path d="M32 27V31" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="24" cy="27" r="3" stroke="currentColor" stroke-width="2"/>
+                                <path d="M27 31L31 35" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Increase productivity and speed to insight</h3>
+                            <p>Reduce low-value work and accelerate analysis, iteration, and decision-making.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <path d="M13 11H35V28L24 36L13 28V11Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 23L23 26L29 19" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Embed responsible, governed AI use</h3>
+                            <p>Establish clear guardrails that protect editorial integrity, data privacy, and brand trust.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="11" y="11" width="22" height="22" stroke="currentColor" stroke-width="2"/>
+                                <path d="M18 18H38V38H18" stroke="currentColor" stroke-width="2"/>
+                                <path d="M27 27H35" stroke="currentColor" stroke-width="2"/>
+                                <path d="M27 31H32" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Lay the foundation for scalable enablement</h3>
+                            <p>Create repeatable assets and internal capability to support ongoing AI upskilling.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
+        <!-- =========================================
+             TESTIMONIALS SECTION
+        ========================================= -->
+        <section class="enterprise-testimonials" id="testimonials">
+            <div class="enterprise-testimonials-container">
+                <h2 class="enterprise-testimonials-title">
+                    Trusted by Professionals &amp; Enterprises Worldwide
+                </h2>
 
-            <!-- =================================
-                 CARD 4
-            ================================== -->
+                <div class="enterprise-testimonial-content">
+                    <div class="enterprise-testimonial-copy">
+                        <div class="enterprise-quote-mark">“</div>
+                        <div class="enterprise-testimonial-text">
+                            <p>Every stage of the workshop was thoughtfully planned, and it was clear that a lot of care went into ensuring we had everything we needed.</p>
+                            <p>My team and I felt welcomed, guided, and engaged throughout and have already been implementing the learnings into our day-to-day work.</p>
+                        </div>
 
-            <div class="benefit-card">
+                        <div class="enterprise-testimonial-person">
+                            <h3>Gennaro Nesso</h3>
+                            <span>Product Design Manager at EY</span>
+                        </div>
 
-                <div class="benefit-icon">
+                        <div class="enterprise-testimonial-company">
+                            <span class="ey-symbol">EY</span>
+                        </div>
+                    </div>
 
-                    <svg
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-
-                        <path
-                            d="M13 11H35V28L24 36L13 28V11Z"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M20 23L23 26L29 19"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                    </svg>
-
+                    <div class="enterprise-testimonial-image-wrap">
+                        <img src="images/testimonial-person.jpg" alt="Gennaro Nesso" class="enterprise-testimonial-image">
+                    </div>
                 </div>
-
-
-                <div class="benefit-content">
-
-                    <h3>
-                        Embed responsible, governed AI use
-                    </h3>
-
-                    <p>
-                        Establish clear guardrails that protect editorial
-                        integrity, data privacy, and brand trust.
-                    </p>
-
-                </div>
-
             </div>
+        </section>
 
-
-            <!-- =================================
-                 CARD 5
-            ================================== -->
-
-            <div class="benefit-card">
-
-                <div class="benefit-icon">
-
-                    <svg
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-
-                        <rect
-                            x="11"
-                            y="11"
-                            width="22"
-                            height="22"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M18 18H38V38H18"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M27 27H35"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                        <path
-                            d="M27 31H32"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        />
-
-                    </svg>
-
+        <!-- =========================================
+             LOCATIONS SECTION
+        ========================================= -->
+        <section class="enterprise-locations" id="locations">
+            <div class="enterprise-locations-container">
+                <div class="enterprise-locations-header">
+                    <h2>World-Class Training In-Person or Online</h2>
+                    <p>Purpose-built spaces designed for immersive, hands-on learning in the heart of the world's leading tech districts.</p>
                 </div>
 
+                <div class="enterprise-location-grid">
+                    <a href="#" class="enterprise-location-card">
+                        <img src="images/new-york.jpg" alt="New York training location">
+                        <div class="enterprise-location-overlay"></div>
+                        <div class="enterprise-location-name">New York</div>
+                    </a>
 
-                <div class="benefit-content">
+                    <a href="#" class="enterprise-location-card">
+                        <img src="images/london.jpg" alt="London training location">
+                        <div class="enterprise-location-overlay"></div>
+                        <div class="enterprise-location-name">London</div>
+                    </a>
 
-                    <h3>
-                        Lay the foundation for scalable enablement
-                    </h3>
-
-                    <p>
-                        Create repeatable assets and internal capability
-                        to support ongoing AI upskilling.
-                    </p>
-
+                    <a href="#" class="enterprise-location-card">
+                        <img src="images/toronto.jpg" alt="Toronto training location">
+                        <div class="enterprise-location-overlay"></div>
+                        <div class="enterprise-location-name">Toronto</div>
+                    </a>
                 </div>
-
             </div>
+        </section>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     TESTIMONIALS
-========================================= -->
-
-<section class="enterprise-testimonials" id="testimonials">
-
-    <div class="enterprise-testimonials-container">
-
-        <h2 class="enterprise-testimonials-title">
-            Trusted by Professionals &amp; Enterprises Worldwide
-        </h2>
-
-
-        <div class="enterprise-testimonial-content">
-
-            <!-- LEFT : TESTIMONIAL -->
-
-            <div class="enterprise-testimonial-copy">
-
-                <div class="enterprise-quote-mark">
-                    “
+        <!-- ==============================
+             TRUSTED COMPANIES
+        ================================ -->
+        <section class="trusted-companies">
+            <div class="trusted-container">
+                <h2 class="trusted-title">
+                    Trusted by 40,000+ Professionals &amp; Leading Brands Worldwide
+                </h2>
+                <div class="trusted-divider"></div>
+                <div class="trusted-slider">
+                    <div class="trusted-track" id="trustedTrack"></div>
                 </div>
-
-                <div class="enterprise-testimonial-text">
-
-                    <p>
-                        Every stage of the workshop was thoughtfully planned,
-                        and it was clear that a lot of care went into ensuring
-                        we had everything we needed.
-                    </p>
-
-                    <p>
-                        My team and I felt welcomed, guided, and engaged
-                        throughout and have already been implementing the
-                        learnings into our day-to-day work.
-                    </p>
-
-                </div>
-
-
-                <div class="enterprise-testimonial-person">
-
-                    <h3>
-                        Gennaro Nesso
-                    </h3>
-
-                    <span>
-                        Product Design Manager at EY
-                    </span>
-
-                </div>
-
-
-                <div class="enterprise-testimonial-company">
-                    <span class="ey-symbol">EY</span>
-                </div>
-
             </div>
-
-
-            <!-- RIGHT : PERSON IMAGE -->
-
-            <div class="enterprise-testimonial-image-wrap">
-
-                <!-- Replace this image with your testimonial person's image -->
-
-                <img
-                    src="images/testimonial-person.jpg"
-                    alt="Gennaro Nesso"
-                    class="enterprise-testimonial-image"
-                />
-
-                <div class="enterprise-testimonial-image-accent"></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     LOCATIONS
-========================================= -->
-
-<section class="enterprise-locations" id="locations">
-
-    <div class="enterprise-locations-container">
-
-        <div class="enterprise-locations-header">
-
-            <h2>
-                World-Class Training In-Person or Online
-            </h2>
-
-            <p>
-                Purpose-built spaces designed for immersive, hands-on
-                learning in the heart of the world's leading tech districts.
-            </p>
-
-        </div>
-
-
-        <div class="enterprise-location-grid">
-
-
-            <!-- NEW YORK -->
-
-            <a
-                href="#"
-                class="enterprise-location-card"
-            >
-
-                <img
-                    src="images/new-york.jpg"
-                    alt="New York training location"
-                />
-
-                <div class="enterprise-location-overlay"></div>
-
-                <div class="enterprise-location-name">
-                    New York
-                </div>
-
-            </a>
-
-
-            <!-- LONDON -->
-
-            <a
-                href="#"
-                class="enterprise-location-card"
-            >
-
-                <img
-                    src="images/london.jpg"
-                    alt="London training location"
-                />
-
-                <div class="enterprise-location-overlay"></div>
-
-                <div class="enterprise-location-name">
-                    London
-                </div>
-
-            </a>
-
-
-            <!-- TORONTO -->
-            <a
-                href="#"
-                class="enterprise-location-card"
-            >
-                <img
-                    src="images/toronto.jpg"
-                    alt="Toronto training location"
-                />
-                <div class="enterprise-location-overlay"></div>
-                <div class="enterprise-location-name">
-                    Toronto
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ==============================
-     TRUSTED COMPANIES
-================================ -->
-
-<section class="trusted-companies">
-
-    <div class="trusted-container">
-
-        <!-- HEADING -->
-
-        <h2 class="trusted-title">
-           Trusted by 40,000+ Professionals & Leading Brands Worldwide
-            <br>
-        </h2>
-
-
-        <!-- DIVIDER -->
-
-        <div class="trusted-divider"></div>
-
-        <!-- LOGO SLIDER -->
-
-        <div class="trusted-slider">
-
-            <div class="trusted-track" id="trustedTrack">
-
-                <!-- Logos will be generated by JS -->
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
+        </section>
     </main>
-
-
 
     <!-- ==============================
          FOOTER
     ============================== -->
-
     <div id="footer"></div>
 
-
-    <!-- Existing components -->
-
     <script src="js/components.js"></script>
-
-    <!-- Enterprise page JS -->
-
     <script src="js/enterprise-training.js"></script>
-
     <script src="js/trusted-companies.js"></script>
 </body>
-
 </html>

@@ -3,829 +3,355 @@
 ========================================= */
 
 .enterprise-hero {
-
     position: relative;
-
-    min-height: calc(100vh - 80px);
-
+    min-height: calc(100vh - 72px);
     width: 100%;
-
     overflow: hidden;
-
-    background: #090a0b;
-
+    background: #090a0d;
     color: #ffffff;
+    display: flex;
+    align-items: center;
 }
 
-
 /* =========================================
-   BACKGROUND IMAGE
+   BACKGROUND VIDEO
 ========================================= */
 
-.enterprise-background {
-
+.enterprise-video-wrapper {
     position: absolute;
-
     inset: 0;
-
-    background-image:
-        url("../images/enterprise-ai-training.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    transform: scale(1.03);
-
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     z-index: 0;
 }
 
+.enterprise-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: scale(1.02);
+    pointer-events: none;
+}
 
 /* =========================================
    DARK OVERLAY
 ========================================= */
 
 .enterprise-overlay {
-
     position: absolute;
-
     inset: 0;
-
     z-index: 1;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(4, 5, 6, 0.96) 0%,
-            rgba(5, 6, 7, 0.91) 38%,
-            rgba(5, 6, 7, 0.82) 62%,
-            rgba(5, 6, 7, 0.90) 100%
-        );
-}
-
-
-/* =========================================
-   RED / ORANGE / YELLOW GLOWS
-========================================= */
-
-.enterprise-glow {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(90px);
-
-    opacity: 0.25;
-
-    z-index: 2;
-
+    background: linear-gradient(
+        90deg,
+        rgba(9, 10, 13, 0.75) 0%,
+        rgba(9, 10, 13, 0.50) 45%,
+        rgba(9, 10, 13, 0.30) 75%,
+        rgba(9, 10, 13, 0.45) 100%
+    );
     pointer-events: none;
 }
-
-
-.enterprise-glow-red {
-
-    width: 430px;
-
-    height: 430px;
-
-    background: #ff3b30;
-
-    left: -180px;
-
-    top: 180px;
-}
-
-
-.enterprise-glow-orange {
-
-    width: 360px;
-
-    height: 360px;
-
-    background: #ff7a00;
-
-    right: 250px;
-
-    top: 100px;
-
-    opacity: 0.15;
-}
-
-
-.enterprise-glow-yellow {
-
-    width: 300px;
-
-    height: 300px;
-
-    background: #ffd400;
-
-    right: -100px;
-
-    bottom: -100px;
-
-    opacity: 0.12;
-}
-
 
 /* =========================================
    CONTAINER
 ========================================= */
 
 .enterprise-container {
-
     position: relative;
-
     z-index: 5;
-
-    width: min(
-        960px,
-        calc(100% - 50px)
-    );
-
-    min-height: calc(100vh - 80px);
-
+    width: min(1200px, calc(100% - 60px));
     margin: 0 auto;
-
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(390px, 450px);
-
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
-
     gap: 70px;
-
-    padding: 130px 0 70px;
+    padding-top: 180px;
+    padding-bottom: 90px;
 }
 
-
 /* =========================================
-   LEFT
+   BREADCRUMBS & LEFT TYPOGRAPHY
 ========================================= */
+
+.enterprise-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #9aa0a6;
+    margin-bottom: 26px;
+}
+
+.enterprise-breadcrumbs .crumb-sep {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.enterprise-breadcrumbs .crumb-active {
+    color: #ffffff;
+}
 
 .enterprise-left {
-
-    max-width: 530px;
-
-    padding-bottom: 15px;
+    max-width: 540px;
 }
-
 
 .enterprise-plus {
-
-    font-size: 18px;
-
+    font-size: 15px;
     font-weight: 600;
-
-    margin-bottom: 18px;
-
+    margin-bottom: 12px;
     color: #ffffff;
+    letter-spacing: -0.2px;
 }
-
-
-.enterprise-plus::after {
-
-    content: "";
-
-    display: inline-block;
-
-    width: 8px;
-
-    height: 8px;
-
-    margin-left: 7px;
-
-    border-radius: 50%;
-
-    background: #ff7a00;
-
-    box-shadow:
-        0 0 10px rgba(255, 122, 0, 0.8);
-}
-
-
-/* =========================================
-   HEADING
-========================================= */
 
 .enterprise-left h1 {
-
-    margin: 0;
-
-    font-size: 64px;
-
-    line-height: 1.02;
-
-    font-weight: 500;
-
-    letter-spacing: -2.8px;
-
+    margin: 0 0 20px 0;
+    font-size: clamp(40px, 4.5vw, 62px);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -2px;
     color: #ffffff;
 }
-
-
-/* =========================================
-   SUBTITLE
-========================================= */
 
 .enterprise-subtitle {
-
-    max-width: 550px;
-
-    margin: 25px 0 0;
-
-    font-size: 17px;
-
+    font-size: 16px;
     line-height: 1.5;
-
-    color: rgba(255,255,255,0.90);
+    color: #c5cbd3;
+    margin: 0 0 45px 0;
+    max-width: 480px;
 }
-
-
-/* =========================================
-   STATS
-========================================= */
 
 .enterprise-stats {
-
     display: flex;
-
-    gap: 85px;
-
-    margin-top: 45px;
+    gap: 65px;
+    align-items: flex-start;
 }
-
 
 .enterprise-stat {
-
     display: flex;
-
     flex-direction: column;
-
-    min-width: 160px;
 }
-
 
 .enterprise-stat strong {
-
-    font-size: 44px;
-
+    font-size: 42px;
     line-height: 1;
-
-    font-weight: 400;
-
-    letter-spacing: -1.5px;
-
+    font-weight: 700;
+    letter-spacing: -1.2px;
     color: #ffffff;
+    margin-bottom: 8px;
 }
-
 
 .enterprise-stat span {
-
-    margin-top: 8px;
-
-    font-size: 14px;
-
-    color: rgba(255,255,255,0.70);
+    font-size: 13.5px;
+    color: #9aa0a6;
 }
 
-
 /* =========================================
-   FORM CARD
+   RIGHT FORM CARD (BRAINSTATION MATCH)
 ========================================= */
 
 .enterprise-form-card {
-
     position: relative;
-
     width: 100%;
-
-    background:
-        rgba(15, 18, 20, 0.94);
-
-    border: 1px solid rgba(255,255,255,0.08);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,0.45);
-
-    border-radius: 2px;
-
+    max-width: 460px;
+    background: rgba(18, 21, 26, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    border-radius: 6px;
     overflow: hidden;
+    justify-self: end;
+    backdrop-filter: blur(10px);
 }
-
-
-/* =========================================
-   TOP COLOR LINE
-========================================= */
 
 .form-top-line {
-
     width: 100%;
-
-    height: 4px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff3b30 0%,
-            #ff6b00 45%,
-            #ffd400 100%
-        );
+    height: 3px;
+    background: #ffffff !important;
 }
-
 
 .enterprise-form-inner {
-
-    padding: 28px 30px 30px;
+    padding: 34px 32px 30px;
 }
 
-
-/* =========================================
-   FORM HEADING
-========================================= */
-
 .enterprise-form-inner h2 {
-
-    margin: 0;
-
+    margin: 0 0 10px 0;
     font-size: 21px;
-
-    line-height: 1.2;
-
-    font-weight: 600;
-
+    font-weight: 700;
+    letter-spacing: -0.4px;
     color: #ffffff;
 }
 
-
 .form-description {
-
-    margin: 12px 0 22px;
-
+    margin: 0 0 22px 0;
     font-size: 13px;
-
-    line-height: 1.45;
-
-    font-weight: 500;
-
-    color: rgba(255,255,255,0.88);
+    line-height: 1.5;
+    color: #a0a6b2;
 }
 
-
-/* =========================================
-   FORM ROW
-========================================= */
-
 .form-row {
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 12px;
 }
 
-
-/* =========================================
-   FORM FIELD
-========================================= */
-
 .form-field {
-
     width: 100%;
-
     margin-bottom: 12px;
 }
 
-
 .form-field input,
-.form-field textarea,
-.form-field select {
-
+.form-field textarea {
     width: 100%;
-
     box-sizing: border-box;
-
-    border: 1px solid rgba(255,255,255,0.20);
-
-    background: #2b3033;
-
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: #252a32;
     color: #ffffff;
-
-    border-radius: 2px;
-
+    border-radius: 4px;
     outline: none;
-
     font-family: inherit;
-
-    font-size: 13px;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.form-field input,
-.form-field select {
-
+    font-size: 13.5px;
+    padding: 0 14px;
     height: 44px;
-
-    padding: 0 13px;
+    transition: border-color 0.2s ease, background 0.2s ease;
 }
-
 
 .form-field textarea {
-
-    min-height: 72px;
-
-    padding: 12px 13px;
-
-    resize: vertical;
+    height: auto;
+    min-height: 80px;
+    padding: 12px 14px;
+    resize: none;
 }
-
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-
-    color: #b8bec4;
+    color: #8c93a0;
 }
-
 
 .form-field input:focus,
-.form-field textarea:focus,
-.form-field select:focus {
-
-    border-color: #ff7a00;
-
-    box-shadow:
-        0 0 0 2px rgba(255,122,0,0.12);
+.form-field textarea:focus {
+    border-color: #ffffff;
+    background: #2b313b;
+    box-shadow: none !important;
 }
-
-
-/* =========================================
-   PHONE
-========================================= */
 
 .phone-field {
-
-    display: grid;
-
-    grid-template-columns: 82px 1fr;
-
-    gap: 8px;
+    display: flex;
+    background: #252a32;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-
-.phone-field select {
-
-    cursor: pointer;
-
-    appearance: none;
-
-    padding: 0 8px;
+.phone-field input {
+    border: none;
+    background: transparent;
+    padding-left: 10px;
 }
 
+.custom-flag-field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    user-select: none;
+}
 
-/* =========================================
-   TERMS
-========================================= */
+.custom-flag-field .flag-icon {
+    width: 18px;
+    height: 13px;
+    border-radius: 1px;
+}
+
+.custom-flag-field .dropdown-chevron {
+    width: 8px;
+    height: 5px;
+    fill: #8c93a0;
+}
 
 .form-terms {
-
-    margin: 2px 0 17px;
-
-    font-size: 10px;
-
-    line-height: 1.35;
-
-    font-weight: 500;
-
-    color: rgba(255,255,255,0.85);
+    margin: 6px 0 20px;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #8c93a0;
 }
 
-
 .form-terms a {
-
     color: #ffffff;
-
     text-decoration: underline;
 }
 
-
-/* =========================================
-   BUTTON
-========================================= */
-
 .consultation-btn {
-
     width: 100%;
-
     height: 46px;
-
     border: none;
-
-    border-radius: 25px;
-
+    border-radius: 999px;
     background: #ffffff;
-
-    color: #090a0b;
-
+    color: #090a0d;
     cursor: pointer;
-
-    font-family: inherit;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
-
 
 .consultation-btn:hover {
-
-    transform: translateY(-2px);
-
-    background: #fff7e8;
-
-    box-shadow:
-        0 8px 25px rgba(255,122,0,0.20);
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1050px) {
-
-    .enterprise-container {
-
-        width: calc(100% - 50px);
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(350px, 420px);
-
-        gap: 45px;
-    }
-
-
-    .enterprise-left h1 {
-
-        font-size: 54px;
-    }
-
-
-    .enterprise-stats {
-
-        gap: 45px;
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 800px) {
-
-    .enterprise-hero {
-
-        min-height: auto;
-    }
-
-
-    .enterprise-background {
-
-        background-position: center;
-    }
-
-
-    .enterprise-container {
-
-        width: calc(100% - 35px);
-
-        min-height: auto;
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-
-        padding: 70px 0;
-    }
-
-
-    .enterprise-left {
-
-        max-width: 650px;
-    }
-
-
-    .enterprise-left h1 {
-
-        font-size: 48px;
-
-        letter-spacing: -2px;
-    }
-
-
-    .enterprise-form-card {
-
-        max-width: 520px;
-
-        margin: 0 auto;
-    }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 500px) {
-
-    .enterprise-container {
-
-        width: calc(100% - 28px);
-
-        padding: 55px 0;
-    }
-
-
-    .enterprise-plus {
-
-        font-size: 16px;
-    }
-
-
-    .enterprise-left h1 {
-
-        font-size: 39px;
-
-        letter-spacing: -1.5px;
-    }
-
-
-    .enterprise-subtitle {
-
-        font-size: 15px;
-    }
-
-
-    .enterprise-stats {
-
-        gap: 25px;
-
-        margin-top: 35px;
-    }
-
-
-    .enterprise-stat strong {
-
-        font-size: 34px;
-    }
-
-
-    .enterprise-stat span {
-
-        font-size: 12px;
-    }
-
-
-    .enterprise-form-inner {
-
-        padding: 24px 18px 22px;
-    }
-
-
-    .form-row {
-
-        grid-template-columns: 1fr;
-
-        gap: 0;
-    }
-
+    background: #eaecef;
+    transform: translateY(-1px);
+    box-shadow: none !important;
 }
 
 /* =========================================
-   ENTERPRISE SECONDARY NAV
+   SECONDARY STICKY SUBNAV
 ========================================= */
+
+body.enterprise-page #header {
+    position: relative;
+    z-index: 1100;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+body.enterprise-page #header.enterprise-header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
 
 .enterprise-subnav {
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
-
     width: 100%;
-
-    height: 76px;
-
+    height: 72px;
     background: rgba(8, 9, 10, 0.97);
-
-    border-bottom: 1px solid rgba(255,255,255,0.16);
-
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
 }
 
-
 .enterprise-subnav-inner {
-
-    width: min(
-        100%,
-        1740px
-    );
-
+    width: min(100%, 1740px);
     height: 100%;
-
     margin: 0 auto;
-
     padding: 0 26px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
-
-
-/* =========================================
-   LOGO
-========================================= */
-
-.enterprise-subnav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 55px;
-    flex-shrink: 0;
-    overflow: hidden;
-    text-decoration: none;
-}
-
-.enterprise-logo-image {
-    display: block;
-    width: 145px;
-    height: 50px;
-    max-width: none;
-    max-height: none;
-    object-fit: contain;
-    object-position: center;
-    transform: none !important;
-    rotate: none !important;
-}
-
-.enterprise-logo-mark {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 31px;
-    line-height: 1;
-    transform: rotate(45deg);
-}
-
-/* =========================================
-   NAV LINKS
-========================================= */
 
 .enterprise-subnav-links {
     display: flex;
     align-items: center;
     gap: 30px;
-    margin-left: 0;
-    margin-right: auto;
-    padding-left: 20px;
 }
 
 .enterprise-nav-link {
     position: relative;
-    padding: 28px 0;
+    padding: 26px 0;
     color: #ffffff;
     text-decoration: none;
     font-size: 13px;
-    line-height: 1;
     font-weight: 600;
-    white-space: nowrap;
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .enterprise-nav-link::after {
@@ -833,32 +359,17 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 17px;
+    bottom: 16px;
     height: 2px;
     transform: scaleX(0);
     transform-origin: center;
-    background:
-        linear-gradient(
-            90deg,
-            #ff3b30,
-            #ff7a00,
-            #ffd400
-        );
-    transition:
-        transform 0.25s ease;
-}
-
-.enterprise-nav-link:hover {
-    color: #ffffff;
+    background: #ffffff;
+    transition: transform 0.25s ease;
 }
 
 .enterprise-nav-link.active::after {
     transform: scaleX(1);
 }
-
-/* =========================================
-   GET IN TOUCH
-========================================= */
 
 .enterprise-contact-btn {
     display: inline-flex;
@@ -873,18 +384,16 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 600;
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .enterprise-contact-btn:hover {
     transform: translateY(-1px);
-    background: #fff4df;
+    background: #eaecef;
 }
 
 /* =========================================
-   WHY BRAINSTATION SECTION
+   WHY SECTION & DIAGRAM
 ========================================= */
 
 .enterprise-content-section {
@@ -894,21 +403,14 @@
     overflow: hidden;
     background: #080808;
     color: #ffffff;
-    scroll-margin-top: 76px;
+    scroll-margin-top: 72px;
 }
 
 .enterprise-content-container {
-    width: min(
-        900px,
-        calc(100% - 40px)
-    );
+    width: min(900px, calc(100% - 40px));
     margin: 0 auto;
     padding: 95px 0 80px;
 }
-
-/* =========================================
-   CONTENT HEADING
-========================================= */
 
 .enterprise-content-heading {
     text-align: center;
@@ -929,703 +431,122 @@
     max-width: 670px;
     margin: 22px auto 0;
     font-size: 14px;
-
     line-height: 1.55;
-
     font-weight: 500;
-
-    color: rgba(255,255,255,0.92);
+    color: rgba(255, 255, 255, 0.88);
 }
 
-
-/* =========================================
-   AI OPPORTUNITY DIAGRAM
-========================================= */
-
 .ai-opportunity-diagram {
-
     position: relative;
-
     width: 590px;
-
     height: 390px;
-
     margin: 45px auto 0;
 }
 
-
-/* =========================================
-   TOP CARDS
-========================================= */
-
 .opportunity-card {
-
     position: absolute;
-
     top: 0;
-
     width: 184px;
-
     height: 112px;
-
     box-sizing: border-box;
-
-    border: 1px solid rgba(255,255,255,0.25);
-
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 11px;
-
-    background: rgba(8,8,8,0.75);
-
+    background: rgba(18, 20, 24, 0.85);
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     color: #ffffff;
-
-    transition:
-        border-color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
-
 .opportunity-card:hover {
-
-    border-color: rgba(255,122,0,0.75);
-
-    background: rgba(255,122,0,0.04);
-
+    border-color: rgba(255, 255, 255, 0.45);
     transform: translateY(-3px);
 }
 
-
-.opportunity-card-people {
-
-    left: 0;
-}
-
-
-.opportunity-card-processes {
-
-    left: 203px;
-}
-
-
-.opportunity-card-technology {
-
-    right: 0;
-}
-
-
-/* =========================================
-   ICON
-========================================= */
+.opportunity-card-people { left: 0; }
+.opportunity-card-processes { left: 203px; }
+.opportunity-card-technology { right: 0; }
 
 .opportunity-icon {
-
-    height: 31px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
     font-size: 26px;
-
-    line-height: 1;
-
-    color: #ffffff;
-
     margin-bottom: 5px;
 }
 
-
 .opportunity-card span {
-
     font-size: 16px;
-
     font-weight: 500;
 }
-
-
-/* =========================================
-   CENTER AI OPPORTUNITY
-========================================= */
 
 .ai-opportunity-center {
-
     position: absolute;
-
     left: 50%;
-
     bottom: 0;
-
     transform: translateX(-50%);
-
     width: 240px;
-
     height: 147px;
-
     border-radius: 11px;
-
-    background: #303538;
-
+    background: #1e2227;
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     color: #ffffff;
-
     font-size: 22px;
-
     line-height: 1.25;
-
-    font-weight: 500;
-
+    font-weight: 600;
     text-align: center;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
-
-
-.ai-opportunity-center span {
-
-    text-decoration-line: underline;
-
-    text-decoration-color: #ffd400;
-
-    text-decoration-thickness: 1px;
-
-    text-underline-offset: 5px;
-}
-
-
-/* =========================================
-   CONNECTION LINES
-========================================= */
 
 .diagram-line {
-
     position: absolute;
-
-    background: rgba(255,255,255,0.22);
-
+    background: rgba(255, 255, 255, 0.18);
     pointer-events: none;
 }
-
-
-/* Left */
 
 .diagram-line-left {
-
     left: 92px;
-
     top: 112px;
-
     width: 1px;
-
     height: 132px;
 }
-
 
 .diagram-line-left::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     bottom: 0;
-
     width: 82px;
-
     height: 1px;
-
-    background: rgba(255,255,255,0.22);
+    background: rgba(255, 255, 255, 0.18);
 }
-
-
-/* Center */
 
 .diagram-line-center {
-
     left: 50%;
-
     top: 112px;
-
     width: 1px;
-
     height: 63px;
-
     transform: translateX(-50%);
 }
-
-
-.diagram-line-center::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 5px;
-
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: #555b5f;
-
-    left: 50%;
-
-    bottom: -3px;
-
-    transform: translateX(-50%);
-}
-
-
-/* Right */
 
 .diagram-line-right {
-
     right: 92px;
-
     top: 112px;
-
     width: 1px;
-
     height: 132px;
 }
 
-
 .diagram-line-right::after {
-
     content: "";
-
     position: absolute;
-
     right: 0;
-
     bottom: 0;
-
     width: 82px;
-
     height: 1px;
-
-    background: rgba(255,255,255,0.22);
-}
-
-
-/* =========================================
-   PLACEHOLDER SECTIONS
-========================================= */
-
-.enterprise-placeholder-section {
-
-    min-height: 600px;
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #0b0b0b;
-
-    color: #ffffff;
-
-    border-top: 1px solid rgba(255,255,255,0.08);
-
-    scroll-margin-top: 76px;
-}
-
-
-.enterprise-placeholder-inner {
-
-    text-align: center;
-}
-
-
-.enterprise-placeholder-inner h2 {
-
-    font-size: 45px;
-
-    font-weight: 500;
-
-    margin: 0;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 850px) {
-
-    .enterprise-subnav-inner {
-
-        padding: 0 18px;
-    }
-
-
-    .enterprise-subnav-links {
-
-        gap: 18px;
-
-        padding-left: 10px;
-    }
-
-
-    .enterprise-nav-link {
-
-        font-size: 11px;
-    }
-
-
-    .enterprise-contact-btn {
-
-        min-width: 85px;
-
-        padding: 0 13px;
-
-        font-size: 11px;
-    }
-
-
-    .enterprise-content-container {
-
-        padding-top: 75px;
-    }
-
-
-    .enterprise-content-heading h2 {
-
-        font-size: 33px;
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 650px) {
-
-    .enterprise-subnav {
-
-        height: auto;
-
-        min-height: 70px;
-    }
-
-
-    .enterprise-subnav-inner {
-
-        min-height: 70px;
-
-        padding: 10px 15px;
-
-        flex-wrap: wrap;
-
-        gap: 10px;
-    }
-
-
-    .enterprise-subnav-links {
-
-        order: 3;
-
-        width: 100%;
-
-        overflow-x: auto;
-
-        padding: 0 0 8px;
-
-        gap: 25px;
-
-        scrollbar-width: none;
-    }
-
-
-    .enterprise-subnav-links::-webkit-scrollbar {
-
-        display: none;
-    }
-
-
-    .enterprise-nav-link {
-
-        padding: 10px 0;
-
-        font-size: 11px;
-    }
-
-
-    .enterprise-nav-link::after {
-
-        bottom: 3px;
-    }
-
-
-    .enterprise-contact-btn {
-
-        margin-left: auto;
-    }
-
-
-    .enterprise-content-section {
-
-        scroll-margin-top: 120px;
-    }
-
-
-    .enterprise-content-container {
-
-        width: calc(100% - 28px);
-
-        padding: 65px 0 70px;
-    }
-
-
-    .enterprise-content-heading h2 {
-
-        font-size: 29px;
-
-        letter-spacing: -1px;
-    }
-
-
-    .enterprise-content-heading p {
-
-        font-size: 13px;
-    }
-
-
-    .ai-opportunity-diagram {
-
-        width: 100%;
-
-        max-width: 400px;
-
-        height: 500px;
-
-        margin-top: 40px;
-    }
-
-
-    .opportunity-card {
-
-        width: 135px;
-
-        height: 100px;
-    }
-
-
-    .opportunity-card-people {
-
-        left: 0;
-    }
-
-
-    .opportunity-card-processes {
-
-        left: auto;
-
-        right: 0;
-    }
-
-
-    .opportunity-card-technology {
-
-        top: 125px;
-
-        left: 50%;
-
-        right: auto;
-
-        transform: translateX(-50%);
-    }
-
-
-    .opportunity-card-technology:hover {
-
-        transform:
-            translateX(-50%)
-            translateY(-3px);
-    }
-
-
-    .ai-opportunity-center {
-
-        bottom: 25px;
-
-        width: 210px;
-
-        height: 130px;
-    }
-
-
-    .diagram-line-left,
-    .diagram-line-right,
-    .diagram-line-center {
-
-        display: none;
-    }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 430px) {
-
-    .enterprise-subnav-logo {
-
-        width: 32px;
-    }
-
-
-    .enterprise-contact-btn {
-
-        height: 34px;
-
-        min-width: 78px;
-
-        padding: 0 10px;
-
-        font-size: 10px;
-    }
-
-
-    .enterprise-content-heading h2 {
-
-        font-size: 26px;
-    }
-
-
-    .opportunity-card {
-
-        width: 125px;
-
-        height: 92px;
-    }
-
-
-    .opportunity-card-processes {
-
-        right: 0;
-    }
-
-
-    .ai-opportunity-center {
-
-        width: 190px;
-
-        height: 120px;
-
-        font-size: 19px;
-    }
-
-}
-
-/* =========================================
-   ENTERPRISE MAIN HEADER + SECONDARY HEADER
-========================================= */
-
-/*
-   Main header initially visible.
-   JS will add .enterprise-header-hidden
-   after the Why BrainStation section reaches
-   the top area.
-*/
-
-body.enterprise-page #header {
-    position: relative;
-    z-index: 1100;
-    transition:
-        transform 0.35s ease,
-        opacity 0.35s ease;
-}
-
-
-/* Main header disappears */
-
-body.enterprise-page #header.enterprise-header-hidden {
-
-    transform: translateY(-100%);
-
-    opacity: 0;
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   SECONDARY HEADER
-========================================= */
-
-.enterprise-subnav {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-
-    width: 100%;
-
-    height: 76px;
-
-    background: rgba(8, 9, 10, 0.97);
-
-    border-bottom: 1px solid rgba(255,255,255,0.16);
-
-    backdrop-filter: blur(12px);
-}
-
-
-/*
-   IMPORTANT:
-
-   Secondary nav is NOT fixed.
-
-   It stays in normal document flow and becomes
-   sticky only when the user scrolls to it.
-*/
-
-
-.enterprise-subnav-inner {
-
-    width: 100%;
-
-    max-width: 1740px;
-
-    height: 100%;
-
-    margin: 0 auto;
-
-    padding: 0 26px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.18);
 }
 
 /* =========================================
@@ -1637,7 +558,7 @@ body.enterprise-page #header.enterprise-header-hidden {
     min-height: 100vh;
     background: #080808;
     color: #ffffff;
-    scroll-margin-top: 76px;
+    scroll-margin-top: 72px;
     overflow: hidden;
 }
 
@@ -1646,11 +567,6 @@ body.enterprise-page #header.enterprise-header-hidden {
     margin: 0 auto;
     padding: 95px 0 120px;
 }
-
-
-/* =========================================
-   OFFERINGS HEADER
-========================================= */
 
 .offerings-header {
     width: 100%;
@@ -1674,21 +590,12 @@ body.enterprise-page #header.enterprise-header-hidden {
     font-size: 18px;
     line-height: 1.55;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.85);
 }
-
-
-/* =========================================
-   GROUP
-========================================= */
 
 .offerings-group {
     width: 100%;
     margin-bottom: 72px;
-}
-
-.offerings-group:last-child {
-    margin-bottom: 0;
 }
 
 .offerings-group-heading {
@@ -1700,319 +607,68 @@ body.enterprise-page #header.enterprise-header-hidden {
     font-size: 29px;
     line-height: 1.2;
     font-weight: 600;
-    letter-spacing: -0.7px;
     color: #ffffff;
 }
 
 .offerings-group-heading p {
     margin: 7px 0 0;
     font-size: 16px;
-    line-height: 1.45;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.75);
 }
-
-
-/* =========================================
-   CARDS GRID
-========================================= */
 
 .offerings-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 24px;
 }
-
-
-/* =========================================
-   OFFERING CARD
-========================================= */
 
 .offering-card {
     position: relative;
-
     width: 100%;
-    height: 220px;
     min-height: 220px;
-
-    box-sizing: border-box;
-
     padding: 28px 30px;
-
-    border: 1px solid rgba(255, 255, 255, 0.20);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 9px;
-
-    background: rgba(8, 8, 8, 0.72);
-
+    background: rgba(18, 21, 26, 0.65);
     color: #ffffff;
     text-decoration: none;
-
     display: flex;
     flex-direction: column;
-
-    transition:
-        border-color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
 .offering-card:hover {
-    border-color: rgba(255, 205, 0, 0.65);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 205, 0, 0.045),
-            rgba(255, 255, 255, 0.015)
-        );
-
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(25, 29, 36, 0.85);
     transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.30);
 }
-
-
-/* =========================================
-   ICON
-========================================= */
 
 .offering-icon {
-    position: relative;
-
-    width: 52px;
-    height: 52px;
-
-    flex: 0 0 52px;
-
+    width: 48px;
+    height: 48px;
     border-radius: 8px;
-
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-
-    margin-bottom: auto;
-
-    font-size: 23px;
-    line-height: 1;
-
-    font-weight: 600;
-}
-
-
-/* Yellow icons */
-
-.yellow-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #ffe03b 0%,
-            #f4c900 100%
-        );
-
-    color: #1a1a1a;
-}
-
-
-/* Dark icons */
-
-.dark-icon {
-    background: #303437;
+    font-size: 21px;
     color: #ffffff;
-}
-
-
-/* Small top-right badge */
-
-.offering-icon span {
-    position: absolute;
-
-    top: -7px;
-    right: -7px;
-
-    width: 20px;
-    height: 20px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 9px;
-
-    background: #f4e58b;
-    color: #444;
-
-    border: 2px solid #111;
-}
-
-
-/* =========================================
-   CARD TEXT
-========================================= */
-
-.offering-content {
-    min-width: 0;
+    margin-bottom: auto;
 }
 
 .offering-content h4 {
-    margin: 0;
-
-    font-size: 22px;
-    line-height: 1.25;
-
+    margin: 16px 0 0;
+    font-size: 21px;
     font-weight: 600;
-
-    letter-spacing: -0.45px;
-
     color: #ffffff;
 }
 
 .offering-content p {
-    margin: 12px 0 0;
-
-    font-size: 16px;
+    margin: 10px 0 0;
+    font-size: 15px;
     line-height: 1.45;
-
-    color: rgba(255, 255, 255, 0.88);
-}
-
-
-/* =========================================
-   SPECIALIZED / INNOVATION
-   KEEP SAME CARD SIZE
-========================================= */
-
-.offerings-group:nth-of-type(2) .offering-card,
-.offerings-group:nth-of-type(3) .offering-card {
-    height: 220px;
-    min-height: 220px;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1000px) {
-
-    .offerings-container {
-        width: min(850px, calc(100% - 50px));
-        padding: 80px 0 100px;
-    }
-
-    .offerings-header {
-        margin-bottom: 60px;
-    }
-
-    .offerings-header h2 {
-        font-size: 44px;
-    }
-
-    .offerings-header p {
-        font-size: 16px;
-    }
-
-    .offerings-grid {
-        gap: 20px;
-    }
-
-    .offering-card {
-        height: 205px;
-        min-height: 205px;
-        padding: 24px;
-    }
-
-    .offering-content h4 {
-        font-size: 19px;
-    }
-
-    .offering-content p {
-        font-size: 14px;
-    }
-
-    .offering-icon {
-        width: 48px;
-        height: 48px;
-        flex-basis: 48px;
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    .offerings-section {
-        scroll-margin-top: 110px;
-    }
-
-    .offerings-container {
-        width: calc(100% - 32px);
-        padding: 65px 0 80px;
-    }
-
-    .offerings-header {
-        margin-bottom: 50px;
-    }
-
-    .offerings-header h2 {
-        font-size: 34px;
-        letter-spacing: -1px;
-    }
-
-    .offerings-header p {
-        margin-top: 18px;
-        font-size: 14px;
-        line-height: 1.55;
-    }
-
-    .offerings-group {
-        margin-bottom: 55px;
-    }
-
-    .offerings-group-heading {
-        margin-bottom: 20px;
-    }
-
-    .offerings-group-heading h3 {
-        font-size: 24px;
-    }
-
-    .offerings-group-heading p {
-        font-size: 13px;
-    }
-
-    .offerings-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .offering-card,
-    .offerings-group:nth-of-type(2) .offering-card,
-    .offerings-group:nth-of-type(3) .offering-card {
-        height: 190px;
-        min-height: 190px;
-        padding: 24px;
-    }
-
-    .offering-icon {
-        width: 48px;
-        height: 48px;
-        flex-basis: 48px;
-        margin-bottom: auto;
-    }
-
-    .offering-content h4 {
-        font-size: 19px;
-    }
-
-    .offering-content p {
-        font-size: 14px;
-    }
+    color: rgba(255, 255, 255, 0.78);
 }
 
 /* =========================================
@@ -2020,402 +676,103 @@ body.enterprise-page #header.enterprise-header-hidden {
 ========================================= */
 
 .benefits-section {
-
     width: 100%;
-
     background: #080909;
-
     color: #ffffff;
-
-    border-top: 1px solid rgba(255,255,255,0.08);
-
-    scroll-margin-top: 76px;
-
-    padding: 38px 0 30px;
-
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    scroll-margin-top: 72px;
+    padding: 80px 0;
 }
-
-
-/* =========================================
-   CONTAINER
-========================================= */
 
 .benefits-container {
-
-    width: min(
-        972px,
-        calc(100% - 40px)
-    );
-
+    width: min(1000px, calc(100% - 40px));
     margin: 0 auto;
-
 }
-
-
-/* =========================================
-   HEADER
-========================================= */
 
 .benefits-header {
-
     text-align: center;
-
-    margin-bottom: 46px;
-
+    margin-bottom: 50px;
 }
-
 
 .benefits-header h2 {
-
-    margin: 0 auto;
-
-    max-width: 920px;
-
     font-size: 40px;
-
-    line-height: 1.15;
-
-    font-weight: 500;
-
-    letter-spacing: -1.8px;
-
+    font-weight: 600;
+    letter-spacing: -1.5px;
     color: #ffffff;
-
+    margin: 0;
 }
-
 
 .benefits-header p {
-
     max-width: 650px;
-
-    margin: 22px auto 0;
-
+    margin: 20px auto 0;
     font-size: 15px;
-
     line-height: 1.55;
-
-    font-weight: 500;
-
-    color: rgba(255,255,255,0.88);
-
+    color: rgba(255, 255, 255, 0.85);
 }
-
-
-/* =========================================
-   GRID
-========================================= */
 
 .benefits-grid {
-
     display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr
-        1fr;
-
-    grid-template-rows:
-        272px
-        272px;
-
-    gap: 12px;
-
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
-
-
-/* =========================================
-   BENEFIT CARD
-========================================= */
 
 .benefit-card {
-
-    position: relative;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
-    min-width: 0;
-
-    padding: 36px 36px 32px;
-
-    background: #15191b;
-
-    border: 1px solid rgba(255,255,255,0.12);
-
+    min-height: 250px;
+    padding: 32px 30px;
+    background: #14171d;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 10px;
-
-    overflow: hidden;
-
-    transition:
-        border-color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease;
-
+    transition: border-color 0.25s ease, transform 0.25s ease;
 }
-
-
-/* First card spans 2 columns */
 
 .benefit-card-large {
-
     grid-column: span 2;
-
 }
-
 
 .benefit-card:hover {
-
-    background: #191d1f;
-
-    border-color: rgba(255,255,255,0.20);
-
+    border-color: rgba(255, 255, 255, 0.28);
     transform: translateY(-2px);
-
 }
-
-
-/* =========================================
-   ICON
-========================================= */
 
 .benefit-icon {
-
     width: 36px;
-
     height: 36px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-start;
-
     color: #ffffff;
-
 }
-
 
 .benefit-icon svg {
-
     width: 32px;
-
     height: 32px;
-
     display: block;
-
 }
-
-
-/* =========================================
-   CONTENT
-========================================= */
-
-.benefit-content {
-
-    max-width: 100%;
-
-}
-
 
 .benefit-content h3 {
-
     margin: 0;
-
-    max-width: 430px;
-
     font-size: 18px;
-
-    line-height: 1.25;
-
     font-weight: 600;
-
-    letter-spacing: -0.35px;
-
     color: #ffffff;
-
 }
-
 
 .benefit-content p {
-
-    margin: 12px 0 0;
-
-    max-width: 540px;
-
+    margin: 10px 0 0;
     font-size: 14px;
-
     line-height: 1.5;
-
-    font-weight: 400;
-
-    color: rgba(255,255,255,0.92);
-
-}
-
-
-/* =========================================
-   DESKTOP CARD ALIGNMENT
-========================================= */
-
-.benefit-card-large .benefit-content {
-
-    max-width: 650px;
-
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .benefits-container {
-
-        width: calc(100% - 35px);
-
-    }
-
-
-    .benefits-header h2 {
-
-        font-size: 35px;
-
-    }
-
-
-    .benefits-grid {
-
-        grid-template-columns:
-            1fr
-            1fr;
-
-        grid-template-rows:
-            auto
-            auto
-            auto;
-
-    }
-
-
-    .benefit-card-large {
-
-        grid-column: span 2;
-
-    }
-
-
-    .benefit-card {
-
-        min-height: 250px;
-
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-    .benefits-section {
-
-        padding: 60px 0;
-
-    }
-
-
-    .benefits-container {
-
-        width: calc(100% - 28px);
-
-    }
-
-
-    .benefits-header {
-
-        margin-bottom: 32px;
-
-    }
-
-
-    .benefits-header h2 {
-
-        font-size: 30px;
-
-        letter-spacing: -1px;
-
-    }
-
-
-    .benefits-header p {
-
-        margin-top: 17px;
-
-        font-size: 14px;
-
-    }
-
-
-    .benefits-grid {
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        grid-template-rows: none;
-
-        gap: 12px;
-
-    }
-
-
-    .benefit-card-large {
-
-        grid-column: auto;
-
-    }
-
-
-    .benefit-card {
-
-        min-height: 230px;
-
-        padding: 28px 25px;
-
-    }
-
-
-    .benefit-content h3 {
-
-        font-size: 17px;
-
-    }
-
-
-    .benefit-content p {
-
-        font-size: 13px;
-
-    }
-
+    color: rgba(255, 255, 255, 0.82);
 }
 
 /* =========================================
-   TESTIMONIALS
+   TESTIMONIALS SECTION
 ========================================= */
 
 .enterprise-testimonials {
     width: 100%;
     background: #080909;
     color: #ffffff;
-    border-top: 1px solid rgba(255,255,255,0.22);
-    padding: 55px 0 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 85px 0 70px;
 }
 
 .enterprise-testimonials-container {
@@ -2423,492 +780,185 @@ body.enterprise-page #header.enterprise-header-hidden {
     margin: 0 auto;
 }
 
-
-/* =========================================
-   TITLE
-========================================= */
-
 .enterprise-testimonials-title {
-    margin: 0;
     text-align: center;
-
     font-size: 38px;
-    line-height: 1.15;
-    font-weight: 500;
-
-    letter-spacing: -1.5px;
-    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+    margin: 0 0 50px 0;
 }
-
-
-/* =========================================
-   TESTIMONIAL CONTENT
-========================================= */
 
 .enterprise-testimonial-content {
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        390px;
-
-    column-gap: 95px;
-
-    align-items: start;
-
-    max-width: 930px;
-
-    margin: 45px auto 0;
-}
-
-
-/* =========================================
-   LEFT CONTENT
-========================================= */
-
-.enterprise-testimonial-copy {
-    position: relative;
-    padding-top: 5px;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    column-gap: 80px;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .enterprise-quote-mark {
-    position: absolute;
-
-    top: -35px;
-    left: -18px;
-
-    font-size: 105px;
-    line-height: 1;
-
+    font-size: 90px;
     font-family: Georgia, serif;
-    font-weight: 700;
-
-    color: #343a3c;
-
-    pointer-events: none;
-}
-
-.enterprise-testimonial-text {
-    position: relative;
-    z-index: 1;
+    color: #2b3036;
+    line-height: 1;
+    margin-bottom: -30px;
 }
 
 .enterprise-testimonial-text p {
-    margin: 0 0 32px;
-
-    font-size: 19px;
-    line-height: 1.35;
-
-    font-weight: 600;
-
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 24px;
     color: #ffffff;
 }
-
-.enterprise-testimonial-text p:last-child {
-    margin-bottom: 28px;
-}
-
-
-/* =========================================
-   PERSON
-========================================= */
 
 .enterprise-testimonial-person h3 {
     margin: 0;
-
     font-size: 16px;
-    line-height: 1.3;
-
     font-weight: 700;
-
-    color: #ffffff;
 }
 
 .enterprise-testimonial-person span {
-    display: block;
-
-    margin-top: 6px;
-
-    font-size: 12px;
-    line-height: 1.3;
-
-    color: rgba(255,255,255,0.82);
-}
-
-
-/* =========================================
-   EY LOGO
-========================================= */
-
-.enterprise-testimonial-company {
-    margin-top: 24px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .ey-symbol {
-    position: relative;
-
     display: inline-block;
-
-    padding-top: 13px;
-
-    font-size: 32px;
-    line-height: 1;
-
+    margin-top: 20px;
+    font-size: 28px;
     font-weight: 800;
-
-    letter-spacing: -1.5px;
-
     color: #ffffff;
 }
 
-.ey-symbol::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 50px;
-    height: 9px;
-
-    background: #ffffff;
-
-    clip-path: polygon(
-        0 100%,
-        100% 0,
-        100% 35%,
-        20% 100%
-    );
-}
-
-
-/* =========================================
-   TESTIMONIAL IMAGE
-========================================= */
-
 .enterprise-testimonial-image-wrap {
-    position: relative;
-
-    width: 390px;
-    height: 400px;
-
+    width: 360px;
+    height: 380px;
     overflow: hidden;
+    border-radius: 8px;
 }
 
 .enterprise-testimonial-image {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
     width: 100%;
-    height: 350px;
-
+    height: 100%;
     object-fit: cover;
-    object-position: center;
-
     filter: grayscale(100%);
-
-    display: block;
 }
 
-
 /* =========================================
-   DIAGONAL IMAGE BOTTOM
-========================================= */
-
-.enterprise-testimonial-image-accent {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 105px;
-
-    background: #555e62;
-
-    clip-path: polygon(
-        0 0,
-        100% 48%,
-        100% 100%,
-        0 100%
-    );
-}
-
-
-/* =========================================
-   LOCATIONS
+   LOCATIONS SECTION
 ========================================= */
 
 .enterprise-locations {
     width: 100%;
-
     background: #080909;
-
     color: #ffffff;
-
-    padding: 120px 0 70px;
+    padding: 100px 0 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .enterprise-locations-container {
-    width: min(980px, calc(100% - 80px));
-
+    width: min(1050px, calc(100% - 60px));
     margin: 0 auto;
 }
 
-
-/* =========================================
-   LOCATIONS HEADER
-========================================= */
-
 .enterprise-locations-header {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .enterprise-locations-header h2 {
-    margin: 0;
-
     font-size: 38px;
-    line-height: 1.15;
-
-    font-weight: 500;
-
-    letter-spacing: -1.4px;
-
-    color: #ffffff;
+    font-weight: 600;
+    margin: 0 0 16px;
 }
 
 .enterprise-locations-header p {
-    max-width: 650px;
-
-    margin: 20px auto 0;
-
-    font-size: 14px;
-    line-height: 1.5;
-
-    font-weight: 500;
-
-    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
 }
-
-
-/* =========================================
-   LOCATION GRID
-========================================= */
 
 .enterprise-location-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 7px;
-
-    margin-top: 45px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
-
-
-/* =========================================
-   LOCATION CARD
-========================================= */
 
 .enterprise-location-card {
     position: relative;
-
-    display: block;
-
-    height: 300px;
-
+    height: 290px;
+    border-radius: 8px;
     overflow: hidden;
-
     text-decoration: none;
-
-    background: #15191b;
 }
 
 .enterprise-location-card img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    display: block;
-
-    transition:
-        transform 0.45s ease;
+    transition: transform 0.4s ease;
 }
 
 .enterprise-location-card:hover img {
     transform: scale(1.05);
 }
 
-
-/* =========================================
-   LOCATION OVERLAY
-========================================= */
-
 .enterprise-location-overlay {
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.02) 20%,
-            rgba(0,0,0,0.12) 45%,
-            rgba(0,0,0,0.92) 100%
-        );
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%);
 }
-
-
-/* =========================================
-   LOCATION NAME
-========================================= */
 
 .enterprise-location-name {
     position: absolute;
-
-    left: 22px;
-    bottom: 25px;
-
-    z-index: 2;
-
+    left: 20px;
+    bottom: 20px;
     font-size: 18px;
-    line-height: 1;
-
-    font-weight: 600;
-
+    font-weight: 700;
     color: #ffffff;
+    z-index: 2;
 }
 
-
 /* =========================================
-   TABLET
+   RESPONSIVE QUERIES
 ========================================= */
 
-@media (max-width: 1000px) {
-
-    .enterprise-testimonials-container {
-        width: min(900px, calc(100% - 50px));
+@media (max-width: 990px) {
+    .enterprise-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 70px 0;
     }
-
-    .enterprise-testimonial-content {
-        grid-template-columns:
-            minmax(0, 1fr)
-            320px;
-
-        column-gap: 55px;
-    }
-
-    .enterprise-testimonial-image-wrap {
-        width: 320px;
-        height: 350px;
-    }
-
-    .enterprise-testimonial-image {
-        height: 305px;
-    }
-
-    .enterprise-testimonial-image-accent {
-        height: 90px;
-    }
-
-    .enterprise-testimonial-text p {
-        font-size: 17px;
-    }
-
-    .enterprise-locations-container {
-        width: min(850px, calc(100% - 50px));
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    .enterprise-testimonials {
-        padding: 55px 0 20px;
-    }
-
-    .enterprise-testimonials-container {
-        width: calc(100% - 35px);
-    }
-
-    .enterprise-testimonials-title {
-        font-size: 30px;
-        letter-spacing: -1px;
-    }
-
-    .enterprise-testimonial-content {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 45px;
-
-        margin-top: 45px;
-
+    .enterprise-form-card {
         max-width: 100%;
     }
-
-    .enterprise-testimonial-text p {
-        font-size: 17px;
-        line-height: 1.4;
+    .offerings-grid {
+        grid-template-columns: 1fr;
     }
-
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    .benefit-card-large {
+        grid-column: auto;
+    }
+    .enterprise-testimonial-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
     .enterprise-testimonial-image-wrap {
         width: 100%;
-        max-width: 390px;
-
-        height: 390px;
-
-        margin: 0 auto;
+        max-width: 360px;
     }
+}
 
-    .enterprise-testimonial-image {
-        height: 340px;
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
     }
-
-    .enterprise-testimonial-image-accent {
-        height: 100px;
+    .enterprise-stats {
+        gap: 30px;
     }
-
-
-    /* LOCATIONS */
-
-    .enterprise-locations {
-        padding: 90px 0 50px;
-    }
-
-    .enterprise-locations-container {
-        width: calc(100% - 35px);
-    }
-
-    .enterprise-locations-header h2 {
-        font-size: 30px;
-    }
-
-    .enterprise-locations-header p {
-        font-size: 13px;
-    }
-
     .enterprise-location-grid {
         grid-template-columns: 1fr;
-
-        gap: 12px;
-
-        margin-top: 35px;
     }
-
-    .enterprise-location-card {
-        height: 280px;
-    }
-
 }
