@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Us | Courstrike</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #08090a;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Hero Container with Background Image & Dark Overlay */
+        .connect-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: 
+                linear-gradient(90deg, rgba(8, 9, 10, 0.88) 0%, rgba(8, 9, 10, 0.72) 45%, rgba(8, 9, 10, 0.85) 100%),
+                url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2200&q=85");
+            background-size: cover;
+            background-position: center;
+            padding: 130px 24px 60px;
+        }
+
+        .connect-hero1 {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 130px 24px 60px;
+        }
+
+        .connect-container {
+            width: min(1280px, calc(100% - 60px));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 440px; /* Left side ne puri space aapse ane form ne compact rakhse */
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Left Side Content */
+        .connect-content {
+            max-width: 100%;
+        }
+
+        .connect-content h1 {
+            font-size: clamp(34px, 3.8vw, 48px); /* Size thodi balance kari jethi exact fit thay */
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -1.8px;
+            color: #ffffff;
+            margin: 0 0 24px 0;
+        }
+
+
+
+        .connect-divider {
+            width: 38px;
+            height: 3px;
+            background: #ffffff;
+            margin: 0 0 24px 0;
+            border-radius: 2px;
+        }
+
+        .connect-line-one {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .connect-line-two {
+            display: block;
+        }
+
+        .connect-content p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 400;
+            max-width: 480px;
+            margin: 0;
+        }
+
+        /* Right Floating Lead Form Card */
+        .connect-form-card {
+            background-color: #16181d;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 38px 34px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            width: 100%;
+            max-width: 480px;
+            margin-left: auto;
+        }
+
+        .connect-form-card h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.35;
+            margin-bottom: 26px;
+        }
+
+        .connect-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .form-row-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-input-field {
+            width: 100%;
+            background-color: #242932;
+            border: 1px solid #2d333d;
+            border-radius: 6px;
+            padding: 13px 15px;
+            color: #ffffff;
+            font-size: 0.9rem;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-input-field::placeholder {
+            color: #8c939d;
+        }
+
+        .form-input-field:focus {
+            border-color: rgba(255, 255, 255, 0.45);
+        }
+
+        /* Phone Input Group with Country Flag */
+        .phone-input-group {
+            display: flex;
+            align-items: center;
+            background-color: #242932;
+            border: 1px solid #2d333d;
+            border-radius: 6px;
+        }
+
+        .phone-flag-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-left: 14px;
+            font-size: 0.85rem;
+            color: #9aa1a9;
+            cursor: pointer;
+        }
+
+        .phone-flag-box .flag-arrow {
+            font-size: 0.65rem;
+        }
+
+        .phone-input-group input {
+            border: none;
+            background: transparent;
+        }
+
+        /* Textarea Message Field */
+        textarea.form-input-field {
+            height: 90px;
+            resize: vertical;
+        }
+
+        .connect-terms {
+            font-size: 0.74rem;
+            color: #7a828d;
+            margin: 4px 0 10px 0;
+            line-height: 1.4;
+        }
+
+        .connect-terms a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Submit Pill Button */
+        .connect-submit-btn {
+            width: 100%;
+            padding: 13px;
+            border-radius: 999px;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: #08090a;
+            background: #ffffff;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .connect-submit-btn:hover {
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 960px) {
+            .connect-hero {
+                padding-top: 110px;
+            }
+
+            .connect-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .connect-form-card {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .form-row-two {
+                grid-template-columns: 1fr;
+            }
+
+            .connect-form-card {
+                padding: 28px 20px;
+            }
+        }
+
+          /* =========================================
+   WHAT WE DO
+========================================= */
+
+.what-we-do {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+
+    padding: 110px 0 120px;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+.what-we-do-container {
+    width: min(1180px, calc(100% - 70px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 43% 57%;
+
+    gap: 0;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.what-we-do-content {
+    position: relative;
+    z-index: 5;
+
+    padding-top: 35px;
+}
+
+.what-we-do-content h2 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.what-we-do-intro {
+    width: 90%;
+
+    margin: 0 0 62px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.what-we-do-label {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.what-card {
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    padding: 22px 20px 18px;
+
+    background: #15191b;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.what-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(255, 135, 45, 0.45);
+}
+
+.what-card-icon {
+    width: 34px;
+    height: 34px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    filter:
+        grayscale(1)
+        brightness(1.7);
+}
+
+.what-card h3 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.what-card p {
+    margin: 0 0 14px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.what-card a {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.what-card a:hover {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =========================================
+   IMAGE COLLAGE
+========================================= */
+
+.what-we-do-images {
+    position: relative;
+
+    height: 790px;
+
+    margin-left: -10px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+        155px
+        180px
+        350px
+        190px;
+
+    gap: 4px;
+
+    /* Fade the left side into black */
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 7%,
+            black 100%
+        );
+}
+
+
+/* Image boxes */
+
+.image-box {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   COLLAGE POSITIONS
+========================================= */
+
+.image-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.image-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-3 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.image-4 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.image-5 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.image-6 {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+
+/* Dark overlay on images */
+
+.image-box::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   RED / ORANGE / YELLOW BRAND GLOW
+========================================= */
+
+.what-we-do::before {
+    display: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .what-we-do {
+        padding: 80px 0;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .what-we-do-content {
+        padding-top: 0;
+    }
+
+    .what-we-do-intro {
+        width: 100%;
+    }
+
+    .what-we-do-images {
+        margin-left: 0;
+
+        height: 600px;
+
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .what-we-do {
+        padding: 70px 0 80px;
+    }
+
+    .what-we-do-container {
+        width: calc(100% - 30px);
+
+        display: block;
+    }
+
+    .what-we-do-content h2 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .what-we-do-intro {
+        font-size: 13px;
+
+        margin-bottom: 45px;
+    }
+
+    .what-card {
+        padding: 20px 17px;
+
+        margin-bottom: 12px;
+    }
+
+    .what-card p {
+        font-size: 10px;
+    }
+
+    .what-we-do-images {
+        height: 500px;
+
+        margin-top: 35px;
+
+        grid-template-rows:
+            95px
+            120px
+            210px
+            120px;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header Injection Container -->
+    <div id="header"></div>
+
+    <main>
+        <!-- 1. HERO SECTION (Separate Section) -->
+        <section class="connect-hero">
+            <div class="connect-container">
+
+                <!-- LEFT TEXT -->
+                <div class="connect-content">
+                    <h1>
+                        <span class="connect-line-one">Have questions about Courstrike?</span>
+                        <span class="connect-line-two">Connect with us.</span>
+                    </h1>
+                    <div class="connect-divider"></div>
+                    <p>
+                        Tell us what you're looking for and a member of our team will reach out.
+                    </p>
+                </div>
+
+                <!-- RIGHT FORM CARD -->
+                <aside class="connect-form-card">
+                    <h2>
+                        Share a few details and we'll connect you with the right person.
+                    </h2>
+
+                    <form action="#" method="POST" class="connect-form">
+                        <div class="form-row-two">
+                            <input type="text" class="form-input-field" placeholder="First Name" required>
+                            <input type="text" class="form-input-field" placeholder="Last Name" required>
+                        </div>
+
+                        <input type="email" class="form-input-field" placeholder="Email Address" required>
+
+                        <div class="phone-input-group">
+                            <div class="phone-flag-box">
+                                <span>🇺🇸</span>
+                                <span class="flag-arrow">▼</span>
+                            </div>
+                            <input type="tel" class="form-input-field" placeholder="(201) 555-0123" required>
+                        </div>
+
+                        <textarea class="form-input-field" placeholder="Message" required></textarea>
+
+                        <p class="connect-terms">
+                            By clicking "Submit", you confirm that you accept our <a href="#">Terms</a>.
+                        </p>
+
+                        <button type="submit" class="connect-submit-btn">Submit</button>
+                    </form>
+                </aside>
+
+            </div>
+        </section> 
+
+
+        <!-- 2. WHAT WE DO SECTION  -->
+        <section class="what-we-do">
+
+            <div class="what-we-do-container">
+
+                <!-- LEFT CONTENT -->
+                <div class="what-we-do-content">
+
+                    <h2>What We Do</h2>
+
+                    <p class="what-we-do-intro">
+                        Established in 2012, BrainStation empowers professionals
+                        and leading companies to build essential skills in AI,
+                        data, product management, marketing, and design through
+                        live, instructor-led training.
+                    </p>
+
+                    <div class="what-we-do-label">
+                        POWERFUL LEARNING EXPERIENCES:
+                    </div>
+
+
+                    <!-- CARD 1 -->
+                    <div class="what-card">
+
+                        <div class="what-card-icon">
+                            💡
+                        </div>
+
+                        <h3>Thought Leadership Events</h3>
+
+                        <p>
+                            Connect with industry leaders at the forefront of
+                            their fields. Join us for in-person panels, keynotes,
+                            and community events featuring leaders from the
+                            world's most innovative brands.
+                        </p>
+
+                        <a href="#">
+                            View Upcoming Events
+                        </a>
+
+                    </div>
+
+
+                    <!-- CARD 2 -->
+                    <div class="what-card">
+
+                        <div class="what-card-icon">
+                            ♧
+                        </div>
+
+                        <h3>Enterprise Training</h3>
+
+                        <p>
+                            Accelerate digital transformation. BrainStation
+                            delivers professional, in-depth workshops designed
+                            to help teams and individuals build lasting AI
+                            capability.
+                        </p>
+
+                    </div>
+
+
+                    <!-- CARD 3 -->
+                    <div class="what-card">
+
+                        <div class="what-card-icon">
+                            ▤
+                        </div>
+
+                        <h3>Professional Certifications</h3>
+
+                        <p>
+                            Master the skills driving the modern economy. From
+                            AI and Data to Product Management, Marketing, and UX
+                            Design, our certifications provide the hands-on
+                            mentorship and training to level up your professional
+                            skills and advance your career.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT IMAGE COLLAGE -->
+                <div class="what-we-do-images">
+
+                    <div class="image-box image-1">
+                        <img src="images/img1.png" alt="">
+                    </div>
+
+                    <div class="image-box image-2">
+                        <img src="images/img2.png" alt="">
+                    </div>
+
+                    <div class="image-box image-3">
+                        <img src="images/img3.png" alt="">
+                    </div>
+
+                    <div class="image-box image-4">
+                        <img src="images/img-6-D6d52sTz.avif" alt="">
+                    </div>
+
+                    <div class="image-box image-5">
+                        <img src="images/img-5-Rt-tByro.avif" alt="">
+                    </div>
+
+                    <div class="image-box image-6">
+                        <img src="images/img-7-CUHIhtsi.avif" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="connect-hero1">
+            <div class="connect-container">
+
+                <!-- LEFT TEXT -->
+                <div class="connect-content">
+                    <h1>
+                        <span class="connect-line-one">Have questions about Courstrike?</span>
+                        <span class="connect-line-two">Connect with us.</span>
+                    </h1>
+                    <div class="connect-divider"></div>
+                    <p>
+                        Tell us what you're looking for and a member of our team will reach out.
+                    </p>
+                </div>
+
+                <!-- RIGHT FORM CARD -->
+                <aside class="connect-form-card">
+                    <h2>
+                        Share a few details and we'll connect you with the right person.
+                    </h2>
+
+                    <form action="#" method="POST" class="connect-form">
+                        <div class="form-row-two">
+                            <input type="text" class="form-input-field" placeholder="First Name" required>
+                            <input type="text" class="form-input-field" placeholder="Last Name" required>
+                        </div>
+
+                        <input type="email" class="form-input-field" placeholder="Email Address" required>
+
+                        <div class="phone-input-group">
+                            <div class="phone-flag-box">
+                                <span>🇺🇸</span>
+                                <span class="flag-arrow">▼</span>
+                            </div>
+                            <input type="tel" class="form-input-field" placeholder="(201) 555-0123" required>
+                        </div>
+
+                        <textarea class="form-input-field" placeholder="Message" required></textarea>
+
+                        <p class="connect-terms">
+                            By clicking "Submit", you confirm that you accept our <a href="#">Terms</a>.
+                        </p>
+
+                        <button type="submit" class="connect-submit-btn">Submit</button>
+                    </form>
+                </aside>
+
+            </div>
+        </section> 
+
+    </main>
+
+    <!-- Footer Injection Container -->
+    <div id="footer"></div>
+
+    <script src="js/components.js"></script>
+</body>
+</html>

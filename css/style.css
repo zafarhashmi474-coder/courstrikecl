@@ -1255,11 +1255,34 @@ a {
         transform 0.2s ease;
 }
 
-.workshop-item:hover {
-    background: #171a1c;
-    border-color:
-        rgba(255, 255, 255, 0.18);
-    transform: translateY(-1px);
+.workshops-mega-menu .workshop-item {
+    position: relative;
+    min-height: 76px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #ffffff !important;
+    background: transparent;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.workshops-mega-menu .workshop-item:hover {
+    background: rgba(255, 255, 255, 0.08) !important; /* હળવી ટ્રાન્સપરન્ટ વ્હાઇટ હાઇલાઇટ */
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    transform: translateX(4px); /* સહેજ જમણી તરફ સ્લાઇડ ઇફેક્ટ */
+}
+
+.workshops-mega-menu .workshop-item:hover .workshop-text strong,
+.workshops-mega-menu .workshop-item .workshop-text strong {
+    color: #ffffff !important;
+}
+
+.workshops-mega-menu .workshop-item:hover .workshop-text small,
+.workshops-mega-menu .workshop-item .workshop-text small {
+    color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* =========================================

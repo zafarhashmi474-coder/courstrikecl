@@ -117,7 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
     const sections = [
         document.getElementById("overview"),
-        document.getElementById("curriculum")
+        document.getElementById("curriculum"),
+        document.getElementById("testimonials"),
+    document.getElementById("our-space"),
+    document.getElementById("faq")
     ].filter(Boolean);
 
     const observer = new IntersectionObserver(
@@ -147,4 +150,34 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(section);
     });
 
+});
+
+/* =====================================================
+   6. FAQ ACCORDION CONTROLLER
+===================================================== */
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(function (item) {
+    const questionBtn = item.querySelector(".faq-question");
+    const icon = item.querySelector(".faq-icon");
+
+    questionBtn.addEventListener("click", function () {
+        const isOpen = item.classList.contains("active");
+
+        // Bija badha FAQs ne bandh karva mate:
+        faqItems.forEach(function (otherItem) {
+            otherItem.classList.remove("active");
+            const otherIcon = otherItem.querySelector(".faq-icon");
+            if (otherIcon) otherIcon.textContent = "+";
+        });
+
+        // Click karela FAQ ne toggle karo:
+        if (!isOpen) {
+            item.classList.add("active");
+            if (icon) icon.textContent = "−";
+        } else {
+            item.classList.remove("active");
+            if (icon) icon.textContent = "+";
+        }
+    });
 });
