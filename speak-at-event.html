@@ -1180,7 +1180,8 @@
     background: #050505;
     color: #ffffff;
     overflow: hidden;
-    padding-bottom: 115px;
+    padding-top: 130px;
+    padding-bottom: 0;
 }
 
 /* =========================================================
@@ -1221,10 +1222,10 @@
 ========================================================= */
 
 .speaker-experience-content {
-    width: min(1180px, calc(100% - 50px));
+    width: min(1200px, calc(100% - 60px));
     margin: 0 auto;
-    padding-top: 110px;
     text-align: center;
+    padding-bottom: 90px;
 }
 
 /* =========================================================
@@ -1232,8 +1233,8 @@
 ========================================================= */
 
 .speaker-experience-content h2 {
-    margin: 0 0 78px;
-    font-size: clamp(38px, 4.2vw, 52px);
+    margin: 0 0 75px;
+    font-size: clamp(38px, 4.4vw, 54px);
     line-height: 1.1;
     letter-spacing: -2px;
     font-weight: 500;
@@ -1247,7 +1248,7 @@
 .speaker-experience-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px;
+    gap: 70px;
     align-items: start;
 }
 
@@ -1266,20 +1267,20 @@
 ========================================================= */
 
 .experience-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 25px;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 22px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .experience-icon svg {
-    width: 55px;
-    height: 55px;
+    width: 36px;
+    height: 36px;
     fill: none;
     stroke: #ffffff;
-    stroke-width: 2.4;
+    stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
@@ -1289,11 +1290,11 @@
 ========================================================= */
 
 .experience-item h3 {
-    margin: 0 0 22px;
-    font-size: 23px;
-    line-height: 1.2;
+    margin: 0 0 16px;
+    font-size: 21px;
+    line-height: 1.25;
     font-weight: 600;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
     color: #ffffff;
 }
 
@@ -1303,10 +1304,10 @@
 
 .experience-item p {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+    line-height: 1.55;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* =========================================================
@@ -3129,6 +3130,74 @@
         invert(1);
 }
 
+.speaker-experience-strip {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr 1.1fr 1fr 0.9fr;
+    gap: 8px;
+    height: 340px;
+    overflow: hidden;
+    background: #050505;
+}
+
+.strip-photo-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #111417;
+}
+
+.strip-photo-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.strip-photo-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Tablet & Mobile responsive */
+@media (max-width: 1024px) {
+    .speaker-experience {
+        padding-top: 90px;
+    }
+    .speaker-experience-content h2 {
+        margin-bottom: 50px;
+    }
+    .speaker-experience-grid {
+        gap: 35px;
+    }
+    .speaker-experience-strip {
+        height: 250px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .speaker-experience-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    .speaker-experience-strip {
+        height: 190px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .strip-photo-item:nth-child(4),
+    .strip-photo-item:nth-child(5) {
+        display: none;
+    }
+}
 
 /* =========================================================
    SLIDER BUTTONS
@@ -4051,237 +4120,86 @@
 </script>
 
 
-<section class="speaker-experience">
+<!-- =========================================================
+             THE SPEAKER EXPERIENCE
+        ========================================================= -->
+        <section class="speaker-experience">
 
-    <!-- Top Images -->
-    <div class="speaker-experience-images">
+            <!-- Content Area (3 Columns) -->
+            <div class="speaker-experience-content">
+                <h2>The Speaker Experience</h2>
 
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85"
-                alt="Speaker presenting at event"
-            >
-        </div>
+                <div class="speaker-experience-grid">
+                    <!-- Item 1 -->
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>We Make Speaking Easy</h3>
+                        <p>The Courstrike team is here to make sure you feel confident and prepared to speak. You bring the experience, we’ll make sure it lands.</p>
+                    </div>
 
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
-                alt="Professionals attending event"
-            >
-        </div>
+                    <!-- Item 2 -->
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Lead the Room</h3>
+                        <p>Demonstrate your experience in front of a room of professionals eager to connect and learn from leaders like you.</p>
+                    </div>
 
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85"
-                alt="Networking event"
-            >
-        </div>
-
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85"
-                alt="Woman speaking at event"
-            >
-        </div>
-
-    </div>
-
-
-    <!-- Content -->
-    <div class="speaker-experience-content">
-
-        <h2>
-            The Speaker Experience
-        </h2>
-
-
-        <div class="speaker-experience-grid">
-
-
-            <!-- Item 1 -->
-            <div class="experience-item">
-
-                <div class="experience-icon">
-
-                    <svg
-                        viewBox="0 0 64 64"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <circle
-                            cx="27"
-                            cy="17"
-                            r="8"
-                        />
-
-                        <path
-                            d="M13 43c0-8 6-13 14-13s14 5 14 13"
-                        />
-
-                        <path
-                            d="M45 25l5 5 9-10"
-                        />
-                    </svg>
-
+                    <!-- Item 3 -->
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Yours to Keep</h3>
+                        <p>Professional photography, video, and a published page with your name on it that you can share with your network.</p>
+                    </div>
                 </div>
-
-                <h3>
-                    We Make Speaking Easy
-                </h3>
-
-                <p>
-                    The BrainStation team is here to make sure
-                    you feel confident and prepared to speak.
-                    You bring the experience, we’ll make sure it
-                    lands.
-                </p>
-
             </div>
 
-
-            <!-- Item 2 -->
-            <div class="experience-item">
-
-                <div class="experience-icon">
-
-                    <svg
-                        viewBox="0 0 64 64"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <circle
-                            cx="32"
-                            cy="15"
-                            r="7"
-                        />
-
-                        <circle
-                            cx="14"
-                            cy="22"
-                            r="5"
-                        />
-
-                        <circle
-                            cx="50"
-                            cy="22"
-                            r="5"
-                        />
-
-                        <path
-                            d="M20 47c0-8 5-13 12-13s12 5 12 13"
-                        />
-
-                        <path
-                            d="M5 45c0-6 4-10 9-10 4 0 7 2 9 6"
-                        />
-
-                        <path
-                            d="M59 45c0-6-4-10-9-10-4 0-7 2-9 6"
-                        />
-                    </svg>
-
+            <!-- Bottom 5-Photo Strip Matching BrainStation Reference -->
+            <div class="speaker-experience-strip">
+                <!-- 1. Speaker with mic seated -->
+                <div class="strip-photo-item">
+                    <img src="images/corporate-training-1-4-CKZ7yMfi.avif" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'" alt="Speaker on armchair">
                 </div>
 
-                <h3>
-                    Lead the Room
-                </h3>
-
-                <p>
-                    Demonstrate your experience in front of a
-                    room of professionals eager to connect and
-                    learn from leaders like you.
-                </p>
-
-            </div>
-
-
-            <!-- Item 3 -->
-            <div class="experience-item">
-
-                <div class="experience-icon">
-
-                    <svg
-                        viewBox="0 0 64 64"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <rect
-                            x="12"
-                            y="17"
-                            width="40"
-                            height="35"
-                            rx="2"
-                        />
-
-                        <path
-                            d="M18 17v-5h28v5"
-                        />
-
-                        <circle
-                            cx="32"
-                            cy="34"
-                            r="9"
-                        />
-
-                        <circle
-                            cx="32"
-                            cy="34"
-                            r="4"
-                        />
-
-                        <path
-                            d="M44 23h4"
-                        />
-                    </svg>
-
+                <!-- 2. Panel discussion (Man & Woman speaking) -->
+                <div class="strip-photo-item">
+                    <img src="images/contribute-2-Bu0FbptL.avif" onerror="this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80'" alt="Panel speakers discussion">
                 </div>
 
-                <h3>
-                    Yours to Keep
-                </h3>
+                <!-- 3. Keynote presenter standing -->
+                <div class="strip-photo-item">
+                    <img src="images/flagship-event-2-1-CLmiqfCT.avif" onerror="this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80'" alt="Keynote speaker presenting">
+                </div>
 
-                <p>
-                    Professional photography, video, and a
-                    published page with your name on it that you
-                    can share with your network.
-                </p>
+                <!-- 4. Speaker holding mic in front of audience -->
+                <div class="strip-photo-item">
+                    <img src="images/contribute-3-BRxGpi0D.avif" onerror="this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80'" alt="Speaker engaging audience">
+                </div>
 
+                <!-- 5. Audience taking phone photo -->
+                <div class="strip-photo-item">
+                    <img src="images/flagship-event-2-4-BBE9CQMd.avif" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80'" alt="Audience capturing event on mobile">
+                </div>
             </div>
 
-        </div>
-
-    </div>
-
-    <div class="speaker-experience-images">
-
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85"
-                alt="Speaker presenting at event"
-            >
-        </div>
-
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
-                alt="Professionals attending event"
-            >
-        </div>
-
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85"
-                alt="Networking event"
-            >
-        </div>
-
-        <div class="experience-image">
-            <img
-                src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85"
-                alt="Woman speaking at event"
-            >
-        </div>
-
-    </div>
-
-</section>
+        </section>
 
 <section class="event-speaker-section">
 
