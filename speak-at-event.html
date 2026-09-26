@@ -454,13 +454,9 @@
         ========================================================= */
 
         .speaker-marquee {
-
             position: relative;
-
             width: 100%;
-
             overflow: hidden;
-
             mask-image:
                 linear-gradient(
                     90deg,
@@ -469,7 +465,6 @@
                     #000 93%,
                     transparent 100%
                 );
-
             -webkit-mask-image:
                 linear-gradient(
                     90deg,
@@ -480,91 +475,58 @@
                 );
         }
 
-
         .speaker-track {
-
             display: flex;
-
             width: max-content;
-
             align-items: center;
-
             animation:
                 speaker-slide 48s
                 linear
                 infinite;
-
             will-change: transform;
         }
 
-
+        /* Logos vacche space ochhi kari lidhi (78px mathi 40px) */
         .speaker-set {
-
             display: flex;
-
             align-items: center;
-
-            gap: 78px;
-
-            padding-right: 78px;
+            gap: 40px;
+            padding-right: 40px;
         }
 
-
+        /* Logo container ni size uniform ane moti kari */
         .speaker-logo {
-
-            width: 150px;
-            height: 65px;
-
-            flex: 0 0 150px;
-
+            width: 160px;
+            height: 70px;
+            flex: 0 0 160px;
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
-            opacity: 0.76;
-
+            opacity: 0.85;
+            border: none !important; /* Koi pan aaju baaju ni line kadhi nakhi */
             transition:
                 opacity 0.25s ease,
                 transform 0.25s ease;
         }
 
+        .speaker-logo::after,
+        .speaker-logo::before {
+            display: none !important; /* Vertical lines remove kari didhi */
+        }
 
         .speaker-logo:hover {
-
             opacity: 1;
-
-            transform:
-                scale(1.05);
+            transform: scale(1.05);
         }
 
-
+        /* Badha logos ni size sarakhi ane moti dekhay e mate */
         .speaker-logo img {
-
-            width: auto;
-            height: auto;
-
-            max-width: 135px;
-            max-height: 45px;
-
+            width: 100%;
+            height: 48px; /* Fixed height jethi badha logo same lage */
+            max-width: 140px;
             object-fit: contain;
-
             display: block;
-        }
-
-
-        /*
-         * Simple Icons CDN gives us SVG logos.
-         * White versions are used to match the screenshot.
-         */
-
-
-        .speaker-logo img {
-
-            filter:
-                brightness(0)
-                invert(1);
+            filter: brightness(0) invert(1);
         }
 
 
@@ -1826,7 +1788,7 @@
 
             <video class="speak-bg-video" autoplay muted loop playsinline>
                 <source src="images/1471806_People_Business_1280x720.mp4" type="video/mp4">
-                Tamaru browser video support nathi kartu.
+                
             </video>
 
             <div class="speak-video-overlay"></div>
@@ -1930,7 +1892,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/shopify/FFFFFF"
+                                src="logos/shopify-P6Nq5HRK.svg"
                                 alt="Shopify"
                                 loading="lazy"
                             >
@@ -1943,7 +1905,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/disney/FFFFFF"
+                                src="logos/disney-fFHs9X3n.svg"
                                 alt="Disney"
                                 loading="lazy"
                             >
@@ -1956,7 +1918,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/uber/FFFFFF"
+                                src="logos/uber-CuYQ6LLL.svg"
                                 alt="Uber"
                                 loading="lazy"
                             >
@@ -1969,7 +1931,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/whatsapp/FFFFFF"
+                                src="logos/whatsapp-CqYjmvKL.svg"
                                 alt="WhatsApp"
                                 loading="lazy"
                             >
@@ -1982,7 +1944,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/goldmansachs/FFFFFF"
+                                src="logos/goldman-sachs-D-NMkoM2.svg"
                                 alt="Goldman Sachs"
                                 loading="lazy"
                             >
@@ -1995,7 +1957,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/paypal/FFFFFF"
+                                src="logos/pay-pal-Bfc0Ddjo.svg"
                                 alt="PayPal"
                                 loading="lazy"
                             >
@@ -2008,7 +1970,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/venmo/FFFFFF"
+                                src="logos/venmo-CqKvO7hI.svg"
                                 alt="Venmo"
                                 loading="lazy"
                             >
@@ -2021,7 +1983,7 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/spotify/FFFFFF"
+                                src="logos/spotify-1vlQYlz4.svg"
                                 alt="Spotify"
                                 loading="lazy"
                             >
@@ -2044,8 +2006,8 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/shopify/FFFFFF"
-                                alt="Shopify"
+                                src="logos/hypebeast-g62rSmFi.svg"
+                                alt="hypebeast"
                                 loading="lazy"
                             >
 
@@ -2055,8 +2017,8 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/disney/FFFFFF"
-                                alt="Disney"
+                                src="logos/indeed-BZG1Ebxx.svg"
+                                alt="indeed"
                                 loading="lazy"
                             >
 
@@ -2066,8 +2028,8 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/uber/FFFFFF"
-                                alt="Uber"
+                                src="logos/jp-morgan-chase-BFZJZcAb.svg"
+                                alt="jp-morgan-chase"
                                 loading="lazy"
                             >
 
@@ -2077,8 +2039,8 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/whatsapp/FFFFFF"
-                                alt="WhatsApp"
+                                src="logos/tik-tok-DsQE0kAg.svg"
+                                alt="tik-tok"
                                 loading="lazy"
                             >
 
@@ -2088,8 +2050,8 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/goldmansachs/FFFFFF"
-                                alt="Goldman Sachs"
+                                src="logos/salesforce-B_GpkNgn.svg"
+                                alt="salesforce"
                                 loading="lazy"
                             >
 
@@ -2099,8 +2061,8 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/paypal/FFFFFF"
-                                alt="PayPal"
+                                src="logos/shopify-P6Nq5HRK.svg"
+                                alt="shopify"
                                 loading="lazy"
                             >
 
@@ -2110,8 +2072,8 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/venmo/FFFFFF"
-                                alt="Venmo"
+                                src="logos/amazon-Di2h6wTx.svg"
+                                alt="amazon"
                                 loading="lazy"
                             >
 
@@ -2121,8 +2083,18 @@
                         <div class="speaker-logo">
 
                             <img
-                                src="https://cdn.simpleicons.org/spotify/FFFFFF"
-                                alt="Spotify"
+                                src="logos/mastercard-DzuA8yXC.svg"
+                                alt="mastercard"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="speaker-logo">
+
+                            <img
+                                src="logos/meta-BZywIIjr.svg"
+                                alt="meta"
                                 loading="lazy"
                             >
 

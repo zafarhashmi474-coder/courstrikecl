@@ -1,5 +1,7 @@
 /* =========================================
    TRUSTED COMPANIES
+   LOCAL LOGOS
+   CONTINUOUS INFINITE SLIDER
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -9,151 +11,219 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!track) return;
 
 
+    /* =========================================
+       LOCAL LOGO PATH
+    ========================================= */
 
-    const pageOne = [
+    const logoPath = "logos/";
+
+
+    /* =========================================
+       LOGO FILES
+    ========================================= */
+
+    const logos = {
+
         // ROW 1
-        ["Adobe", "adobe-icon", "adobe"],
-        ["Stripe", "stripe", "stripe"],
-        ["JPMorgan Chase", "jpmorgan", "jpmorganchase"],
-        ["Walmart", "walmart-icon", "walmart"],
-        ["Accenture", "accenture-icon", "accenture"],
-        ["eBay", "ebay", "ebay"],
-        ["Spotify", "spotify-icon", "spotify"],
+        accenture: "accenture-B8e8s0T-.svg",
+        adobe: "adobe-BcqsFWNQ.svg",
+        amazon: "amazon-Di2h6wTx.svg",
+        cisco: "cisco-DB3M1NTR.svg",
+        ebay: "ebay-BBPoNyCb.svg",
+        jpmorgan: "jp-morgan-chase-BFZJZcAb.svg",
+        oracle: "oracle-DVpj55Dm.svg",
+        spotify: "spotify-1vlQYlz4.svg",
+        stripe: "stripe-B_yOJQOV.svg",
+        walmart: "walmart-vYA2S4Ej.svg",
+
 
         // ROW 2
-        ["SAP", "sap", "sap"],
-        ["Salesforce", "salesforce", "salesforce"],
-        ["Visa", "visa", "visa"],
-        ["Uber", "uber", "uber"],
-        ["Netflix", "netflix-icon", "netflix"],
-        ["PayPal", "paypal", "paypal"],
-        ["IBM", "ibm", "ibm"],
+        netflix: "netflix-BHGFdXVI.svg",
+        meta: "meta-BZywIIjr.svg",
+        sap: "sap-D0PO_hJ0.svg",
+        visa: "visa-CCLr1viw.svg",
+        uber: "uber-CuYQ6LLL.svg",
+        openai: "openai-C2CruhdW.svg",
+        paypal: "pay-pal-Bfc0Ddjo.svg",
+        ibm: "ibm-CXb5eiGf.svg",
+        nvidia: "nvidia-6ikefk4z.svg",
+        salseforce: "salesforce-B_GpkNgn.svg",
+
 
         // ROW 3
-        ["American Express", "american-express", "americanexpress"],
-        ["Microsoft", "microsoft-icon", "microsoft"],
-        ["Deloitte", "deloitte-icon", "deloitte"],
-        ["Square", "square-icon", "square"],
-        ["Apple", "apple", "apple"],
-        ["YouTube", "youtube-icon", "youtube"],
-        ["LinkedIn", "linkedin-icon", "linkedin"],
+        apple: "apple-BSb7elEh.svg",
+        youtube: "youtube-s_hbr19z.svg",
+        linkedin: "linked-in-CQUtIIra.svg",
+        square: "square-CBb6pZi4.svg",
+        pwc: "pwc-YkmQJs_z.svg",
+        x: "x-uzq0HYzV.svg",
+        deloitte: "deloitte-DzccWM-R.svg",
+        lloydsbank: "lloyds-bank-lZ5iVW51.svg",
+        americanexpress: "american-express-BHPcj7-J.svg",
+        microsoft: "microsoft-rwvmviyC.svg",
+
 
         // ROW 4
-        ["TikTok", "tiktok-icon", "tiktok"],
-        ["Shopify", "shopify", "shopify"],
-        ["Samsung", "samsung", "samsung"],
-        ["Intuit", "intuit", "intuit"],
-        ["Anthropic", "anthropic-icon", "anthropic"],
-        ["Figma", "figma", "figma"],
-        ["AMD", "amd-icon", "amd"],
+        pinterest: "pinterest-c1Nv03xt.svg",
+        mastercard: "mastercard-DzuA8yXC.svg",
+        ey: "ey-D_19C1MH.svg",
+        tiktok: "tik-tok-DsQE0kAg.svg",
+        shopify: "shopify-P6Nq5HRK.svg",
+        samsung: "samsung-CgcHNOx5.svg",
+        amd: "amd-83DV4pPi.svg",
+        intuit: "intuit-D1T_YaYF.svg",
+        anthropic: "anthropic-CtuPP2GD.svg",
+        figma: "figma-Bcp0FF_n.svg",
+
 
         // ROW 5
-        ["Citi", "citi", "citi"],
-        ["RBC", "royal-bank-of-canada", "rbc"],
-        ["KPMG", "kpmg", "kpmg"],
-        ["Slack", "slack-icon", "slack"],
-        ["Mozilla", "mozilla-icon", "mozilla"],
-        ["McKinsey", "mckinsey-and-company", "mckinseyandcompany"],
-        ["Expedia", "expedia-icon", "expedia"],
+        slack: "slack-ElURnRzW.svg",
+        mozilla: "mozilla-C9SH_HDJ.svg",
+        mckinsey: "mckinsey-CFF8mJqg.svg",
+        kpmg: "kpmg-DCU3pMPb.svg",
+        rbc: "rbc-CAcB9Ejg.svg",
+        expedia: "expedia-C1o1ZHya.svg",
+        disney: "disney-fFHs9X3n.svg",
+        ikea: "ikea-Ck8Px6wl.svg",
+        cohere: "cohere-BLu928EK.svg",
+        citi: "citi-C7NHPaja.svg",
+
 
         // ROW 6
-        ["McDonald's", "mcdonalds-icon", "mcdonalds"],
-        ["Morgan Stanley", "morgan-stanley", "morganstanley"],
-        ["Canva", "canva-icon", "canva"],
-        ["Nike", "nike", "nike"],
-        ["Ogilvy", "ogilvy", "ogilvy"],
-        ["Monzo", "monzo-icon", "monzo"],
-        ["Airbnb", "airbnb-icon", "airbnb"]
+        canva: "canva-DKUxXMD1.svg",
+        nike: "nike-DEymYOMO.svg",
+        airbnb: "airbnb-CtmsI85F.svg",
+        morganstanley: "morgan-stanley-CgJehnXY.svg",
+        ogilvy: "ogilvy-C7grrWhk.svg",
+        monzo: "monzo-DcHvcf-h.svg",
+        barclays: "barclays-C0NbH0hv.svg",
+        mcdonalds: "mcdonald-s-Dd1zGQfz.svg",
+        public: "public-CBs9tUTc.svg",
+        intel: "intel-U5DZAR-E.svg"
+    };
+
+
+    /* =========================================
+       ROW STRUCTURE
+    ========================================= */
+
+    const rows = [
+
+        // ROW 1 - 10
+        [
+            "accenture",
+            "adobe",
+            "amazon",
+            "cisco",
+            "ebay",
+            "jpmorgan",
+            "oracle",
+            "spotify",
+            "stripe",
+            "walmart"
+        ],
+
+        // ROW 2 - 9
+        [
+            "netflix",
+            "meta",
+            "sap",
+            "visa",
+            "uber",
+            "openai",
+            "paypal",
+            "ibm",
+            "nvidia",
+            "salseforce"
+        ],
+
+        // ROW 3 - 10
+        [
+            "apple",
+            "youtube",
+            "linkedin",
+            "square",
+            "pwc",
+            "x",
+            "deloitte",
+            "lloydsbank",
+            "americanexpress",
+            "microsoft"
+        ],
+
+        // ROW 4 - 10
+        [
+            "pinterest",
+            "mastercard",
+            "ey",
+            "tiktok",
+            "shopify",
+            "samsung",
+            "amd",
+            "intuit",
+            "anthropic",
+            "figma"
+        ],
+
+        // ROW 5 - 10
+        [
+            "slack",
+            "mozilla",
+            "mckinsey",
+            "kpmg",
+            "rbc",
+            "expedia",
+            "disney",
+            "ikea",
+            "cohere",
+            "citi"
+        ],
+
+        // ROW 6 - 10
+        [
+            "canva",
+            "nike",
+            "airbnb",
+            "morganstanley",
+            "ogilvy",
+            "monzo",
+            "barclays",
+            "mcdonalds",
+            "public",
+            "intel"
+        ]
     ];
 
 
     /* =========================================
-       SCREEN 2 (EXACTLY 42 LOGOS)
+       CREATE LOGO
     ========================================= */
 
-    const pageTwo = [
-        // ROW 1
-        ["Accenture", "accenture-icon", "accenture"],
-        ["eBay", "ebay", "ebay"],
-        ["Spotify", "spotify-icon", "spotify"],
-        ["Amazon", "amazon-icon", "amazon"],
-        ["Oracle", "oracle", "oracle"],
-        ["Cisco", "cisco", "cisco"],
-        ["Adobe", "adobe-icon", "adobe"],
+    function createLogo(key) {
 
-        // ROW 2
-        ["Netflix", "netflix-icon", "netflix"],
-        ["PayPal", "paypal", "paypal"],
-        ["IBM", "ibm", "ibm"],
-        ["NVIDIA", "nvidia", "nvidia"],
-        ["OpenAI", "openai-icon", "openai"],
-        ["Meta", "meta-icon", "meta"],
-        ["SAP", "sap", "sap"],
+        const wrapper = document.createElement("div");
+        wrapper.className = "trusted-logo";
 
-        // ROW 3
-        ["Apple", "apple", "apple"],
-        ["YouTube", "youtube-icon", "youtube"],
-        ["LinkedIn", "linkedin-icon", "linkedin"],
-        ["X", "x", "x"],
-        ["PwC", "pwc", "pwc"],
-        ["Lloyds Bank", "lloyds-bank", "lloydsbank"],
-        ["American Express", "american-express", "americanexpress"],
+        const img = document.createElement("img");
 
-        // ROW 4
-        ["Anthropic", "anthropic-icon", "anthropic"],
-        ["Figma", "figma", "figma"],
-        ["AMD", "amd-icon", "amd"],
-        ["EY", "ernst-young-icon", "ey"],
-        ["Pinterest", "pinterest-icon", "pinterest"],
-        ["Mastercard", "mastercard", "mastercard"],
-        ["TikTok", "tiktok-icon", "tiktok"],
+        img.src = logoPath + logos[key];
+        img.alt = key;
+        img.draggable = false;
+        img.loading = "eager";
 
-        // ROW 5
-        ["Mozilla", "mozilla-icon", "mozilla"],
-        ["McKinsey", "mckinsey-and-company", "mckinseyandcompany"],
-        ["Expedia", "expedia-icon", "expedia"],
-        ["Disney", "walt-disney", "disney"],
-        ["IKEA", "ikea", "ikea"],
-        ["Cohere", "cohere-icon", "cohere"],
-        ["Citi", "citi", "citi"],
+        img.onerror = function () {
 
-        // ROW 6
-        ["Ogilvy", "ogilvy", "ogilvy"],
-        ["Monzo", "monzo-icon", "monzo"],
-        ["Airbnb", "airbnb-icon", "airbnb"],
-        ["Barclays", "barclays-icon", "barclays"],
-        ["Public", "public", "public"],
-        ["Intel", "intel", "intel"],
-        ["McDonald's", "mcdonalds-icon", "mcdonalds"]
-    ];
+            console.warn(
+                "LOGO NOT FOUND:",
+                logoPath + logos[key]
+            );
 
-    const pages = [pageOne, pageTwo];
-
-
-    /* =========================================
-       CREATE LOGO (WITH AUTOMATIC FALLBACK)
-    ========================================= */
-
-    function createLogo(name, iconifySlug, simpleSlug) {
-        const logo = document.createElement("div");
-        logo.className = "trusted-logo";
-
-        const image = document.createElement("img");
-        image.alt = name;
-        image.loading = "lazy";
-        image.draggable = false;
-
-        // First attempt: Iconify Logos
-        image.src = `https://api.iconify.design/logos:${iconifySlug}.svg`;
-
-        // If Iconify fails, fallback to SimpleIcons automatically
-        image.onerror = function () {
-            this.onerror = null; // Infinite loop rokvano guard
-            this.src = `https://cdn.simpleicons.org/${simpleSlug}`;
+            wrapper.classList.add("logo-missing");
         };
 
-        logo.appendChild(image);
-        return logo;
+        wrapper.appendChild(img);
+
+        return wrapper;
     }
 
 
@@ -161,64 +231,77 @@ document.addEventListener("DOMContentLoaded", function () {
        CREATE PAGE
     ========================================= */
 
-    function createPage(logos) {
+    function createPage() {
+
         const page = document.createElement("div");
+
         page.className = "trusted-page";
 
-        logos.forEach(function (logoData) {
-            const name = logoData[0];
-            const iconifySlug = logoData[1];
-            const simpleSlug = logoData[2] || logoData[1];
 
-            page.appendChild(createLogo(name, iconifySlug, simpleSlug));
+        rows.forEach(function (row) {
+
+            const rowElement = document.createElement("div");
+
+            rowElement.className = "trusted-row";
+
+
+            row.forEach(function (logoKey) {
+
+                rowElement.appendChild(
+                    createLogo(logoKey)
+                );
+
+            });
+
+
+            page.appendChild(rowElement);
+
         });
+
 
         return page;
     }
 
 
     /* =========================================
-       BUILD ALL PAGES
+       BUILD TWO PAGES
     ========================================= */
 
-    pages.forEach(function (logos) {
-        track.appendChild(createPage(logos));
-    });
+    track.innerHTML = "";
 
-    // Seamless infinite clone
-    const firstPage = track.children[0];
-    if (firstPage) {
-        const firstPageClone = firstPage.cloneNode(true);
-        track.appendChild(firstPageClone);
-    }
+    const pageOne = createPage();
+    const pageTwo = createPage();
+
+    track.appendChild(pageOne);
+    track.appendChild(pageTwo);
 
 
     /* =========================================
-       SLIDER LOGIC
+       CONTINUOUS SLIDER
+       HOVER DOES NOT STOP IT
     ========================================= */
 
-    let currentPage = 0;
-    const totalPages = pages.length;
+    let position = 0;
 
-    function moveSlider() {
-        currentPage++;
-        track.style.transform = `translate3d(-${currentPage * 100}%, 0, 0)`;
+    const speed = 0.35;
 
-        if (currentPage === totalPages) {
-            setTimeout(function () {
-                track.style.transition = "none";
-                currentPage = 0;
-                track.style.transform = "translate3d(0, 0, 0)";
-                track.offsetHeight; // Reflow
-                track.style.transition = "transform 1.8s ease-in-out";
-            }, 1800);
+    function animate() {
+
+        position += speed;
+
+        const firstPageWidth =
+            track.children[0].offsetWidth;
+
+        if (position >= firstPageWidth) {
+            position = 0;
         }
+
+        track.style.transform =
+            `translate3d(${-position}px, 0, 0)`;
+
+        requestAnimationFrame(animate);
     }
 
-    track.style.transition = "transform 1.8s ease-in-out";
-
-    setInterval(function () {
-        moveSlider();
-    }, 7000);
+    requestAnimationFrame(animate);
 
 });

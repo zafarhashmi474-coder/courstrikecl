@@ -2925,25 +2925,26 @@ a {
 }
 
 /* =========================================
-   TRUSTED COMPANIES SECTION
+   TRUSTED COMPANIES
 ========================================= */
 
 .trusted-companies {
     width: 100%;
     background: #ffffff;
-    color: #080808;
-
-    padding: 95px 0 105px;
-
     overflow: hidden;
+    padding: 52px 0 60px;
+    box-sizing: border-box;
 }
 
 
-.trusted-container {
-    width: min(1180px, calc(100% - 60px));
-    margin: 0 auto;
+/* =========================================
+   HEADER
+========================================= */
 
+.trusted-header {
+    width: 100%;
     text-align: center;
+    box-sizing: border-box;
 }
 
 
@@ -2951,33 +2952,31 @@ a {
    TITLE
 ========================================= */
 
-.trusted-title {
-    margin: 0 auto;
+.trusted-header h2 {
+    margin: 0;
+    padding: 0 20px;
 
-    max-width: 900px;
+    color: #111111;
 
-    font-size: 39px;
-    line-height: 1.18;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 700;
 
-    font-weight: 500;
-
-    letter-spacing: -1.5px;
-
-    color: #080808;
+    text-align: center;
 }
 
 
 /* =========================================
-   DIVIDER
+   UNDERLINE
 ========================================= */
 
-.trusted-divider {
-    width: 45px;
+.trusted-title-line {
+    width: 52px;
     height: 4px;
 
-    background: #080808;
+    background: #111111;
 
-    margin: 28px auto 30px;
+    margin: 22px auto 24px;
 }
 
 
@@ -2985,183 +2984,294 @@ a {
    DESCRIPTION
 ========================================= */
 
-.trusted-description {
+.trusted-header p {
     margin: 0 auto;
 
-    max-width: 850px;
+    padding: 0 20px;
 
-    font-size: 16px;
-    line-height: 1.5;
+    max-width: 1000px;
 
-    color: #111111;
+    color: #222222;
+
+    font-size: 18px;
+    line-height: 1.55;
+
+    font-weight: 400;
+
+    text-align: center;
 }
 
 
 /* =========================================
-   SLIDER
+   SLIDER VIEWPORT
 ========================================= */
 
 .trusted-slider {
     width: 100%;
 
-    margin-top: 52px;
-
     overflow: hidden;
+
+    margin-top: 48px;
+
+    position: relative;
 }
 
 
-.trusted-track {
+/* =========================================
+   MOVING TRACK
+========================================= */
+
+#trustedTrack {
     display: flex;
 
-    width: 100%;
-
-    transition: transform 0.8s ease-in-out;
+    width: max-content;
 
     will-change: transform;
 }
 
 
 /* =========================================
-   EACH PAGE
+   COMPLETE PAGE
 ========================================= */
 
 .trusted-page {
-    min-width: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    grid-template-rows: repeat(6, 72px);
-    align-items: center;
-    justify-items: center;
-    row-gap: 14px;
-    column-gap: 0;
+    width: 100vw;
+
     flex-shrink: 0;
+
+    box-sizing: border-box;
+
+    /* LEFT + RIGHT SPACE */
+    padding: 0 55px;
 }
 
+
 /* =========================================
-   LOGO
+   ROW
+========================================= */
+
+.trusted-row {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+
+    align-items: center;
+
+    justify-items: center;
+
+    column-gap: 25px;
+
+    min-height: 100px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   LOGO BOX
 ========================================= */
 
 .trusted-logo {
+
     width: 100%;
-    height: 55px;
+
+    height: 82px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
+    box-sizing: border-box;
 }
 
-.trusted-logo img {
-    width: 110px;
-    height: 40px;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.25s ease;
-}
 
 /* =========================================
-   SUBTLE HOVER
+   LOGO IMAGE
 ========================================= */
 
-.trusted-logo:hover img {
-    transform: scale(1.06);
+.trusted-logo img {
+
+    display: block;
+
+    width: auto;
+
+    max-width: 105px;
+
+    max-height: 48px;
+
+    object-fit: contain;
+
+    user-select: none;
+
+    pointer-events: none;
 }
+
+
+/* =========================================
+   MISSING LOGO
+========================================= */
+
+.logo-missing {
+    visibility: hidden;
+}
+
+
+/* =========================================
+   DESKTOP LARGE
+========================================= */
+
+@media (min-width: 1500px) {
+
+    .trusted-page {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    .trusted-row {
+        column-gap: 30px;
+    }
+
+    .trusted-logo img {
+        max-width: 110px;
+        max-height: 50px;
+    }
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .trusted-header h2 {
+        font-size: 36px;
+    }
+
+    .trusted-header p {
+        font-size: 17px;
+    }
+
+    .trusted-page {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .trusted-row {
+        column-gap: 15px;
+    }
+
+    .trusted-logo img {
+        max-width: 95px;
+        max-height: 45px;
+    }
+}
+
 
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
+
     .trusted-companies {
-        padding: 80px 0 90px;
+        padding-top: 42px;
     }
-    .trusted-container {
-        width: calc(100% - 45px);
+
+    .trusted-header h2 {
+        font-size: 30px;
     }
-    .trusted-title {
-        font-size: 34px;
+
+    .trusted-header p {
+        font-size: 16px;
     }
+
+    .trusted-slider {
+        margin-top: 35px;
+    }
+
     .trusted-page {
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(8, 68px);
-        row-gap: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
-    .trusted-logo {
-        width: 120px;
+
+    .trusted-row {
+        grid-template-columns: repeat(10, 95px);
+
+        min-height: 85px;
+
+        column-gap: 0;
     }
+
     .trusted-logo img {
-        max-width: 110px;
-        max-height: 38px;
+        max-width: 82px;
+        max-height: 40px;
     }
 }
+
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
+
     .trusted-companies {
-        padding: 65px 0 75px;
+        padding: 35px 0 45px;
     }
-    .trusted-container {
-        width: calc(100% - 30px);
-    }
-    .trusted-title {
-        font-size: 29px;
-        line-height: 1.2;
-        letter-spacing: -0.8px;
-    }
-    .trusted-title br {
-        display: none;
-    }
-    .trusted-divider {
-        margin: 22px auto 25px;
-    }
-    .trusted-description {
-        font-size: 14px;
-        line-height: 1.55;
-    }
-    .trusted-description br {
-        display: none;
-    }
-    .trusted-slider {
-        margin-top: 38px;
-    }
-    .trusted-page {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(14, 60px);
-        row-gap: 8px;
-    }
-    .trusted-logo {
-        width: 95px;
-        height: 48px;
-    }
-    .trusted-logo img {
-        max-width: 88px;
-        max-height: 32px;
-    }
-}
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 430px) {
-    .trusted-title {
+    .trusted-header h2 {
         font-size: 26px;
+        line-height: 1.25;
     }
-    .trusted-page {
-        grid-template-columns: repeat(2, 1fr);
 
-        grid-template-rows: repeat(21, 60px);
+    .trusted-title-line {
+        width: 45px;
+        height: 3px;
+
+        margin-top: 18px;
+        margin-bottom: 20px;
     }
+
+    .trusted-header p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .trusted-header p br {
+        display: none;
+    }
+
+    .trusted-slider {
+        margin-top: 30px;
+    }
+
+    .trusted-page {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .trusted-row {
+        grid-template-columns: repeat(10, 90px);
+
+        min-height: 78px;
+    }
+
     .trusted-logo {
-        width: 120px;
+        height: 65px;
     }
+
     .trusted-logo img {
-        max-width: 105px;
-        max-height: 34px;
+        max-width: 72px;
+        max-height: 36px;
     }
 }
+
 
 /* About Trigger Button */
 .about-trigger {

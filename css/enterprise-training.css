@@ -962,3 +962,52 @@ body.enterprise-page #header.enterprise-header-hidden {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================
+   TRUSTED COMPANIES FIX FOR ENTERPRISE PAGE
+========================================= */
+
+.enterprise-page .trusted-companies {
+    background: #ffffff !important;
+    padding: 90px 0 95px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.enterprise-page .trusted-header {
+    text-align: center !important;
+    margin-bottom: 45px !important;
+    padding: 0 20px !important;
+}
+
+.enterprise-page .trusted-header h2 {
+    color: #111111 !important;
+    font-size: clamp(32px, 3.8vw, 48px) !important;
+    line-height: 1.15 !important;
+    font-weight: 600 !important;
+    letter-spacing: -1.5px !important;
+    margin: 0 0 16px 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.enterprise-page .trusted-title-line {
+    width: 60px !important;
+    height: 4px !important;
+    background: #111111 !important;
+    margin: 20px auto 25px !important;
+}
+
+.enterprise-page .trusted-header p {
+    color: rgba(17, 17, 17, 0.75) !important;
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+    margin: 0 auto !important;
+    max-width: 820px !important;
+}
+
+.enterprise-page .trusted-slider {
+    width: 100% !important;
+    overflow: hidden !important;
+}
