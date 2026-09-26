@@ -2930,12 +2930,11 @@ a {
 
 .trusted-companies {
     width: 100%;
-    background: #ffffff;
+    background: #ffffff !important;
     overflow: hidden;
-    padding: 52px 0 60px;
+    padding: 70px 0 80px;
     box-sizing: border-box;
 }
-
 
 /* =========================================
    HEADER
@@ -2945,8 +2944,9 @@ a {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+    padding: 0 20px;
+    margin-bottom: 40px;
 }
-
 
 /* =========================================
    TITLE
@@ -2955,30 +2955,24 @@ a {
 .trusted-header h2 {
     margin: 0;
     padding: 0 20px;
-
-    color: #111111;
-
-    font-size: 42px;
+    color: #111111 !important;
+    font-size: clamp(28px, 3.4vw, 42px);
     line-height: 1.2;
     font-weight: 700;
-
     text-align: center;
+    letter-spacing: -1px;
 }
-
 
 /* =========================================
    UNDERLINE
 ========================================= */
 
 .trusted-title-line {
-    width: 52px;
+    width: 50px;
     height: 4px;
-
-    background: #111111;
-
-    margin: 22px auto 24px;
+    background: #111111 !important;
+    margin: 18px auto 20px;
 }
-
 
 /* =========================================
    DESCRIPTION
@@ -2986,36 +2980,48 @@ a {
 
 .trusted-header p {
     margin: 0 auto;
-
     padding: 0 20px;
-
-    max-width: 1000px;
-
-    color: #222222;
-
-    font-size: 18px;
+    max-width: 900px;
+    color: rgba(17, 17, 17, 0.75) !important;
+    font-size: 16.5px;
     line-height: 1.55;
-
     font-weight: 400;
-
     text-align: center;
 }
 
-
 /* =========================================
-   SLIDER VIEWPORT
+   SLIDER VIEWPORT (CENTERED & SIDE SPACING)
 ========================================= */
 
 .trusted-slider {
     width: 100%;
-
     overflow: hidden;
-
-    margin-top: 48px;
-
+    margin-top: 25px;
     position: relative;
+    padding: 8px 0;
 }
 
+/* Banne baju soft white fade/spacing */
+.trusted-slider::before,
+.trusted-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.trusted-slider::before {
+    left: 0;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.trusted-slider::after {
+    right: 0;
+    background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
 
 /* =========================================
    MOVING TRACK
@@ -3023,94 +3029,73 @@ a {
 
 #trustedTrack {
     display: flex;
-
     width: max-content;
-
+    align-items: center;
     will-change: transform;
 }
-
 
 /* =========================================
    COMPLETE PAGE
 ========================================= */
 
 .trusted-page {
-    width: 100vw;
-
+    width: max-content;
     flex-shrink: 0;
-
     box-sizing: border-box;
-
-    /* LEFT + RIGHT SPACE */
-    padding: 0 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px; /* Ek column ma 2 logos vacche ni vertical space ochhi kari */
+    padding: 0 40px; /* Banne side ma perfect space */
 }
-
 
 /* =========================================
    ROW
 ========================================= */
 
 .trusted-row {
-
     width: 100%;
-
-    display: grid;
-
-    grid-template-columns: repeat(10, minmax(0, 1fr));
-
+    display: flex;
     align-items: center;
-
-    justify-items: center;
-
-    column-gap: 25px;
-
-    min-height: 100px;
-
+    justify-content: center;
+    gap: 45px; /* Horizontal space between logos */
+    min-height: 48px; /* Extra height ghatadi didhi */
     box-sizing: border-box;
 }
-
 
 /* =========================================
    LOGO BOX
 ========================================= */
 
 .trusted-logo {
-
-    width: 100%;
-
-    height: 82px;
-
+    width: 120px; /* Uniform container width */
+    height: 44px; /* Compact height */
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
+    flex-shrink: 0;
     box-sizing: border-box;
 }
 
-
 /* =========================================
-   LOGO IMAGE
+   LOGO IMAGE (SMALLER & CRISP)
 ========================================= */
 
 .trusted-logo img {
-
     display: block;
-
     width: auto;
-
-    max-width: 105px;
-
-    max-height: 48px;
-
+    max-width: 100px; /* Logo width nani kari */
+    max-height: 25px; /* Logo height nani kari */
     object-fit: contain;
-
     user-select: none;
-
     pointer-events: none;
+    opacity: 0.92;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+.trusted-logo:hover img {
+    transform: scale(1.06);
+    opacity: 1;
+}
 
 /* =========================================
    MISSING LOGO
@@ -3120,67 +3105,13 @@ a {
     visibility: hidden;
 }
 
-
 /* =========================================
-   DESKTOP LARGE
-========================================= */
-
-@media (min-width: 1500px) {
-
-    .trusted-page {
-        padding-left: 70px;
-        padding-right: 70px;
-    }
-
-    .trusted-row {
-        column-gap: 30px;
-    }
-
-    .trusted-logo img {
-        max-width: 110px;
-        max-height: 50px;
-    }
-}
-
-
-/* =========================================
-   LAPTOP
-========================================= */
-
-@media (max-width: 1200px) {
-
-    .trusted-header h2 {
-        font-size: 36px;
-    }
-
-    .trusted-header p {
-        font-size: 17px;
-    }
-
-    .trusted-page {
-        padding-left: 35px;
-        padding-right: 35px;
-    }
-
-    .trusted-row {
-        column-gap: 15px;
-    }
-
-    .trusted-logo img {
-        max-width: 95px;
-        max-height: 45px;
-    }
-}
-
-
-/* =========================================
-   TABLET
+   TABLET RESPONSIVE
 ========================================= */
 
 @media (max-width: 900px) {
-
     .trusted-companies {
-        padding-top: 42px;
+        padding: 50px 0 60px;
     }
 
     .trusted-header h2 {
@@ -3188,90 +3119,71 @@ a {
     }
 
     .trusted-header p {
-        font-size: 16px;
-    }
-
-    .trusted-slider {
-        margin-top: 35px;
+        font-size: 15px;
     }
 
     .trusted-page {
-        padding-left: 25px;
-        padding-right: 25px;
+        gap: 12px;
+        padding: 0 25px;
     }
 
     .trusted-row {
-        grid-template-columns: repeat(10, 95px);
-
-        min-height: 85px;
-
-        column-gap: 0;
-    }
-
-    .trusted-logo img {
-        max-width: 82px;
-        max-height: 40px;
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-    .trusted-companies {
-        padding: 35px 0 45px;
-    }
-
-    .trusted-header h2 {
-        font-size: 26px;
-        line-height: 1.25;
-    }
-
-    .trusted-title-line {
-        width: 45px;
-        height: 3px;
-
-        margin-top: 18px;
-        margin-bottom: 20px;
-    }
-
-    .trusted-header p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .trusted-header p br {
-        display: none;
-    }
-
-    .trusted-slider {
-        margin-top: 30px;
-    }
-
-    .trusted-page {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .trusted-row {
-        grid-template-columns: repeat(10, 90px);
-
-        min-height: 78px;
+        gap: 30px;
     }
 
     .trusted-logo {
-        height: 65px;
+        width: 100px;
+        height: 38px;
+    }
+
+    .trusted-logo img {
+        max-width: 85px;
+        max-height: 22px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+    .trusted-companies {
+        padding: 40px 0 50px;
+    }
+
+    .trusted-header h2 {
+        font-size: 24px;
+    }
+
+    .trusted-title-line {
+        width: 40px;
+        height: 3px;
+        margin: 14px auto 16px;
+    }
+
+    .trusted-header p {
+        font-size: 13.5px;
+    }
+
+    .trusted-page {
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .trusted-row {
+        gap: 22px;
+    }
+
+    .trusted-logo {
+        width: 85px;
+        height: 34px;
     }
 
     .trusted-logo img {
         max-width: 72px;
-        max-height: 36px;
+        max-height: 19px;
     }
 }
-
 
 /* About Trigger Button */
 .about-trigger {

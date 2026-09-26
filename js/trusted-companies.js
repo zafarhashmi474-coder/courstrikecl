@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       ROW STRUCTURE
+       ROW STRUCTURE (10 LOGOS PER ROW)
     ========================================= */
 
     const rows = [
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "walmart"
         ],
 
-        // ROW 2 - 9
+        // ROW 2 - 10
         [
             "netflix",
             "meta",
@@ -212,12 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.loading = "eager";
 
         img.onerror = function () {
-
-            console.warn(
-                "LOGO NOT FOUND:",
-                logoPath + logos[key]
-            );
-
+            console.warn("LOGO NOT FOUND:", logoPath + logos[key]);
             wrapper.classList.add("logo-missing");
         };
 
@@ -234,37 +229,26 @@ document.addEventListener("DOMContentLoaded", function () {
     function createPage() {
 
         const page = document.createElement("div");
-
         page.className = "trusted-page";
-
 
         rows.forEach(function (row) {
 
             const rowElement = document.createElement("div");
-
             rowElement.className = "trusted-row";
 
-
             row.forEach(function (logoKey) {
-
-                rowElement.appendChild(
-                    createLogo(logoKey)
-                );
-
+                rowElement.appendChild(createLogo(logoKey));
             });
 
-
             page.appendChild(rowElement);
-
         });
-
 
         return page;
     }
 
 
     /* =========================================
-       BUILD TWO PAGES
+       BUILD TWO PAGES FOR INFINITE LOOP
     ========================================= */
 
     track.innerHTML = "";
@@ -277,27 +261,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       CONTINUOUS SLIDER
-       HOVER DOES NOT STOP IT
+       CONTINUOUS SLIDER ANIMATION
     ========================================= */
 
     let position = 0;
-
     const speed = 0.35;
 
     function animate() {
 
         position += speed;
 
-        const firstPageWidth =
-            track.children[0].offsetWidth;
+        const firstPageWidth = track.children[0].offsetWidth;
 
         if (position >= firstPageWidth) {
             position = 0;
         }
 
-        track.style.transform =
-            `translate3d(${-position}px, 0, 0)`;
+        track.style.transform = `translate3d(${-position}px, 0, 0)`;
 
         requestAnimationFrame(animate);
     }
