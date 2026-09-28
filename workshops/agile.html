@@ -6,6 +6,44 @@
     <title>AI Fundamentals Workshop | Courstrike</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/workshop.css">
+
+    <!-- HERO BACKGROUND VIDEO STYLES -->
+    <style>
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.85; 
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 <body class="workshop-page">
 
@@ -16,6 +54,11 @@
          HERO SECTION
     ======================================================== -->
     <section class="hero-section">
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="../images/0_Business_Meeting_Applause_1280x672.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
         <!-- Background Overlay with Red-Orange-Yellow Gradient Glow -->
         <div class="hero-bg-overlay"></div>
 
@@ -160,7 +203,6 @@
         <div class="workshop-subnav-inner">
             <div class="workshop-subnav-left">
                 <a href="../index.html" class="workshop-subnav-logo">
-                    <!-- <span class="sub-logo-icon"></span> -->
                     <span class="sub-logo-text">Courstrike</span>
                 </a>
                 <div class="workshop-subnav-links">
@@ -193,28 +235,24 @@
             </div>
 
             <div class="dates-cards-wrapper">
-                <!-- Aug Card -->
                 <div class="date-card">
                     <span class="date-month">Aug</span>
                     <span class="date-year">2026</span>
                     <span class="date-status closed">• CLOSED</span>
                 </div>
 
-                <!-- Sep Card -->
                 <div class="date-card">
                     <span class="date-month">Sep</span>
                     <span class="date-year">2026</span>
                     <span class="date-status limited">LIMITED DATES</span>
                 </div>
 
-                <!-- Oct Card -->
                 <div class="date-card active-date">
                     <span class="date-month">Oct</span>
                     <span class="date-year">2026</span>
                     <span class="date-status reserving">• NOW RESERVING</span>
                 </div>
 
-                <!-- Nov Card -->
                 <div class="date-card">
                     <span class="date-month">Nov</span>
                     <span class="date-year">2026</span>
@@ -227,16 +265,11 @@
     <!-- =======================================================
          SECTION 1: OVERVIEW
     ======================================================== -->
-    <!-- =======================================================
-         SECTION 1: OVERVIEW
-    ======================================================== -->
     <section class="section-overview" id="overview">
         <div class="overview-container">
 
-            <!-- Top Split Grid (Text + Timeline Card) -->
             <div class="overview-grid">
                 
-                <!-- Left Details -->
                 <div class="overview-info">
                     <span class="section-badge-tag">WHY YOU SHOULD ATTEND</span>
                     <h2 class="overview-title">
@@ -246,31 +279,17 @@
                         Build the AI fluency you and your team need in a single day. Attendees get hands-on with leading AI tools and apply proven techniques to real business tasks, grounded in the work they do every day, so they leave with new AI skills they can apply immediately.
                     </p>
 
-                    <!-- Industry Tools -->
                     <div class="industry-tools-block">
                         <span class="tools-label">INDUSTRY TOOLS</span>
                         <div class="tools-badges">
-                            <div class="tool-pill">
-                                <span class="tool-icon">✳️</span>
-                                <span>Claude</span>
-                            </div>
-                            <div class="tool-pill">
-                                <span class="tool-icon">🌀</span>
-                                <span>ChatGPT</span>
-                            </div>
-                            <div class="tool-pill">
-                                <span class="tool-icon">🐙</span>
-                                <span>Copilot</span>
-                            </div>
-                            <div class="tool-pill">
-                                <span class="tool-icon">✨</span>
-                                <span>Gemini</span>
-                            </div>
+                            <div class="tool-pill"><span class="tool-icon">✳️</span><span>Claude</span></div>
+                            <div class="tool-pill"><span class="tool-icon">🌀</span><span>ChatGPT</span></div>
+                            <div class="tool-pill"><span class="tool-icon">🐙</span><span>Copilot</span></div>
+                            <div class="tool-pill"><span class="tool-icon">✨</span><span>Gemini</span></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Agenda Timeline Card -->
                 <div class="agenda-card">
                     <h3 class="agenda-header">Example Workshop Agenda</h3>
                     <div class="agenda-timeline">
@@ -323,17 +342,12 @@
                     </div>
                 </div>
 
-            </div> <!-- /.overview-grid -->
+            </div>
 
-
-            <!-- =======================================================
-                 WHY TAKE THIS WORKSHOP? (Aligned directly inside container)
-            ======================================================== -->
             <div class="why-workshop-block">
                 <h2 class="why-workshop-title">Why Take This Workshop?</h2>
 
                 <div class="why-workshop-grid">
-                    <!-- Column 1 -->
                     <div class="why-feature-col">
                         <div class="why-feature-icon">
                             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -349,7 +363,6 @@
                         </p>
                     </div>
 
-                    <!-- Column 2 -->
                     <div class="why-feature-col">
                         <div class="why-feature-icon">
                             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -367,7 +380,6 @@
                         </p>
                     </div>
 
-                    <!-- Column 3 -->
                     <div class="why-feature-col">
                         <div class="why-feature-icon">
                             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -383,9 +395,6 @@
                 </div>
             </div>
 
-            <!-- =======================================================
-                 TRAIN AN ENTIRE TEAM CARD (Aligned directly inside container)
-            ======================================================== -->
             <div class="team-training-cta">
                 <h2>Want to Train an Entire Team?</h2>
                 <div class="team-cta-divider"></div>
@@ -395,10 +404,8 @@
                 <a href="#header" class="team-cta-btn">Book a Call</a>
             </div>
 
-        </div> <!-- /.overview-container -->
+        </div>
     </section>
-
-
 
     <!-- =======================================================
          SECTION 2: WORKSHOP CURRICULUM (3 PARTS CONTINUOUS)
@@ -406,7 +413,6 @@
     <section class="section-curriculum" id="curriculum">
         <div class="curriculum-container">
 
-            <!-- CURRICULUM TOP HEADER -->
             <div class="curriculum-header">
                 <span class="curriculum-tag">ENTERPRISE WORKSHOP</span>
                 <h2 class="curriculum-main-title">Workshop Curriculum</h2>
@@ -419,12 +425,9 @@
                 </div>
             </div>
 
-            <!-- TIMELINE WRAPPER (Line goes through all 3 parts) -->
             <div class="curriculum-timeline-wrapper">
 
-                <!-- ===================================================
-                     PART 1: UNDERSTANDING AI
-                ==================================================== -->
+                <!-- PART 1: UNDERSTANDING AI -->
                 <div class="curriculum-part-block">
                     <div class="part-indicator">
                         <span class="part-marker-ring"></span>
@@ -448,7 +451,6 @@
                                 </div>
                             </div>
 
-                            <!-- Graphic Illustration -->
                             <div class="part-illustration">
                                 <svg class="iso-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M200 65 L270 105 L200 145 L130 105 Z" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
@@ -468,7 +470,6 @@
                             </div>
                         </div>
 
-                        <!-- 3 Sub Columns -->
                         <div class="part-features-grid">
                             <div class="part-feature-col">
                                 <div class="feature-icon-box">
@@ -495,9 +496,7 @@
                     </div>
                 </div>
 
-                <!-- ===================================================
-                     PART 2: PROMPTING THAT WORKS
-                ==================================================== -->
+                <!-- PART 2: PROMPTING THAT WORKS -->
                 <div class="curriculum-part-block">
                     <div class="part-indicator">
                         <span class="part-marker-ring"></span>
@@ -521,7 +520,6 @@
                                 </div>
                             </div>
 
-                            <!-- Graphic Illustration -->
                             <div class="part-illustration">
                                 <svg class="iso-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M150 40 L210 70 L170 95 L110 65 Z" fill="#3b82f6" opacity="0.9"/>
@@ -542,7 +540,6 @@
                             </div>
                         </div>
 
-                        <!-- 3 Sub Columns -->
                         <div class="part-features-grid">
                             <div class="part-feature-col">
                                 <div class="feature-icon-box">
@@ -569,9 +566,7 @@
                     </div>
                 </div>
 
-                <!-- ===================================================
-                     PART 3: AI AGENTS & WORKFLOWS
-                ==================================================== -->
+                <!-- PART 3: AI AGENTS & WORKFLOWS -->
                 <div class="curriculum-part-block">
                     <div class="part-indicator">
                         <span class="part-marker-ring"></span>
@@ -595,7 +590,6 @@
                                 </div>
                             </div>
 
-                            <!-- Graphic Illustration -->
                             <div class="part-illustration">
                                 <svg class="iso-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M190 20 L250 50 L210 75 L150 45 Z" fill="#0284c7" opacity="0.9"/>
@@ -619,7 +613,6 @@
                             </div>
                         </div>
 
-                        <!-- 3 Sub Columns -->
                         <div class="part-features-grid">
                             <div class="part-feature-col">
                                 <div class="feature-icon-box">
@@ -646,9 +639,9 @@
                     </div>
                 </div>
 
-            </div> <!-- /.curriculum-timeline-wrapper -->
+            </div>
 
-        </div> <!-- /.curriculum-container -->
+        </div>
     </section>
 
     <!-- =======================================================
@@ -657,68 +650,56 @@
     <section class="section-testimonials" id="testimonials">
         <div class="testimonials-container">
 
-            <!-- LEFT: HEADING & BRAND LOGOS -->
             <div class="testimonials-left">
                 <h2 class="testimonials-heading">
                     Leading Brands Learn from Courstrike®
                 </h2>
 
                 <div class="brands-grid">
-                    <!-- Peloton -->
                     <div class="brand-item">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-5h2v5zm0-7h-2V7h2v2.5z"/></svg>
                         <span>PELOTON</span>
                     </div>
 
-                    <!-- Airbnb -->
                     <div class="brand-item">
                         <svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 6 5.5 6 9.5c0 4.2 4.5 9 6 10.5 1.5-1.5 6-6.3 6-10.5C18 5.5 15.5 2 12 2zm0 11.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 8.5 12 8.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z"/></svg>
                         <span>airbnb</span>
                     </div>
 
-                    <!-- Amazon -->
                     <div class="brand-item">
                         <span style="font-weight: 800; letter-spacing: -1px;">amazon</span>
                     </div>
 
-                    <!-- Uber -->
                     <div class="brand-item">
                         <span style="font-weight: 800;">Uber</span>
                     </div>
 
-                    <!-- Slack -->
                     <div class="brand-item">
                         <svg viewBox="0 0 24 24"><path d="M6 15a2 2 0 1 1-2-2h2v2zm1 0a2 2 0 1 1 2 2v-2H7zm0-6a2 2 0 1 1-2-2 2 2 0 0 1 2 2v2zm0 1a2 2 0 1 1 2-2v2H7zm6-1a2 2 0 1 1 2 2h-2V9zm-1 0a2 2 0 1 1-2-2v2h2zm0 6a2 2 0 1 1 2 2 2 2 0 0 1-2-2v-2zm0-1a2 2 0 1 1-2 2v-2h2z"/></svg>
                         <span>slack</span>
                     </div>
 
-                    <!-- Meta -->
                     <div class="brand-item">
                         <svg viewBox="0 0 24 24"><path d="M16.9 7.3c-1.3 0-2.5.6-3.3 1.7-.8-1.1-2-1.7-3.3-1.7-2.6 0-4.7 2.1-4.7 4.7 0 3.3 3.6 6.3 7.5 9.7 1.1 1 1.7 1.4 2 1.4s.9-.4 2-1.4c3.9-3.4 7.5-6.4 7.5-9.7 0-2.6-2.1-4.7-4.7-4.7z"/></svg>
                         <span>∞ Meta</span>
                     </div>
 
-                    <!-- Microsoft -->
                     <div class="brand-item">
                         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" fill="#f25022"/><rect x="13" y="3" width="8" height="8" fill="#7fba00"/><rect x="3" y="13" width="8" height="8" fill="#00a4ef"/><rect x="13" y="13" width="8" height="8" fill="#ffb900"/></svg>
                         <span>Microsoft</span>
                     </div>
 
-                    <!-- Nike -->
                     <div class="brand-item">
                         <svg viewBox="0 0 24 24"><path d="M21.7 6.4c-.2-.1-.5-.1-.7.1L7.5 17.2l-3.8-3.1c-.2-.2-.5-.1-.7.1-.2.2-.1.5.1.7l4.3 3.5c.1.1.3.1.4 0L21.8 7.1c.2-.2.1-.5-.1-.7z"/></svg>
                     </div>
                 </div>
             </div>
 
-            <!-- RIGHT: ANGULAR CUTOUT INSTRUCTOR CARD -->
             <div class="testimonials-right-card">
-                <!-- Instructor Photo -->
                 <div class="testimonial-img-box">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85" alt="Instructor Jon">
                 </div>
 
-                <!-- Angular Dark Quote Block -->
                 <div class="testimonial-cutout-block">
                     <div class="quote-icon">“</div>
                     <blockquote class="quote-text">
@@ -741,13 +722,11 @@
         </div>
     </section>
 
-<!-- =======================================================
+    <!-- =======================================================
          SECTION 4: OUR SPACE
     ======================================================== -->
     <section class="section-our-space" id="our-space">
         
-        <!-- Big Street Backdrop -->
-        <!-- Note: Background street image tame CSS (.space-hero-banner) mathi ../images/ ma change kari shako cho -->
         <div class="space-hero-banner">
             <div class="space-hero-content">
                 <span class="space-welcome-label">Welcome to</span>
@@ -758,7 +737,6 @@
             </div>
         </div>
 
-        <!-- Floating Info Card: How to Get Here -->
         <div class="space-guide-container">
             <div class="space-guide-card">
                 <h3 class="space-guide-title">How to Get Here</h3>
@@ -766,7 +744,6 @@
 
                 <div class="space-guide-grid">
                     
-                    <!-- Left: Directions & Arrival steps -->
                     <div class="space-guide-left">
                         <div class="space-location-pill">
                             <div class="space-loc-details">
@@ -808,7 +785,6 @@
                         </div>
                     </div>
 
-                    <!-- Right: Minimalist Street Map Graphic -->
                     <div class="space-map-box">
                         <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="500" height="300" fill="#f1f3f5"/>
@@ -822,7 +798,6 @@
                             <text x="70" y="160" fill="#9aa0a6" font-size="11" font-weight="700" transform="rotate(52 70 160)">Broadway</text>
                         </svg>
 
-                        <!-- Centered Badge Pin -->
                         <div class="space-map-pin-badge">
                             <span class="space-map-pin-inner">🎓</span>
                         </div>
@@ -832,9 +807,7 @@
             </div>
         </div>
 
-        <!-- Photographic Gallery (Tamari local images mate paths) -->
         <div class="space-gallery-wrapper">
-            <!-- Row 1 -->
             <div class="space-gallery-row-1">
                 <div class="space-gallery-item">
                     <img src="../images/img-1-CysHayZl.avif" alt="Building Exterior">
@@ -850,7 +823,6 @@
                 </div>
             </div>
 
-            <!-- Row 2 -->
             <div class="space-gallery-row-2">
                 <div class="space-gallery-item">
                     <img src="../images/img-7-BwdLPytZ.avif" alt="Instructor Teaching">
@@ -880,10 +852,8 @@
                 <div class="faq-title-divider"></div>
             </div>
 
-            <!-- FAQ Accordion Card -->
             <div class="faq-card">
 
-                <!-- Item 1 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>Do I need a technical background for this workshop?</span>
@@ -896,7 +866,6 @@
                     </div>
                 </div>
 
-                <!-- Item 2 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>Are there any prerequisites for this workshop?</span>
@@ -909,7 +878,6 @@
                     </div>
                 </div>
 
-                <!-- Item 3 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>Who are the instructors?</span>
@@ -922,7 +890,6 @@
                     </div>
                 </div>
 
-                <!-- Item 4 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>How do I sign up for this workshop?</span>
@@ -935,7 +902,6 @@
                     </div>
                 </div>
 
-                <!-- Item 5 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>Can I take this workshop on my own?</span>
@@ -948,7 +914,6 @@
                     </div>
                 </div>
 
-                <!-- Item 6 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>Can I attend this workshop online?</span>
@@ -961,7 +926,6 @@
                     </div>
                 </div>
 
-                <!-- Item 7 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>Will I receive a certificate by completing this workshop?</span>
@@ -974,7 +938,6 @@
                     </div>
                 </div>
 
-                <!-- Item 8 -->
                 <div class="faq-item">
                     <button type="button" class="faq-question">
                         <span>I have more questions, can I speak with someone?</span>
@@ -998,7 +961,6 @@
     <section class="section-reserve-team" id="reserve-workshop">
         <div class="reserve-team-container">
 
-            <!-- LEFT COLUMN: TITLE, STATS & DATES CARD -->
             <div class="reserve-team-left">
                 <h2 class="reserve-team-title">
                     Reserve a Workshop for Your Team
@@ -1015,7 +977,6 @@
                     </li>
                 </ul>
 
-                <!-- Embedded Reserve an Upcoming Date Card -->
                 <div class="reserve-dates-card">
                     <h3 class="reserve-dates-title">Reserve an Upcoming Date</h3>
                     <p class="reserve-dates-sub">Full-Day, In-Person Training</p>
@@ -1025,28 +986,24 @@
                     </div>
 
                     <div class="reserve-months-grid">
-                        <!-- Sep Card -->
                         <div class="reserve-month-item">
                             <span class="res-month">Sep</span>
                             <span class="res-year">2026</span>
                             <span class="res-status closed">• CLOSED</span>
                         </div>
 
-                        <!-- Oct Card -->
                         <div class="reserve-month-item active">
                             <span class="res-month">Oct</span>
                             <span class="res-year">2026</span>
                             <span class="res-status reserving">• NOW RESERVING</span>
                         </div>
 
-                        <!-- Nov Card -->
                         <div class="reserve-month-item">
                             <span class="res-month">Nov</span>
                             <span class="res-year">2026</span>
                             <span class="res-status reserving">• NOW RESERVING</span>
                         </div>
 
-                        <!-- Dec Card -->
                         <div class="reserve-month-item">
                             <span class="res-month">Dec</span>
                             <span class="res-year">2026</span>
@@ -1056,7 +1013,6 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: GET STARTED FORM CARD -->
             <div class="reserve-team-right">
                 <aside class="reserve-form-card">
                     <h3>Get Started</h3>
@@ -1125,12 +1081,6 @@
 
         </div>
     </section>
-
-    <!-- FLOATING 'HAVE QUESTIONS?' ACTION PILL -->
-    <!-- <a href="#header" class="floating-help-btn">
-        <span class="phone-icon">&#x1F4DE;</span>
-        <span>Have Questions?</span>
-    </a> -->
 
     <!-- FOOTER INJECTION CONTAINER -->
     <footer id="footer"></footer>
