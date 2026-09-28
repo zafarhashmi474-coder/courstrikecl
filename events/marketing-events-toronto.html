@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Toronto | Courstrike</title>
+
+    <!-- Main Global CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* =========================================
+           PAGE RESET & BASE
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           1. HERO SECTION
+        ========================================= */
+        .events-hero {
+            position: relative;
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            background-color: #0b0c10;
+            background-image: 
+                linear-gradient(rgba(10, 11, 14, 0.75), rgba(10, 11, 14, 0.88)), 
+                url('../images/nyc-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .events-hero-container {
+            max-width: 1240px;
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.95fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .events-hero-content {
+            color: #ffffff;
+        }
+
+        .events-hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .events-hero-stats {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .events-hero-desc {
+            font-size: 1.1rem;
+            line-height: 1.65;
+            color: #cbd5e1;
+            max-width: 580px;
+        }
+
+        .events-subscribe-card {
+            background-color: #121316;
+            border: 1px solid #23252b;
+            border-radius: 12px;
+            padding: 36px 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .subscribe-card-title {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .subscribe-card-subtitle {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            margin-bottom: 26px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 16px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .subscribe-form input {
+            width: 100%;
+            background-color: #1a1c22;
+            border: 1px solid #2e323b;
+            border-radius: 6px;
+            padding: 13px 16px;
+            font-size: 0.95rem;
+            color: #ffffff;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .subscribe-form input::placeholder {
+            color: #6b7280;
+        }
+
+        .subscribe-form input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+        }
+
+        .terms-text {
+            font-size: 0.78rem;
+            color: #9ca3af;
+            margin: 4px 0 6px;
+            line-height: 1.4;
+        }
+
+        .terms-text a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .subscribe-submit-btn {
+            width: 100%;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 50px;
+            padding: 13px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .subscribe-submit-btn:hover {
+            background-color: #e5e7eb;
+        }
+
+        /* =========================================
+           2. UPCOMING EVENTS LISTING SECTION
+        ========================================= */
+        .upcoming-events-section {
+            padding: 90px 24px 120px;
+            background-color: #0a0b0d;
+        }
+
+        .upcoming-container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .upcoming-header-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 28px;
+        }
+
+        .upcoming-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .city-select-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 2px;
+            cursor: pointer;
+        }
+
+        .city-arrow-icon {
+            font-size: 1.3rem;
+            transition: transform 0.25s ease;
+        }
+
+        .city-arrow-icon.open {
+            transform: rotate(180deg);
+        }
+
+        .city-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 280px;
+            background-color: #ffffff;
+            color: #111111;
+            border-radius: 12px;
+            padding: 8px 0;
+            width: 200px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+            z-index: 40;
+        }
+
+        .city-dropdown-menu.show {
+            display: block;
+        }
+
+        .city-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            color: #111111;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background 0.15s ease;
+        }
+
+        .city-dropdown-item:hover {
+            background-color: #f1f3f5;
+        }
+
+        .event-tabs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .tab-btn {
+            background-color: #1a1c22;
+            color: #9ca3af;
+            border: 1px solid #272a33;
+            border-radius: 30px;
+            padding: 8px 22px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: #ffffff;
+            border-color: #4b5563;
+        }
+
+        .tab-btn.active {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            font-weight: 600;
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .event-card {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #22252c;
+            min-height: 290px;
+            padding: 38px 44px;
+            background-size: cover;
+            background-position: center;
+            transition: border-color 0.3s ease, transform 0.25s ease;
+        }
+
+        .card-horizons {
+            background-image: 
+                linear-gradient(90deg, rgba(8, 9, 12, 0.92) 0%, rgba(8, 9, 12, 0.82) 48%, rgba(8, 9, 12, 0.35) 100%),
+                url('../images/nyc-hero-bg.jpg');
+        }
+
+        .card-product-summit {
+            background-image: 
+                linear-gradient(90deg, rgba(8, 9, 12, 0.92) 0%, rgba(8, 9, 12, 0.82) 48%, rgba(8, 9, 12, 0.35) 100%),
+                url('../images/img1.png');
+        }
+
+        .event-card:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .event-card-left {
+            display: flex;
+            gap: 30px;
+            max-width: 820px;
+            z-index: 2;
+        }
+
+        .event-date-badge {
+            background-color: #21252d;
+            border: 1px solid #323742;
+            border-radius: 8px;
+            width: 68px;
+            height: 68px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .badge-month {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #9ca3af;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .badge-day {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .event-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-title-main {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            font-style: italic;
+            font-family: Georgia, 'Times New Roman', serif;
+            margin-bottom: 2px;
+            line-height: 1.1;
+        }
+
+        .event-title-sub {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .event-summary {
+            font-size: 0.96rem;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+            max-width: 580px;
+            line-height: 1.45;
+        }
+
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 22px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 22px;
+        }
+
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .event-speakers-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .event-speakers-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .event-card-arrow {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .arrow-svg {
+            stroke: #ffffff;
+            transition: stroke 0.3s ease, transform 0.2s ease;
+        }
+
+        .event-card:hover .event-card-arrow {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            transform: scale(1.06);
+        }
+
+        .event-card:hover .arrow-svg {
+            stroke: #000000;
+        }
+
+        /* =========================================
+           3. BOTTOM SUBSCRIBE SECTION
+        ========================================= */
+        .bottom-subscribe-section {
+            width: 100%;
+            background-color: #ffffff;
+            color: #111111;
+            padding: 100px 24px 110px;
+            box-sizing: border-box;
+        }
+
+        .bottom-subscribe-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .bottom-subscribe-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0d0e12;
+            margin-bottom: 20px;
+            letter-spacing: -0.8px;
+        }
+
+        .title-underline {
+            width: 48px;
+            height: 4px;
+            background-color: #111111;
+            margin-bottom: 40px;
+            border-radius: 2px;
+        }
+
+        .subscribe-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .feature-check {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111111;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1.05rem;
+            line-height: 1.55;
+            color: #333942;
+            font-weight: 400;
+        }
+
+        .bottom-subscribe-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 42px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-form-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 26px;
+            letter-spacing: -0.3px;
+        }
+
+        .card-form-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-inputs-row {
+            display: flex;
+            gap: 14px;
+        }
+
+        .form-field {
+            flex: 1;
+        }
+
+        .card-form-wrap input {
+            width: 100%;
+            background-color: #f7f9fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 14px 16px;
+            font-size: 0.95rem;
+            color: #111111;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .card-form-wrap input::placeholder {
+            color: #7b8390;
+        }
+
+        .card-form-wrap input:focus {
+            background-color: #ffffff;
+            border-color: #000000;
+        }
+
+        .form-terms-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 4px 0 8px;
+            line-height: 1.4;
+        }
+
+        .form-terms-text a {
+            color: #111111;
+            text-decoration: underline;
+        }
+
+        .card-submit-btn {
+            width: 100%;
+            background-color: #0a0b0d;
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .card-submit-btn:hover {
+            background-color: #22262e;
+        }
+
+        .card-submit-btn:active {
+            transform: scale(0.99);
+        }
+
+        /* =========================================
+           4. RECENT EVENTS SECTION
+        ========================================= */
+        .recent-events-section {
+            width: 100%;
+            background-color: #0b0c10;
+            color: #ffffff;
+            padding: 100px 24px 120px;
+            box-sizing: border-box;
+        }
+
+        .recent-events-container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .recent-events-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: -0.8px;
+            color: #ffffff;
+        }
+
+        .recent-events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .recent-event-card {
+            background-color: #121317;
+            border: 1px solid #1f232b;
+            border-radius: 12px;
+            padding: 38px 40px 32px;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .recent-event-card:hover {
+            border-color: #383e4c;
+        }
+
+        .recent-event-card.is-hidden {
+            display: none;
+        }
+
+        .card-header-row {
+            display: grid;
+            grid-template-columns: 75px 1fr auto;
+            gap: 28px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .card-date-badge {
+            background-color: #1b1e25;
+            border: 1px solid #282d38;
+            border-radius: 8px;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .card-date-badge .badge-month {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #9ca3af;
+            letter-spacing: 1px;
+        }
+
+        .card-date-badge .badge-day {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .card-main-info {
+            max-width: 760px;
+        }
+
+        .card-category-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+            display: inline-block;
+        }
+
+        .card-event-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .card-partner-line {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+            letter-spacing: 0.4px;
+        }
+
+        .card-partner-line strong {
+            color: #ffffff;
+        }
+
+        .card-event-desc {
+            font-size: 0.95rem;
+            line-height: 1.55;
+            color: #9ca3af;
+            margin-bottom: 18px;
+        }
+
+        .card-speaker-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .speaker-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.8px;
+        }
+
+        .speaker-brand {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .see-highlights-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.25s ease;
+        }
+
+        .see-highlights-btn .btn-arrow {
+            font-size: 1.2rem;
+            line-height: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .see-highlights-btn:hover {
+            background-color: #ffffff;
+            color: #0b0c10;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+        }
+
+        .see-highlights-btn:hover .btn-arrow {
+            transform: translateX(3px);
+        }
+
+        .card-photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .gallery-thumb {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #1a1c22;
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92);
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
+
+        .gallery-thumb:hover img {
+            transform: scale(1.04);
+            filter: brightness(1);
+        }
+
+        .view-more-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .view-more-events-btn {
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 999px;
+            padding: 13px 34px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .view-more-events-btn:hover {
+            background-color: #e5e7eb;
+            transform: translateY(-2px);
+        }
+
+        .view-more-events-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN (Media Queries)
+        ========================================= */
+        @media (max-width: 992px) {
+            .events-hero {
+                padding: 100px 20px 60px;
+                min-height: auto;
+            }
+            .events-hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .upcoming-title {
+                font-size: 2rem;
+            }
+            .city-dropdown-menu {
+                left: 0;
+            }
+            .event-card {
+                padding: 30px 24px;
+            }
+            .bottom-subscribe-section {
+                padding: 70px 20px 80px;
+            }
+            .bottom-subscribe-container {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+            .recent-events-section {
+                padding: 70px 20px 90px;
+            }
+            .card-header-row {
+                grid-template-columns: 65px 1fr;
+                gap: 20px;
+            }
+            .see-highlights-btn {
+                grid-column: 2 / 3;
+                justify-self: flex-start;
+                margin-top: 5px;
+            }
+            .gallery-thumb {
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .upcoming-title {
+                font-size: 1.6rem;
+                flex-wrap: wrap;
+            }
+            .event-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+                padding: 24px 20px;
+            }
+            .event-card-left {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .event-card-arrow {
+                align-self: flex-end;
+            }
+            .form-row, .form-inputs-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .bottom-subscribe-card {
+                padding: 26px 20px;
+            }
+            .bottom-subscribe-title, .recent-events-heading {
+                font-size: 1.85rem;
+            }
+            .recent-event-card {
+                padding: 24px 18px;
+            }
+            .card-header-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .see-highlights-btn {
+                grid-column: 1 / 2;
+            }
+            .card-photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .gallery-thumb {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shared Header via components.js -->
+    <div id="header"></div>
+
+    <main class="events-toronto-page">
+
+        <!-- =========================================
+             1. HERO SECTION
+        ========================================= -->
+        <section class="events-hero">
+            <div class="events-hero-container">
+                <div class="events-hero-content">
+                    <h1 class="events-hero-title">Events in Toronto</h1>
+                    <p class="events-hero-stats">
+                        2,000+ Events Hosted. 80,000+ Attendees. 2,500+ Speakers.
+                    </p>
+                    <p class="events-hero-desc">
+                        Join Toronto's leaders driving innovation across AI, product management, 
+                        design, and marketing. Connect with professionals, unlock new insights, 
+                        and stay ahead of what's next.
+                    </p>
+                </div>
+
+                <!-- Right Subscription Card -->
+                <div class="events-subscribe-card">
+                    <h2 class="subscribe-card-title">Subscribe for Event Updates</h2>
+                    <p class="subscribe-card-subtitle">Get exclusive invites and never miss an event.</p>
+
+                    <form class="subscribe-form" onsubmit="event.preventDefault();">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+
+                        <p class="terms-text">
+                            By clicking "Subscribe", you confirm that you accept our <a href="#">Terms</a>.
+                        </p>
+
+                        <button type="submit" class="subscribe-submit-btn">
+                            <span>Subscribe</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+             2. UPCOMING EVENTS LISTING SECTION
+        ========================================= -->
+        <section class="upcoming-events-section">
+            <div class="upcoming-container">
+                
+                <!-- City Selector Heading with Dropdown -->
+                <div class="upcoming-header-wrap">
+                    <h2 class="upcoming-title" id="cityDropdownBtn">
+                        <span>Upcoming Events in</span>
+                        <span class="city-select-trigger">
+                            <span id="selectedCityFlag">🇨🇦</span> 
+                            <span id="selectedCityText">Toronto</span>
+                            <span class="city-arrow-icon" id="cityArrow">▾</span>
+                        </span>
+                    </h2>
+
+                    <!-- City Dropdown Popover -->
+                    <div class="city-dropdown-menu" id="cityMenu">
+                        <a href="new-york-events.html" class="city-dropdown-item" data-city="New York" data-flag="🇺🇸">
+                            <span>🇺🇸</span> <span>New York</span>
+                        </a>
+                        <a href="london-events.html" class="city-dropdown-item" data-city="London" data-flag="🇬🇧">
+                            <span>🇬🇧</span> <span>London</span>
+                        </a>
+                        <a href="toronto-events.html" class="city-dropdown-item" data-city="Toronto" data-flag="🇨🇦">
+                            <span>🇨🇦</span> <span>Toronto</span>
+                        </a>
+                        <a href="#" class="city-dropdown-item" data-city="Online" data-flag="🌐">
+                            <span>🌐</span> <span>Online</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category Filter Tabs -->
+                <div class="event-tabs">
+                    <button type="button" class="tab-btn" data-category="all">All</button>
+                    <button type="button" class="tab-btn" data-category="ai">AI</button>
+                    <button type="button" class="tab-btn" data-category="product">Product</button>
+                    <button type="button" class="tab-btn" data-category="design">Design</button>
+                    <button type="button" class="tab-btn active" data-category="marketing">Marketing</button>
+                </div>
+
+                <!-- Event Cards List -->
+                <div class="events-list" id="eventsList">
+
+                    <!-- EVENT 1: HORIZONS (Toronto) -->
+                    <a href="horizons-toronto.html" class="event-card card-horizons" data-categories="all ai product">
+                        <div class="event-card-left">
+                            <div class="event-date-badge">
+                                <span class="badge-month">OCT</span>
+                                <span class="badge-day">22</span>
+                            </div>
+                            <div class="event-details">
+                                <h3 class="event-title-main">HORIZONS</h3>
+                                <div class="event-title-sub">AI + Digital Innovation</div>
+                                <p class="event-summary">
+                                    A one-day summit in Toronto for leaders at the edge of innovation.
+                                </p>
+                                <div class="event-meta">
+                                    <span class="meta-item">
+                                        🕒 1:00 PM – 5:30 PM EST
+                                    </span>
+                                    <span class="meta-item">
+                                        📍 Courstrike Toronto
+                                    </span>
+                                </div>
+                                <div class="event-speakers-label">FEATURING SPEAKERS FROM:</div>
+                                <div class="event-speakers-logos">
+                                    <span>Google</span>
+                                    <span>Shopify</span>
+                                    <span>RBC</span>
+                                    <span>TD Bank</span>
+                                    <span>mastercard</span>
+                                    <span>Amazon</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Hover Arrow Indicator -->
+                        <div class="event-card-arrow">
+                            <svg class="arrow-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- EVENT 2: AI PRODUCT SUMMIT -->
+                    <a href="ai-product-summit-toronto.html" class="event-card card-product-summit" data-categories="all ai product">
+                        <div class="event-card-left">
+                            <div class="event-date-badge">
+                                <span class="badge-month">NOV</span>
+                                <span class="badge-day">19</span>
+                            </div>
+                            <div class="event-details">
+                                <div class="event-title-sub" style="margin-bottom: 4px; font-weight: 600; letter-spacing: 1px; font-size: 0.95rem;">AI PRODUCT</div>
+                                <h3 class="event-title-main" style="font-family: inherit; font-style: normal; font-weight: 800; font-size: 2.2rem; margin-bottom: 10px;">SUMMIT</h3>
+                                <p class="event-summary">
+                                    A one-day summit for product leaders &amp; professionals at the edge of innovation.
+                                </p>
+                                <div class="event-meta">
+                                    <span class="meta-item">
+                                        🕒 2:00 PM – 6:00 PM EST
+                                    </span>
+                                    <span class="meta-item">
+                                        📍 Courstrike Toronto
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Hover Arrow Indicator -->
+                        <div class="event-card-arrow">
+                            <svg class="arrow-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+            3. BOTTOM SUBSCRIBE SECTION
+        ========================================= -->
+        <section class="bottom-subscribe-section">
+            <div class="bottom-subscribe-container">
+
+                <div class="bottom-subscribe-info">
+                    <h2 class="bottom-subscribe-title">Subscribe for Event Updates</h2>
+                    <div class="title-underline"></div>
+
+                    <ul class="subscribe-features-list">
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span class="feature-text">Receive exclusive event invitations and updates directly to your inbox.</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span class="feature-text">Join leaders and experts for insightful panel discussions, business deep dives, and social community evenings.</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span class="feature-text">Expand your network and join the Courstrike community of over 250,000 professionals.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bottom-subscribe-card">
+                    <h3 class="card-form-title">Get Exclusive Event Updates by Email</h3>
+
+                    <form class="card-form-wrap" onsubmit="event.preventDefault();">
+                        <div class="form-inputs-row">
+                            <div class="form-field">
+                                <input type="text" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+
+                        <p class="form-terms-text">
+                            By clicking “Subscribe”, you confirm that you accept our <a href="#">Terms</a>.
+                        </p>
+
+                        <button type="submit" class="card-submit-btn">
+                            <span>Subscribe</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+            4. RECENT EVENTS IN TORONTO SECTION
+        ========================================= -->
+        <section class="recent-events-section">
+            <div class="recent-events-container">
+                
+                <h2 class="recent-events-heading">Recent Events in Toronto</h2>
+
+                <div class="recent-events-list" id="recentEventsList">
+
+                    <!-- EVENT 1 -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">SEP</span>
+                                <span class="badge-day">16</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">DESIGN EVENINGS TORONTO:</span>
+                                <h3 class="card-event-title">From Concept to Conviction: AI in the Designer's Toolkit</h3>
+                                <p class="card-event-desc">
+                                    During her talk, Mareike Carolin Keller, Product Designer at Spotify, explored how to move AI from an experimental tool to a core part of the design workflow, sharing how to leverage AI-assisted prototyping and code generation to accelerate execution and earn rapid stakeholder buy-in.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKER FROM:</span>
+                                    <span class="speaker-brand">Spotify</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/from-concept-to-conviction.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Event presentation"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Speaker on stage"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Attendees networking"></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 2 -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">SEP</span>
+                                <span class="badge-day">1</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">LEADERS IN FINTECH:</span>
+                                <h3 class="card-event-title">The Evolution of Agentic Commerce</h3>
+                                <p class="card-event-desc">
+                                    During the panel, leading AI and product executives shared frameworks for navigating the shift toward agentic commerce, drawing on their experience scaling complex transactional infrastructure to unpack practical models for deploying autonomous agents, securing machine-to-machine payments, and capturing enterprise value in agent-driven markets.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">AMERICAN EXPRESS</span>
+                                    <span class="speaker-brand">mastercard</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/the-evolution-of-agentic-commerce.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Fintech reception"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Panel discussion"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Audience listening"></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 3 -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">AUG</span>
+                                <span class="badge-day">13</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">MARKETING EVENINGS TORONTO:</span>
+                                <h3 class="card-event-title">Marketing People Actually Notice (and Will Pay You For)</h3>
+                                <p class="card-event-desc">
+                                    During the evening with Jeffrey Tousignant, Head of Marketing at Air, and Emmeline Vu, Product Marketing Lead at Air, they explored how enterprise organizations built and scaled their creative operations, sharing how unifying product positioning with creative production accelerated multi-channel campaigns and drove business impact.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Air</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/marketing-people-actually-notice.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Marketing stage sign"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Speakers couch talk"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Crowd taking notes"></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 4 -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUL</span>
+                                <span class="badge-day">29</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">LEADERS IN PRODUCT:</span>
+                                <h3 class="card-event-title">Fintech Insights from JPMC &amp; PayPal</h3>
+                                <div class="card-partner-line">
+                                    IN PARTNERSHIP WITH <strong>Canva</strong> ✳ <strong>Flourish</strong>
+                                </div>
+                                <p class="card-event-desc">
+                                    During the forward-looking conversation, product leaders explored how AI-driven products, sustainable growth strategies, and customer-first innovation were shaping the next generation of financial services.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">PayPal</span>
+                                    <span class="speaker-brand">JPMorganChase</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/fintech-insights-jpmc-paypal.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Welcome chalkboard"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Fireside chat"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Audience notebook"></div>
+                        </div>
+                    </article>
+
+                    <!-- ================= BATCH 2 (EVENTS 5-8) ================= -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUL</span>
+                                <span class="badge-day">15</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">AI SUMMIT TORONTO:</span>
+                                <h3 class="card-event-title">Building Multi-Agent Workflows in Production</h3>
+                                <p class="card-event-desc">
+                                    Engineering leaders from top tier tech startups discussed autonomous system orchestration, token efficiency, memory architectures, and deployment pipelines.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">OpenAI</span>
+                                    <span class="speaker-brand">Databricks</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUN</span>
+                                <span class="badge-day">24</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">PRODUCT LEADERSHIP:</span>
+                                <h3 class="card-event-title">Scaling 0 to 1 Products with Generative AI</h3>
+                                <p class="card-event-desc">
+                                    An executive roundtable on discovery phases, finding product market fit with generative AI primitives, and reducing product cycle velocities.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Shopify</span>
+                                    <span class="speaker-brand">Notion</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUN</span>
+                                <span class="badge-day">10</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">DATA &amp; AI:</span>
+                                <h3 class="card-event-title">Modern Data Architecture &amp; RAG Systems</h3>
+                                <p class="card-event-desc">
+                                    Deep dive into modern retrieval augmented generation pipelines, vector databases, query evaluations, and semantic search techniques for big data.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Snowflake</span>
+                                    <span class="speaker-brand">Pinecone</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">MAY</span>
+                                <span class="badge-day">20</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">CREATIVE OPERATIONS:</span>
+                                <h3 class="card-event-title">The Future of Brand Storytelling</h3>
+                                <p class="card-event-desc">
+                                    Exploring multi-channel brand synthesis, real-time campaign iteration, and how top design agencies leverage generative tooling for client showcases.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Nike</span>
+                                    <span class="speaker-brand">VML</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- ================= BATCH 3 (EVENTS 9-12) ================= -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">MAY</span>
+                                <span class="badge-day">05</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">LEADERS IN AI:</span>
+                                <h3 class="card-event-title">Enterprise Safety &amp; LLM Governance</h3>
+                                <p class="card-event-desc">
+                                    Frameworks for deploying LLMs securely across heavily regulated industries including healthcare, banking, and government organizations.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Anthropic</span>
+                                    <span class="speaker-brand">IBM</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">APR</span>
+                                <span class="badge-day">18</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">DESIGN SYSTEMS:</span>
+                                <h3 class="card-event-title">Adaptive UI and Autonomous Design Tokens</h3>
+                                <p class="card-event-desc">
+                                    How design systems architects maintain tokens across web, iOS, and Android while automatically synchronizing Figma components with production repos.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Airbnb</span>
+                                    <span class="speaker-brand">Uber</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">APR</span>
+                                <span class="badge-day">02</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">GROWTH STRATEGY:</span>
+                                <h3 class="card-event-title">Retention Loops in Subscription Products</h3>
+                                <p class="card-event-desc">
+                                    Analyzing churn reduction techniques, behavioral telemetry, and personalized cohort activation triggers across high-growth SaaS portfolios.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Duolingo</span>
+                                    <span class="speaker-brand">Netflix</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">MAR</span>
+                                <span class="badge-day">14</span>
+                            </div>
+                            <div class="card-main-info">
+                                <span class="card-category-tag">EXECUTIVE KEYNOTE:</span>
+                                <h3 class="card-event-title">The Next Decade of Digital Transformation</h3>
+                                <p class="card-event-desc">
+                                    Global leaders come together in Toronto to debate organizational agility, enterprise upskilling, and navigating modern technological inflection points.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Amazon Web Services</span>
+                                    <span class="speaker-brand">Microsoft</span>
+                                </div>
+                            </div>
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- View More Events Button -->
+                <div class="view-more-container">
+                    <button type="button" class="view-more-events-btn" id="viewMoreEventsBtn">
+                        View More Events
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared Footer via components.js -->
+    <div id="footer"></div>
+
+    <!-- Component loader script -->
+    <script src="../js/components.js"></script>
+
+    <!-- Page Specific Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. City Dropdown Toggle
+            const dropdownBtn = document.getElementById('cityDropdownBtn');
+            const cityMenu = document.getElementById('cityMenu');
+            const cityArrow = document.getElementById('cityArrow');
+
+            if (dropdownBtn && cityMenu && cityArrow) {
+                dropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    cityMenu.classList.toggle('show');
+                    cityArrow.classList.toggle('open');
+                });
+
+                document.addEventListener('click', () => {
+                    cityMenu.classList.remove('show');
+                    cityArrow.classList.remove('open');
+                });
+            }
+
+            // 2. Tabs Filter Logic
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const eventCards = document.querySelectorAll('.event-card');
+
+            function filterEvents(category) {
+                eventCards.forEach(card => {
+                    const categories = card.getAttribute('data-categories') || '';
+                    if (category === 'all' || categories.toLowerCase().includes(category.toLowerCase())) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            filterEvents('all');
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const selectedCategory = btn.getAttribute('data-category');
+                    filterEvents(selectedCategory);
+                });
+            });
+
+            // 3. View More Events Pagination (4 + 4 + 4)
+            const viewMoreBtn = document.getElementById('viewMoreEventsBtn');
+            const allCards = Array.from(document.querySelectorAll('.recent-event-card'));
+            let currentVisibleCount = 4;
+
+            if (viewMoreBtn) {
+                viewMoreBtn.addEventListener('click', () => {
+                    const nextCards = allCards.slice(currentVisibleCount, currentVisibleCount + 4);
+
+                    nextCards.forEach(card => {
+                        card.classList.remove('is-hidden');
+                    });
+
+                    currentVisibleCount += 4;
+
+                    if (currentVisibleCount >= allCards.length) {
+                        viewMoreBtn.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

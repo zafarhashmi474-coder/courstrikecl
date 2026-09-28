@@ -1,0 +1,3454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizons New York | AI + Digital Innovation - Courstrike</title>
+
+    <!-- Main Global CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* =========================================
+           GLOBAL & BASE RESETS
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #050608;
+            color: #ffffff;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           STICKY SECONDARY EVENT HEADER
+        ========================================= */
+        .event-sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 68px;
+            background-color: rgba(5, 6, 8, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 99999;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .event-sticky-nav.visible {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sticky-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sticky-logo-img {
+            height: 28px;
+            width: auto;
+            display: block;
+        }
+
+        .sticky-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sticky-nav-links li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 68px;
+        }
+
+        .sticky-nav-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: inline-block;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .sticky-nav-links a:hover,
+        .sticky-nav-links a.active {
+            color: #ffffff;
+        }
+
+        .sticky-nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+
+        .sticky-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sticky-date-info {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sticky-date-label {
+            font-size: 0.65rem;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sticky-date-val {
+            font-size: 0.82rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .sticky-ticket-btn {
+            background-color: #ffffff;
+            color: #0b0c10;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: background 0.2s ease, transform 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .sticky-ticket-btn:hover {
+            background-color: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        /* =========================================
+           1. HORIZONS HERO SECTION
+        ========================================= */
+        .horizons-hero {
+            position: relative;
+            width: 100%;
+            min-height: 94vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 140px 24px 70px;
+            box-sizing: border-box;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(68, 48, 120, 0.45) 0%, transparent 45%),
+                radial-gradient(circle at 85% 60%, rgba(35, 80, 110, 0.35) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(80, 30, 70, 0.3) 0%, transparent 60%),
+                #050608;
+            overflow: hidden;
+        }
+
+        .horizons-hero::before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            left: -10%;
+            width: 120%;
+            height: 380px;
+            background: linear-gradient(135deg, rgba(255, 90, 95, 0.08), rgba(120, 110, 255, 0.12), rgba(0, 220, 255, 0.08));
+            filter: blur(80px);
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .horizons-hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .horizons-title-wrap {
+            margin-bottom: 60px;
+        }
+
+        .horizons-main-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(4.8rem, 11vw, 10.5rem);
+            font-style: italic;
+            font-weight: 300;
+            line-height: 0.95;
+            letter-spacing: -2px;
+            color: #ffffff;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .horizons-sub-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 14px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .horizons-tagline {
+            font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .horizons-location-tag {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .horizons-bottom-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .hero-speakers-card {
+            background-color: rgba(14, 16, 21, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .speakers-header-title {
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .speakers-rows-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .speakers-row-1 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: center;
+        }
+
+        .speakers-row-2 {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            min-height: 36px;
+        }
+
+        .speakers-row-3 {
+            display: flex;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .speaker-logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 36px;
+        }
+
+        .speaker-logo-item img {
+            max-height: 26px;
+            max-width: 120px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .speaker-logo-item img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .hero-ticket-card {
+            background: linear-gradient(180deg, rgba(20, 24, 32, 0.85) 0%, rgba(12, 14, 19, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ticket-upper-content {
+            padding: 28px 28px 20px;
+            position: relative;
+        }
+
+        .ticket-date-val {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .ticket-time-val {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            margin-bottom: 4px;
+        }
+
+        .ticket-loc-val {
+            font-size: 0.88rem;
+            color: #94a3b8;
+        }
+
+        .ticket-lower-bar {
+            padding: 16px 28px;
+            background-color: rgba(7, 8, 11, 0.9);
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .ticket-barcode {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 38px;
+        }
+
+        .barcode-line {
+            background-color: #ffffff;
+            height: 100%;
+            border-radius: 1px;
+        }
+
+        .ticket-action-btn {
+            background-color: #ffffff;
+            color: #0b0c10;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 50px;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .ticket-action-btn:hover {
+            background-color: #e2e8f0;
+            transform: scale(1.02);
+        }
+
+        /* =========================================
+           2. SPEAKERS SECTION
+        ========================================= */
+        .speakers-section {
+            position: relative;
+            width: 100%;
+            padding: 120px 24px 140px;
+            background-color: #050608;
+            overflow: hidden;
+        }
+
+        .speakers-section::before {
+            content: '';
+            position: absolute;
+            top: 5%;
+            right: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(90, 60, 200, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .speakers-section::after {
+            content: '';
+            position: absolute;
+            bottom: 5%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(220, 50, 150, 0.12) 0%, transparent 70%);
+            filter: blur(70px);
+            pointer-events: none;
+        }
+
+        .speakers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .speakers-heading {
+            text-align: center;
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 70px;
+            letter-spacing: -1px;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .speaker-card-center-wrap {
+            grid-column: 2 / 3;
+        }
+
+        .speaker-card {
+            background-color: #0d0f14;
+            border: 1px solid #1c202a;
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-4px);
+            border-color: #333a4d;
+        }
+
+        .speaker-img-box {
+            width: 100%;
+            height: 310px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #141720;
+            margin-bottom: 24px;
+        }
+
+        .speaker-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .speaker-info {
+            flex-grow: 1;
+        }
+
+        .speaker-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+
+        .speaker-role {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 18px;
+            line-height: 1.35;
+        }
+
+        .speaker-bio {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .speaker-company-logo {
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .speaker-company-logo img {
+            max-height: 26px;
+            max-width: 130px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+        }
+
+        /* Carousel */
+        .past-speakers-wrap {
+            margin-top: 150px;
+            position: relative;
+            width: 100%;
+        }
+
+        .past-speakers-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .past-speakers-title {
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.8px;
+        }
+
+        .past-speakers-subtitle {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .past-carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .past-carousel-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+
+        .past-speaker-card {
+            flex: 0 0 850px;
+            max-width: 850px;
+            background-color: #0d0f14;
+            border: 1px solid #1c202a;
+            border-radius: 14px;
+            padding: 24px 28px 30px;
+            box-sizing: border-box;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        .past-card-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .past-thumb {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #161922;
+        }
+
+        .past-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92);
+        }
+
+        .past-card-body {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .past-speaker-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+
+        .past-speaker-role {
+            font-size: 0.92rem;
+            color: #94a3b8;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+
+        .past-logo-box {
+            height: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+        .past-logo-box img {
+            max-height: 28px;
+            max-width: 140px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+        }
+
+        .past-bio-col p {
+            font-size: 0.92rem;
+            line-height: 1.62;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .past-nav-btn {
+            position: absolute;
+            top: 36%;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: #0b0c10;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .past-nav-btn:hover {
+            background-color: #f1f5f9;
+            transform: scale(1.08);
+        }
+
+        .past-prev { left: 20px; }
+        .past-next { right: 20px; }
+
+        /* Moments Mosaic */
+        .moments-section-wrap {
+            margin-top: 140px;
+            width: 100%;
+            position: relative;
+        }
+
+        .moments-header {
+            text-align: center;
+            margin-bottom: 55px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .moments-icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .moments-title {
+            font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+            font-weight: 500;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .moments-mosaic-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .mosaic-row {
+            display: grid;
+            gap: 8px;
+            width: 100%;
+            height: 270px;
+        }
+
+        .mosaic-row-1 { grid-template-columns: 1.1fr 1.4fr 1.15fr 0.95fr; }
+        .mosaic-row-2 { grid-template-columns: 0.85fr 1.65fr 1.1fr 0.85fr; }
+        .mosaic-row-3 { grid-template-columns: 1.05fr 0.95fr 1.65fr 0.8fr; }
+
+        .mosaic-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #12151c;
+            border-radius: 2px;
+        }
+
+        .mosaic-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.92);
+            transition: transform 0.4s ease;
+        }
+
+        .mosaic-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* =========================================
+           3. SESSIONS SECTION
+        ========================================= */
+        .sessions-section {
+            position: relative;
+            width: 100%;
+            padding: 120px 24px 130px;
+            background-color: #050608;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .sessions-section::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -8%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(90, 45, 175, 0.18) 0%, rgba(255, 90, 50, 0.08) 50%, transparent 75%);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .sessions-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sessions-header {
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto 55px;
+            width: 100%;
+        }
+
+        .sessions-title {
+            font-size: clamp(2rem, 3.4vw, 3.2rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            white-space: nowrap; 
+        }
+
+        .sessions-subtitle {
+            max-width: 820px;
+            margin: 0 auto;
+            font-size: clamp(1rem, 1.3vw, 1.18rem);
+            line-height: 1.6;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        .sessions-skeleton-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .session-skeleton-card {
+            background-color: #0a0c10;
+            border: 1px solid #161a22;
+            border-radius: 12px;
+            padding: 32px 36px 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .skeleton-top-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .skeleton-avatar {
+            width: 72px;
+            height: 72px;
+            background-color: #1a1e27;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .skeleton-lines-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skeleton-line {
+            height: 12px;
+            background-color: #1a1e27;
+            border-radius: 4px;
+        }
+
+        .line-long { width: 95%; }
+        .line-medium { width: 65%; }
+
+        .skeleton-right-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .skeleton-small-avatar {
+            width: 68px;
+            height: 68px;
+            background-color: #1a1e27;
+            border-radius: 6px;
+        }
+
+        .skeleton-small-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100px;
+        }
+
+        .line-short { width: 100%; }
+        .line-xshort { width: 40%; }
+
+        .skeleton-bottom-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .skeleton-pill-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .line-tab { width: 60%; height: 11px; }
+        .line-tab-sub { width: 85%; height: 10px; }
+
+        .sessions-bottom-notice {
+            text-align: center;
+            font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.4px;
+        }
+
+        /* =========================================
+           4. THE EXPERIENCE (PINNED DIAGONAL SCROLL)
+        ========================================= */
+        .experience-pin-container {
+            position: relative;
+            width: 100%;
+            height: 380vh;
+            background-color: #050608;
+        }
+
+        /* Ambient Glow */
+        .experience-pin-container::before {
+            content: '';
+            position: fixed;
+            top: 25%;
+            left: -10%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(90, 50, 200, 0.22) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .experience-pin-container::after {
+            content: '';
+            position: fixed;
+            top: 45%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(230, 60, 150, 0.18) 0%, transparent 70%);
+            filter: blur(110px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Top Card Intro Block (Normal Flow - Scrolls Away First) */
+        .exp-intro-block {
+            width: 100%;
+            padding: 100px 0 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-top-card {
+            background-color: rgba(14, 16, 22, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 48px 56px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .exp-main-title {
+            font-size: clamp(2.3rem, 3.8vw, 3.3rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+        }
+
+        .exp-main-desc {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            max-width: 440px;
+        }
+
+        .exp-right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .exp-feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .exp-feature-desc {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* Pinned Viewport Window with clean background */
+        .exp-pinned-viewport {
+            position: sticky;
+            top: 68px;
+            width: 100%;
+            height: calc(100vh - 68px);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            background-color: #050608;
+        }
+
+        /* Diagonal Sliding Gallery Strip (Bottom-Right -> Top-Left) */
+        .exp-diagonal-gallery-stream {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: max-content;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 20px;
+            z-index: 10;
+            will-change: transform;
+            pointer-events: none;
+            transform: translate3d(120vw, 80vh, 0);
+        }
+
+        .rising-photo-box {
+            width: 480px;
+            height: 330px;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #12141a;
+            flex-shrink: 0;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .rising-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.95);
+        }
+
+        /* Final Stage: Countdown & Ticket (Rises from bottom as photos exit) */
+        .exp-final-stage-wrap {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+            will-change: transform, opacity;
+            transform: translate3d(0, 110%, 0);
+            opacity: 0;
+            pointer-events: auto;
+        }
+
+        .experience-bottom-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .countdown-heading-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+
+        .countdown-timer-display {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 50px;
+        }
+
+        .timer-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timer-num {
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .timer-txt {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            margin-top: 6px;
+        }
+
+        .timer-colon {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .team-invite-title {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .team-invite-desc {
+            font-size: 0.95rem;
+            line-height: 1.55;
+            color: #94a3b8;
+            max-width: 480px;
+            margin-bottom: 26px;
+        }
+
+        .book-call-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 10px 26px;
+            border-radius: 50px;
+            transition: all 0.25s ease;
+        }
+
+        .book-call-btn:hover {
+            background-color: #ffffff;
+            color: #0b0c10;
+            border-color: #ffffff;
+        }
+
+        .exp-ticket-card {
+            background: linear-gradient(180deg, #181c25 0%, #0d1016 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+        }
+
+        .pass-header-info {
+            padding: 32px 32px 24px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .pass-brand-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #94a3b8;
+        }
+
+        .pass-event-name {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2.2rem;
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin: 4px 0 2px;
+        }
+
+        .pass-theme {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+
+        .pass-meta-time {
+            font-size: 0.88rem;
+            color: #94a3b8;
+        }
+
+        .pass-middle-venue {
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .pass-venue-lines {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: #94a3b8;
+        }
+
+        .pass-venue-lines strong {
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .pass-barcode-wrap {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 42px;
+        }
+
+        .bc-bar {
+            background-color: #ffffff;
+            height: 100%;
+        }
+
+        .pass-footer-cta {
+            padding: 22px 32px;
+            background-color: #090b10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pass-price-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-lbl {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .price-val {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .pass-request-btn {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 50px;
+            transition: all 0.25s ease;
+        }
+
+        .pass-request-btn:hover {
+            background-color: #ffffff;
+            color: #0b0c10;
+            border-color: #ffffff;
+        }
+
+        /* Generic Anchors */
+        .content-section {
+            padding: 110px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            min-height: 450px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            max-width: 750px;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN (Media Queries)
+        ========================================= */
+        @media (max-width: 992px) {
+            .experience-pin-container {
+                height: auto;
+            }
+            .exp-pinned-viewport {
+                position: relative;
+                top: 0;
+                height: auto;
+                padding: 60px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+            }
+            .exp-diagonal-gallery-stream {
+                position: relative;
+                transform: none !important;
+                overflow-x: auto;
+                width: 100%;
+                padding: 20px 24px;
+            }
+            .exp-final-stage-wrap {
+                position: relative;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+            .experience-top-card {
+                grid-template-columns: 1fr;
+                padding: 36px 30px;
+                gap: 36px;
+            }
+            .experience-bottom-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .rising-photo-box {
+                width: 360px;
+                height: 250px;
+            }
+            .horizons-bottom-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .sticky-nav-links {
+                display: none;
+            }
+            .speakers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            .speaker-card-center-wrap {
+                grid-column: 1 / 2;
+            }
+            .speakers-row-1 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .past-speaker-card {
+                flex: 0 0 calc(100vw - 60px);
+                max-width: calc(100vw - 60px);
+                padding: 20px;
+            }
+            .past-card-body {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .mosaic-row {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sessions-title {
+                white-space: normal;
+                font-size: 2rem;
+            }
+            .mosaic-row {
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px;
+            }
+            .mosaic-item {
+                height: 200px;
+            }
+            .skeleton-top-row {
+                flex-wrap: wrap;
+            }
+            .skeleton-right-profile {
+                margin-left: 0;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .skeleton-bottom-row {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .horizons-hero {
+                padding: 120px 20px 50px;
+            }
+            .horizons-title-wrap {
+                margin-bottom: 45px;
+            }
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+            .speaker-card-center-wrap {
+                grid-column: 1 / -1;
+            }
+            .speakers-row-2 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .sticky-date-info {
+                display: none;
+            }
+            .ticket-lower-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+            }
+            .ticket-barcode {
+                justify-content: center;
+            }
+            .ticket-action-btn {
+                text-align: center;
+            }
+            .past-card-gallery {
+                grid-template-columns: 1fr;
+            }
+            .past-thumb {
+                height: 160px;
+            }
+            .past-prev { left: 10px; }
+            .past-next { right: 10px; }
+            .mosaic-row {
+                grid-template-columns: 1fr !important;
+            }
+            .mosaic-item {
+                height: 220px;
+            }
+            .experience-top-card {
+                padding: 24px 20px;
+            }
+            .rising-photo-box {
+                width: 290px;
+                height: 200px;
+            }
+            .pass-middle-venue {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .countdown-timer-display {
+                gap: 10px;
+            }
+            .timer-num {
+                font-size: 2rem;
+            }
+        }
+
+        /* =========================================
+   LOCATION SECTION STYLES
+========================================= */
+.location-section {
+    position: relative;
+    width: 100%;
+    background-color: #050608;
+    padding-bottom: 140px;
+    overflow: hidden;
+}
+
+/* 1. Hero Banner with Building Background */
+.location-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    background-color: #0b0d13;
+    background-image: 
+        linear-gradient(180deg, rgba(5, 6, 8, 0.45) 0%, rgba(5, 6, 8, 0.88) 100%),
+        url('../images/nyc-hero-bg.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    display: flex;
+    align-items: flex-start;
+    padding: 90px 24px 0;
+    box-sizing: border-box;
+}
+
+.location-banner-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.location-banner-tag {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.location-banner-title {
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+}
+
+/* 2. Glassmorphism Card Container (Pulled up into banner) */
+.location-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: -140px auto 0;
+    padding: 0 24px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+}
+
+.location-glass-card {
+    background-color: rgba(14, 17, 23, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 54px 58px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 50px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+    align-items: center;
+}
+
+/* Left Guide Info */
+.location-card-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.6px;
+    margin-bottom: 12px;
+}
+
+.location-title-bar {
+    width: 42px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+
+/* Address & Directions Button Box */
+.location-address-box {
+    background-color: #1a1e27;
+    border: 1px solid #282f3d;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.addr-text-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.addr-pin-icon {
+    color: #cbd5e1;
+    flex-shrink: 0;
+}
+
+.addr-lines {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.86rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.addr-lines strong {
+    color: #ffffff;
+    font-size: 0.94rem;
+}
+
+.get-directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 2px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.get-directions-btn:hover {
+    border-color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Vertical Stepper Timeline */
+.location-timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-step {
+    display: flex;
+    gap: 18px;
+    min-height: 75px;
+}
+
+.timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14px;
+    flex-shrink: 0;
+}
+
+.marker-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #94a3b8;
+    background-color: #050608;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+.marker-line {
+    flex-grow: 1;
+    width: 1.5px;
+    background-color: #2b313d;
+    margin: 4px 0;
+}
+
+.timeline-text {
+    padding-bottom: 20px;
+}
+
+.step-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.step-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+/* Right Map Mockup Frame */
+.location-map-col {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-mockup-frame {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #edf0f3;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.map-graphic-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.map-center-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+    transition: transform 0.25s ease;
+}
+
+.map-center-pin:hover {
+    transform: translate(-50%, -92%) scale(1.05);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Location)
+========================================= */
+@media (max-width: 992px) {
+    .location-glass-card {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+        gap: 40px;
+    }
+
+    .location-hero-banner {
+        height: 360px;
+        padding-top: 70px;
+    }
+
+    .location-container {
+        margin-top: -100px;
+    }
+
+    .map-mockup-frame {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .location-glass-card {
+        padding: 26px 20px;
+    }
+
+    .location-address-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .get-directions-btn {
+        align-self: flex-start;
+    }
+
+    .map-mockup-frame {
+        height: 250px;
+    }
+}
+
+/* =========================================
+   FAQS SECTION STYLES
+========================================= */
+.faqs-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 24px 140px;
+    background-color: #050608;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Ambient side glows */
+.faqs-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: -12%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(120, 60, 220, 0.16) 0%, transparent 70%);
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.faqs-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.faqs-main-heading {
+    font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+}
+
+.faqs-heading-line {
+    width: 48px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 45px;
+}
+
+/* Glassmorphism Border Box */
+.faqs-accordion-card {
+    background-color: rgba(13, 16, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+/* Accordion Item */
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item:hover {
+    background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* Question Header Button */
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-title-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -0.2px;
+}
+
+.faq-icon {
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+/* Answer Body */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+    padding: 0 32px;
+}
+
+.faq-answer p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: #cbd5e1;
+    margin: 0 0 24px 0;
+    max-width: 980px;
+}
+
+/* Open State */
+.faq-item.open .faq-answer {
+    max-height: 400px;
+    transition: max-height 0.4s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faqs-section {
+        padding: 80px 20px 100px;
+    }
+
+    .faq-question {
+        padding: 20px 22px;
+    }
+
+    .faq-title-text {
+        font-size: 0.96rem;
+    }
+
+    .faq-answer {
+        padding: 0 22px;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}
+
+/* =========================================
+   GLOBAL EVENTS SECTION STYLES
+========================================= */
+.global-events-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 24px 140px;
+    background-color: #050608;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.global-events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.global-header-block {
+    margin-bottom: 60px;
+}
+
+.global-main-title {
+    font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+.global-main-title .horizons-italic {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-right: 8px;
+}
+
+.global-subtitle {
+    font-size: 1.12rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 740px;
+}
+
+/* 2-Columns Grid */
+.global-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 150px;
+}
+
+/* Single Event Card */
+.global-city-card {
+    background-color: #0c0e13;
+    border: 1px solid #1a1e28;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.global-city-card:hover {
+    transform: translateY(-4px);
+    border-color: #2e3648;
+}
+
+.city-card-banner {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #161922;
+}
+
+.city-card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: transform 0.35s ease;
+}
+
+.global-city-card:hover .city-card-banner img {
+    transform: scale(1.03);
+}
+
+.city-card-body {
+    padding: 34px 34px 38px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.city-card-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+}
+
+.city-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 0.92rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.meta-city {
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.city-speakers-wrap {
+    margin-bottom: 35px;
+    flex-grow: 1;
+}
+
+.speakers-lead-lbl {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #64748b;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.city-brand-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.brand-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.brand-img {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+}
+
+.and-more-txt {
+    font-size: 0.85rem;
+    color: #64748b;
+    display: block;
+}
+
+.city-card-action {
+    margin-top: auto;
+}
+
+.view-event-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.view-event-btn:hover {
+    background-color: #ffffff;
+    color: #0b0c10;
+    border-color: #ffffff;
+}
+
+/* Bottom Countdown Block */
+.global-countdown-section {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Global Events)
+========================================= */
+@media (max-width: 992px) {
+    .global-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-bottom: 90px;
+    }
+    .city-card-banner {
+        height: 200px;
+    }
+    .city-card-body {
+        padding: 26px 24px 30px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- 1. Shared Main Site Header -->
+    <div id="header"></div>
+
+    <!-- 2. Sticky Secondary Event Header -->
+    <nav class="event-sticky-nav" id="eventStickyNav">
+        <div class="sticky-nav-left">
+            <a href="/index.html">
+                <img src="../images/Logo_png.png" alt="Courstrike" class="sticky-logo-img">
+            </a>
+        </div>
+
+        <ul class="sticky-nav-links">
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#sessions">Sessions</a></li>
+            <li><a href="#experience">The Experience</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#global-events">Global Events</a></li>
+        </ul>
+
+        <div class="sticky-nav-right">
+            <div class="sticky-date-info">
+                <span class="sticky-date-label">Event Date</span>
+                <span class="sticky-date-val">Thursday, October 29, 2026</span>
+            </div>
+            <a href="#request-tickets" class="sticky-ticket-btn">Request Tickets</a>
+        </div>
+    </nav>
+
+    <main class="horizons-page">
+
+        <!-- =========================================
+             1. HERO SECTION
+        ========================================= -->
+        <section class="horizons-hero" id="hero">
+            <div class="horizons-hero-container">
+
+                <div class="horizons-title-wrap">
+                    <h1 class="horizons-main-title">HORIZONS</h1>
+                    <div class="horizons-sub-title-row">
+                        <div class="horizons-tagline">AI + Digital Innovation</div>
+                        <div class="horizons-location-tag">NEW YORK</div>
+                    </div>
+                </div>
+
+                <div class="horizons-bottom-grid">
+
+                    <div class="hero-speakers-card">
+                        <div class="speakers-header-title">Featuring speakers from:</div>
+                        
+                        <div class="speakers-rows-wrap">
+                            <div class="speakers-row-1">
+                                <div class="speaker-logo-item">
+                                    <img src="../logos/minified.svg" alt="Google">
+                                </div>
+                                <div class="speaker-logo-item">
+                                    <img src="../logos/nvidia-6ikefk4z.svg" alt="NVIDIA">
+                                </div>
+                                <div class="speaker-logo-item">
+                                    <img src="../logos/citi-C7NHPaja.svg" alt="Citi">
+                                </div>
+                                <div class="speaker-logo-item">
+                                    <img src="../logos/BNY.svg" alt="BNY Mellon">
+                                </div>
+                            </div>
+
+                            <div class="speakers-row-2">
+                                <div class="speaker-logo-item">
+                                    <img src="../logos/mastercard-DzuA8yXC.svg" alt="Mastercard">
+                                </div>
+                                <div class="speaker-logo-item">
+                                    <img src="../logos/morgan-stanley-CgJehnXY.svg" alt="Morgan Stanley">
+                                </div>
+                            </div>
+
+                            <div class="speakers-row-3">
+                                <div class="speaker-logo-item">
+                                    <img src="../images/Logo_png.png" alt="Courstrike">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-ticket-card" id="request-tickets">
+                        <div class="ticket-upper-content">
+                            <div class="ticket-date-val">Thu, Oct 29, 2026</div>
+                            <div class="ticket-time-val">3:00 PM – 7:00 PM EDT</div>
+                            <div class="ticket-loc-val">Courstrike New York</div>
+                        </div>
+
+                        <div class="ticket-lower-bar">
+                            <div class="ticket-barcode" aria-hidden="true">
+                                <span class="barcode-line" style="width: 3px;"></span>
+                                <span class="barcode-line" style="width: 1px;"></span>
+                                <span class="barcode-line" style="width: 4px;"></span>
+                                <span class="barcode-line" style="width: 2px;"></span>
+                                <span class="barcode-line" style="width: 1px;"></span>
+                                <span class="barcode-line" style="width: 5px;"></span>
+                                <span class="barcode-line" style="width: 2px;"></span>
+                                <span class="barcode-line" style="width: 3px;"></span>
+                                <span class="barcode-line" style="width: 1px;"></span>
+                                <span class="barcode-line" style="width: 4px;"></span>
+                                <span class="barcode-line" style="width: 2px;"></span>
+                            </div>
+
+                            <a href="#" class="ticket-action-btn">Request Tickets</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             2. SPEAKERS SECTION
+        ========================================= -->
+        <section class="speakers-section" id="speakers">
+            <div class="speakers-container">
+                
+                <h2 class="speakers-heading">Hear From Industry Leaders</h2>
+
+                <div class="speakers-grid">
+
+                    <article class="speaker-card">
+                        <div class="speaker-img-box">
+                            <img src="../images/speakers/hashim-syed.jpg" alt="Hashim Syed">
+                        </div>
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Hashim Syed</h3>
+                            <div class="speaker-role">AI Leader</div>
+                            <p class="speaker-bio">
+                                Hashim Syed is the AI Go-to-Market Lead for Startups in North America at Google, where he helps emerging technology companies scale with AI and cloud solutions. He focuses on shaping strategic partnerships, driving adoption of AI-enabled tools, and supporting founders as they bring innovative products to market in a competitive landscape.
+                            </p>
+                        </div>
+                        <div class="speaker-company-logo">
+                            <img src="../logos/minified.svg" alt="Google">
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <div class="speaker-img-box">
+                            <img src="../images/speakers/sebastian-misiurek.jpg" alt="Sebastian Misiurek">
+                        </div>
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Sebastian Misiurek</h3>
+                            <div class="speaker-role">Senior Product Manager</div>
+                            <p class="speaker-bio">
+                                Sebastian Misiurek is a Senior Product Manager at NVIDIA, where he leads cloud-native Digital Twin and Physical AI products within the Omniverse ecosystem. He works across engineering, design, and enterprise customer teams to transform complex AI and 3D simulation capabilities into intuitive tools. Driven by computational workflows, he also serves as a Visiting Professor at Pratt Institute.
+                            </p>
+                        </div>
+                        <div class="speaker-company-logo">
+                            <img src="../logos/nvidia-6ikefk4z.svg" alt="NVIDIA">
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <div class="speaker-img-box">
+                            <img src="../images/speakers/hakarl-bee.jpg" alt="Hakarl Bee">
+                        </div>
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Hakarl Bee</h3>
+                            <div class="speaker-role">Creative Lead - AI Design</div>
+                            <p class="speaker-bio">
+                                Hakarl Bee is the Creative Lead of AI Design at Citi, where he directs the evolution of the firm's brand identity for the AI age. He focuses on building a comprehensive brand expression spectrum and establishing the governance tools that ensure brand quality within Citi's agentic AI platforms, seamlessly scaling an AI-enabled design system across consumer, employee, and enterprise touchpoints.
+                            </p>
+                        </div>
+                        <div class="speaker-company-logo">
+                            <img src="../logos/citi-C7NHPaja.svg" alt="Citi">
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <div class="speaker-img-box">
+                            <img src="../images/speakers/christi-fisher.jpg" alt="Christi Fisher">
+                        </div>
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Christi Fisher</h3>
+                            <div class="speaker-role">Global Head of Product and Process Transformation</div>
+                            <p class="speaker-bio">
+                                Christi Fisher is the Head of Product Transformation & Operations at BNY, where she leads global enterprise transformation across products, technology, and service experiences. She focuses on developing AI-enabled products, modernizing operations, and integrating intelligent workflows across complex business environments. Bringing over 20 years of experience from JPMorgan Chase, she combines product strategy with hands-on leadership to transform fragmented ecosystems into scalable solutions.
+                            </p>
+                        </div>
+                        <div class="speaker-company-logo">
+                            <img src="../logos/BNY.svg" alt="BNY Mellon">
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <div class="speaker-img-box">
+                            <img src="../images/speakers/michael-wagner.jpg" alt="Michael K. Wagner">
+                        </div>
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Michael K. Wagner</h3>
+                            <div class="speaker-role">Vice President, Product Excellence</div>
+                            <p class="speaker-bio">
+                                Michael K. Wagner is the Vice President of Product Excellence at Mastercard, where he leads enterprise-wide initiatives to fundamentally improve how the organization builds and manages products at scale. He focuses on transforming the core product operating model, optimizing governance, decision-making, and lifecycle management to seamlessly connect overarching business strategy and investment with product execution and tangible business outcomes.
+                            </p>
+                        </div>
+                        <div class="speaker-company-logo">
+                            <img src="../logos/mastercard-DzuA8yXC.svg" alt="Mastercard">
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <div class="speaker-img-box">
+                            <img src="../images/speakers/dorothy-joseph.jpg" alt="Dorothy Joseph">
+                        </div>
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Dorothy Joseph</h3>
+                            <div class="speaker-role">Executive Director, Head of Wealth Management Digital Marketing Applications</div>
+                            <p class="speaker-bio">
+                                Dorothy Joseph is the Executive Director and Head of Wealth Management Digital Marketing Applications at Morgan Stanley, where she specializes in driving the digital strategy, technology roadmap, and implementation of advanced marketing cloud solutions. She focuses on aligning complex marketing technology ecosystems with overarching wealth management objectives, empowering the firm to deliver targeted messaging, robust analytics, and personalized digital experiences to its clients.
+                            </p>
+                        </div>
+                        <div class="speaker-company-logo">
+                            <img src="../logos/morgan-stanley-CgJehnXY.svg" alt="Morgan Stanley">
+                        </div>
+                    </article>
+
+                    <div class="speaker-card-center-wrap">
+                        <article class="speaker-card">
+                            <div class="speaker-img-box">
+                                <img src="../images/speakers/radek-meljon.jpg" alt="Radek Meljon">
+                            </div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">Radek Meljon</h3>
+                                <div class="speaker-role">Vice President</div>
+                                <p class="speaker-bio">
+                                    Radek Meljon is a Vice President at Courstrike, the global leader in digital and AI skills training for teams of professionals with locations in New York, London and Toronto. Courstrike works directly with industry leaders to design and deliver innovative training programs that equip professionals with the in-demand skills needed to succeed in today's technology-driven economy and has trained over 35,000 professionals to date.
+                                </p>
+                            </div>
+                            <div class="speaker-company-logo">
+                                <img src="../images/Logo_png.png" alt="Courstrike">
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Carousel -->
+            <div class="past-speakers-wrap">
+                <div class="past-speakers-header">
+                    <h2 class="past-speakers-title">Speakers from Past Events</h2>
+                    <p class="past-speakers-subtitle">Our stage hosts senior leaders from global brands who are driving innovation at scale.</p>
+                </div>
+
+                <div class="past-carousel-container">
+                    
+                    <button type="button" class="past-nav-btn past-prev" id="pastPrevBtn" aria-label="Previous speaker">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </button>
+                    <button type="button" class="past-nav-btn past-next" id="pastNextBtn" aria-label="Next speaker">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+
+                    <div class="past-carousel-track" id="pastTrack">
+
+                        <div class="past-speaker-card">
+                            <div class="past-card-gallery">
+                                <div class="past-thumb"><img src="../images/img1.png" alt="Anna Baird speaking"></div>
+                                <div class="past-thumb"><img src="../images/img2.png" alt="Anna Baird panel discussion"></div>
+                                <div class="past-thumb"><img src="../images/img3.png" alt="Event audience"></div>
+                            </div>
+
+                            <div class="past-card-body">
+                                <div class="past-info-col">
+                                    <h3 class="past-speaker-name">Anna Baird</h3>
+                                    <div class="past-speaker-role">Chief Customer Officer, Generative AI GTM</div>
+                                    <div class="past-logo-box">
+                                        <img src="../logos/minified.svg" alt="Google">
+                                    </div>
+                                </div>
+                                <div class="past-bio-col">
+                                    <p>
+                                        You wouldn't think of brand leadership as a technical discipline. Anna Baird unpacked how generative AI is reshaping the way organizations engage customers, make decisions, and scale trust. Drawing from boardroom experience at Google, she highlighted the importance of emotional intelligence, responsible AI, and human-centred thinking as the true differentiators in an AI-powered era.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="past-speaker-card">
+                            <div class="past-card-gallery">
+                                <div class="past-thumb"><img src="../images/img1.png" alt="Sarah Bishop speaking"></div>
+                                <div class="past-thumb"><img src="../images/img2.png" alt="Panel discussion"></div>
+                                <div class="past-thumb"><img src="../images/img3.png" alt="Networking"></div>
+                            </div>
+
+                            <div class="past-card-body">
+                                <div class="past-info-col">
+                                    <h3 class="past-speaker-name">Sarah Bishop</h3>
+                                    <div class="past-speaker-role">VP, Global Brand and Consumer Marketing</div>
+                                    <div class="past-logo-box">
+                                        <img src="../logos/nfl.svg" alt="NFL" onerror="this.onerror=null; this.src='../images/event-logos/nfl.png';">
+                                    </div>
+                                </div>
+                                <div class="past-bio-col">
+                                    <p>
+                                        The NFL is expanding its global reach through inclusive brand strategy, culturally attuned campaigns, and next-generation audience engagement. Drawing from nearly two decades across sports, media, and tech, Sarah Bishop highlighted how strategic partnerships, fan-first storytelling, and purpose-driven initiatives grow affinity, recruit new audiences, and deepen engagement across generations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="past-speaker-card">
+                            <div class="past-card-gallery">
+                                <div class="past-thumb"><img src="../images/img1.png" alt="Chris Walker speaking"></div>
+                                <div class="past-thumb"><img src="../images/img2.png" alt="Audience interaction"></div>
+                                <div class="past-thumb"><img src="../images/img3.png" alt="Room discussion"></div>
+                            </div>
+
+                            <div class="past-card-body">
+                                <div class="past-info-col">
+                                    <h3 class="past-speaker-name">Chris Walker</h3>
+                                    <div class="past-speaker-role">Research Lead</div>
+                                    <div class="past-logo-box">
+                                        <img src="../logos/cash-app.svg" alt="Cash App" onerror="this.onerror=null; this.src='../images/event-logos/cashapp.png';">
+                                    </div>
+                                </div>
+                                <div class="past-bio-col">
+                                    <p>
+                                        Research shapes how Cash App makes financial systems more accessible. Drawing on market, policy, and behavioral insights, Chris Walker showed how data guides products that empower first-time savers, debit card holders, and everyday investors. He highlighted how understanding financial barriers, building trust, and designing for inclusion drive impact across Cash App's ecosystem.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="past-speaker-card">
+                            <div class="past-card-gallery">
+                                <div class="past-thumb"><img src="../images/img1.png" alt="Liz Bergman talk"></div>
+                                <div class="past-thumb"><img src="../images/img2.png" alt="Executive stage"></div>
+                                <div class="past-thumb"><img src="../images/img3.png" alt="Crowd networking"></div>
+                            </div>
+
+                            <div class="past-card-body">
+                                <div class="past-info-col">
+                                    <h3 class="past-speaker-name">Liz Bergman</h3>
+                                    <div class="past-speaker-role">Vice President &amp; GM</div>
+                                    <div class="past-logo-box">
+                                        <img src="../logos/american-express.svg" alt="American Express" onerror="this.onerror=null; this.src='../images/event-logos/amex.png';">
+                                    </div>
+                                </div>
+                                <div class="past-bio-col">
+                                    <p>
+                                        Liz Bergman shared how American Express leverages strategy, operations, and AI to drive customer-centric growth. She highlighted how cross-functional alignment and thoughtful product launches create seamless experiences, how data informs decisions, and how brands can scale while maintaining trust and human connection in an increasingly automated world.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="past-speaker-card">
+                            <div class="past-card-gallery">
+                                <div class="past-thumb"><img src="../images/img1.png" alt="Ankur Jain keynote"></div>
+                                <div class="past-thumb"><img src="../images/img2.png" alt="Stage fireside"></div>
+                                <div class="past-thumb"><img src="../images/img3.png" alt="Audience view"></div>
+                            </div>
+
+                            <div class="past-card-body">
+                                <div class="past-info-col">
+                                    <h3 class="past-speaker-name">Ankur Jain</h3>
+                                    <div class="past-speaker-role">Founder &amp; CEO</div>
+                                    <div class="past-logo-box">
+                                        <img src="../logos/bilt.svg" alt="Bilt" onerror="this.onerror=null; this.src='../images/event-logos/bilt.png';">
+                                    </div>
+                                </div>
+                                <div class="past-bio-col">
+                                    <p>
+                                        Ankur Jain shared how Bilt transforms rent, a major financial commitment, into opportunities for wealth, rewards, and long-term value. Drawing on his experience building a multi-billion-dollar platform, he explored mission-driven growth, designing products without a finished image, and solving overlooked but critical problems in fintech and real estate.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mosaic -->
+            <div class="moments-section-wrap">
+                
+                <div class="moments-header">
+                    <div class="moments-icon-badge" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h2 class="moments-title">Relive the moments from past events.</h2>
+                </div>
+
+                <div class="moments-mosaic-container">
+
+                    <div class="mosaic-row mosaic-row-1">
+                        <div class="mosaic-item">
+                            <img src="../images/img1.png" alt="Speaker fireside">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img2.png" alt="Attendees smiling">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img3.png" alt="Audience listening">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img1.png" alt="Woman networking">
+                        </div>
+                    </div>
+
+                    <div class="mosaic-row mosaic-row-2">
+                        <div class="mosaic-item">
+                            <img src="../images/img2.png" alt="Speaker sitting with mic">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img3.png" alt="Wide hall audience view">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img1.png" alt="Speaker smiling standing">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img2.png" alt="Hands holding smartphone">
+                        </div>
+                    </div>
+
+                    <div class="mosaic-row mosaic-row-3">
+                        <div class="mosaic-item">
+                            <img src="../images/img3.png" alt="Cocktail conversation">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img1.png" alt="Presenter with microphone">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img2.png" alt="Future of AI stage panel">
+                        </div>
+                        <div class="mosaic-item">
+                            <img src="../images/img3.png" alt="Speaker in glasses closing">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             3. SESSIONS SECTION
+        ========================================= -->
+        <section class="sessions-section" id="sessions">
+            <div class="sessions-container">
+
+                <div class="sessions-header">
+                    <h2 class="sessions-title">An Exceptional Lineup: Coming Soon</h2>
+                    <p class="sessions-subtitle">
+                        We're hand-picking the voices that will define this Horizon event. Register early to be the first to know and stay ahead of the curve.
+                    </p>
+                </div>
+
+                <div class="sessions-skeleton-list">
+
+                    <div class="session-skeleton-card">
+                        <div class="skeleton-top-row">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-lines-group">
+                                <div class="skeleton-line line-long"></div>
+                                <div class="skeleton-line line-medium"></div>
+                            </div>
+                            <div class="skeleton-right-profile">
+                                <div class="skeleton-small-avatar"></div>
+                                <div class="skeleton-small-lines">
+                                    <div class="skeleton-line line-short"></div>
+                                    <div class="skeleton-line line-xshort"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skeleton-bottom-row">
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="session-skeleton-card">
+                        <div class="skeleton-top-row">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-lines-group">
+                                <div class="skeleton-line line-long"></div>
+                                <div class="skeleton-line line-medium"></div>
+                            </div>
+                            <div class="skeleton-right-profile">
+                                <div class="skeleton-small-avatar"></div>
+                                <div class="skeleton-small-lines">
+                                    <div class="skeleton-line line-short"></div>
+                                    <div class="skeleton-line line-xshort"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skeleton-bottom-row">
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sessions-bottom-notice">
+                    The full schedule will be announced soon.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             4. THE EXPERIENCE (PINNED DIAGONAL SCROLL)
+        ========================================= -->
+        <section class="experience-pin-container" id="experience">
+            
+            <!-- 1. Top Card Intro Block (Scrolls away first before pinned stage) -->
+            <div class="exp-intro-block">
+                <div class="experience-container">
+                    <div class="experience-top-card" id="expTopCard">
+                        <div class="exp-left-col">
+                            <h2 class="exp-main-title">Horizons Experience</h2>
+                            <p class="exp-main-desc">
+                                A day designed to inspire, connect, and challenge the world's most innovative leaders.
+                            </p>
+                        </div>
+
+                        <div class="exp-right-col">
+                            <div class="exp-feature-item">
+                                <h3 class="exp-feature-title">Exclusive Panels</h3>
+                                <p class="exp-feature-desc">Conversations with senior executives from leading global brands.</p>
+                            </div>
+                            <div class="exp-feature-item">
+                                <h3 class="exp-feature-title">Curated Audiences</h3>
+                                <p class="exp-feature-desc">Attend alongside hand-selected senior leaders.</p>
+                            </div>
+                            <div class="exp-feature-item">
+                                <h3 class="exp-feature-title">Elevated Networking</h3>
+                                <p class="exp-feature-desc">Cocktails, conversation, and connection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Pinned Viewport (Only Images and Countdown) -->
+            <div class="exp-pinned-viewport" id="expPinnedViewport">
+                
+                <!-- Diagonal Sliding Photos Strip (Moves from Bottom-Right to Top-Left) -->
+                <div class="exp-diagonal-gallery-stream" id="expDiagonalStream">
+                    <div class="rising-photo-box"><img src="../images/img1.png" alt="Horizons Welcome Stand"></div>
+                    <div class="rising-photo-box"><img src="../images/img2.png" alt="Panel Discussion"></div>
+                    <div class="rising-photo-box"><img src="../images/img3.png" alt="Audience taking photo"></div>
+                    <div class="rising-photo-box"><img src="../images/img1.png" alt="Speaker stage"></div>
+                    <div class="rising-photo-box"><img src="../images/img2.png" alt="Attendees cheering cocktails"></div>
+                    <div class="rising-photo-box"><img src="../images/img3.png" alt="Keynote Presentation"></div>
+                </div>
+
+                <!-- Final Stage Block: Countdown & Ticket (Rises from bottom as photos exit) -->
+                <div class="exp-final-stage-wrap" id="expFinalStage">
+                    <div class="experience-container">
+                        <div class="experience-bottom-grid">
+
+                            <!-- Left: Countdown Timer -->
+                            <div class="exp-countdown-col">
+                                <div class="countdown-heading-label">Until Horizons New York City</div>
+
+                                <div class="countdown-timer-display" id="horizonsCountdown">
+                                    <div class="timer-unit">
+                                        <span class="timer-num" id="cdDays">30</span>
+                                        <span class="timer-txt">Days</span>
+                                    </div>
+                                    <span class="timer-colon">:</span>
+                                    <div class="timer-unit">
+                                        <span class="timer-num" id="cdHours">23</span>
+                                        <span class="timer-txt">Hours</span>
+                                    </div>
+                                    <span class="timer-colon">:</span>
+                                    <div class="timer-unit">
+                                        <span class="timer-num" id="cdMinutes">45</span>
+                                        <span class="timer-txt">Minutes</span>
+                                    </div>
+                                    <span class="timer-colon">:</span>
+                                    <div class="timer-unit">
+                                        <span class="timer-num" id="cdSeconds">12</span>
+                                        <span class="timer-txt">Seconds</span>
+                                    </div>
+                                </div>
+
+                                <div class="team-invite-box">
+                                    <h3 class="team-invite-title">Want to Bring your Team?</h3>
+                                    <p class="team-invite-desc">
+                                        Book a call for your organization with enterprise packages built for teams—giving leaders the insights to shape the future of digital.
+                                    </p>
+                                    <a href="/contact.html" class="book-call-btn">Book a Call</a>
+                                </div>
+                            </div>
+
+                            <!-- Right: Ticket Card -->
+                            <div class="exp-ticket-card">
+                                <div class="pass-header-info">
+                                    <div class="pass-logo-title">
+                                        <span class="pass-brand-tag">COURSTRIKE</span>
+                                        <h4 class="pass-event-name">HORIZONS</h4>
+                                        <div class="pass-theme">AI + Digital Innovation</div>
+                                    </div>
+                                    <div class="pass-meta-time">
+                                        Thu, Oct 29, 2026 | 3:00 PM - 7:00 PM EDT
+                                    </div>
+                                </div>
+
+                                <div class="pass-middle-venue">
+                                    <div class="pass-venue-lines">
+                                        <strong>Courstrike New York</strong>
+                                        <span>136 Crosby St</span>
+                                        <span>New York City, NY</span>
+                                    </div>
+
+                                    <div class="pass-barcode-wrap" aria-hidden="true">
+                                        <span class="bc-bar" style="width: 2px;"></span>
+                                        <span class="bc-bar" style="width: 1px;"></span>
+                                        <span class="bc-bar" style="width: 4px;"></span>
+                                        <span class="bc-bar" style="width: 2px;"></span>
+                                        <span class="bc-bar" style="width: 1px;"></span>
+                                        <span class="bc-bar" style="width: 3px;"></span>
+                                        <span class="bc-bar" style="width: 5px;"></span>
+                                        <span class="bc-bar" style="width: 1px;"></span>
+                                        <span class="bc-bar" style="width: 2px;"></span>
+                                        <span class="bc-bar" style="width: 4px;"></span>
+                                        <span class="bc-bar" style="width: 1px;"></span>
+                                        <span class="bc-bar" style="width: 3px;"></span>
+                                        <span class="bc-bar" style="width: 2px;"></span>
+                                    </div>
+                                </div>
+
+                                <div class="pass-footer-cta">
+                                    <div class="pass-price-box">
+                                        <span class="price-lbl">Ticket Price</span>
+                                        <span class="price-val">$475</span>
+                                    </div>
+                                    <a href="#request-tickets" class="pass-request-btn">Request Tickets</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+            5. LOCATION SECTION
+        ========================================= -->
+        <section class="location-section" id="location">
+            <!-- Top Welcome Banner with Background Image -->
+            <div class="location-hero-banner">
+                <div class="location-banner-content">
+                    <span class="location-banner-tag">Welcome to</span>
+                    <h2 class="location-banner-title">Courstrike New York</h2>
+                </div>
+            </div>
+
+            <!-- Main Glassmorphism "How to Get Here" Card -->
+            <div class="location-container">
+                <div class="location-glass-card">
+                    
+                    <!-- Left Guide Info -->
+                    <div class="location-guide-col">
+                        <h3 class="location-card-title">How to Get Here</h3>
+                        <div class="location-title-bar"></div>
+
+                        <!-- Address & Directions Pill -->
+                        <div class="location-address-box">
+                            <div class="addr-text-wrap">
+                                <svg class="addr-pin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <div class="addr-lines">
+                                    <strong>Courstrike New York</strong>
+                                    <span>136 Crosby St, 4th Floor, New York</span>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=136+Crosby+St,+New+York" target="_blank" rel="noopener noreferrer" class="get-directions-btn">
+                                <span>Get Directions</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Stepper Vertical Timeline -->
+                        <div class="location-timeline">
+                            <!-- Step 1 -->
+                            <div class="timeline-step">
+                                <div class="timeline-marker">
+                                    <div class="marker-circle"></div>
+                                    <div class="marker-line"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <span class="step-label">FINDING YOUR WAY</span>
+                                    <p class="step-desc">
+                                        Located on Crosby St just south of Houston between Broadway and Lafayette, just steps away from the Lafayette B D F M train.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="timeline-step">
+                                <div class="timeline-marker">
+                                    <div class="marker-circle"></div>
+                                    <div class="marker-line"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <span class="step-label">ENTERING THE BUILDING</span>
+                                    <p class="step-desc">
+                                        A Courstrike team member will be waiting for you at the elevators to take you to the 4th floor.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="timeline-step">
+                                <div class="timeline-marker">
+                                    <div class="marker-circle"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <span class="step-label">ONCE YOU'RE INSIDE</span>
+                                    <p class="step-desc">
+                                        Our staff will be there to greet you at reception.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive Map Mockup -->
+                    <div class="location-map-col">
+                        <div class="map-mockup-frame">
+                            <!-- Stylized SVG Map Graphic matching screenshot -->
+                            <svg class="map-graphic-svg" viewBox="0 0 520 420" preserveAspectRatio="xMidYMid slice">
+                                <rect width="100%" height="100%" fill="#edf0f3"/>
+                                
+                                <!-- Street Roads -->
+                                <path d="M-20,120 L540,320" stroke="#ffffff" stroke-width="32" stroke-linecap="round"/>
+                                <path d="M-20,40 L540,240" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+                                <path d="M120,-20 L40,440" stroke="#ffffff" stroke-width="34" stroke-linecap="round"/>
+                                <path d="M380,-20 L300,440" stroke="#ffffff" stroke-width="30" stroke-linecap="round"/>
+                                <path d="M220,-20 L160,440" stroke="#ffffff" stroke-width="38" stroke-linecap="round"/>
+                                <path d="M-20,290 L540,160" stroke="#ffffff" stroke-width="24" stroke-linecap="round"/>
+
+                                <!-- Street Names -->
+                                <text x="70" y="85" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(18, 70, 85)">E Houston St</text>
+                                <text x="80" y="165" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(18, 80, 165)">W Houston St</text>
+                                <text x="380" y="270" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(18, 380, 270)">E Houston St</text>
+                                <text x="60" y="380" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(-80, 60, 380)">Broadway</text>
+                                <text x="180" y="360" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(-80, 180, 360)">Crosby St</text>
+                                <text x="365" y="380" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(-80, 365, 380)">Lafayette St</text>
+                            </svg>
+
+                            <!-- Center Pin -->
+                            <div class="map-center-pin" aria-label="Courstrike Venue Location">
+                                <svg class="pin-marker-svg" width="46" height="58" viewBox="0 0 46 58" fill="none">
+                                    <path d="M23 0C10.2975 0 0 10.2975 0 23C0 39.5 23 58 23 58C23 58 46 39.5 46 23C46 10.2975 35.7025 0 23 0Z" fill="#090a0f"/>
+                                    <circle cx="23" cy="22" r="14" fill="#ffffff"/>
+                                    <path d="M17 22H29M23 16V28M19 18L27 26M27 18L19 26" stroke="#090a0f" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+            6. FAQS SECTION (ACCORDION)
+        ========================================= -->
+        <section class="faqs-section" id="faqs">
+            <div class="faqs-container">
+
+                <h2 class="faqs-main-heading">Frequently Asked Questions</h2>
+                <div class="faqs-heading-line"></div>
+
+                <div class="faqs-accordion-card">
+
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">What is Horizons, and who is it for?</span>
+                            <span class="faq-icon">−</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Horizons is a semi-annual summit created by Courstrike to explore the most relevant ideas shaping technology, design, and business today, and to anticipate what's coming next. Each edition convenes a curated group of executives and digital leaders for deep discussions, shared insights, and meaningful connections in an intimate, high-impact format.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">How long is the event and what does the schedule look like?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                The summit runs from 3:00 PM to 7:00 PM EDT, featuring consecutive keynote talks, executive panel discussions, breakout conversations, and concluding with a networking cocktail reception.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">How do I register?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                You can request passes directly through the "Request Tickets" button on this page. Due to capacity limits and our curated format, registrations undergo a brief review before approval.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">What is included with my ticket?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Full access to all keynote sessions, curated executive roundtable panels, live digital innovation showcases, catered gourmet bites, and premium drinks during the networking reception.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">Will the sessions be recorded or streamed online?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Select keynote highlights will be made available post-event to attendees. However, breakout roundtables and Chatham House discussions remain in-person only to encourage candid exchange.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">Are group registrations or team passes available?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. Organizations looking to attend with executive teams of three or more can select "Book a Call" under our team packages to access preferred enterprise tier pricing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">Is there a dress code?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                The recommended attire is smart casual to business formal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">Will there be opportunities to network with speakers or other attendees?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. Dedicated networking intervals and the final evening cocktail lounge provide ample space for direct one-on-one connections with speakers, partners, and peer leaders.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 9 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span class="faq-title-text">Are there speaking opportunities?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                We invite executives shaping technology frontiers to pitch case studies. You can reach out directly via our contact channels to submit an abstract for review.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+            7. GLOBAL EVENTS SECTION
+        ========================================= -->
+        <section class="global-events-section" id="global-events">
+            <div class="global-events-container">
+
+                <!-- Header -->
+                <div class="global-header-block">
+                    <h2 class="global-main-title">
+                        <span class="horizons-italic">HORIZONS</span> Global Events
+                    </h2>
+                    <p class="global-subtitle">
+                        A connected global experience. Horizons brings top industry voices together to deliver powerful perspectives and real-world learnings across the world.
+                    </p>
+                </div>
+
+                <!-- 2 City Cards Grid (London & Toronto) -->
+                <div class="global-cards-grid">
+
+                    <!-- CARD 1: LONDON -->
+                    <article class="global-city-card">
+                        <div class="city-card-banner">
+                            <img src="../images/london-city.jpg" alt="London Skyline" onerror="this.onerror=null; this.src='../images/nyc-hero-bg.jpg';">
+                        </div>
+                        <div class="city-card-body">
+                            <h3 class="city-card-title">Horizons London: AI + Digital Innovation</h3>
+                            
+                            <div class="city-card-meta">
+                                <span class="meta-city">London</span>
+                                <span class="meta-address">55-57 Rivington St, London</span>
+                                <span class="meta-date">Thu, Oct 1, 2026 | 2:00 PM</span>
+                            </div>
+
+                            <div class="city-speakers-wrap">
+                                <span class="speakers-lead-lbl">Featuring Speakers from:</span>
+                                <div class="city-brand-logos">
+                                    <span class="brand-text">VISA</span>
+                                    <span class="brand-text">INTERBRAND</span>
+                                    <img src="../logos/mastercard-DzuA8yXC.svg" alt="Mastercard" class="brand-img" onerror="this.onerror=null; this.src='../logos/minified.svg';">
+                                    <span class="brand-text">checkout.com</span>
+                                </div>
+                                <span class="and-more-txt">And more...</span>
+                            </div>
+
+                            <div class="city-card-action">
+                                <a href="horizons-london.html" class="view-event-btn">View Event</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 2: TORONTO -->
+                    <article class="global-city-card">
+                        <div class="city-card-banner">
+                            <img src="../images/toronto-city.jpg" alt="Toronto Skyline" onerror="this.onerror=null; this.src='../images/nyc-hero-bg.jpg';">
+                        </div>
+                        <div class="city-card-body">
+                            <h3 class="city-card-title">Horizons Toronto: AI + Digital Innovation</h3>
+                            
+                            <div class="city-card-meta">
+                                <span class="meta-city">Toronto</span>
+                                <span class="meta-address">482 Front St W, 2nd Floor, Toronto, ON</span>
+                                <span class="meta-date">Thu, Sep 17, 2026 | 2:00 PM</span>
+                            </div>
+
+                            <div class="city-speakers-wrap">
+                                <span class="speakers-lead-lbl">Featuring Speakers from:</span>
+                                <div class="city-brand-logos">
+                                    <span class="brand-text">Wealthsimple</span>
+                                    <span class="brand-text">Meta</span>
+                                    <span class="brand-text">WESTJET</span>
+                                    <span class="brand-text">Loblaw Advance</span>
+                                </div>
+                                <span class="and-more-txt">And more...</span>
+                            </div>
+
+                            <div class="city-card-action">
+                                <a href="horizons-toronto.html" class="view-event-btn">View Event</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Bottom Countdown & Ticket Pass Section -->
+                <div class="global-countdown-section">
+                    <div class="experience-bottom-grid">
+
+                        <!-- Left: Countdown Timer -->
+                        <div class="exp-countdown-col">
+                            <div class="countdown-heading-label">Until Horizons New York City</div>
+
+                            <div class="countdown-timer-display" id="globalCountdown">
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="gCdDays">30</span>
+                                    <span class="timer-txt">Days</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="gCdHours">23</span>
+                                    <span class="timer-txt">Hours</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="gCdMinutes">12</span>
+                                    <span class="timer-txt">Minutes</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="gCdSeconds">36</span>
+                                    <span class="timer-txt">Seconds</span>
+                                </div>
+                            </div>
+
+                            <div class="team-invite-box">
+                                <h3 class="team-invite-title">Want to Bring your Team?</h3>
+                                <p class="team-invite-desc">
+                                    Book a call for your organization with enterprise packages built for teams—giving leaders the insights to shape the future of digital.
+                                </p>
+                                <a href="/contact.html" class="book-call-btn">Book a Call</a>
+                            </div>
+                        </div>
+
+                        <!-- Right: Ticket Card -->
+                        <div class="exp-ticket-card">
+                            <div class="pass-header-info">
+                                <div class="pass-logo-title">
+                                    <span class="pass-brand-tag">COURSTRIKE</span>
+                                    <h4 class="pass-event-name">HORIZONS</h4>
+                                    <div class="pass-theme">AI + Digital Innovation</div>
+                                </div>
+                                <div class="pass-meta-time">
+                                    Thu, Oct 29, 2026 | 3:00 PM - 7:00 PM EDT
+                                </div>
+                            </div>
+
+                            <div class="pass-middle-venue">
+                                <div class="pass-venue-lines">
+                                    <strong>Courstrike New York</strong>
+                                    <span>136 Crosby St</span>
+                                    <span>New York City, NY</span>
+                                </div>
+
+                                <div class="pass-barcode-wrap" aria-hidden="true">
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 4px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 3px;"></span>
+                                    <span class="bc-bar" style="width: 5px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 4px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 3px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                </div>
+                            </div>
+
+                            <div class="pass-footer-cta">
+                                <div class="pass-price-box">
+                                    <span class="price-lbl">Ticket Price</span>
+                                    <span class="price-val">$475</span>
+                                </div>
+                                <a href="#request-tickets" class="pass-request-btn">Request Tickets</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared Footer via components.js -->
+    <div id="footer"></div>
+
+    <!-- Component loader script -->
+    <script src="../js/components.js"></script>
+
+    <!-- Unified Master Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stickyNav = document.getElementById('eventStickyNav');
+            const navLinks = document.querySelectorAll('.sticky-nav-links a');
+            const sections = document.querySelectorAll('section[id]');
+
+            const expPinContainer = document.getElementById('experience');
+            const expDiagonalStream = document.getElementById('expDiagonalStream');
+            const expFinalStage = document.getElementById('expFinalStage');
+            const expPinnedViewport = document.getElementById('expPinnedViewport');
+
+            // 1. Unified Scroll Handler
+            function handlePageScroll() {
+                const scrollPos = window.scrollY;
+
+                // Sticky Secondary Header Show/Hide
+                if (scrollPos > 40) {
+                    stickyNav.classList.add('visible');
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+
+                // ScrollSpy Active Tab Highlight
+                sections.forEach(sec => {
+                    const top = sec.offsetTop - 120;
+                    const height = sec.offsetHeight;
+                    const id = sec.getAttribute('id');
+
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+
+                // Diagonal Scroll Animation inside The Experience
+                if (expPinContainer && expPinnedViewport && window.innerWidth > 992) {
+                    const rect = expPinnedViewport.getBoundingClientRect();
+                    const containerRect = expPinContainer.getBoundingClientRect();
+                    const totalScrollable = expPinContainer.offsetHeight - window.innerHeight;
+
+                    // Progress calculates when viewport pins
+                    if (rect.top <= 68 && containerRect.bottom >= window.innerHeight) {
+                        const progress = Math.min(Math.max((68 - containerRect.top) / totalScrollable, 0), 1);
+
+                        // Images slide diagonally from Bottom-Right to Top-Left (0 to 0.70)
+                        const startX = 100;
+                        const endX = -135;
+                        const startY = 70;
+                        const endY = -70;
+
+                        const currentX = startX + (endX - startX) * (progress / 0.70);
+                        const currentY = startY + (endY - startY) * (progress / 0.70);
+
+                        expDiagonalStream.style.transform = `translate3d(${currentX}vw, ${currentY}vh, 0)`;
+
+                        // Final Stage (Countdown & Ticket) slides up smoothly (0.60 to 1.0)
+                        if (progress >= 0.60) {
+                            const finalProgress = (progress - 0.60) / 0.40;
+                            const finalTranslateY = (1 - finalProgress) * 90;
+                            expFinalStage.style.transform = `translate3d(0, ${finalTranslateY}%, 0)`;
+                            expFinalStage.style.opacity = Math.min(finalProgress * 1.5, 1);
+                        } else {
+                            expFinalStage.style.transform = `translate3d(0, 100%, 0)`;
+                            expFinalStage.style.opacity = '0';
+                        }
+                    } else if (containerRect.top > 68) {
+                        expDiagonalStream.style.transform = `translate3d(100vw, 70vh, 0)`;
+                        expFinalStage.style.transform = `translate3d(0, 100%, 0)`;
+                        expFinalStage.style.opacity = '0';
+                    } else if (containerRect.bottom < window.innerHeight) {
+                        expDiagonalStream.style.transform = `translate3d(-140vw, -70vh, 0)`;
+                        expFinalStage.style.transform = `translate3d(0, 0%, 0)`;
+                        expFinalStage.style.opacity = '1';
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', handlePageScroll, { passive: true });
+            handlePageScroll();
+
+            // 2. Carousel Controls for "Speakers from Past Events"
+            const track = document.getElementById('pastTrack');
+            const prevBtn = document.getElementById('pastPrevBtn');
+            const nextBtn = document.getElementById('pastNextBtn');
+
+            if (track && prevBtn && nextBtn) {
+                const cards = Array.from(track.children);
+                let currentIndex = 0;
+
+                function updateCarousel() {
+                    const cardWidth = cards[0].offsetWidth;
+                    const gap = 30;
+                    const offset = currentIndex * (cardWidth + gap);
+                    track.style.transform = `translateX(-${offset}px)`;
+
+                    prevBtn.style.opacity = currentIndex === 0 ? "0.4" : "1";
+                    prevBtn.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
+
+                    nextBtn.style.opacity = currentIndex === cards.length - 1 ? "0.4" : "1";
+                    nextBtn.style.pointerEvents = currentIndex === cards.length - 1 ? "none" : "auto";
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < cards.length - 1) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+
+                window.addEventListener('resize', updateCarousel);
+                updateCarousel();
+            }
+
+            // 3. Live Countdown Timer to October 29, 2026
+            const targetDate = new Date('October 29, 2026 15:00:00 EDT').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    document.getElementById('cdDays').textContent = String(days).padStart(2, '0');
+                    document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('cdMinutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('cdSeconds').textContent = String(seconds).padStart(2, '0');
+                }
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        });
+
+        // FAQs Accordion Interactive Toggle
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    const icon = item.querySelector('.faq-icon');
+
+    questionBtn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Close all other items
+        faqItems.forEach(otherItem => {
+            otherItem.classList.remove('open');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            if (otherIcon) otherIcon.textContent = '+';
+        });
+
+        // Toggle current item
+        if (!isOpen) {
+            item.classList.add('open');
+            icon.textContent = '−';
+        } else {
+            item.classList.remove('open');
+            icon.textContent = '+';
+        }
+    });
+});
+
+// Synchroniséierte Countdown fir déi global Sektioun
+const globalTargetDate = new Date('October 29, 2026 15:00:00 EDT').getTime();
+
+function updateGlobalCountdown() {
+    const now = new Date().getTime();
+    const diff = globalTargetDate - now;
+
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const dElem = document.getElementById('gCdDays');
+        const hElem = document.getElementById('gCdHours');
+        const mElem = document.getElementById('gCdMinutes');
+        const sElem = document.getElementById('gCdSeconds');
+
+        if (dElem) dElem.textContent = String(days).padStart(2, '0');
+        if (hElem) hElem.textContent = String(hours).padStart(2, '0');
+        if (mElem) mElem.textContent = String(minutes).padStart(2, '0');
+        if (sElem) sElem.textContent = String(seconds).padStart(2, '0');
+    }
+}
+
+setInterval(updateGlobalCountdown, 1000);
+updateGlobalCountdown();
+    </script>
+
+</body>
+</html>

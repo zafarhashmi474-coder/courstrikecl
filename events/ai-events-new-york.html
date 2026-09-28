@@ -518,6 +518,496 @@
                 gap: 16px;
             }
         }
+
+        /* =========================================
+   BOTTOM SUBSCRIBE SECTION STYLES
+========================================= */
+.bottom-subscribe-section {
+    width: 100%;
+    background-color: #ffffff;
+    color: #111111;
+    padding: 100px 24px 110px;
+    box-sizing: border-box;
+}
+
+.bottom-subscribe-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* Left Content */
+.bottom-subscribe-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0d0e12;
+    margin-bottom: 20px;
+    letter-spacing: -0.8px;
+}
+
+.title-underline {
+    width: 48px;
+    height: 4px;
+    background-color: #111111;
+    margin-bottom: 40px;
+    border-radius: 2px;
+}
+
+.subscribe-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.feature-check {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #333942;
+    font-weight: 400;
+}
+
+/* Right Card */
+.bottom-subscribe-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 42px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.card-form-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 26px;
+    letter-spacing: -0.3px;
+}
+
+.card-form-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-inputs-row {
+    display: flex;
+    gap: 14px;
+}
+
+.form-field {
+    flex: 1;
+}
+
+.card-form-wrap input {
+    width: 100%;
+    background-color: #f7f9fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    color: #111111;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.card-form-wrap input::placeholder {
+    color: #7b8390;
+}
+
+.card-form-wrap input:focus {
+    background-color: #ffffff;
+    border-color: #000000;
+}
+
+.form-terms-text {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin: 4px 0 8px;
+    line-height: 1.4;
+}
+
+.form-terms-text a {
+    color: #111111;
+    text-decoration: underline;
+}
+
+.card-submit-btn {
+    width: 100%;
+    background-color: #0a0b0d;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.card-submit-btn:hover {
+    background-color: #22262e;
+}
+
+.card-submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Media Queries)
+========================================= */
+@media (max-width: 900px) {
+    .bottom-subscribe-section {
+        padding: 70px 20px 80px;
+    }
+
+    .bottom-subscribe-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .bottom-subscribe-title {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .form-inputs-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .bottom-subscribe-card {
+        padding: 26px 20px;
+    }
+
+    .bottom-subscribe-title {
+        font-size: 1.8rem;
+    }
+
+    .feature-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================================
+   RECENT EVENTS SECTION
+========================================= */
+.recent-events-section {
+    width: 100%;
+    background-color: #0b0c10;
+    color: #ffffff;
+    padding: 100px 24px 120px;
+    box-sizing: border-box;
+}
+
+.recent-events-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.recent-events-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+}
+
+/* Event List & Cards */
+.recent-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.recent-event-card {
+    background-color: #121317;
+    border: 1px solid #1f232b;
+    border-radius: 12px;
+    padding: 38px 40px 32px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.recent-event-card:hover {
+    border-color: #383e4c;
+}
+
+/* Hidden state for batches */
+.recent-event-card.is-hidden {
+    display: none;
+}
+
+/* Card Top Info Row */
+.card-header-row {
+    display: grid;
+    grid-template-columns: 75px 1fr auto;
+    gap: 28px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+/* Date Badge */
+.card-date-badge {
+    background-color: #1b1e25;
+    border: 1px solid #282d38;
+    border-radius: 8px;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-date-badge .badge-month {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #9ca3af;
+    letter-spacing: 1px;
+}
+
+.card-date-badge .badge-day {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* Content Details */
+.card-main-info {
+    max-width: 760px;
+}
+
+.card-category-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.card-event-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.card-partner-line {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+    letter-spacing: 0.4px;
+}
+
+.card-partner-line strong {
+    color: #ffffff;
+}
+
+.card-event-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #9ca3af;
+    margin-bottom: 18px;
+}
+
+.card-speaker-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.speaker-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.8px;
+}
+
+.speaker-brand {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+/* --- "See Highlights" Button with White Hover Effect --- */
+.see-highlights-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.see-highlights-btn .btn-arrow {
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+/* Hover State */
+.see-highlights-btn:hover {
+    background-color: #ffffff;
+    color: #0b0c10;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+}
+
+.see-highlights-btn:hover .btn-arrow {
+    transform: translateX(3px);
+}
+
+/* Photo Gallery Strip */
+.card-photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.gallery-thumb {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1a1c22;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.92);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.gallery-thumb:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+}
+
+/* --- View More Events Button --- */
+.view-more-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.view-more-events-btn {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 999px;
+    padding: 13px 34px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.view-more-events-btn:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+.view-more-events-btn:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 900px) {
+    .recent-events-section {
+        padding: 70px 20px 90px;
+    }
+
+    .card-header-row {
+        grid-template-columns: 65px 1fr;
+        gap: 20px;
+    }
+
+    .see-highlights-btn {
+        grid-column: 2 / 3;
+        justify-self: flex-start;
+        margin-top: 5px;
+    }
+
+    .gallery-thumb {
+        height: 140px;
+    }
+}
+
+@media (max-width: 600px) {
+    .recent-events-heading {
+        font-size: 1.85rem;
+    }
+
+    .recent-event-card {
+        padding: 24px 18px;
+    }
+
+    .card-header-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .see-highlights-btn {
+        grid-column: 1 / 2;
+    }
+
+    .card-photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .gallery-thumb {
+        height: 180px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -670,7 +1160,7 @@
 
                     <!-- EVENT 2: AI PRODUCT SUMMIT -->
                     <!-- Category tags: data-category="ai product" -->
-                    <a href="ai-product-summit-new-york.html" class="event-card card-product-summit" data-categories="all ai product">
+                    <a href="summit-new-york.html" class="event-card card-product-summit" data-categories="all ai product">
                         <div class="event-card-left">
                             <div class="event-date-badge">
                                 <span class="badge-month">DEC</span>
@@ -702,6 +1192,503 @@
                         </div>
                     </a>
 
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+            BOTTOM SUBSCRIBE SECTION
+        ========================================= -->
+        <section class="bottom-subscribe-section">
+            <div class="bottom-subscribe-container">
+
+                <!-- Left Information Content -->
+                <div class="bottom-subscribe-info">
+                    <h2 class="bottom-subscribe-title">Subscribe for Event Updates</h2>
+                    <div class="title-underline"></div>
+
+                    <ul class="subscribe-features-list">
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span class="feature-text">Receive exclusive event invitations and updates directly to your inbox.</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span class="feature-text">Join leaders and experts for insightful panel discussions, business deep dives, and social community evenings.</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span class="feature-text">Expand your network and join the Courstrike community of over 250,000 professionals.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right White Form Card -->
+                <div class="bottom-subscribe-card">
+                    <h3 class="card-form-title">Get Exclusive Event Updates by Email</h3>
+
+                    <form class="card-form-wrap" onsubmit="event.preventDefault();">
+                        <div class="form-inputs-row">
+                            <div class="form-field">
+                                <input type="text" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+
+                        <p class="form-terms-text">
+                            By clicking “Subscribe”, you confirm that you accept our <a href="#">Terms</a>.
+                        </p>
+
+                        <button type="submit" class="card-submit-btn">
+                            <span>Subscribe</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+            RECENT EVENTS IN NEW YORK SECTION
+        ========================================= -->
+        <section class="recent-events-section">
+            <div class="recent-events-container">
+                
+                <h2 class="recent-events-heading">Recent Events in New York</h2>
+
+                <div class="recent-events-list" id="recentEventsList">
+
+                    <!-- EVENT 1 (SEP 16) -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">SEP</span>
+                                <span class="badge-day">16</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">DESIGN EVENINGS NYC:</span>
+                                <h3 class="card-event-title">From Concept to Conviction: AI in the Designer's Toolkit</h3>
+                                <p class="card-event-desc">
+                                    During her talk, Mareike Carolin Keller, Product Designer at Spotify, explored how to move AI from an experimental tool to a core part of the design workflow, sharing how to leverage AI-assisted prototyping and code generation to accelerate execution and earn rapid stakeholder buy-in.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKER FROM:</span>
+                                    <span class="speaker-brand">Spotify</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/from-concept-to-conviction.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Event presentation"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Speaker on stage"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Attendees networking"></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 2 (SEP 1) -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">SEP</span>
+                                <span class="badge-day">1</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">LEADERS IN FINTECH:</span>
+                                <h3 class="card-event-title">The Evolution of Agentic Commerce</h3>
+                                <p class="card-event-desc">
+                                    During the panel, leading AI and product executives shared frameworks for navigating the shift toward agentic commerce, drawing on their experience scaling complex transactional infrastructure to unpack practical models for deploying autonomous agents, securing machine-to-machine payments, and capturing enterprise value in agent-driven markets.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">AMERICAN EXPRESS</span>
+                                    <span class="speaker-brand">mastercard</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/the-evolution-of-agentic-commerce.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Fintech reception"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Panel discussion"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Audience listening"></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 3 (AUG 13) -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">AUG</span>
+                                <span class="badge-day">13</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">MARKETING EVENINGS NYC:</span>
+                                <h3 class="card-event-title">Marketing People Actually Notice (and Will Pay You For)</h3>
+                                <p class="card-event-desc">
+                                    During the evening with Jeffrey Tousignant, Head of Marketing at Air, and Emmeline Vu, Product Marketing Lead at Air, they explored how enterprise organizations built and scaled their creative operations, sharing how unifying product positioning with creative production accelerated multi-channel campaigns and drove business impact.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Air</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/marketing-people-actually-notice.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Marketing stage sign"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Speakers couch talk"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Crowd taking notes"></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 4 (JUL 29) -->
+                    <article class="recent-event-card">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUL</span>
+                                <span class="badge-day">29</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">LEADERS IN PRODUCT:</span>
+                                <h3 class="card-event-title">Fintech Insights from JPMC &amp; PayPal</h3>
+                                <div class="card-partner-line">
+                                    IN PARTNERSHIP WITH <strong>Canva</strong> ✳ <strong>Flourish</strong>
+                                </div>
+                                <p class="card-event-desc">
+                                    During the forward-looking conversation, product leaders explored how AI-driven products, sustainable growth strategies, and customer-first innovation were shaping the next generation of financial services.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">PayPal</span>
+                                    <span class="speaker-brand">JPMorganChase</span>
+                                </div>
+                            </div>
+
+                            <a href="/events/fintech-insights-jpmc-paypal.html" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt="Welcome chalkboard"></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt="Fireside chat"></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt="Audience notebook"></div>
+                        </div>
+                    </article>
+
+                    <!-- ================= BATCH 2 (EVENTS 5-8) HIDDEN INITIALLY ================= -->
+
+                    <!-- EVENT 5 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUL</span>
+                                <span class="badge-day">15</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">AI SUMMIT NYC:</span>
+                                <h3 class="card-event-title">Building Multi-Agent Workflows in Production</h3>
+                                <p class="card-event-desc">
+                                    Engineering leaders from top tier tech startups discussed autonomous system orchestration, token efficiency, memory architectures, and deployment pipelines.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">OpenAI</span>
+                                    <span class="speaker-brand">Databricks</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 6 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUN</span>
+                                <span class="badge-day">24</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">PRODUCT LEADERSHIP:</span>
+                                <h3 class="card-event-title">Scaling 0 to 1 Products with Generative AI</h3>
+                                <p class="card-event-desc">
+                                    An executive roundtable on discovery phases, finding product market fit with generative AI primitives, and reducing product cycle velocities.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Figma</span>
+                                    <span class="speaker-brand">Notion</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 7 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">JUN</span>
+                                <span class="badge-day">10</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">DATA &amp; AI:</span>
+                                <h3 class="card-event-title">Modern Data Architecture &amp; RAG Systems</h3>
+                                <p class="card-event-desc">
+                                    Deep dive into modern retrieval augmented generation pipelines, vector databases, query evaluations, and semantic search techniques for big data.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Snowflake</span>
+                                    <span class="speaker-brand">Pinecone</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 8 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">MAY</span>
+                                <span class="badge-day">20</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">CREATIVE OPERATIONS:</span>
+                                <h3 class="card-event-title">The Future of Brand Storytelling</h3>
+                                <p class="card-event-desc">
+                                    Exploring multi-channel brand synthesis, real-time campaign iteration, and how top design agencies leverage generative tooling for client showcases.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Nike</span>
+                                    <span class="speaker-brand">VML</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- ================= BATCH 3 (EVENTS 9-12) HIDDEN INITIALLY ================= -->
+
+                    <!-- EVENT 9 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">MAY</span>
+                                <span class="badge-day">05</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">LEADERS IN AI:</span>
+                                <h3 class="card-event-title">Enterprise Safety &amp; LLM Governance</h3>
+                                <p class="card-event-desc">
+                                    Frameworks for deploying LLMs securely across heavily regulated industries including healthcare, banking, and government organizations.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Anthropic</span>
+                                    <span class="speaker-brand">IBM</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 10 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">APR</span>
+                                <span class="badge-day">18</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">DESIGN SYSTEMS:</span>
+                                <h3 class="card-event-title">Adaptive UI and Autonomous Design Tokens</h3>
+                                <p class="card-event-desc">
+                                    How design systems architects maintain tokens across web, iOS, and Android while automatically synchronizing Figma components with production repos.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Airbnb</span>
+                                    <span class="speaker-brand">Uber</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 11 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">APR</span>
+                                <span class="badge-day">02</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">GROWTH STRATEGY:</span>
+                                <h3 class="card-event-title">Retention Loops in Subscription Products</h3>
+                                <p class="card-event-desc">
+                                    Analyzing churn reduction techniques, behavioral telemetry, and personalized cohort activation triggers across high-growth SaaS portfolios.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Duolingo</span>
+                                    <span class="speaker-brand">Netflix</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 12 -->
+                    <article class="recent-event-card is-hidden">
+                        <div class="card-header-row">
+                            <div class="card-date-badge">
+                                <span class="badge-month">MAR</span>
+                                <span class="badge-day">14</span>
+                            </div>
+
+                            <div class="card-main-info">
+                                <span class="card-category-tag">EXECUTIVE KEYNOTE:</span>
+                                <h3 class="card-event-title">The Next Decade of Digital Transformation</h3>
+                                <p class="card-event-desc">
+                                    Global leaders come together in NYC to debate organizational agility, enterprise upskilling, and navigating modern technological inflection points.
+                                </p>
+                                <div class="card-speaker-row">
+                                    <span class="speaker-label">SPEAKERS FROM:</span>
+                                    <span class="speaker-brand">Amazon Web Services</span>
+                                    <span class="speaker-brand">Microsoft</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="see-highlights-btn">
+                                <span>See Highlights</span>
+                                <span class="btn-arrow">&rsaquo;</span>
+                            </a>
+                        </div>
+
+                        <div class="card-photo-gallery">
+                            <div class="gallery-thumb"><img src="../images/img1.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img2.png" alt=""></div>
+                            <div class="gallery-thumb"><img src="../images/img3.png" alt=""></div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- View More Events Trigger Button -->
+                <div class="view-more-container">
+                    <button type="button" class="view-more-events-btn" id="viewMoreEventsBtn">
+                        View More Events
+                    </button>
                 </div>
 
             </div>
@@ -756,7 +1743,35 @@
                     });
                 });
             });
+
+            
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const viewMoreBtn = document.getElementById('viewMoreEventsBtn');
+    const allCards = Array.from(document.querySelectorAll('.recent-event-card'));
+    let currentVisibleCount = 4; // First 4 are already shown
+
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', () => {
+            // Next 4 cards reveal
+            const nextCards = allCards.slice(currentVisibleCount, currentVisibleCount + 4);
+
+            nextCards.forEach(card => {
+                card.classList.remove('is-hidden');
+            });
+
+            currentVisibleCount += 4;
+
+            // Total 12 cards thai jaay tyare button hide thai jashe
+            if (currentVisibleCount >= allCards.length) {
+                viewMoreBtn.style.display = 'none';
+            }
+        });
+    }
+});
+
+
     </script>
 
 </body>

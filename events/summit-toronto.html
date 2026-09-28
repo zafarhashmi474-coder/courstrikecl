@@ -1,0 +1,3758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Summit New York | Courstrike</title>
+
+    <!-- Main Global CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* =========================================
+           GLOBAL & BASE RESETS
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #050608;
+            color: #ffffff;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           STICKY SECONDARY EVENT HEADER
+        ========================================= */
+        .event-sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 68px;
+            background-color: rgba(5, 6, 8, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 99999;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .event-sticky-nav.visible {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sticky-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sticky-logo-img {
+            height: 28px;
+            width: auto;
+            display: block;
+        }
+
+        .sticky-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sticky-nav-links li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 68px;
+        }
+
+        .sticky-nav-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: inline-block;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .sticky-nav-links a:hover,
+        .sticky-nav-links a.active {
+            color: #ffffff;
+        }
+
+        .sticky-nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+
+        .sticky-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sticky-date-info {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sticky-date-label {
+            font-size: 0.65rem;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sticky-date-val {
+            font-size: 0.82rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .sticky-ticket-btn {
+            background-color: #ffffff;
+            color: #0b0c10;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: background 0.2s ease, transform 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .sticky-ticket-btn:hover {
+            background-color: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        /* =========================================
+           1. HERO SECTION
+        ========================================= */
+        .summit-hero {
+            position: relative;
+            width: 100%;
+            min-height: 94vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 130px 24px 80px;
+            box-sizing: border-box;
+            background-color: #050608;
+            background-image: 
+                linear-gradient(180deg, rgba(5, 6, 8, 0.45) 0%, rgba(5, 6, 8, 0.85) 75%, #050608 100%),
+                url('../images/img1.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .summit-hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .summit-title-wrap {
+            margin-bottom: 50px;
+        }
+
+        .summit-small-lead {
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -1px;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .summit-main-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .summit-huge-title {
+            font-size: clamp(5.5rem, 13vw, 11.5rem);
+            font-weight: 900;
+            line-height: 0.88;
+            letter-spacing: -2px;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .summit-loc-tag {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+        }
+
+        .summit-ticket-col {
+            max-width: 440px;
+            width: 100%;
+        }
+
+        .summit-ticket-card {
+            background: linear-gradient(180deg, rgba(20, 24, 32, 0.9) 0%, rgba(12, 14, 19, 0.96) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 14px;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        .summit-card-top {
+            padding: 28px 28px 22px;
+        }
+
+        .summit-event-date {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .summit-event-time {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            margin-bottom: 4px;
+        }
+
+        .summit-event-venue {
+            font-size: 0.88rem;
+            color: #94a3b8;
+        }
+
+        .summit-card-bottom {
+            padding: 16px 28px;
+            background-color: rgba(7, 8, 11, 0.92);
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .summit-price-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-tag-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 2px;
+        }
+
+        .price-figures {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .current-price {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .strike-price {
+            font-size: 0.95rem;
+            color: #f87171;
+            text-decoration: line-through;
+        }
+
+        .summit-request-btn {
+            background-color: #ffffff;
+            color: #0b0c10;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 50px;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .summit-request-btn:hover {
+            background-color: #e2e8f0;
+            transform: scale(1.02);
+        }
+
+        .early-bird-note {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        /* =========================================
+           2. OVERVIEW & THEMES SECTION
+        ========================================= */
+        .summit-overview-section {
+            position: relative;
+            width: 100%;
+            padding: 120px 24px 140px;
+            background-color: #050608;
+            background-image: 
+                linear-gradient(90deg, #050608 0%, rgba(5, 6, 8, 0.88) 55%, rgba(5, 6, 8, 0.45) 100%),
+                url('../images/img2.png');
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .summit-overview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .overview-content-col {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        .overview-lead-statement {
+            font-size: clamp(2rem, 3.4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.25;
+            color: #ffffff;
+            letter-spacing: -0.8px;
+            margin-bottom: 70px;
+        }
+
+        .themes-lead-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .theme-card {
+            background-color: rgba(16, 19, 26, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 12px;
+            padding: 26px 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .theme-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.35;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .theme-card-desc {
+            font-size: 0.86rem;
+            line-height: 1.55;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        .theme-more-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 26px 28px;
+        }
+
+        .more-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            letter-spacing: -0.2px;
+        }
+
+        /* PAST SPEAKERS CAROUSEL */
+        .past-speakers-wrap {
+            margin-top: 150px;
+            position: relative;
+            width: 100%;
+        }
+
+        .past-speakers-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .past-speakers-title {
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.8px;
+        }
+
+        .past-speakers-subtitle {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .past-carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .past-carousel-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+
+        .past-speaker-card {
+            flex: 0 0 850px;
+            max-width: 850px;
+            background-color: #0d0f14;
+            border: 1px solid #1c202a;
+            border-radius: 14px;
+            padding: 24px 28px 30px;
+            box-sizing: border-box;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        .past-card-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .past-thumb {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #161922;
+        }
+
+        .past-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92);
+        }
+
+        .past-card-body {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .past-speaker-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+
+        .past-speaker-role {
+            font-size: 0.92rem;
+            color: #94a3b8;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+
+        .past-logo-box {
+            height: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+        .past-logo-box img {
+            max-height: 28px;
+            max-width: 140px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+        }
+
+        .past-bio-col p {
+            font-size: 0.92rem;
+            line-height: 1.62;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .past-nav-btn {
+            position: absolute;
+            top: 36%;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: #0b0c10;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .past-nav-btn:hover {
+            background-color: #f1f5f9;
+            transform: scale(1.08);
+        }
+
+        .past-prev { left: 20px; }
+        .past-next { right: 20px; }
+
+        /* RELIVE THE MOMENTS MOSAIC GRID */
+        .moments-section-wrap {
+            margin-top: 140px;
+            width: 100%;
+            position: relative;
+        }
+
+        .moments-header {
+            text-align: center;
+            margin-bottom: 55px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .moments-icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .moments-title {
+            font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+            font-weight: 500;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .moments-mosaic-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .mosaic-row {
+            display: grid;
+            gap: 8px;
+            width: 100%;
+            height: 270px;
+        }
+
+        .mosaic-row-1 { grid-template-columns: 1.1fr 1.4fr 1.15fr 0.95fr; }
+        .mosaic-row-2 { grid-template-columns: 0.85fr 1.65fr 1.1fr 0.85fr; }
+        .mosaic-row-3 { grid-template-columns: 1.05fr 0.95fr 1.65fr 0.8fr; }
+
+        .mosaic-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #12151c;
+            border-radius: 2px;
+        }
+
+        .mosaic-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.92);
+            transition: transform 0.4s ease;
+        }
+
+        .mosaic-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* =========================================
+           3. SESSIONS SECTION
+        ========================================= */
+        .sessions-section {
+            position: relative;
+            width: 100%;
+            padding: 120px 24px 130px;
+            background-color: #050608;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .sessions-section::before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            right: -10%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(14, 85, 150, 0.2) 0%, rgba(20, 40, 80, 0.08) 50%, transparent 75%);
+            filter: blur(85px);
+            pointer-events: none;
+        }
+
+        .sessions-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sessions-header {
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto 55px;
+            width: 100%;
+        }
+
+        .sessions-title {
+            font-size: clamp(2rem, 3.4vw, 3.2rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .sessions-subtitle {
+            max-width: 820px;
+            margin: 0 auto;
+            font-size: clamp(1rem, 1.3vw, 1.18rem);
+            line-height: 1.6;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        .sessions-skeleton-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .session-skeleton-card {
+            background-color: #0a0c10;
+            border: 1px solid #161a22;
+            border-radius: 12px;
+            padding: 32px 36px 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .skeleton-top-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .skeleton-avatar {
+            width: 72px;
+            height: 72px;
+            background-color: #1a1e27;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .skeleton-lines-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skeleton-line {
+            height: 12px;
+            background-color: #1a1e27;
+            border-radius: 4px;
+        }
+
+        .line-long { width: 95%; }
+        .line-medium { width: 65%; }
+
+        .skeleton-right-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .skeleton-small-avatar {
+            width: 68px;
+            height: 68px;
+            background-color: #1a1e27;
+            border-radius: 6px;
+        }
+
+        .skeleton-small-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100px;
+        }
+
+        .line-short { width: 100%; }
+        .line-xshort { width: 40%; }
+
+        .skeleton-bottom-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .skeleton-pill-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .line-tab { width: 60%; height: 11px; }
+        .line-tab-sub { width: 85%; height: 10px; }
+
+        .sessions-bottom-notice {
+            text-align: center;
+            font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.4px;
+        }
+
+        /* =========================================
+           4. THE EXPERIENCE (EXACT HORIZONS PINNED DIAGONAL)
+        ========================================= */
+        .experience-pin-container {
+            position: relative;
+            width: 100%;
+            height: 380vh; /* Pinned scrolling travel room */
+            background-color: #050608;
+        }
+
+        /* Ambient Glow */
+        .experience-pin-container::before {
+            content: '';
+            position: fixed;
+            top: 25%;
+            left: -10%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(14, 85, 150, 0.2) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .experience-pin-container::after {
+            content: '';
+            position: fixed;
+            top: 45%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(90, 50, 200, 0.16) 0%, transparent 70%);
+            filter: blur(110px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Top Card Intro Block (Normal Flow - Scrolls away before pinned stage) */
+        .exp-intro-block {
+            width: 100%;
+            padding: 100px 0 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-top-card {
+            background-color: rgba(14, 16, 22, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 48px 56px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .exp-main-title {
+            font-size: clamp(2.3rem, 3.8vw, 3.3rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+            line-height: 1.15;
+        }
+
+        .exp-main-desc {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            max-width: 440px;
+        }
+
+        .exp-right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .exp-feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .exp-feature-desc {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* Pinned Viewport Window with Solid Dark Background */
+        .exp-pinned-viewport {
+            position: sticky;
+            top: 68px;
+            width: 100%;
+            height: calc(100vh - 68px);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            background-color: #050608;
+        }
+
+        /* Diagonal Sliding Gallery Strip (Bottom-Right -> Top-Left) */
+        .exp-diagonal-gallery-stream {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: max-content;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 20px;
+            z-index: 10;
+            will-change: transform;
+            pointer-events: none;
+            transform: translate3d(120vw, 80vh, 0); /* Initial position off-screen bottom-right */
+        }
+
+        .rising-photo-box {
+            width: 480px;
+            height: 330px;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #12141a;
+            flex-shrink: 0;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .rising-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.95);
+        }
+
+        /* =========================================
+           PLACEHOLDER SECTIONS
+        ========================================= */
+        .content-section {
+            padding: 110px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            min-height: 400px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            max-width: 750px;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN (Media Queries)
+        ========================================= */
+        @media (max-width: 992px) {
+            .sticky-nav-links {
+                display: none;
+            }
+            .summit-main-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            .summit-loc-tag {
+                padding-bottom: 0;
+            }
+            .past-speaker-card {
+                flex: 0 0 calc(100vw - 60px);
+                max-width: calc(100vw - 60px);
+                padding: 20px;
+            }
+            .past-card-body {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .mosaic-row {
+                height: 220px;
+            }
+            .experience-pin-container {
+                height: auto;
+            }
+            .exp-pinned-viewport {
+                position: relative;
+                top: 0;
+                height: auto;
+                padding: 50px 0;
+            }
+            .exp-diagonal-gallery-stream {
+                position: relative;
+                transform: none !important;
+                overflow-x: auto;
+                width: 100%;
+                padding: 10px 24px;
+            }
+            .experience-top-card {
+                grid-template-columns: 1fr;
+                padding: 36px 30px;
+                gap: 36px;
+            }
+            .rising-photo-box {
+                width: 360px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .summit-overview-section {
+                background-image: linear-gradient(180deg, #050608 0%, rgba(5, 6, 8, 0.95) 100%);
+                padding: 90px 20px 100px;
+            }
+            .overview-lead-statement {
+                margin-bottom: 45px;
+            }
+            .themes-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .theme-more-card {
+                justify-content: flex-start;
+                padding: 16px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sessions-title {
+                white-space: normal;
+                font-size: 2rem;
+            }
+            .mosaic-row {
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px;
+            }
+            .mosaic-item {
+                height: 200px;
+            }
+            .skeleton-top-row {
+                flex-wrap: wrap;
+            }
+            .skeleton-right-profile {
+                margin-left: 0;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .skeleton-bottom-row {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .summit-hero {
+                padding: 120px 20px 60px;
+            }
+            .sticky-date-info {
+                display: none;
+            }
+            .summit-card-bottom {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 14px;
+            }
+            .summit-request-btn {
+                text-align: center;
+            }
+            .past-card-gallery {
+                grid-template-columns: 1fr;
+            }
+            .past-thumb {
+                height: 160px;
+            }
+            .past-prev { left: 10px; }
+            .past-next { right: 10px; }
+            .mosaic-row {
+                grid-template-columns: 1fr !important;
+            }
+            .mosaic-item {
+                height: 220px;
+            }
+            .experience-top-card {
+                padding: 24px 20px;
+            }
+            .rising-photo-box {
+                width: 290px;
+                height: 200px;
+            }
+        }
+
+        /* =========================================
+   DETAILS OF THE EVENING SECTION STYLES
+========================================= */
+.summit-details-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 24px 140px;
+    background-color: #050608;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Subtle background glows */
+.summit-details-section::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: -12%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(14, 85, 150, 0.16) 0%, transparent 70%);
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.summit-details-section::after {
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(90, 50, 200, 0.14) 0%, transparent 70%);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.details-outer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.details-main-heading {
+    font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 45px;
+}
+
+/* Main Split Card (White Info Left, Graphic Right) */
+.details-split-card {
+    display: grid;
+    grid-template-columns: 1.25fr 0.95fr;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #0c0e14;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    margin-bottom: 120px;
+}
+
+/* Left White Box */
+.details-info-white-box {
+    background-color: #ffffff;
+    color: #0b0c10;
+    padding: 48px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.detail-block-row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.detail-block-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f1f5f9;
+    padding: 8px 14px;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.badge-icon {
+    display: flex;
+    align-items: center;
+    color: #0f172a;
+}
+
+.badge-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+}
+
+/* Agenda Timeline */
+.agenda-timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.agenda-time-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.agenda-pin-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #0f172a;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.agenda-time {
+    font-weight: 700;
+    color: #0f172a;
+    width: 65px;
+    flex-shrink: 0;
+}
+
+.agenda-desc {
+    color: #334155;
+    font-weight: 500;
+}
+
+/* Divider */
+.details-divider-line {
+    width: 100%;
+    height: 1px;
+    background-color: #e2e8f0;
+}
+
+/* Check paragraph items */
+.detail-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.check-paragraph-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.check-mark-icon {
+    color: #94a3b8;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.check-paragraph-item p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: #334155;
+    margin: 0;
+}
+
+.check-paragraph-item strong {
+    color: #0f172a;
+}
+
+/* Dietary Card */
+.dietary-restriction-card {
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-top: 6px;
+}
+
+.dietary-heading {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.dietary-body {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: #475569;
+    margin: 0;
+}
+
+/* Right Neon Art Frame */
+.details-artwork-col {
+    position: relative;
+    background-color: #0a0d14;
+    overflow: hidden;
+}
+
+.artwork-image-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+}
+
+.artwork-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* =========================================
+   BOTTOM COUNTDOWN & TICKET SECTION
+========================================= */
+.details-bottom-countdown-wrap {
+    padding-top: 30px;
+}
+
+.summit-countdown-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.countdown-heading-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+}
+
+.countdown-timer-display {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 50px;
+}
+
+.timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-num {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-txt {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    margin-top: 6px;
+}
+
+.timer-colon {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.team-invite-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.team-invite-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #94a3b8;
+    max-width: 480px;
+    margin-bottom: 26px;
+}
+
+.book-call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 10px 26px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+}
+
+.book-call-btn:hover {
+    background-color: #ffffff;
+    color: #0b0c10;
+    border-color: #ffffff;
+}
+
+/* Right Details Ticket Pass */
+.summit-details-ticket-pass {
+    background: linear-gradient(180deg, #181c25 0%, #0d1016 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.pass-header-info {
+    padding: 32px 32px 24px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.pass-brand-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #94a3b8;
+}
+
+.pass-event-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin: 4px 0 2px;
+}
+
+.pass-theme {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+}
+
+.pass-meta-time {
+    font-size: 0.88rem;
+    color: #94a3b8;
+}
+
+.pass-middle-venue {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pass-venue-lines {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: #94a3b8;
+}
+
+.pass-venue-lines strong {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.pass-barcode-wrap {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 42px;
+}
+
+.bc-bar {
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.pass-footer-cta {
+    padding: 22px 32px;
+    background-color: #090b10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pass-price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-lbl {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.price-figures {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.current-price {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.strike-price {
+    font-size: 0.95rem;
+    color: #f87171;
+    text-decoration: line-through;
+}
+
+.pass-request-btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+}
+
+.pass-request-btn:hover {
+    background-color: #ffffff;
+    color: #0b0c10;
+    border-color: #ffffff;
+}
+
+.ticket-bottom-note {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    text-align: center;
+    padding: 0 0 16px;
+    background-color: #090b10;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Details)
+========================================= */
+@media (max-width: 992px) {
+    .details-split-card {
+        grid-template-columns: 1fr;
+    }
+
+    .artwork-image-wrapper {
+        min-height: 280px;
+    }
+
+    .summit-countdown-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 680px) {
+    .details-info-white-box {
+        padding: 30px 22px;
+    }
+
+    .detail-block-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .pass-middle-venue {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+
+/* =========================================
+   DETAILS OF THE EVENING SECTION STYLES
+========================================= */
+.summit-details-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 24px 140px;
+    background-color: #050608;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Subtle background glows */
+.summit-details-section::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: -12%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(14, 85, 150, 0.16) 0%, transparent 70%);
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.summit-details-section::after {
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(90, 50, 200, 0.14) 0%, transparent 70%);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.details-outer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.details-main-heading {
+    font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 45px;
+}
+
+/* Main Split Card (White Info Left, Graphic Right) */
+.details-split-card {
+    display: grid;
+    grid-template-columns: 1.25fr 0.95fr;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #0c0e14;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    margin-bottom: 120px;
+}
+
+/* Left White Box */
+.details-info-white-box {
+    background-color: #ffffff;
+    color: #0b0c10;
+    padding: 48px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.detail-block-row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.detail-block-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f1f5f9;
+    padding: 8px 14px;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.badge-icon {
+    display: flex;
+    align-items: center;
+    color: #0f172a;
+}
+
+.badge-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+}
+
+/* Agenda Timeline */
+.agenda-timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.agenda-time-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.agenda-pin-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #0f172a;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.agenda-time {
+    font-weight: 700;
+    color: #0f172a;
+    width: 65px;
+    flex-shrink: 0;
+}
+
+.agenda-desc {
+    color: #334155;
+    font-weight: 500;
+}
+
+/* Divider */
+.details-divider-line {
+    width: 100%;
+    height: 1px;
+    background-color: #e2e8f0;
+}
+
+/* Check paragraph items */
+.detail-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.check-paragraph-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.check-mark-icon {
+    color: #94a3b8;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.check-paragraph-item p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: #334155;
+    margin: 0;
+}
+
+.check-paragraph-item strong {
+    color: #0f172a;
+}
+
+/* Dietary Card */
+.dietary-restriction-card {
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-top: 6px;
+}
+
+.dietary-heading {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.dietary-body {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: #475569;
+    margin: 0;
+}
+
+/* Right Neon Art Frame */
+.details-artwork-col {
+    position: relative;
+    background-color: #0a0d14;
+    overflow: hidden;
+}
+
+.artwork-image-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+}
+
+.artwork-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* =========================================
+   BOTTOM COUNTDOWN & TICKET SECTION
+========================================= */
+.details-bottom-countdown-wrap {
+    padding-top: 30px;
+}
+
+.summit-countdown-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.countdown-heading-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+}
+
+.countdown-timer-display {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 50px;
+}
+
+.timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-num {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-txt {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    margin-top: 6px;
+}
+
+.timer-colon {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.team-invite-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.team-invite-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #94a3b8;
+    max-width: 480px;
+    margin-bottom: 26px;
+}
+
+.book-call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 10px 26px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+}
+
+.book-call-btn:hover {
+    background-color: #ffffff;
+    color: #0b0c10;
+    border-color: #ffffff;
+}
+
+/* Right Details Ticket Pass */
+.summit-details-ticket-pass {
+    background: linear-gradient(180deg, #181c25 0%, #0d1016 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.pass-header-info {
+    padding: 32px 32px 24px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.pass-brand-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #94a3b8;
+}
+
+.pass-event-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin: 4px 0 2px;
+}
+
+.pass-theme {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+}
+
+.pass-meta-time {
+    font-size: 0.88rem;
+    color: #94a3b8;
+}
+
+.pass-middle-venue {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pass-venue-lines {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: #94a3b8;
+}
+
+.pass-venue-lines strong {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.pass-barcode-wrap {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 42px;
+}
+
+.bc-bar {
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.pass-footer-cta {
+    padding: 22px 32px;
+    background-color: #090b10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pass-price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-lbl {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.price-figures {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.current-price {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.strike-price {
+    font-size: 0.95rem;
+    color: #f87171;
+    text-decoration: line-through;
+}
+
+.pass-request-btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+}
+
+.pass-request-btn:hover {
+    background-color: #ffffff;
+    color: #0b0c10;
+    border-color: #ffffff;
+}
+
+.ticket-bottom-note {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    text-align: center;
+    padding: 0 0 16px;
+    background-color: #090b10;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Details)
+========================================= */
+@media (max-width: 992px) {
+    .details-split-card {
+        grid-template-columns: 1fr;
+    }
+
+    .artwork-image-wrapper {
+        min-height: 280px;
+    }
+
+    .summit-countdown-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 680px) {
+    .details-info-white-box {
+        padding: 30px 22px;
+    }
+
+    .detail-block-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .pass-middle-venue {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+
+/* =========================================
+   LOCATION SECTION STYLES
+========================================= */
+.location-section {
+    position: relative;
+    width: 100%;
+    background-color: #050608;
+    padding-bottom: 140px;
+    overflow: hidden;
+}
+
+/* 1. Hero Banner with Building Background */
+.location-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    background-color: #0b0d13;
+    background-image: 
+        linear-gradient(180deg, rgba(5, 6, 8, 0.45) 0%, rgba(5, 6, 8, 0.88) 100%),
+        url('../images/nyc-hero-bg.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    display: flex;
+    align-items: flex-start;
+    padding: 90px 24px 0;
+    box-sizing: border-box;
+}
+
+.location-banner-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.location-banner-tag {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.location-banner-title {
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+}
+
+/* 2. Glassmorphism Card Container (Pulled up into banner) */
+.location-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: -140px auto 0;
+    padding: 0 24px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+}
+
+.location-glass-card {
+    background-color: rgba(14, 17, 23, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 54px 58px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 50px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+    align-items: center;
+}
+
+/* Left Guide Info */
+.location-card-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.6px;
+    margin-bottom: 12px;
+}
+
+.location-title-bar {
+    width: 42px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+
+/* Address & Directions Button Box */
+.location-address-box {
+    background-color: #1a1e27;
+    border: 1px solid #282f3d;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.addr-text-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.addr-pin-icon {
+    color: #cbd5e1;
+    flex-shrink: 0;
+}
+
+.addr-lines {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.86rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.addr-lines strong {
+    color: #ffffff;
+    font-size: 0.94rem;
+}
+
+.get-directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 2px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.get-directions-btn:hover {
+    border-color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Vertical Stepper Timeline */
+.location-timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-step {
+    display: flex;
+    gap: 18px;
+    min-height: 75px;
+}
+
+.timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14px;
+    flex-shrink: 0;
+}
+
+.marker-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #94a3b8;
+    background-color: #050608;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+.marker-line {
+    flex-grow: 1;
+    width: 1.5px;
+    background-color: #2b313d;
+    margin: 4px 0;
+}
+
+.timeline-text {
+    padding-bottom: 20px;
+}
+
+.step-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.step-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+/* Right Map Mockup Frame */
+.location-map-col {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-mockup-frame {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #edf0f3;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.map-graphic-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.map-center-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+    transition: transform 0.25s ease;
+}
+
+.map-center-pin:hover {
+    transform: translate(-50%, -92%) scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .location-glass-card {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+        gap: 40px;
+    }
+
+    .location-hero-banner {
+        height: 360px;
+        padding-top: 70px;
+    }
+
+    .location-container {
+        margin-top: -100px;
+    }
+
+    .map-mockup-frame {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .location-glass-card {
+        padding: 26px 20px;
+    }
+
+    .location-address-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .get-directions-btn {
+        align-self: flex-start;
+    }
+
+    .map-mockup-frame {
+        height: 250px;
+    }
+}
+
+/* =========================================
+   SUMMIT FAQS SECTION (WHITE ACCORDION)
+========================================= */
+.summit-faqs-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 24px 140px;
+    background-color: #050608;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.summit-faqs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.summit-faqs-heading {
+    font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+}
+
+.summit-faqs-heading-line {
+    width: 48px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 45px;
+}
+
+/* White Card Box like screenshot */
+.summit-faqs-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 130px;
+}
+
+/* Accordion Item */
+.summit-faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s ease;
+}
+
+.summit-faq-item:last-child {
+    border-bottom: none;
+}
+
+.summit-faq-item:hover {
+    background-color: #f8fafc;
+}
+
+/* Question Header Button */
+.summit-faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 26px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-q-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+}
+
+.faq-toggle-icon {
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: #0f172a;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* Answer Body - All Closed By Default */
+.summit-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 36px;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+}
+
+.summit-faq-answer p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: #334155;
+    margin: 0;
+    max-width: 1000px;
+}
+
+/* Active Open State */
+.summit-faq-item.open .summit-faq-answer {
+    max-height: 380px;
+    padding: 0 36px 26px 36px;
+}
+
+/* Bottom Countdown wrap */
+.faqs-bottom-countdown-wrap {
+    padding-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .summit-faqs-section {
+        padding: 80px 20px 100px;
+    }
+
+    .summit-faq-question {
+        padding: 20px 22px;
+    }
+
+    .faq-q-text {
+        font-size: 0.96rem;
+    }
+
+    .summit-faq-answer {
+        padding: 0 22px;
+    }
+
+    .summit-faq-item.open .summit-faq-answer {
+        padding: 0 22px 20px 22px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- 1. Shared Global Header -->
+    <div id="header"></div>
+
+    <!-- 2. Sticky Secondary Header (AI Product Summit Nav) -->
+    <nav class="event-sticky-nav" id="eventStickyNav">
+        <div class="sticky-nav-left">
+            <a href="/index.html">
+                <img src="../images/Logo_png.png" alt="Courstrike" class="sticky-logo-img">
+            </a>
+        </div>
+
+        <ul class="sticky-nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#sessions">Sessions</a></li>
+            <li><a href="#experience">The Experience</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+        </ul>
+
+        <div class="sticky-nav-right">
+            <div class="sticky-date-info">
+                <span class="sticky-date-label">Event Date</span>
+                <span class="sticky-date-val">Thursday, December 10, 2026</span>
+            </div>
+            <a href="#request-tickets" class="sticky-ticket-btn">Request Tickets</a>
+        </div>
+    </nav>
+
+    <main class="summit-new-york-page">
+
+        <!-- =========================================
+             1. HERO SECTION (AI PRODUCT SUMMIT)
+        ========================================= -->
+        <section class="summit-hero" id="hero">
+            <div class="summit-hero-container">
+
+                <!-- Main Titles -->
+                <div class="summit-title-wrap">
+                    <div class="summit-small-lead">AI PRODUCT</div>
+                    <div class="summit-main-row">
+                        <h1 class="summit-huge-title">SUMMIT</h1>
+                        <span class="summit-loc-tag">NEW YORK</span>
+                    </div>
+                </div>
+
+                <!-- Left Event Info & Ticket Pass -->
+                <div class="summit-ticket-col" id="request-tickets">
+                    <div class="summit-ticket-card">
+                        <div class="summit-card-top">
+                            <div class="summit-event-date">Thu, Dec 10, 2026</div>
+                            <div class="summit-event-time">3:00 PM – 7:00 PM EST</div>
+                            <div class="summit-event-venue">Courstrike New York</div>
+                        </div>
+
+                        <div class="summit-card-bottom">
+                            <div class="summit-price-info">
+                                <span class="price-tag-title">Early Bird Price</span>
+                                <div class="price-figures">
+                                    <span class="current-price">$325</span>
+                                    <span class="strike-price">$475</span>
+                                </div>
+                            </div>
+                            <a href="#" class="summit-request-btn">Request Tickets</a>
+                        </div>
+                    </div>
+                    <div class="early-bird-note">Save with early bird pricing</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             2. OVERVIEW SECTION (THEMES, PAST SPEAKERS & MOSAIC)
+        ========================================= -->
+        <section class="summit-overview-section" id="overview">
+            <div class="summit-overview-container">
+
+                <!-- Part A: Themes Explored -->
+                <div class="overview-content-col">
+                    <h2 class="overview-lead-statement">
+                        A one-day summit for product leaders &amp; professionals at the edge of innovation.
+                    </h2>
+
+                    <div class="themes-lead-label">THEMES BEING EXPLORED:</div>
+
+                    <div class="themes-grid">
+                        <article class="theme-card">
+                            <h3 class="theme-card-title">Leading Product Strategy Through Disruption</h3>
+                            <p class="theme-card-desc">
+                                Frameworks for navigating market uncertainty, maintaining cross-functional alignment, and building resilient product roadmaps in rapidly evolving industries.
+                            </p>
+                        </article>
+
+                        <article class="theme-card">
+                            <h3 class="theme-card-title">Building Trust in AI-Driven Products</h3>
+                            <p class="theme-card-desc">
+                                Best practices for integrating intelligent systems and autonomous features while prioritizing user confidence, data privacy, and transparent user experiences.
+                            </p>
+                        </article>
+
+                        <article class="theme-card">
+                            <h3 class="theme-card-title">Unlocking Product-Led Growth and Retention</h3>
+                            <p class="theme-card-desc">
+                                How to build self-sustaining ecosystems by combining continuous user discovery, community engagement, and operational discipline to drive enduring product growth.
+                            </p>
+                        </article>
+
+                        <article class="theme-card">
+                            <h3 class="theme-card-title">"Shifting Left" in the Product Lifecycle</h3>
+                            <p class="theme-card-desc">
+                                Practical frameworks for accelerating time-to-value and reducing risk by bringing continuous discovery, technical feasibility, and quality assurance to the earliest stages of development.
+                            </p>
+                        </article>
+
+                        <article class="theme-card">
+                            <h3 class="theme-card-title">The Product Manager of the Future</h3>
+                            <p class="theme-card-desc">
+                                How autonomous agents, large language models, and advanced tooling are reshaping product workflows, strategic decision-making, and the PM's role in human-computer interaction.
+                            </p>
+                        </article>
+
+                        <div class="theme-more-card">
+                            <span class="more-text">and more...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part B: Speakers from Past Events Carousel -->
+                <div class="past-speakers-wrap">
+                    <div class="past-speakers-header">
+                        <h2 class="past-speakers-title">Speakers from Past Events</h2>
+                        <p class="past-speakers-subtitle">Our stage hosts senior leaders from global brands who are driving innovation at scale.</p>
+                    </div>
+
+                    <div class="past-carousel-container">
+                        <button type="button" class="past-nav-btn past-prev" id="pastPrevBtn" aria-label="Previous speaker">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </button>
+                        <button type="button" class="past-nav-btn past-next" id="pastNextBtn" aria-label="Next speaker">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+
+                        <div class="past-carousel-track" id="pastTrack">
+
+                            <!-- SLIDE 1 -->
+                            <div class="past-speaker-card">
+                                <div class="past-card-gallery">
+                                    <div class="past-thumb"><img src="../images/img1.png" alt="Anna Baird speaking"></div>
+                                    <div class="past-thumb"><img src="../images/img2.png" alt="Anna Baird panel discussion"></div>
+                                    <div class="past-thumb"><img src="../images/img3.png" alt="Event audience"></div>
+                                </div>
+
+                                <div class="past-card-body">
+                                    <div class="past-info-col">
+                                        <h3 class="past-speaker-name">Anna Baird</h3>
+                                        <div class="past-speaker-role">Chief Customer Officer, Generative AI GTM</div>
+                                        <div class="past-logo-box">
+                                            <img src="../logos/minified.svg" alt="Google">
+                                        </div>
+                                    </div>
+                                    <div class="past-bio-col">
+                                        <p>
+                                            You wouldn't think of brand leadership as a technical discipline. Anna Baird unpacked how generative AI is reshaping the way organizations engage customers, make decisions, and scale trust. Drawing from boardroom experience at Google, she highlighted the importance of emotional intelligence, responsible AI, and human-centred thinking as the true differentiators in an AI-powered era.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 2 -->
+                            <div class="past-speaker-card">
+                                <div class="past-card-gallery">
+                                    <div class="past-thumb"><img src="../images/img1.png" alt="Sarah Bishop speaking"></div>
+                                    <div class="past-thumb"><img src="../images/img2.png" alt="Panel discussion"></div>
+                                    <div class="past-thumb"><img src="../images/img3.png" alt="Networking"></div>
+                                </div>
+
+                                <div class="past-card-body">
+                                    <div class="past-info-col">
+                                        <h3 class="past-speaker-name">Sarah Bishop</h3>
+                                        <div class="past-speaker-role">VP, Global Brand and Consumer Marketing</div>
+                                        <div class="past-logo-box">
+                                            <img src="../logos/nfl.svg" alt="NFL" onerror="this.onerror=null; this.src='../images/event-logos/nfl.png';">
+                                        </div>
+                                    </div>
+                                    <div class="past-bio-col">
+                                        <p>
+                                            The NFL is expanding its global reach through inclusive brand strategy, culturally attuned campaigns, and next-generation audience engagement. Drawing from nearly two decades across sports, media, and tech, Sarah Bishop highlighted how strategic partnerships, fan-first storytelling, and purpose-driven initiatives grow affinity, recruit new audiences, and deepen engagement across generations.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 3 -->
+                            <div class="past-speaker-card">
+                                <div class="past-card-gallery">
+                                    <div class="past-thumb"><img src="../images/img1.png" alt="Chris Walker speaking"></div>
+                                    <div class="past-thumb"><img src="../images/img2.png" alt="Audience interaction"></div>
+                                    <div class="past-thumb"><img src="../images/img3.png" alt="Room discussion"></div>
+                                </div>
+
+                                <div class="past-card-body">
+                                    <div class="past-info-col">
+                                        <h3 class="past-speaker-name">Chris Walker</h3>
+                                        <div class="past-speaker-role">Research Lead</div>
+                                        <div class="past-logo-box">
+                                            <img src="../logos/cash-app.svg" alt="Cash App" onerror="this.onerror=null; this.src='../images/event-logos/cashapp.png';">
+                                        </div>
+                                    </div>
+                                    <div class="past-bio-col">
+                                        <p>
+                                            Research shapes how Cash App makes financial systems more accessible. Drawing on market, policy, and behavioral insights, Chris Walker showed how data guides products that empower first-time savers, debit card holders, and everyday investors. He highlighted how understanding financial barriers, building trust, and designing for inclusion drive impact across Cash App's ecosystem.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 4 -->
+                            <div class="past-speaker-card">
+                                <div class="past-card-gallery">
+                                    <div class="past-thumb"><img src="../images/img1.png" alt="Liz Bergman talk"></div>
+                                    <div class="past-thumb"><img src="../images/img2.png" alt="Executive stage"></div>
+                                    <div class="past-thumb"><img src="../images/img3.png" alt="Crowd networking"></div>
+                                </div>
+
+                                <div class="past-card-body">
+                                    <div class="past-info-col">
+                                        <h3 class="past-speaker-name">Liz Bergman</h3>
+                                        <div class="past-speaker-role">Vice President &amp; GM</div>
+                                        <div class="past-logo-box">
+                                            <img src="../logos/american-express.svg" alt="American Express" onerror="this.onerror=null; this.src='../images/event-logos/amex.png';">
+                                        </div>
+                                    </div>
+                                    <div class="past-bio-col">
+                                        <p>
+                                            Liz Bergman shared how American Express leverages strategy, operations, and AI to drive customer-centric growth. She highlighted how cross-functional alignment and thoughtful product launches create seamless experiences, how data informs decisions, and how brands can scale while maintaining trust and human connection in an increasingly automated world.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 5 -->
+                            <div class="past-speaker-card">
+                                <div class="past-card-gallery">
+                                    <div class="past-thumb"><img src="../images/img1.png" alt="Ankur Jain keynote"></div>
+                                    <div class="past-thumb"><img src="../images/img2.png" alt="Stage fireside"></div>
+                                    <div class="past-thumb"><img src="../images/img3.png" alt="Audience view"></div>
+                                </div>
+
+                                <div class="past-card-body">
+                                    <div class="past-info-col">
+                                        <h3 class="past-speaker-name">Ankur Jain</h3>
+                                        <div class="past-speaker-role">Founder &amp; CEO</div>
+                                        <div class="past-logo-box">
+                                            <img src="../logos/bilt.svg" alt="Bilt" onerror="this.onerror=null; this.src='../images/event-logos/bilt.png';">
+                                        </div>
+                                    </div>
+                                    <div class="past-bio-col">
+                                        <p>
+                                            Ankur Jain shared how Bilt transforms rent, a major financial commitment, into opportunities for wealth, rewards, and long-term value. Drawing on his experience building a multi-billion-dollar platform, he explored mission-driven growth, designing products without a finished image, and solving overlooked but critical problems in fintech and real estate.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part C: Relive the Moments Mosaic Grid -->
+                <div class="moments-section-wrap">
+                    <div class="moments-header">
+                        <div class="moments-icon-badge" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h2 class="moments-title">Relive the moments from past events.</h2>
+                    </div>
+
+                    <div class="moments-mosaic-container">
+                        <div class="mosaic-row mosaic-row-1">
+                            <div class="mosaic-item"><img src="../images/img1.png" alt="Speaker fireside"></div>
+                            <div class="mosaic-item"><img src="../images/img2.png" alt="Attendees smiling"></div>
+                            <div class="mosaic-item"><img src="../images/img3.png" alt="Audience listening"></div>
+                            <div class="mosaic-item"><img src="../images/img1.png" alt="Woman networking"></div>
+                        </div>
+
+                        <div class="mosaic-row mosaic-row-2">
+                            <div class="mosaic-item"><img src="../images/img2.png" alt="Speaker sitting with mic"></div>
+                            <div class="mosaic-item"><img src="../images/img3.png" alt="Wide hall audience view"></div>
+                            <div class="mosaic-item"><img src="../images/img1.png" alt="Speaker smiling standing"></div>
+                            <div class="mosaic-item"><img src="../images/img2.png" alt="Hands holding smartphone"></div>
+                        </div>
+
+                        <div class="mosaic-row mosaic-row-3">
+                            <div class="mosaic-item"><img src="../images/img3.png" alt="Cocktail conversation"></div>
+                            <div class="mosaic-item"><img src="../images/img1.png" alt="Presenter with microphone"></div>
+                            <div class="mosaic-item"><img src="../images/img2.png" alt="Future of AI stage panel"></div>
+                            <div class="mosaic-item"><img src="../images/img3.png" alt="Speaker in glasses closing"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             3. SESSIONS SECTION
+        ========================================= -->
+        <section class="sessions-section" id="sessions">
+            <div class="sessions-container">
+
+                <div class="sessions-header">
+                    <h2 class="sessions-title">An Exceptional Lineup: Coming Soon</h2>
+                    <p class="sessions-subtitle">
+                        We're hand-picking the voices that take center stage. Register early to be the first to know and stay ahead of the curve.
+                    </p>
+                </div>
+
+                <div class="sessions-skeleton-list">
+                    <div class="session-skeleton-card">
+                        <div class="skeleton-top-row">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-lines-group">
+                                <div class="skeleton-line line-long"></div>
+                                <div class="skeleton-line line-medium"></div>
+                            </div>
+                            <div class="skeleton-right-profile">
+                                <div class="skeleton-small-avatar"></div>
+                                <div class="skeleton-small-lines">
+                                    <div class="skeleton-line line-short"></div>
+                                    <div class="skeleton-line line-xshort"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skeleton-bottom-row">
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="session-skeleton-card">
+                        <div class="skeleton-top-row">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-lines-group">
+                                <div class="skeleton-line line-long"></div>
+                                <div class="skeleton-line line-medium"></div>
+                            </div>
+                            <div class="skeleton-right-profile">
+                                <div class="skeleton-small-avatar"></div>
+                                <div class="skeleton-small-lines">
+                                    <div class="skeleton-line line-short"></div>
+                                    <div class="skeleton-line line-xshort"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skeleton-bottom-row">
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                            <div class="skeleton-pill-block">
+                                <div class="skeleton-line line-tab"></div>
+                                <div class="skeleton-line line-tab-sub"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sessions-bottom-notice">
+                    The full schedule will be announced soon.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             4. THE EXPERIENCE (EXACT HORIZONS PINNED DIAGONAL)
+        ========================================= -->
+        <section class="experience-pin-container" id="experience">
+            
+            <!-- 1. Top Card Intro Block (Scrolls away before pinned stage) -->
+            <div class="exp-intro-block">
+                <div class="experience-container">
+                    <div class="experience-top-card" id="expTopCard">
+                        <div class="exp-left-col">
+                            <h2 class="exp-main-title">Your Summit Experience</h2>
+                            <p class="exp-main-desc">
+                                An experience designed to inspire, connect, and challenge leaders and innovators in product.
+                            </p>
+                        </div>
+
+                        <div class="exp-right-col">
+                            <div class="exp-feature-item">
+                                <h3 class="exp-feature-title">Exclusive Panels</h3>
+                                <p class="exp-feature-desc">Conversations with senior executives from leading global brands.</p>
+                            </div>
+                            <div class="exp-feature-item">
+                                <h3 class="exp-feature-title">Curated Audiences</h3>
+                                <p class="exp-feature-desc">Attend alongside hand-selected senior leaders.</p>
+                            </div>
+                            <div class="exp-feature-item">
+                                <h3 class="exp-feature-title">Elevated Networking</h3>
+                                <p class="exp-feature-desc">Cocktails, conversation, and connection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Pinned Viewport (Only Diagonal Rising Photos) -->
+            <div class="exp-pinned-viewport" id="expPinnedViewport">
+                <div class="exp-diagonal-gallery-stream" id="expDiagonalStream">
+                    <div class="rising-photo-box"><img src="../images/img1.png" alt="Speaker on stage"></div>
+                    <div class="rising-photo-box"><img src="../images/img2.png" alt="Attendees smiling"></div>
+                    <div class="rising-photo-box"><img src="../images/img3.png" alt="Audience listening"></div>
+                    <div class="rising-photo-box"><img src="../images/img1.png" alt="Panel discussion"></div>
+                    <div class="rising-photo-box"><img src="../images/img2.png" alt="Toast with drinks"></div>
+                    <div class="rising-photo-box"><img src="../images/img3.png" alt="Keynote address"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =========================================
+            5. DETAILS SECTION (DETAILS OF THE EVENING & COUNTDOWN)
+        ========================================= -->
+        <section class="summit-details-section" id="details">
+            <div class="details-outer-container">
+
+                <!-- Top Heading -->
+                <h2 class="details-main-heading">Details of the Evening</h2>
+
+                <!-- Main Split Card Layout -->
+                <div class="details-split-card">
+                    
+                    <!-- Left White Details Info -->
+                    <div class="details-info-white-box">
+
+                        <!-- ROW 1: AGENDA -->
+                        <div class="detail-block-row">
+                            <div class="detail-block-badge">
+                                <span class="badge-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </span>
+                                <span class="badge-name">Agenda</span>
+                            </div>
+
+                            <div class="agenda-timeline-list">
+                                <div class="agenda-time-item">
+                                    <span class="agenda-pin-dot"></span>
+                                    <span class="agenda-time">2:50pm</span>
+                                    <span class="agenda-desc">Check-in Opens</span>
+                                </div>
+                                <div class="agenda-time-item">
+                                    <span class="agenda-pin-dot"></span>
+                                    <span class="agenda-time">3:15pm</span>
+                                    <span class="agenda-desc">Sessions Begin</span>
+                                </div>
+                                <div class="agenda-time-item">
+                                    <span class="agenda-pin-dot"></span>
+                                    <span class="agenda-time">5:45pm</span>
+                                    <span class="agenda-desc">Closing Remarks</span>
+                                </div>
+                                <div class="agenda-time-item">
+                                    <span class="agenda-pin-dot"></span>
+                                    <span class="agenda-time">6:00pm</span>
+                                    <span class="agenda-desc">Cocktail Reception</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-divider-line"></div>
+
+                        <!-- ROW 2: WHO SHOULD ATTEND -->
+                        <div class="detail-block-row">
+                            <div class="detail-block-badge">
+                                <span class="badge-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
+                                </span>
+                                <span class="badge-name">Who Should Attend</span>
+                            </div>
+
+                            <div class="detail-text-content">
+                                <div class="check-paragraph-item">
+                                    <svg class="check-mark-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <p>
+                                        The Product Summit is designed for senior product leaders and builders who are driving innovation across the entire product lifecycle. This invitation-only summit brings together those operating at the intersection of emerging technology, continuous discovery, and product-led growth.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-divider-line"></div>
+
+                        <!-- ROW 3: WHAT'S INCLUDED -->
+                        <div class="detail-block-row">
+                            <div class="detail-block-badge">
+                                <span class="badge-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="9 12 12 15 16 10"></polyline>
+                                    </svg>
+                                </span>
+                                <span class="badge-name">What's Included</span>
+                            </div>
+
+                            <div class="detail-text-content">
+                                <div class="check-paragraph-item">
+                                    <svg class="check-mark-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <p>
+                                        <strong>Gourmet Light Refreshments</strong> – Enjoy a curated selection of artisanal bites and small plates, perfect for connecting with colleagues.
+                                    </p>
+                                </div>
+
+                                <div class="check-paragraph-item">
+                                    <svg class="check-mark-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <p>
+                                        Settle in for easy conversation and good company in a warm, welcoming space. With a thoughtful selection of beer and wine on hand, it's the perfect backdrop for winding down or catching up.
+                                    </p>
+                                </div>
+
+                                <!-- Dietary Restrictions Box -->
+                                <div class="dietary-restriction-card">
+                                    <h4 class="dietary-heading">Have dietary restrictions?</h4>
+                                    <p class="dietary-body">
+                                        To ensure we can accommodate your dietary needs, please inform us at least 48 hours before the workshop start date.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Neon Structure Background Art -->
+                    <div class="details-artwork-col">
+                        <div class="artwork-image-wrapper">
+                            <img src="../images/img3.png" alt="Neon Event Light Architecture">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Countdown & Ticket Pass Section -->
+                <div class="details-bottom-countdown-wrap">
+                    <div class="summit-countdown-grid">
+
+                        <!-- Left: Countdown Timer & Team Call -->
+                        <div class="summit-countdown-col">
+                            <div class="countdown-heading-label">Until AI Product Summit New York</div>
+
+                            <div class="countdown-timer-display" id="summitDetailsCountdown">
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="sCdDays">72</span>
+                                    <span class="timer-txt">Days</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="sCdHours">23</span>
+                                    <span class="timer-txt">Hours</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="sCdMinutes">43</span>
+                                    <span class="timer-txt">Minutes</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="sCdSeconds">33</span>
+                                    <span class="timer-txt">Seconds</span>
+                                </div>
+                            </div>
+
+                            <div class="team-invite-box">
+                                <h3 class="team-invite-title">Want to Bring your Team?</h3>
+                                <p class="team-invite-desc">
+                                    Book a call for your organization with enterprise packages built for teams—giving leaders the insights to shape the future of digital.
+                                </p>
+                                <a href="/contact.html" class="book-call-btn">Book a Call</a>
+                            </div>
+                        </div>
+
+                        <!-- Right: Ticket Card -->
+                        <div class="summit-details-ticket-pass">
+                            <div class="pass-header-info">
+                                <div class="pass-logo-title">
+                                    <span class="pass-brand-tag">AI PRODUCT</span>
+                                    <h4 class="pass-event-name">SUMMIT</h4>
+                                    <div class="pass-theme">NEW YORK</div>
+                                </div>
+                                <div class="pass-meta-time">
+                                    Thu, Dec 10, 2026 | 3:00 PM - 7:00 PM EST
+                                </div>
+                            </div>
+
+                            <div class="pass-middle-venue">
+                                <div class="pass-venue-lines">
+                                    <strong>Courstrike New York</strong>
+                                    <span>136 Crosby St</span>
+                                    <span>New York City, NY</span>
+                                </div>
+
+                                <div class="pass-barcode-wrap" aria-hidden="true">
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 4px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 3px;"></span>
+                                    <span class="bc-bar" style="width: 5px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 4px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 3px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                </div>
+                            </div>
+
+                            <div class="pass-footer-cta">
+                                <div class="pass-price-box">
+                                    <span class="price-lbl">Early Bird Price</span>
+                                    <div class="price-figures">
+                                        <span class="current-price">$325</span>
+                                        <span class="strike-price">$475</span>
+                                    </div>
+                                </div>
+                                <a href="#request-tickets" class="pass-request-btn">Request Tickets</a>
+                            </div>
+
+                            <div class="ticket-bottom-note">Save with early bird pricing</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+            6. LOCATION SECTION
+        ========================================= -->
+        <section class="location-section" id="location">
+            <!-- Top Welcome Banner with Background Building Photo -->
+            <div class="location-hero-banner">
+                <div class="location-banner-content">
+                    <span class="location-banner-tag">Welcome to</span>
+                    <h2 class="location-banner-title">Courstrike New York</h2>
+                </div>
+            </div>
+
+            <!-- Main Glassmorphism "How to Get Here" Card -->
+            <div class="location-container">
+                <div class="location-glass-card">
+                    
+                    <!-- Left Guide Info -->
+                    <div class="location-guide-col">
+                        <h3 class="location-card-title">How to Get Here</h3>
+                        <div class="location-title-bar"></div>
+
+                        <!-- Address & Directions Pill -->
+                        <div class="location-address-box">
+                            <div class="addr-text-wrap">
+                                <svg class="addr-pin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <div class="addr-lines">
+                                    <strong>Courstrike New York</strong>
+                                    <span>136 Crosby St, 4th Floor, New York</span>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=136+Crosby+St,+New+York" target="_blank" rel="noopener noreferrer" class="get-directions-btn">
+                                <span>Get Directions</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Stepper Vertical Timeline -->
+                        <div class="location-timeline">
+                            <!-- Step 1 -->
+                            <div class="timeline-step">
+                                <div class="timeline-marker">
+                                    <div class="marker-circle"></div>
+                                    <div class="marker-line"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <span class="step-label">FINDING YOUR WAY</span>
+                                    <p class="step-desc">
+                                        Located on Crosby St just south of Houston between Broadway and Lafayette, just steps away from the Lafayette B D F M train.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="timeline-step">
+                                <div class="timeline-marker">
+                                    <div class="marker-circle"></div>
+                                    <div class="marker-line"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <span class="step-label">ENTERING THE BUILDING</span>
+                                    <p class="step-desc">
+                                        A Courstrike team member will be waiting for you at the elevators to take you to the 4th floor.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="timeline-step">
+                                <div class="timeline-marker">
+                                    <div class="marker-circle"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <span class="step-label">ONCE YOU'RE INSIDE</span>
+                                    <p class="step-desc">
+                                        Our staff will be there to greet you at reception.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive Map Mockup -->
+                    <div class="location-map-col">
+                        <div class="map-mockup-frame">
+                            <!-- Stylized Vector Map Graphics matching screenshot -->
+                            <svg class="map-graphic-svg" viewBox="0 0 520 420" preserveAspectRatio="xMidYMid slice">
+                                <rect width="100%" height="100%" fill="#edf0f3"/>
+                                
+                                <!-- Street Roads -->
+                                <path d="M-20,120 L540,320" stroke="#ffffff" stroke-width="32" stroke-linecap="round"/>
+                                <path d="M-20,40 L540,240" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+                                <path d="M120,-20 L40,440" stroke="#ffffff" stroke-width="34" stroke-linecap="round"/>
+                                <path d="M380,-20 L300,440" stroke="#ffffff" stroke-width="30" stroke-linecap="round"/>
+                                <path d="M220,-20 L160,440" stroke="#ffffff" stroke-width="38" stroke-linecap="round"/>
+                                <path d="M-20,290 L540,160" stroke="#ffffff" stroke-width="24" stroke-linecap="round"/>
+
+                                <!-- Street Names -->
+                                <text x="70" y="85" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(18, 70, 85)">E Houston St</text>
+                                <text x="80" y="165" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(18, 80, 165)">W Houston St</text>
+                                <text x="380" y="270" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(18, 380, 270)">E Houston St</text>
+                                <text x="60" y="380" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(-80, 60, 380)">Broadway</text>
+                                <text x="180" y="360" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(-80, 180, 360)">Crosby St</text>
+                                <text x="365" y="380" font-size="11" fill="#717a8a" font-weight="600" transform="rotate(-80, 365, 380)">Lafayette St</text>
+                            </svg>
+
+                            <!-- Center Location Pin -->
+                            <div class="map-center-pin" aria-label="Courstrike Venue Location">
+                                <svg class="pin-marker-svg" width="46" height="58" viewBox="0 0 46 58" fill="none">
+                                    <path d="M23 0C10.2975 0 0 10.2975 0 23C0 39.5 23 58 23 58C23 58 46 39.5 46 23C46 10.2975 35.7025 0 23 0Z" fill="#090a0f"/>
+                                    <circle cx="23" cy="22" r="14" fill="#ffffff"/>
+                                    <path d="M17 22H29M23 16V28M19 18L27 26M27 18L19 26" stroke="#090a0f" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+            7. FAQS SECTION (ALL CLOSED BY DEFAULT)
+        ========================================= -->
+        <section class="summit-faqs-section" id="faqs">
+            <div class="summit-faqs-container">
+
+                <!-- Heading -->
+                <h2 class="summit-faqs-heading">Frequently Asked Questions</h2>
+                <div class="summit-faqs-heading-line"></div>
+
+                <!-- White Accordion Card Container -->
+                <div class="summit-faqs-card">
+
+                    <!-- FAQ 1 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">What is Product Summit, and who is it for?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                Courstrike's Product Summit is an exclusive, semi-annual conference designed for professionals driving the future of digital products, technology, and business. This intensive, single-day event convenes a curated group of executives and industry leaders to explore the most relevant ideas shaping technology and digital products, and to anticipate what's next. Each edition of Product Summit features expert panel discussions, dynamic product demonstrations, and strategic networking, where attendees can gain insights and meaningful connections in an intimate, high-impact event.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">How long is the event and what does the schedule look like?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                The summit runs from 3:00 PM to 7:00 PM EST, featuring consecutive keynote talks, tactical executive panels, interactive technology deep-dives, and concludes with a cocktail networking reception.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">How do I register?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                You can request passes directly through the "Request Tickets" button on this page. Registrations are reviewed to ensure a curated, high-level audience of product leaders.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">What is included with my ticket?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                Your pass includes access to all keynote sessions, curated executive roundtable discussions, product demonstrations, artisanal gourmet bites, and premium drinks during the networking reception.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">Will the sessions be recorded or streamed online?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                Select keynote highlights will be shared with attendees post-event. Breakout discussions and roundtables remain in-person only to encourage candid peer collaboration.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">Are group registrations or team passes available?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                Yes. For organizations attending with teams of three or more, enterprise packages and preferential rates are available by clicking "Book a Call".
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">Is there a dress code?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                The recommended attire is business casual to smart casual.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">Will there be opportunities to network with speakers or other attendees?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                Yes. Multiple dedicated networking intervals and the concluding evening cocktail reception offer direct opportunities to connect with speakers and executive peers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 9 -->
+                    <div class="summit-faq-item">
+                        <button type="button" class="summit-faq-question">
+                            <span class="faq-q-text">Are there speaking opportunities?</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="summit-faq-answer">
+                            <p>
+                                We welcome proposals from seasoned product leaders. You can submit your abstract and background through our contact page for consideration.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Countdown & Ticket Pass Section -->
+                <div class="faqs-bottom-countdown-wrap">
+                    <div class="summit-countdown-grid">
+
+                        <!-- Left: Countdown Timer -->
+                        <div class="summit-countdown-col">
+                            <div class="countdown-heading-label">Until AI Product Summit New York</div>
+
+                            <div class="countdown-timer-display" id="faqsCountdown">
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="fCdDays">72</span>
+                                    <span class="timer-txt">Days</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="fCdHours">23</span>
+                                    <span class="timer-txt">Hours</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="fCdMinutes">33</span>
+                                    <span class="timer-txt">Minutes</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="fCdSeconds">54</span>
+                                    <span class="timer-txt">Seconds</span>
+                                </div>
+                            </div>
+
+                            <div class="team-invite-box">
+                                <h3 class="team-invite-title">Want to Bring your Team?</h3>
+                                <p class="team-invite-desc">
+                                    Book a call for your organization with enterprise packages built for teams—giving leaders the insights to shape the future of digital.
+                                </p>
+                                <a href="/contact.html" class="book-call-btn">Book a Call</a>
+                            </div>
+                        </div>
+
+                        <!-- Right: Ticket Card -->
+                        <div class="summit-details-ticket-pass">
+                            <div class="pass-header-info">
+                                <div class="pass-logo-title">
+                                    <span class="pass-brand-tag">AI PRODUCT</span>
+                                    <h4 class="pass-event-name">SUMMIT</h4>
+                                    <div class="pass-theme">NEW YORK</div>
+                                </div>
+                                <div class="pass-meta-time">
+                                    Thu, Dec 10, 2026 | 3:00 PM - 7:00 PM EST
+                                </div>
+                            </div>
+
+                            <div class="pass-middle-venue">
+                                <div class="pass-venue-lines">
+                                    <strong>Courstrike New York</strong>
+                                    <span>136 Crosby St</span>
+                                    <span>New York City, NY</span>
+                                </div>
+
+                                <div class="pass-barcode-wrap" aria-hidden="true">
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 4px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 3px;"></span>
+                                    <span class="bc-bar" style="width: 5px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                    <span class="bc-bar" style="width: 4px;"></span>
+                                    <span class="bc-bar" style="width: 1px;"></span>
+                                    <span class="bc-bar" style="width: 3px;"></span>
+                                    <span class="bc-bar" style="width: 2px;"></span>
+                                </div>
+                            </div>
+
+                            <div class="pass-footer-cta">
+                                <div class="pass-price-box">
+                                    <span class="price-lbl">Early Bird Price</span>
+                                    <div class="price-figures">
+                                        <span class="current-price">$325</span>
+                                        <span class="strike-price">$475</span>
+                                    </div>
+                                </div>
+                                <a href="#request-tickets" class="pass-request-btn">Request Tickets</a>
+                            </div>
+
+                            <div class="ticket-bottom-note">Save with early bird pricing</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared Footer -->
+    <div id="footer"></div>
+
+    <!-- Component loader script -->
+    <script src="../js/components.js"></script>
+
+    <!-- Unified Master Script with Exact Diagonal Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stickyNav = document.getElementById('eventStickyNav');
+            const navLinks = document.querySelectorAll('.sticky-nav-links a');
+            const sections = document.querySelectorAll('section[id]');
+
+            const expPinContainer = document.getElementById('experience');
+            const expDiagonalStream = document.getElementById('expDiagonalStream');
+            const expPinnedViewport = document.getElementById('expPinnedViewport');
+
+            // 1. Unified Scroll Handler
+            function handlePageScroll() {
+                const scrollPos = window.scrollY;
+
+                // Secondary Header Show / Hide
+                if (scrollPos > 40) {
+                    stickyNav.classList.add('visible');
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+
+                // ScrollSpy highlight
+                sections.forEach(sec => {
+                    const top = sec.offsetTop - 120;
+                    const height = sec.offsetHeight;
+                    const id = sec.getAttribute('id');
+
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+
+                // EXACT HORIZONS DIAGONAL SCROLL ANIMATION
+                if (expPinContainer && expPinnedViewport && expDiagonalStream && window.innerWidth > 992) {
+                    const rect = expPinnedViewport.getBoundingClientRect();
+                    const containerRect = expPinContainer.getBoundingClientRect();
+                    const totalScrollable = expPinContainer.offsetHeight - window.innerHeight;
+
+                    // Progress calculates when sticky viewport reaches top
+                    if (rect.top <= 68 && containerRect.bottom >= window.innerHeight) {
+                        const progress = Math.min(Math.max((68 - containerRect.top) / totalScrollable, 0), 1);
+
+                        // Exact values matching Horizons (Bottom-Right to Top-Left)
+                        const startX = 100;
+                        const endX = -135;
+                        const startY = 70;
+                        const endY = -70;
+
+                        const currentX = startX + (endX - startX) * progress;
+                        const currentY = startY + (endY - startY) * progress;
+
+                        expDiagonalStream.style.transform = `translate3d(${currentX}vw, ${currentY}vh, 0)`;
+                    } else if (containerRect.top > 68) {
+                        expDiagonalStream.style.transform = `translate3d(100vw, 70vh, 0)`;
+                    } else if (containerRect.bottom < window.innerHeight) {
+                        expDiagonalStream.style.transform = `translate3d(-140vw, -70vh, 0)`;
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', handlePageScroll, { passive: true });
+            handlePageScroll();
+
+            // 2. Carousel Controls for Past Speakers
+            const track = document.getElementById('pastTrack');
+            const prevBtn = document.getElementById('pastPrevBtn');
+            const nextBtn = document.getElementById('pastNextBtn');
+
+            if (track && prevBtn && nextBtn) {
+                const cards = Array.from(track.children);
+                let currentIndex = 0;
+
+                function updateCarousel() {
+                    const cardWidth = cards[0].offsetWidth;
+                    const gap = 30;
+                    const offset = currentIndex * (cardWidth + gap);
+                    track.style.transform = `translateX(-${offset}px)`;
+
+                    prevBtn.style.opacity = currentIndex === 0 ? "0.4" : "1";
+                    prevBtn.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
+
+                    nextBtn.style.opacity = currentIndex === cards.length - 1 ? "0.4" : "1";
+                    nextBtn.style.pointerEvents = currentIndex === cards.length - 1 ? "none" : "auto";
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < cards.length - 1) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+
+                window.addEventListener('resize', updateCarousel);
+                updateCarousel();
+            }
+        });
+
+        // Live Countdown to December 10, 2026 for Summit Details
+const summitDetailsTarget = new Date('December 10, 2026 15:00:00 EST').getTime();
+
+function updateSummitDetailsCountdown() {
+    const now = new Date().getTime();
+    const diff = summitDetailsTarget - now;
+
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const d = document.getElementById('sCdDays');
+        const h = document.getElementById('sCdHours');
+        const m = document.getElementById('sCdMinutes');
+        const s = document.getElementById('sCdSeconds');
+
+        if (d) d.textContent = String(days).padStart(2, '0');
+        if (h) h.textContent = String(hours).padStart(2, '0');
+        if (m) m.textContent = String(minutes).padStart(2, '0');
+        if (s) s.textContent = String(seconds).padStart(2, '0');
+    }
+}
+
+setInterval(updateSummitDetailsCountdown, 1000);
+updateSummitDetailsCountdown();
+
+// FAQs Accordion Interactive Toggle (Single Open / Toggle All)
+const summitFaqItems = document.querySelectorAll('.summit-faq-item');
+
+summitFaqItems.forEach(item => {
+    const btn = item.querySelector('.summit-faq-question');
+    const icon = item.querySelector('.faq-toggle-icon');
+
+    btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Close others
+        summitFaqItems.forEach(other => {
+            other.classList.remove('open');
+            const otherIcon = other.querySelector('.faq-toggle-icon');
+            if (otherIcon) otherIcon.textContent = '+';
+        });
+
+        // Toggle clicked item
+        if (!isOpen) {
+            item.classList.add('open');
+            icon.textContent = '−';
+        } else {
+            item.classList.remove('open');
+            icon.textContent = '+';
+        }
+    });
+});
+
+// Live Countdown for FAQs Section (Dec 10, 2026)
+const faqsCountdownTarget = new Date('December 10, 2026 15:00:00 EST').getTime();
+
+function updateFaqsCountdown() {
+    const now = new Date().getTime();
+    const diff = faqsCountdownTarget - now;
+
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const d = document.getElementById('fCdDays');
+        const h = document.getElementById('fCdHours');
+        const m = document.getElementById('fCdMinutes');
+        const s = document.getElementById('fCdSeconds');
+
+        if (d) d.textContent = String(days).padStart(2, '0');
+        if (h) h.textContent = String(hours).padStart(2, '0');
+        if (m) m.textContent = String(minutes).padStart(2, '0');
+        if (s) s.textContent = String(seconds).padStart(2, '0');
+    }
+}
+
+setInterval(updateFaqsCountdown, 1000);
+updateFaqsCountdown();
+    </script>
+
+</body>
+</html>
