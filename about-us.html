@@ -228,11 +228,8 @@
 
         .logo-marquee {
             width: 100%;
-
             overflow: hidden;
-
             position: relative;
-
             mask-image: linear-gradient(
                 to right,
                 transparent,
@@ -240,7 +237,6 @@
                 #000 92%,
                 transparent
             );
-
             -webkit-mask-image: linear-gradient(
                 to right,
                 transparent,
@@ -252,53 +248,40 @@
 
         .logo-track {
             width: max-content;
-
             display: flex;
-
             align-items: center;
-
-            gap: 70px;
-
-            padding: 10px 35px;
-
-            animation: aboutLogoScroll 42s linear infinite;
-
+            gap: 65px;
+            padding: 12px 35px;
+            animation: aboutLogoScroll 40s linear infinite;
             will-change: transform;
         }
 
         .company-logo {
             flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
 
-            min-width: 120px;
-
-            color: rgba(255, 255, 255, 0.66);
-
-            white-space: nowrap;
-
-            text-align: center;
-
-            font-size: 25px;
-
-            line-height: 1;
-
-            font-weight: 700;
-
-            filter: grayscale(1);
-
-            opacity: 0.82;
-
-            transition:
-                opacity 0.25s ease,
-                filter 0.25s ease;
+        .company-logo img {
+            height: 32px;              
+            max-width: 130px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.75;
+            filter: brightness(0) invert(1); 
+            transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
         }
 
         .logo-marquee:hover .logo-track {
             animation-play-state: paused;
         }
 
-        .logo-marquee:hover .company-logo {
+        .company-logo:hover img {
             opacity: 1;
-            filter: grayscale(0);
+            transform: scale(1.06);
+            /* filter: none; */ /* Jo hover par original colored logo jovo hoy to aani comment kadhi nakhvi */
         }
 
         /* Company names */
@@ -3244,92 +3227,84 @@
 
                     <!-- FIRST SET -->
 
-                    <div class="company-logo disney">
-                        Disney
+                    <div class="company-logo">
+                        <img src="/logos/apple-BSb7elEh.svg" alt="Apple">
                     </div>
 
-                    <div class="company-logo amazon">
-                        amazon
+                    <div class="company-logo">
+                        <img src="/logos/openai-C2CruhdW.svg" alt="OpenAI">
                     </div>
 
-                    <div class="company-logo nike">
-                        NIKE
+                    <div class="company-logo">
+                        <img src="/logos/mastercard-DzuA8yXC.svg" alt="Mastercard">
                     </div>
 
-                    <div class="company-logo walmart">
-                        Walmart<span>✦</span>
+                    <div class="company-logo">
+                        <img src="/logos/anthropic-CtuPP2GD.svg" alt="Anthropic">
                     </div>
 
-                    <div class="company-logo shopify">
-                        shopify
+                    <div class="company-logo">
+                        <img src="/logos/disney-fFHs9X3n.svg" alt="Disney">
                     </div>
 
-                    <div class="company-logo apple">
-                        ● Apple
+                    <div class="company-logo">
+                        <img src="/logos/amazon-Di2h6wTx.svg" alt="Amazon">
                     </div>
 
-                    <div class="company-logo openai">
-                        ◉ OpenAI
+                    <div class="company-logo">
+                        <img src="/logos/nike-DEymYOMO.svg" alt="Nike">
                     </div>
 
-                    <div class="company-logo mastercard">
-
-                        <i></i>
-                        <i></i>
-
-                        <b>mastercard</b>
-
+                    <div class="company-logo">
+                        <img src="/logos/walmart-vYA2S4Ej.svg" alt="Walmart">
                     </div>
 
-                    <div class="company-logo anthropic">
-                        ANTHROPIC
+                    <div class="company-logo">
+                        <img src="/logos/shopify-P6Nq5HRK.svg" alt="Shopify">
                     </div>
 
 
-                    <!-- SECOND SET
-                         Required for seamless loop -->
+                    <!-- ===== SECOND SET (For Smooth Infinite Loop) ===== -->
 
-                    <div class="company-logo disney">
-                        Disney
+                    <div class="company-logo">
+                        <img src="/logos/intuit-D1T_YaYF.svg" alt="Intuit">
                     </div>
 
-                    <div class="company-logo amazon">
-                        amazon
+                    <div class="company-logo">
+                        <img src="/logos/tik-tok-DsQE0kAg.svg" alt="TikTok">
                     </div>
 
-                    <div class="company-logo nike">
-                        NIKE
+                    <div class="company-logo">
+                        <img src="/logos/stripe-B_yOJQOV.svg" alt="Stripe">
                     </div>
 
-                    <div class="company-logo walmart">
-                        Walmart<span>✦</span>
+                    <div class="company-logo">
+                        <img src="/logos/jp-morgan-chase-BFZJZcAb.svg" alt="JPMorganChase">
                     </div>
 
-                    <div class="company-logo shopify">
-                        shopify
+                    <div class="company-logo">
+                        <img src="/logos/visa-CCLr1viw.svg" alt="Visa">
                     </div>
 
-                    <div class="company-logo apple">
-                        ● Apple
+                    <div class="company-logo">
+                        <img src="/logos/spotify-1vlQYlz4.svg" alt="Spotify">
                     </div>
 
-                    <div class="company-logo openai">
-                        ◉ OpenAI
+                    <div class="company-logo">
+                        <img src="/logos/microsoft-rwvmviyC.svg" alt="Microsoft">
                     </div>
 
-                    <div class="company-logo mastercard">
-
-                        <i></i>
-                        <i></i>
-
-                        <b>mastercard</b>
-
+                    <div class="company-logo">
+                        <img src="/logos/uber-CuYQ6LLL.svg" alt="Uber">
                     </div>
 
-                    <div class="company-logo anthropic">
-                        ANTHROPIC
+                    <div class="company-logo">
+                        <img src="/logos/adobe-BcqsFWNQ.svg" alt="Adobe">
                     </div>
 
+                    <div class="company-logo">
+                        <img src="/logos/salesforce-B_GpkNgn.svg" alt="salesforce">
+                    </div>
                 </div>
 
             </div>

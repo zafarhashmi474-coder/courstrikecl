@@ -504,47 +504,57 @@ a {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 38px;
-    margin-top: 30px;
+    gap: 48px;                
+    margin-top: 36px;
+    width: 100%;
 }
 
 .logo-box {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 500;
-    font-family: inherit;
-    letter-spacing: -0.3px;
-    line-height: 1;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0.95;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.brand-svg {
-    width: 22px;
-    height: 22px;
-    display: block;
-    fill: #ffffff;
-    flex-shrink: 0;
+.logo-box:hover {
+    opacity: 1;
+    transform: scale(1.05);    /* Hover effect */
 }
 
-/* Normal logos */
-.brand-svg {
-    width: 22px;
-    height: 22px;
+.logo-box .brand-img {
+    height: 28px !important;   
+    max-height: 32px !important;
+    max-width: 140px !important;
+    width: auto !important;
+    object-fit: contain;
     display: block;
-    fill: #ffffff;
-    flex-shrink: 0;
+    filter: brightness(0) invert(1);
 }
 
-/* Amazon wordmark logo */
-/* .amazon-svg {
-    width: 78px;
-    height: 24px;
-    display: block;
-    fill: #ffffff;
-    flex-shrink: 0;
-} */
+/* Tablets */
+@media (max-width: 900px) {
+    .ai-logos-row {
+        gap: 32px;
+    }
+    .logo-box .brand-img {
+        height: 24px !important;
+        max-width: 110px !important;
+    }
+}
+
+/* Mobile  */
+@media (max-width: 600px) {
+    .ai-logos-row {
+        gap: 24px 28px;
+    }
+    .logo-box .brand-img {
+        height: 20px !important;
+        max-width: 95px !important;
+    }
+}
+
 
 /* =========================================
    OLD COMPANY LOGOS SUPPORT
