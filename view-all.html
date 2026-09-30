@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guides - BrainStation</title>
+
+    <!-- Main CSS Link -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================
+           RESET & GLOBAL STYLES
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           WHITE HEADER THEME FIX (CLEAN & TRANSPARENT)
+        ========================================= */
+        .site-header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 80px !important;
+            background: #ffffff !important;
+            border-bottom: 1px solid #e5e7eb !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            z-index: 9999 !important;
+        }
+
+        .site-header .brand-logo,
+        .site-header .brand img {
+            filter: invert(1) brightness(0) !important;
+        }
+
+        .site-header .nav-links > button,
+        .site-header .nav-links > a:not(.get-started),
+        .site-header .sign-in-button {
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #111111 !important;
+            opacity: 0.9 !important;
+            outline: none !important;
+            font-family: inherit !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            padding: 6px 0 !important;
+        }
+
+        .site-header .nav-links > button:hover,
+        .site-header .nav-links > a:not(.get-started):hover,
+        .site-header .sign-in-button:hover {
+            color: #2563eb !important;
+            opacity: 1 !important;
+        }
+
+        .site-header a[href*="enterprise-training"],
+        .nav-links a[href*="enterprise-training"] {
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .site-header .workshops-arrow,
+        .site-header .certifications-arrow,
+        .site-header .events-arrow,
+        .site-header .about-arrow,
+        .site-header .location-button span {
+            background-color: #111111 !important;
+        }
+
+        .site-header .location-button {
+            background: transparent !important;
+            color: #111111 !important;
+            border: 1px solid #cbd5e1 !important;
+            border-radius: 999px !important;
+            padding: 8px 18px !important;
+        }
+
+        .site-header .location-button:hover {
+            background: rgba(0, 0, 0, 0.04) !important;
+            border-color: #94a3b8 !important;
+        }
+
+        .site-header .get-started {
+            background: #2563eb !important;
+            color: #ffffff !important;
+            box-shadow: none !important;
+            padding: 9px 22px !important;
+            border-radius: 999px !important;
+            font-weight: 600 !important;
+            font-size: 13.5px !important;
+        }
+
+        .site-header .get-started:hover {
+            background: #1d4ed8 !important;
+        }
+
+        .site-header .menu-btn {
+            border-color: rgba(0, 0, 0, 0.25) !important;
+        }
+
+        .site-header .menu-btn span {
+            background: #111111 !important;
+        }
+
+        /* =========================================
+           HERO BANNER SECTION (DARK BLUE)
+        ========================================= */
+        .guides-hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #071124 0%, #0b1329 100%);
+            color: #ffffff;
+            padding: 80px 80px 90px;
+        }
+
+        .guides-hero h1 {
+            font-size: clamp(40px, 4.5vw, 56px);
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        /* =========================================
+           MAIN CONTAINER & LAYOUT
+        ========================================= */
+        .guides-main-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 40px 100px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* BROWSE BY DISCIPLINE SIDEBAR */
+        .discipline-sidebar {
+            position: sticky;
+            top: 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-heading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .discipline-link {
+            font-size: 16px;
+            font-weight: 600;
+            color: #475569;
+            padding: 12px 16px;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+            display: block;
+            border-left: 3px solid transparent;
+        }
+
+        .discipline-link:hover {
+            color: #2563eb;
+            background: #f8fafc;
+        }
+
+        .discipline-link.active {
+            color: #2563eb;
+            background: #f1f5f9;
+            border-left-color: #2563eb;
+            font-weight: 700;
+        }
+
+        /* GUIDES CONTENT AREA */
+        .guides-content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .discipline-section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* DISCIPLINE BANNER CARD */
+        .discipline-banner {
+            background-color: #0b1329;
+            background-image: radial-gradient(circle at 85% 50%, rgba(37, 99, 235, 0.25) 0%, transparent 60%);
+            border-radius: 8px;
+            padding: 40px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .banner-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .banner-icon-box {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .banner-left h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .banner-arrow-icon {
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* CAREER GUIDE ITEM CARD */
+        .guide-item-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 30px 34px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .guide-item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            border-color: #cbd5e1;
+            background: #ffffff;
+        }
+
+        .guide-category-tag {
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .guide-title-link {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2563eb;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .guide-title-link:hover {
+            text-decoration: underline;
+        }
+
+        .guide-desc {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+        ========================================= */
+        @media (max-width: 1050px) {
+            .guides-main-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 20px 80px;
+            }
+            .discipline-sidebar {
+                position: relative;
+                top: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .sidebar-heading {
+                width: 100%;
+            }
+            .discipline-link {
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+            .discipline-link.active {
+                border-bottom-color: #2563eb;
+                border-left-color: transparent;
+            }
+            .guides-hero {
+                padding: 60px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SHARED DYNAMIC HEADER CONTAINER -->
+    <div id="header"></div>
+
+    <!-- HERO SECTION -->
+    <section class="guides-hero">
+        <h1>Career Guides</h1>
+    </section>
+
+    <!-- MAIN CONTAINER -->
+    <div class="guides-main-container">
+
+        <!-- LEFT SIDEBAR: BROWSE BY DISCIPLINE -->
+        <aside class="discipline-sidebar">
+            <div class="sidebar-heading">Browse by discipline</div>
+            <a href="#data-section" class="discipline-link active" onclick="setActiveDiscipline(this)">Data</a>
+            <a href="#marketing-section" class="discipline-link" onclick="setActiveDiscipline(this)">Marketing</a>
+            <a href="#design-section" class="discipline-link" onclick="setActiveDiscipline(this)">Design</a>
+            <a href="#product-section" class="discipline-link" onclick="setActiveDiscipline(this)">Product</a>
+        </aside>
+
+        <!-- RIGHT CONTENT AREA -->
+        <div class="guides-content-area">
+
+            <!-- 1. DATA DISCIPLINE -->
+            <section id="data-section" class="discipline-section">
+                <div class="discipline-banner">
+                    <div class="banner-left">
+                        <div class="banner-icon-box">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                        </div>
+                        <h2>Data</h2>
+                    </div>
+                    <div class="banner-arrow-icon">&rsaquo;</div>
+                </div>
+
+                <div class="guide-item-card">
+                    <span class="guide-category-tag">Career Guides</span>
+                    <h3>
+                        <a href="../data-analyst.html" class="guide-title-link">
+                            <span>How to Become a Data Analyst</span>
+                            <span>&rsaquo;</span>
+                        </a>
+                    </h3>
+                    <p class="guide-desc">
+                        Learn more about the data analysis field, including key skills, career paths in data analysis, how to become a Data Analyst, and more[cite: 122].
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. MARKETING DISCIPLINE -->
+            <section id="marketing-section" class="discipline-section">
+                <div class="discipline-banner">
+                    <div class="banner-left">
+                        <div class="banner-icon-box">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <h2>Marketing</h2>
+                    </div>
+                    <div class="banner-arrow-icon">&rsaquo;</div>
+                </div>
+
+                <div class="guide-item-card">
+                    <span class="guide-category-tag">Career Guides</span>
+                    <h3>
+                        <a href="../digital-marketer.html" class="guide-title-link">
+                            <span>How to Become a Digital Marketer</span>
+                            <span>&rsaquo;</span>
+                        </a>
+                    </h3>
+                    <p class="guide-desc">
+                        Learn more about the rise of digital marketing, including what skills are in-demand, digital marketing career paths, how you can become a Digital Marketer, and more[cite: 123].
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. DESIGN DISCIPLINE -->
+            <section id="design-section" class="discipline-section">
+                <div class="discipline-banner">
+                    <div class="banner-left">
+                        <div class="banner-icon-box">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                        </div>
+                        <h2>Design</h2>
+                    </div>
+                    <div class="banner-arrow-icon">&rsaquo;</div>
+                </div>
+
+                <div class="guide-item-card">
+                    <span class="guide-category-tag">Career Guides</span>
+                    <h3>
+                        <a href="#" class="guide-title-link">
+                            <span>How to Become a Product Designer</span>
+                            <span>&rsaquo;</span>
+                        </a>
+                    </h3>
+                    <p class="guide-desc">
+                        Learn more about the skills to learn, career opportunities in product design, how to become a Product Designer, and more[cite: 124].
+                    </p>
+                </div>
+
+                <div class="guide-item-card">
+                    <span class="guide-category-tag">Career Guides</span>
+                    <h3>
+                        <a href="#" class="guide-title-link">
+                            <span>How to Become a UI Designer</span>
+                            <span>&rsaquo;</span>
+                        </a>
+                    </h3>
+                    <p class="guide-desc">
+                        Learn more about the skills to learn, career opportunities in UI design, how to become a UI Designer, and more[cite: 124].
+                    </p>
+                </div>
+
+                <div class="guide-item-card">
+                    <span class="guide-category-tag">Career Guides</span>
+                    <h3>
+                        <a href="../ux-designer.html" class="guide-title-link">
+                            <span>How to Become a UX Designer</span>
+                            <span>&rsaquo;</span>
+                        </a>
+                    </h3>
+                    <p class="guide-desc">
+                        Find out more about the fast-growing User Experience (UX) design field, including what skills are needed, career paths, how to become a UX Designer, and more[cite: 125].
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4. PRODUCT DISCIPLINE -->
+            <section id="product-section" class="discipline-section">
+                <div class="discipline-banner">
+                    <div class="banner-left">
+                        <div class="banner-icon-box">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h2>Product</h2>
+                    </div>
+                    <div class="banner-arrow-icon">&rsaquo;</div>
+                </div>
+
+                <div class="guide-item-card">
+                    <span class="guide-category-tag">Career Guides</span>
+                    <h3>
+                        <a href="../product-manager.html" class="guide-title-link">
+                            <span>How to Become a Product Manager</span>
+                            <span>&rsaquo;</span>
+                        </a>
+                    </h3>
+                    <p class="guide-desc">
+                        Learn more about the skills to learn, career opportunities in product management, how to become a Product Manager, and more[cite: 125].
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- SHARED FOOTER CONTAINER -->
+    <div id="footer"></div>
+
+    <!-- SCRIPT LOADER -->
+    <script src="js/components.js"></script>
+
+    <!-- SIDEBAR INTERACTIVITY SCRIPT -->
+    <script>
+        function setActiveDiscipline(element) {
+            document.querySelectorAll('.discipline-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

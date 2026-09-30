@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Become a UX Designer - BrainStation</title>
+
+    <!-- Main CSS Link -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* =========================================
+           RESET & GLOBAL STYLES
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           WHITE HEADER THEME FIX (COMPLETE CLEANUP)
+        ========================================= */
+        .site-header,
+        .site-header.white-header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 80px !important;
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+            border-bottom: 1px solid #e5e7eb !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            z-index: 9999 !important;
+        }
+
+        /* Pure Black Logo */
+        .site-header .brand-logo,
+        .site-header .brand img {
+            filter: invert(1) brightness(0) !important;
+        }
+
+        /* GREY BACKGROUND COMPLETELY REMOVED */
+        .site-header .nav-links > button,
+        .site-header .nav-links > a,
+        .site-header.white-header .nav-links > button,
+        .site-header.white-header .nav-links > a:not(.get-started),
+        .site-header .sign-in-button,
+        .site-header.white-header .sign-in-button {
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #111111 !important;
+            opacity: 0.9 !important;
+            outline: none !important;
+            font-family: inherit !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            padding: 6px 0 !important;
+        }
+
+        /* Hover par pan background transparent j rehse */
+        .site-header .nav-links > button:hover,
+        .site-header .nav-links > a:hover,
+        .site-header.white-header .nav-links > button:hover,
+        .site-header.white-header .nav-links > a:not(.get-started):hover,
+        .site-header .sign-in-button:hover {
+            background: transparent !important;
+            background-color: transparent !important;
+            color: #2563eb !important;
+            opacity: 1 !important;
+        }
+
+        /* Chevron Arrows Black */
+        .site-header .workshops-arrow,
+        .site-header .certifications-arrow,
+        .site-header .events-arrow,
+        .site-header .about-arrow,
+        .site-header .location-button span,
+        .site-header.white-header .workshops-arrow,
+        .site-header.white-header .certifications-arrow,
+        .site-header.white-header .events-arrow,
+        .site-header.white-header .about-arrow,
+        .site-header.white-header .location-button span {
+            background-color: #111111 !important;
+        }
+
+        /* Location Button (Clean border, No inner grey bg) */
+        .site-header .location-button,
+        .site-header.white-header .location-button {
+            background: transparent !important;
+            background-color: transparent !important;
+            color: #111111 !important;
+            border: 1px solid #cbd5e1 !important;
+            border-radius: 999px !important;
+            padding: 8px 18px !important;
+        }
+
+        .site-header .location-button:hover,
+        .site-header.white-header .location-button:hover {
+            background: rgba(0, 0, 0, 0.04) !important;
+            border-color: #94a3b8 !important;
+        }
+
+        /* Get Started Button */
+        .site-header .get-started,
+        .site-header.white-header .get-started {
+            background: #2563eb !important;
+            color: #ffffff !important;
+            box-shadow: none !important;
+        }
+
+        .site-header .get-started:hover,
+        .site-header.white-header .get-started:hover {
+            background: #1d4ed8 !important;
+        }
+
+        
+
+        /* =========================================
+           TOP BREADCRUMB
+        ========================================= */
+        .breadcrumb-bar {
+            margin-top: 80px;
+            background: #071124;
+            padding: 16px 45px;
+            font-size: 13.5px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .breadcrumb-bar a {
+            color: #cbd5e1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-bar span.current {
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           LAYOUT: FIXED SIDEBAR + SCROLL CONTENT
+        ========================================= */
+        .page-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            background: #ffffff;
+        }
+
+        /* LEFT SIDEBAR */
+        .sidebar {
+            width: 320px;
+            flex-shrink: 0;
+            background: #ffffff;
+            color: #111111;
+            border-right: 1px solid #e5e7eb;
+            padding: 28px 24px;
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-active-tab {
+            background: #2563eb;
+            color: #ffffff;
+            padding: 14px 18px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 14.5px;
+            margin-bottom: 6px;
+        }
+
+        .sidebar-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 10px 0;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .sidebar-arrow {
+            font-size: 16px;
+            transition: transform 0.25s ease;
+            user-select: none;
+            display: inline-block;
+        }
+
+        .sidebar-group.closed .sidebar-arrow {
+            transform: rotate(180deg);
+        }
+
+        .sidebar-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            padding-left: 2px;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.25s ease;
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-group.closed .sidebar-links-list {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            pointer-events: none;
+        }
+
+        .sidebar-links-list a {
+            font-size: 14.5px;
+            color: #334155;
+            font-weight: 500;
+            line-height: 1.4;
+            padding-left: 10px;
+            border-left: 3px solid transparent;
+            transition: all 0.15s ease;
+            display: block;
+        }
+
+        .sidebar-links-list a:hover {
+            color: #2563eb !important;
+            font-weight: 700 !important;
+            border-left-color: #2563eb !important;
+        }
+
+        .sidebar-scroll-indicator {
+            margin-top: auto;
+            padding-top: 20px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* RIGHT CONTENT CONTAINER */
+        .content-wrap {
+            flex: 1;
+            min-width: 0;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: linear-gradient(135deg, #071124 0%, #0b1329 100%);
+            color: #ffffff;
+            padding: 55px 60px 70px;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .guide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .hero-left h1 {
+            font-size: clamp(38px, 4vw, 56px);
+            font-weight: 800;
+            line-height: 1.08;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .yellow-bar {
+            width: 44px;
+            height: 4px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin: 6px 0 14px 0;
+        }
+
+        .hero-left p {
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: #cbd5e1;
+            max-width: 620px;
+            margin: 0;
+        }
+
+        .form-box {
+            background: #ffffff;
+            color: #0f172a;
+            padding: 34px;
+            border-radius: 16px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .form-box h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .form-box p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-row.single {
+            grid-template-columns: 1fr;
+        }
+
+        .input-text {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: #f8fafc;
+            color: #0f172a;
+            font-family: inherit;
+        }
+
+        .input-text:focus {
+            border-color: #2563eb;
+            background: #ffffff;
+        }
+
+        .phone-field {
+            display: flex;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f8fafc;
+            overflow: hidden;
+        }
+
+        .country-flag {
+            padding: 0 10px;
+            background: #f1f5f9;
+            border: none;
+            border-right: 1px solid #cbd5e1;
+            outline: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .phone-field input {
+            border: none;
+            background: transparent;
+            padding: 12px 14px;
+            width: 100%;
+            font-size: 14px;
+            outline: none;
+            color: #0f172a;
+        }
+
+        .form-disclaimer {
+            font-size: 11.5px;
+            color: #64748b;
+            margin: 14px 0 18px 0;
+            line-height: 1.4;
+        }
+
+        .form-disclaimer a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* ARTICLE CONTENT AREA */
+        .article-content {
+            padding: 55px 75px 40px;
+            max-width: 960px;
+            color: #111111;
+        }
+
+        .article-p {
+            font-size: 17.5px;
+            line-height: 1.7;
+            color: #111111;
+            margin-bottom: 26px;
+            font-weight: 400;
+        }
+
+        .overview-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 30px 34px;
+            margin: 36px 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+        }
+
+        .overview-box h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 18px;
+        }
+
+        .overview-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .overview-list li {
+            font-size: 16px;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+        }
+
+        .overview-list li span.num {
+            color: #2563eb;
+            font-weight: 600;
+            margin-right: 8px;
+            min-width: 18px;
+        }
+
+        .overview-list li a {
+            color: #2563eb;
+            text-decoration: underline;
+            font-weight: 500;
+            transition: opacity 0.15s;
+        }
+
+        .overview-list li a:hover {
+            opacity: 0.8;
+        }
+
+        .guide-section {
+            padding-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .guide-main-heading {
+            font-size: clamp(34px, 3.8vw, 48px);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            color: #0b0c10;
+            margin: 0 0 14px 0;
+        }
+
+        .yellow-accent-bar {
+            width: 44px;
+            height: 4px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin-bottom: 32px;
+        }
+
+        .section-lead-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 36px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .lead-text-col {
+            flex: 1;
+        }
+
+        .guide-text {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #1e293b;
+            margin: 0 0 26px 0;
+            font-weight: 400;
+        }
+
+        .sidebar-guide-promo {
+            width: 200px;
+            background-color: #0b1736;
+            color: #ffffff;
+            padding: 22px 18px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(11, 23, 54, 0.15);
+        }
+
+        .sidebar-guide-promo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -12px;
+            width: 0;
+            height: 0;
+            border-top: 14px solid #0b1736;
+            border-left: 14px solid transparent;
+        }
+
+        .promo-tag {
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+        }
+
+        .promo-link {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .promo-link:hover {
+            color: #60a5fa;
+        }
+
+        .promo-arrow {
+            font-size: 18px;
+            line-height: 1;
+            margin-left: 6px;
+        }
+
+        .guide-sub-heading {
+            font-size: 26px;
+            font-weight: 800;
+            color: #0b0c10;
+            margin: 36px 0 20px 0;
+            letter-spacing: -0.4px;
+        }
+
+        .skills-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            margin-top: 28px;
+            margin-bottom: 40px;
+        }
+
+        .skill-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 32px;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-card-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-card-content h4 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #0b0c10;
+            margin: 0 0 12px 0;
+            line-height: 1.3;
+        }
+
+        .skill-card-content p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin: 0;
+        }
+
+        .checklist-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 34px 38px;
+            margin: 28px 0 45px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .check-icon {
+            color: #2563eb;
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .check-content {
+            font-size: 16px;
+            line-height: 1.65;
+            color: #1e293b;
+        }
+
+        .check-content strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 24px 0 45px 0;
+        }
+
+        .option-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px 28px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .option-card h5 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .option-card p {
+            font-size: 15.5px;
+            line-height: 1.6;
+            color: #334155;
+            margin: 0;
+        }
+
+        .timeline-steps-wrapper {
+            position: relative;
+            padding-left: 55px;
+            margin: 35px 0 50px 0;
+        }
+
+        .timeline-steps-wrapper::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            bottom: 25px;
+            width: 2px;
+            background-color: #2563eb;
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-badge {
+            position: absolute;
+            left: -55px;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .timeline-step h4 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0b0c10;
+            margin: 4px 0 12px 0;
+        }
+
+        .step-phase-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .step-yellow-line {
+            width: 38px;
+            height: 3px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin-bottom: 18px;
+        }
+
+        .step-p {
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin-bottom: 18px;
+        }
+
+        .strategy-points {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .strategy-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        .strategy-point strong {
+            color: #0f172a;
+        }
+
+        .info-card-block {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 34px 38px;
+            margin: 28px 0 32px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-card-block h4 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0b0c10;
+            margin: 0 0 12px 0;
+        }
+
+        .info-card-line {
+            width: 100%;
+            height: 1px;
+            background-color: #e2e8f0;
+            margin-bottom: 22px;
+        }
+
+        .bullet-list-custom {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .bullet-list-custom li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 16px;
+            line-height: 1.65;
+            color: #334155;
+        }
+
+        .bullet-list-custom li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .bullet-list-custom li strong {
+            color: #0f172a;
+        }
+
+        .star-item {
+            margin-left: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15.5px;
+            line-height: 1.6;
+            color: #334155;
+            margin-top: 8px;
+        }
+
+        .career-paths-timeline {
+            position: relative;
+            padding-left: 45px;
+            margin: 35px 0 55px 0;
+        }
+
+        .career-paths-timeline::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 15px;
+            bottom: 35px;
+            width: 2px;
+            background-color: #2563eb;
+        }
+
+        .career-path-row {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .career-path-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .path-dot {
+            position: absolute;
+            left: -45px;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 4px solid #2563eb;
+            z-index: 2;
+        }
+
+        .path-title-col {
+            font-size: 13px;
+            font-weight: 700;
+            color: #475569;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .path-desc-col {
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: #1e293b;
+        }
+
+        .faq-accordion-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            margin-top: 24px;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: 16.5px;
+            font-weight: 700;
+            color: #0f172a;
+            transition: color 0.15s ease;
+        }
+
+        .faq-question:hover {
+            color: #2563eb;
+        }
+
+        .faq-question.active {
+            color: #2563eb;
+        }
+
+        .faq-icon {
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 600;
+            color: #0f172a;
+            user-select: none;
+        }
+
+        .faq-question.active .faq-icon {
+            color: #2563eb;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #ffffff;
+            padding: 0 28px;
+        }
+
+        .faq-answer.open {
+            padding: 0 28px 24px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .faq-answer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .faq-answer ul li {
+            font-size: 15px;
+            line-height: 1.55;
+            color: #334155;
+        }
+
+        .faq-answer ul li strong {
+            color: #0f172a;
+        }
+
+        .next-topic-bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 24px 45px;
+            background: #ffffff;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .next-topic-link {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .next-tag {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .next-target {
+            color: #2563eb;
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .next-target:hover {
+            text-decoration: underline;
+        }
+
+        .accelerate-section {
+            background-color: #071124;
+            color: #ffffff;
+            padding: 65px 50px 75px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: start;
+            margin-top: 0;
+        }
+
+        .accelerate-left {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .accel-tag {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .accelerate-left h2 {
+            font-size: clamp(30px, 3.2vw, 42px);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .accel-yellow-line {
+            width: 44px;
+            height: 4px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin: 4px 0 16px 0;
+        }
+
+        .accelerate-left p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        .accel-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .accel-benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .accel-benefit-item span.check {
+            color: #facc15;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .accel-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            width: fit-content;
+            transition: background-color 0.2s ease;
+        }
+
+        .accel-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .accelerate-right {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .rec-tag-title {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .rec-cert-card {
+            background: #ffffff;
+            color: #0f172a;
+            border-radius: 8px;
+            padding: 26px 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .rec-cert-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .badge-yellow-tag {
+            display: inline-block;
+            background: #fef08a;
+            color: #854d0e;
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .rec-cert-card h4 a {
+            color: #2563eb;
+            font-size: 17.5px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.3;
+        }
+
+        .rec-cert-card h4 a:hover {
+            text-decoration: underline;
+        }
+
+        .rec-cert-card p {
+            font-size: 14px;
+            color: #334155;
+            margin: 10px 0 0 0;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+        ========================================= */
+        @media (max-width: 1100px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+            .article-content {
+                padding: 40px 30px 40px;
+            }
+            .career-path-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .accelerate-section {
+                grid-template-columns: 1fr;
+                padding: 50px 30px 60px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .page-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 0;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            .section-lead-wrapper {
+                flex-direction: column;
+            }
+            .sidebar-guide-promo {
+                width: 100%;
+            }
+            .sidebar-guide-promo::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SHARED DYNAMIC HEADER CONTAINER -->
+    <div id="header"></div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+        <a href="../index.html">Career Guides</a>
+        <span>›</span>
+        <span class="current">How to Become a UX Designer</span>
+    </div>
+
+    <!-- MAIN PAGE CONTAINER -->
+    <div class="page-container">
+
+        <!-- =========================================
+             LEFT SIDEBAR (COLLAPSIBLE / ACCORDION)
+        ========================================== -->
+        <aside class="sidebar">
+            <div class="sidebar-active-tab">
+                <span>How to Become a UX Designer</span>
+                <span>➔</span>
+            </div>
+
+            <!-- THE BASICS -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>THE BASICS</span>
+                    <span class="sidebar-arrow">▲</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">What Is UX Design?</a>
+                    <a href="#">What Is UI Design?</a>
+                    <a href="#">What Is Graphic Design?</a>
+                    <a href="#">What is Web Design?</a>
+                </div>
+            </div>
+
+            <!-- ON THE JOB -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>ON THE JOB</span>
+                    <span class="sidebar-arrow">▲</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">How To Become A Product Designer</a>
+                    <a href="#">How to Learn UI Design Basics</a>
+                    <a href="#">What Does a UX Designer Do?</a>
+                </div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>SKILLS</span>
+                    <span class="sidebar-arrow">▲</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">How to Use AI for UX Design</a>
+                    <a href="#">AI Design Tools: Use them and Create them</a>
+                    <a href="#">Does UX Design Require Coding?</a>
+                    <a href="#">What Skills Are Needed For UX Design?</a>
+                    <a href="#">UI Design Tools and Skills You Need to Master</a>
+                </div>
+            </div>
+
+            <!-- CAREER PATH -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>CAREER PATH</span>
+                    <span class="sidebar-arrow">▲</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">Design Certification</a>
+                    <a href="#">Do you Need a Degree for UX Design?</a>
+                </div>
+            </div>
+
+            <!-- GETTING THE JOB -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>GETTING THE JOB</span>
+                    <span class="sidebar-arrow">▲</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">How to Create a UX Design Portfolio</a>
+                    <a href="#">UX Designer Cover Letter</a>
+                    <a href="#">UX Designer Resume Examples</a>
+                    <a href="#">UX Design Interview Questions</a>
+                </div>
+            </div>
+
+            <div class="sidebar-scroll-indicator">
+                <span>Scroll</span> <span>↓</span>
+            </div>
+        </aside>
+
+        <!-- RIGHT CONTENT -->
+        <div class="content-wrap">
+            
+            <!-- 1. HERO WITH FORM -->
+            <section class="hero-section">
+                <div class="hero-left">
+                    <div class="guide-tag">
+                        <span>📖</span> 2026 GUIDE <span>↗</span>
+                    </div>
+                    <h1>How to Become a UX Designer</h1>
+                    <div class="yellow-bar"></div>
+                    <p>
+                        BrainStation’s UX Designer career guide is intended to help you take the first steps toward a lucrative career in UX design. The guide provides an in-depth overview of the design skills you should learn, the available UX design training options, career paths in UX design, how to become a UX Designer, and more.
+                    </p>
+                </div>
+
+                <div class="form-box">
+                    <h3>Become a UX Designer</h3>
+                    <p>Speak to a Learning Advisor to learn more about how our courses can help you become a UX Designer.</p>
+                    
+                    <form>
+                        <div class="form-row">
+                            <input type="text" class="input-text" placeholder="First Name" required>
+                            <input type="text" class="input-text" placeholder="Last Name" required>
+                        </div>
+
+                        <div class="form-row single">
+                            <input type="email" class="input-text" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-row single">
+                            <div class="phone-field">
+                                <select class="country-flag">
+                                    <option value="us">🇺🇸 ▾</option>
+                                    <option value="in">🇮🇳 ▾</option>
+                                </select>
+                                <input type="tel" placeholder="(201) 555-0123 (Optional)">
+                            </div>
+                        </div>
+
+                        <div class="form-disclaimer">
+                            By clicking “Submit”, you agree to our <a href="#">Terms</a>.
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- 2. ARTICLE MAIN CONTENT -->
+            <article class="article-content">
+
+                <!-- INTRODUCTORY PARAGRAPHS -->
+                <p class="article-p">
+                    In an increasingly digital world, the drive to become a UX designer is more prevalent than ever. Companies have realized that a functional product isn’t enough, it must be user friendly, accessible, and enjoyable. This shift has created a massive demand for professionals who can bridge the gap between user needs and technical feasibility to create successful digital products.
+                </p>
+
+                <p class="article-p">
+                    But the modern landscape is different than it was five years ago, fundamentally reshaped by the Generative AI revolution and LLMs. The rush of hiring bodies to fill seats is over. Today, the AI-augmented UX design field requires more than just knowing how to use software; it requires a specific mindset focused on how humans interact with intelligent systems and a relentless focus on how to solve complex problems through evidence-based design.
+                </p>
+
+                <!-- OVERVIEW BOX -->
+                <div class="overview-box">
+                    <h4>Overview</h4>
+                    <ul class="overview-list">
+                        <li>
+                            <span class="num">1.</span>
+                            <a href="#how-to-get-into-ux">How to Get Into UX Design</a>
+                        </li>
+                        <li>
+                            <span class="num">2.</span>
+                            <a href="#how-to-learn-ui-ux">How to Learn UI UX Design</a>
+                        </li>
+                        <li>
+                            <span class="num">3.</span>
+                            <a href="#get-into-no-experience">How to Get Into UX Design with No Experience</a>
+                        </li>
+                        <li>
+                            <span class="num">4.</span>
+                            <a href="#user-experience-research">How to Get Into User Experience Research</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="article-p">
+                    The beauty of this creative field is its inclusivity. There is no single correct background. Whether you are a graphic designer looking to add strategy to your visuals, a psychologist interested in tech, or a complete novice, the path is open. Almost everyone working in the industry today began in a related field and joined by acquiring supplemental key skills.
+                </p>
+
+                <!-- 1. HOW TO GET INTO UX DESIGN SECTION -->
+                <section id="how-to-get-into-ux" class="guide-section">
+
+                    <h2 class="guide-main-heading">How to Get Into UX Design</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <div class="section-lead-wrapper">
+                        <div class="lead-text-col">
+                            <p class="guide-text">
+                                If you are wondering how to get into UX design, the first step is shifting your mindset and leveraging your existing assets. This is especially true for career switchers who often possess valuable transferable skills they overlook.
+                            </p>
+                        </div>
+
+                        <aside class="sidebar-guide-promo">
+                            <div class="promo-tag">2026 GUIDE</div>
+                            <a href="#" class="promo-link">
+                                <span>UX Designer Cover Letter</span>
+                                <span class="promo-arrow">&rsaquo;</span>
+                            </a>
+                        </aside>
+                    </div>
+
+                    <h3 class="guide-sub-heading">1. Identify Your Transferable Skills</h3>
+
+                    <p class="guide-text">
+                        Many new designers have imposter syndrome because they believe they are starting from zero. This is rarely true. UX Design is a multidisciplinary field that is essentially a mix of psychology, business, visual arts, and technology. The key to getting hired is not hiding your past, but translating your unique skills into UX terminology. Here is how common backgrounds map directly to UX roles:
+                    </p>
+
+                    <div class="skills-cards-stack">
+                        <!-- Card 1 -->
+                        <div class="skill-card">
+                            <div class="skill-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                    <path d="M2 12h20"></path>
+                                </svg>
+                            </div>
+                            <div class="skill-card-content">
+                                <h4>Graphic Design &amp; Visual Arts</h4>
+                                <p>You are not just making things pretty, you are handling visual interface design. You likely already understand hierarchy, typography, and color theory, skills found in UI designers. Your challenge is simply moving from static print to dynamic prototypes that exemplify good UI.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="skill-card">
+                            <div class="skill-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m3 11 18-5v12L3 13v-2z"></path>
+                                    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
+                                </svg>
+                            </div>
+                            <div class="skill-card-content">
+                                <h4>Marketing &amp; Sales</h4>
+                                <p>You are not just selling products, you are defining user personas and business strategy. You understand conversion funnels and how to leverage market research to align an AI-driven product’s features with the company’s revenue goals, ensuring LLM-generated outputs consistently provide user value.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="skill-card">
+                            <div class="skill-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                                    <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                                    <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                                    <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+                                </svg>
+                            </div>
+                            <div class="skill-card-content">
+                                <h4>Customer Service &amp; Retail &amp; Hospitality</h4>
+                                <p>You are not just handling complaints, you are conducting daily user research. You have the most direct experience with pain points. Your ability to empathize with a confused customer is the core of human-centered design and good UX.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="skill-card">
+                            <div class="skill-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                                </svg>
+                            </div>
+                            <div class="skill-card-content">
+                                <h4>Psychology &amp; Social Sciences</h4>
+                                <p>You are not just studying theory, you are trained in removing bias and analyzing human behavior. In UX, this is the entire discovery phase, which is now vital for mapping how users form mental models when interacting with unpredictable Generative AI conversational interfaces.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="skill-card">
+                            <div class="skill-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                                    <path d="M9 22v-4h6v4"></path>
+                                    <path d="M8 6h.01"></path>
+                                    <path d="M16 6h.01"></path>
+                                    <path d="M8 10h.01"></path>
+                                    <path d="M16 10h.01"></path>
+                                    <path d="M8 14h.01"></path>
+                                    <path d="M16 14h.01"></path>
+                                </svg>
+                            </div>
+                            <div class="skill-card-content">
+                                <h4>Architecture &amp; Industrial Design</h4>
+                                <p>You are not just building physical structures, you are acting as a UX Architect. You understand how people move through space and blueprints (wireframes). Moving from physical space to digital space is a natural evolution.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="skill-card">
+                            <div class="skill-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                            </div>
+                            <div class="skill-card-content">
+                                <h4>Teaching &amp; Education</h4>
+                                <p>You are not just planning lessons, you are designing user journeys. A teacher identifies where a student is struggling and adjusts the method to help them succeed. This translates directly into how an Interaction Designer optimizes a complex prompt engineering interface or an AI onboarding flow.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. MASTER SOFT SKILLS FOR THE AI ERA -->
+                    <h3 class="guide-sub-heading">2. Master Soft Skills for the AI Era</h3>
+
+                    <p class="guide-text">
+                        While technical skills get you the interview, soft skills get you the job. Hiring managers often value these traits over raw design ability:
+                    </p>
+
+                    <div class="checklist-box">
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Empathy:</strong> The ability to step outside your own biases and see the product through the eyes of a frustrated user.
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Collaboration:</strong> UX is a team sport. You will work in cross-functional teams alongside Product Managers, Developers, and AI Engineers. Collaborating to balance design aesthetics with LLM performance limitations and technical feasibility is critical. Your ability to negotiate and compromise is critical.
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Communication:</strong> You must possess strong communication skills to articulate the why behind your design decisions, especially when designing ethical guardrails and feedback loops for AI systems. If you can’t explain why a button should be blue, you will lose the argument.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. IMMERSE YOURSELF IN THE INDUSTRY -->
+                    <h3 class="guide-sub-heading">3. Immerse Yourself in the Industry</h3>
+
+                    <p class="guide-text">
+                        Before committing to a path, you must understand the landscape. Passive immersion helps you learn the vocabulary and UX principles to decide if the day-to-day reality of the job aligns with your interests.
+                    </p>
+
+                    <div class="checklist-box">
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Read Industry Standards:</strong> Books like <em>The Design of Everyday Things</em> by Don Norman or <em>Don’t Make Me Think</em> by Steve Krug are non-negotiable reading for understanding core design principles.
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Follow Thought Leaders:</strong> Platforms like LinkedIn and Medium are where the real conversations happen. Follow leaders who talk about the design process and engage with the broader UX community, not just the visuals.
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- 2. HOW TO LEARN UI UX DESIGN AND AI INTEGRATION -->
+                <section id="how-to-learn-ui-ux" class="guide-section">
+
+                    <h2 class="guide-main-heading">How to Learn UI UX Design and AI Integration</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="guide-text">
+                        Once you have committed to the path, the next logical question is how to learn UX design. The market offers several distinct educational routes to build a solid foundation, each with its own pros and cons depending on your current life stage.
+                    </p>
+
+                    <!-- Option 1 -->
+                    <h3 class="guide-sub-heading">Option 1: University Degrees</h3>
+
+                    <div class="option-group">
+                        <div class="option-card">
+                            <h5>Best for</h5>
+                            <p>High school graduates or those seeking deep theoretical knowledge.</p>
+                        </div>
+                        <div class="option-card">
+                            <h5>Pros</h5>
+                            <p>Extremely thorough. You will dive deep into cognitive psychology, human-computer interaction (HCI), and computer science fundamentals.</p>
+                        </div>
+                        <div class="option-card">
+                            <h5>Cons</h5>
+                            <p>Expensive and time-consuming (3-4 years). The curriculum can sometimes lag behind the rapid pace of industry software updates. You may graduate knowing theory but lacking speed in modern design tools like Figma.</p>
+                        </div>
+                    </div>
+
+                    <!-- Option 2 -->
+                    <h3 class="guide-sub-heading">Option 2: UX Design Certificates</h3>
+
+                    <div class="option-group">
+                        <div class="option-card">
+                            <h5>Best for</h5>
+                            <p>Career switchers and professionals looking to pivot quickly (2-6 months) to become a UX designer.</p>
+                        </div>
+                        <div class="option-card">
+                            <h5>Pros</h5>
+                            <p>Laser-focused on employability. These programs strip away the fluff and focus on the practical skills employers want right now: Figma, Generative AI design tools, design systems, and real-world project portfolios.</p>
+                        </div>
+                        <div class="option-card">
+                            <h5>Cons</h5>
+                            <p>The workload can be intense depending on the schedule of classes, especially if you are undertaking the training on top of your full-time job. It requires significant self-discipline to master the industry tools in such a short time window.</p>
+                        </div>
+                    </div>
+
+                    <!-- Option 3 -->
+                    <h3 class="guide-sub-heading">Option 3: Self-Taught</h3>
+
+                    <div class="option-group">
+                        <div class="option-card">
+                            <h5>Best for</h5>
+                            <p>Those with high self-discipline, a tight budget, and plenty of time.</p>
+                        </div>
+                        <div class="option-card">
+                            <h5>Pros</h5>
+                            <p>Free resources are abundant. You can learn design softwares at your own pace.</p>
+                        </div>
+                        <div class="option-card">
+                            <h5>Cons</h5>
+                            <p>No feedback loop. You might be designing inefficiently and never know it because you don’t have a mentor to critique your work. It is also difficult to structure your own curriculum and know what to learn.</p>
+                        </div>
+                    </div>
+
+                    <!-- The Curriculum Checklist -->
+                    <h3 class="guide-sub-heading" style="font-size: 28px; margin-top: 50px;">The Curriculum Checklist</h3>
+
+                    <p class="guide-text">
+                        Regardless of the path you choose, ensure your learning covers these core pillars:
+                    </p>
+
+                    <div class="checklist-box">
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Theory:</strong> Understanding UX design principles ensures your work is functional, not just pretty.
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Design Research &amp; Strategy:</strong> How to plan UX research, conduct interviews, and synthesize data into personas.
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Information Architecture:</strong> How to structure content (sitemaps and user flows).
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Interaction Design:</strong> How to create wireframes and high fidelity prototypes that feel intuitive.
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Visual Interface Design:</strong> Typography, color theory, accessibility standards (WCAG).
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Tool Proficiency:</strong> Mastery of Figma is non-negotiable, alongside emerging AI UX design tools (like Galileo AI, Uizard, or FigJam AI) that accelerate prototyping workflows.
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>AI Interaction Design (AIxD):</strong> Understanding how to design user interfaces for non-deterministic systems, handle LLM latency, and structure effective prompting UX frameworks.
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- 3. HOW TO GET INTO UX DESIGN WITH NO EXPERIENCE -->
+                <section id="get-into-no-experience" class="guide-section">
+
+                    <h2 class="guide-main-heading">How to Get Into UX Design with No Experience</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <div class="section-lead-wrapper">
+                        <div class="lead-text-col">
+                            <p class="guide-text">
+                                The most common challenge for new entrants is how to get into UX design with no experience[cite: 44]. You might be straight out of high school or transitioning from a completely different field[cite: 44].
+                            </p>
+                            <p class="guide-text">
+                                The secret is: No one is born with experience[cite: 44]. Every Senior UX Designer started with zero projects[cite: 44]. To bridge this gap, you must adopt a growth mindset like successful UX designers do[cite: 44].
+                            </p>
+                        </div>
+
+                        <aside class="sidebar-guide-promo">
+                            <div class="promo-tag">2026 GUIDE</div>
+                            <a href="#" class="promo-link">
+                                <span>Do you Need a Degree for UX Design?</span>
+                                <span class="promo-arrow">&rsaquo;</span>
+                            </a>
+                        </aside>
+                    </div>
+
+                    <h3 class="guide-sub-heading">The Junior Value Proposition</h3>
+
+                    <p class="guide-text">
+                        Employers hiring entry-level talents do not expect you to know everything[cite: 44, 45]. They are looking for potential[cite: 44, 45]. They want to see:
+                    </p>
+
+                    <div class="checklist-box" style="margin-top: 15px;">
+                        <div class="checklist-item">
+                            <span class="check-icon" style="color: #facc15;">✓</span>
+                            <div class="check-content">
+                                <strong>Curiosity &amp; AI Literacy:</strong> Do you ask the right questions? Can you responsibly leverage Generative AI assistants like ChatGPT or Claude to streamline user research coding, synthesize datasets, or iterate on wireframes quickly?[cite: 45]
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon" style="color: #facc15;">✓</span>
+                            <div class="check-content">
+                                <strong>UX Design Process:</strong> Do you follow a logical workflow (like the Double Diamond)?[cite: 45]
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon" style="color: #facc15;">✓</span>
+                            <div class="check-content">
+                                <strong>Coachability:</strong> Can you improve from feedback?[cite: 45]
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="guide-sub-heading" style="font-size: 28px; margin-top: 50px;">How to Get UX Design Experience</h3>
+
+                    <p class="guide-text">
+                        People often think you can’t get a job without a portfolio, and you can’t have a portfolio without experience[cite: 45]. This creates a paralyzed state for many beginners[cite: 45]. But you actually can break this cycle to gain experience[cite: 45]. The secret is that you do not need the job to do UX work[cite: 45]. You can manufacture your own experience using the following strategies[cite: 45].
+                    </p>
+
+                    <div class="timeline-steps-wrapper">
+                        
+                        <!-- Step 1 -->
+                        <div class="timeline-step">
+                            <div class="timeline-badge">1</div>
+                            <h4>Volunteer Work &amp; Local Businesses</h4>
+                            <div class="step-yellow-line"></div>
+                            <p class="step-p">
+                                Approach local non-profits, charities, or small mom-and-pop shops[cite: 46]. Look for volunteer opportunities where their websites or mobile apps are outdated and difficult to use[cite: 46].
+                            </p>
+                            <div class="strategy-points">
+                                <div class="strategy-point">
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>The Strategy:</strong> Offer to redesign a specific flow (like the “Donate” page or “Volunteer Sign-up”) pro bono[cite: 46].</div>
+                                </div>
+                                <div class="strategy-point">
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>The Benefit:</strong> This gives you a real client, real constraints (budget, brand guidelines), and real impact metrics[cite: 46]. “Redesigned a website concept” is great, but “Increased donation conversions by 20% for a local animal shelter” gives you a competitive edge because it proves results[cite: 46].</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="timeline-step">
+                            <div class="timeline-badge">2</div>
+                            <h4>Hackathons</h4>
+                            <div class="step-yellow-line"></div>
+                            <p class="step-p">
+                                Join 48-hour design/code sprints open to the public[cite: 46]. These events simulate the pressure of a real tech startup environment without the same barrier to entry[cite: 46].
+                            </p>
+                            <div class="strategy-points">
+                                <div class="strategy-point">
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>The Strategy:</strong> Partner with developers to build a working prototype in a weekend to get experience[cite: 47].</div>
+                                </div>
+                                <div class="strategy-point">
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>The Benefit:</strong> It proves you can collaborate effectively with developers under pressure, a massive green flag for hiring managers[cite: 47].</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="timeline-step">
+                            <div class="timeline-badge">3</div>
+                            <h4>Unsolicited Redesigns</h4>
+                            <div class="step-yellow-line"></div>
+                            <p class="step-p">
+                                Find a usability flaw in a popular app you use[cite: 47]. But be careful, most beginners do this wrong by just focusing on improving the aesthetics[cite: 47].
+                            </p>
+                            <ul class="bullet-list-custom" style="margin-top: 10px;">
+                                <li><strong>The Wrong Way:</strong> “I redesigned Spotify to use better colors.”[cite: 47]</li>
+                                <li><strong>The Right Way:</strong> “I noticed my grandmother couldn’t read the Spotify text[cite: 47]. I conducted usability testing with 5 seniors, identified the contrast issues, and redesigned the interface to meet WCAG accessibility standards.”[cite: 47]</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <h3 class="guide-sub-heading" style="font-size: 28px; margin-top: 50px;">How to Get a UX Design Job with No Experience</h3>
+
+                    <p class="guide-text">
+                        Once you have done your UX homework and have a few volunteer projects under your belt, you need to package that experience to sell yourself[cite: 48]. Here is how to get a UX design job without paid experience by focusing on the application process[cite: 48].
+                    </p>
+
+                    <!-- Card 1 -->
+                    <div class="info-card-block">
+                        <h4>The UX Design Portfolio: Tell a Story</h4>
+                        <div class="info-card-line"></div>
+                        <p class="step-p">
+                            Your UX portfolio is not a gallery of pretty pictures, it is a case study of your brain[cite: 48]. Potential employers want to see how you think using your own projects[cite: 48]. To be portfolio ready, structure your case studies using the STAR method[cite: 48]:
+                        </p>
+                        <ul class="bullet-list-custom">
+                            <li>
+                                <strong>Structure:</strong> Use the STAR method to explain your Hackathon or Freelance project[cite: 48, 49]:
+                                <div class="star-item">
+                                    <span class="check-icon" style="color: #facc15;">✓</span>
+                                    <div><strong>Situation:</strong> What was the problem? (e.g., “The animal shelter was losing donations on mobile.”)[cite: 49]</div>
+                                </div>
+                                <div class="star-item">
+                                    <span class="check-icon" style="color: #facc15;">✓</span>
+                                    <div><strong>Task:</strong> What was your role? (e.g., “I led the research and mobile redesign.”)[cite: 49]</div>
+                                </div>
+                                <div class="star-item">
+                                    <span class="check-icon" style="color: #facc15;">✓</span>
+                                    <div><strong>Action:</strong> What did you do? Show your messy sketches, your failed ideas, and your wireframes[cite: 49].</div>
+                                </div>
+                                <div class="star-item">
+                                    <span class="check-icon" style="color: #facc15;">✓</span>
+                                    <div><strong>Result:</strong> What happened? (e.g., “We simplified the flow from 5 steps to 2.”)[cite: 49]</div>
+                                </div>
+                            </li>
+                            <li style="margin-top: 10px;">
+                                <strong>Variety:</strong> You don’t need 10 projects[cite: 49]. You need high-quality case studies[cite: 49].
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="info-card-block">
+                        <h4>The Resume: Tailor and Translate</h4>
+                        <div class="info-card-line"></div>
+                        <p class="step-p">
+                            If you haven’t had a relevant paid job yet, look at your university clubs or high school extracurriculars[cite: 49, 50]. Don’t just list “Student Club Member”, translate those roles into professional UX language[cite: 49, 50].
+                        </p>
+                        <ul class="bullet-list-custom">
+                            <li><strong>Before:</strong> “University Club Social Chair. Planned the end-of-year party and ordered catering.”[cite: 50]</li>
+                            <li><strong>After:</strong> “Event Experience Lead. Designed the end-to-end attendee journey for a 200-person campus event. Managed budget constraints and coordinated with vendors to deliver a seamless experience, increasing attendance by 20% over the previous year.”[cite: 50]</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="info-card-block">
+                        <h4>The Interview: The Whiteboard Challenge</h4>
+                        <div class="info-card-line"></div>
+                        <p class="step-p">
+                            Be prepared for the “Whiteboard Challenge”[cite: 50]. The interviewer will give you a vague prompt (e.g., “Design an elevator for the blind”) and watch you work for 30 minutes[cite: 50].
+                        </p>
+                        <ul class="bullet-list-custom">
+                            <li><strong>Pro Tip:</strong> They care about the questions you ask before you start drawing (e.g., “Who is this building for? Is it a hospital or a hotel?”)[cite: 50, 51]. This proves you have the UX mindset even without the years of experience[cite: 50, 51].</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- 4. HOW TO START A CAREER IN UX DESIGN -->
+                <section id="start-career-ux" class="guide-section">
+
+                    <h2 class="guide-main-heading">How to Start a Career in UX Design</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="guide-text">
+                        Learning the UX design skills is one thing, building a trajectory for career growth is another[cite: 51]. Starting a new career in UX design requires a strategic view of your evolution in the current job market[cite: 51].
+                    </p>
+
+                    <h3 class="guide-sub-heading">The Career Paths</h3>
+
+                    <div class="career-paths-timeline">
+                        
+                        <div class="career-path-row">
+                            <div class="path-dot"></div>
+                            <div class="path-title-col">
+                                JUNIOR UX DESIGNER<br>(YEARS 0-2)
+                            </div>
+                            <div class="path-desc-col">
+                                Your focus is on execution[cite: 51, 52]. You will support senior UX designers, build wireframes, and run tests[cite: 51, 52]. You are there to learn the ropes and master the tools[cite: 51, 52].
+                            </div>
+                        </div>
+
+                        <div class="career-path-row">
+                            <div class="path-dot"></div>
+                            <div class="path-title-col">
+                                MID-LEVEL UX DESIGNER<br>(YEARS 2-5)
+                            </div>
+                            <div class="path-desc-col">
+                                You begin to own entire features[cite: 52]. You can run a project from discovery to hand-off with minimal supervision[cite: 52]. You start mentoring juniors[cite: 52].
+                            </div>
+                        </div>
+
+                        <div class="career-path-row">
+                            <div class="path-dot"></div>
+                            <div class="path-title-col">
+                                SENIOR UX DESIGNER / LEAD<br>(YEARS 5+)
+                            </div>
+                            <div class="path-desc-col">
+                                You influence the product roadmap[cite: 52]. You are solving complex problems that involve business strategy, not just interface design[cite: 52].
+                            </div>
+                        </div>
+
+                        <div class="career-path-row">
+                            <div class="path-dot"></div>
+                            <div class="path-title-col">
+                                PRINCIPAL DESIGNER / LEADER
+                            </div>
+                            <div class="path-desc-col">
+                                Eventually, you will choose between the individual contributor track (becoming a Principal Designer who focuses on craft) or the management track (becoming a Design Manager who focuses on the team and hiring)[cite: 52].
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- 5. HOW TO GET INTO USER EXPERIENCE RESEARCH FOR AI AND LLMS -->
+                <section id="user-experience-research" class="guide-section">
+
+                    <h2 class="guide-main-heading">How to Get Into User Experience Research for AI and LLMs</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="guide-text">
+                        While design gets the spotlight, many professionals are realizing they prefer the “Why” over the “How”[cite: 53]. User Experience Research (UXR) is a distinct discipline that is less about visual design and more about behavioral science and data analytics[cite: 53].
+                    </p>
+
+                    <p class="guide-text">
+                        UXR is exploding because companies cannot afford to guess user workflows—especially when deploying complex Generative AI systems that are prone to hallucination[cite: 53]. Researchers provide the necessary data and empirical proof before teams invest heavily in engineering[cite: 53]. However, this role requires a unique and difficult-to-master combination of skills[cite: 53]:
+                    </p>
+
+                    <div class="info-card-block" style="margin-bottom: 28px;">
+                        <ul class="bullet-list-custom">
+                            <li>
+                                <strong>For Quantitative Research:</strong> You need the data analytics hard skills of a scientist to run A/B tests, analyze large datasets, and ensure statistical significance[cite: 53, 54].
+                            </li>
+                            <li style="margin-top: 14px;">
+                                <strong>For Qualitative Research:</strong> You need the diagnosing mindset of a therapist to conduct empathetic interviews, remove bias, and get users to open up about their frustrations[cite: 54].
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="guide-text">
+                        Finding someone who can balance cold, hard data with deep human empathy is rare, which is why specialized researchers are in such high demand[cite: 54].
+                    </p>
+
+                    <h3 class="guide-sub-heading">Why Specialization Matters</h3>
+
+                    <div class="checklist-box" style="margin-top: 15px;">
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>High Impact:</strong> Your insights drive the strategy for the entire product[cite: 54, 55]. You tell the UX designers what to solve before they even open their tools[cite: 54, 55].
+                            </div>
+                        </div>
+
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div class="check-content">
+                                <strong>Strategic Growth:</strong> As companies mature, they split “Design” and “Research” into separate departments[cite: 54, 55]. Being a specialist makes you a key pillar of product strategy[cite: 55].
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="guide-sub-heading" style="font-size: 28px; margin-top: 50px;">How to Become a User Experience Researcher</h3>
+
+                    <p class="guide-text">
+                        If you decide this niche is your calling, the path on how to become a User Experience Researcher looks different than the standard design track[cite: 55, 56]. You generally have two options[cite: 55, 56]:
+                    </p>
+
+                    <div class="info-card-block" style="margin-top: 15px; margin-bottom: 30px;">
+                        <div class="checklist-item" style="margin-bottom: 18px;">
+                            <span class="check-icon" style="color: #facc15;">✓</span>
+                            <div class="check-content">
+                                <strong>The Pivot:</strong> You start as a UX Designer, realize you love the discovery phase, and specialize in research over time[cite: 55, 56].
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon" style="color: #facc15;">✓</span>
+                            <div class="check-content">
+                                <strong>The Direct Entry:</strong> You come from a background in Psychology, Anthropology, or Data Science and enter the field directly[cite: 56]. You don’t need to be a visual designer, but you do need to learn UX fundamentals to understand the context of what you are researching[cite: 56].
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="guide-text">
+                        Here is how to build that profile[cite: 56]:
+                    </p>
+
+                    <div class="timeline-steps-wrapper">
+                        
+                        <!-- Phase 1 -->
+                        <div class="timeline-step">
+                            <div class="timeline-badge">1</div>
+                            <span class="step-phase-tag">PHASE:</span>
+                            <h4>Sharpen Your Analytical Toolkit</h4>
+                            <p class="step-p">
+                                You don’t need to be a master of design software like Photoshop or Figma, but you must be comfortable with data tools[cite: 56, 57].
+                            </p>
+                            <ul class="bullet-list-custom" style="margin-top: 10px;">
+                                <li><strong>Testing Platforms:</strong> UserTesting.com, Maze, Lookback[cite: 57].</li>
+                                <li><strong>Analysis Tools:</strong> Dovetail and LLM-driven synthesis tools (for rapidly tagging and organizing interview transcripts), Hotjar (for heatmaps), and Google Analytics or Excel (for crunching numbers)[cite: 57].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 2 -->
+                        <div class="timeline-step">
+                            <div class="timeline-badge">2</div>
+                            <span class="step-phase-tag">PHASE:</span>
+                            <h4>Deepen Your Methodologies</h4>
+                            <p class="step-p">
+                                You must be fluent in both qualitative and quantitative research[cite: 57]. A good researcher knows which method to use to conduct user research effectively to answer a specific question[cite: 57].
+                            </p>
+                            <ul class="bullet-list-custom" style="margin-top: 10px;">
+                                <li><strong>Qualitative Research:</strong> Discovery interviews, diary studies, ethnographic field studies[cite: 57, 58]. This requires intense active listening and soft skills[cite: 57, 58].</li>
+                                <li><strong>Quantitative Research:</strong> Surveys, A/B user testing, click-stream analysis, and tree testing[cite: 57, 58]. This requires statistical knowledge and often overlaps with market research[cite: 57, 58].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 3 -->
+                        <div class="timeline-step">
+                            <div class="timeline-badge">3</div>
+                            <span class="step-phase-tag">PHASE:</span>
+                            <h4>Build a Research Portfolio</h4>
+                            <p class="step-p">
+                                Your portfolio should look different than a UX designer’s[cite: 58]. Instead of visual galleries, you should showcase research reports[cite: 58].
+                            </p>
+                            <ul class="bullet-list-custom" style="margin-top: 10px;">
+                                <li><strong>The Formula:</strong> Hypothesis + Methodology + Data Gathered + Insights + Impact[cite: 58, 59].</li>
+                                <li><strong>The Key:</strong> Show how your insights influenced the final product decision[cite: 58, 59]. Did the team change the feature because of your findings? That is the win[cite: 58, 59].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 4 -->
+                        <div class="timeline-step">
+                            <div class="timeline-badge">4</div>
+                            <span class="step-phase-tag">PHASE:</span>
+                            <h4>Leverage Your Background</h4>
+                            <p class="step-p">
+                                If you have a degree in Psychology, Sociology, Anthropology, or Political Science, you are already ahead[cite: 58, 59]. Highlight your academic experience with rigorous data collection and bias mitigation[cite: 59]. In many ways, UXR is simply the scientific method applied to product development[cite: 59].
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- 6. FAQ SECTION -->
+                <section class="guide-section">
+
+                    <h2 class="guide-main-heading">FAQ</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <div class="faq-accordion-box">
+
+                        <!-- Item 1 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What is a persona in UX design?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    A persona is a fictional character created using real user research to represent a specific segment of your target audience[cite: 60]. It helps design teams build empathy and make user-centric decisions by focusing on the goals, frustrations, and behaviors of a defined archetype[cite: 60].
+                                </p>
+                                <ul>
+                                    <li>– <strong>Demographics:</strong> Age, occupation, and location[cite: 60].</li>
+                                    <li>– <strong>Psychographics:</strong> Motivations, goals, and pain points[cite: 60].</li>
+                                    <li>– <strong>Behaviors:</strong> Technical proficiency and daily habits[cite: 60].</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What is a user flow in UX design?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    A user flow is a visual path showing the step-by-step actions a user takes to complete a specific goal within a digital product, illustrating their journey from entry point to resolution.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What is A/B testing in UX design?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    A/B testing is a research methodology where two variations of a webpage or interface are shown to users at random to determine which version performs better based on engagement or conversions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What is heuristic evaluation in UX design?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    A heuristic evaluation is a usability inspection method where UX experts review a digital interface against recognized usability principles (like Nielsen's 10 heuristics) to identify design flaws.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>Will AI replace UX Designers?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    No, AI will not replace UX designers. Instead, AI changes what designers do—automating routine tasks while elevating human-centered problem solving, empathy, strategy, and ethical system design.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What is AI Interaction Design (AIxD)?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    AIxD focuses on designing user interfaces and communication patterns for unpredictable, probabilistic, or generative AI systems, managing user trust, error tolerance, and latency.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 7 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What AI tools should a junior UX Designer learn?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    Junior designers should be comfortable with AI features inside Figma, prompt engineering with ChatGPT/Claude for research coding, and generative prototyping tools like Uizard and FigJam AI.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </article>
+
+            <!-- NEXT TOPIC BAR (Inside Right Column) -->
+            <div class="next-topic-bar">
+                <a href="#" class="next-topic-link">
+                    <span class="next-tag">Next</span>
+                    <span class="next-target">What Is UX Design? &rsaquo;</span>
+                </a>
+            </div>
+
+            <!-- ACCELERATE YOUR DESIGN CAREER CTA (Inside Right Column) -->
+            <section class="accelerate-section">
+                <div class="accelerate-left">
+                    <span class="accel-tag">GET STARTED</span>
+                    <h2>Accelerate Your Design Career</h2>
+                    <div class="accel-yellow-line"></div>
+                    
+                    <p>
+                        Courses built on adaptive curriculum and led by leading industry experts[cite: 62].
+                    </p>
+
+                    <div class="accel-benefits">
+                        <div class="accel-benefit-item">
+                            <span class="check">✓</span>
+                            <span>Work on projects in a collaborative setting</span>[cite: 62]
+                        </div>
+                        <div class="accel-benefit-item">
+                            <span class="check">✓</span>
+                            <span>Get access to VIP events and workshops</span>[cite: 62]
+                        </div>
+                        <div class="accel-benefit-item">
+                            <span class="check">✓</span>
+                            <span>Taught by industry experts</span>[cite: 62]
+                        </div>
+                    </div>
+
+                    <a href="../get-started.html" class="accel-btn">Learn more</a>
+                </div>
+
+                <div class="accelerate-right">
+                    <span class="rec-tag-title">RECOMMENDED CERTIFICATIONS</span>[cite: 62]
+
+                    <div class="rec-cert-card">
+                        <span class="badge-yellow-tag">PROFESSIONAL CERTIFICATE</span>[cite: 62]
+                        <h4>
+                            <a href="#">AI Product Design Certification (PDC™) &rsaquo;</a>[cite: 62]
+                        </h4>
+                        <p>Earn the Product Design Certification (PDC™)</p>[cite: 62]
+                    </div>
+
+                    <div class="rec-cert-card">
+                        <span class="badge-yellow-tag">PROFESSIONAL CERTIFICATE</span>[cite: 62]
+                        <h4>
+                            <a href="#">Artificial Intelligence Certification (AIC™) &rsaquo;</a>[cite: 62]
+                        </h4>
+                        <p>Earn the Artificial Intelligence Certification (AIC™)</p>[cite: 62]
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- SHARED FOOTER CONTAINER -->
+    <div id="footer"></div>
+
+    <!-- SCRIPT LOADER -->
+    <script src="../js/components.js"></script>
+
+    <!-- INTERACTIVITY SCRIPT (SIDEBAR COLLAPSE & FAQ ACCORDION) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // 1. SIDEBAR ACCORDION / TOGGLE (OPEN & CLOSE ON CLICK)
+            const sidebarTitles = document.querySelectorAll(".sidebar-title");
+            sidebarTitles.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const group = this.closest(".sidebar-group");
+                    group.classList.toggle("closed");
+                });
+            });
+
+            // 2. FAQ ACCORDION INTERACTIVITY (ALL DEFAULT CLOSED)
+            const faqQuestions = document.querySelectorAll(".faq-question");
+            faqQuestions.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector(".faq-icon");
+                    const isOpen = answer.classList.contains("open");
+
+                    // Close all FAQs
+                    document.querySelectorAll(".faq-answer").forEach(function (el) {
+                        el.classList.remove("open");
+                    });
+                    document.querySelectorAll(".faq-question").forEach(function (el) {
+                        el.classList.remove("active");
+                        const ic = el.querySelector(".faq-icon");
+                        if (ic) ic.textContent = "+";
+                    });
+
+                    // If not open, open current
+                    if (!isOpen) {
+                        this.classList.add("active");
+                        answer.classList.add("open");
+                        if (icon) icon.textContent = "−";
+                    }
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>

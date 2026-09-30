@@ -1458,95 +1458,55 @@ a {
 }
 
 /* =========================================================
-   FOOTER
+   FOOTER EXACT FIX (Compact & 4-Column Layout)
 ========================================================= */
 
 .site-footer {
     width: 100%;
-    background: #050608;
-    color: #fff;
-    border-top:
-        1px solid
-        rgba(255, 255, 255, 0.12);
-    padding:
-        75px 0 0;
+    background: #000000;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 60px 0 0;
 }
-
-/* =========================================================
-   MAIN FOOTER CONTAINER
-========================================================= */
 
 .footer-container {
-    width:
-        min(
-            calc(100% - 80px),
-            1490px
-        );
+    width: min(calc(100% - 80px), 1400px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns:
-        1.5fr
-        1fr
-        1fr
-        1fr;
-    column-gap: 70px;
-    padding-bottom: 75px;
+    grid-template-columns: 1.2fr 1.2fr 1fr 1fr;
+    column-gap: 50px;
+    padding-bottom: 60px;
 }
 
-/* =========================================================
-   LOGO
-========================================================= */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 .footer-logo {
     display: inline-flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     text-decoration: none;
 }
 
 .footer-logo img {
     display: block;
     width: auto;
-    max-width: 205px;
+    max-width: 160px;
     height: auto;
-    max-height: 55px;
+    max-height: 45px;
     object-fit: contain;
 }
 
-/* =========================================================
-   BRAND DESCRIPTION
-========================================================= */
-
 .footer-description {
-    max-width: 430px;
-    margin: 0 0 27px;
+    max-width: 320px;
+    margin: 0 0 0;
     color: #91a1bd;
-    font-size: 19px;
-    line-height: 1.55;
-    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.45;
 }
-
-/* =========================================================
-   CAMPUS INFORMATION
-========================================================= */
-
-.footer-campus {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    color: #91a1bd;
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-.footer-campus-title {
-    margin-bottom: 2px;
-    color: #91a1bd;
-}
-
-/* =========================================================
-   FOOTER COLUMNS
-========================================================= */
 
 .footer-column {
     display: flex;
@@ -1555,80 +1515,63 @@ a {
 }
 
 .footer-column h3 {
-    margin: 0 0 28px;
-    color: #fff;
-    font-size: 19px;
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 14px;
     line-height: 1.2;
     font-weight: 700;
-    letter-spacing: 0.5px;
+}
+
+.footer-sub-heading {
+    margin-top: 22px !important;
 }
 
 .footer-column a {
-    margin-bottom: 22px;
+    margin-bottom: 8px;
     color: #91a1bd;
-    font-size: 18px;
-    line-height: 1.3;
+    font-size: 13px;
+    line-height: 1.35;
     text-decoration: none;
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .footer-column a:hover {
-    color: #fff;
+    color: #ffffff;
 }
 
-/* =========================================================
-   FOOTER BOTTOM LINE
-========================================================= */
-
 .footer-bottom {
-    width:
-        min(
-            calc(100% - 80px),
-            1490px
-        );
+    width: min(calc(100% - 80px), 1400px);
     margin: 0 auto;
-    min-height: 105px;
-    border-top:
-        1px solid
-        rgba(255, 255, 255, 0.5);
+    min-height: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
+    padding: 20px 0;
 }
-
-/* =========================================================
-   COPYRIGHT
-========================================================= */
 
 .footer-copyright {
     color: #63748f;
-    font-size: 16px;
+    font-size: 12.5px;
     line-height: 1.4;
 }
-
-/* =========================================================
-   LEGAL LINKS
-========================================================= */
 
 .footer-legal {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 24px;
 }
 
 .footer-legal a {
     color: #63748f;
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: 12.5px;
     text-decoration: none;
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .footer-legal a:hover {
-    color: #fff;
+    color: #ffffff;
 }
 
 /* =========================================================
@@ -3985,4 +3928,35 @@ a {
 .location-button.active span {
     transform: rotate(180deg) !important;
     opacity: 1 !important;
+}
+
+/* White Header style for specific pages */
+.site-header.white-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.site-header.white-header .nav-links > button,
+.site-header.white-header .nav-links > a:not(.get-started):not(.sign-in-button),
+.site-header.white-header .sign-in-button,
+.site-header.white-header .location-button {
+    color: #111111 !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    background: rgba(0, 0, 0, 0.04) !important;
+}
+
+.site-header.white-header .location-button span,
+.site-header.white-header .workshops-arrow,
+.site-header.white-header .certifications-arrow,
+.site-header.white-header .events-arrow,
+.site-header.white-header .about-arrow {
+    background-color: #111111 !important;
+}
+
+/* Footer default dark / blue theme */
+.site-footer {
+    width: 100%;
+    background: #050608 !important;
+    color: #fff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }

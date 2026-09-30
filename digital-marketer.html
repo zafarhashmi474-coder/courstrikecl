@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Become a Digital Marketer - BrainStation</title>
+
+    <!-- Main CSS Link -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* =========================================
+           RESET & GLOBAL STYLES
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           WHITE HEADER THEME FIX (CLEAN & TRANSPARENT)
+        ========================================= */
+        .site-header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 80px !important;
+            background: #ffffff !important;
+            border-bottom: 1px solid #e5e7eb !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            z-index: 9999 !important;
+        }
+
+        .site-header .brand-logo,
+        .site-header .brand img {
+            filter: invert(1) brightness(0) !important;
+        }
+
+        .site-header .nav-links > button,
+        .site-header .nav-links > a:not(.get-started),
+        .site-header .sign-in-button {
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #111111 !important;
+            opacity: 0.9 !important;
+            outline: none !important;
+            font-family: inherit !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            padding: 6px 0 !important;
+        }
+
+        .site-header .nav-links > button:hover,
+        .site-header .nav-links > a:not(.get-started):hover,
+        .site-header .sign-in-button:hover {
+            color: #2563eb !important;
+            opacity: 1 !important;
+        }
+
+        .site-header a[href*="enterprise-training"],
+        .nav-links a[href*="enterprise-training"] {
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .site-header .workshops-arrow,
+        .site-header .certifications-arrow,
+        .site-header .events-arrow,
+        .site-header .about-arrow,
+        .site-header .location-button span {
+            background-color: #111111 !important;
+        }
+
+        .site-header .location-button {
+            background: transparent !important;
+            color: #111111 !important;
+            border: 1px solid #cbd5e1 !important;
+            border-radius: 999px !important;
+            padding: 8px 18px !important;
+        }
+
+        .site-header .location-button:hover {
+            background: rgba(0, 0, 0, 0.04) !important;
+            border-color: #94a3b8 !important;
+        }
+
+        .site-header .get-started {
+            background: #2563eb !important;
+            color: #ffffff !important;
+            box-shadow: none !important;
+            padding: 9px 22px !important;
+            border-radius: 999px !important;
+            font-weight: 600 !important;
+            font-size: 13.5px !important;
+        }
+
+        .site-header .get-started:hover {
+            background: #1d4ed8 !important;
+        }
+
+        .site-header .menu-btn {
+            border-color: rgba(0, 0, 0, 0.25) !important;
+        }
+
+        .site-header .menu-btn span {
+            background: #111111 !important;
+        }
+
+        /* =========================================
+           TOP BREADCRUMB
+        ========================================= */
+        .breadcrumb-bar {
+            margin-top: 80px;
+            background: #071124;
+            padding: 16px 45px;
+            font-size: 13.5px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .breadcrumb-bar a {
+            color: #cbd5e1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-bar span.current {
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           LAYOUT: FIXED SIDEBAR + SCROLL CONTENT
+        ========================================= */
+        .page-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            background: #ffffff;
+        }
+
+        /* LEFT SIDEBAR */
+        .sidebar {
+            width: 320px;
+            flex-shrink: 0;
+            background: #ffffff;
+            color: #111111;
+            border-right: 1px solid #e5e7eb;
+            padding: 24px 20px;
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .sidebar-active-tab {
+            background: #2563eb;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 6px;
+            gap: 10px;
+        }
+
+        .sidebar-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 8px 0;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .sidebar-arrow {
+            font-size: 15px;
+            transition: transform 0.25s ease;
+            user-select: none;
+            display: inline-block;
+        }
+
+        .sidebar-group.closed .sidebar-arrow {
+            transform: rotate(180deg);
+        }
+
+        .sidebar-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            padding-left: 2px;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.25s ease;
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-group.closed .sidebar-links-list {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            pointer-events: none;
+        }
+
+        .sidebar-links-list a {
+            font-size: 14.5px;
+            color: #334155;
+            font-weight: 500;
+            line-height: 1.4;
+            padding-left: 10px;
+            border-left: 3px solid transparent;
+            transition: all 0.15s ease;
+            display: block;
+        }
+
+        .sidebar-links-list a:hover {
+            color: #2563eb !important;
+            font-weight: 700 !important;
+            border-left-color: #2563eb !important;
+        }
+
+        .sidebar-scroll-indicator {
+            margin-top: auto;
+            padding-top: 20px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* RIGHT CONTENT CONTAINER */
+        .content-wrap {
+            flex: 1;
+            min-width: 0;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: linear-gradient(135deg, #071124 0%, #0b1329 100%);
+            color: #ffffff;
+            padding: 55px 60px 70px;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .guide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .hero-left h1 {
+            font-size: clamp(38px, 4vw, 56px);
+            font-weight: 800;
+            line-height: 1.08;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .yellow-bar {
+            width: 44px;
+            height: 4px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin: 6px 0 14px 0;
+        }
+
+        .hero-left p {
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: #cbd5e1;
+            max-width: 620px;
+            margin: 0;
+        }
+
+        .form-box {
+            background: #ffffff;
+            color: #0f172a;
+            padding: 34px;
+            border-radius: 16px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .form-box h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .form-box p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-row.single {
+            grid-template-columns: 1fr;
+        }
+
+        .input-text {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: #f8fafc;
+            color: #0f172a;
+            font-family: inherit;
+        }
+
+        .input-text:focus {
+            border-color: #2563eb;
+            background: #ffffff;
+        }
+
+        .phone-field {
+            display: flex;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f8fafc;
+            overflow: hidden;
+        }
+
+        .country-flag {
+            padding: 0 10px;
+            background: #f1f5f9;
+            border: none;
+            border-right: 1px solid #cbd5e1;
+            outline: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .phone-field input {
+            border: none;
+            background: transparent;
+            padding: 12px 14px;
+            width: 100%;
+            font-size: 14px;
+            outline: none;
+            color: #0f172a;
+        }
+
+        .form-disclaimer {
+            font-size: 11.5px;
+            color: #64748b;
+            margin: 14px 0 18px 0;
+            line-height: 1.4;
+        }
+
+        .form-disclaimer a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* =========================================
+           ARTICLE MAIN CONTENT AREA
+        ========================================= */
+        .article-content {
+            padding: 55px 75px 80px;
+            max-width: 960px;
+            color: #111111;
+        }
+
+        .article-p {
+            font-size: 17.5px;
+            line-height: 1.7;
+            color: #111111;
+            margin-bottom: 26px;
+            font-weight: 400;
+        }
+
+        .section-main-heading {
+            font-size: clamp(34px, 3.8vw, 48px);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            color: #0b0c10;
+            margin: 45px 0 24px 0;
+        }
+
+        .yellow-accent-bar {
+            width: 44px;
+            height: 4px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+
+        .overview-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 32px 36px;
+            margin: 36px 0 45px 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+        }
+
+        .overview-box h4 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .overview-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .overview-list li {
+            font-size: 16px;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+        }
+
+        .overview-list li span.num {
+            color: #2563eb;
+            font-weight: 600;
+            margin-right: 8px;
+            min-width: 18px;
+        }
+
+        .overview-list li a {
+            color: #2563eb;
+            text-decoration: underline;
+            font-weight: 500;
+            transition: opacity 0.15s;
+        }
+
+        .overview-list li a:hover {
+            opacity: 0.8;
+        }
+
+        /* TIMELINE: BENEFITS */
+        .dm-timeline-wrapper {
+            position: relative;
+            padding-left: 45px;
+            margin: 35px 0 55px 0;
+        }
+
+        .dm-timeline-wrapper::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 15px;
+            bottom: 35px;
+            width: 2px;
+            background-color: #2563eb;
+        }
+
+        .dm-timeline-row {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .dm-timeline-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .dm-path-dot {
+            position: absolute;
+            left: -45px;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 4px solid #2563eb;
+            z-index: 2;
+        }
+
+        .dm-title-col {
+            font-size: 13px;
+            font-weight: 700;
+            color: #475569;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .dm-desc-col {
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: #1e293b;
+        }
+
+        /* 4 PHASES MARKETING FUNNEL TIMELINE */
+        .funnel-timeline-wrapper {
+            position: relative;
+            padding-left: 55px;
+            margin: 35px 0 50px 0;
+        }
+
+        .funnel-timeline-wrapper::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            bottom: 25px;
+            width: 2px;
+            background-color: #2563eb;
+        }
+
+        .funnel-step {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .funnel-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .funnel-badge {
+            position: absolute;
+            left: -55px;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .funnel-phase-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .funnel-step h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0b0c10;
+            margin: 4px 0 12px 0;
+        }
+
+        .funnel-box-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 26px 30px;
+            margin-top: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .funnel-box-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        .funnel-box-row .check-blue {
+            color: #2563eb;
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .funnel-box-row strong {
+            color: #0f172a;
+        }
+
+        /* 7 TYPES & ANALYTICS CARD BLOCKS */
+        .type-sub-heading {
+            font-size: 26px;
+            font-weight: 800;
+            color: #0b0c10;
+            margin: 45px 0 16px 0;
+            letter-spacing: -0.4px;
+        }
+
+        .info-card-block {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 26px 30px;
+            margin: 18px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .info-card-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .info-card-content h5 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0b0c10;
+            margin: 0 0 8px 0;
+        }
+
+        .info-card-content p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin: 0;
+        }
+
+        .quote-block {
+            margin: 36px 0 40px 0;
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 52px;
+            line-height: 1;
+            color: #93c5fd;
+            margin-bottom: 8px;
+            font-family: serif;
+            font-weight: bold;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0b0c10;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .quote-author {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .bullet-list-dm {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bullet-list-dm li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: #334155;
+        }
+
+        .bullet-list-dm li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .bullet-list-dm li strong {
+            color: #0f172a;
+        }
+
+        /* STICKY NOTES ILLUSTRATION */
+        .sticky-notes-wrapper {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 45px 30px;
+            margin: 35px 0 45px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .sticky-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .sticky-note {
+            width: 135px;
+            height: 135px;
+            background: #facc15;
+            box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.12);
+            padding: 16px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.35;
+        }
+
+        .sticky-note.hash {
+            font-size: 52px;
+            font-weight: 900;
+            color: #0f172a;
+        }
+
+        /* CHECKMARK BOX */
+        .dm-checklist-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 30px 34px;
+            margin: 24px 0 35px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .dm-checklist-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        .dm-checklist-row .check-yellow {
+            color: #eab308;
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .dm-checklist-row strong {
+            color: #0f172a;
+        }
+
+        /* DISCLAIMER BOX */
+        .disclaimer-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 32px 36px;
+            margin: 32px 0 45px 0;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .disclaimer-icon-svg {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            color: #2563eb;
+        }
+
+        .disclaimer-content h5 {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+        }
+
+        .disclaimer-content p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* 5-STEP ROADMAP TIMELINE */
+        .roadmap-timeline-wrapper {
+            position: relative;
+            padding-left: 55px;
+            margin: 35px 0 50px 0;
+        }
+
+        .roadmap-timeline-wrapper::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            bottom: 25px;
+            width: 2px;
+            background-color: #2563eb;
+        }
+
+        .roadmap-step {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .roadmap-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .roadmap-badge {
+            position: absolute;
+            left: -55px;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .roadmap-step h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0b0c10;
+            margin: 4px 0 8px 0;
+        }
+
+        .roadmap-yellow-line {
+            width: 40px;
+            height: 3px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin-bottom: 18px;
+        }
+
+        .step-flex-wrap {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .step-right-bubble {
+            width: 205px;
+            background-color: #0b1736;
+            color: #ffffff;
+            padding: 20px 18px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(11, 23, 54, 0.15);
+        }
+
+        .step-right-bubble::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -12px;
+            width: 0;
+            height: 0;
+            border-top: 14px solid #0b1736;
+            border-left: 14px solid transparent;
+        }
+
+        .bubble-tag {
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .bubble-link {
+            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: 700;
+            line-height: 1.35;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bubble-link:hover {
+            color: #60a5fa;
+        }
+
+        /* TIP BOX (Screenshot 91 & 92) */
+        .tip-box-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 30px 34px;
+            margin: 32px 0 45px 0;
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .tip-icon-svg {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            color: #2563eb;
+            margin-top: 2px;
+        }
+
+        .tip-content h5 {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+        }
+
+        .tip-content p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* B2B vs B2C 2-COLUMN GRID (Screenshot 91 & 92) */
+        .b2b-grid-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+            margin: 32px 0 24px 0;
+        }
+
+        .b2b-col h4 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .b2b-col p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        /* SKILLS COMPARISON BOX (Screenshot 93 & 94) */
+        .skills-compare-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 36px 40px;
+            margin: 35px 0 40px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .compare-col h4 {
+            font-size: 17.5px;
+            font-weight: 800;
+            font-style: italic;
+            color: #2563eb;
+            margin-bottom: 16px;
+        }
+
+        .compare-col p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* FAQ ACCORDION (Screenshot 95) */
+        .faq-accordion-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            margin-top: 24px;
+            margin-bottom: 45px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: 16.5px;
+            font-weight: 700;
+            color: #0f172a;
+            transition: color 0.15s ease;
+        }
+
+        .faq-question:hover {
+            color: #2563eb;
+        }
+
+        .faq-question.active {
+            color: #2563eb;
+        }
+
+        .faq-icon {
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 600;
+            color: #0f172a;
+            user-select: none;
+        }
+
+        .faq-question.active .faq-icon {
+            color: #2563eb;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #ffffff;
+            padding: 0 28px;
+        }
+
+        .faq-answer.open {
+            padding: 0 28px 24px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            font-size: 15.5px;
+            line-height: 1.65;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* BOTTOM NEXT LINK (Screenshot 95) */
+        .bottom-next-bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 0;
+            border-top: 1px solid #e5e7eb;
+            margin-bottom: 40px;
+        }
+
+        .bottom-next-link {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .next-tag {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .next-target {
+            color: #2563eb;
+            font-size: 15.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .next-target:hover {
+            text-decoration: underline;
+        }
+
+        /* ACCELERATE CTA SECTION (Screenshot 96) */
+        .accelerate-section {
+            background-color: #071124;
+            color: #ffffff;
+            padding: 65px 50px 75px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: start;
+            margin-top: 0;
+        }
+
+        .accelerate-left {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .accel-tag {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .accelerate-left h2 {
+            font-size: clamp(30px, 3.2vw, 42px);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .accel-yellow-line {
+            width: 44px;
+            height: 4px;
+            background-color: #facc15;
+            border-radius: 2px;
+            margin: 4px 0 16px 0;
+        }
+
+        .accelerate-left p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        .accel-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .accel-benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .accel-benefit-item span.check {
+            color: #facc15;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .accel-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            width: fit-content;
+            transition: background-color 0.2s ease;
+        }
+
+        .accel-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .accelerate-right {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .rec-tag-title {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .rec-cert-card {
+            background: #ffffff;
+            color: #0f172a;
+            border-radius: 8px;
+            padding: 26px 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .rec-cert-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .badge-yellow-tag {
+            display: inline-block;
+            background: #fef08a;
+            color: #854d0e;
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .rec-cert-card h4 a {
+            color: #2563eb;
+            font-size: 17.5px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.3;
+        }
+
+        .rec-cert-card h4 a:hover {
+            text-decoration: underline;
+        }
+
+        .rec-cert-card p {
+            font-size: 14px;
+            color: #334155;
+            margin: 10px 0 0 0;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+        ========================================= */
+        @media (max-width: 1100px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+            .article-content {
+                padding: 40px 30px;
+            }
+            .dm-timeline-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .step-flex-wrap {
+                flex-direction: column;
+            }
+            .step-right-bubble {
+                width: 100%;
+            }
+            .step-right-bubble::before {
+                display: none;
+            }
+            .b2b-grid-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .skills-compare-box {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .accelerate-section {
+                grid-template-columns: 1fr;
+                padding: 50px 30px 60px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .page-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 0;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SHARED DYNAMIC HEADER CONTAINER -->
+    <div id="header"></div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+        <a href="../index.html">Career Guides</a>
+        <span>&rsaquo;</span>
+        <span class="current">How to Become a Digital Marketer</span>
+    </div>
+
+    <!-- MAIN PAGE CONTAINER -->
+    <div class="page-container">
+
+        <!-- =========================================
+             LEFT SIDEBAR (DIGITAL MARKETING)
+        ========================================== -->
+        <aside class="sidebar">
+            <div class="sidebar-active-tab">
+                <span>How to Become a Digital Marketer</span>
+                <span>&rarr;</span>
+            </div>
+
+            <!-- ON THE JOB -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>ON THE JOB</span>
+                    <span class="sidebar-arrow">&#9650;</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">What Does a Digital Marketer Do?</a>
+                </div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>SKILLS</span>
+                    <span class="sidebar-arrow">&#9650;</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">Digital Marketing Skills</a>
+                </div>
+            </div>
+
+            <!-- CAREER PATH -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>CAREER PATH</span>
+                    <span class="sidebar-arrow">&#9650;</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">How to Learn Digital Marketing</a>
+                    <a href="#">Is a Digital Marketing Certificate Worth it?</a>
+                    <a href="#">Is Digital Marketing a Good Career?</a>
+                    <a href="#">Digital and Social Media Marketing</a>
+                </div>
+            </div>
+
+            <!-- GETTING THE JOB -->
+            <div class="sidebar-group">
+                <button class="sidebar-title" type="button">
+                    <span>GETTING THE JOB</span>
+                    <span class="sidebar-arrow">&#9650;</span>
+                </button>
+                <div class="sidebar-links-list">
+                    <a href="#">How to Make a Marketing Portfolio</a>
+                    <a href="#">Digital Marketing Cover Letter</a>
+                    <a href="#">Marketing Resume</a>
+                    <a href="#">Marketing Interview Questions</a>
+                </div>
+            </div>
+
+            <div class="sidebar-scroll-indicator">
+                <span>Scroll</span> <span>&darr;</span>
+            </div>
+        </aside>
+
+        <!-- RIGHT CONTENT -->
+        <div class="content-wrap">
+            
+            <!-- HERO SECTION -->
+            <section class="hero-section">
+                <div class="hero-left">
+                    <div class="guide-tag">
+                        2026 GUIDE &nearr;
+                    </div>
+                    <h1>How to Become a Digital Marketer</h1>
+                    <div class="yellow-bar"></div>
+                    <p>
+                        BrainStation&rsquo;s Digital Marketing career guide can help start a career in marketing, including LLM-assisted content creation, social media marketing, email marketing, and AI search optimization[cite: 87]. The guide provides an in-depth overview of the marketing skills you should learn, the best available digital marketing training options, career paths in digital marketing, how to become a digital marketer, and more[cite: 87].
+                    </p>
+                </div>
+
+                <div class="form-box">
+                    <h3>Become a Digital Marketer</h3>
+                    <p>Speak to a Learning Advisor to learn more about how our courses can help you become a Digital Marketer[cite: 87].</p>
+                    
+                    <form>
+                        <div class="form-row">
+                            <input type="text" class="input-text" placeholder="First Name" required>
+                            <input type="text" class="input-text" placeholder="Last Name" required>
+                        </div>
+
+                        <div class="form-row single">
+                            <input type="email" class="input-text" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-row single">
+                            <div class="phone-field">
+                                <select class="country-flag">
+                                    <option value="us">US</option>
+                                    <option value="in">IN</option>
+                                </select>
+                                <input type="tel" placeholder="(201) 555-0123 (Optional)">
+                            </div>
+                        </div>
+
+                        <div class="form-disclaimer">
+                            By clicking &ldquo;Submit&rdquo;, you accept our <a href="#">Terms</a>[cite: 87].
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ARTICLE CONTENT AREA -->
+            <article class="article-content">
+
+                <!-- SECTION: What is Digital Marketing? -->
+                <section id="what-is-digital-marketing">
+                    <h2 class="section-main-heading">What is Digital Marketing?</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="article-p">
+                        Digital marketing is the act of promoting products and services through various digital marketing channels, such as social media, search engines, emails, and mobile apps[cite: 89]. Unlike traditional marketing methods, which rely on static marketing channels like print, billboards, or TV, digital marketing is more data-driven, allowing brands to track engagement on social media, monitor ROI (Return on Investment) in real-time, and target specific audiences with precision[cite: 89].
+                    </p>
+
+                    <!-- OVERVIEW BOX -->
+                    <div class="overview-box">
+                        <h4>Overview</h4>
+                        <ul class="overview-list">
+                            <li>
+                                <span class="num">1.</span>
+                                <a href="#what-is-digital-marketing">What is Digital Marketing?</a>
+                            </li>
+                            <li>
+                                <span class="num">2.</span>
+                                <a href="#why-is-digital-marketing-important">Why is Digital Marketing Important?</a>
+                            </li>
+                            <li>
+                                <span class="num">3.</span>
+                                <a href="#how-does-it-work">What is Digital Marketing and How Does it Work?</a>
+                            </li>
+                            <li>
+                                <span class="num">4.</span>
+                                <a href="#types-of-digital-marketing">What are the 7 Types of Digital Marketing?</a>
+                            </li>
+                            <li>
+                                <span class="num">5.</span>
+                                <a href="#digital-marketing-analytics">What is Digital Marketing Analytics?</a>
+                            </li>
+                            <li>
+                                <span class="num">6.</span>
+                                <a href="#ai-digital-marketing">AI in Digital Marketing</a>
+                            </li>
+                            <li>
+                                <span class="num">7.</span>
+                                <a href="#how-to-get-into-dm">How to Get Into Digital Marketing?</a>
+                            </li>
+                            <li>
+                                <span class="num">8.</span>
+                                <a href="#time-to-learn">How Long Does It Take to Learn Digital Marketing?</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="article-p">
+                        Digital marketing is a distinct discipline because it requires a unique set of skills to navigate the technology that shapes our society[cite: 90]. While traditional marketing casts a wide net, often reaching people who have no interest in the product, digital tools allow for hyper-targeted communication[cite: 90].
+                    </p>
+
+                    <p class="article-p">
+                        For example, social media algorithms pay careful attention to the content social media users consume to understand their personality and interests[cite: 90]. This allows advertisers to show ads based on specific search history, profile, or behavior[cite: 90]. While this level of personalization is impossible with traditional channels, it is the standard in the digital world, where Large Language Models and real-time behavioral data ensure the right message reaches the right person at the right time[cite: 90].
+                    </p>
+
+                    <p class="article-p">
+                        At its core, digital marketing connects businesses with potential customers where they spend a lot of their time: browsing online channels[cite: 90].
+                    </p>
+                </section>
+
+                <!-- SECTION: Why is Digital Marketing Important? -->
+                <section id="why-is-digital-marketing-important">
+                    <h2 class="section-main-heading">Why is Digital Marketing Important?</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="article-p">
+                        While traditional marketing channels like print and broadcast still hold value, incorporating a digital or online marketing strategy is no longer optional, it is essential for relevance[cite: 91]. Innovation is central to business growth, and brands that effectively integrate these marketing channels are better positioned to capture market share, while those that ignore the online landscape risk becoming invisible to modern consumers[cite: 91].
+                    </p>
+
+                    <p class="article-p">
+                        Without a digital presence, you aren&rsquo;t just missing out on a trend, you are missing out on a massive segment of your potential market that expects to find you online[cite: 91].
+                    </p>
+
+                    <p class="article-p" style="margin-bottom: 28px;">
+                        There are many benefits of digital marketing that complement and enhance a business&rsquo;s overall marketing strategy[cite: 91]:
+                    </p>
+
+                    <div class="dm-timeline-wrapper">
+                        <div class="dm-timeline-row">
+                            <div class="dm-path-dot"></div>
+                            <div class="dm-title-col">
+                                DEEP CUSTOMER INSIGHTS
+                            </div>
+                            <div class="dm-desc-col">
+                                Digital tools can reveal hidden behaviors and preferences, allowing you to learn things about your customers you did not know before[cite: 91]. These insights can drive strategic product development and messaging[cite: 91].
+                            </div>
+                        </div>
+
+                        <div class="dm-timeline-row">
+                            <div class="dm-path-dot"></div>
+                            <div class="dm-title-col">
+                                MEASURABILITY
+                            </div>
+                            <div class="dm-desc-col">
+                                You can track the success of your marketing efforts and every dollar spent using analytics[cite: 92].
+                            </div>
+                        </div>
+
+                        <div class="dm-timeline-row">
+                            <div class="dm-path-dot"></div>
+                            <div class="dm-title-col">
+                                PRECISION TARGETING
+                            </div>
+                            <div class="dm-desc-col">
+                                You can reach specific demographics of interested users, and trigger behaviors of potential customers rather than taking a guessing approach[cite: 92].
+                            </div>
+                        </div>
+
+                        <div class="dm-timeline-row">
+                            <div class="dm-path-dot"></div>
+                            <div class="dm-title-col">
+                                INTERACTIVITY
+                            </div>
+                            <div class="dm-desc-col">
+                                Foster a conversation on social media between the brand and the consumer, building trust and loyalty[cite: 92].
+                            </div>
+                        </div>
+
+                        <div class="dm-timeline-row">
+                            <div class="dm-path-dot"></div>
+                            <div class="dm-title-col">
+                                GLOBAL REACH
+                            </div>
+                            <div class="dm-desc-col">
+                                Small businesses can reach international target audiences without the cost of sending printed assets internationally[cite: 92].
+                            </div>
+                        </div>
+
+                        <div class="dm-timeline-row">
+                            <div class="dm-path-dot"></div>
+                            <div class="dm-title-col">
+                                COST EFFICIENCY
+                            </div>
+                            <div class="dm-desc-col">
+                                Digital campaigns often require lower upfront investment compared to TV or print, leveling the playing field for smaller competitors[cite: 92].
+                            </div>
+                        </div>
+
+                        <div class="dm-timeline-row">
+                            <div class="dm-path-dot"></div>
+                            <div class="dm-title-col">
+                                SPEED TO MARKET
+                            </div>
+                            <div class="dm-desc-col">
+                                Digital campaigns can be launched, paused, or pivoted in minutes, unlike print or broadcast media which have long lead times[cite: 93].
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: What is Digital Marketing and How Does it Work? -->
+                <section id="how-does-it-work">
+                    <h2 class="section-main-heading">What is Digital Marketing and How Does it Work?</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="article-p">
+                        To acquire customers systematically, Digital Marketers use a framework known as the marketing funnel[cite: 93]. This funnel relies heavily on inbound marketing methodologies to be effective[cite: 93].
+                    </p>
+
+                    <p class="article-p">
+                        Inbound marketing is a strategic shift away from interruptive tactics[cite: 94]. Rather than pushing unwanted ads onto an audience, referred to as outbound marketing, inbound marketing focuses on creating content that addresses the specific needs and pain points of your target audience[cite: 94]. It is about providing the right answer at the exact moment a potential customer asks the question[cite: 94].
+                    </p>
+
+                    <p class="article-p">
+                        By solving problems rather than just selling products, you build trust early in the relationship[cite: 94]. This approach guides the customer naturally through the funnel, taking them from total unawareness to brand advocacy[cite: 94]. An effective digital marketing strategy moves users through these four stages[cite: 94]:
+                    </p>
+
+                    <div class="funnel-timeline-wrapper">
+                        <!-- 1st Phase -->
+                        <div class="funnel-step">
+                            <div class="funnel-badge">1st</div>
+                            <span class="funnel-phase-tag">PHASE</span>
+                            <h3>Awareness</h3>
+                            <p class="article-p" style="margin-bottom: 0;">
+                                At this stage, the potential customer does not know the brand yet[cite: 94]. The goal is to cast a wide net and capture the attention of your target audience and other potential customers[cite: 94].
+                            </p>
+                            <div class="funnel-box-card">
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Goals:</strong> Visibility and traffic to your platforms and content[cite: 95].</div>
+                                </div>
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Tactics:</strong> Social media posts, display ads, influencer marketing, and AI-optimized content marketing (SEO &amp; GEO) designed to satisfy conversational LLM search queries[cite: 95].</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2nd Phase -->
+                        <div class="funnel-step">
+                            <div class="funnel-badge">2nd</div>
+                            <span class="funnel-phase-tag">PHASE</span>
+                            <h3>Consideration &amp; Interest</h3>
+                            <p class="article-p" style="margin-bottom: 0;">
+                                The potential customer is now aware of you and is comparing you against competitors[cite: 95]. They are looking for social proof and product details[cite: 95].
+                            </p>
+                            <div class="funnel-box-card">
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Goals:</strong> Engagement and education on your brand[cite: 95, 96].</div>
+                                </div>
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Tactics:</strong> E-books, newsletters, targeted email campaigns, webinars, and reviews/testimonials[cite: 96].</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3rd Phase -->
+                        <div class="funnel-step">
+                            <div class="funnel-badge">3rd</div>
+                            <span class="funnel-phase-tag">PHASE</span>
+                            <h3>Conversion &amp; Decision</h3>
+                            <p class="article-p" style="margin-bottom: 0;">
+                                The customer is ready to buy[cite: 96]. The marketing focus shifts to removing friction and closing the sale[cite: 96].
+                            </p>
+                            <div class="funnel-box-card">
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Goal:</strong> Generate sales[cite: 96].</div>
+                                </div>
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Tactics:</strong> Retargeting ads, discount codes, clear call to action (CTA) buttons, free trials, and optimized landing pages[cite: 96].</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4th Phase -->
+                        <div class="funnel-step">
+                            <div class="funnel-badge">4th</div>
+                            <span class="funnel-phase-tag">PHASE</span>
+                            <h3>Loyalty &amp; Advocacy</h3>
+                            <p class="article-p" style="margin-bottom: 0;">
+                                The relationship doesn&rsquo;t end at the sale. Your marketing efforts now focus on turning a one-time buyer into a repeat customer who refers others.
+                            </p>
+                            <div class="funnel-box-card">
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Goals:</strong> Retention and word-of-mouth.</div>
+                                </div>
+                                <div class="funnel-box-row">
+                                    <span class="check-blue">&#10003;</span>
+                                    <div><strong>Tactics:</strong> Post-purchase email flows, loyalty programs, referral bonuses, and community management.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: What are the 7 Types of Digital Marketing? -->
+                <section id="types-of-digital-marketing">
+                    <h2 class="section-main-heading">What are the 7 Types of Digital Marketing?</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="article-p">
+                        Digital marketing encompasses a wide range of strategies and specializations that work together. While a &ldquo;T-Shaped Marketer&rdquo; may have broad knowledge of all of them, most professionals specialize in one or two areas. Beyond the core types of digital marketing, modern Digital Marketers often leverage specialized strategies across various online platforms to reach niche audiences or amplify their impact.
+                    </p>
+
+                    <!-- TYPE 1: SEO & GEO -->
+                    <h3 class="type-sub-heading">Search Engine Optimization (SEO) and Generative Engine Optimization (GEO)</h3>
+                    <p class="article-p">
+                        SEO and GEO (Generative Engine Optimization) form the art and science of optimizing your online content so that AI engines and conversational models (like ChatGPT, Gemini, and Google&rsquo;s AI Overviews) surface it as an authoritative source. This evolution focuses on driving organic traffic from both traditional search and AI response engines.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>Organic search is often the primary source of digital web traffic. Ranking high builds credibility and trust without paying for every click.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Use Ahrefs, Moz, and SEMrush to conduct technical site audits, along side AI benchmarking tools to track brand sentiment and visibility across LLM training datasets.</p>
+                        </div>
+                    </div>
+
+                    <!-- TYPE 2: Mobile Marketing -->
+                    <h3 class="type-sub-heading">Mobile Marketing</h3>
+                    <p class="article-p">
+                        In a mobile-first world, almost all digital marketing focuses on mobile marketing. However, this type of digital marketing refers specifically to tactics designed only for mobile devices.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Tactics</h5>
+                            <p>SMS marketing, In-App advertising, and App Store Optimization (ASO), which is essentially SEO for mobile apps.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>Mobile devices are personal and always on. The average mobile user checks their device multiple times a day. SMS open rates are typically far higher than email, making it a powerful digital marketing channel for time-sensitive offers.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Leverage Klaviyo and Attentive to master mobile retention through text messaging, and utilize data.ai and Sensor Tower to refine your App Store Optimization (ASO) strategy.</p>
+                        </div>
+                    </div>
+
+                    <div class="quote-block">
+                        <div class="quote-icon">&ldquo;</div>
+                        <div class="quote-text">The majority of US online adults use SMS or MMS daily, and open rates for SMS are as high as 90%</div>
+                        <div class="quote-author">FORRESTER</div>
+                    </div>
+
+                    <!-- TYPE 3: SEM & PPC -->
+                    <h3 class="type-sub-heading">Search Engine Marketing (SEM) &amp; Pay-Per-Click (PPC)</h3>
+                    <p class="article-p">
+                        While SEO focuses on earning traffic, search marketing via SEM focuses on buying traffic. This involves bidding on keywords so that your paid ads appear at the very top of search engine results. The most common model is Pay-Per-Click (PPC), where you only pay when a user actually clicks your ad.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>SEM &amp; PPC generate immediate visibility and results, making it ideal for time-sensitive marketing campaigns. This form of paid advertising is often the fastest way to drive traffic.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Execute your paid search strategy using Google Ads and Microsoft Advertising to bid on keywords and manage campaign budgets across their respective search networks.</p>
+                        </div>
+                    </div>
+
+                    <!-- TYPE 4: Content Marketing -->
+                    <h3 class="type-sub-heading">Content Marketing</h3>
+                    <p class="article-p">
+                        Content marketing focuses on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience. This is the fuel for your other digital marketing channels and the core of organic search strategies, without compelling content, you have nothing to rank for in search engines.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Tactics</h5>
+                            <p>Blog posts, video marketing assets, podcasts &amp; infographics.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>It builds brand authority and nurtures customers through the funnel (from awareness to decision).</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Manage your website content via a CMS like WordPress or Webflow, and identify topics to write about based on trends or SEO goals.</p>
+                        </div>
+                    </div>
+
+                    <!-- TYPE 5: Social Media Marketing -->
+                    <h3 class="type-sub-heading">Social Media Marketing</h3>
+                    <p class="article-p">
+                        Social media marketing involves content creation for social media platforms to promote your products or services and build a community. Effective strategies here often overlap heavily with your content marketing calendar. It is split into organic social (posting freely to your followers) and paid social (social media advertising to specific target audiences).
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>It humanizes your brand. Platforms like Instagram, TikTok, and LinkedIn are where brands can develop a voice and engage directly with users through text and video marketing.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Streamline your workflow by scheduling posts across multiple platforms with Buffer or Hootsuite, and create visually engaging assets without a design degree using Canva.</p>
+                        </div>
+                    </div>
+
+                    <!-- TYPE 6: Influencer Marketing -->
+                    <h3 class="type-sub-heading">Influencer Marketing</h3>
+                    <p class="article-p">
+                        While this often sits under the umbrella of social media marketing, influencer marketing has grown into its own distinct budget line item. It involves partnering with individuals who have a dedicated following on popular social media platforms and can influence the purchasing decisions of their target audience.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>Consumers trust people on social media more than brands. A recommendation from a trusted creator (whether a celebrity or a micro-influencer) often bypasses the skepticism people have toward traditional paid advertising.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Platforms like Grin, Upfluence, and Aspire allow marketers to discover relevant influencers, manage contracts, and track the ROI of sponsored posts within a single dashboard.</p>
+                        </div>
+                    </div>
+
+                    <!-- TYPE 7: Email Marketing -->
+                    <h3 class="type-sub-heading">Email Marketing</h3>
+                    <p class="article-p">
+                        Despite being one of the oldest digital marketing channels, email marketing remains one of the most effective. It is the process of sending commercial messages to a group of potential customers who have opted in to hear from you.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>It typically offers a significant ROI because you own the email list and aren&rsquo;t at the mercy of platform algorithms. It is also crucial for customer retention.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Design and automate email campaigns using MailChimp, or manage complex customer relationships and communications at scale with HubSpot and Salesforce.</p>
+                        </div>
+                    </div>
+
+                    <!-- TYPE 8: Marketing Analytics -->
+                    <h3 class="type-sub-heading">Marketing Analytics</h3>
+                    <p class="article-p">
+                        Analytics is the backbone of digital marketing. It involves measuring, managing, and analyzing performance data to power digital marketing campaigns.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>Unlike traditional marketing, digital marketing allows for real-time adjustments. Proper analytics help you navigate common digital marketing challenges, if a particular effort isn&rsquo;t working, the data will tell you quickly, allowing you to optimize your digital marketing efforts and save budget.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Track website traffic and user behavior with Google Analytics (GA4), and visualize complex data sets to make them digestible for stakeholders using Looker Studio or Tableau.</p>
+                        </div>
+                    </div>
+
+                    <!-- TYPE 9: Affiliate Marketing -->
+                    <h3 class="type-sub-heading">Affiliate Marketing</h3>
+                    <p class="article-p">
+                        Affiliate marketing is a performance-based strategy where a business rewards a third-party partner (the affiliate) for generating traffic or sales. It works by giving a partner a unique link that they promote themselves to potential customers and rewarding the partner with commission made from their unique link sales.
+                    </p>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Why it matters</h5>
+                            <p>It is low risk and a effective form of online marketing. Unlike paying for ads upfront, you pay the affiliate after a sale is made and only if it came from their efforts. It turns customers and content creators on any digital platform into your external sales team.</p>
+                        </div>
+                    </div>
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Key Tools</h5>
+                            <p>Networks like ShareASale, CJ Affiliate, and Impact allow you to recruit partners, track unique referral links, and automate commission payouts accurately.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: What is Digital Marketing Analytics in the LLM Era? -->
+                <section id="digital-marketing-analytics">
+                    <h2 class="section-main-heading">What is Digital Marketing Analytics in the LLM Era?</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="article-p">
+                        One of the most significant benefits of digital marketing over traditional media is measurability. A billboard cannot tell you exactly who looked at it, but digital channels provide precise data on every interaction. To succeed in this field, you must be comfortable tracking Key Performance Indicators (KPIs) to confirm you are meeting your marketing goals. Here are the most critical metrics you will use daily:
+                    </p>
+
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Customer Lifetime Value (CLV)</h5>
+                            <p>The total revenue a business can expect from a single customer account over time. Digital marketers use this to determine how much they can afford to spend on acquiring new users.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Traffic</h5>
+                            <p>The total number of visits to your website or web pages.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Click-Through Rate (CTR)</h5>
+                            <p>The percentage of people who saw your ad or email marketing message and actually clicked on it. This measures how compelling your creative or copy is.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Conversion Rate</h5>
+                            <p>The percentage of visitors who completed a desired action (e.g., buying a product or filling out a form) from your content.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Cost Per Acquisition (CPA)</h5>
+                            <p>How much money you had to spend on advertising to get one paying customer.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Return on Investment (ROI)</h5>
+                            <p>The ultimate measure of success. It calculates the profit generated relative to the cost of the digital marketing campaign or efforts.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: AI in Digital Marketing -->
+                <section id="ai-digital-marketing">
+                    <h2 class="section-main-heading">AI in Digital Marketing</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="article-p">
+                        Artificial Intelligence (AI) is no longer a sci-fi concept, it is the new standard in digital marketing. Understanding how to leverage these tools is now a mandatory skill for modern digital marketers.
+                    </p>
+
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 38px 0 16px 0;">
+                        What is AI in Digital Marketing?
+                    </h3>
+                    <p class="article-p">
+                        AI in digital marketing refers to the use of machine learning algorithms and data analysis to simulate human intelligence. It allows computers to perform tasks that typically require human intervention, such as predicting consumer behavior, generating content, and personalizing customer experiences in real-time.
+                    </p>
+
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 40px 0 16px 0;">
+                        What is Automation in Digital Marketing?
+                    </h3>
+                    <p class="article-p">
+                        Automation is the engine that powers consistent action. Effective marketing automation involves using software to handle repetitive tasks and workflows without the need for constant human input.
+                    </p>
+
+                    <ul class="bullet-list-dm">
+                        <li>
+                            <strong>Example:</strong> Instead of manually emailing every new subscriber, an automation workflow instantly triggers a personalized &ldquo;Welcome Series&rdquo; of 3 emails sent over 3 days.
+                        </li>
+                        <li>
+                            <strong>The Benefit:</strong> It allows marketers to scale their efforts, nurturing thousands of leads simultaneously while focusing their human energy on high-level strategy and creativity.
+                        </li>
+                    </ul>
+
+                    <div class="sticky-notes-wrapper">
+                        <div class="sticky-row">
+                            <div class="sticky-note">
+                                Advent<br>Calendar<br>Campaign
+                            </div>
+                        </div>
+                        <div class="sticky-row">
+                            <div class="sticky-note hash">#</div>
+                            <div class="sticky-note">
+                                Christmas<br>Social Media<br>Campaign
+                            </div>
+                        </div>
+                        <div class="sticky-row">
+                            <div class="sticky-note">
+                                Influencer<br>Holiday<br>Takeovers
+                            </div>
+                            <div class="sticky-note">
+                                Holiday<br>Email<br>Marketing Series
+                            </div>
+                        </div>
+                        <div class="sticky-row">
+                            <div class="sticky-note">
+                                New Year's<br>Resolutions<br>Campaign
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 45px 0 14px 0;">
+                        How AI is Changing Digital Marketing
+                    </h3>
+                    <p class="article-p">
+                        AI is shifting the industry from &ldquo;reactive&rdquo; to &ldquo;predictive&rdquo;.
+                    </p>
+                    <div class="dm-checklist-box">
+                        <div class="dm-checklist-row">
+                            <span class="check-yellow">&#10003;</span>
+                            <div><strong>Hyper-Personalization:</strong> AI analyzes past behavior to recommend products a user is likely to buy next (think of Netflix or Amazon recommendations).</div>
+                        </div>
+                        <div class="dm-checklist-row">
+                            <span class="check-yellow">&#10003;</span>
+                            <div><strong>Predictive Analytics:</strong> AI tools can forecast trends and sales performance, helping marketers allocate budgets more efficiently.</div>
+                        </div>
+                        <div class="dm-checklist-row">
+                            <span class="check-yellow">&#10003;</span>
+                            <div><strong>Content Velocity:</strong> Tools like ChatGPT and MidJourney allow marketers to brainstorm, draft, and visualize digital marketing campaigns 10x faster than before, streamlining the content creation process.</div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 45px 0 14px 0;">
+                        How to Use AI in Digital Marketing
+                    </h3>
+                    <p class="article-p">
+                        To future-proof your career, you shouldn&rsquo;t fear AI, you should become an expert at directing it.
+                    </p>
+                    <ul class="bullet-list-dm">
+                        <li>
+                            <strong>Master Prompt Engineering:</strong> Learn how to write specific, detailed instructions for AI tools to get high-quality outputs (e.g., for writing blog outlines or ad copy) and create your own library of best prompts to refer back to.
+                        </li>
+                        <li>
+                            <strong>Use AI for Research:</strong> Use AI to summarize long reports, analyze competitor reviews, or identify target audience pain points in seconds.
+                        </li>
+                        <li>
+                            <strong>Automate Customer Service:</strong> Implement AI chatbots to handle common customer queries 24/7, improving user experience and capturing leads while you sleep.
+                        </li>
+                    </ul>
+
+                    <div class="disclaimer-card">
+                        <svg class="disclaimer-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <div class="disclaimer-content">
+                            <h5>DISCLAIMER</h5>
+                            <p>
+                                Do not use AI to do the work for you, use AI to augment your work. Always challenge its outcome and use it to teach you, but never trust it blindly. You have more context, strategic nuance, and emotional intelligence than the algorithm. Use AI wisely as an assistant, but ensure the final digital marketing strategy and voice remain distinctly human.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: How to Get Into Digital Marketing? -->
+                <section id="how-to-get-into-dm">
+                    <h2 class="section-main-heading">How to Get Into Digital Marketing?</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 35px 0 16px 0;">
+                        How to Become a Digital Marketing Expert?
+                    </h3>
+                    <p class="article-p">
+                        To pivot into this career, there is no specific education background required. You may find that you already have some transferable skills that make you a great candidate for the field. Here is your 5-step roadmap to getting hired:
+                    </p>
+
+                    <div class="roadmap-timeline-wrapper">
+                        <!-- Step 1: Education -->
+                        <div class="roadmap-step">
+                            <div class="roadmap-badge">1</div>
+                            <h3>Education</h3>
+                            <div class="roadmap-yellow-line"></div>
+                            <p class="article-p" style="margin-bottom: 0;">
+                                While self-teaching is possible, structured learnings, such as a certification program, is the fastest way to bridge the skills gap without getting lost in outdated YouTube tutorials. Beyond just speed, a certification provides credentials recognized by employers, validating that you have been vetted by professionals. The hands-on approach ensures you are actively building a portfolio, while gaining critical industry insights from instructors who are active in the field.
+                            </p>
+                        </div>
+
+                        <!-- Step 2: Portfolio -->
+                        <div class="roadmap-step">
+                            <div class="roadmap-badge">2</div>
+                            <div class="step-flex-wrap">
+                                <div style="flex: 1;">
+                                    <h3>Portfolio</h3>
+                                    <div class="roadmap-yellow-line"></div>
+                                    <p class="article-p" style="margin-bottom: 0;">
+                                        Gather your coursework, mock projects, or passion projects into a professional, glossy package (website or PDF).
+                                    </p>
+                                </div>
+                                <aside class="step-right-bubble">
+                                    <div class="bubble-tag">2026 GUIDE</div>
+                                    <a href="#" class="bubble-link">
+                                        <span>How to Make a Marketing Portfolio?</span>
+                                        <span style="font-size: 16px;">&rsaquo;</span>
+                                    </a>
+                                </aside>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Tools -->
+                        <div class="roadmap-step">
+                            <div class="roadmap-badge">3</div>
+                            <h3>Tools</h3>
+                            <div class="roadmap-yellow-line"></div>
+                            <p class="article-p" style="margin-bottom: 0;">
+                                Ensure you have hands-on experience with one tool in every major category.
+                            </p>
+                        </div>
+
+                        <!-- Step 4: Resume -->
+                        <div class="roadmap-step">
+                            <div class="roadmap-badge">4</div>
+                            <div class="step-flex-wrap">
+                                <div style="flex: 1;">
+                                    <h3>Resume</h3>
+                                    <div class="roadmap-yellow-line"></div>
+                                    <p class="article-p" style="margin-bottom: 0;">
+                                        Rewrite your resume for powerful application, using the exact keywords found in the job description.
+                                    </p>
+                                </div>
+                                <aside class="step-right-bubble">
+                                    <div class="bubble-tag">2026 GUIDE</div>
+                                    <a href="#" class="bubble-link">
+                                        <span>Marketing Resume</span>
+                                        <span style="font-size: 16px;">&rsaquo;</span>
+                                    </a>
+                                </aside>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Network -->
+                        <div class="roadmap-step">
+                            <div class="roadmap-badge">5</div>
+                            <h3>Network</h3>
+                            <div class="roadmap-yellow-line"></div>
+                            <p class="article-p" style="margin-bottom: 0;">
+                                Innovative jobs are often filled through referrals before they are even posted.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- NETWORK TO MAKE CONNECTIONS (Screenshots 89 & 90) -->
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 45px 0 16px 0;">
+                        Network to Make Connections in Digital Marketing
+                    </h3>
+
+                    <p class="article-p">
+                        Unsurprisingly, developing a wide network as a digital marketer begins online[cite: 89]. However, networking is not just about adding strangers on LinkedIn, it is about demonstrating thought leadership[cite: 89].
+                    </p>
+
+                    <h4 style="font-size: 20px; font-weight: 800; color: #0b0c10; margin: 30px 0 16px 0;">
+                        Build Your Platform Online for Digital Marketing Exposure
+                    </h4>
+
+                    <p class="article-p">
+                        Building a strong social media presence is beneficial in any field, but in digital marketing, it is highly recommended to differentiate yourself[cite: 89].
+                    </p>
+
+                    <!-- LinkedIn -->
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3"></path><path d="M12 19v3"></path><path d="M2 12h3"></path><path d="M19 12h3"></path><path d="m4.93 4.93 2.12 2.12"></path><path d="m16.95 16.95 2.12 2.12"></path><path d="m16.95 7.05-2.12 2.12"></path><path d="m4.93 19.07 2.12-2.12"></path></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>LinkedIn</h5>
+                            <p>Engage with industry leaders, comment on trends, and share your own insights[cite: 89]. Optimizing your LinkedIn profile with keywords (like SEO, Content Strategy) is just as important as optimizing your resume[cite: 89].</p>
+                        </div>
+                    </div>
+
+                    <!-- Launch a Newsletter -->
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Launch a Newsletter</h5>
+                            <p>Consider starting a small industry-related newsletter[cite: 90]. This showcases your original high quality content, proves you are keeping up with trends, and grows a personal audience[cite: 90].</p>
+                        </div>
+                    </div>
+
+                    <!-- Join Communities -->
+                    <div class="info-card-block">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" y1="8" x2="19" y2="14"></line><line x1="22" y1="11" x2="16" y2="11"></line></svg>
+                        </div>
+                        <div class="info-card-content">
+                            <h5>Join Communities</h5>
+                            <p>Participate in online groups, Reddit threads, and Discord servers dedicated to growth, SEO or any of your main marketing interests[cite: 90].</p>
+                        </div>
+                    </div>
+
+                    <!-- Attend Digital Marketing Events (Screenshots 90 & 91) -->
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 45px 0 16px 0;">
+                        Attend Digital Marketing Events
+                    </h3>
+
+                    <p class="article-p">
+                        There is no substitute for face-to-face connection[cite: 90].
+                    </p>
+
+                    <ul class="bullet-list-dm">
+                        <li>
+                            <strong>Conferences:</strong> Cities like Toronto, New York, and London host major annual digital marketing conferences[cite: 90, 91]. These are goldmines for meeting hiring managers[cite: 90, 91].
+                        </li>
+                        <li>
+                            <strong>Meetups:</strong> Look for smaller, local events dedicated to specific niches[cite: 90, 91].
+                        </li>
+                        <li>
+                            <strong>Virtual Summits:</strong> There are dozens of virtual networking events constantly happening over the world[cite: 90, 91].
+                        </li>
+                    </ul>
+
+                    <!-- TIP BOX 1 (Screenshot 91) -->
+                    <div class="tip-box-card">
+                        <svg class="tip-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <div class="tip-content">
+                            <h5>TIP</h5>
+                            <p>
+                                Give before you take[cite: 91]. Don&rsquo;t just ask for a job, ask for advice, offer feedback, or share an interesting article[cite: 91]. People are more likely to help those who add value to the community[cite: 91].
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- B2B vs. B2C Digital Marketing (Screenshots 91 & 92) -->
+                    <h3 style="font-size: 26px; font-weight: 800; color: #0b0c10; margin: 45px 0 16px 0;">
+                        B2B vs. B2C Digital Marketing
+                    </h3>
+
+                    <p class="article-p">
+                        While the tools you will use often remain the same whether you are targeting consumers or businesses, the marketing strategy differs based on the target audience[cite: 91, 92].
+                    </p>
+
+                    <div class="b2b-grid-row">
+                        <div class="b2b-col">
+                            <h4>B2C (Business to Consumer)</h4>
+                            <p>Focuses on individual consumers[cite: 91, 92].</p>
+                            <p>Key digital marketing strategies prioritize quick conversions, emotional engagement, and increased brand awareness[cite: 91, 92]. The goal is often to capture immediate interest[cite: 92].</p>
+                        </div>
+
+                        <div class="b2b-col">
+                            <h4>B2B (Business to Business)</h4>
+                            <p>Focuses on other companies[cite: 91, 92].</p>
+                            <p>Strategies prioritize logic, business outcomes, ROI, and relationship building[cite: 91, 92]. The sales cycle is longer and involves multiple decision-makers[cite: 92].</p>
+                        </div>
+                    </div>
+
+                    <!-- TIP BOX 2 (Screenshot 92) -->
+                    <div class="tip-box-card">
+                        <svg class="tip-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <div class="tip-content">
+                            <h5>TIP</h5>
+                            <p>
+                                This is an interesting distinction to keep in mind when planning your strategy, applying for jobs, and identifying your own work preferences[cite: 92]. While skills are transferable, the experience you grow in one sector will help you specialize[cite: 92]. Moving from B2B to B2C (or vice versa) happens often, but understanding the nuances of these audiences is key to becoming a versatile digital marketer[cite: 92].
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: How Long Does It Take to Learn Digital Marketing? (Screenshots 93 & 94) -->
+                <section id="time-to-learn">
+                    <h2 class="section-main-heading">How Long Does It Take to Learn Digital Marketing?</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <p class="article-p">
+                        Depending on your current experience and learning path, you may be able to acquire the technical skills you need to become a Digital Marketer in as little as a few weeks depending on the program (digital marketing certifications, digital marketing courses or digital marketing degrees)[cite: 93].
+                    </p>
+
+                    <p class="article-p">
+                        However, mastering the craft is a significantly longer journey[cite: 93]. True expertise goes beyond simply knowing how to use a tool, it requires developing the strategic intuition to solve complex business problems, interpret nuanced data, and adapt to shifting consumer behaviors, capabilities that are forged through years of hands-on practice[cite: 93].
+                    </p>
+
+                    <!-- Technical vs Soft Skills Box (Screenshots 93 & 94) -->
+                    <div class="skills-compare-box">
+                        <div class="compare-col">
+                            <h4>Technical Skills</h4>
+                            <p>
+                                Learning the tools (Google Analytics, SEM, SEO principles) can be done relatively quickly through structured learning, like a digital marketing course or certification[cite: 93, 94].
+                            </p>
+                        </div>
+
+                        <div class="compare-col">
+                            <h4>Soft Skills</h4>
+                            <p>
+                                Developing the sense of marketing, leadership, client communication, strategic empathy, and crisis management, typically takes years of on-the-job experience[cite: 94]. Although it might be a transferrable skill you bring in from a previous career[cite: 94]!
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="article-p">
+                        Because the digital marketing landscape changes so rapidly (driven by the evolution of LLMs, prompt engineering, and the retirement of traditional cookies), becoming a digital marketer is not a destination, it is a continuous process of learning[cite: 94]. The landscape of online marketing changes daily, the best marketers never stop being students[cite: 94].
+                    </p>
+                </section>
+
+                <!-- SECTION: FAQ (Screenshot 95) -->
+                <section id="faq-section" style="margin-top: 50px;">
+                    <h2 class="section-main-heading">FAQ</h2>
+                    <div class="yellow-accent-bar"></div>
+
+                    <div class="faq-accordion-box">
+                        <!-- FAQ 1 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What is a Digital Marketing Specialist?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    A Digital Marketing Specialist is responsible for designing, creating, and executing online marketing campaigns across various channels such as search engines, social media, email, and display advertising to increase brand awareness and drive customer acquisition.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What is an AI-powered digital marketing platform?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    An AI-powered digital marketing platform uses machine learning and predictive analytics to automate repetitive tasks, optimize ad bidding, deliver hyper-personalized content, and analyze customer behaviors in real-time.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What are the channels of digital marketing?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    Key channels include Search Engine Optimization (SEO &amp; GEO), Search Engine Marketing (PPC), Content Marketing, Social Media Marketing, Email Marketing, Influencer Marketing, and Affiliate Marketing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Next Link (Screenshot 95) -->
+                    <div class="bottom-next-bar">
+                        <a href="#" class="bottom-next-link">
+                            <span class="next-tag">Next</span>
+                            <span class="next-target">What Does a Digital Marketer Do? &rsaquo;</span>
+                        </a>
+                    </div>
+                </section>
+
+            </article>
+
+            <!-- ACCELERATE YOUR MARKETING CAREER (Screenshot 96) -->
+            <section class="accelerate-section">
+                <div class="accelerate-left">
+                    <span class="accel-tag">GET STARTED</span>
+                    <h2>Accelerate Your Marketing Career</h2>
+                    <div class="accel-yellow-line"></div>
+                    
+                    <p>
+                        Courses built on adaptive curriculum and led by leading industry experts[cite: 96].
+                    </p>
+
+                    <div class="accel-benefits">
+                        <div class="accel-benefit-item">
+                            <span class="check">&#10003;</span>
+                            <span>Work on projects in a collaborative setting</span>[cite: 96]
+                        </div>
+                        <div class="accel-benefit-item">
+                            <span class="check">&#10003;</span>
+                            <span>Get access to VIP events and workshops</span>[cite: 96]
+                        </div>
+                        <div class="accel-benefit-item">
+                            <span class="check">&#10003;</span>
+                            <span>Taught by industry experts</span>[cite: 96]
+                        </div>
+                    </div>
+
+                    <a href="../get-started.html" class="accel-btn">Learn more</a>
+                </div>
+
+                <div class="accelerate-right">
+                    <span class="rec-tag-title">RECOMMENDED CERTIFICATIONS</span>[cite: 96]
+
+                    <!-- Card 1: DMC -->
+                    <div class="rec-cert-card">
+                        <span class="badge-yellow-tag">PROFESSIONAL CERTIFICATE</span>[cite: 96]
+                        <h4>
+                            <a href="#">AI Digital Marketer Certification (DMC&trade;) &rsaquo;</a>[cite: 96]
+                        </h4>
+                        <p>Earn the Digital Marketer Certification (DMC&trade;)</p>[cite: 96]
+                    </div>
+
+                    <!-- Card 2: AIC -->
+                    <div class="rec-cert-card">
+                        <span class="badge-yellow-tag">PROFESSIONAL CERTIFICATE</span>[cite: 96]
+                        <h4>
+                            <a href="#">Artificial Intelligence Certification (AIC&trade;) &rsaquo;</a>[cite: 96]
+                        </h4>
+                        <p>Earn the Artificial Intelligence Certification (AIC&trade;)</p>[cite: 96]
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- SHARED FOOTER CONTAINER -->
+    <div id="footer"></div>
+
+    <!-- SCRIPT LOADER -->
+    <script src="../js/components.js"></script>
+
+    <!-- INTERACTIVITY SCRIPT (SIDEBAR COLLAPSE & FAQ ACCORDION) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // 1. SIDEBAR ACCORDION
+            const sidebarTitles = document.querySelectorAll(".sidebar-title");
+            sidebarTitles.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const group = this.closest(".sidebar-group");
+                    group.classList.toggle("closed");
+                });
+            });
+
+            // 2. FAQ ACCORDION (DEFAULT ALL CLOSED)
+            const faqQuestions = document.querySelectorAll(".faq-question");
+            faqQuestions.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector(".faq-icon");
+                    const isOpen = answer.classList.contains("open");
+
+                    // Close all FAQs
+                    document.querySelectorAll(".faq-answer").forEach(function (el) {
+                        el.classList.remove("open");
+                    });
+                    document.querySelectorAll(".faq-question").forEach(function (el) {
+                        el.classList.remove("active");
+                        const ic = el.querySelector(".faq-icon");
+                        if (ic) ic.textContent = "+";
+                    });
+
+                    // Toggle current clicked item
+                    if (!isOpen) {
+                        this.classList.add("active");
+                        answer.classList.add("open");
+                        if (icon) icon.textContent = "−";
+                    }
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>

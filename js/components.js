@@ -38,6 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             headerContainer.innerHTML = html;
 
+            if (window.location.pathname.includes('ux') || window.location.pathname.includes('career')) {
+                const headerEl = document.querySelector('.site-header');
+                if (headerEl) {
+                    headerEl.classList.add('white-header');
+                }
+            }
+
             setupMobileMenu();
             setupLocationDropdown();
             setupWorkshopsMenu();
