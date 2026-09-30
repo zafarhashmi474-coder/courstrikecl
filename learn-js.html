@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Python - BrainStation</title>
+    <title>Learn JavaScript - BrainStation</title>
 
     <!-- Main CSS Link -->
     <link rel="stylesheet" href="../css/style.css">
@@ -126,7 +126,7 @@
         }
 
         /* =========================================
-           PYTHON SUB-NAV BAR
+           JS SUB-NAV BAR
         ========================================= */
         .python-subnav {
             margin-top: 80px;
@@ -174,7 +174,7 @@
         }
 
         /* =========================================
-           PYTHON HERO SECTION WITH TYPING ANIMATION
+           JS HERO SECTION WITH TYPING ANIMATION
         ========================================= */
         .python-hero {
             background: linear-gradient(135deg, #071124 0%, #0b1329 100%);
@@ -297,69 +297,6 @@
         }
 
         /* =========================================
-           INFINITE LOGO SLIDER CAROUSEL
-        ========================================= */
-        .logos-section {
-            background: #ffffff;
-            padding: 90px 40px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .logos-section h2 {
-            font-size: clamp(32px, 3.5vw, 44px);
-            font-weight: 800;
-            color: #0b0c10;
-            margin-bottom: 60px;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-slider-track {
-            display: flex;
-            width: max-content;
-            animation: scrollLogos 30s linear infinite;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .logo-slider-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scrollLogos {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .logo-slider-container {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
-
-        .logo-item {
-            flex-shrink: 0;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-
-        .logo-item img {
-            height: 36px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%) opacity(0.7);
-        }
-
-        .logo-item img:hover {
-            filter: none;
-            opacity: 1;
-        }
-
-        /* =========================================
            CONTENT SECTIONS (FIXED BACKGROUND & COLORS)
         ========================================= */
         .content-section {
@@ -430,7 +367,7 @@
         }
 
         /* =========================================
-           FIXED: GET STARTED FOR FREE SECTION
+           GET STARTED FOR FREE SECTION
         ========================================= */
         .get-started-section {
             background-color: #ffffff;
@@ -537,7 +474,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f1f5f9; /* Fallback background if image fails to load */
+            background-color: #f1f5f9;
             border-radius: 12px;
             min-height: 380px;
         }
@@ -609,7 +546,6 @@
             margin-bottom: 16px;
         }
 
-        /* 4-column layout for Python Data Types, 2-column for others */
         .toc-grid-2col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -675,7 +611,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(6, 1fr); /* 6 columns per row */
+            grid-template-columns: repeat(6, 1fr);
             gap: 40px 30px;
             align-items: center;
             justify-items: center;
@@ -693,8 +629,8 @@
             max-height: 40px;
             max-width: 100%;
             object-fit: contain;
-            opacity: 1; /* Original color visible thase */
-            filter: none; /* Grayscale hatavi didhu chhe */
+            opacity: 1;
+            filter: none;
             transition: transform 0.2s ease;
         }
 
@@ -702,7 +638,6 @@
             transform: scale(1.05);
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 900px) {
             .logos-grid-container {
                 grid-template-columns: repeat(3, 1fr);
@@ -715,7 +650,7 @@
         }
 
         /* =========================================
-           WHY LEARN PYTHON SECTION
+           WHY LEARN JS SECTION
         ========================================= */
         .why-learn-section {
             background-color: #ffffff;
@@ -768,7 +703,6 @@
             display: block;
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 900px) {
             .why-learn-container {
                 grid-template-columns: 1fr;
@@ -800,7 +734,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
-        /* Left Sidebar */
         .faq-sidebar {
             display: flex;
             flex-direction: column;
@@ -844,7 +777,6 @@
             color: #2563eb;
         }
 
-        /* Navigation Arrows at bottom left */
         .faq-nav-arrows {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -873,7 +805,6 @@
             color: #2563eb;
         }
 
-        /* Right Content Panel */
         .faq-content-panel {
             padding: 60px;
             background-color: #ffffff;
@@ -912,7 +843,6 @@
             margin-bottom: 20px;
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .faq-container {
                 grid-template-columns: 1fr;
@@ -933,7 +863,7 @@
            LOOKING FOR ANOTHER PROGRAMMING LANGUAGE?
         ========================================= */
         .other-langs-section {
-            background-color: #071124; /* Dark blue background matching screenshot */
+            background-color: #071124;
             padding: 100px 70px;
             color: #ffffff;
         }
@@ -955,7 +885,6 @@
             margin: 0;
         }
 
-        /* Cards Grid (3 cards side by side) */
         .other-langs-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1024,7 +953,6 @@
             background-color: #1d4ed8;
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 1100px) {
             .other-langs-container {
                 grid-template-columns: 1fr;
@@ -1053,18 +981,18 @@
     <!-- SHARED DYNAMIC HEADER CONTAINER -->
     <div id="header"></div>
 
-    <!-- PYTHON SUB-NAV BAR -->
+    <!-- JS SUB-NAV BAR -->
     <div class="python-subnav">
         <div class="python-subnav-left">
             <a href="../index.html">BrainStation</a>
             <span>&rsaquo;</span>
             <a href="#">Learn</a>
             <span>&rsaquo;</span>
-            <span style="color: #ffffff; font-weight: 600;">Python</span>
+            <span style="color: #ffffff; font-weight: 600;">JavaScript</span>
         </div>
         <div class="python-subnav-right">
-            <a href="#" class="active">Python Tutorial</a>
-            <a href="#">Python Reference</a>
+            <a href="#" class="active">JavaScript Tutorial</a>
+            <a href="#">JavaScript Reference</a>
         </div>
     </div>
 
@@ -1072,14 +1000,15 @@
     <section class="python-hero">
         <div class="python-hero-left">
             <div class="python-logo-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2H2v10h10V2zM22 12h-10v10h10V12z"></path>
+                <svg width="48" height="48" viewBox="0 0 32 32" fill="#facc15">
+                    <path d="M0 0h32v32H0z" fill="#f7df1e"/>
+                    <path d="M6.5 25.5l2.2-1.3c.5.8.9 1.5 1.8 1.5 1 0 1.6-.4 1.6-1.9V11h3v12.8c0 3.1-1.8 4.7-4.5 4.7-2 0-3.3-1-4.1-2.2zm12.5 0l2.2-1.3c.5.8.9 1.5 1.8 1.5 1 0 1.6-.4 1.6-1.9V11h3v12.8c0 3.1-1.8 4.7-4.5 4.7-2 0-3.3-1-4.1-2.2z"/>
                 </svg>
             </div>
-            <h1>Learn Python</h1>
+            <h1>Learn JavaScript</h1>
             <div class="yellow-bar"></div>
             <p>
-                One of the fastest-growing programming languages, Python is used by some of the most innovative companies in the world for everything from web development to machine learning.
+                JavaScript is the standard programming language of the web, giving interactivity and dynamic design elements to millions of web pages and mobile apps.
             </p>
             <a href="#" class="start-btn">Start Free Tutorial</a>
         </div>
@@ -1109,7 +1038,7 @@
                 <h2>Get Started For Free</h2>
                 
                 <div class="tutorial-card">
-                    <h3>Introduction to Python Programming</h3>
+                    <h3>Introduction to JavaScript</h3>
                     <div class="yellow-bar-small"></div>
                     
                     <div class="badge-row">
@@ -1119,7 +1048,7 @@
                     </div>
                     
                     <p>
-                        Discover the basics of programming with one of the world's most popular programming languages in this Python tutorial.
+                        Discover the basics of programming with one of the world's most popular programming languages in this JavaScript tutorial.
                     </p>
                     
                     <a href="#" class="start-btn">Start Free Tutorial</a>
@@ -1127,7 +1056,7 @@
             </div>
 
             <div class="get-started-right">
-                <img src="../images/python-students.jpg" alt="Students learning Python">
+                <img src="../images/python-students.jpg" alt="Students learning JavaScript">
             </div>
         </div>
     </section>
@@ -1139,8 +1068,8 @@
 
         <div class="learn-grid">
             <div class="learn-card">
-                <h4><span class="learn-arrow">&rsaquo;</span> What is Python?</h4>
-                <p>Discover the Python programming language, what it&rsquo;s used for.</p>
+                <h4><span class="learn-arrow">&rsaquo;</span> What is JavaScript?</h4>
+                <p>Discover the JavaScript programming language, what it&rsquo;s used for.</p>
             </div>
             <div class="learn-card">
                 <h4><span class="learn-arrow">&rsaquo;</span> Working with Collections of Values</h4>
@@ -1148,7 +1077,7 @@
             </div>
             <div class="learn-card">
                 <h4><span class="learn-arrow">&rsaquo;</span> Working With Numbers</h4>
-                <p>Understand how to store and manipulate numbers with Python.</p>
+                <p>Understand how to store and manipulate numbers with JavaScript.</p>
             </div>
             <div class="learn-card">
                 <h4><span class="learn-arrow">&rsaquo;</span> Executing Code Conditionally</h4>
@@ -1156,74 +1085,58 @@
             </div>
             <div class="learn-card">
                 <h4><span class="learn-arrow">&rsaquo;</span> Working with Text</h4>
-                <p>Learn how to use and manipulate text with Python.</p>
+                <p>Learn how to use and manipulate text with JavaScript.</p>
             </div>
         </div>
     </section>
 
-    <!-- EXPLORE DETAILED PYTHON REFERENCE DOCS -->
+    <!-- EXPLORE DETAILED JAVASCRIPT REFERENCE DOCS -->
     <section class="reference-section">
         <div class="reference-box">
-            <h2 class="section-title">Explore Detailed Python Reference Docs</h2>
+            <h2 class="section-title">Explore Detailed JavaScript Reference Docs</h2>
             <div class="yellow-line"></div>
             <p class="reference-desc">
-                Discover the features and capabilities of Python, one of the most popular programming languages in the world. This reference documentation is an invaluable tool to support you while you learn and build.
+                Discover the features and capabilities of JavaScript, one of the world's most popular programming languages. This reference documentation is an invaluable tool to support you while you learn and build.
             </p>
 
             <h3 class="toc-main-title">Table of Contents</h3>
 
-            <!-- Category 1: Python Programming Language -->
+            <!-- Category 1: Learn JavaScript -->
             <div class="toc-category">
-                <h5>Python Programming Language</h5>
+                <h5>Learn JavaScript</h5>
                 <div class="toc-grid-2col">
-                    <div class="toc-item"><span>1.1</span> <a href="#">What is Python?</a></div>
-                    <div class="toc-item"><span>1.2</span> <a href="#">Python Tools</a></div>
+                    <div class="toc-item"><span>1.1</span> <a href="#">What is JavaScript?</a></div>
+                    <div class="toc-item"><span>1.2</span> <a href="#">What is JavaScript Used For?</a></div>
                 </div>
             </div>
 
-            <!-- Category 2: Python Basics -->
+            <!-- Category 2: JavaScript Basics (4 Columns for expanded list) -->
             <div class="toc-category">
-                <h5>Python Basics</h5>
-                <div class="toc-grid-2col">
-                    <div class="toc-item"><span>2.1</span> <a href="#">Intro to Python Programming</a></div>
-                    <div class="toc-item"><span>2.2</span> <a href="#">Python Variables</a></div>
-                </div>
-            </div>
-
-            <!-- Category 3: Python Data Types (4 Columns) -->
-            <div class="toc-category">
-                <h5>Python Data Types</h5>
+                <h5>JavaScript Basics</h5>
                 <div class="toc-grid-4col">
-                    <div class="toc-item"><span>3.1</span> <a href="#">Python String</a></div>
-                    <div class="toc-item"><span>3.3</span> <a href="#">Python Boolean</a></div>
-                    <div class="toc-item"><span>3.5</span> <a href="#">Python Dictionary</a></div>
-                    <div class="toc-item"><span>3.7</span> <a href="#">Python Tuple</a></div>
-                    <div class="toc-item"><span>3.2</span> <a href="#">Python Number</a></div>
-                    <div class="toc-item"><span>3.4</span> <a href="#">Python List</a></div>
-                    <div class="toc-item"><span>3.6</span> <a href="#">Python Set</a></div>
-                    <div class="toc-item"><span>3.8</span> <a href="#">Python Casting</a></div>
-                </div>
-            </div>
-
-            <!-- Category 4: Python Conditions -->
-            <div class="toc-category">
-                <h5>Python Conditions</h5>
-                <div class="toc-grid-2col">
-                    <div class="toc-item"><span>4.1</span> <a href="#">Python If Statement</a></div>
-                    <div class="toc-item"><span>4.2</span> <a href="#">Python In Keyword</a></div>
-                    <div class="toc-item"><span>4.3</span> <a href="#">Python Is Keyword</a></div>
+                    <div class="toc-item"><span>2.1</span> <a href="#">JavaScript Basics</a></div>
+                    <div class="toc-item"><span>2.4</span> <a href="#">JavaScript Operators</a></div>
+                    <div class="toc-item"><span>2.7</span> <a href="#">JavaScript Numbers</a></div>
+                    <div class="toc-item"><span>2.10</span> <a href="#">JavaScript Object</a></div>
+                    <div class="toc-item"><span>2.2</span> <a href="#">JavaScript Comment</a></div>
+                    <div class="toc-item"><span>2.5</span> <a href="#">JavaScript Data Types</a></div>
+                    <div class="toc-item"><span>2.8</span> <a href="#">JavaScript Boolean</a></div>
+                    <div class="toc-item"><span>2.11</span> <a href="#">JavaScript Casting</a></div>
+                    <div class="toc-item"><span>2.3</span> <a href="#">JavaScript Variables</a></div>
+                    <div class="toc-item"><span>2.6</span> <a href="#">JavaScript String</a></div>
+                    <div class="toc-item"><span>2.9</span> <a href="#">JavaScript Array</a></div>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 50px;">
-                <a href="#" class="start-btn" style="padding: 14px 36px; display: inline-block;">View Full Python Reference</a>
+                <a href="#" class="start-btn" style="padding: 14px 36px; display: inline-block;">View Full JavaScript Reference</a>
             </div>
         </div>
     </section>
 
     <!-- LEADING DIGITAL BUSINESSES LOGOS GRID -->
     <section class="logos-section">
-        <h2>Leading Digital Businesses Need Python Skills</h2>
+        <h2>Leading Digital Businesses Need JavaScript Skills</h2>
         <div class="logos-grid-container">
             <!-- Row 1 -->
             <div class="logo-item"><img src="../images/logo1.png" alt="Samsung"></div>
@@ -1259,24 +1172,24 @@
         </div>
     </section>
 
-    <!-- WHY LEARN PYTHON SECTION -->
+    <!-- WHY LEARN JAVASCRIPT SECTION -->
     <section class="why-learn-section">
         <div class="why-learn-container">
             <!-- Left Side: Title & Paragraphs -->
             <div class="why-learn-left">
-                <h2>Why Learn Python?</h2>
+                <h2>Why Learn JavaScript?</h2>
                 <div class="yellow-line"></div>
                 <p>
-                    It&rsquo;s a great idea to learn Python because it is one of the fastest-growing programming languages in the world, with large communities of users in web development, data science, machine learning, AI, and more. The popularity of Python is set to increase even further, as according to recent surveys, Python has come out on top as perhaps the most sought-after and popular programming language.
+                    JavaScript is perhaps the most versatile and popular programming language for web development. JavaScript code is the crucial top layer after HTML and CSS that turns static web pages into an interactive environment with dynamic design elements, embedded multimedia and animations, and crucial functional elements like form validation. JavaScript is the programming language of choice for tech companies like PayPal, Groupon, Uber, and more.
                 </p>
                 <p>
-                    If you&rsquo;re interested in learning Python, you should know it is also one of the most accessible programming languages available due to its simplified syntax, which puts an emphasis on natural language. This free Python tutorial is intended as an introduction to the Python programming language, so that even absolute beginners can quickly learn the basics and begin building Python skills.
+                    In this modern JavaScript tutorial, you&rsquo;ll find detailed explanations and short lessons focused on a variety of essential JavaScript skills and programming knowledge. Even if you&rsquo;ve tried to learn to code before, this JavaScript course can be a great refresher for those who want to revisit JavaScript basics and learn how to add interactivity to an HTML page.
                 </p>
             </div>
 
             <!-- Right Side: Image -->
             <div class="why-learn-right">
-                <img src="../images/python-why-learn.jpg" alt="People learning Python together">
+                <img src="../images/python-why-learn.jpg" alt="People learning JavaScript together">
             </div>
         </div>
     </section>
@@ -1287,10 +1200,10 @@
             <!-- Left Sidebar with Questions -->
             <div class="faq-sidebar">
                 <div class="faq-list" id="faqList">
-                    <div class="faq-item active" data-target="faq1">Why Is Python so Popular?</div>
-                    <div class="faq-item" data-target="faq2">What Type of Programming Language Is Python?</div>
-                    <div class="faq-item" data-target="faq3">What Is Python Used For?</div>
-                    <div class="faq-item" data-target="faq4">Is Python Hard to Learn?</div>
+                    <div class="faq-item active" data-target="faq1">How Long Does it Take to Learn JavaScript?</div>
+                    <div class="faq-item" data-target="faq2">Is JavaScript Hard to Learn?</div>
+                    <div class="faq-item" data-target="faq3">Is JavaScript a Good First Programming Language to Learn?</div>
+                    <div class="faq-item" data-target="faq4">Why Is JavaScript So Popular?</div>
                 </div>
                 <!-- Prev / Next Arrows -->
                 <div class="faq-nav-arrows">
@@ -1303,35 +1216,36 @@
             <div class="faq-content-panel">
                 <!-- FAQ 1 -->
                 <div class="faq-pane active" id="faq1">
-                    <h3>Why Is Python so Popular?</h3>
+                    <h3>How Long Does it Take to Learn JavaScript?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>Python is such a popular programming language because it is straightforward to learn and use, and because Python functions can be carried out with simpler commands and less text than most competing languages. Python is, in fact, the language of choice for a number of the world-class tech products we use in our daily lives and is a force behind how we interact with the world.</p>
-                    <p>Python is currently used by Netflix, Pixar, Meta, Wikipedia, Google, JP Morgan Chase, Spotify, Yahoo!, Reddit, Pinterest, and NASA, among many other top companies. It's actually one of the four main languages at Google, and YouTube is largely written in Python. Python also remains the language of choice for automation and scripting, both for large-scale Fortune 500 projects, or smaller scale tasks that can simplify work by automating tedious tasks.</p>
-                    <p>Python's popularity also owes to the fact that Python is available for free on its official website and because it's open-source — anyone can update Python or add new features. It also helps that Python can run efficiently across all platforms, including Windows, Mac, and Linux.</p>
+                    <p>It can take between three and eight months to learn JavaScript from scratch. This would depend on if you are following a self-guided learning plan or if you&rsquo;ve enrolled in a program like BrainStation&rsquo;s Web Development bootcamp, which is designed to give learners hands-on experience using development fundamentals and key programming languages, including JavaScript.</p>
+                    <p>If you have any kind of background in computer programming or the basics of HTML code, it will be easier to learn JavaScript fast through courses or advanced tutorials. Coding bootcamps like BrainStation&rsquo;s can help you learn JavaScript and get up to speed in as little as three months of intensive study.</p>
+                    <p>Getting started in JavaScript is as easy as opening Chrome or another web browser and opening Developer Tools. A total beginner could write a &quot;Hello World&quot; program: <code>console.log(&quot;Hello World&quot;)</code>. Even in that beginning stage of learning JavaScript and long before you&rsquo;ve looked at more advanced concepts, you can get your hands dirty with a real-world project and begin seeing real results.</p>
+                    <p>But progressing beyond JavaScript fundamentals will take longer, especially if you try to do it at your own pace. In part, that&rsquo;s because JavaScript offers multiple ways of accomplishing the same task, and determining the right strategies will take time and experience.</p>
                 </div>
 
                 <!-- FAQ 2 -->
                 <div class="faq-pane" id="faq2">
-                    <h3>What Type of Programming Language Is Python?</h3>
+                    <h3>Is JavaScript Hard to Learn?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>Python is an interpreted, object-oriented, high-level programming language. Unlike many other languages, Python is also an open-source, cross-platform language, which means that it can be run on Mac, Windows, Linux, and Raspberry Pi.</p>
-                    <p>Apart from this, Python differs from other programming languages in a few ways, including using new lines to complete a command (as opposed to semicolon or parentheses), and whitespace to define the scope of loops, functions, and classes (as opposed to the curly brackets used in other languages).</p>
+                    <p>JavaScript has a relatively gentle learning curve for beginners, especially if you already have a basic understanding of HTML and CSS. Writing simple scripts and interactive features can be picked up quite quickly.</p>
+                    <p>However, mastering advanced asynchronous programming, closures, and modern framework patterns takes dedication, practice, and real-world project experience.</p>
                 </div>
 
                 <!-- FAQ 3 -->
                 <div class="faq-pane" id="faq3">
-                    <h3>What Is Python Used For?</h3>
+                    <h3>Is JavaScript a Good First Programming Language to Learn?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>Python is a general-purpose programming language, meaning it can be used to create a variety of different programs and isn't specialized for any specific problems.</p>
-                    <p>Its versatility has made it one of the most widely used programming languages today in fields such as web development, data science, machine learning, artificial intelligence, desktop applications, and automation scripting.</p>
+                    <p>Yes, JavaScript is widely considered an excellent first programming language because every browser runs it natively without requiring complex setups or installations.</p>
+                    <p>It provides immediate visual feedback on web pages, which keeps learners motivated as they build interactive elements directly in the browser.</p>
                 </div>
 
                 <!-- FAQ 4 -->
                 <div class="faq-pane" id="faq4">
-                    <h3>Is Python Hard to Learn?</h3>
+                    <h3>Why Is JavaScript So Popular?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>No, Python is widely considered one of the easiest programming languages for beginners to learn. Its syntax closely resembles natural English, allowing developers to write programs with fewer lines of code than languages like C++ or Java.</p>
-                    <p>Because of its readability and simplicity, absolute beginners can quickly grasp foundational programming concepts and start building practical projects in a short amount of time.</p>
+                    <p>JavaScript is popular because it is the core language of the web, powering client-side interactivity across virtually all modern websites.</p>
+                    <p>With the introduction of Node.js, JavaScript can now also run on servers, allowing developers to build full-stack applications using a single programming language.</p>
                 </div>
             </div>
         </div>
@@ -1347,29 +1261,7 @@
 
             <!-- Right Side Cards -->
             <div class="other-langs-cards">
-                <!-- Card 1: SQL -->
-                <div class="lang-card">
-                    <div class="lang-card-top">
-                        <div class="lang-icon-box">
-                            <img src="../images/sql-icon.png" alt="SQL Icon">
-                        </div>
-                        <h3>SQL</h3>
-                    </div>
-                    <a href="learn-sql.html" class="lang-btn">Learn SQL</a>
-                </div>
-
-                <!-- Card 2: JavaScript -->
-                <div class="lang-card">
-                    <div class="lang-card-top">
-                        <div class="lang-icon-box">
-                            <img src="../images/js-icon.png" alt="JavaScript Icon">
-                        </div>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <a href="learn-js.html" class="lang-btn">Learn JavaScript</a>
-                </div>
-
-                <!-- Card 3: HTML & CSS -->
+                <!-- Card 1: HTML & CSS -->
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
@@ -1378,6 +1270,28 @@
                         <h3>HTML & CSS</h3>
                     </div>
                     <a href="learn-html.html" class="lang-btn">Learn HTML</a>
+                </div>
+
+                <!-- Card 2: Python -->
+                <div class="lang-card">
+                    <div class="lang-card-top">
+                        <div class="lang-icon-box">
+                            <img src="../images/python-icon.png" alt="Python Icon">
+                        </div>
+                        <h3>Python</h3>
+                    </div>
+                    <a href="learn-python.html" class="lang-btn">Learn Python</a>
+                </div>
+
+                <!-- Card 3: SQL -->
+                <div class="lang-card">
+                    <div class="lang-card-top">
+                        <div class="lang-icon-box">
+                            <img src="../images/sql-icon.png" alt="SQL Icon">
+                        </div>
+                        <h3>SQL</h3>
+                    </div>
+                    <a href="learn-sql.html" class="lang-btn">Learn SQL</a>
                 </div>
             </div>
         </div>
@@ -1393,19 +1307,15 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const codeLines = [
-                '<span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">=</span> <span class="syntax-num">30</span>',
+                '<span class="syntax-kw">const</span> <span class="syntax-var">dogs</span> <span class="syntax-op">=</span> [<span class="syntax-str">"Husky"</span>, <span class="syntax-str">"Poodle"</span>];',
+                '<span class="syntax-var">dogs</span>.<span class="syntax-fn">push</span>(<span class="syntax-str">"Golden Retriever"</span>);',
                 '',
-                '<span class="syntax-kw">while</span> <span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">&gt;</span> <span class="syntax-num">0</span><span class="syntax-op">:</span>',
-                '    <span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">=</span> <span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">-</span> <span class="syntax-num">10</span>',
-                '    <span class="syntax-fn">print</span>(<span class="syntax-str">\'Remaining Balance: \',</span> <span class="syntax-var">piggy_bank_balance</span>)',
-                '<span class="syntax-fn">print</span>(<span class="syntax-str">\'You have spent all your saved money\'</span>)'
+                '<span class="syntax-var">console</span>.<span class="syntax-fn">log</span>(<span class="syntax-str">"There are "</span> <span class="syntax-op">+</span> <span class="syntax-var">dogs</span>.<span class="syntax-var">length</span> <span class="syntax-op">+</span> <span class="syntax-str">" dogs."</span>);',
+                '',
+                ''
             ];
 
-            const outputText = 
-                'Remaining Balance:  20<br>' +
-                'Remaining Balance:  10<br>' +
-                'Remaining Balance:  0<br>' +
-                'You have spent all your saved money';
+            const outputText = 'There are 3 dogs.';
 
             function runTypingAnimation() {
                 let currentLine = 0;
@@ -1439,61 +1349,38 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-        const track = document.getElementById("logoTrack");
-        let position = 0;
-        const speed = 0.8; // Speed control karva mate
+            const faqItems = document.querySelectorAll(".faq-item");
+            const faqPanes = document.querySelectorAll(".faq-pane");
+            const prevBtn = document.getElementById("prevFaq");
+            const nextBtn = document.getElementById("nextFaq");
+            let currentIndex = 0;
 
-        function animateSlider() {
-            position -= speed;
-            // Jyare half track scroll thai jay tyare position reset karvi
-            if (Math.abs(position) >= track.scrollWidth / 2) {
-                position = 0;
+            function switchFaq(index) {
+                faqItems.forEach(item => item.classList.remove("active"));
+                faqPanes.forEach(pane => pane.classList.remove("active"));
+
+                faqItems[index].classList.add("active");
+                const targetId = faqItems[index].getAttribute("data-target");
+                document.getElementById(targetId).classList.add("active");
+                currentIndex = index;
             }
-            track.style.transform = `translateX(${position}px)`;
-            requestAnimationFrame(animateSlider);
-        }
 
-        // Mouse hover par animation pause karva mate
-        track.addEventListener("mouseenter", () => { speed = 0; });
-        // Mouse leave par pachhu start karva mate
-        track.addEventListener("mouseleave", () => { speed = 0.8; });
+            faqItems.forEach((item, index) => {
+                item.addEventListener("click", () => {
+                    switchFaq(index);
+                });
+            });
 
-        requestAnimationFrame(animateSlider);
-    });
+            nextBtn.addEventListener("click", () => {
+                let nextIndex = (currentIndex + 1) % faqItems.length;
+                switchFaq(nextIndex);
+            });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const faqItems = document.querySelectorAll(".faq-item");
-        const faqPanes = document.querySelectorAll(".faq-pane");
-        const prevBtn = document.getElementById("prevFaq");
-        const nextBtn = document.getElementById("nextFaq");
-        let currentIndex = 0;
-
-        function switchFaq(index) {
-            faqItems.forEach(item => item.classList.remove("active"));
-            faqPanes.forEach(pane => pane.classList.remove("active"));
-
-            faqItems[index].classList.add("active");
-            const targetId = faqItems[index].getAttribute("data-target");
-            document.getElementById(targetId).classList.add("active");
-            currentIndex = index;
-        }
-
-        faqItems.forEach((item, index) => {
-            item.addEventListener("click", () => {
-                switchFaq(index);
+            prevBtn.addEventListener("click", () => {
+                let prevIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
+                switchFaq(prevIndex);
             });
         });
-
-        nextBtn.addEventListener("click", () => {
-            let nextIndex = (currentIndex + 1) % faqItems.length;
-            switchFaq(nextIndex);
-        });
-
-        prevBtn.addEventListener("click", () => {
-            let prevIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
-            switchFaq(prevIndex);
-        });
-    });
     </script>
 
 </body>

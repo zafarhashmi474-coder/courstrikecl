@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Python - BrainStation</title>
+    <title>Learn HTML & CSS - BrainStation</title>
 
     <!-- Main CSS Link -->
     <link rel="stylesheet" href="../css/style.css">
@@ -126,7 +126,7 @@
         }
 
         /* =========================================
-           PYTHON SUB-NAV BAR
+           HTML SUB-NAV BAR
         ========================================= */
         .python-subnav {
             margin-top: 80px;
@@ -174,7 +174,7 @@
         }
 
         /* =========================================
-           PYTHON HERO SECTION WITH TYPING ANIMATION
+           HTML HERO SECTION WITH CODE & MINI-NAV PREVIEW
         ========================================= */
         .python-hero {
             background: linear-gradient(135deg, #071124 0%, #0b1329 100%);
@@ -193,11 +193,15 @@
         }
 
         .python-logo-icon {
-            width: 56px;
-            height: 56px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 12px;
+        }
+
+        .python-logo-icon img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
         }
 
         .python-hero-left h1 {
@@ -240,7 +244,7 @@
             background-color: #1d4ed8;
         }
 
-        /* TYPING CODE TERMINAL BOX */
+        /* CODE TERMINAL BOX */
         .code-terminal-box {
             background: #09122c;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -254,9 +258,8 @@
 
         .code-editor-area {
             padding: 24px;
-            min-height: 250px;
             color: #e2e8f0;
-            font-size: 14.5px;
+            font-size: 14px;
             line-height: 1.8;
         }
 
@@ -278,85 +281,38 @@
             white-space: pre;
         }
 
-        /* Syntax colors */
-        .syntax-var { color: #60a5fa; }
-        .syntax-op { color: #f43f5e; }
-        .syntax-num { color: #facc15; }
-        .syntax-kw { color: #c084fc; }
-        .syntax-fn { color: #4ade80; }
-        .syntax-str { color: #facc15; }
+        /* CSS Syntax coloring */
+        .syntax-sel { color: #60a5fa; }
+        .syntax-prop { color: #67e8f9; }
+        .syntax-val { color: #facc15; }
 
         .terminal-output-area {
-            background: #060d1f;
+            background: #040914;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 22px 24px;
-            min-height: 140px;
-            font-size: 14px;
-            line-height: 1.7;
-            color: #ffffff;
-        }
-
-        /* =========================================
-           INFINITE LOGO SLIDER CAROUSEL
-        ========================================= */
-        .logos-section {
-            background: #ffffff;
-            padding: 90px 40px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .logos-section h2 {
-            font-size: clamp(32px, 3.5vw, 44px);
-            font-weight: 800;
-            color: #0b0c10;
-            margin-bottom: 60px;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-slider-track {
+            padding: 20px 24px;
             display: flex;
-            width: max-content;
-            animation: scrollLogos 30s linear infinite;
-            gap: 60px;
             align-items: center;
+            justify-content: space-between;
         }
 
-        .logo-slider-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scrollLogos {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .logo-slider-container {
-            overflow: hidden;
-            position: relative;
+        .mock-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             width: 100%;
         }
 
-        .logo-item {
-            flex-shrink: 0;
-            height: 42px;
+        .mock-nav-logo img {
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .mock-nav-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-
-        .logo-item img {
-            height: 36px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%) opacity(0.7);
-        }
-
-        .logo-item img:hover {
-            filter: none;
-            opacity: 1;
+            gap: 20px;
+            font-size: 13.5px;
+            color: #e2e8f0;
+            font-family: Arial, sans-serif;
         }
 
         /* =========================================
@@ -430,7 +386,7 @@
         }
 
         /* =========================================
-           FIXED: GET STARTED FOR FREE SECTION
+           GET STARTED FOR FREE SECTION
         ========================================= */
         .get-started-section {
             background-color: #ffffff;
@@ -537,7 +493,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f1f5f9; /* Fallback background if image fails to load */
+            background-color: #f1f5f9;
             border-radius: 12px;
             min-height: 380px;
         }
@@ -609,7 +565,6 @@
             margin-bottom: 16px;
         }
 
-        /* 4-column layout for Python Data Types, 2-column for others */
         .toc-grid-2col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -653,69 +608,7 @@
         }
 
         /* =========================================
-           STATIC LOGOS GRID (ORIGINAL COLORS)
-        ========================================= */
-        .logos-section {
-            background: #ffffff;
-            padding: 80px 70px;
-            text-align: center;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .logos-section h2 {
-            font-size: clamp(30px, 3.5vw, 42px);
-            font-weight: 800;
-            color: #0b0c10;
-            margin-bottom: 50px;
-            letter-spacing: -0.5px;
-        }
-
-        .logos-grid-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr); /* 6 columns per row */
-            gap: 40px 30px;
-            align-items: center;
-            justify-items: center;
-        }
-
-        .logo-item {
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .logo-item img {
-            max-height: 40px;
-            max-width: 100%;
-            object-fit: contain;
-            opacity: 1; /* Original color visible thase */
-            filter: none; /* Grayscale hatavi didhu chhe */
-            transition: transform 0.2s ease;
-        }
-
-        .logo-item img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Responsive for mobile/tablets */
-        @media (max-width: 900px) {
-            .logos-grid-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (max-width: 600px) {
-            .logos-grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* =========================================
-           WHY LEARN PYTHON SECTION
+           WHY LEARN HTML & CSS SECTION
         ========================================= */
         .why-learn-section {
             background-color: #ffffff;
@@ -768,7 +661,6 @@
             display: block;
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 900px) {
             .why-learn-container {
                 grid-template-columns: 1fr;
@@ -800,7 +692,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
-        /* Left Sidebar */
         .faq-sidebar {
             display: flex;
             flex-direction: column;
@@ -844,7 +735,6 @@
             color: #2563eb;
         }
 
-        /* Navigation Arrows at bottom left */
         .faq-nav-arrows {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -873,7 +763,6 @@
             color: #2563eb;
         }
 
-        /* Right Content Panel */
         .faq-content-panel {
             padding: 60px;
             background-color: #ffffff;
@@ -912,7 +801,6 @@
             margin-bottom: 20px;
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .faq-container {
                 grid-template-columns: 1fr;
@@ -933,7 +821,7 @@
            LOOKING FOR ANOTHER PROGRAMMING LANGUAGE?
         ========================================= */
         .other-langs-section {
-            background-color: #071124; /* Dark blue background matching screenshot */
+            background-color: #071124;
             padding: 100px 70px;
             color: #ffffff;
         }
@@ -955,7 +843,6 @@
             margin: 0;
         }
 
-        /* Cards Grid (3 cards side by side) */
         .other-langs-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1024,7 +911,6 @@
             background-color: #1d4ed8;
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 1100px) {
             .other-langs-container {
                 grid-template-columns: 1fr;
@@ -1053,48 +939,60 @@
     <!-- SHARED DYNAMIC HEADER CONTAINER -->
     <div id="header"></div>
 
-    <!-- PYTHON SUB-NAV BAR -->
+    <!-- HTML SUB-NAV BAR -->
     <div class="python-subnav">
         <div class="python-subnav-left">
             <a href="../index.html">BrainStation</a>
             <span>&rsaquo;</span>
             <a href="#">Learn</a>
             <span>&rsaquo;</span>
-            <span style="color: #ffffff; font-weight: 600;">Python</span>
+            <span style="color: #ffffff; font-weight: 600;">HTML & CSS</span>
         </div>
         <div class="python-subnav-right">
-            <a href="#" class="active">Python Tutorial</a>
-            <a href="#">Python Reference</a>
+            <a href="#" class="active">HTML & CSS Tutorial</a>
+            <a href="#">HTML & CSS Reference</a>
         </div>
     </div>
 
-    <!-- HERO SECTION WITH TYPING CODE ANIMATION -->
+    <!-- HERO SECTION WITH CODE & MINI-NAV PREVIEW -->
     <section class="python-hero">
         <div class="python-hero-left">
             <div class="python-logo-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2H2v10h10V2zM22 12h-10v10h10V12z"></path>
-                </svg>
+                <span style="font-size: 28px; font-weight: 800; color: #ffffff;">HTML5 + CSS3</span>
             </div>
-            <h1>Learn Python</h1>
+            <h1>Learn HTML</h1>
             <div class="yellow-bar"></div>
             <p>
-                One of the fastest-growing programming languages, Python is used by some of the most innovative companies in the world for everything from web development to machine learning.
+                If you are interested in web development or building websites, you will want to learn HTML. HTML code is the core technology for defining the structure of web pages.
             </p>
             <a href="#" class="start-btn">Start Free Tutorial</a>
         </div>
 
-        <!-- RIGHT SIDE: LIVE TYPING CODE ANIMATION BOX -->
+        <!-- RIGHT SIDE: CODE EDITOR & MINI NAV PREVIEW BOX -->
         <div class="code-terminal-box">
-            <div class="code-editor-area" id="codeEditor">
-                <div class="code-line"><span class="line-num">1</span><span class="code-content" id="c1"></span></div>
-                <div class="code-line"><span class="line-num">2</span><span class="code-content" id="c2"></span></div>
-                <div class="code-line"><span class="line-num">3</span><span class="code-content" id="c3"></span></div>
-                <div class="code-line"><span class="line-num">4</span><span class="code-content" id="c4"></span></div>
-                <div class="code-line"><span class="line-num">5</span><span class="code-content" id="c5"></span></div>
-                <div class="code-line"><span class="line-num">6</span><span class="code-content" id="c6"></span></div>
+            <div class="code-editor-area">
+                <div class="code-line"><span class="line-num">1</span><span class="code-content"><span class="syntax-sel">nav</span> {</span></div>
+                <div class="code-line"><span class="line-num">2</span><span class="code-content">    <span class="syntax-prop">background-color</span>: <span class="syntax-val">#131A30</span>;</span></div>
+                <div class="code-line"><span class="line-num">3</span><span class="code-content">    <span class="syntax-prop">padding</span>: <span class="syntax-val">16px 0</span>;</span></div>
+                <div class="code-line"><span class="line-num">4</span><span class="code-content">}</span></div>
+                <div class="code-line"><span class="line-num">5</span><span class="code-content"></span></div>
+                <div class="code-line"><span class="line-num">6</span><span class="code-content"><span class="syntax-sel">a</span> {</span></div>
+                <div class="code-line"><span class="line-num">7</span><span class="code-content">    <span class="syntax-prop">color</span>: <span class="syntax-val">#FFFFFF</span>;</span></div>
+                <div class="code-line"><span class="line-num">8</span><span class="code-content">}</span></div>
+                <div class="code-line"><span class="line-num">9</span><span class="code-content"></span></div>
             </div>
-            <div class="terminal-output-area" id="terminalOutput"></div>
+            <div class="terminal-output-area">
+                <div class="mock-nav">
+                    <div class="mock-nav-logo">
+                        <span style="font-weight: 800; color: #ffffff; font-size: 15px;">BrainStation</span>
+                    </div>
+                    <div class="mock-nav-links">
+                        <span>About</span>
+                        <span>Courses</span>
+                        <span>Start Learning</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1109,17 +1007,17 @@
                 <h2>Get Started For Free</h2>
                 
                 <div class="tutorial-card">
-                    <h3>Introduction to Python Programming</h3>
+                    <h3>Introduction to HTML & CSS</h3>
                     <div class="yellow-bar-small"></div>
                     
                     <div class="badge-row">
                         <span class="badge">1 Hour</span>
                         <span class="badge">Beginner-Friendly</span>
-                        <span class="badge">20 Lessons</span>
+                        <span class="badge">17 Lessons</span>
                     </div>
                     
                     <p>
-                        Discover the basics of programming with one of the world's most popular programming languages in this Python tutorial.
+                        Learn how websites are built with HTML & CSS and practice building common web page elements with this guided HTML & CSS tutorial.
                     </p>
                     
                     <a href="#" class="start-btn">Start Free Tutorial</a>
@@ -1127,7 +1025,7 @@
             </div>
 
             <div class="get-started-right">
-                <img src="../images/python-students.jpg" alt="Students learning Python">
+                <img src="../images/python-students.jpg" alt="Students learning HTML & CSS">
             </div>
         </div>
     </section>
@@ -1139,144 +1037,85 @@
 
         <div class="learn-grid">
             <div class="learn-card">
-                <h4><span class="learn-arrow">&rsaquo;</span> What is Python?</h4>
-                <p>Discover the Python programming language, what it&rsquo;s used for.</p>
+                <h4><span class="learn-arrow">&rsaquo;</span> What are HTML & CSS?</h4>
+                <p>Discover how HTML and CSS are used to create modern websites.</p>
             </div>
             <div class="learn-card">
-                <h4><span class="learn-arrow">&rsaquo;</span> Working with Collections of Values</h4>
-                <p>Discover how multiple values can be collected and stored.</p>
+                <h4><span class="learn-arrow">&rsaquo;</span> Applying Styles with CSS</h4>
+                <p>Use important CSS properties to apply styles to your webpage.</p>
             </div>
             <div class="learn-card">
-                <h4><span class="learn-arrow">&rsaquo;</span> Working With Numbers</h4>
-                <p>Understand how to store and manipulate numbers with Python.</p>
+                <h4><span class="learn-arrow">&rsaquo;</span> Structuring a Page with HTML</h4>
+                <p>Learn the essential HTML tags and practice using them.</p>
             </div>
             <div class="learn-card">
-                <h4><span class="learn-arrow">&rsaquo;</span> Executing Code Conditionally</h4>
-                <p>Learn to write rules for when specific code should run.</p>
-            </div>
-            <div class="learn-card">
-                <h4><span class="learn-arrow">&rsaquo;</span> Working with Text</h4>
-                <p>Learn how to use and manipulate text with Python.</p>
+                <h4><span class="learn-arrow">&rsaquo;</span> Introduction to CSS & Selectors</h4>
+                <p>Practice using CSS to target specific HTML elements.</p>
             </div>
         </div>
     </section>
 
-    <!-- EXPLORE DETAILED PYTHON REFERENCE DOCS -->
+    <!-- EXPLORE DETAILED HTML & CSS REFERENCE DOCS -->
     <section class="reference-section">
         <div class="reference-box">
-            <h2 class="section-title">Explore Detailed Python Reference Docs</h2>
+            <h2 class="section-title">Explore Detailed HTML & CSS Reference Docs</h2>
             <div class="yellow-line"></div>
             <p class="reference-desc">
-                Discover the features and capabilities of Python, one of the most popular programming languages in the world. This reference documentation is an invaluable tool to support you while you learn and build.
+                Discover the features and capabilities of both HTML and CSS, the two foundational languages of the modern web. This reference documentation is an invaluable tool to support you while you learn and build.
             </p>
 
             <h3 class="toc-main-title">Table of Contents</h3>
 
-            <!-- Category 1: Python Programming Language -->
+            <!-- Category 1: HTML Basics -->
             <div class="toc-category">
-                <h5>Python Programming Language</h5>
-                <div class="toc-grid-2col">
-                    <div class="toc-item"><span>1.1</span> <a href="#">What is Python?</a></div>
-                    <div class="toc-item"><span>1.2</span> <a href="#">Python Tools</a></div>
-                </div>
-            </div>
-
-            <!-- Category 2: Python Basics -->
-            <div class="toc-category">
-                <h5>Python Basics</h5>
-                <div class="toc-grid-2col">
-                    <div class="toc-item"><span>2.1</span> <a href="#">Intro to Python Programming</a></div>
-                    <div class="toc-item"><span>2.2</span> <a href="#">Python Variables</a></div>
-                </div>
-            </div>
-
-            <!-- Category 3: Python Data Types (4 Columns) -->
-            <div class="toc-category">
-                <h5>Python Data Types</h5>
+                <h5>HTML Basics</h5>
                 <div class="toc-grid-4col">
-                    <div class="toc-item"><span>3.1</span> <a href="#">Python String</a></div>
-                    <div class="toc-item"><span>3.3</span> <a href="#">Python Boolean</a></div>
-                    <div class="toc-item"><span>3.5</span> <a href="#">Python Dictionary</a></div>
-                    <div class="toc-item"><span>3.7</span> <a href="#">Python Tuple</a></div>
-                    <div class="toc-item"><span>3.2</span> <a href="#">Python Number</a></div>
-                    <div class="toc-item"><span>3.4</span> <a href="#">Python List</a></div>
-                    <div class="toc-item"><span>3.6</span> <a href="#">Python Set</a></div>
-                    <div class="toc-item"><span>3.8</span> <a href="#">Python Casting</a></div>
+                    <div class="toc-item"><span>1.1</span> <a href="#">HTML Basics</a></div>
+                    <div class="toc-item"><span>1.2</span> <a href="#">HTML and CSS</a></div>
+                    <div class="toc-item"><span>1.3</span> <a href="#">What is CSS?</a></div>
+                    <div class="toc-item"><span>1.4</span> <a href="#">CSS Syntax</a></div>
                 </div>
             </div>
 
-            <!-- Category 4: Python Conditions -->
+            <!-- Category 2: HTML Elements -->
             <div class="toc-category">
-                <h5>Python Conditions</h5>
-                <div class="toc-grid-2col">
-                    <div class="toc-item"><span>4.1</span> <a href="#">Python If Statement</a></div>
-                    <div class="toc-item"><span>4.2</span> <a href="#">Python In Keyword</a></div>
-                    <div class="toc-item"><span>4.3</span> <a href="#">Python Is Keyword</a></div>
+                <h5>HTML Elements</h5>
+                <div class="toc-grid-4col">
+                    <div class="toc-item"><span>2.1</span> <a href="#">HTML Elements</a></div>
+                    <div class="toc-item"><span>2.3</span> <a href="#">HTML Attributes</a></div>
+                    <div class="toc-item"><span>2.5</span> <a href="#">HTML Input Types</a></div>
+                    <div class="toc-item"><span>2.7</span> <a href="#">HTML Table</a></div>
+                    <div class="toc-item"><span>2.2</span> <a href="#">HTML Tags</a></div>
+                    <div class="toc-item"><span>2.4</span> <a href="#">HTML Forms</a></div>
+                    <div class="toc-item"><span>2.6</span> <a href="#">HTML Lists</a></div>
+                    <div class="toc-item"><span></span> </div>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 50px;">
-                <a href="#" class="start-btn" style="padding: 14px 36px; display: inline-block;">View Full Python Reference</a>
+                <a href="#" class="start-btn" style="padding: 14px 36px; display: inline-block;">View Full HTML & CSS Reference</a>
             </div>
         </div>
     </section>
 
-    <!-- LEADING DIGITAL BUSINESSES LOGOS GRID -->
-    <section class="logos-section">
-        <h2>Leading Digital Businesses Need Python Skills</h2>
-        <div class="logos-grid-container">
-            <!-- Row 1 -->
-            <div class="logo-item"><img src="../images/logo1.png" alt="Samsung"></div>
-            <div class="logo-item"><img src="../images/logo2.png" alt="SkipTheDishes"></div>
-            <div class="logo-item"><img src="../images/logo3.png" alt="Telus"></div>
-            <div class="logo-item"><img src="/logos/uber-CuYQ6LLL.svg" alt="Uber"></div>
-            <div class="logo-item"><img src="../images/logo5.png" alt="WarnerMedia"></div>
-            <div class="logo-item"><img src="/logos/jp-morgan-chase-BFZJZcAb.svg" alt="JPMorgan"></div>
-
-            <!-- Row 2 -->
-            <div class="logo-item"><img src="/logos/amazon-Di2h6wTx.svg" alt="Amazon"></div>
-            <div class="logo-item"><img src="/logos/slack-ElURnRzW.svg" alt="Slack"></div>
-            <div class="logo-item"><img src="../images/logo9.png" alt="KraftHeinz"></div>
-            <div class="logo-item"><img src="../images/logo10.png" alt="Ubisoft"></div>
-            <div class="logo-item"><img src="../images/logo11.png" alt="Yelp"></div>
-            <div class="logo-item"><img src="/logos/ey-D_19C1MH.svg" alt="EY"></div>
-
-            <!-- Row 3 -->
-            <div class="logo-item"><img src="/logos/american-express-BHPcj7-J.svg" alt="American Express"></div>
-            <div class="logo-item"><img src="/logos/shopify-P6Nq5HRK.svg" alt="Shopify"></div>
-            <div class="logo-item"><img src="/logos/square-CBb6pZi4.svg" alt="Square"></div>
-            <div class="logo-item"><img src="/logos/tik-tok-DsQE0kAg.svg" alt="TikTok"></div>
-            <div class="logo-item"><img src="../images/logo17.png" alt="Verizon"></div>
-            <div class="logo-item"><img src="../images/logo18.png" alt="Red Bull"></div>
-
-            <!-- Row 4 -->
-            <div class="logo-item"><img src="../images/logo19.png" alt="Bumble"></div>
-            <div class="logo-item"><img src="/logos/apple-BSb7elEh.svg" alt="Apple"></div>
-            <div class="logo-item"><img src="../images/logo21.png" alt="TD"></div>
-            <div class="logo-item"><img src="/logos/x-uzq0HYzV.svg" alt="X"></div>
-            <div class="logo-item"><img src="/logos/walmart-vYA2S4Ej.svg" alt="Walmart"></div>
-            <div class="logo-item"><img src="../images/logo24.png" alt="Blackstone"></div>
-        </div>
-    </section>
-
-    <!-- WHY LEARN PYTHON SECTION -->
+    <!-- WHY LEARN HTML & CSS SECTION -->
     <section class="why-learn-section">
         <div class="why-learn-container">
             <!-- Left Side: Title & Paragraphs -->
             <div class="why-learn-left">
-                <h2>Why Learn Python?</h2>
+                <h2>Why Learn HTML & CSS?</h2>
                 <div class="yellow-line"></div>
                 <p>
-                    It&rsquo;s a great idea to learn Python because it is one of the fastest-growing programming languages in the world, with large communities of users in web development, data science, machine learning, AI, and more. The popularity of Python is set to increase even further, as according to recent surveys, Python has come out on top as perhaps the most sought-after and popular programming language.
+                    You should learn HTML because it is the foundation of all web pages on the Internet. If you are interested in web development or building websites at all, you will want to learn HTML. HTML stands for HyperText Markup Language and it is the core technology for defining the structure of web pages. Whether you want to become a Web Developer or just create web pages on your own for fun, learning HTML will open up new career options, enable you to make bigger contributions to design and development projects, and open the door toward learning other programming languages.
                 </p>
                 <p>
-                    If you&rsquo;re interested in learning Python, you should know it is also one of the most accessible programming languages available due to its simplified syntax, which puts an emphasis on natural language. This free Python tutorial is intended as an introduction to the Python programming language, so that even absolute beginners can quickly learn the basics and begin building Python skills.
+                    This HTML tutorial will introduce the fundamentals of HTML and CSS, giving you the skills and knowledge you need to get started creating websites with HTML.
                 </p>
             </div>
 
             <!-- Right Side: Image -->
             <div class="why-learn-right">
-                <img src="../images/python-why-learn.jpg" alt="People learning Python together">
+                <img src="../images/python-why-learn.jpg" alt="People learning HTML & CSS together">
             </div>
         </div>
     </section>
@@ -1287,10 +1126,10 @@
             <!-- Left Sidebar with Questions -->
             <div class="faq-sidebar">
                 <div class="faq-list" id="faqList">
-                    <div class="faq-item active" data-target="faq1">Why Is Python so Popular?</div>
-                    <div class="faq-item" data-target="faq2">What Type of Programming Language Is Python?</div>
-                    <div class="faq-item" data-target="faq3">What Is Python Used For?</div>
-                    <div class="faq-item" data-target="faq4">Is Python Hard to Learn?</div>
+                    <div class="faq-item active" data-target="faq1">Is HTML Hard to Learn?</div>
+                    <div class="faq-item" data-target="faq2">How Long Does it Take to Learn HTML?</div>
+                    <div class="faq-item" data-target="faq3">What Is the Best Way to Learn HTML?</div>
+                    <div class="faq-item" data-target="faq4">What Careers Use HTML?</div>
                 </div>
                 <!-- Prev / Next Arrows -->
                 <div class="faq-nav-arrows">
@@ -1303,35 +1142,32 @@
             <div class="faq-content-panel">
                 <!-- FAQ 1 -->
                 <div class="faq-pane active" id="faq1">
-                    <h3>Why Is Python so Popular?</h3>
+                    <h3>Is HTML Hard to Learn?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>Python is such a popular programming language because it is straightforward to learn and use, and because Python functions can be carried out with simpler commands and less text than most competing languages. Python is, in fact, the language of choice for a number of the world-class tech products we use in our daily lives and is a force behind how we interact with the world.</p>
-                    <p>Python is currently used by Netflix, Pixar, Meta, Wikipedia, Google, JP Morgan Chase, Spotify, Yahoo!, Reddit, Pinterest, and NASA, among many other top companies. It's actually one of the four main languages at Google, and YouTube is largely written in Python. Python also remains the language of choice for automation and scripting, both for large-scale Fortune 500 projects, or smaller scale tasks that can simplify work by automating tedious tasks.</p>
-                    <p>Python's popularity also owes to the fact that Python is available for free on its official website and because it's open-source — anyone can update Python or add new features. It also helps that Python can run efficiently across all platforms, including Windows, Mac, and Linux.</p>
+                    <p>No, HTML is not hard to learn, because it is relatively easy to learn enough basic HTML code to get started creating and editing web pages. However, it is harder to learn how to use HTML for more advanced applications, like combining HTML with other programming languages to create an interactive website or responsive web design.</p>
+                    <p>Though HTML might seem daunting at first for absolute beginners to web development, it is actually quite easy to learn HTML once you begin digging into it. For one thing, there aren't really any technological barriers learning HTML and tackling your first web page — all you need is a computer with a web browser and a text editor like TextEdit or NotePad to write HTML.</p>
+                    <p>HTML is a markup language, as opposed to a programming language. So where programming languages spell out a series of actions, an HTML tag merely describes what things are (like paragraphs, images, tables, headings, etc.). As a result, it should be much more straightforward for most people to learn the basics of HTML.</p>
                 </div>
 
                 <!-- FAQ 2 -->
                 <div class="faq-pane" id="faq2">
-                    <h3>What Type of Programming Language Is Python?</h3>
+                    <h3>How Long Does it Take to Learn HTML?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>Python is an interpreted, object-oriented, high-level programming language. Unlike many other languages, Python is also an open-source, cross-platform language, which means that it can be run on Mac, Windows, Linux, and Raspberry Pi.</p>
-                    <p>Apart from this, Python differs from other programming languages in a few ways, including using new lines to complete a command (as opposed to semicolon or parentheses), and whitespace to define the scope of loops, functions, and classes (as opposed to the curly brackets used in other languages).</p>
+                    <p>You can learn the basic syntax and core tags of HTML in just a few days or weeks of dedicated practice. Building proficiency in responsive design with CSS usually takes a bit longer.</p>
                 </div>
 
                 <!-- FAQ 3 -->
                 <div class="faq-pane" id="faq3">
-                    <h3>What Is Python Used For?</h3>
+                    <h3>What Is the Best Way to Learn HTML?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>Python is a general-purpose programming language, meaning it can be used to create a variety of different programs and isn't specialized for any specific problems.</p>
-                    <p>Its versatility has made it one of the most widely used programming languages today in fields such as web development, data science, machine learning, artificial intelligence, desktop applications, and automation scripting.</p>
+                    <p>The best way to learn HTML is through hands-on practice—writing your own markup and building simple webpages from scratch alongside guided tutorials or structured courses.</p>
                 </div>
 
                 <!-- FAQ 4 -->
                 <div class="faq-pane" id="faq4">
-                    <h3>Is Python Hard to Learn?</h3>
+                    <h3>What Careers Use HTML?</h3>
                     <div class="yellow-bar-small"></div>
-                    <p>No, Python is widely considered one of the easiest programming languages for beginners to learn. Its syntax closely resembles natural English, allowing developers to write programs with fewer lines of code than languages like C++ or Java.</p>
-                    <p>Because of its readability and simplicity, absolute beginners can quickly grasp foundational programming concepts and start building practical projects in a short amount of time.</p>
+                    <p>Web developers, front-end engineers, UI/UX designers, digital marketers, content managers, and email marketing specialists all regularly use HTML.</p>
                 </div>
             </div>
         </div>
@@ -1347,18 +1183,7 @@
 
             <!-- Right Side Cards -->
             <div class="other-langs-cards">
-                <!-- Card 1: SQL -->
-                <div class="lang-card">
-                    <div class="lang-card-top">
-                        <div class="lang-icon-box">
-                            <img src="../images/sql-icon.png" alt="SQL Icon">
-                        </div>
-                        <h3>SQL</h3>
-                    </div>
-                    <a href="learn-sql.html" class="lang-btn">Learn SQL</a>
-                </div>
-
-                <!-- Card 2: JavaScript -->
+                <!-- Card 1: JavaScript -->
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
@@ -1369,15 +1194,26 @@
                     <a href="learn-js.html" class="lang-btn">Learn JavaScript</a>
                 </div>
 
-                <!-- Card 3: HTML & CSS -->
+                <!-- Card 2: Python -->
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
-                            <img src="../images/html-css-icon.png" alt="HTML & CSS Icon">
+                            <img src="../images/python-icon.png" alt="Python Icon">
                         </div>
-                        <h3>HTML & CSS</h3>
+                        <h3>Python</h3>
                     </div>
-                    <a href="learn-html.html" class="lang-btn">Learn HTML</a>
+                    <a href="learn-python.html" class="lang-btn">Learn Python</a>
+                </div>
+
+                <!-- Card 3: SQL -->
+                <div class="lang-card">
+                    <div class="lang-card-top">
+                        <div class="lang-icon-box">
+                            <img src="../images/sql-icon.png" alt="SQL Icon">
+                        </div>
+                        <h3>SQL</h3>
+                    </div>
+                    <a href="learn-sql.html" class="lang-btn">Learn SQL</a>
                 </div>
             </div>
         </div>
@@ -1389,111 +1225,41 @@
     <!-- SCRIPT LOADER -->
     <script src="../js/components.js"></script>
 
-    <!-- INTERACTIVE TYPING ANIMATION SCRIPT -->
+    <!-- INTERACTIVE FAQ SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const codeLines = [
-                '<span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">=</span> <span class="syntax-num">30</span>',
-                '',
-                '<span class="syntax-kw">while</span> <span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">&gt;</span> <span class="syntax-num">0</span><span class="syntax-op">:</span>',
-                '    <span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">=</span> <span class="syntax-var">piggy_bank_balance</span> <span class="syntax-op">-</span> <span class="syntax-num">10</span>',
-                '    <span class="syntax-fn">print</span>(<span class="syntax-str">\'Remaining Balance: \',</span> <span class="syntax-var">piggy_bank_balance</span>)',
-                '<span class="syntax-fn">print</span>(<span class="syntax-str">\'You have spent all your saved money\'</span>)'
-            ];
+            const faqItems = document.querySelectorAll(".faq-item");
+            const faqPanes = document.querySelectorAll(".faq-pane");
+            const prevBtn = document.getElementById("prevFaq");
+            const nextBtn = document.getElementById("nextFaq");
+            let currentIndex = 0;
 
-            const outputText = 
-                'Remaining Balance:  20<br>' +
-                'Remaining Balance:  10<br>' +
-                'Remaining Balance:  0<br>' +
-                'You have spent all your saved money';
+            function switchFaq(index) {
+                faqItems.forEach(item => item.classList.remove("active"));
+                faqPanes.forEach(pane => pane.classList.remove("active"));
 
-            function runTypingAnimation() {
-                let currentLine = 0;
-                
-                for(let i=1; i<=6; i++) {
-                    let el = document.getElementById('c' + i);
-                    if(el) el.innerHTML = '';
-                }
-                let termOut = document.getElementById('terminalOutput');
-                if(termOut) termOut.innerHTML = '';
-
-                function typeNextLine() {
-                    if (currentLine < codeLines.length) {
-                        let lineEl = document.getElementById('c' + (currentLine + 1));
-                        if(lineEl) lineEl.innerHTML = codeLines[currentLine];
-                        currentLine++;
-                        setTimeout(typeNextLine, 400);
-                    } else {
-                        setTimeout(() => {
-                            let outEl = document.getElementById('terminalOutput');
-                            if(outEl) outEl.innerHTML = outputText;
-                            setTimeout(runTypingAnimation, 5000);
-                        }, 600);
-                    }
-                }
-
-                typeNextLine();
+                faqItems[index].classList.add("active");
+                const targetId = faqItems[index].getAttribute("data-target");
+                document.getElementById(targetId).classList.add("active");
+                currentIndex = index;
             }
 
-            runTypingAnimation();
-        });
+            faqItems.forEach((item, index) => {
+                item.addEventListener("click", () => {
+                    switchFaq(index);
+                });
+            });
 
-        document.addEventListener("DOMContentLoaded", function () {
-        const track = document.getElementById("logoTrack");
-        let position = 0;
-        const speed = 0.8; // Speed control karva mate
+            nextBtn.addEventListener("click", () => {
+                let nextIndex = (currentIndex + 1) % faqItems.length;
+                switchFaq(nextIndex);
+            });
 
-        function animateSlider() {
-            position -= speed;
-            // Jyare half track scroll thai jay tyare position reset karvi
-            if (Math.abs(position) >= track.scrollWidth / 2) {
-                position = 0;
-            }
-            track.style.transform = `translateX(${position}px)`;
-            requestAnimationFrame(animateSlider);
-        }
-
-        // Mouse hover par animation pause karva mate
-        track.addEventListener("mouseenter", () => { speed = 0; });
-        // Mouse leave par pachhu start karva mate
-        track.addEventListener("mouseleave", () => { speed = 0.8; });
-
-        requestAnimationFrame(animateSlider);
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const faqItems = document.querySelectorAll(".faq-item");
-        const faqPanes = document.querySelectorAll(".faq-pane");
-        const prevBtn = document.getElementById("prevFaq");
-        const nextBtn = document.getElementById("nextFaq");
-        let currentIndex = 0;
-
-        function switchFaq(index) {
-            faqItems.forEach(item => item.classList.remove("active"));
-            faqPanes.forEach(pane => pane.classList.remove("active"));
-
-            faqItems[index].classList.add("active");
-            const targetId = faqItems[index].getAttribute("data-target");
-            document.getElementById(targetId).classList.add("active");
-            currentIndex = index;
-        }
-
-        faqItems.forEach((item, index) => {
-            item.addEventListener("click", () => {
-                switchFaq(index);
+            prevBtn.addEventListener("click", () => {
+                let prevIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
+                switchFaq(prevIndex);
             });
         });
-
-        nextBtn.addEventListener("click", () => {
-            let nextIndex = (currentIndex + 1) % faqItems.length;
-            switchFaq(nextIndex);
-        });
-
-        prevBtn.addEventListener("click", () => {
-            let prevIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
-            switchFaq(prevIndex);
-        });
-    });
     </script>
 
 </body>
