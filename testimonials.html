@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Testimonials | Courstrike</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .testimonial-hero {
+            min-height: 540px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.68),
+                    rgba(0, 0, 0, 0.72)
+                ),
+                url("images/testimonials/testimonial-hero.jpg")
+                center / cover no-repeat;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-inner {
+            width: min(1240px, calc(100% - 80px));
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .hero-small {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 28px;
+        }
+
+        .hero-title {
+            color: #ffffff;
+            font-size: clamp(48px, 5vw, 68px);
+            line-height: 0.98;
+            font-weight: 500;
+            max-width: 700px;
+            margin-bottom: 32px;
+        }
+
+        .hero-description {
+            color: #ffffff;
+
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 600;
+
+            max-width: 720px;
+        }
+
+
+        /* =========================
+           FIRST 3 + REMAINING CARDS
+        ========================= */
+
+        .testimonials-section {
+            width: min(1240px, calc(100% - 80px));
+
+            margin: auto;
+
+            padding: 110px 0 100px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            column-gap: 28px;
+
+            row-gap: 70px;
+        }
+
+        .testimonial-card {
+            display: block;
+            cursor: pointer;
+        }
+
+        .testimonial-image-wrapper {
+            width: 100%;
+
+            height: 380px;
+
+            overflow: hidden;
+
+            background: #eeeeee;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .testimonial-card:hover
+        .testimonial-image {
+            transform: scale(1.035);
+        }
+
+        .testimonial-info {
+            display: grid;
+
+            grid-template-columns:
+                1fr auto;
+
+            gap: 20px;
+
+            padding-top: 28px;
+        }
+
+        .testimonial-name {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.testimonial-role {
+    font-size: 16px;
+    line-height: 1.35;
+    color: #111111;
+    max-width: 330px;
+}
+
+        .testimonial-arrow {
+            font-size: 38px;
+
+            line-height: 1;
+
+            font-weight: 300;
+
+            transition:
+                transform 0.3s ease;
+
+            align-self: center;
+        }
+
+        .testimonial-card:hover
+        .testimonial-arrow {
+            transform:
+                translateX(7px);
+        }
+
+
+        /* =========================
+           FEATURED STORY
+        ========================= */
+
+        .featured-story {
+            width: min(1240px, calc(100% - 80px));
+
+            margin: 0 auto 110px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .featured-content {
+            padding-left: 30px;
+        }
+
+        .featured-label {
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 25px;
+        }
+
+        .featured-title {
+            font-size: 34px;
+
+            line-height: 1.25;
+
+            font-weight: 500;
+
+            max-width: 520px;
+
+            margin-bottom: 25px;
+        }
+
+        .featured-person {
+            font-size: 18px;
+
+            margin-bottom: 30px;
+        }
+
+        .watch-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            background: #000000;
+
+            color: #ffffff;
+
+            padding:
+                17px 27px;
+
+            border-radius: 40px;
+
+            font-size: 16px;
+
+            font-weight: 700;
+        }
+
+        .play-icon {
+            font-size: 17px;
+        }
+
+        .featured-image {
+            width: 100%;
+
+            height: 430px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .testimonial-hero {
+                min-height: 500px;
+            }
+
+            .hero-inner,
+            .testimonials-section,
+            .featured-story {
+                width:
+                    min(
+                        calc(100% - 40px),
+                        700px
+                    );
+            }
+
+            .testimonials-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap:
+                    50px 22px;
+            }
+
+            .testimonial-image-wrapper {
+                height: 320px;
+            }
+
+            .featured-story {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .featured-content {
+                padding-left: 0;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .testimonial-hero {
+                min-height: 480px;
+            }
+
+            .hero-inner {
+                padding: 60px 0;
+            }
+
+            .hero-title {
+                font-size: 52px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .testimonials-section {
+                padding:
+                    70px 0 80px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+
+                row-gap: 55px;
+            }
+
+            .testimonial-image-wrapper {
+                height: 380px;
+            }
+
+            .testimonial-name {
+                font-size: 22px;
+            }
+
+            .testimonial-role {
+                font-size: 17px;
+            }
+
+            .featured-story {
+                width:
+                    calc(100% - 40px);
+
+                margin-bottom: 70px;
+            }
+
+            .featured-title {
+                font-size: 28px;
+            }
+
+            .featured-image {
+                height: 350px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         EXISTING SHARED HEADER
+    ========================= -->
+
+    <div id="header"></div>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="testimonial-hero">
+
+        <div class="hero-inner">
+
+            <div class="hero-small">
+                REVIEWS &amp; TESTIMONIALS
+            </div>
+
+            <h1 class="hero-title">
+                Learner Success<br>
+                Stories
+            </h1>
+
+            <p class="hero-description">
+                Courstrike has empowered professionals around the world,
+                equipping them with essential digital skills and enabling
+                them to thrive in the digital age.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FIRST 3 TESTIMONIALS
+         JS CREATES THESE
+    ========================= -->
+
+    <section class="testimonials-section">
+
+        <div
+            id="firstTestimonialsGrid"
+            class="testimonials-grid"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FEATURED STORY
+    ========================= -->
+
+    <section class="featured-story">
+
+        <div class="featured-content">
+
+            <div class="featured-label">
+                FEATURED STORY
+            </div>
+
+            <h2 class="featured-title">
+                After taking the course, I was like:
+                in two years I want to have my data job.
+                But in less than two years I was in my
+                role at Spotify.
+            </h2>
+
+            <p class="featured-person">
+                Sydney Bang, Data Analytics Engineer at Spotify
+            </p>
+
+            <a
+                href="testimonial-detail.html?id=4"
+                class="watch-button"
+            >
+                <span class="play-icon">▶</span>
+                Watch Video
+            </a>
+
+        </div>
+
+
+        <img
+            src="images/testimonials/sydney-bang-DvNogG9B.avif"
+            alt="Sydney Bang"
+            class="featured-image"
+        >
+
+    </section>
+
+
+
+    <!-- =========================
+         REMAINING TESTIMONIALS
+         JS CREATES 33 MORE
+    ========================= -->
+
+    <section class="testimonials-section">
+
+        <div
+            id="remainingTestimonialsGrid"
+            class="testimonials-grid"
+        ></div>
+
+    </section>
+
+    <section class="trusted-companies">
+
+    <div class="trusted-header">
+
+        <h2>
+            Our Network of Industry Partners and Experts
+        </h2>
+
+        <div class="trusted-title-line"></div>
+
+        <p>
+            Courstrike is proud to work with the world's leading digital and AI brands and professionals<br>
+            to power our events, workshops, and certification courses.
+        </p>
+
+    </div>
+
+
+    <div class="trusted-slider">
+
+        <div id="trustedTrack"></div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =========================
+         EXISTING SHARED FOOTER
+    ========================= -->
+
+    <div id="footer"></div>
+
+    <!-- =========================
+         COMPONENT LOADER
+    ========================= -->
+
+    <script src="js/components.js"></script>
+
+
+    <!-- =========================
+         TESTIMONIAL DATA + LOGIC
+    ========================= -->
+
+    <script src="js/testimonials.js"></script>
+
+    <script src="js/trusted-companies.js"></script>
+
+
+</body>
+
+</html>

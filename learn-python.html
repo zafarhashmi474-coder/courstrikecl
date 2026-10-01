@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Python - BrainStation</title>
+    <title>Learn Python - Courstrike</title>
 
     <!-- Main CSS Link -->
     <link rel="stylesheet" href="../css/style.css">
@@ -297,69 +297,6 @@
         }
 
         /* =========================================
-           INFINITE LOGO SLIDER CAROUSEL
-        ========================================= */
-        .logos-section {
-            background: #ffffff;
-            padding: 90px 40px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .logos-section h2 {
-            font-size: clamp(32px, 3.5vw, 44px);
-            font-weight: 800;
-            color: #0b0c10;
-            margin-bottom: 60px;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-slider-track {
-            display: flex;
-            width: max-content;
-            animation: scrollLogos 30s linear infinite;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .logo-slider-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scrollLogos {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .logo-slider-container {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
-
-        .logo-item {
-            flex-shrink: 0;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-
-        .logo-item img {
-            height: 36px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%) opacity(0.7);
-        }
-
-        .logo-item img:hover {
-            filter: none;
-            opacity: 1;
-        }
-
-        /* =========================================
            CONTENT SECTIONS (FIXED BACKGROUND & COLORS)
         ========================================= */
         .content-section {
@@ -537,7 +474,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f1f5f9; /* Fallback background if image fails to load */
+            background-color: #f1f5f9;
             border-radius: 12px;
             min-height: 380px;
         }
@@ -609,7 +546,6 @@
             margin-bottom: 16px;
         }
 
-        /* 4-column layout for Python Data Types, 2-column for others */
         .toc-grid-2col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -653,64 +589,138 @@
         }
 
         /* =========================================
-           STATIC LOGOS GRID (ORIGINAL COLORS)
+           PYTHON LOGOS SLIDER STYLES (ORIGINAL COLORS)
         ========================================= */
         .logos-section {
-            background: #ffffff;
-            padding: 80px 70px;
-            text-align: center;
+            background: #ffffff !important;
+            overflow: hidden;
+            padding: 90px 0;
+            box-sizing: border-box;
             border-top: 1px solid #e2e8f0;
             border-bottom: 1px solid #e2e8f0;
+            text-align: center;
         }
 
         .logos-section h2 {
             font-size: clamp(30px, 3.5vw, 42px);
             font-weight: 800;
             color: #0b0c10;
-            margin-bottom: 50px;
+            margin-bottom: 16px;
             letter-spacing: -0.5px;
         }
 
-        .logos-grid-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr); /* 6 columns per row */
-            gap: 40px 30px;
-            align-items: center;
-            justify-items: center;
+        .trusted-title-line {
+            width: 44px;
+            height: 4px;
+            background: #facc15 !important;
+            border-radius: 2px;
+            margin: 0 auto 40px auto;
         }
 
-        .logo-item {
-            height: 45px;
+        .trusted-slider {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 25px;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .trusted-slider::before,
+        .trusted-slider::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 90px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .trusted-slider::before {
+            left: 0;
+            background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .trusted-slider::after {
+            right: 0;
+            background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        #pythonLogoTrack {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            will-change: transform;
+        }
+
+        .trusted-page {
+            width: max-content;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Thodi space vadhari */
+            padding: 0 40px;
+        }
+
+        .trusted-row {
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            gap: 60px; /* Logos vachi ni horizontal gap vadhari */
+            min-height: 60px;
+            box-sizing: border-box;
         }
 
-        .logo-item img {
-            max-height: 40px;
-            max-width: 100%;
+        .trusted-logo {
+            width: 150px; /* Container size moti kari */
+            height: 55px; /* Height vadhari */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-sizing: border-box;
+        }
+
+        .trusted-logo img {
+            display: block;
+            width: auto;
+            max-width: 135px; /* Logo ni max width vadhari */
+            max-height: 42px; /* Logo ni max height vadhari ne mota karya */
             object-fit: contain;
-            opacity: 1; /* Original color visible thase */
-            filter: none; /* Grayscale hatavi didhu chhe */
+            user-select: none;
+            pointer-events: none;
+            opacity: 1 !important;
+            filter: none !important;
             transition: transform 0.2s ease;
         }
 
-        .logo-item img:hover {
-            transform: scale(1.05);
+        .trusted-logo img:hover {
+            transform: scale(1.06);
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 900px) {
-            .logos-grid-container {
-                grid-template-columns: repeat(3, 1fr);
+            .logos-section {
+                padding: 60px 0;
             }
-        }
-        @media (max-width: 600px) {
-            .logos-grid-container {
-                grid-template-columns: repeat(2, 1fr);
+            .logos-section h2 {
+                font-size: 30px;
+            }
+            .trusted-page {
+                gap: 15px;
+                padding: 0 25px;
+            }
+            .trusted-row {
+                gap: 35px;
+            }
+            .trusted-logo {
+                width: 120px;
+                height: 45px;
+            }
+            .trusted-logo img {
+                max-width: 105px;
+                max-height: 34px;
             }
         }
 
@@ -768,7 +778,6 @@
             display: block;
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 900px) {
             .why-learn-container {
                 grid-template-columns: 1fr;
@@ -800,7 +809,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
-        /* Left Sidebar */
         .faq-sidebar {
             display: flex;
             flex-direction: column;
@@ -844,7 +852,6 @@
             color: #2563eb;
         }
 
-        /* Navigation Arrows at bottom left */
         .faq-nav-arrows {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -873,7 +880,6 @@
             color: #2563eb;
         }
 
-        /* Right Content Panel */
         .faq-content-panel {
             padding: 60px;
             background-color: #ffffff;
@@ -912,7 +918,6 @@
             margin-bottom: 20px;
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .faq-container {
                 grid-template-columns: 1fr;
@@ -933,7 +938,7 @@
            LOOKING FOR ANOTHER PROGRAMMING LANGUAGE?
         ========================================= */
         .other-langs-section {
-            background-color: #071124; /* Dark blue background matching screenshot */
+            background-color: #071124;
             padding: 100px 70px;
             color: #ffffff;
         }
@@ -955,7 +960,6 @@
             margin: 0;
         }
 
-        /* Cards Grid (3 cards side by side) */
         .other-langs-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1024,7 +1028,6 @@
             background-color: #1d4ed8;
         }
 
-        /* Responsive for mobile/tablets */
         @media (max-width: 1100px) {
             .other-langs-container {
                 grid-template-columns: 1fr;
@@ -1056,7 +1059,7 @@
     <!-- PYTHON SUB-NAV BAR -->
     <div class="python-subnav">
         <div class="python-subnav-left">
-            <a href="../index.html">BrainStation</a>
+            <a href="../index.html">Courstrike</a>
             <span>&rsaquo;</span>
             <a href="#">Learn</a>
             <span>&rsaquo;</span>
@@ -1072,9 +1075,7 @@
     <section class="python-hero">
         <div class="python-hero-left">
             <div class="python-logo-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2H2v10h10V2zM22 12h-10v10h10V12z"></path>
-                </svg>
+                <img src="logos/python.svg">
             </div>
             <h1>Learn Python</h1>
             <div class="yellow-bar"></div>
@@ -1127,7 +1128,7 @@
             </div>
 
             <div class="get-started-right">
-                <img src="../images/python-students.jpg" alt="Students learning Python">
+                <img src="/images/topic-overview-bg-py@2x.jpg" alt="Students learning Python">
             </div>
         </div>
     </section>
@@ -1221,48 +1222,18 @@
         </div>
     </section>
 
-    <!-- LEADING DIGITAL BUSINESSES LOGOS GRID -->
+    <!-- LEADING DIGITAL BUSINESSES LOGOS SLIDER SECTION -->
     <section class="logos-section">
         <h2>Leading Digital Businesses Need Python Skills</h2>
-        <div class="logos-grid-container">
-            <!-- Row 1 -->
-            <div class="logo-item"><img src="../images/logo1.png" alt="Samsung"></div>
-            <div class="logo-item"><img src="../images/logo2.png" alt="SkipTheDishes"></div>
-            <div class="logo-item"><img src="../images/logo3.png" alt="Telus"></div>
-            <div class="logo-item"><img src="/logos/uber-CuYQ6LLL.svg" alt="Uber"></div>
-            <div class="logo-item"><img src="../images/logo5.png" alt="WarnerMedia"></div>
-            <div class="logo-item"><img src="/logos/jp-morgan-chase-BFZJZcAb.svg" alt="JPMorgan"></div>
-
-            <!-- Row 2 -->
-            <div class="logo-item"><img src="/logos/amazon-Di2h6wTx.svg" alt="Amazon"></div>
-            <div class="logo-item"><img src="/logos/slack-ElURnRzW.svg" alt="Slack"></div>
-            <div class="logo-item"><img src="../images/logo9.png" alt="KraftHeinz"></div>
-            <div class="logo-item"><img src="../images/logo10.png" alt="Ubisoft"></div>
-            <div class="logo-item"><img src="../images/logo11.png" alt="Yelp"></div>
-            <div class="logo-item"><img src="/logos/ey-D_19C1MH.svg" alt="EY"></div>
-
-            <!-- Row 3 -->
-            <div class="logo-item"><img src="/logos/american-express-BHPcj7-J.svg" alt="American Express"></div>
-            <div class="logo-item"><img src="/logos/shopify-P6Nq5HRK.svg" alt="Shopify"></div>
-            <div class="logo-item"><img src="/logos/square-CBb6pZi4.svg" alt="Square"></div>
-            <div class="logo-item"><img src="/logos/tik-tok-DsQE0kAg.svg" alt="TikTok"></div>
-            <div class="logo-item"><img src="../images/logo17.png" alt="Verizon"></div>
-            <div class="logo-item"><img src="../images/logo18.png" alt="Red Bull"></div>
-
-            <!-- Row 4 -->
-            <div class="logo-item"><img src="../images/logo19.png" alt="Bumble"></div>
-            <div class="logo-item"><img src="/logos/apple-BSb7elEh.svg" alt="Apple"></div>
-            <div class="logo-item"><img src="../images/logo21.png" alt="TD"></div>
-            <div class="logo-item"><img src="/logos/x-uzq0HYzV.svg" alt="X"></div>
-            <div class="logo-item"><img src="/logos/walmart-vYA2S4Ej.svg" alt="Walmart"></div>
-            <div class="logo-item"><img src="../images/logo24.png" alt="Blackstone"></div>
+        <div class="trusted-title-line"></div>
+        <div class="trusted-slider">
+            <div id="pythonLogoTrack"></div>
         </div>
     </section>
 
     <!-- WHY LEARN PYTHON SECTION -->
     <section class="why-learn-section">
         <div class="why-learn-container">
-            <!-- Left Side: Title & Paragraphs -->
             <div class="why-learn-left">
                 <h2>Why Learn Python?</h2>
                 <div class="yellow-line"></div>
@@ -1274,7 +1245,6 @@
                 </p>
             </div>
 
-            <!-- Right Side: Image -->
             <div class="why-learn-right">
                 <img src="../images/python-why-learn.jpg" alt="People learning Python together">
             </div>
@@ -1284,7 +1254,6 @@
     <!-- FAQ SECTION -->
     <section class="faq-section">
         <div class="faq-container">
-            <!-- Left Sidebar with Questions -->
             <div class="faq-sidebar">
                 <div class="faq-list" id="faqList">
                     <div class="faq-item active" data-target="faq1">Why Is Python so Popular?</div>
@@ -1292,16 +1261,13 @@
                     <div class="faq-item" data-target="faq3">What Is Python Used For?</div>
                     <div class="faq-item" data-target="faq4">Is Python Hard to Learn?</div>
                 </div>
-                <!-- Prev / Next Arrows -->
                 <div class="faq-nav-arrows">
                     <button class="faq-arrow-btn" id="prevFaq">&#8592;</button>
                     <button class="faq-arrow-btn" id="nextFaq">&#8594;</button>
                 </div>
             </div>
 
-            <!-- Right Content Panel -->
             <div class="faq-content-panel">
-                <!-- FAQ 1 -->
                 <div class="faq-pane active" id="faq1">
                     <h3>Why Is Python so Popular?</h3>
                     <div class="yellow-bar-small"></div>
@@ -1310,7 +1276,6 @@
                     <p>Python's popularity also owes to the fact that Python is available for free on its official website and because it's open-source — anyone can update Python or add new features. It also helps that Python can run efficiently across all platforms, including Windows, Mac, and Linux.</p>
                 </div>
 
-                <!-- FAQ 2 -->
                 <div class="faq-pane" id="faq2">
                     <h3>What Type of Programming Language Is Python?</h3>
                     <div class="yellow-bar-small"></div>
@@ -1318,7 +1283,6 @@
                     <p>Apart from this, Python differs from other programming languages in a few ways, including using new lines to complete a command (as opposed to semicolon or parentheses), and whitespace to define the scope of loops, functions, and classes (as opposed to the curly brackets used in other languages).</p>
                 </div>
 
-                <!-- FAQ 3 -->
                 <div class="faq-pane" id="faq3">
                     <h3>What Is Python Used For?</h3>
                     <div class="yellow-bar-small"></div>
@@ -1326,7 +1290,6 @@
                     <p>Its versatility has made it one of the most widely used programming languages today in fields such as web development, data science, machine learning, artificial intelligence, desktop applications, and automation scripting.</p>
                 </div>
 
-                <!-- FAQ 4 -->
                 <div class="faq-pane" id="faq4">
                     <h3>Is Python Hard to Learn?</h3>
                     <div class="yellow-bar-small"></div>
@@ -1340,40 +1303,35 @@
     <!-- LOOKING FOR ANOTHER PROGRAMMING LANGUAGE SECTION -->
     <section class="other-langs-section">
         <div class="other-langs-container">
-            <!-- Left Side Title -->
             <div class="other-langs-left">
                 <h2>Looking for Another Programming Language?</h2>
             </div>
 
-            <!-- Right Side Cards -->
             <div class="other-langs-cards">
-                <!-- Card 1: SQL -->
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
-                            <img src="../images/sql-icon.png" alt="SQL Icon">
+                            <img src="/logos/database.svg" alt="SQL Icon">
                         </div>
                         <h3>SQL</h3>
                     </div>
                     <a href="learn-sql.html" class="lang-btn">Learn SQL</a>
                 </div>
 
-                <!-- Card 2: JavaScript -->
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
-                            <img src="../images/js-icon.png" alt="JavaScript Icon">
+                            <img src="/logos/js.svg" alt="JavaScript Icon">
                         </div>
                         <h3>JavaScript</h3>
                     </div>
                     <a href="learn-js.html" class="lang-btn">Learn JavaScript</a>
                 </div>
 
-                <!-- Card 3: HTML & CSS -->
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
-                            <img src="../images/html-css-icon.png" alt="HTML & CSS Icon">
+                            <img src="/logos/html-and-css.svg" alt="HTML & CSS Icon">
                         </div>
                         <h3>HTML & CSS</h3>
                     </div>
@@ -1389,7 +1347,7 @@
     <!-- SCRIPT LOADER -->
     <script src="../js/components.js"></script>
 
-    <!-- INTERACTIVE TYPING ANIMATION SCRIPT -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const codeLines = [
@@ -1438,62 +1396,132 @@
             runTypingAnimation();
         });
 
+        // PYTHON LOGOS INFINITE SLIDER SCRIPT
         document.addEventListener("DOMContentLoaded", function () {
-        const track = document.getElementById("logoTrack");
-        let position = 0;
-        const speed = 0.8; // Speed control karva mate
+            const track = document.getElementById("pythonLogoTrack");
+            if (!track) return;
 
-        function animateSlider() {
-            position -= speed;
-            // Jyare half track scroll thai jay tyare position reset karvi
-            if (Math.abs(position) >= track.scrollWidth / 2) {
-                position = 0;
+            const rowsData = [
+                [
+                    { src: "/logos/samsung-CgcHNOx5.svg", alt: "Samsung" },
+                    { src: "/logos/skip-the-dishes.svg", alt: "SkipTheDishes" },
+                    { src: "/logos/telus.svg", alt: "Telus" },
+                    { src: "/logos/uber-CuYQ6LLL.svg", alt: "Uber" },
+                    { src: "/logos/warner-media.svg", alt: "WarnerMedia" },
+                    { src: "/logos/jp-morgan-chase-BFZJZcAb.svg", alt: "JPMorgan" },
+                    { src: "/logos/duolingo.svg", alt: "Duolingo" },
+                    { src: "/logos/mastercard-DzuA8yXC.svg", alt: "MasterCard" },
+                    { src: "/logos/bank-of-america.svg", alt: "BankOfAMreica" },
+                ],
+                [
+                    { src: "/logos/amazon-Di2h6wTx.svg", alt: "Amazon" },
+                    { src: "/logos/slack-ElURnRzW.svg", alt: "Slack" },
+                    { src: "/logos/kraft-heinz.svg", alt: "KraftHeinz" },
+                    { src: "/logos/ubisoft.svg", alt: "Ubisoft" },
+                    { src: "/logos/yelp.svg", alt: "Yelp" },
+                    { src: "/logos/ey-D_19C1MH.svg", alt: "EY" },
+                    { src: "/logos/cisco-DB3M1NTR.svg", alt: "cisco" },
+                    { src: "/logos/pay-pal-Bfc0Ddjo.svg", alt: "PayPal" },
+                    { src: "/logos/apple-BSb7elEh.svg", alt: "apple" },
+                ],
+                [
+                    { src: "/logos/american-express-BHPcj7-J.svg", alt: "American Express" },
+                    { src: "/logos/shopify-P6Nq5HRK.svg", alt: "Shopify" },
+                    { src: "/logos/square-CBb6pZi4.svg", alt: "Square" },
+                    { src: "/logos/tik-tok-DsQE0kAg.svg", alt: "TikTok" },
+                    { src: "/logos/verizon.svg", alt: "Verizon" },
+                    { src: "/logos/red-bull.svg", alt: "Red Bull" },
+                    { src: "/logos/at-t.svg", alt: "AT&T" },
+                    { src: "/logos/mcdonald-s-Dd1zGQfz.svg", alt: "Macd" },
+                    { src: "/logos/hootsuite-1.svg", alt: "hootsuite" },
+                ],
+                [
+                    { src: "/logos/bumble.svg", alt: "Bumble" },
+                    { src: "/logos/apple-BSb7elEh.svg", alt: "Apple" },
+                    { src: "/logos/td.svg", alt: "TD" },
+                    { src: "/logos/x-uzq0HYzV.svg", alt: "X" },
+                    { src: "/logos/walmart-vYA2S4Ej.svg", alt: "Walmart" },
+                    { src: "/logos/blackstone.svg", alt: "Blackstone" },
+                    { src: "/logos/kpmg-DCU3pMPb.svg", alt: "KpMG" },
+                    { src: "/logos/microsoft-rwvmviyC.svg", alt: "Microsoft" },
+                    { src: "/logos/facebook-social.svg", alt: "facebook" },
+                ]
+            ];
+
+            function createPage() {
+                const page = document.createElement("div");
+                page.className = "trusted-page";
+                rowsData.forEach(row => {
+                    const rowEl = document.createElement("div");
+                    rowEl.className = "trusted-row";
+                    row.forEach(logo => {
+                        const wrapper = document.createElement("div");
+                        wrapper.className = "trusted-logo";
+                        const img = document.createElement("img");
+                        img.src = logo.src;
+                        img.alt = logo.alt;
+                        img.draggable = false;
+                        wrapper.appendChild(img);
+                        rowEl.appendChild(wrapper);
+                    });
+                    page.appendChild(rowEl);
+                });
+                return page;
             }
-            track.style.transform = `translateX(${position}px)`;
-            requestAnimationFrame(animateSlider);
-        }
 
-        // Mouse hover par animation pause karva mate
-        track.addEventListener("mouseenter", () => { speed = 0; });
-        // Mouse leave par pachhu start karva mate
-        track.addEventListener("mouseleave", () => { speed = 0.8; });
+            track.innerHTML = "";
+            track.appendChild(createPage());
+            track.appendChild(createPage());
 
-        requestAnimationFrame(animateSlider);
-    });
+            let position = 0;
+            const speed = 0.35;
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const faqItems = document.querySelectorAll(".faq-item");
-        const faqPanes = document.querySelectorAll(".faq-pane");
-        const prevBtn = document.getElementById("prevFaq");
-        const nextBtn = document.getElementById("nextFaq");
-        let currentIndex = 0;
+            function animate() {
+                position += speed;
+                const firstPageWidth = track.children[0].offsetWidth;
+                if (position >= firstPageWidth) {
+                    position = 0;
+                }
+                track.style.transform = `translate3d(${-position}px, 0, 0)`;
+                requestAnimationFrame(animate);
+            }
 
-        function switchFaq(index) {
-            faqItems.forEach(item => item.classList.remove("active"));
-            faqPanes.forEach(pane => pane.classList.remove("active"));
+            requestAnimationFrame(animate);
+        });
 
-            faqItems[index].classList.add("active");
-            const targetId = faqItems[index].getAttribute("data-target");
-            document.getElementById(targetId).classList.add("active");
-            currentIndex = index;
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqItems = document.querySelectorAll(".faq-item");
+            const faqPanes = document.querySelectorAll(".faq-pane");
+            const prevBtn = document.getElementById("prevFaq");
+            const nextBtn = document.getElementById("nextFaq");
+            let currentIndex = 0;
 
-        faqItems.forEach((item, index) => {
-            item.addEventListener("click", () => {
-                switchFaq(index);
+            function switchFaq(index) {
+                faqItems.forEach(item => item.classList.remove("active"));
+                faqPanes.forEach(pane => pane.classList.remove("active"));
+
+                faqItems[index].classList.add("active");
+                const targetId = faqItems[index].getAttribute("data-target");
+                document.getElementById(targetId).classList.add("active");
+                currentIndex = index;
+            }
+
+            faqItems.forEach((item, index) => {
+                item.addEventListener("click", () => {
+                    switchFaq(index);
+                });
+            });
+
+            nextBtn.addEventListener("click", () => {
+                let nextIndex = (currentIndex + 1) % faqItems.length;
+                switchFaq(nextIndex);
+            });
+
+            prevBtn.addEventListener("click", () => {
+                let prevIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
+                switchFaq(prevIndex);
             });
         });
-
-        nextBtn.addEventListener("click", () => {
-            let nextIndex = (currentIndex + 1) % faqItems.length;
-            switchFaq(nextIndex);
-        });
-
-        prevBtn.addEventListener("click", () => {
-            let prevIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
-            switchFaq(prevIndex);
-        });
-    });
     </script>
 
 </body>

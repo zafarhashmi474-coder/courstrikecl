@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Testimonial | Courstrike</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ========================================
+           HERO / TESTIMONIAL DETAIL
+        ======================================== */
+
+        .detail-hero {
+            background: #080808;
+            color: #ffffff;
+            min-height: calc(100vh - 95px);
+            padding: 42px 0 70px;
+        }
+
+        .detail-container {
+            width: min(1240px, calc(100% - 80px));
+            margin: auto;
+        }
+
+
+        /* BACK LINK */
+
+        .detail-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+
+            color: #ffffff;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            margin-bottom: 70px;
+
+            transition: opacity 0.3s ease;
+        }
+
+        .detail-back:hover {
+            opacity: 0.7;
+        }
+
+        .back-arrow {
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+
+        /* HERO GRID */
+
+        .detail-hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.9fr 1.1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        /* LEFT CONTENT */
+
+        .detail-content {
+            padding-bottom: 20px;
+        }
+
+        .detail-label {
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.6px;
+
+            margin-bottom: 28px;
+
+            color: #ffffff;
+        }
+
+        .detail-name {
+            font-size: clamp(40px, 3vw, 60px);
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            margin-bottom: 22px;
+
+            color: #ffffff;
+        }
+
+        .detail-role {
+            font-size: 20px;
+
+            line-height: 1.45;
+
+            color: #ffffff;
+
+            margin-bottom: 38px;
+        }
+
+
+        /* COMPANY LOGO */
+
+        .company-logo-wrapper {
+            min-height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            margin-bottom: 42px;
+        }
+
+        .company-logo {
+            max-width: 190px;
+            max-height: 55px;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+
+        /* WATCH BUTTON */
+
+        .watch-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            background: #ffffff;
+
+            color: #000000;
+
+            padding: 17px 30px;
+
+            border-radius: 40px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .watch-button:hover {
+            transform: translateY(-2px);
+
+            background: #eeeeee;
+        }
+
+        .watch-icon {
+            font-size: 16px;
+
+            line-height: 1;
+        }
+
+
+        /* HERO IMAGE */
+
+        .detail-image-wrapper {
+            width: 100%;
+        }
+
+        .detail-image {
+            width: 100%;
+
+            height: 700px;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 2px;
+        }
+
+
+        /* ========================================
+           READ MORE SUCCESS STORIES
+        ======================================== */
+
+        .related-section {
+            background: #ffffff;
+
+            padding: 105px 0 120px;
+        }
+
+        .related-container {
+            width: min(1240px, calc(100% - 80px));
+            margin: auto;
+        }
+
+        .related-heading {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .related-title {
+            font-size: clamp(38px, 4vw, 52px);
+
+            line-height: 1.1;
+
+            font-weight: 500;
+
+            margin-bottom: 28px;
+        }
+
+        .related-line {
+            width: 58px;
+
+            height: 5px;
+
+            background: #111111;
+
+            margin: auto;
+        }
+
+
+        /* RELATED GRID */
+
+        .related-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .related-card {
+            display: block;
+
+            cursor: pointer;
+        }
+
+
+        /* RELATED IMAGE */
+
+        .related-image-wrapper {
+            width: 100%;
+
+            height: 380px;
+
+            overflow: hidden;
+
+            background: #eeeeee;
+        }
+
+        .related-image {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .related-card:hover .related-image {
+            transform: scale(1.035);
+        }
+
+
+        /* RELATED INFO */
+
+        .related-info {
+            display: grid;
+
+            grid-template-columns: 1fr auto;
+
+            gap: 20px;
+
+            padding-top: 25px;
+        }
+
+        .related-name {
+            font-size: 22px;
+
+            line-height: 1.25;
+
+            font-weight: 500;
+
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            font-size: 18px;
+
+            line-height: 1.4;
+
+            color: #111111;
+
+            max-width: 340px;
+        }
+
+        .related-arrow {
+            font-size: 34px;
+
+            line-height: 1;
+
+            font-weight: 300;
+
+            align-self: center;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        .related-card:hover .related-arrow {
+            transform: translateX(7px);
+        }
+
+
+        /* ========================================
+           READY TO BECOME SUCCESS STORY
+        ======================================== */
+
+        .success-cta {
+            background: #080808;
+
+            color: #ffffff;
+
+            padding: 120px 0 80px;
+        }
+
+        .success-container {
+            width: min(1240px, calc(100% - 80px));
+            margin: auto;
+        }
+
+        .success-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 90px;
+
+            align-items: start;
+        }
+
+
+        /* LEFT */
+
+        .success-title {
+            font-size: clamp(42px, 4vw, 58px);
+
+            line-height: 1.08;
+
+            font-weight: 500;
+
+            max-width: 600px;
+
+            margin-bottom: 32px;
+        }
+
+        .success-line {
+            width: 60px;
+
+            height: 5px;
+
+            background: #ffffff;
+
+            margin-bottom: 42px;
+        }
+
+        .success-description {
+            font-size: 18px;
+
+            line-height: 1.5;
+
+            max-width: 600px;
+
+            margin-bottom: 40px;
+        }
+
+        .success-list {
+            list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 22px;
+        }
+
+        .success-list li {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            font-size: 18px;
+
+            line-height: 1.4;
+        }
+
+        .check-icon {
+            font-size: 22px;
+
+            line-height: 1;
+        }
+
+
+        /* RIGHT ADVISOR CARD */
+
+        .advisor-card {
+            background: #171a1c;
+
+            border-top: 5px solid #9da4a8;
+
+            padding: 36px 40px;
+
+            min-height: 195px;
+        }
+
+        .advisor-title {
+            font-size: 25px;
+
+            line-height: 1.25;
+
+            font-weight: 600;
+
+            margin-bottom: 32px;
+        }
+
+        .advisor-message {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 22px;
+
+            font-size: 18px;
+
+            line-height: 1.45;
+
+            font-weight: 600;
+        }
+
+        .advisor-icon {
+            font-size: 28px;
+
+            line-height: 1;
+        }
+
+
+        /* BOTTOM LINE */
+
+        .success-bottom-line {
+            width: 100%;
+
+            height: 1px;
+
+            background: #292929;
+
+            margin-top: 120px;
+        }
+
+        .detail-graduation {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .detail-graduation {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #ffffff;
+            margin-bottom: 38px;
+        }
+
+        .detail-divider {
+            width: 58px;
+            height: 5px;
+            background: #ffffff;
+            margin-bottom: 42px;
+        }
+
+        .detail-role {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #ffffff;
+            margin-bottom: 28px;
+        }
+
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 700px) {
+
+            .detail-graduation {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            .detail-graduation {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .detail-divider {
+                width: 50px;
+                height: 4px;
+                margin-bottom: 32px;
+            }
+
+            .detail-role {
+                font-size: 17px;
+            }
+
+        }
+
+        @media (max-width: 1000px) {
+
+            .detail-hero {
+                padding-top: 35px;
+            }
+
+            .detail-hero-grid {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .detail-image {
+                height: 600px;
+            }
+
+            .detail-content {
+                order: 1;
+            }
+
+            .detail-image-wrapper {
+                order: 2;
+            }
+
+            .related-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .success-grid {
+                grid-template-columns: 1fr;
+
+                gap: 60px;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .detail-container,
+            .related-container,
+            .success-container {
+                width: calc(100% - 40px);
+            }
+
+            .detail-hero {
+                min-height: auto;
+
+                padding:
+                    35px 0 70px;
+            }
+
+            .detail-back {
+                margin-bottom: 50px;
+            }
+
+            .detail-name {
+                font-size: 46px;
+            }
+
+            .detail-role {
+                font-size: 18px;
+            }
+
+            .detail-image {
+                height: 500px;
+            }
+
+            .related-section {
+                padding:
+                    75px 0 85px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+
+                gap: 55px;
+            }
+
+            .related-image-wrapper {
+                height: 380px;
+            }
+
+            .related-name {
+                font-size: 20px;
+            }
+
+            .related-role {
+                font-size: 16px;
+            }
+
+            .success-cta {
+                padding:
+                    80px 0 60px;
+            }
+
+            .success-title {
+                font-size: 40px;
+            }
+
+            .success-description {
+                font-size: 16px;
+            }
+
+            .success-list li {
+                font-size: 16px;
+            }
+
+            .advisor-card {
+                padding: 30px 25px;
+            }
+
+            .advisor-title {
+                font-size: 21px;
+            }
+
+            .advisor-message {
+                font-size: 16px;
+            }
+
+            .success-bottom-line {
+                margin-top: 80px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .detail-name {
+                font-size: 40px;
+            }
+
+            .detail-image {
+                height: 430px;
+            }
+
+            .company-logo {
+    max-width: 190px;
+    max-height: 55px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    display: block;
+
+    filter: none !important;
+    opacity: 1;
+}
+
+            .watch-button {
+                padding:
+                    15px 25px;
+            }
+
+            .related-image-wrapper {
+                height: 330px;
+            }
+
+            .success-title {
+                font-size: 34px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SHARED HEADER
+    ========================= -->
+
+    <div id="header"></div>
+
+
+
+    <!-- =========================
+         TESTIMONIAL HERO
+    ========================= -->
+
+    <section class="detail-hero">
+
+        <div class="detail-container">
+
+
+            <!-- BACK -->
+
+            <a
+                href="testimonials.html"
+                class="detail-back"
+            >
+
+                <span class="back-arrow">‹</span>
+
+                <span>All Success Stories</span>
+
+            </a>
+
+
+
+            <div class="detail-hero-grid">
+
+
+                <!-- LEFT CONTENT -->
+
+                <div class="detail-content">
+
+                    <div class="detail-label">
+                        ALUMNI TESTIMONIAL
+                    </div>
+
+
+                    <h1
+                        id="detailName"
+                        class="detail-name"
+                    ></h1>
+
+                    <p
+                        id="detailGraduation"
+                        class="detail-graduation"
+                    ></p>
+
+                    <div class="detail-divider"></div>
+
+
+                    <p
+                        id="detailRole"
+                        class="detail-role"
+                    ></p>
+
+
+                    <!-- COMPANY LOGO -->
+
+                    <div class="company-logo-wrapper">
+
+                        <img
+                            id="detailLogo"
+                            class="company-logo"
+                            src=""
+                            alt="Company logo"
+                        >
+
+                    </div>
+
+
+                    <!-- WATCH -->
+
+                    <a
+                        href="#"
+                        class="watch-button"
+                        id="watchButton"
+                    >
+
+                        <span class="watch-icon">
+                            ▶
+                        </span>
+
+                        <span>
+                            Watch
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- RIGHT IMAGE -->
+
+                <div class="detail-image-wrapper">
+
+                    <img
+                        id="detailImage"
+                        class="detail-image"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         READ MORE SUCCESS STORIES
+    ========================= -->
+
+    <section class="related-section">
+
+        <div class="related-container">
+
+
+            <div class="related-heading">
+
+                <h2 class="related-title">
+                    Read More Success Stories
+                </h2>
+
+                <div class="related-line"></div>
+
+            </div>
+
+
+            <div
+                id="relatedTestimonials"
+                class="related-grid"
+            ></div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         READY TO BECOME
+         NEXT SUCCESS STORY
+    ========================= -->
+
+    <section class="success-cta">
+
+        <div class="success-container">
+
+            <div class="success-grid">
+
+
+                <!-- LEFT -->
+
+                <div class="success-content">
+
+                    <h2 class="success-title">
+                        Ready to Become the
+                        <br>
+                        Next Success Story?
+                    </h2>
+
+
+                    <div class="success-line"></div>
+
+
+                    <p class="success-description">
+                        Join a network of over 250,000 professionals who are transforming
+                        and accelerating their careers through cutting edge tech skills.
+                    </p>
+
+
+                    <ul class="success-list">
+
+                        <li>
+                            <span class="check-icon">✓</span>
+
+                            <span>
+                                Discover new courses and programs
+                            </span>
+                        </li>
+
+
+                        <li>
+                            <span class="check-icon">✓</span>
+
+                            <span>
+                                Learn about tuition and flexible payment plans
+                            </span>
+                        </li>
+
+
+                        <li>
+                            <span class="check-icon">✓</span>
+
+                            <span>
+                                Get access to VIP events and workshops
+                            </span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- RIGHT -->
+
+                <div class="advisor-card">
+
+                    <h3 class="advisor-title">
+                        Book a call with a Learning Advisor
+                    </h3>
+
+
+                    <div class="advisor-message">
+
+                        <span class="advisor-icon">
+                            ⚒
+                        </span>
+
+                        <span>
+                            There are currently no Learning Advisors available in
+                            your location.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="success-bottom-line"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SHARED FOOTER
+    ========================= -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- =========================
+         SCRIPTS
+    ========================= -->
+
+    <script src="js/components.js"></script>
+    <script src="js/testimonials.js"></script>
+
+
+</body>
+
+</html>

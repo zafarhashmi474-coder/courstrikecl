@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Learner Profile | Courstrike</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ========================================
+           LEARNER HERO
+        ======================================== */
+
+        .learner-hero {
+            background: #080808;
+            color: #ffffff;
+            padding: 40px 0 70px;
+        }
+
+        .learner-container {
+            width: min(1110px, calc(100% - 80px));
+            margin: auto;
+        }
+
+
+        /* BACK */
+
+        .learner-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+
+            color: #ffffff;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            margin-bottom: 55px;
+        }
+
+        .learner-back:hover {
+            opacity: 0.7;
+        }
+
+        .back-arrow {
+            font-size: 28px;
+            line-height: 1;
+            font-weight: 300;
+        }
+
+
+        /* LEARNER LABEL */
+
+        .learner-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* NAME */
+
+        .learner-name {
+            font-size: clamp(36px, 4vw, 50px);
+            line-height: 1.05;
+            font-weight: 500;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* ROLE */
+
+        .learner-role {
+            font-size: 21px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+
+        /* ========================================
+           COURSE + IMAGE
+        ======================================== */
+
+        .learner-profile-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1.65fr;
+
+            gap: 26px;
+
+            margin-top: 70px;
+
+            align-items: stretch;
+        }
+
+
+        /* COURSE CARD */
+
+        .course-card {
+            background: #303538;
+
+            border-top: 5px solid #9da4a8;
+
+            border-radius: 7px;
+
+            padding: 34px;
+
+            min-height: 474px;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .course-label {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
+        }
+
+        .course-name {
+            font-size: 16px;
+
+            line-height: 1.4;
+
+            font-weight: 600;
+
+            margin-bottom: 38px;
+        }
+
+
+        /* SKILLS */
+
+        .skills-label {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+        .skills-list {
+            list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .skills-list li {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+        }
+
+        .skill-check {
+            font-size: 20px;
+
+            line-height: 1;
+        }
+
+
+        /* COURSE BUTTON */
+
+        .course-button {
+            margin-top: auto;
+
+            width: 100%;
+
+            background: #ffffff;
+
+            color: #111111;
+
+            border-radius: 30px;
+
+            padding: 17px 20px;
+
+            text-align: center;
+
+            font-size: 15px;
+
+            font-weight: 600;
+        }
+
+        .course-button:hover {
+            background: #eeeeee;
+        }
+
+
+        /* LEARNER IMAGE */
+
+        .learner-image-wrapper {
+            width: 100%;
+
+            min-height: 474px;
+
+            overflow: hidden;
+
+            border-radius: 7px;
+
+            background: #222222;
+        }
+
+        .learner-image {
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 474px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* ========================================
+           QUESTIONS
+        ======================================== */
+
+        .questions-section {
+            background: #ffffff;
+
+            padding: 75px 0 110px;
+        }
+
+        .questions-container {
+            width: min(700px, calc(100% - 80px));
+
+            margin: auto;
+        }
+
+        .question-item {
+            margin-bottom: 62px;
+        }
+
+        .question {
+            font-size: 22px;
+
+            line-height: 1.35;
+
+            font-weight: 600;
+
+            margin-bottom: 22px;
+        }
+
+        .answer {
+            font-size: 16px;
+
+            line-height: 1.55;
+
+            color: #111111;
+        }
+
+
+        /* ========================================
+           READ MORE
+        ======================================== */
+
+        .related-section {
+            background: #ffffff;
+
+            padding: 40px 0 120px;
+        }
+
+        .related-container {
+            width: min(1240px, calc(100% - 80px));
+
+            margin: auto;
+        }
+
+        .related-heading {
+            text-align: center;
+
+            margin-bottom: 58px;
+        }
+
+        .related-title {
+            font-size: clamp(38px, 4vw, 52px);
+
+            line-height: 1.1;
+
+            font-weight: 500;
+
+            margin-bottom: 28px;
+        }
+
+        .related-line {
+            width: 58px;
+
+            height: 5px;
+
+            background: #111111;
+
+            margin: auto;
+        }
+
+
+        /* RELATED GRID */
+
+        .related-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .related-card {
+            display: block;
+
+            cursor: pointer;
+        }
+
+        .related-image-wrapper {
+            width: 100%;
+
+            height: 380px;
+
+            overflow: hidden;
+
+            background: #eeeeee;
+        }
+
+        .related-image {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .related-card:hover .related-image {
+            transform: scale(1.035);
+        }
+
+
+        /* RELATED INFO */
+
+        .related-info {
+            display: grid;
+
+            grid-template-columns: 1fr auto;
+
+            gap: 20px;
+
+            padding-top: 25px;
+        }
+
+        .related-name {
+            font-size: 20px;
+
+            line-height: 1.25;
+
+            font-weight: 500;
+
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            font-size: 16px;
+
+            line-height: 1.4;
+
+            max-width: 340px;
+        }
+
+        .related-arrow {
+            font-size: 34px;
+
+            line-height: 1;
+
+            align-self: center;
+
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover .related-arrow {
+            transform: translateX(7px);
+        }
+
+
+        /* ========================================
+           READY TO BECOME
+        ======================================== */
+
+        .success-cta {
+            background: #080808;
+
+            color: #ffffff;
+
+            padding: 120px 0 80px;
+        }
+
+        .success-container {
+            width: min(1240px, calc(100% - 80px));
+
+            margin: auto;
+        }
+
+        .success-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 90px;
+
+            align-items: start;
+        }
+
+        .success-title {
+            font-size: clamp(42px, 4vw, 58px);
+
+            line-height: 1.08;
+
+            font-weight: 500;
+
+            max-width: 600px;
+
+            margin-bottom: 32px;
+        }
+
+        .success-line {
+            width: 60px;
+
+            height: 5px;
+
+            background: #ffffff;
+
+            margin-bottom: 42px;
+        }
+
+        .success-description {
+            font-size: 18px;
+
+            line-height: 1.5;
+
+            max-width: 600px;
+
+            margin-bottom: 40px;
+        }
+
+        .success-list {
+            list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 22px;
+        }
+
+        .success-list li {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            font-size: 18px;
+
+            line-height: 1.4;
+        }
+
+        .check-icon {
+            font-size: 22px;
+
+            line-height: 1;
+        }
+
+
+        /* ADVISOR */
+
+        .advisor-card {
+            background: #171a1c;
+
+            border-top: 5px solid #9da4a8;
+
+            padding: 36px 40px;
+
+            min-height: 195px;
+        }
+
+        .advisor-title {
+            font-size: 25px;
+
+            line-height: 1.25;
+
+            font-weight: 600;
+
+            margin-bottom: 32px;
+        }
+
+        .advisor-message {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 22px;
+
+            font-size: 18px;
+
+            line-height: 1.45;
+
+            font-weight: 600;
+        }
+
+        .advisor-icon {
+            font-size: 28px;
+
+            line-height: 1;
+        }
+
+        .success-bottom-line {
+            width: 100%;
+
+            height: 1px;
+
+            background: #292929;
+
+            margin-top: 120px;
+        }
+
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 1000px) {
+
+            .learner-profile-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .learner-image-wrapper,
+            .learner-image {
+                min-height: 600px;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .success-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
+        @media (max-width: 700px) {
+
+            .learner-container,
+            .questions-container,
+            .related-container,
+            .success-container {
+                width: calc(100% - 40px);
+            }
+
+            .learner-hero {
+                padding: 30px 0 55px;
+            }
+
+            .learner-back {
+                margin-bottom: 45px;
+            }
+
+            .learner-name {
+                font-size: 42px;
+            }
+
+            .learner-role {
+                font-size: 18px;
+            }
+
+            .learner-profile-grid {
+                margin-top: 50px;
+            }
+
+            .course-card {
+                min-height: 430px;
+                padding: 28px;
+            }
+
+            .learner-image-wrapper,
+            .learner-image {
+                min-height: 430px;
+            }
+
+            .questions-section {
+                padding: 65px 0 80px;
+            }
+
+            .question-item {
+                margin-bottom: 48px;
+            }
+
+            .question {
+                font-size: 20px;
+            }
+
+            .answer {
+                font-size: 16px;
+            }
+
+            .related-section {
+                padding: 30px 0 80px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .related-image-wrapper {
+                height: 350px;
+            }
+
+            .success-cta {
+                padding: 80px 0 60px;
+            }
+
+            .success-title {
+                font-size: 38px;
+            }
+
+            .success-description {
+                font-size: 16px;
+            }
+
+            .success-list li {
+                font-size: 16px;
+            }
+
+            .advisor-card {
+                padding: 30px 25px;
+            }
+
+            .advisor-title {
+                font-size: 21px;
+            }
+
+            .advisor-message {
+                font-size: 16px;
+            }
+
+            .success-bottom-line {
+                margin-top: 80px;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .learner-name {
+                font-size: 36px;
+            }
+
+            .learner-image-wrapper,
+            .learner-image {
+                min-height: 360px;
+            }
+
+            .course-card {
+                min-height: 400px;
+            }
+
+            .related-image-wrapper {
+                height: 320px;
+            }
+
+            .success-title {
+                font-size: 34px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div id="header"></div>
+
+
+    <!-- ========================================
+         LEARNER PROFILE
+    ======================================== -->
+
+    <section class="learner-hero">
+
+        <div class="learner-container">
+
+            <a
+                href="testimonials.html"
+                class="learner-back"
+            >
+                <span class="back-arrow">‹</span>
+                <span>All Success Stories</span>
+            </a>
+
+
+            <div class="learner-label">
+                LEARNER PROFILE
+            </div>
+
+
+            <h1
+                id="learnerName"
+                class="learner-name"
+            ></h1>
+
+
+            <p
+                id="learnerRole"
+                class="learner-role"
+            ></p>
+
+
+            <div class="learner-profile-grid">
+
+
+                <!-- COURSE -->
+
+                <div class="course-card">
+
+                    <div class="course-label">
+                        COURSE TAKEN
+                    </div>
+
+                    <div
+                        id="learnerCourse"
+                        class="course-name"
+                    ></div>
+
+
+                    <div class="skills-label">
+                        KEY SKILLS LEARNED
+                    </div>
+
+                    <ul
+                        id="learnerSkills"
+                        class="skills-list"
+                    ></ul>
+
+
+                    <a
+                        href="#"
+                        class="course-button"
+                    >
+                        View Course Details
+                    </a>
+
+                </div>
+
+
+                <!-- IMAGE -->
+
+                <div class="learner-image-wrapper">
+
+                    <img
+                        id="learnerImage"
+                        class="learner-image"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         QUESTIONS
+    ======================================== -->
+
+    <section class="questions-section">
+
+        <div
+            id="learnerQuestions"
+            class="questions-container"
+        ></div>
+
+    </section>
+
+
+    <!-- ========================================
+         READ MORE
+    ======================================== -->
+
+    <section class="related-section">
+
+        <div class="related-container">
+
+            <div class="related-heading">
+
+                <h2 class="related-title">
+                    Read More Success Stories
+                </h2>
+
+                <div class="related-line"></div>
+
+            </div>
+
+
+            <div
+                id="relatedTestimonials"
+                class="related-grid"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         READY TO BECOME
+    ======================================== -->
+
+    <section class="success-cta">
+
+        <div class="success-container">
+
+            <div class="success-grid">
+
+
+                <div>
+
+                    <h2 class="success-title">
+                        Ready to Become the
+                        <br>
+                        Next Success Story?
+                    </h2>
+
+
+                    <div class="success-line"></div>
+
+
+                    <p class="success-description">
+                        Join a network of over 250,000 professionals who are transforming
+                        and accelerating their careers through cutting edge tech skills.
+                    </p>
+
+
+                    <ul class="success-list">
+
+                        <li>
+                            <span class="check-icon">✓</span>
+
+                            <span>
+                                Discover new courses and programs
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="check-icon">✓</span>
+
+                            <span>
+                                Learn about tuition and flexible payment plans
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="check-icon">✓</span>
+
+                            <span>
+                                Get access to VIP events and workshops
+                            </span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="advisor-card">
+
+                    <h3 class="advisor-title">
+                        Book a call with a Learning Advisor
+                    </h3>
+
+                    <div class="advisor-message">
+
+                        <span class="advisor-icon">
+                            ⚒
+                        </span>
+
+                        <span>
+                            There are currently no Learning Advisors available in
+                            your location.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="success-bottom-line"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+
+    <script src="js/components.js"></script>
+
+    <script src="js/testimonials.js"></script>
+
+</body>
+
+</html>

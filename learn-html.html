@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn HTML & CSS - BrainStation</title>
+    <title>Learn HTML & CSS - Courstrike</title>
 
     <!-- Main CSS Link -->
     <link rel="stylesheet" href="../css/style.css">
@@ -199,9 +199,10 @@
         }
 
         .python-logo-icon img {
-            height: 36px;
-            width: auto;
+            height: 64px !important;
+            width: 64px !important;
             object-fit: contain;
+            filter: brightness(0) invert(1);
         }
 
         .python-hero-left h1 {
@@ -608,6 +609,142 @@
         }
 
         /* =========================================
+           LOGOS SLIDER STYLES (ORIGINAL COLORS & LARGER SIZE)
+        ========================================= */
+        .logos-section {
+            background: #ffffff !important;
+            overflow: hidden;
+            padding: 90px 0;
+            box-sizing: border-box;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .logos-section h2 {
+            font-size: clamp(30px, 3.5vw, 42px);
+            font-weight: 800;
+            color: #0b0c10;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .trusted-title-line {
+            width: 44px;
+            height: 4px;
+            background: #facc15 !important;
+            border-radius: 2px;
+            margin: 0 auto 40px auto;
+        }
+
+        .trusted-slider {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 25px;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .trusted-slider::before,
+        .trusted-slider::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 90px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .trusted-slider::before {
+            left: 0;
+            background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .trusted-slider::after {
+            right: 0;
+            background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        #htmlLogoTrack {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            will-change: transform;
+        }
+
+        .trusted-page {
+            width: max-content;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 40px;
+        }
+
+        .trusted-row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            min-height: 60px;
+            box-sizing: border-box;
+        }
+
+        .trusted-logo {
+            width: 150px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-sizing: border-box;
+        }
+
+        .trusted-logo img {
+            display: block;
+            width: auto;
+            max-width: 135px;
+            max-height: 42px;
+            object-fit: contain;
+            user-select: none;
+            pointer-events: none;
+            opacity: 1 !important;
+            filter: none !important;
+            transition: transform 0.2s ease;
+        }
+
+        .trusted-logo img:hover {
+            transform: scale(1.06);
+        }
+
+        @media (max-width: 900px) {
+            .logos-section {
+                padding: 60px 0;
+            }
+            .logos-section h2 {
+                font-size: 30px;
+            }
+            .trusted-page {
+                gap: 15px;
+                padding: 0 25px;
+            }
+            .trusted-row {
+                gap: 35px;
+            }
+            .trusted-logo {
+                width: 120px;
+                height: 45px;
+            }
+            .trusted-logo img {
+                max-width: 105px;
+                max-height: 34px;
+            }
+        }
+
+        /* =========================================
            WHY LEARN HTML & CSS SECTION
         ========================================= */
         .why-learn-section {
@@ -942,7 +1079,7 @@
     <!-- HTML SUB-NAV BAR -->
     <div class="python-subnav">
         <div class="python-subnav-left">
-            <a href="../index.html">BrainStation</a>
+            <a href="../index.html">Courstrike</a>
             <span>&rsaquo;</span>
             <a href="#">Learn</a>
             <span>&rsaquo;</span>
@@ -958,7 +1095,7 @@
     <section class="python-hero">
         <div class="python-hero-left">
             <div class="python-logo-icon">
-                <span style="font-size: 28px; font-weight: 800; color: #ffffff;">HTML5 + CSS3</span>
+                <img src="/logos/html-and-css.svg" alt="HTML Logo" style="filter: brightness(0) invert(1); width: 48px; height: 48px;">
             </div>
             <h1>Learn HTML</h1>
             <div class="yellow-bar"></div>
@@ -984,7 +1121,7 @@
             <div class="terminal-output-area">
                 <div class="mock-nav">
                     <div class="mock-nav-logo">
-                        <span style="font-weight: 800; color: #ffffff; font-size: 15px;">BrainStation</span>
+                        <span style="font-weight: 800; color: #ffffff; font-size: 15px;">Courstrike</span>
                     </div>
                     <div class="mock-nav-links">
                         <span>About</span>
@@ -1025,7 +1162,7 @@
             </div>
 
             <div class="get-started-right">
-                <img src="../images/python-students.jpg" alt="Students learning HTML & CSS">
+                <img src="/images/topic-overview-bg-html-css@2x.jpg" alt="Students learning HTML & CSS">
             </div>
         </div>
     </section>
@@ -1095,6 +1232,15 @@
             <div style="text-align: center; margin-top: 50px;">
                 <a href="#" class="start-btn" style="padding: 14px 36px; display: inline-block;">View Full HTML & CSS Reference</a>
             </div>
+        </div>
+    </section>
+
+    <!-- LEADING DIGITAL BUSINESSES LOGOS SLIDER SECTION -->
+    <section class="logos-section">
+        <h2>Leading Digital Businesses Need HTML & CSS Skills</h2>
+        <div class="trusted-title-line"></div>
+        <div class="trusted-slider">
+            <div id="htmlLogoTrack"></div>
         </div>
     </section>
 
@@ -1187,7 +1333,7 @@
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
-                            <img src="../images/js-icon.png" alt="JavaScript Icon">
+                            <img src="/logos/js.svg" alt="JavaScript Icon">
                         </div>
                         <h3>JavaScript</h3>
                     </div>
@@ -1198,7 +1344,7 @@
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
-                            <img src="../images/python-icon.png" alt="Python Icon">
+                            <img src="/logos/python.svg" alt="Python Icon">
                         </div>
                         <h3>Python</h3>
                     </div>
@@ -1209,7 +1355,7 @@
                 <div class="lang-card">
                     <div class="lang-card-top">
                         <div class="lang-icon-box">
-                            <img src="../images/sql-icon.png" alt="SQL Icon">
+                            <img src="/logos/database.svg" alt="SQL Icon">
                         </div>
                         <h3>SQL</h3>
                     </div>
@@ -1225,8 +1371,101 @@
     <!-- SCRIPT LOADER -->
     <script src="../js/components.js"></script>
 
-    <!-- INTERACTIVE FAQ SCRIPT -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
+        // HTML LOGOS INFINITE SLIDER SCRIPT
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.getElementById("htmlLogoTrack");
+            if (!track) return;
+
+            const rowsData = [
+                [
+                    { src: "/logos/samsung-CgcHNOx5.svg", alt: "Samsung" },
+                    { src: "/logos/skip-the-dishes.svg", alt: "SkipTheDishes" },
+                    { src: "/logos/telus.svg", alt: "Telus" },
+                    { src: "/logos/uber-CuYQ6LLL.svg", alt: "Uber" },
+                    { src: "/logos/warner-media.svg", alt: "WarnerMedia" },
+                    { src: "/logos/jp-morgan-chase-BFZJZcAb.svg", alt: "JPMorgan" },
+                    { src: "/logos/duolingo.svg", alt: "Duolingo" },
+                    { src: "/logos/mastercard-DzuA8yXC.svg", alt: "MasterCard" },
+                    { src: "/logos/bank-of-america.svg", alt: "BankOfAmerica" }
+                ],
+                [
+                    { src: "/logos/amazon-Di2h6wTx.svg", alt: "Amazon" },
+                    { src: "/logos/slack-ElURnRzW.svg", alt: "Slack" },
+                    { src: "/logos/kraft-heinz.svg", alt: "KraftHeinz" },
+                    { src: "/logos/ubisoft.svg", alt: "Ubisoft" },
+                    { src: "/logos/yelp.svg", alt: "Yelp" },
+                    { src: "/logos/ey-D_19C1MH.svg", alt: "EY" },
+                    { src: "/logos/cisco-DB3M1NTR.svg", alt: "Cisco" },
+                    { src: "/logos/pay-pal-Bfc0Ddjo.svg", alt: "PayPal" },
+                    { src: "/logos/apple-BSb7elEh.svg", alt: "Apple" }
+                ],
+                [
+                    { src: "/logos/american-express-BHPcj7-J.svg", alt: "American Express" },
+                    { src: "/logos/shopify-P6Nq5HRK.svg", alt: "Shopify" },
+                    { src: "/logos/square-CBb6pZi4.svg", alt: "Square" },
+                    { src: "/logos/tik-tok-DsQE0kAg.svg", alt: "TikTok" },
+                    { src: "/logos/verizon.svg", alt: "Verizon" },
+                    { src: "/logos/red-bull.svg", alt: "Red Bull" },
+                    { src: "/logos/at-t.svg", alt: "AT&T" },
+                    { src: "/logos/mcdonald-s-Dd1zGQfz.svg", alt: "McDonald's" },
+                    { src: "/logos/hootsuite-1.svg", alt: "Hootsuite" }
+                ],
+                [
+                    { src: "/logos/bumble.svg", alt: "Bumble" },
+                    { src: "/logos/apple-BSb7elEh.svg", alt: "Apple" },
+                    { src: "/logos/td.svg", alt: "TD" },
+                    { src: "/logos/x-uzq0HYzV.svg", alt: "X" },
+                    { src: "/logos/walmart-vYA2S4Ej.svg", alt: "Walmart" },
+                    { src: "/logos/blackstone.svg", alt: "Blackstone" },
+                    { src: "/logos/kpmg-DCU3pMPb.svg", alt: "KPMG" },
+                    { src: "/logos/microsoft-rwvmviyC.svg", alt: "Microsoft" },
+                    { src: "/logos/facebook-social.svg", alt: "Facebook" }
+                ]
+            ];
+
+            function createPage() {
+                const page = document.createElement("div");
+                page.className = "trusted-page";
+                rowsData.forEach(row => {
+                    const rowEl = document.createElement("div");
+                    rowEl.className = "trusted-row";
+                    row.forEach(logo => {
+                        const wrapper = document.createElement("div");
+                        wrapper.className = "trusted-logo";
+                        const img = document.createElement("img");
+                        img.src = logo.src;
+                        img.alt = logo.alt;
+                        img.draggable = false;
+                        wrapper.appendChild(img);
+                        rowEl.appendChild(wrapper);
+                    });
+                    page.appendChild(rowEl);
+                });
+                return page;
+            }
+
+            track.innerHTML = "";
+            track.appendChild(createPage());
+            track.appendChild(createPage());
+
+            let position = 0;
+            const speed = 0.35;
+
+            function animate() {
+                position += speed;
+                const firstPageWidth = track.children[0].offsetWidth;
+                if (position >= firstPageWidth) {
+                    position = 0;
+                }
+                track.style.transform = `translate3d(${-position}px, 0, 0)`;
+                requestAnimationFrame(animate);
+            }
+
+            requestAnimationFrame(animate);
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
             const faqItems = document.querySelectorAll(".faq-item");
             const faqPanes = document.querySelectorAll(".faq-pane");
