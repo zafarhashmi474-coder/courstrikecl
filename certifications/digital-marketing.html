@@ -37,21 +37,16 @@
 
         /* Fixed Site Header transitions - enterprise page style */
         #header {
-            position: relative;
-            z-index: 1100;
-            transition: transform 0.35s ease, opacity 0.35s ease;
-        }
-
-        #header.cert-header-hidden {
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .page-wrapper {
             width: 100%;
-            padding-top: 90px;
+            position: relative;
+            z-index: 10000; /* Header sauthi upar rahe */
         }
+
+
+.page-wrapper {
+    width: 100%;
+    padding-top: 75px; 
+}
 
         /* Generic SVG Icon Utilities */
         .ui-icon {
@@ -65,695 +60,840 @@
             flex-shrink: 0;
         }
 
-        /* ================= HERO SECTION ================= */
-        .hero-section {
-            position: relative;
-            min-height: calc(100vh - 90px);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 60px 24px 80px;
-            box-sizing: border-box;
-            overflow: hidden;
-            background-color: #08090b;
-        }
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-        .hero-video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.8; 
-        }
 
-        .hero-video-overlay {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 75% 30%, rgba(0, 0, 0, 0.25) 0%, rgba(8, 9, 11, 0.6) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
+/* Base Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 75px);
+    display: flex;
+    justify-content: center;
+    background-color: #0c0e12;
+    padding: 40px 0 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1;
+}
 
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 20%;
-            left: 30%;
-            width: 480px;
-            height: 480px;
-            background: rgba(45, 60, 80, 0.15);
-            filter: blur(140px);
-            pointer-events: none;
-        }
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.38;
+    pointer-events: none;
+}
 
-        .hero-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 60% 40%, rgba(12, 14, 18, 0.4) 0%, rgba(12, 14, 18, 0.95) 100%);
+    z-index: 1;
+}
 
-        /* ================= LEFT CONTENT ================= */
-        .hero-left {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
+/* Master Centered Container - Matches Top Nav Grid Width */
+.hero-container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
 
-        .breadcrumbs-tag {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: #7b8390;
-            font-weight: 500;
-        }
+/* Top Split: Left Details + Right Form */
+.hero-top-grid {
+    display: grid;
+    grid-template-columns: 580px 420px;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 48px;
+}
 
-        .breadcrumbs-tag .separator {
-            font-size: 11px;
-            color: #4f5661;
-        }
+/* Left Content */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+}
 
-        .hero-label {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1.6px;
-            color: #a0a6b2;
-            text-transform: uppercase;
-        }
+.breadcrumbs-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #8f95a0;
+    margin-bottom: 24px;
+}
 
-        .hero-title {
-            font-size: clamp(38px, 4.4vw, 62px);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            color: #ffffff;
-        }
+.breadcrumbs-tag a {
+    color: #8f95a0;
+    text-decoration: none;
+}
 
-        /* Shield Certification Badge Card */
-        .cert-shield-badge-box {
-            display: inline-flex;
-            align-items: center;
-            gap: 18px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 16px 22px;
-            max-width: 480px;
-        }
+.breadcrumbs-tag .separator {
+    color: #555b66;
+}
 
-        .shield-icon {
-            width: 46px;
-            height: 52px;
-            background: #14171d;
-            border: 1.5px solid #ffffff;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
+.hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: #9aa1ad;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
 
-        .shield-code {
-            font-size: 11px;
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1;
-        }
+.hero-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
 
-        .shield-check-icon {
-            width: 11px;
-            height: 11px;
-            fill: #ffffff;
-            margin-top: 2px;
-        }
+/* AIC Shield Badge */
+.cert-shield-badge-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 12px 18px;
+    width: fit-content;
+    margin-bottom: 24px;
+}
 
-        .cert-badge-text {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
+.shield-icon {
+    width: 38px;
+    height: 44px;
+    background: #12151b;
+    border: 1.5px solid #ffffff;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
 
-        .cert-badge-text .tagline {
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: #7b8390;
-            letter-spacing: 0.8px;
-        }
+.shield-code {
+    font-size: 10px;
+    font-weight: 800;
+    color: #ffffff;
+}
 
-        .cert-badge-text .title {
-            font-size: 14.5px;
-            font-weight: 700;
-            color: #ffffff;
-        }
+.shield-check-icon {
+    width: 9px;
+    height: 9px;
+    fill: #ffffff;
+}
 
-        /* Location Dropdown selector */
-        .location-line {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #ffffff;
-        }
+.cert-badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
-        .location-select-btn {
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+.cert-badge-text .tagline {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #808794;
+    letter-spacing: 0.6px;
+}
 
-        .location-select-btn .globe-icon {
-            width: 17px;
-            height: 17px;
-            fill: #ffffff;
-        }
+.cert-badge-text .title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #ffffff;
+}
 
-        .location-select-btn .chevron-icon {
-            width: 10px;
-            height: 6px;
-            fill: #ffffff;
-            opacity: 0.8;
-        }
+/* Location Selector */
+.location-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 
-        .hero-desc {
-            font-size: 16.5px;
-            line-height: 1.6;
-            color: #b0b7c3;
-            max-width: 580px;
-        }
+.location-select-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 0;
+}
 
-        /* Social Proof Badges */
-        .social-proof-bar {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 10px;
-        }
+.globe-icon {
+    width: 15px;
+    height: 15px;
+    fill: #ffffff;
+}
 
-        .proof-item {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            font-size: 13.5px;
-            font-weight: 600;
-            color: #cdd3dd;
-        }
+.chevron-icon {
+    width: 9px;
+    height: 5px;
+    stroke: #ffffff;
+}
 
-        .proof-item .proof-svg {
-            width: 16px;
-            height: 16px;
-            fill: #ffaa00;
-            flex-shrink: 0;
-        }
+.hero-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #b5bcc8;
+    max-width: 530px;
+}
 
-        /* ================= RIGHT FORM CARD ================= */
-        .hero-form-card {
-            background: #14171d;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            padding: 38px 34px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            max-width: 480px;
-            justify-self: end;
-            width: 100%;
-        }
+/* Right Form Card */
+.hero-form-card {
+    background: #14171f;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    padding: 28px 24px 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
 
-        .form-header-title {
-            font-size: 19px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 16px;
-        }
+.form-header-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
 
-        .form-benefits-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 24px;
-        }
+.form-header-subtitle {
+    font-size: 12.5px;
+    color: #9299a7;
+    line-height: 1.45;
+    margin-bottom: 18px;
+}
 
-        .form-benefits-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: #cfd4dc;
-            font-weight: 500;
-        }
+.cert-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-        .benefit-check-svg {
-            width: 14px;
-            height: 14px;
-            fill: #ffffff;
-            flex-shrink: 0;
-        }
+.form-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
 
-        .cert-form {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
+.form-input {
+    width: 100%;
+    background: #1a1e27;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 11px 14px;
+    font-size: 13px;
+    color: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+}
 
-        .form-row-two {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
+.form-input::placeholder {
+    color: #6d7481;
+}
 
-        .form-input {
-            width: 100%;
-            background: #1f232b;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
-            padding: 13px 16px;
-            font-size: 14px;
-            color: #ffffff;
-            outline: none;
-            transition: border-color 0.2s ease, background 0.2s ease;
-        }
+.form-input:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
 
-        .form-input:focus {
-            border-color: #ffffff;
-            background: #232832;
-        }
+.phone-input-group {
+    display: flex;
+    align-items: center;
+    background: #1a1e27;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+}
 
-        .form-input::placeholder {
-            color: #7b8390;
-        }
+.country-flag-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 10px 0 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-        .phone-input-group {
-            display: flex;
-            align-items: center;
-            background: #1f232b;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
-            overflow: hidden;
-        }
+.flag-svg {
+    width: 18px;
+    height: 12px;
+}
 
-        .country-flag-badge {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 0 14px;
-            font-size: 13px;
-            color: #aeb4c0;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            user-select: none;
-        }
+.chevron-mini {
+    width: 7px;
+    height: 5px;
+    stroke: #7f8693;
+}
 
-        .country-flag-badge .flag-svg {
-            width: 18px;
-            height: 13px;
-            border-radius: 2px;
-        }
+.phone-input {
+    border: none;
+    background: transparent;
+    padding: 11px 12px;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+}
 
-        .country-flag-badge .chevron-mini {
-            width: 8px;
-            height: 5px;
-            fill: #aeb4c0;
-        }
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
 
-        .phone-input {
-            border: none;
-            background: transparent;
-            flex: 1;
-            padding: 13px 14px;
-            color: #ffffff;
-            outline: none;
-            font-size: 14px;
-        }
+.form-select {
+    appearance: none;
+    cursor: pointer;
+    color: #7b828f;
+    padding-right: 32px;
+}
 
-        .form-disclaimer {
-            font-size: 11px;
-            color: #7b8390;
-            line-height: 1.4;
-            margin-top: 4px;
-        }
+.select-chevron {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 5px;
+    stroke: #7b828f;
+    pointer-events: none;
+}
 
-        .form-disclaimer a {
-            color: #a4abb8;
-            text-decoration: underline;
-        }
+.form-disclaimer {
+    font-size: 11px;
+    color: #727986;
+    margin-top: 2px;
+}
 
-        .btn-submit-package {
-            margin-top: 10px;
-            background: #ffffff;
-            color: #0b0c0e;
-            border: none;
-            border-radius: 999px;
-            padding: 15px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
+.form-disclaimer a {
+    color: #a0a6b2;
+    text-decoration: underline;
+}
 
-        .btn-submit-package .arrow-svg {
-            width: 15px;
-            height: 15px;
-            fill: #0b0c0e;
-            transition: transform 0.2s ease;
-        }
+.btn-submit-main {
+    margin-top: 6px;
+    background: #ffffff;
+    color: #0b0c0e;
+    border: none;
+    border-radius: 999px;
+    padding: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease;
+}
 
-        .btn-submit-package:hover {
-            background: #f0f0f0;
-            transform: translateY(-1px);
-        }
+.btn-submit-main:hover {
+    background: #ebebeb;
+}
 
-        /* ================= SECONDARY STICKY HEADER (COURSE SUBNAV) ================= */
-        .course-subnav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-            height: 64px;
-            background: #090a0c;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-        }
+/* Full Width Upcoming Dates Card */
+.upcoming-dates-bar {
+    background: #14171f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
 
-        .course-subnav-inner {
-            max-width: 1360px;
-            height: 100%;
-            margin: 0 auto;
-            padding: 0 28px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.dates-info {
+    display: flex;
+    flex-direction: column;
+}
 
-        .subnav-left-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
-        }
+.dates-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #79808d;
+    text-transform: uppercase;
+}
 
-        .subnav-logo-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 6px 12px;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
+.dates-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 3px 0 2px;
+}
 
-        .subnav-logo-icon {
-            width: 16px;
-            height: 16px;
-            fill: #ffffff;
-        }
+.dates-sub {
+    font-size: 13px;
+    color: #9da4b1;
+    margin-bottom: 6px;
+}
 
-        .subnav-menu-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            margin-left: 30px;
-            margin-right: auto;
-        }
+.dates-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #7b828f;
+}
 
-        .subnav-link {
-            position: relative;
-            padding: 22px 0;
-            font-size: 13.5px;
-            font-weight: 500;
-            color: #8c939d;
-            white-space: nowrap;
-            transition: color 0.2s ease;
-        }
+.mode-icon {
+    width: 13px;
+    height: 13px;
+    fill: #7b828f;
+}
 
-        .subnav-link:hover {
-            color: #ffffff;
-        }
+.dates-months {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 
-        /* Active highlight underline */
-        .subnav-link::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #ffffff;
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.25s ease;
-        }
+.month-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 96px;
+}
 
-        .subnav-link.active {
-            color: #ffffff;
-        }
+.m-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+}
 
-        .subnav-link.active::after {
-            transform: scaleX(1);
-        }
+.m-year {
+    font-size: 11px;
+    color: #7b828f;
+    margin-bottom: 7px;
+}
 
-        .subnav-cta-btn {
-            background: #ffffff;
-            color: #0b0c0e;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 8px 18px;
-            border-radius: 999px;
-            white-space: nowrap;
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
+.status-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
 
-        .subnav-cta-btn:hover {
-            background: #e6e6e6;
-            transform: translateY(-1px);
-        }
+.status-btn .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+.status-btn.closed {
+    background: #ffffff;
+    color: #0c0e12;
+}
+
+.status-btn.closed .dot {
+    background: #0c0e12;
+}
+
+.status-btn.active {
+    background: #00875a;
+    color: #ffffff;
+}
+
+.status-btn.active .dot {
+    background: #ffffff;
+}
+
+/* Bottom Stats Bar */
+.social-proof-bar {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #b0b7c3;
+}
+
+.proof-item svg {
+    width: 15px;
+    height: 15px;
+    fill: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+    .hero-top-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .hero-form-card {
+        max-width: 480px;
+    }
+
+    .upcoming-dates-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .dates-months {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 12px;
+    }
+}
+
+        /* ================= FLOATING STICKY SUB-NAVBAR (HORIZONS STYLE) ================= */
+.course-subnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 68px;
+    background-color: rgba(9, 10, 12, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    z-index: 99999;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.course-subnav.visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.course-subnav-inner {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subnav-left-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.subnav-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.subnav-logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.subnav-menu-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.subnav-link {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: inline-block;
+    padding: 8px 0;
+    position: relative;
+}
+
+.subnav-link:hover,
+.subnav-link.active {
+    color: #ffffff;
+}
+
+.subnav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.subnav-cta-btn {
+    background-color: #ffffff;
+    color: #0b0c10;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: background 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.subnav-cta-btn:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-1px);
+}
 
         /* ================= COURSE OVERVIEW SECTION ================= */
-        .overview-section {
-            position: relative;
-            width: 100%;
-            min-height: 700px;
-            background: #090b0d;
-            overflow: hidden;
-            scroll-margin-top: 64px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        /* ================= COURSE OVERVIEW SECTION ================= */
+.overview-section {
+    position: relative;
+    width: 100%;
+    min-height: 740px;
+    background: #090b0d;
+    overflow: visible; /* કાર્ડ્સ નીચે અડધા બહાર દેખાય તે માટે visible જરૂરી છે */
+    scroll-margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
 
-        .overview-video-bg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-            opacity: 0.38;
-            filter: contrast(1.1) brightness(0.9);
-            z-index: 0;
-        }
+.overview-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0.35;
+    filter: contrast(1.1) brightness(0.85);
+    z-index: 0;
+}
 
-        .overview-overlay {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(11, 13, 16, 0.4) 0%, rgba(9, 11, 13, 0.95) 85%);
-            z-index: 1;
-        }
+.overview-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(11, 13, 16, 0.45) 0%, rgba(9, 11, 13, 0.96) 80%);
+    z-index: 1;
+}
 
-        .overview-content-center {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 90px 20px 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+.overview-content-center {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 110px 20px 40px; /* ઉપર પૂરતી સ્પેસ રાખી છે જેથી નેવબાર સાથે ક્લેશ ન થાય */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .overview-geometric-icon {
-            width: 44px;
-            height: 44px;
-            margin-bottom: 22px;
-            fill: #ffffff;
-            opacity: 0.9;
-        }
+.overview-geometric-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 20px;
+    stroke: #ffffff;
+    opacity: 0.9;
+}
 
-        .overview-title {
-            font-size: clamp(38px, 4.5vw, 62px);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -1.8px;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
+.overview-title {
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
 
-        .overview-subtitle {
-            font-size: clamp(18px, 2.2vw, 24px);
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.88);
-            margin-bottom: 30px;
-        }
+.overview-subtitle {
+    font-size: clamp(16px, 1.8vw, 22px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 28px;
+}
 
-        /* Watch Video Button */
-        .btn-watch-video {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #ffffff;
-            color: #0b0c0e;
-            padding: 11px 26px;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
+/* Watch Video Button */
+.btn-watch-video {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #0b0c0e;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
 
-        .btn-watch-video .play-svg {
-            width: 12px;
-            height: 12px;
-            fill: #0b0c0e;
-        }
+.btn-watch-video .play-svg {
+    width: 12px;
+    height: 12px;
+    fill: #0b0c0e;
+}
 
-        .btn-watch-video:hover {
-            transform: scale(1.03);
-            background: #f0f0f0;
-        }
+.btn-watch-video:hover {
+    transform: scale(1.04);
+    background: #f0f0f0;
+}
 
-        /* Bottom Floating Instructor / Alumni Cards */
-        .overview-bottom-cards {
-            position: relative;
-            z-index: 3;
-            max-width: 800px;
-            margin: 0 auto -60px; /* Partial overlap like screenshot */
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 0 24px;
-            width: 100%;
-        }
+/* Bottom Floating Instructor / Alumni Cards */
+.overview-bottom-cards {
+    position: relative;
+    z-index: 3;
+    max-width: 780px;
+    margin: 0 auto -90px; /* કાર્ડ્સ અડધા નીચેના સફેદ સેક્શનમાં જાય */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    justify-content: center;
+    gap: 24px;
+    padding: 0 20px;
+    width: 100%;
+}
 
-        .alumni-card {
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 24px;
-        }
+.alumni-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .alumni-avatar-box {
-            width: 100%;
-            height: 230px;
-            overflow: hidden;
-            background: #e9ecef;
-        }
+.alumni-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
 
-        .alumni-avatar-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+/* અગત્યનો ફેરફાર: ફોટો બોક્સ રેશિયો */
+.alumni-avatar-box {
+    width: 100%;
+    aspect-ratio: 1.15 / 1; /* ઊભો / સરસ પોટ્રેટ ફ્રેમ */
+    max-height: 270px;
+    overflow: hidden;
+    background: #f3f4f6;
+}
 
-        .alumni-info {
-            padding: 16px 16px 0;
-            color: #111111;
-        }
+.alumni-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* માથું કપાય નહીં અને વ્યક્તિ આખી દેખાય */
+    display: block;
+}
 
-        .alumni-info h4 {
-            font-size: 15px;
-            font-weight: 700;
-            color: #111111;
-            margin-bottom: 4px;
-        }
+.alumni-info {
+    width: 100%;
+    padding: 18px 20px 24px;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .alumni-info p {
-            font-size: 12.5px;
-            color: #555e68;
-            margin-bottom: 14px;
-            line-height: 1.4;
-        }
+.alumni-info h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 4px 0;
+}
 
-        .alumni-company-logo {
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #111111;
-        }
+.alumni-info p {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 16px 0;
+    line-height: 1.45;
+}
 
-        .alumni-company-logo.staples {
-            color: #cc0000;
-            font-weight: 800;
-        }
+/* કંપની લોગો સ્ટાઈલિંગ */
+.alumni-company-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 100%;
+}
 
-        /* Content spacer after overview cards overlap */
-        .section-spacer {
-            height: 110px;
-            background: #ffffff;
-        }
+.alumni-company-logo img {
+    max-height: 26px;
+    max-width: 140px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(15%);
+    transition: filter 0.2s ease;
+}
 
-        /* Placeholders for following sections */
-        .section-block {
-            scroll-margin-top: 64px;
-            min-height: 480px;
-            padding: 80px 24px;
-            background: #ffffff;
-            color: #111111;
-            border-bottom: 1px solid #e5e7eb;
-        }
+.alumni-card:hover .alumni-company-logo img {
+    filter: grayscale(0%);
+}
 
-        .section-block.dark {
-            background: #090a0c;
-            color: #ffffff;
-        }
+/* સ્પેસર (કાર્ડ્સ નીચે ઓવરલેપ થવાને લીધે જગ્યા જાળવી રાખવા માટે) */
+.section-spacer {
+    height: 120px;
+    background: #ffffff;
+}
 
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* મોબાઈલ માટે રિસ્પોન્સિવ સેટિંગ્સ */
+@media (max-width: 640px) {
+    .overview-bottom-cards {
+        grid-template-columns: 1fr;
+        margin-bottom: -130px;
+    }
+    
+    .section-spacer {
+        height: 160px;
+    }
 
-        .section-container h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
+    .overview-content-center {
+        padding: 90px 16px 30px;
+    }
+}
 
         /* Floating Have Questions Button */
         .floating-help-btn {
@@ -1187,34 +1327,73 @@
 .tools-logo-grid {
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 14px;
+    gap: 12px;
+    width: 100%;
 }
 
 .tool-brand-card {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 9px;
-    padding: 12px 14px;
+    justify-content: flex-start;
+    padding: 10px 16px;
     background: #ffffff;
-    border: 1px solid #e1e4e8;
+    border: 1px solid #e2e5e9;
     border-radius: 8px;
-    font-size: 13.5px;
-    font-weight: 600;
-    color: #111111;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    box-sizing: border-box;
+    min-height: 48px;
+    gap: 10px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tool-brand-card:hover {
-    transform: translateY(-2px);
-    border-color: #111111;
+    border-color: #cbd2d9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo Image Container */
+.tool-icon-wrap {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .tool-logo-img {
-    width: 20px;
-    height: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    flex-shrink: 0;
+    display: block;
+}
+
+/* Tool Label Text */
+.tool-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #111111;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+    .tools-logo-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 680px) {
+    .tools-logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tool-brand-card {
+        padding: 9px 12px;
+    }
 }
 
 /* Responsive */
@@ -1736,21 +1915,26 @@
 }
 
 .alumni-brand-tag {
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: -0.2px;
-    color: #ffffff;
     margin-top: auto;
-    opacity: 0.9;
+    height: 24px;            
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: flex-start;
 }
 
-.alumni-brand-tag svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
+.alumni-brand-tag img {
+    height: 100%;            
+    max-width: 110px;        
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.alumni-card-item:hover .alumni-brand-tag img {
+    opacity: 1;
 }
 
 /* Slow Infinite Linear Animation */
@@ -2621,189 +2805,182 @@
 }
 
 /* ================= NEXT STEP COURSE PACKAGE SECTION ================= */
+/* =========================================================
+   GET CERTIFIED SECTION
+   ========================================================= */
+
 .next-step-section {
     width: 100%;
     background: #ffffff;
     color: #111111;
-    padding: 100px 24px 120px;
+    padding: 70px 24px 90px;
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .next-step-container {
+    width: 100%;
     max-width: 1180px;
     margin: 0 auto;
+
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 70px;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) 410px;
+    column-gap: 70px;
+
+    align-items: start;
+    box-sizing: border-box;
 }
 
-/* Left Content */
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
 .next-step-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 0;
 }
 
-.next-step-shield {
-    width: 82px;
-    height: 94px;
-    background: #111417;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+.next-step-badge {
+    width: 165px;
+    height: 185px;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    text-align: center;
-    padding: 6px;
-    margin-bottom: 34px;
+
+    margin-bottom: 32px;
     flex-shrink: 0;
 }
 
-.next-step-shield .shield-top-icon {
-    width: 12px;
-    height: 12px;
-    fill: #ffffff;
-    opacity: 0.85;
-    margin-bottom: 2px;
-}
+.next-step-badge img {
+    width: 165px;
+    height: auto;
 
-.next-step-shield .shield-brand-text {
-    font-size: 7.5px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 3px;
-}
-
-.next-step-shield .shield-rule {
-    width: 32px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.25);
-    margin-bottom: 4px;
-}
-
-.next-step-shield .shield-certified-text {
-    font-size: 6.5px;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #8c939d;
-    line-height: 1;
-    margin-bottom: 2px;
-}
-
-.next-step-shield .shield-code-text {
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    line-height: 1;
-    color: #ffffff;
-}
-
-.next-step-shield .shield-foot-text {
-    font-size: 5.5px;
-    color: #8c939d;
-    line-height: 1.1;
-    margin-top: 3px;
-    text-transform: uppercase;
-}
-
-.next-step-shield .shield-check-svg {
-    width: 9px;
-    height: 9px;
-    fill: #ffffff;
-    margin-top: 2px;
+    display: block;
+    object-fit: contain;
 }
 
 .next-step-title {
-    font-size: clamp(34px, 4vw, 54px);
-    font-weight: 700;
+    margin: 0 0 20px 0;
+
+    font-size: clamp(38px, 4vw, 52px);
+    font-weight: 600;
     line-height: 1.12;
     letter-spacing: -2px;
+
     color: #0b0c0e;
-    margin: 0 0 20px 0;
 }
 
 .next-step-desc {
-    font-size: 17px;
-    line-height: 1.5;
-    font-weight: 500;
-    color: #495057;
     margin: 0;
-    max-width: 520px;
+
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+
+    color: #111111;
 }
 
-/* Right Form Card */
+
+/* =========================================================
+   RIGHT FORM CARD
+   ========================================================= */
+
 .next-step-card {
-    background: #ffffff;
-    border: 1px solid #edf0f2;
-    border-radius: 12px;
-    padding: 40px 38px 36px;
-    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
     width: 100%;
-    max-width: 480px;
+    max-width: 410px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #b8bdc1;
+    border-radius: 5px;
+
+    padding: 34px 30px 28px;
+
     justify-self: end;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    box-sizing: border-box;
 }
 
 .next-step-card-title {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    margin: 0 0 12px 0;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+
     color: #0b0c0e;
-    margin: 0 0 18px 0;
 }
 
-.next-step-benefits {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
+.next-step-card-desc {
     margin: 0 0 24px 0;
-    padding: 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color: #111111;
 }
 
-.next-step-benefits li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14.5px;
-    color: #212529;
-    font-weight: 500;
-}
 
-.next-step-benefits .benefit-check-icon {
-    width: 13px;
-    height: 13px;
-    fill: #111111;
-    flex-shrink: 0;
-}
+/* =========================================================
+   FORM
+   ========================================================= */
 
 .next-step-form {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
-    gap: 12px;
+
+    gap: 10px;
 }
 
 .next-step-row {
+    width: 100%;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+
+    gap: 10px;
 }
+
+
+/* Normal Inputs */
 
 .next-step-input {
     width: 100%;
+    height: 46px;
+
     background: #f8f9fa;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    padding: 13px 16px;
-    font-size: 14px;
+
+    border: 1px solid #dfe3e6;
+    border-radius: 4px;
+
+    padding: 0 13px;
+
+    font-size: 13px;
+    font-weight: 400;
+
     color: #111111;
+
     outline: none;
-    transition: border-color 0.2s ease, background 0.2s ease;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.next-step-input::placeholder {
+    color: #6f7780;
 }
 
 .next-step-input:focus {
@@ -2811,55 +2988,186 @@
     background: #ffffff;
 }
 
-.next-step-input::placeholder {
-    color: #8c939d;
-}
+
+/* =========================================================
+   PHONE
+   ========================================================= */
 
 .next-step-phone-group {
+    width: 100%;
+    height: 46px;
+
     display: flex;
     align-items: center;
+
     background: #f8f9fa;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
+
+    border: 1px solid #dfe3e6;
+    border-radius: 4px;
+
     overflow: hidden;
+
+    box-sizing: border-box;
 }
 
 .next-step-flag-box {
+    height: 100%;
+
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 0 14px;
-    border-right: 1px solid #e1e4e8;
+
+    padding: 0 10px;
+
+    border-right: 1px solid #dfe3e6;
+
+    flex-shrink: 0;
+
     user-select: none;
 }
 
 .next-step-flag-box .flag-svg {
-    width: 18px;
-    height: 13px;
+    width: 18px !important;
+    height: 12px !important;
+
+    display: block;
+
     border-radius: 2px;
+
+    flex-shrink: 0;
 }
 
 .next-step-flag-box .flag-chevron {
-    width: 8px;
-    height: 5px;
-    fill: #6c757d;
+    width: 8px !important;
+    height: 5px !important;
+
+    display: block;
+
+    color: #111111;
+
+    flex-shrink: 0;
 }
 
 .next-step-phone-input {
+    width: 100%;
+    height: 100%;
+
     border: none;
-    background: transparent;
-    flex: 1;
-    padding: 13px 14px;
-    color: #111111;
     outline: none;
-    font-size: 14px;
+
+    background: transparent;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+    color: #111111;
+
+    box-sizing: border-box;
 }
 
+.next-step-phone-input::placeholder {
+    color: #6f7780;
+}
+
+
+/* =========================================================
+   CUSTOM DROPDOWN
+   IMPORTANT: THIS FIXES HUGE V ARROWS
+   ========================================================= */
+
+.next-step-select {
+    position: relative;
+
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    background: #f8f9fa;
+
+    border: 1px solid #dfe3e6;
+    border-radius: 4px;
+
+    padding: 0 40px 0 13px;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #4d5965;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+
+/* Force ONLY the dropdown SVG to remain small */
+
+.next-step-select .next-step-select-arrow {
+    position: absolute;
+
+    right: 14px;
+    top: 50%;
+
+    width: 10px !important;
+    min-width: 10px !important;
+    max-width: 10px !important;
+
+    height: 6px !important;
+    min-height: 6px !important;
+    max-height: 6px !important;
+
+    display: block !important;
+
+    transform: translateY(-50%);
+
+    color: #111111;
+
+    overflow: visible;
+
+    pointer-events: none;
+
+    flex-shrink: 0;
+}
+
+.next-step-select .next-step-select-arrow path {
+    stroke: #111111 !important;
+    stroke-width: 1.5 !important;
+}
+
+
+/* IMPORTANT:
+   Prevent global SVG rules from affecting this arrow */
+
+.next-step-select svg {
+    width: 10px !important;
+    height: 6px !important;
+
+    max-width: 10px !important;
+    max-height: 6px !important;
+
+    min-width: 10px !important;
+    min-height: 6px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateY(-50%) !important;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
 .next-step-disclaimer {
-    font-size: 11px;
-    line-height: 1.45;
-    color: #6c757d;
-    margin: 4px 0 6px 0;
+    margin: 4px 0 5px;
+
+    font-size: 10px;
+    line-height: 1.4;
+
+    color: #555d66;
 }
 
 .next-step-disclaimer a {
@@ -2867,62 +3175,209 @@
     text-decoration: underline;
 }
 
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
 .btn-package-dark {
     width: 100%;
+    height: 46px;
+
     background: #0d0f12;
     color: #ffffff;
+
     border: none;
     border-radius: 999px;
-    padding: 14px 20px;
-    font-size: 14.5px;
+
+    padding: 0 18px;
+
+    font-size: 13.5px;
     font-weight: 700;
+
     cursor: pointer;
-    display: inline-flex;
+
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    transition: background 0.2s ease, transform 0.2s ease;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .btn-package-dark:hover {
-    background: #232830;
+    background: #25282d;
     transform: translateY(-1px);
 }
 
-.btn-package-dark .arrow-icon {
-    width: 14px;
-    height: 14px;
-    stroke: currentColor;
-    stroke-width: 2.2;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
 
-/* Responsive */
-@media (max-width: 960px) {
-    .next-step-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
 
-    .next-step-card {
-        justify-self: start;
-        max-width: 100%;
-    }
+@media (max-width: 1000px) {
 
     .next-step-section {
-        padding: 70px 20px 90px;
+        padding: 60px 24px 75px;
     }
-}
 
-@media (max-width: 550px) {
-    .next-step-row {
-        grid-template-columns: 1fr;
+    .next-step-container {
+        grid-template-columns: minmax(0, 1fr) 390px;
+        column-gap: 45px;
     }
 
     .next-step-card {
-        padding: 28px 20px;
+        max-width: 390px;
+    }
+
+    .next-step-badge {
+        width: 145px;
+        height: 160px;
+    }
+
+    .next-step-badge img {
+        width: 145px;
+    }
+
+    .next-step-title {
+        font-size: clamp(36px, 4vw, 46px);
+    }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .next-step-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .next-step-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .next-step-card {
+        width: 100%;
+        max-width: 500px;
+
+        justify-self: center;
+    }
+
+    .next-step-desc {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .next-step-section {
+        padding: 45px 16px 60px;
+    }
+
+    .next-step-container {
+        gap: 38px;
+    }
+
+    .next-step-badge {
+        width: 125px;
+        height: 140px;
+        margin-bottom: 24px;
+    }
+
+    .next-step-badge img {
+        width: 125px;
+    }
+
+    .next-step-title {
+        font-size: 32px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+        margin-bottom: 14px;
+    }
+
+    .next-step-desc {
+        font-size: 17px;
+    }
+
+    .next-step-card {
+        padding: 28px 20px 24px;
+    }
+
+    .next-step-card-title {
+        font-size: 22px;
+    }
+
+    .next-step-card-desc {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .next-step-form {
+        gap: 10px;
+    }
+
+    .next-step-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .next-step-input,
+    .next-step-phone-group,
+    .next-step-select,
+    .btn-package-dark {
+        height: 46px;
+    }
+
+    .next-step-select .next-step-select-arrow,
+    .next-step-select svg {
+        width: 10px !important;
+        height: 6px !important;
+        max-width: 10px !important;
+        max-height: 6px !important;
+        min-width: 10px !important;
+        min-height: 6px !important;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .next-step-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .next-step-card {
+        padding: 24px 16px 22px;
+    }
+
+    .next-step-title {
+        font-size: 29px;
+    }
+
+    .next-step-card-title {
+        font-size: 20px;
     }
 }
 
@@ -3790,105 +4245,312 @@
     }
 }
 
-/* ================= GET STARTED FINAL CTA SECTION ================= */
+/* =========================================================
+   RESERVE AN UPCOMING DATE SECTION
+   ========================================================= */
+
 .get-started-cta-section {
     width: 100%;
     background: #000000;
     color: #ffffff;
-    padding: 120px 24px 130px;
+    padding: 70px 24px 80px;
     position: relative;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .get-started-container {
+    width: 100%;
     max-width: 1180px;
     margin: 0 auto;
+
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 70px;
-    align-items: center;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+
+    gap: 32px;
+    align-items: start;
 }
 
-/* Left Content */
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
 .get-started-left {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .get-started-title {
-    font-size: clamp(38px, 4.4vw, 58px);
+    margin: 0 0 34px 0;
+
+    font-size: clamp(38px, 4vw, 52px);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.08;
     letter-spacing: -2px;
+
     color: #ffffff;
-    margin: 0 0 18px 0;
 }
 
-.get-started-rule {
-    width: 44px;
-    height: 3px;
-    background: #ffffff;
-    margin-bottom: 26px;
-}
 
-.get-started-desc {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #b0b7c3;
-    max-width: 520px;
-    margin: 0 0 32px 0;
-}
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
 
-.get-started-checklist {
-    list-style: none;
+.get-started-highlights {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 0;
-    margin: 0;
+    gap: 18px;
+
+    margin-bottom: 42px;
 }
 
-.get-started-checklist li {
+.get-started-highlight {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 15px;
-    font-weight: 600;
+
+    font-size: 16px;
+    font-weight: 500;
     color: #ffffff;
 }
 
-.get-started-check-svg {
-    width: 15px;
-    height: 15px;
+.highlight-icon {
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.highlight-icon.filled-check {
     fill: #ffffff;
+    stroke: #000000;
+    stroke-width: 1.5;
+}
+
+
+/* =========================================================
+   UPCOMING TRAINING CARD
+   ========================================================= */
+
+.upcoming-training-card {
+    width: 100%;
+    max-width: 700px;
+
+    background: #15191c;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 9px;
+
+    padding: 28px 28px 30px;
+}
+
+.upcoming-training-card h3 {
+    margin: 0 0 8px 0;
+
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.upcoming-training-card h4 {
+    margin: 0 0 25px 0;
+
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+/* Location */
+
+.training-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 38px;
+
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.training-location svg {
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   MONTHS
+   ========================================================= */
+
+.training-months {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.training-month {
+    min-width: 0;
+
+    padding: 0 14px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.training-month:first-child {
+    padding-left: 0;
+}
+
+.training-month:last-child {
+    padding-right: 0;
+    border-right: none;
+}
+
+.month-name {
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 600;
+
+    color: #ffffff;
+
+    margin-bottom: 7px;
+}
+
+.month-year {
+    font-size: 14px;
+    line-height: 1;
+
+    font-weight: 600;
+    color: #ffffff;
+
+    margin-bottom: 14px;
+}
+
+
+/* Status */
+
+.month-status {
+    min-height: 28px;
+
+    width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border-radius: 2px;
+
+    padding: 5px 8px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #000000;
+
     flex-shrink: 0;
 }
 
-/* Right Form Card (Dark Theme Card) */
+.month-status.closed {
+    background: #ffffff;
+    color: #111111;
+}
+
+.month-status.reserving {
+    background: #00c853;
+    color: #000000;
+}
+
+
+/* =========================================================
+   RIGHT FORM CARD
+   ========================================================= */
+
 .get-started-form-card {
-    background: #14171d;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    padding: 38px 34px 34px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 470px;
+    max-width: 510px;
+
     justify-self: end;
+
+    background: #15191c;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-top: 4px solid #8f969b;
+
+    border-radius: 4px;
+
+    padding: 32px 38px 36px;
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
 
 .get-started-form-title {
-    font-size: 19px;
+    margin: 0 0 12px 0;
+
+    font-size: 25px;
+    line-height: 1.2;
     font-weight: 700;
-    letter-spacing: -0.4px;
+
     color: #ffffff;
-    margin: 0 0 22px 0;
 }
 
+.get-started-form-desc {
+    margin: 0 0 28px 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #ffffff;
+
+    max-width: 430px;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
 .get-started-form {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
-    gap: 14px;
+
+    gap: 12px;
 }
 
 .get-started-form-row {
@@ -3897,137 +4559,361 @@
     gap: 12px;
 }
 
+
+/* Inputs */
+
 .get-started-input {
     width: 100%;
-    background: #1f232b;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-    padding: 13px 16px;
-    font-size: 14px;
+    height: 56px;
+
+    box-sizing: border-box;
+
+    background: #2a2f33;
+
+    border: 1px solid #555d62;
+    border-radius: 3px;
+
+    padding: 0 18px;
+
+    font-family: inherit;
+    font-size: 15px;
+
     color: #ffffff;
+
     outline: none;
-    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.get-started-input::placeholder {
+    color: #b9c0c5;
 }
 
 .get-started-input:focus {
     border-color: #ffffff;
-    background: #232832;
+    background: #30363a;
 }
 
-.get-started-input::placeholder {
-    color: #7b8390;
-}
+
+/* =========================================================
+   PHONE
+   ========================================================= */
 
 .get-started-phone-group {
+    width: 100%;
+    height: 56px;
+
     display: flex;
     align-items: center;
-    background: #1f232b;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
+
+    box-sizing: border-box;
+
+    background: #2a2f33;
+
+    border: 1px solid #555d62;
+    border-radius: 3px;
+
     overflow: hidden;
 }
 
 .get-started-flag-badge {
+    height: 100%;
+
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
+
     padding: 0 14px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    user-select: none;
+
+    border-right: 1px solid #555d62;
+
+    flex-shrink: 0;
 }
 
 .get-started-flag-badge .flag-svg {
-    width: 18px;
-    height: 13px;
+    width: 19px;
+    height: 14px;
+
     border-radius: 2px;
 }
 
 .get-started-flag-badge .flag-chevron {
     width: 8px;
     height: 5px;
-    fill: #aeb4c0;
+
+    color: #ffffff;
 }
 
 .get-started-phone-input {
+    width: 100%;
+    height: 100%;
+
     border: none;
-    background: transparent;
-    flex: 1;
-    padding: 13px 14px;
-    color: #ffffff;
     outline: none;
-    font-size: 14px;
+
+    background: transparent;
+
+    padding: 0 15px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    color: #ffffff;
 }
 
+.get-started-phone-input::placeholder {
+    color: #b9c0c5;
+}
+
+
+/* =========================================================
+   SELECT DROPDOWNS
+   ========================================================= */
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.get-started-select {
+    width: 100%;
+    height: 56px;
+
+    box-sizing: border-box;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-color: #2a2f33;
+
+    border: 1px solid #555d62;
+    border-radius: 3px;
+
+    padding: 0 45px 0 18px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    color: #b9c0c5;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.get-started-select:focus {
+    border-color: #ffffff;
+}
+
+.get-started-select option {
+    background: #15191c;
+    color: #ffffff;
+}
+
+
+/* Dropdown arrow */
+
+.select-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    right: 20px;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-right: 1.5px solid #ffffff;
+    border-bottom: 1.5px solid #ffffff;
+
+    transform: translateY(-65%) rotate(45deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
 .get-started-disclaimer {
-    font-size: 11px;
-    line-height: 1.45;
-    color: #7b8390;
-    margin: 4px 0 6px 0;
+    margin: 5px 0 2px 0;
+
+    font-size: 10px;
+    line-height: 1.4;
+
+    color: #ffffff;
 }
 
 .get-started-disclaimer a {
-    color: #a4abb8;
+    color: #ffffff;
     text-decoration: underline;
 }
 
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
 .btn-get-started-submit {
     width: 100%;
-    background: #ffffff;
-    color: #0b0c0e;
+    height: 58px;
+
     border: none;
     border-radius: 999px;
-    padding: 14px 20px;
-    font-size: 14.5px;
+
+    background: #ffffff;
+    color: #111111;
+
+    font-family: inherit;
+    font-size: 15px;
     font-weight: 700;
+
     cursor: pointer;
-    display: inline-flex;
+
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    transition: background 0.2s ease, transform 0.2s ease;
+
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn-get-started-submit:hover {
-    background: #f0f0f0;
+    background: #eeeeee;
     transform: translateY(-1px);
 }
 
-.btn-get-started-submit .arrow-icon {
-    width: 14px;
-    height: 14px;
-    stroke: currentColor;
-    stroke-width: 2.2;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
 
-/* Responsive */
-@media (max-width: 960px) {
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
     .get-started-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
+        grid-template-columns: 1fr 400px;
+        gap: 28px;
     }
 
     .get-started-form-card {
-        justify-self: start;
+        padding: 28px 28px 30px;
+    }
+
+    .upcoming-training-card {
         max-width: 100%;
     }
 
-    .get-started-cta-section {
-        padding: 80px 20px 90px;
-    }
 }
 
-@media (max-width: 550px) {
+
+@media (max-width: 900px) {
+
+    .get-started-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .get-started-form-card {
+        max-width: 520px;
+        justify-self: start;
+    }
+
+    .get-started-left {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .get-started-cta-section {
+        padding: 60px 18px 70px;
+    }
+
+    .get-started-title {
+        font-size: 38px;
+        letter-spacing: -1.5px;
+        margin-bottom: 28px;
+    }
+
+    .get-started-highlights {
+        margin-bottom: 32px;
+    }
+
+    .upcoming-training-card {
+        padding: 24px 20px;
+    }
+
+    .upcoming-training-card h3 {
+        font-size: 25px;
+    }
+
+    .upcoming-training-card h4 {
+        font-size: 19px;
+    }
+
+    .training-months {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 0;
+    }
+
+    .training-month:nth-child(2) {
+        border-right: none;
+    }
+
+    .training-month:nth-child(3) {
+        padding-left: 0;
+    }
+
+    .training-month:nth-child(4) {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .get-started-form-card {
+        padding: 26px 20px 28px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
     .get-started-form-row {
         grid-template-columns: 1fr;
     }
 
-    .get-started-form-card {
-        padding: 28px 20px;
+    .training-months {
+        grid-template-columns: 1fr 1fr;
     }
+
+    .month-name {
+        font-size: 27px;
+    }
+
+    .month-status {
+        font-size: 9px;
+        padding: 5px 4px;
+    }
+
+    .get-started-form-title {
+        font-size: 23px;
+    }
+
+    .get-started-form-desc {
+        font-size: 14px;
+    }
+
 }
+
+.story-brand-logo img {
+    height: 32px;              
+    width: auto;               
+    max-width: 160px;          
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1);
+} 
     </style>
 </head>
 <body>
@@ -4037,240 +4923,292 @@
 
     <div class="page-wrapper">
 
-        <!-- ================= HERO SECTION ================= -->
         <section class="hero-section" id="hero">
-            <video class="hero-video-bg" autoplay muted loop playsinline>
-                <source src="../images/6036473_Woman_Business_1280x720.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <video class="hero-video-bg" autoplay muted loop playsinline>
+        <source src="../images/2126821_Man_Business_1280x720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
 
-            <!-- Subtle Gradient Overlay -->
-            <div class="hero-video-overlay"></div>
+    <div class="hero-container">
+        <!-- TOP GRID: LEFT CONTENT & RIGHT FORM -->
+        <div class="hero-top-grid">
+            <!-- LEFT CONTENT -->
+            <div class="hero-left">
+                <div class="breadcrumbs-tag">
+                    <a href="#">Courstrike</a> 
+                    <span class="separator">/</span>
+                    <a href="#">Online</a> 
+                    <span class="separator">/</span>
+                    <span>AI Digital Marketing Certification</span>
+                </div>
 
-            <div class="hero-container">
+                <div class="hero-label">Professional Certification</div>
 
-                <!-- LEFT CONTENT -->
-                <div class="hero-left">
-                    <div class="breadcrumbs-tag">
-                        <a href="../index.html">Courstrike</a> 
-                        <span class="separator">/</span>
-                        <a href="#">Online</a> 
-                        <span class="separator">/</span>
-                        <span>Artificial Intelligence Certification</span>
+                <h1 class="hero-title">AI Digital Marketing Certification</h1>
+
+                <!-- AIC Badge Card -->
+                <div class="cert-shield-badge-box">
+                    <div class="shield-icon">
+                        <span class="shield-code">AIC</span>
+                        <svg class="shield-check-icon" viewBox="0 0 16 16">
+                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
                     </div>
-
-                    <div class="hero-label">Professional Certification</div>
-
-                    <h1 class="hero-title">Artificial Intelligence<br>Certification</h1>
-
-                    <!-- AIC Badge Card -->
-                    <div class="cert-shield-badge-box">
-                        <div class="shield-icon">
-                            <span class="shield-code">AIC</span>
-                            <svg class="shield-check-icon" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                        </div>
-                        <div class="cert-badge-text">
-                            <span class="tagline">Upon Successful Completion</span>
-                            <span class="title">Earn the Artificial Intelligence Certification (AIC™)</span>
-                        </div>
-                    </div>
-
-                    <!-- Location Selector -->
-                    <div class="location-line">
-                        <span>Location:</span>
-                        <button type="button" class="location-select-btn">
-                            <svg class="globe-icon" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
-                            </svg>
-                            <span>Online</span>
-                            <svg class="chevron-icon" viewBox="0 0 10 6">
-                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <!-- Description -->
-                    <p class="hero-desc">
-                        Accelerate your career with the globally recognized Courstrike Artificial Intelligence Certification (AIC™), through hands-on experience in live courses taught by Artificial Intelligence leaders from global tech companies.
-                    </p>
-
-                    <!-- Social Proof Stats -->
-                    <div class="social-proof-bar">
-                        <div class="proof-item">
-                            <svg class="proof-svg" viewBox="0 0 24 24">
-                                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                            </svg>
-                            <span>40k+ professionals trained</span>
-                        </div>
-                        <div class="proof-item">
-                            <svg class="proof-svg" viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                            <span>4.7 on Google</span>
-                        </div>
-                        <div class="proof-item">
-                            <svg class="proof-svg" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
-                            <span>Learn from experts</span>
-                        </div>
+                    <div class="cert-badge-text">
+                        <span class="tagline">Upon Successful Completion</span>
+                        <span class="title">Earn the AI Digital Marketer Certification (DMC™)</span>
                     </div>
                 </div>
 
-                <!-- RIGHT PACKAGE FORM CARD -->
-                <div class="hero-form-card" id="view-package">
-                    <h3 class="form-header-title">View the Course Package to access:</h3>
-
-                    <ul class="form-benefits-list">
-                        <li>
-                            <svg class="benefit-check-svg" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Pricing details</span>
-                        </li>
-                        <li>
-                            <svg class="benefit-check-svg" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Financing options</span>
-                        </li>
-                        <li>
-                            <svg class="benefit-check-svg" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Employer sponsorship</span>
-                        </li>
-                    </ul>
-
-                    <form class="cert-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Request submitted successfully!');">
-                        <div class="form-row-two">
-                            <input type="text" class="form-input" placeholder="First Name" required>
-                            <input type="text" class="form-input" placeholder="Last Name" required>
-                        </div>
-
-                        <input type="email" class="form-input" placeholder="Email" required>
-
-                        <div class="phone-input-group">
-                            <div class="country-flag-badge">
-                                <svg class="flag-svg" viewBox="0 0 640 480">
-                                    <path fill="#bd3d44" d="M0 0h640v480H0z"/>
-                                    <path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"/>
-                                    <path fill="#192f5d" d="M0 0h260v258.5H0z"/>
-                                    <marker id="us-star" markerHeight="2" markerWidth="2">
-                                        <path fill="#fff" d="m0-.8.2.6h.7L.4.2l.2.7L0 .5l-.6.4.2-.7-.5-.4h.7z"/>
-                                    </marker>
-                                </svg>
-                                <svg class="chevron-mini" viewBox="0 0 10 6">
-                                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                </svg>
-                            </div>
-                            <input type="tel" class="phone-input" placeholder="(201) 555-0123" required>
-                        </div>
-
-                        <p class="form-disclaimer">
-                            By clicking "View Course Package", you confirm that you accept our <a href="#">Terms</a>.
-                        </p>
-
-                        <button type="submit" class="btn-submit-package">
-                            <span>View Course Package</span>
-                            <svg class="arrow-svg" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ================= STICKY SECONDARY SUB-NAVBAR ================= -->
-        <nav class="course-subnav" id="courseSubnav">
-            <div class="course-subnav-inner">
-                <div class="subnav-left-brand">
-                    <!-- <span class="subnav-logo-badge">
-                        <svg class="subnav-logo-icon" viewBox="0 0 24 24">
+                <!-- Location Selector -->
+                <div class="location-line">
+                    <span>Location:</span>
+                    <button type="button" class="location-select-btn">
+                        <svg class="globe-icon" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
                         </svg>
-                        Online
-                    </span> -->
+                        <span>Online</span>
+                        <svg class="chevron-icon" viewBox="0 0 10 6">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </button>
                 </div>
 
-                <div class="subnav-menu-links">
-                    <a href="#overview" class="subnav-link active">Overview</a>
-                    <a href="#testimonials" class="subnav-link">Testimonials</a>
-                    <a href="#dates" class="subnav-link">Upcoming Start Dates</a>
-                    <a href="#curriculum" class="subnav-link">Curriculum</a>
-                    <a href="#studio" class="subnav-link">Online Studio</a>
-                    <a href="#faqs" class="subnav-link">FAQs</a>
-                </div>
-
-                <a href="#view-package" class="subnav-cta-btn">View Course Package</a>
+                <!-- Description -->
+                <p class="hero-desc">
+                    Equip your teams to build better products faster by leveraging AI at every stage of the product lifecycle. Go from product discovery to launch, while gaining hands-on roadmapping, AI-assisted prototyping, and data-driven decision-making skills taught by leading product practitioners.
+                </p>
             </div>
-        </nav>
+
+            <!-- RIGHT FORM CARD -->
+            <div class="hero-form-card">
+                <h3 class="form-header-title">Get Started</h3>
+                <p class="form-header-subtitle">Get in touch with our team to discuss training details and reserve a date.</p>
+
+                <form class="cert-form" action="#" method="POST" onsubmit="event.preventDefault();">
+                    <div class="form-row-two">
+                        <input type="text" class="form-input" placeholder="First Name" required>
+                        <input type="text" class="form-input" placeholder="Last Name" required>
+                    </div>
+
+                    <input type="email" class="form-input" placeholder="Business Email" required>
+
+                    <div class="phone-input-group">
+                        <div class="country-flag-badge">
+                            <svg class="flag-svg" viewBox="0 0 640 480">
+                                <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+                                <path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"/>
+                                <path fill="#192f5d" d="M0 0h260v258.5H0z"/>
+                            </svg>
+                            <svg class="chevron-mini" viewBox="0 0 10 6">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <input type="tel" class="phone-input" placeholder="(201) 555-0123" required>
+                    </div>
+
+                    <input type="text" class="form-input" placeholder="Company" required>
+
+                    <div class="select-wrapper">
+                        <select class="form-input form-select" required>
+                            <option value="" disabled selected>Number of Participants</option>
+                            <option value="1-5">1 - 5</option>
+                            <option value="6-20">6 - 20</option>
+                            <option value="20+">20+</option>
+                        </select>
+                        <svg class="select-chevron" viewBox="0 0 10 6">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <div class="select-wrapper">
+                        <select class="form-input form-select" required>
+                            <option value="" disabled selected>Target Date</option>
+                            <option value="oct">October 2026</option>
+                            <option value="nov">November 2026</option>
+                            <option value="dec">December 2026</option>
+                        </select>
+                        <svg class="select-chevron" viewBox="0 0 10 6">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <p class="form-disclaimer">
+                        By clicking "Submit", you confirm that you accept our <a href="#">Terms</a>.
+                    </p>
+
+                    <button type="submit" class="btn-submit-main">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- RESERVE AN UPCOMING DATE BAR -->
+        <div class="upcoming-dates-bar">
+            <div class="dates-info">
+                <span class="dates-tag">UPCOMING TRAINING</span>
+                <h3 class="dates-heading">Reserve an Upcoming Date</h3>
+                <span class="dates-sub">Flexible, Live Training</span>
+                <div class="dates-mode">
+                    <svg viewBox="0 0 24 24" class="mode-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>Online Live</span>
+                </div>
+            </div>
+
+            <div class="dates-months">
+                <div class="month-box">
+                    <span class="m-name">Sep</span>
+                    <span class="m-year">2026</span>
+                    <span class="status-btn closed"><i class="dot"></i>CLOSED</span>
+                </div>
+                <div class="month-box">
+                    <span class="m-name">Oct</span>
+                    <span class="m-year">2026</span>
+                    <span class="status-btn active"><i class="dot"></i>NOW RESERVING</span>
+                </div>
+                <div class="month-box">
+                    <span class="m-name">Nov</span>
+                    <span class="m-year">2026</span>
+                    <span class="status-btn active"><i class="dot"></i>NOW RESERVING</span>
+                </div>
+                <div class="month-box">
+                    <span class="m-name">Dec</span>
+                    <span class="m-year">2026</span>
+                    <span class="status-btn active"><i class="dot"></i>NOW RESERVING</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOCIAL PROOF STATS FOOTER -->
+        <div class="social-proof-bar">
+            <div class="proof-item">
+                <svg class="proof-svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                <span>40k+ professionals trained</span>
+            </div>
+            <div class="proof-item">
+                <svg class="proof-svg star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.7 on Google</span>
+            </div>
+            <div class="proof-item">
+                <svg class="proof-svg check" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Learn from experts</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- ================= STICKY SECONDARY SUB-NAVBAR ================= -->
+         
+        <nav class="course-subnav" id="courseSubnav">
+    <div class="course-subnav-inner">
+        <div class="subnav-left-brand">
+            <a href="/index.html" class="subnav-logo-link">
+                <img src="/images/Logo_png.png" alt="Courstrike" class="subnav-logo-img">
+            </a>
+        </div>
+
+        <ul class="subnav-menu-links">
+            <li><a href="#overview" class="subnav-link active">Overview</a></li>
+            <li><a href="#testimonials" class="subnav-link">Testimonials</a></li>
+            <li><a href="#curriculum" class="subnav-link">Curriculum</a></li>
+            <li><a href="#studio" class="subnav-link">Online Studio</a></li>
+            <li><a href="#faqs" class="subnav-link">FAQs</a></li>
+        </ul>
+
+        <a href="#view-package" class="subnav-cta-btn">View Course Package</a>
+    </div>
+</nav>
 
         <!-- ================= 1. COURSE OVERVIEW SECTION ================= -->
         <section class="overview-section" id="overview">
-            <!-- Background Image overlay -->
-            <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80" 
-                alt="Course Discussion" 
-                class="overview-video-bg"
-            >
-            <div class="overview-overlay"></div>
+    <!-- Background Image overlay -->
+    <img 
+        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80" 
+        alt="Course Discussion" 
+        class="overview-video-bg"
+    >
+    <div class="overview-overlay"></div>
 
-            <div class="overview-content-center">
-                <!-- Geometric Brain/AI Icon -->
-                <svg class="overview-geometric-icon" viewBox="0 0 24 24">
-                    <polygon points="12,2 2,7 12,12 22,7" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                    <polyline points="2,17 12,22 22,17" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                    <polyline points="2,12 12,17 22,12" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
+    <div class="overview-content-center">
+        <!-- Geometric Brain/AI Icon -->
+        <svg class="overview-geometric-icon" viewBox="0 0 24 24">
+            <polygon points="12,2 2,7 12,12 22,7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <polyline points="2,17 12,22 22,17" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <polyline points="2,12 12,17 22,12" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
 
-                <h2 class="overview-title">Course Overview</h2>
-                <p class="overview-subtitle">Artificial Intelligence Certification</p>
+        <h2 class="overview-title">Course Overview</h2>
+        <p class="overview-subtitle">AI Digital Marketing Certification</p>
 
-                <button type="button" class="btn-watch-video">
-                    <svg class="play-svg" viewBox="0 0 24 24">
-                        <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                    <span>Watch</span>
-                </button>
+        <button type="button" class="btn-watch-video">
+            <svg class="play-svg" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Watch</span>
+        </button>
+    </div>
+
+    <!-- Bottom Floating Alumni / Faculty Cards -->
+    <div class="overview-bottom-cards">
+        <!-- Card 1: Daniel -->
+        <div class="alumni-card">
+            <div class="alumni-avatar-box">
+                <img src="/images/testimonials/deana-cappelli-success-story-BV428bOf.avif" alt="Daniel">
             </div>
-
-            <!-- Bottom Floating Alumni / Faculty Cards -->
-            <div class="overview-bottom-cards">
-                <!-- Card 1: Daniel -->
-                <div class="alumni-card">
-                    <div class="alumni-avatar-box">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Daniel">
-                    </div>
-                    <div class="alumni-info">
-                        <h4>Daniel</h4>
-                        <p>Full-stack Developer at<br>Morgan Stanley</p>
-                        <div class="alumni-company-logo">Morgan Stanley</div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Lennie -->
-                <div class="alumni-card">
-                    <div class="alumni-avatar-box">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Lennie">
-                    </div>
-                    <div class="alumni-info">
-                        <h4>Lennie</h4>
-                        <p>Senior Manager, UX at<br>Staples</p>
-                        <div class="alumni-company-logo staples">staples</div>
-                    </div>
+            <div class="alumni-info">
+                <h4>Deana</h4>
+                <p>Senior Measurement Partner<br> at Pinterest</p>
+                <div class="alumni-company-logo">
+                    <img src="/logos/pinterest-c1Nv03xt.svg" alt="Morgan Stanley">
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Spacer for the floating cards overlap -->
-        <div class="section-spacer"></div>
+        <!-- Card 2: Lennie -->
+        <div class="alumni-card">
+            <div class="alumni-avatar-box">
+                <img src="/images/testimonials/lennie-lu-success-story-UoAcwtW9.avif" alt="Lennie">
+            </div>
+            <div class="alumni-info">
+                <h4>Lennie</h4>
+                <p>Senior Manager, UX at <br>Staples</p>
+                <div class="alumni-company-logo">
+                    <img src="/logos/staples-F6pBoWZZ.svg" alt="Staples">
+                </div>
+            </div>
+        </div>
 
-        <!-- ================= OVERVIEW FEATURE (GET CERTIFIED) ================= -->
+        <div class="alumni-card">
+            <div class="alumni-avatar-box">
+                <img src="/images/jon-li-MjDTWMra.avif" alt="Lennie">
+            </div>
+            <div class="alumni-info">
+                <h4>Jon</h4>
+                <p>Head of Marketing Solutions <br>at LinkedIn</p>
+                <div class="alumni-company-logo">
+                    <img src="/logos/linked-in-CQUtIIra.svg" alt="Staples">
+                </div>
+            </div>
+        </div>
+
+        <div class="alumni-card">
+            <div class="alumni-avatar-box">
+                <img src="/images/natasha-suntewari-BEFNb1_Z.avif" alt="Lennie">
+            </div>
+            <div class="alumni-info">
+                <h4>Natasha</h4>
+                <p>Paid Media Lead at lululemon</p>
+                <div class="alumni-company-logo">
+                    <img src="/logos/lululemon-BFktAHKO.svg" alt="Staples">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="section-spacer"></div>
+
+<!-- ================= OVERVIEW FEATURE (GET CERTIFIED) ================= -->
         <section class="overview-feature-section">
             <div class="overview-feature-container">
                 
@@ -4283,7 +5221,7 @@
                         <span class="badge-foot">Certification</span>
                     </div>
 
-                    <h2 class="feature-title">Get Certified in<br>Artificial Intelligence</h2>
+                    <h2 class="feature-title">Get Certified as an AI Digital Marketer</h2>
                     
                     <div class="feature-divider"></div>
 
@@ -4302,7 +5240,7 @@
                 <!-- Right Visual: Slanted Image & Testimonial Overlay -->
                 <div class="feature-right-visual">
                     <div class="slanted-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" alt="Daniel - AI Graduate">
+                        <img src="/images/testimonials/deana-cappelli-success-story-BV428bOf.avif" alt="Daniel - AI Graduate">
                     </div>
 
                     <div class="slanted-quote-card">
@@ -4311,16 +5249,16 @@
                         </svg>
 
                         <p class="quote-statement">
-                            Courstrike gave me the foundation I needed in Artificial Intelligence.
+                            Courstrike helped me better understand product, marketing, entrepreneurship. And all of those different skills led me to Shopify.
                         </p>
 
                         <div class="quote-author-row">
                             <div class="author-meta">
-                                <h5>Daniel</h5>
-                                <span>Full-Stack Developer at Morgan Stanley</span>
+                                <h5>Maxime</h5>
+                                <span>Product Management at Shopify</span>
                             </div>
                             <div class="author-company-tag">
-                                Morgan Stanley
+                                <img src="/logos/shopify-P6Nq5HRK.svg">
                             </div>
                         </div>
                     </div>
@@ -4473,33 +5411,179 @@
                 <!-- 4. INDUSTRY TOOLS -->
                 <div class="details-group-label">INDUSTRY TOOLS</div>
                 <div class="tools-logo-grid">
+                    <!-- Gemini -->
                     <div class="tool-brand-card">
-                        <img src="https://cdn.simpleicons.org/google" class="tool-logo-img" alt="Gemini">
-                        <span>Gemini</span>
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/gemini-DBpCpEFj.svg" class="tool-logo-img" alt="Gemini">
+                        </div>
+                        <span class="tool-name">Gemini</span>
                     </div>
+
+                    <!-- Claude -->
                     <div class="tool-brand-card">
-                        <img src="https://cdn.simpleicons.org/anthropic" class="tool-logo-img" alt="Claude">
-                        <span>Claude</span>
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/claude-DujdiE8p.svg" class="tool-logo-img" alt="Claude">
+                        </div>
+                        <span class="tool-name">Claude</span>
                     </div>
+
+                    <!-- ChatGPT -->
                     <div class="tool-brand-card">
-                        <img src="https://cdn.simpleicons.org/openai" class="tool-logo-img" alt="ChatGPT">
-                        <span>ChatGPT</span>
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/chat-gpt-CwsDVeDv.svg" class="tool-logo-img" alt="ChatGPT">
+                        </div>
+                        <span class="tool-name">ChatGPT</span>
                     </div>
+
+                    <!-- Copilot -->
                     <div class="tool-brand-card">
-                        <img src="https://cdn.simpleicons.org/microsoft" class="tool-logo-img" alt="Copilot">
-                        <span>Copilot</span>
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/copilot-2026-BjDp5w_u.svg" class="tool-logo-img" alt="Copilot">
+                        </div>
+                        <span class="tool-name">Copilot</span>
                     </div>
+
+                    <!-- Make -->
                     <div class="tool-brand-card">
-                        <img src="https://cdn.simpleicons.org/make" class="tool-logo-img" alt="make">
-                        <span>make</span>
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/perplexity-black-CvchdhUa.svg" class="tool-logo-img" alt="make">
+                        </div>
+                        <span class="tool-name">Perplexity</span>
                     </div>
+
+                    <!-- OpenAI -->
                     <div class="tool-brand-card">
-                        <img src="https://cdn.simpleicons.org/openai" class="tool-logo-img" alt="OpenAI">
-                        <span>OpenAI</span>
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/canva-CVAbomal.svg" class="tool-logo-img" alt="OpenAI">
+                        </div>
+                        <span class="tool-name">Canva</span>
                     </div>
+
+                    <!-- Canva -->
                     <div class="tool-brand-card">
-                        <img src="https://cdn.simpleicons.org/canva" class="tool-logo-img" alt="Canva">
-                        <span>Canva</span>
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/ahrefs-icon-iWmFSBoK.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Ahrefs</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/mangools-Bkk6rrO9.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Mangools</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/google-BqMLDqtz.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Google Keyword <br>Planner</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/ga-Cqqn2c4u.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Google Ads</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/tiktok-3Au1xGak.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">TikTok</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/instagram-full-DK5ZAI0w.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Instagram</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/youtube-icon-white-B6vlteAB.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">YouTube</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/linkedin-white-nbjCjurJ.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">LinkedIn</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/facebook-DOZMCLsC" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Facebook</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/pinterest-white-Ce4jaZKi.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Pinterest</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/reddit-DUsvEazG.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Reddit</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/snapchat-D4-uvy__.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Snapchat</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/x-fysbAjuK.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">X (Twitter)</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/x-fysbAjuK.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">X (Twitter)</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/adobe-firefly-C1LRRfYn.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Adobe Firefly</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/mailchimp-dark-BeDHViAz.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Mailchimp</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/googleanalytics-ftWdDbhc.svg" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Google Analytics</span>
+                    </div>
+
+                    <div class="tool-brand-card">
+                        <div class="tool-icon-wrap">
+                            <img src="/logos/google-chrome-C4QUnCwd.webp" class="tool-logo-img" alt="Canva">
+                        </div>
+                        <span class="tool-name">Google Chrome</span>
                     </div>
                 </div>
 
@@ -4566,7 +5650,7 @@
         <section class="success-stories-section" id="testimonials">
             <div class="stories-container">
 
-                <h2 class="stories-main-title">Artificial Intelligence Success Stories</h2>
+                <h2 class="stories-main-title">Digital Marketer Success Stories</h2>
 
                 <div class="stories-content-wrap">
                     
@@ -4578,36 +5662,7 @@
                             </svg>
 
                             <div class="story-quote-text">
-                                <p>The nature of an in-person learning experience simply can't be replicated. The Artificial Intelligence course grounded me in the foundations to apply AI within my role and gave me the guiding principles to share back with my team to spark further discussions and drive efficiency.</p>
-                            </div>
-
-                            <div class="story-author-info">
-                                <h4 class="story-author-name">Melissa Hatter</h4>
-                                <span class="story-author-role">Head of Enterprise Customer Success at Stripe</span>
-                            </div>
-
-                            <div class="story-brand-logo stripe-logo">
-                                stripe
-                            </div>
-                        </div>
-
-                        <div class="story-image-col">
-                            <div class="story-image-cut">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Melissa Hatter">
-                            </div>
-                            <div class="story-image-accent"></div>
-                        </div>
-                    </div>
-
-                    <!-- TAB 2: TIKTOK (CHIARA PULLO) -->
-                    <div class="story-panel" id="story-tiktok">
-                        <div class="story-quote-col">
-                            <svg class="story-big-quote-mark" viewBox="0 0 24 24">
-                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                            </svg>
-
-                            <div class="story-quote-text">
-                                <p>Courstrike delivered one of the highest-quality learning experiences I've had. The courses were well structured and taught by professionals who brought real insights into every lesson.</p>
+                                <p>Courstrike delivered one of the highest-quality learning experiences I’ve had. The courses were well structured and taught by professionals who brought real insights into every lesson.</p>
                             </div>
 
                             <div class="story-author-info">
@@ -4615,85 +5670,19 @@
                                 <span class="story-author-role">Content and Campaign Operations Manager at TikTok</span>
                             </div>
 
-                            <div class="story-brand-logo tiktok-logo">
-                                <svg class="tiktok-icon-svg" viewBox="0 0 24 24">
-                                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.04.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.93-4.48V8.75a8.16 8.16 0 0 0 4.84 1.58V6.87a4.92 4.92 0 0 1-1-.18z"/>
-                                </svg>
-                                <span>TikTok</span>
+                            <div class="story-brand-logo">
+                                <img src="/logos/tik-tok-DsQE0kAg.svg">
                             </div>
                         </div>
 
                         <div class="story-image-col">
                             <div class="story-image-cut">
-                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80" alt="Chiara Pullo">
+                                <img src="/images/chiara-pullo-C1ciErae.avif" alt="Melissa Hatter">
                             </div>
                             <div class="story-image-accent"></div>
                         </div>
                     </div>
 
-                    <!-- TAB 3: DOW JONES (NICOLE FALCAO) -->
-                    <div class="story-panel" id="story-dowjones">
-                        <div class="story-quote-col">
-                            <svg class="story-big-quote-mark" viewBox="0 0 24 24">
-                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                            </svg>
-
-                            <div class="story-quote-text">
-                                <p>This course equipped me with a broad spectrum of AI tools, applications, and real-world use cases, giving me the understanding to utilize AI more strategically.</p>
-                                <p>Having dedicated time in each session to work hands-on with these tools alongside an industry expert made the experience feel incredibly practical and immediately applicable.</p>
-                            </div>
-
-                            <div class="story-author-info">
-                                <h4 class="story-author-name">Nicole Falcao</h4>
-                                <span class="story-author-role">Manager, Financial Planning and Analysis at Dow Jones</span>
-                            </div>
-
-                            <div class="story-brand-logo dowjones-logo">
-                                DOW JONES
-                            </div>
-                        </div>
-
-                        <div class="story-image-col">
-                            <div class="story-image-cut">
-                                <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=800&q=80" alt="Nicole Falcao">
-                            </div>
-                            <div class="story-image-accent"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Navigation Tabs Bar -->
-                <div class="stories-tabs-control-bar">
-                    <!-- Prev Arrow -->
-                    <button type="button" class="story-nav-arrow-btn" id="storyPrevBtn" aria-label="Previous story">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-
-                    <!-- Tab Buttons -->
-                    <div class="story-tabs-list">
-                        <button type="button" class="story-tab-button active" data-target="story-stripe">
-                            stripe
-                        </button>
-                        <button type="button" class="story-tab-button" data-target="story-tiktok">
-                            <svg class="tab-tiktok-icon" viewBox="0 0 24 24">
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.04.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.93-4.48V8.75a8.16 8.16 0 0 0 4.84 1.58V6.87a4.92 4.92 0 0 1-1-.18z"/>
-                            </svg>
-                            TikTok
-                        </button>
-                        <button type="button" class="story-tab-button" data-target="story-dowjones">
-                            DOW JONES
-                        </button>
-                    </div>
-
-                    <!-- Next Arrow -->
-                    <button type="button" class="story-nav-arrow-btn" id="storyNextBtn" aria-label="Next story">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
                 </div>
 
             </div>
@@ -4706,84 +5695,98 @@
                         <!-- 1. Anna Hyclak -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/anna-hyclak-CF9xVBX1.avif" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80'" alt="Anna Hyclak">
+                                <img src="/images/elisa-pera-C5Mrz79n.avif" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80'" alt="Anna Hyclak">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Anna Hyclak</h5>
-                                <p class="alumni-designation">Senior Product Manager, Agentic AI at Expedia</p>
-                                <div class="alumni-brand-tag">Expedia</div>
+                                <h5 class="alumni-name">Elisa Pera</h5>
+                                <p class="alumni-designation">Senior Account Executive at Shopify</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/shopify-P6Nq5HRK.svg" alt="Expedia">
+                                </div>
                             </div>
                         </div>
 
                         <!-- 2. Jean Lai -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/jean-lai-BjWdwSFV.avif" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'" alt="Jean Lai">
+                                <img src="/images/swarnim-bharadwaj-BzEKFT6h.avif" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'" alt="Jean Lai">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Jean Lai</h5>
-                                <p class="alumni-designation">Lead UX Designer at Estée Lauder</p>
-                                <div class="alumni-brand-tag">ESTÉE LAUDER</div>
+                                <h5 class="alumni-name">Swarnim Bhardwaj</h5>
+                                <p class="alumni-designation">Head of Marketing at The Hershey Company</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/hershey-CpJlszrI.svg" alt="Estée Lauder">
+                                </div>
                             </div>
                         </div>
 
                         <!-- 3. Gord Wong -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/gord-wong-BekKpXKx.avif" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'" alt="Gord Wong">
+                                <img src="/images/wendolyne-sabrozo-CJ9100hP.avif" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'" alt="Gord Wong">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Gord Wong</h5>
-                                <p class="alumni-designation">Senior IT Project Manager at BMO</p>
-                                <div class="alumni-brand-tag">BMO</div>
+                                <h5 class="alumni-name">Wendolyne Sabrozo</h5>
+                                <p class="alumni-designation">Senior Content Specialist at Meta</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/meta-BZywIIjr.svg" alt="BMO">
+                                </div>
                             </div>
                         </div>
 
                         <!-- 4. Rafael Arroyo -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/rafael-arroyo-DCDgKQJn.avif" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" alt="Rafael Arroyo">
+                                <img src="/images/emily-burke-DRd9n9DS.avif" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" alt="Rafael Arroyo">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Rafael Arroyo</h5>
-                                <p class="alumni-designation">SVP - Structuring and Portfolio Manager at Citi</p>
-                                <div class="alumni-brand-tag">citi</div>
+                                <h5 class="alumni-name">Emily Burke</h5>
+                                <p class="alumni-designation">Account Manager at Amazon</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/amazon-Di2h6wTx.svg" alt="Citi">
+                                </div>
                             </div>
                         </div>
 
                         <!-- 5. Marian Isola -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/marian-isola-CegL9Xn2.avif" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'" alt="Marian Isola">
+                                <img src="/images/yu-liu-DeT8w1mO.avif" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'" alt="Marian Isola">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Marian Isola</h5>
-                                <p class="alumni-designation">Management Consultant at PwC</p>
-                                <div class="alumni-brand-tag">pwc</div>
+                                <h5 class="alumni-name">Yu (Ning Ning) Liu</h5>
+                                <p class="alumni-designation">Account Manager at TikTok</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/tik-tok-DsQE0kAg.svg" alt="PwC">
+                                </div>
                             </div>
                         </div>
 
                         <!-- 6. Helen Cox -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/helen-cox-DJMby_NU.avif" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'" alt="Helen Cox">
+                                <img src="/images/ariel-sultan-D9Sqk4zO.avif" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'" alt="Helen Cox">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Helen Cox</h5>
-                                <p class="alumni-designation">Digital Account Executive at Salesforce</p>
-                                <div class="alumni-brand-tag">Salesforce</div>
+                                <h5 class="alumni-name">Ariel Sultan</h5>
+                                <p class="alumni-designation">Product Marketing Manager at Adobe</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/adobe-BcqsFWNQ.svg" alt="Salesforce">
+                                </div>
                             </div>
                         </div>
 
                         <!-- 7. Josh Partridge -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/josh-partridge-BXNCQ2YU.avif" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'" alt="Josh Partridge">
+                                <img src="/images/marvin-valle-DA-5EMeM.avif" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'" alt="Josh Partridge">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Josh Partridge</h5>
-                                <p class="alumni-designation">Head of Sales EMEA at Spotify</p>
-                                <div class="alumni-brand-tag">Spotify</div>
+                                <h5 class="alumni-name">Marvin Valle</h5>
+                                <p class="alumni-designation">Creator Growth Manager at TikTok</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/tik-tok-DsQE0kAg.svg" alt="Spotify">
+                                </div>
                             </div>
                         </div>
 
@@ -4791,23 +5794,27 @@
                         <!-- DUPLICATE SET (Seamless Infinite Loop mate) -->
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/anna-hyclak-CF9xVBX1.avif" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80'" alt="Anna Hyclak">
+                                <img src="/images/sabrina-von-allmen-CrpFDDL2.avif" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80'" alt="Anna Hyclak">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Anna Hyclak</h5>
-                                <p class="alumni-designation">Senior Product Manager, Agentic AI at Expedia</p>
-                                <div class="alumni-brand-tag">Expedia</div>
+                                <h5 class="alumni-name">Sabrina von Allmen</h5>
+                                <p class="alumni-designation">VP, Social at JPMorganChase</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/jp-morgan-chase-BFZJZcAb.svg" alt="Expedia">
+                                </div>
                             </div>
                         </div>
 
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/jean-lai-BjWdwSFV.avif" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'" alt="Jean Lai">
+                                <img src="/images/savar-sareen-CRi-x16M.avif" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'" alt="Jean Lai">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Jean Lai</h5>
-                                <p class="alumni-designation">Lead UX Designer at Estée Lauder</p>
-                                <div class="alumni-brand-tag">ESTÉE LAUDER</div>
+                                <h5 class="alumni-name">Savar Sareen</h5>
+                                <p class="alumni-designation">Product Manager, AI at Meta</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/meta-BZywIIjr.svg" alt="Estée Lauder">
+                                </div>
                             </div>
                         </div>
 
@@ -4816,184 +5823,42 @@
                                 <img src="../images/gord-wong-BekKpXKx.avif" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'" alt="Gord Wong">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Gord Wong</h5>
-                                <p class="alumni-designation">Senior IT Project Manager at BMO</p>
-                                <div class="alumni-brand-tag">BMO</div>
+                                <h5 class="alumni-name">Jerod Watson</h5>
+                                <p class="alumni-designation">Director at Visa</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/visa-CCLr1viw.svg" alt="BMO">
+                                </div>
                             </div>
                         </div>
 
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/rafael-arroyo-DCDgKQJn.avif" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" alt="Rafael Arroyo">
+                                <img src="/images/paris-colopy-PrAkmsLl.avif" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" alt="Rafael Arroyo">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Rafael Arroyo</h5>
-                                <p class="alumni-designation">SVP - Structuring and Portfolio Manager at Citi</p>
-                                <div class="alumni-brand-tag">citi</div>
+                                <h5 class="alumni-name">Paris Colopy</h5>
+                                <p class="alumni-designation">Senior Merchant Success Manager at Shopify</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/shopify-P6Nq5HRK.svg" alt="Citi">
+                                </div>
                             </div>
                         </div>
 
                         <div class="alumni-card-item">
                             <div class="alumni-photo-box">
-                                <img src="../images/marian-isola-CegL9Xn2.avif" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'" alt="Marian Isola">
+                                <img src="/images/pei-wang-CLUaw8OS.avif" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'" alt="Marian Isola">
                             </div>
                             <div class="alumni-card-details">
-                                <h5 class="alumni-name">Marian Isola</h5>
-                                <p class="alumni-designation">Management Consultant at PwC</p>
-                                <div class="alumni-brand-tag">pwc</div>
-                            </div>
-                        </div>
-
-                        <div class="alumni-card-item">
-                            <div class="alumni-photo-box">
-                                <img src="../images/helen-cox-DJMby_NU.avif" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'" alt="Helen Cox">
-                            </div>
-                            <div class="alumni-card-details">
-                                <h5 class="alumni-name">Helen Cox</h5>
-                                <p class="alumni-designation">Digital Account Executive at Salesforce</p>
-                                <div class="alumni-brand-tag">Salesforce</div>
-                            </div>
-                        </div>
-
-                        <div class="alumni-card-item">
-                            <div class="alumni-photo-box">
-                                <img src="../images/josh-partridge-BXNCQ2YU.avif" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'" alt="Josh Partridge">
-                            </div>
-                            <div class="alumni-card-details">
-                                <h5 class="alumni-name">Josh Partridge</h5>
-                                <p class="alumni-designation">Head of Sales EMEA at Spotify</p>
-                                <div class="alumni-brand-tag">Spotify</div>
+                                <h5 class="alumni-name">Pei Wang</h5>
+                                <p class="alumni-designation">UX Researcher at Meta</p>
+                                <div class="alumni-brand-tag">
+                                    <img src="/logos/meta-BZywIIjr.svg" alt="PwC">
+                                </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
-        </section>
-
-        
-
-        <!-- ================= 3. UPCOMING START DATES ================= -->
-        <section class="course-dates-section" id="dates">
-            <div class="course-dates-container">
-
-                <h2 class="course-dates-title">Artificial Intelligence Course Start Dates</h2>
-                
-                <p class="course-dates-subtitle">
-                    Take the Artificial Intelligence Certification online or in-person at any of Courstrike's global spaces. Select a time that fits your schedule.
-                </p>
-
-                <!-- Location Selector Filter Tabs -->
-                <div class="location-pills-bar">
-                    <button type="button" class="location-pill-btn active" data-location="tab-toronto">Toronto</button>
-                    <button type="button" class="location-pill-btn" data-location="tab-new-york">New York</button>
-                    <button type="button" class="location-pill-btn" data-location="tab-london">London</button>
-                    <button type="button" class="location-pill-btn" data-location="tab-online">Online</button>
-                </div>
-
-                <!-- Table Card Container -->
-                <div class="dates-table-card">
-
-                    <!-- TAB 1: TORONTO -->
-                    <div class="location-tab-panel active" id="tab-toronto">
-                        <div class="dates-table-head">
-                            <span>CLASS DATES &amp; TIMES</span>
-                            <span>LOCATION</span>
-                            <span>INSTRUCTOR(S)</span>
-                            <span></span>
-                        </div>
-                        <div class="dates-table-row">
-                            <div class="col-schedule">
-                                <h4>Sep 24 - Oct 22</h4>
-                                <div class="time-meta">6:30 pm – 9:30 pm EDT</div>
-                                <div class="days-meta">5 Thursdays</div>
-                            </div>
-                            <div class="col-location">
-                                <svg class="flag-icon" viewBox="0 0 640 480">
-                                    <path fill="#d52b1e" d="M0 0h160v480H0zM480 0h160v480H480z"/>
-                                    <path fill="#fff" d="M160 0h320v480H160z"/>
-                                    <path fill="#d52b1e" d="m320 60 17 48 37-18-12 40 40 5-27 29 27 29-40 5 12 40-37-18-17 48-17-48-37 18 12-40-40-5 27-29-27-29 40-5-12-40 37 18z"/>
-                                </svg>
-                                <span>Toronto</span>
-                            </div>
-                            <div class="col-instructor"></div>
-                            <div class="col-action">
-                                <span class="btn-enrollment-closed">Enrollment Closed</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TAB 2: NEW YORK -->
-                    <div class="location-tab-panel" id="tab-new-york">
-                        <div class="empty-schedule-box">
-                            <h3>No Upcoming Sessions Scheduled</h3>
-                            <button type="button" class="btn-notify-available">Notify Me When Available</button>
-                        </div>
-                    </div>
-
-                    <!-- TAB 3: LONDON -->
-                    <div class="location-tab-panel" id="tab-london">
-                        <div class="dates-table-head">
-                            <span>CLASS DATES &amp; TIMES</span>
-                            <span>LOCATION</span>
-                            <span>INSTRUCTOR(S)</span>
-                            <span></span>
-                        </div>
-                        <div class="dates-table-row">
-                            <div class="col-schedule">
-                                <h4>Sep 10 - Oct 8</h4>
-                                <div class="time-meta">6:30 pm – 9:30 pm BST</div>
-                                <div class="days-meta">5 Thursdays</div>
-                            </div>
-                            <div class="col-location">
-                                <svg class="flag-icon" viewBox="0 0 640 480">
-                                    <clipPath id="uk-clip"><path d="M0 0v480h640V0z"/></clipPath>
-                                    <g clip-path="url(#uk-clip)">
-                                        <path fill="#012169" d="M0 0v480h640V0z"/>
-                                        <path stroke="#fff" stroke-width="60" d="m0 0 640 480M640 0 0 480"/>
-                                        <path stroke="#c8102e" stroke-width="40" d="m0 0 640 480M640 0 0 480"/>
-                                        <path stroke="#fff" stroke-width="100" d="M320 0v480M0 240h640"/>
-                                        <path stroke="#c8102e" stroke-width="60" d="M320 0v480M0 240h640"/>
-                                    </g>
-                                </svg>
-                                <span>London</span>
-                            </div>
-                            <div class="col-instructor"></div>
-                            <div class="col-action">
-                                <span class="btn-enrollment-closed">Enrolment Closed</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TAB 4: ONLINE -->
-                    <div class="location-tab-panel" id="tab-online">
-                        <div class="dates-table-head">
-                            <span>CLASS DATES &amp; TIMES</span>
-                            <span>LOCATION</span>
-                            <span>INSTRUCTOR(S)</span>
-                            <span></span>
-                        </div>
-                        <div class="dates-table-row">
-                            <div class="col-schedule">
-                                <h4>Aug 27 - Sep 24</h4>
-                                <div class="time-meta">4:00 AM – 7:00 AM GMT+5:30</div>
-                                <div class="days-meta">5 Thursdays</div>
-                            </div>
-                            <div class="col-location">
-                                <svg class="loc-icon" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
-                                </svg>
-                                <span>Online</span>
-                            </div>
-                            <div class="col-instructor"></div>
-                            <div class="col-action">
-                                <span class="btn-enrollment-closed">Enrollment Closed</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
         </section>
 
         <!-- ================= 4. COURSE CURRICULUM ================= -->
@@ -5019,19 +5884,19 @@
                                 </p>
                                 <div class="unit-tools-grid">
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/google" alt="Gemini">
+                                        <img src="/logos/gemini-DBpCpEFj.svg" alt="Gemini">
                                         <span>Gemini</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/anthropic" alt="Claude">
+                                        <img src="/logos/claude-DujdiE8p.svg" alt="Claude">
                                         <span>Claude</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/openai" alt="ChatGPT">
+                                        <img src="/logos/chat-gpt-CwsDVeDv.svg" alt="ChatGPT">
                                         <span>ChatGPT</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/microsoft" alt="Copilot">
+                                        <img src="/logos/copilot-2026-BjDp5w_u.svg" alt="Copilot">
                                         <span>Copilot</span>
                                     </div>
                                 </div>
@@ -5132,19 +5997,19 @@
                                 </p>
                                 <div class="unit-tools-grid">
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/google" alt="Gemini">
+                                        <img src="/logos/gemini-DBpCpEFj.svg" alt="Gemini">
                                         <span>Gemini</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/anthropic" alt="Claude">
+                                        <img src="/logos/claude-DujdiE8p.svg" alt="Claude">
                                         <span>Claude</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/openai" alt="ChatGPT">
+                                        <img src="/logos/chat-gpt-CwsDVeDv.svg" alt="ChatGPT">
                                         <span>ChatGPT</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/microsoft" alt="Copilot">
+                                        <img src="/logos/copilot-2026-BjDp5w_u.svg" alt="Copilot">
                                         <span>Copilot</span>
                                     </div>
                                 </div>
@@ -5247,31 +6112,31 @@
                                 </p>
                                 <div class="unit-tools-grid">
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/make" alt="make">
+                                        <img src="/logos/make-De3AvSj3.svg" alt="make">
                                         <span>make</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/openai" alt="OpenAI">
+                                        <img src="/logos/open-ai-logo-DQjx7yKM.svg" alt="OpenAI">
                                         <span>OpenAI</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/google" alt="Gemini">
+                                        <img src="/logos/gemini-DBpCpEFj.svg" alt="Gemini">
                                         <span>Gemini</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/anthropic" alt="Claude">
+                                        <img src="/logos/claude-DujdiE8p.svg" alt="Claude">
                                         <span>Claude</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/openai" alt="ChatGPT">
+                                        <img src="/logos/chat-gpt-CwsDVeDv.svg" alt="ChatGPT">
                                         <span>ChatGPT</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/microsoft" alt="Copilot">
+                                        <img src="/logos/copilot-2026-BjDp5w_u.svg" alt="Copilot">
                                         <span>Copilot</span>
                                     </div>
                                     <div class="unit-tool-card">
-                                        <img src="https://cdn.simpleicons.org/canva" alt="Canva">
+                                        <img src="/logos/canva-CVAbomal.svg" alt="Canva">
                                         <span>Canva</span>
                                     </div>
                                 </div>
@@ -5488,98 +6353,214 @@
         </section>
 
         <!-- ================= NEXT STEP COURSE PACKAGE SECTION ================= -->
-        <section class="next-step-section">
-            <div class="next-step-container">
+        <!-- ================= GET CERTIFIED SECTION ================= -->
+<section class="next-step-section">
 
-                <!-- Left Content -->
-                <div class="next-step-left">
-                    <div class="next-step-shield">
-                        <svg class="shield-top-icon" viewBox="0 0 24 24">
-                            <polygon points="12,2 2,7 12,12 22,7" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                            <polyline points="2,17 12,22 22,17" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                            <polyline points="2,12 12,17 22,12" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <div class="next-step-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="next-step-left">
+
+            <div class="next-step-badge">
+                <img
+                    src="images/aic-certificate.png"
+                    alt="Artificial Intelligence Certification"
+                >
+            </div>
+
+            <h2 class="next-step-title">
+                Get Certified in Artificial<br class="desktop-break">
+                Intelligence
+            </h2>
+
+            <p class="next-step-desc">
+                Talk to our team to get started.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT FORM CARD -->
+        <div class="next-step-card">
+
+            <h3 class="next-step-card-title">
+                Get Started
+            </h3>
+
+            <p class="next-step-card-desc">
+                Get in touch with our team to discuss training details
+                <br class="desktop-break">
+                and reserve a date.
+            </p>
+
+
+            <form
+                class="next-step-form"
+                action="#"
+                method="POST"
+                onsubmit="event.preventDefault();"
+            >
+
+                <!-- First + Last Name -->
+                <div class="next-step-row">
+
+                    <input
+                        type="text"
+                        class="next-step-input"
+                        placeholder="First Name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        class="next-step-input"
+                        placeholder="Last Name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Business Email -->
+                <input
+                    type="email"
+                    class="next-step-input"
+                    placeholder="Business Email"
+                    required
+                >
+
+
+                <!-- Phone -->
+                <div class="next-step-phone-group">
+
+                    <div class="next-step-flag-box">
+
+                        <svg
+                            class="flag-svg"
+                            viewBox="0 0 640 480"
+                            aria-hidden="true"
+                        >
+                            <path
+                                fill="#bd3d44"
+                                d="M0 0h640v480H0z"
+                            />
+
+                            <path
+                                stroke="#fff"
+                                stroke-width="37"
+                                d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"
+                            />
+
+                            <path
+                                fill="#192f5d"
+                                d="M0 0h260v258.5H0z"
+                            />
                         </svg>
-                        <span class="shield-brand-text">COURSTRIKE</span>
-                        <div class="shield-rule"></div>
-                        <span class="shield-certified-text">CERTIFIED</span>
-                        <span class="shield-code-text">AIC™</span>
-                        <span class="shield-foot-text">Artificial Intelligence<br>Certification</span>
-                        <svg class="shield-check-svg" viewBox="0 0 16 16">
-                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+
+                        <svg
+                            class="flag-chevron"
+                            viewBox="0 0 10 6"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M1 1L5 5L9 1"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                fill="none"
+                            />
                         </svg>
+
                     </div>
 
-                    <h2 class="next-step-title">
-                        Your Next Step Towards<br>Artificial Intelligence<br>Certification
-                    </h2>
+                    <input
+                        type="tel"
+                        class="next-step-phone-input"
+                        placeholder="(201) 555-0123"
+                        required
+                    >
 
-                    <p class="next-step-desc">
-                        View the Artificial Intelligence Course Package to Learn More.
-                    </p>
                 </div>
 
-                <!-- Right Package Form Card -->
-                <div class="next-step-card">
-                    <h3 class="next-step-card-title">View the Course Package to access:</h3>
 
-                    <ul class="next-step-benefits">
-                        <li>
-                            <svg class="benefit-check-icon" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Pricing details</span>
-                        </li>
-                        <li>
-                            <svg class="benefit-check-icon" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Financing options</span>
-                        </li>
-                        <li>
-                            <svg class="benefit-check-icon" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Employer sponsorship</span>
-                        </li>
-                    </ul>
+                <!-- Company -->
+                <input
+                    type="text"
+                    class="next-step-input"
+                    placeholder="Company"
+                    required
+                >
 
-                    <form class="next-step-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Request submitted successfully!');">
-                        <div class="next-step-row">
-                            <input type="text" class="next-step-input" placeholder="First Name" required>
-                            <input type="text" class="next-step-input" placeholder="Last Name" required>
-                        </div>
 
-                        <input type="email" class="next-step-input" placeholder="Email" required>
+                <!-- Number Of Participants -->
+                <div class="next-step-select">
 
-                        <div class="next-step-phone-group">
-                            <div class="next-step-flag-box">
-                                <svg class="flag-svg" viewBox="0 0 640 480">
-                                    <path fill="#bd3d44" d="M0 0h640v480H0z"/>
-                                    <path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"/>
-                                    <path fill="#192f5d" d="M0 0h260v258.5H0z"/>
-                                </svg>
-                                <svg class="flag-chevron" viewBox="0 0 10 6">
-                                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                </svg>
-                            </div>
-                            <input type="tel" class="next-step-phone-input" placeholder="(201) 555-0123" required>
-                        </div>
+                    <span>Number of Participants</span>
 
-                        <p class="next-step-disclaimer">
-                            By clicking "View Course Package", you confirm that you accept our <a href="#">Terms</a>.
-                        </p>
+                    <svg
+                        class="next-step-select-arrow"
+                        viewBox="0 0 10 6"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M1 1L5 5L9 1"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
 
-                        <button type="submit" class="btn-package-dark">
-                            <span>View Course Package</span>
-                            <svg class="arrow-icon" viewBox="0 0 24 24">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                    </form>
                 </div>
 
-            </div>
-        </section>
+
+                <!-- Target Date -->
+                <div class="next-step-select">
+
+                    <span>Target Date</span>
+
+                    <svg
+                        class="next-step-select-arrow"
+                        viewBox="0 0 10 6"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M1 1L5 5L9 1"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+
+                </div>
+
+
+                <!-- Disclaimer -->
+                <p class="next-step-disclaimer">
+                    By clicking "Submit", you confirm that you accept our
+                    <a href="#">Terms</a>.
+                </p>
+
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="btn-package-dark"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
 
         <!-- ================= UPCOMING AI EVENTS SECTION ================= -->
         <section class="upcoming-events-section" id="events">
@@ -5606,7 +6587,7 @@
                 <div class="events-cards-stack">
 
                     <!-- EVENT CARD 1: HORIZONS -->
-                    <a href="https://courstrike.com/events/horizons-ai-digital-innovation" target="_blank" class="ai-event-card">
+                    <a href="/events/horizons-new-york.html" target="_blank" class="ai-event-card">
                         <div class="event-card-left">
                             <div>
                                 <div class="event-card-top-row">
@@ -5670,7 +6651,7 @@
                     </a>
 
                     <!-- EVENT CARD 2: AI PRODUCT SUMMIT -->
-                    <a href="https://courstrike.com/events/product-summit-new-york" target="_blank" class="ai-event-card">
+                    <a href="/events/summit-new-york.html" target="_blank" class="ai-event-card">
                         <div class="event-card-left">
                             <div>
                                 <div class="event-card-top-row">
@@ -5784,48 +6765,48 @@
                 <div class="marquee-track-row track-row-1">
                     <!-- First Set -->
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/microsoft" alt="Microsoft">
+                        <img src="/logos/microsoft-rwvmviyC.svg" alt="Microsoft">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/uber" alt="Uber">
+                        <img src="/logos/uber-CuYQ6LLL.svg" alt="Uber">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/slack" alt="Slack">
+                        <img src="/logos/slack-ElURnRzW.svg" alt="Slack">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple">
+                        <img src="/logos/apple-BSb7elEh.svg" alt="Apple">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/meta" alt="Meta">
+                        <img src="/logos/meta-BZywIIjr.svg" alt="Meta">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/google" alt="Google">
+                        <img src="/logos/google.svg" alt="Google">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/nvidia" alt="NVIDIA">
+                        <img src="/logos/nvidia-6ikefk4z.svg" alt="NVIDIA">
                     </div>
 
                     <!-- Duplicate Set for Smooth Loop -->
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/microsoft" alt="Microsoft">
+                        <img src="/logos/microsoft-rwvmviyC.svg" alt="Microsoft">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/uber" alt="Uber">
+                        <img src="/logos/uber-CuYQ6LLL.svg" alt="Uber">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/slack" alt="Slack">
+                        <img src="/logos/slack-ElURnRzW.svg" alt="Slack">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple">
+                        <img src="/logos/apple-BSb7elEh.svg" alt="Apple">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/meta" alt="Meta">
+                        <img src="/logos/meta-BZywIIjr.svg" alt="Meta">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/google" alt="Google">
+                        <img src="/logos/google.svg" alt="Google">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/nvidia" alt="NVIDIA">
+                        <img src="/logos/nvidia-6ikefk4z.svg" alt="NVIDIA">
                     </div>
                 </div>
 
@@ -5833,48 +6814,48 @@
                 <div class="marquee-track-row track-row-2">
                     <!-- First Set -->
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/airbnb" alt="Airbnb">
+                        <img src="/logos/airbnb-CtmsI85F.svg" alt="Airbnb">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/amazon/000000" alt="Amazon">
+                        <img src="/logos/amazon-Di2h6wTx.svg" alt="Amazon">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/nike/000000" alt="Nike">
+                        <img src="/logos/nike-DEymYOMO.svg" alt="Nike">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/shopify" alt="Shopify">
+                        <img src="/logos/shopify-P6Nq5HRK.svg" alt="Shopify">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
+                        <img src="/logos/spotify-1vlQYlz4.svg" alt="Spotify">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/mastercard" alt="Mastercard">
+                        <img src="/logos/mastercard-DzuA8yXC.svg" alt="Mastercard">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/openai/000000" alt="OpenAI">
+                        <img src="/logos/openai-C2CruhdW.svg" alt="OpenAI">
                     </div>
 
                     <!-- Duplicate Set for Smooth Loop -->
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/airbnb" alt="Airbnb">
+                        <img src="/logos/airbnb-CtmsI85F.svg" alt="Airbnb">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/amazon/000000" alt="Amazon">
+                        <img src="/logos/amazon-Di2h6wTx.svg" alt="Amazon">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/nike/000000" alt="Nike">
+                        <img src="/logos/nike-DEymYOMO.svg" alt="Nike">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/shopify" alt="Shopify">
+                        <img src="/logos/shopify-P6Nq5HRK.svg" alt="Shopify">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
+                        <img src="/logos/spotify-1vlQYlz4.svg" alt="Spotify">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/mastercard" alt="Mastercard">
+                        <img src="/logos/mastercard-DzuA8yXC.svg" alt="Mastercard">
                     </div>
                     <div class="company-brand-item">
-                        <img src="https://cdn.simpleicons.org/openai/000000" alt="OpenAI">
+                        <img src="/logos/openai-C2CruhdW.svg" alt="OpenAI">
                     </div>
                 </div>
 
@@ -6109,82 +7090,275 @@
             </div>
         </section>
 
-        <!-- ================= GET STARTED FINAL CTA SECTION ================= -->
-        <section class="get-started-cta-section" id="get-started">
-            <div class="get-started-container">
+        <!-- ================= RESERVE AN UPCOMING DATE SECTION ================= -->
+<section class="get-started-cta-section" id="get-started">
 
-                <!-- Left Content -->
-                <div class="get-started-left">
-                    <h2 class="get-started-title">Get Started</h2>
-                    <div class="get-started-rule"></div>
+    <div class="get-started-container">
 
-                    <p class="get-started-desc">
-                        Join a network of over 250,000 professionals who are transforming and accelerating their careers through cutting edge tech skills.
-                    </p>
+        <!-- LEFT SIDE -->
+        <div class="get-started-left">
 
-                    <ul class="get-started-checklist">
-                        <li>
-                            <svg class="get-started-check-svg" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Tuition details</span>
-                        </li>
-                        <li>
-                            <svg class="get-started-check-svg" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Financing options</span>
-                        </li>
-                        <li>
-                            <svg class="get-started-check-svg" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            <span>Employer sponsorship</span>
-                        </li>
-                    </ul>
+            <h2 class="get-started-title">
+                Reserve an Upcoming Date
+            </h2>
+
+            <div class="get-started-highlights">
+
+                <div class="get-started-highlight">
+                    <svg viewBox="0 0 24 24" class="highlight-icon">
+                        <polyline points="3 17 8 11 12 14 21 5"></polyline>
+                        <polyline points="17 5 21 5 21 9"></polyline>
+                    </svg>
+                    <span>40k+ professionals trained</span>
                 </div>
 
-                <!-- Right Form Card -->
-                <div class="get-started-form-card">
-                    <h3 class="get-started-form-title">View the Course Package:</h3>
-
-                    <form class="get-started-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Request submitted successfully!');">
-                        <div class="get-started-form-row">
-                            <input type="text" class="get-started-input" placeholder="First Name" required>
-                            <input type="text" class="get-started-input" placeholder="Last Name" required>
-                        </div>
-
-                        <input type="email" class="get-started-input" placeholder="Email" required>
-
-                        <div class="get-started-phone-group">
-                            <div class="get-started-flag-badge">
-                                <svg class="flag-svg" viewBox="0 0 640 480">
-                                    <path fill="#bd3d44" d="M0 0h640v480H0z"/>
-                                    <path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"/>
-                                    <path fill="#192f5d" d="M0 0h260v258.5H0z"/>
-                                </svg>
-                                <svg class="flag-chevron" viewBox="0 0 10 6">
-                                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                </svg>
-                            </div>
-                            <input type="tel" class="get-started-phone-input" placeholder="(201) 555-0123" required>
-                        </div>
-
-                        <p class="get-started-disclaimer">
-                            By clicking “View Course Package”, you confirm that you accept our <a href="#">Terms</a>.
-                        </p>
-
-                        <button type="submit" class="btn-get-started-submit">
-                            <span>View Course Package</span>
-                            <svg class="arrow-icon" viewBox="0 0 24 24">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                    </form>
+                <div class="get-started-highlight">
+                    <svg viewBox="0 0 24 24" class="highlight-icon filled-check">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="8 12 11 15 16 9"></polyline>
+                    </svg>
+                    <span>Learn from experts</span>
                 </div>
 
             </div>
-        </section>
+
+
+            <!-- UPCOMING TRAINING CARD -->
+            <div class="upcoming-training-card">
+
+                <h3>Upcoming Training</h3>
+
+                <h4>Flexible, Live Training</h4>
+
+                <div class="training-location">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"></path>
+                        <circle cx="12" cy="9" r="2.5"></circle>
+                    </svg>
+                    <span>Online Live</span>
+                </div>
+
+
+                <div class="training-months">
+
+                    <!-- SEPTEMBER -->
+                    <div class="training-month">
+                        <div class="month-name">Sep</div>
+                        <div class="month-year">2026</div>
+
+                        <span class="month-status closed">
+                            <span class="status-dot"></span>
+                            CLOSED
+                        </span>
+                    </div>
+
+
+                    <!-- OCTOBER -->
+                    <div class="training-month">
+                        <div class="month-name">Oct</div>
+                        <div class="month-year">2026</div>
+
+                        <span class="month-status reserving">
+                            <span class="status-dot"></span>
+                            NOW RESERVING
+                        </span>
+                    </div>
+
+
+                    <!-- NOVEMBER -->
+                    <div class="training-month">
+                        <div class="month-name">Nov</div>
+                        <div class="month-year">2026</div>
+
+                        <span class="month-status reserving">
+                            <span class="status-dot"></span>
+                            NOW RESERVING
+                        </span>
+                    </div>
+
+
+                    <!-- DECEMBER -->
+                    <div class="training-month">
+                        <div class="month-name">Dec</div>
+                        <div class="month-year">2026</div>
+
+                        <span class="month-status reserving">
+                            <span class="status-dot"></span>
+                            NOW RESERVING
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE FORM -->
+        <div class="get-started-form-card">
+
+            <h3 class="get-started-form-title">
+                Get Started
+            </h3>
+
+            <p class="get-started-form-desc">
+                Get in touch with our team to discuss training details
+                and reserve a date.
+            </p>
+
+
+            <form
+                class="get-started-form"
+                action="#"
+                method="POST"
+                onsubmit="event.preventDefault(); alert('Request submitted successfully!');"
+            >
+
+                <!-- FIRST + LAST NAME -->
+                <div class="get-started-form-row">
+
+                    <input
+                        type="text"
+                        class="get-started-input"
+                        placeholder="First Name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        class="get-started-input"
+                        placeholder="Last Name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <input
+                    type="email"
+                    class="get-started-input"
+                    placeholder="Business Email"
+                    required
+                >
+
+
+                <!-- PHONE -->
+                <div class="get-started-phone-group">
+
+                    <div class="get-started-flag-badge">
+
+                        <svg class="flag-svg" viewBox="0 0 640 480">
+                            <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+                            <path
+                                stroke="#fff"
+                                stroke-width="37"
+                                d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"
+                            />
+                            <path
+                                fill="#192f5d"
+                                d="M0 0h260v258.5H0z"
+                            />
+                        </svg>
+
+                        <svg class="flag-chevron" viewBox="0 0 10 6">
+                            <path
+                                d="M1 1L5 5L9 1"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                fill="none"
+                            />
+                        </svg>
+
+                    </div>
+
+                    <input
+                        type="tel"
+                        class="get-started-phone-input"
+                        placeholder="(201) 555-0123"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- COMPANY -->
+                <input
+                    type="text"
+                    class="get-started-input"
+                    placeholder="Company"
+                >
+
+
+                <!-- PARTICIPANTS -->
+                <div class="select-wrapper">
+
+                    <select
+                        class="get-started-select"
+                        required
+                    >
+                        <option value="" selected disabled>
+                            Number of Participants
+                        </option>
+                        <option value="1">1 Participant</option>
+                        <option value="2-5">2–5 Participants</option>
+                        <option value="6-10">6–10 Participants</option>
+                        <option value="11-20">11–20 Participants</option>
+                        <option value="20+">20+ Participants</option>
+                    </select>
+
+                </div>
+
+
+                <!-- TARGET DATE -->
+                <div class="select-wrapper">
+
+                    <select
+                        class="get-started-select"
+                        required
+                    >
+                        <option value="" selected disabled>
+                            Target Date
+                        </option>
+                        <option value="october-2026">
+                            October 2026
+                        </option>
+                        <option value="november-2026">
+                            November 2026
+                        </option>
+                        <option value="december-2026">
+                            December 2026
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- DISCLAIMER -->
+                <p class="get-started-disclaimer">
+                    By clicking “Submit”, you confirm that you accept our
+                    <a href="#">Terms</a>.
+                </p>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="btn-get-started-submit"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
 
     </div>
 
@@ -6201,24 +7375,28 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const mainHeader = document.getElementById("header");
+            //const mainHeader = document.getElementById("header");
             const secondaryNav = document.getElementById("courseSubnav");
             const overviewSection = document.getElementById("overview");
 
             /* 1. Main Header Hide/Show logic on scroll */
-            if (mainHeader && secondaryNav && overviewSection) {
-                function updateMainHeader() {
-                    const navRect = secondaryNav.getBoundingClientRect();
-                    // Jyare subnav screen na top par pahonche tyare main header hide thashe
-                    if (navRect.top <= 0) {
-                        mainHeader.classList.add("cert-header-hidden");
-                    } else {
-                        mainHeader.classList.remove("cert-header-hidden");
-                    }
-                }
-                window.addEventListener("scroll", updateMainHeader, { passive: true });
-                updateMainHeader();
-            }
+            /* 1. Sticky Secondary Subnav Show/Hide */
+if (secondaryNav) {
+
+    function updateSecondaryNav() {
+        if (window.scrollY > 40) {
+            secondaryNav.classList.add("visible");
+        } else {
+            secondaryNav.classList.remove("visible");
+        }
+    }
+
+    window.addEventListener("scroll", updateSecondaryNav, {
+        passive: true
+    });
+
+    updateSecondaryNav();
+}
 
             /* 2. Subnav Click Smooth Scroll */
             const navLinks = document.querySelectorAll(".subnav-link");
@@ -6306,25 +7484,6 @@
     }
         });
 
-        /* ================= COURSE START DATES TABS SWITCHER ================= */
-    const locationPills = document.querySelectorAll(".location-pill-btn");
-    const locationPanels = document.querySelectorAll(".location-tab-panel");
-
-    locationPills.forEach(pill => {
-        pill.addEventListener("click", () => {
-            const targetId = pill.getAttribute("data-location");
-
-            locationPills.forEach(btn => btn.classList.remove("active"));
-            locationPanels.forEach(panel => panel.classList.remove("active"));
-
-            pill.classList.add("active");
-            const targetPanel = document.getElementById(targetId);
-            if (targetPanel) {
-                targetPanel.classList.add("active");
-            }
-        });
-    });
-
     /* ================= FAQS ACCORDION TOGGLE ================= */
     const faqItems = document.querySelectorAll(".faq-accordion-item");
 
@@ -6352,6 +7511,61 @@
             }
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const secondaryNav = document.getElementById("courseSubnav");
+    const navLinks = document.querySelectorAll(".subnav-link");
+    const heroSection = document.getElementById("hero");
+    const sections = document.querySelectorAll("section[id]");
+
+    // Show/hide subnav on scroll past hero
+    function handleSubnavScroll() {
+        const scrollPos = window.scrollY;
+        const heroBottom = heroSection ? heroSection.offsetHeight - 100 : 300;
+
+        if (scrollPos > heroBottom) {
+            secondaryNav.classList.add("visible");
+        } else {
+            secondaryNav.classList.remove("visible");
+        }
+
+        // Active link scrollspy
+        sections.forEach(sec => {
+            const top = sec.offsetTop - 120;
+            const height = sec.offsetHeight;
+            const id = sec.getAttribute("id");
+
+            if (scrollPos >= top && scrollPos < top + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${id}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleSubnavScroll, { passive: true });
+    handleSubnavScroll();
+
+    // Smooth scroll for subnav clicks
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            if (targetId && targetId.startsWith("#")) {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        });
+    });
+});
     </script>
 </body>
 </html>
