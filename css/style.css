@@ -3303,19 +3303,23 @@ a {
 }
 
 .certifications-mega-menu {
-    display: none;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 90vw;
-    max-width: 1140px;
-    background-color: #0c0d0f;
-    color: #ffffff;
+    width: 100%;
+    max-width: 1200px;
+    background: #0d0f12;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
+    display: none; /* toggle thaye tyare flex */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-    z-index: 1000;
+    z-index: 99999;
+}
+
+.certifications-mega-menu.active {
+    display: flex;
 }
 
 .certifications-mega-menu.show {
@@ -3324,13 +3328,14 @@ a {
 
 /* Left Sidebar */
 .cert-sidebar {
-    width: 32%;
-    background-color: #24292f;
-    padding: 44px 36px;
+    width: 320px;
+    min-width: 320px;
+    padding: 40px 32px;
+    background: #14171d;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 16px;
+    justify-content: space-between;
 }
 
 .cert-sidebar h2 {
@@ -3366,31 +3371,60 @@ a {
 
 /* Right Content */
 .cert-content {
-    width: 68%;
-    background-color: #0b0c0e;
-    padding: 24px 30px;
+    flex: 1;
+    padding: 24px 28px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    max-height: 480px; 
+    overflow-y: auto;   
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* Certification Card Row */
+
+
+/* ================= MODERN CUSTOM SCROLLBAR ================= */
+/* Chrome, Safari, Edge */
+.cert-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cert-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.cert-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.cert-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Firefox */
+.cert-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.03);
+}
+
+/* Individual Certificate Card Hover Styling */
 .cert-card {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 14px 18px;
-    border-radius: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
     text-decoration: none;
-    color: inherit;
-    border: 1px solid transparent;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    color: #ffffff;
+    transition: background 0.2s ease, transform 0.15s ease;
 }
 
-/* Transparent Box on Hover */
 .cert-card:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* Category Tag */

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artificial Intelligence & Machine Learning Certification (AIC™) | Courstrike</title>
+    <title>Business Intelligence & Machine Learning Certification (AIC™) | Courstrike</title>
 
     <!-- Main Global CSS (Header, Footer & Dropdowns mate) -->
     <link rel="stylesheet" href="../css/style.css">
@@ -168,62 +168,82 @@
     margin-bottom: 24px;
 }
 
-/* AIC Shield Badge */
+/* ================= AIC SHIELD BADGE CARD ================= */
 .cert-shield-badge-box {
     display: inline-flex;
     align-items: center;
-    gap: 16px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    padding: 12px 18px;
-    width: fit-content;
-    margin-bottom: 24px;
+    gap: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 16px 26px;
+    width: 100%;
+    max-width: 530px;
+    box-sizing: border-box;
+    margin-bottom: 28px;
+    backdrop-filter: blur(8px);
 }
 
-.shield-icon {
-    width: 38px;
-    height: 44px;
-    background: #12151b;
-    border: 1.5px solid #ffffff;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+/* Badge Image Wrapper */
+.cert-shield-img-wrap {
+    width: 100px;
+    height: 100px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
 
-.shield-code {
-    font-size: 10px;
-    font-weight: 800;
-    color: #ffffff;
+.cert-shield-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
-.shield-check-icon {
-    width: 9px;
-    height: 9px;
-    fill: #ffffff;
-}
-
+/* Right Side Text */
 .cert-badge-text {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    justify-content: center;
+    gap: 6px;
 }
 
+/* Small Subtitle */
 .cert-badge-text .tagline {
-    font-size: 10.5px;
+    font-size: 12.5px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #808794;
-    letter-spacing: 0.6px;
+    color: #9ea5b3;
+    letter-spacing: 0.9px;
+    line-height: 1.2;
 }
 
+/* Main Title Text */
 .cert-badge-text .title {
-    font-size: 13.5px;
-    font-weight: 600;
+    font-size: 17.5px;
+    font-weight: 700;
     color: #ffffff;
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+}
+
+/* Responsive (Mobile Mate) */
+@media (max-width: 600px) {
+    .cert-shield-badge-box {
+        padding: 14px 18px;
+        gap: 16px;
+    }
+    .cert-shield-img-wrap {
+        width: 58px;
+        height: 62px;
+    }
+    .cert-badge-text .tagline {
+        font-size: 11px;
+    }
+    .cert-badge-text .title {
+        font-size: 15px;
+    }
 }
 
 /* Location Selector */
@@ -2247,9 +2267,20 @@
     position: absolute;
     top: 15px;
     bottom: 40px;
-    left: 17px;
+    left: 24px;
     width: 2px;
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.timeline-progress-line {
+    position: absolute;
+    top: 15px;
+    left: 24px;
+    width: 2px;
+    height: 0;
+    background: #ffffff; /* Bright active white line */
+    transition: height 0.08s ease-out;
+    z-index: 1;
 }
 
 /* Timeline Unit Block */
@@ -2265,13 +2296,20 @@
 .timeline-node-circle {
     position: absolute;
     top: 6px;
-    left: -46px;
-    width: 16px;
-    height: 16px;
+    left: -40px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: #090a0d;
-    border: 2px solid #8c939d;
+    border: 2px solid #555e68;
     z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-unit-block.active-node .timeline-node-circle {
+    border-color: #ffffff;
+    background: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
 }
 
 .unit-tag {
@@ -2335,18 +2373,37 @@
     object-fit: contain;
 }
 
-/* Isometric 3D Diagram Visual */
+/* Isometric Diagram Col Wrapper */
 .isometric-diagram-col {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 440px;
 }
 
-.isometric-diagram-col svg {
+/* Video Styling */
+.unit-video-preview {
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     height: auto;
-    filter: drop-shadow(0 12px 28px rgba(0, 180, 216, 0.12));
+    object-fit: contain;
+    border-radius: 12px;
+    background: transparent;
+    filter: drop-shadow(0 12px 28px rgba(0, 180, 216, 0.18));
+    display: block;
+    pointer-events: none; /* User play/pause na kare ane clean loop chale */
+}
+
+/* Responsive adjustment */
+@media (max-width: 900px) {
+    .isometric-diagram-col {
+        order: -1;
+        margin-bottom: 24px;
+    }
+    .unit-video-preview {
+        max-width: 320px;
+    }
 }
 
 /* Key Skills Pills */
@@ -4932,24 +4989,21 @@
                     <span class="separator">/</span>
                     <a href="#">Online</a> 
                     <span class="separator">/</span>
-                    <span>Artificial Intelligence Certification</span>
+                    <span>Business Intelligence Certification</span>
                 </div>
 
                 <div class="hero-label">Professional Certification</div>
 
-                <h1 class="hero-title">Artificial Intelligence<br>Certification</h1>
+                <h1 class="hero-title">Business Intelligence<br>Certification</h1>
 
                 <!-- AIC Badge Card -->
                 <div class="cert-shield-badge-box">
-                    <div class="shield-icon">
-                        <span class="shield-code">AIC</span>
-                        <svg class="shield-check-icon" viewBox="0 0 16 16">
-                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                        </svg>
+                    <div class="cert-shield-img-wrap">
+                        <img src="/images/badges/Business-Intelligence-Certification.png" alt="AIC Certification Badge" class="cert-shield-img">
                     </div>
                     <div class="cert-badge-text">
                         <span class="tagline">Upon Successful Completion</span>
-                        <span class="title">Earn the Artificial Intelligence Certification (AIC™)</span>
+                        <span class="title">Earn the Business Intelligence Certification (AIC™)</span>
                     </div>
                 </div>
 
@@ -5130,7 +5184,7 @@
         </svg>
 
         <h2 class="overview-title">Course Overview</h2>
-        <p class="overview-subtitle">Artificial Intelligence Certification</p>
+        <p class="overview-subtitle">Business Intelligence Certification</p>
 
         <button type="button" class="btn-watch-video">
             <svg class="play-svg" viewBox="0 0 24 24">
@@ -5188,12 +5242,12 @@
                         <span class="badge-foot">Certification</span>
                     </div>
 
-                    <h2 class="feature-title">Get Certified in<br>Artificial Intelligence</h2>
+                    <h2 class="feature-title">Get Certified in<br>Business Intelligence</h2>
                     
                     <div class="feature-divider"></div>
 
                     <p class="feature-desc">
-                        Gain essential Artificial Intelligence skills with hands-on instruction from industry leaders working at the best global tech companies like Amazon, Meta, and Microsoft.
+                        Gain essential Business Intelligence skills with hands-on instruction from industry leaders working at the best global tech companies like Amazon, Meta, and Microsoft.
                     </p>
 
                     <a href="#dates" class="btn-upcoming-dates">
@@ -5216,7 +5270,7 @@
                         </svg>
 
                         <p class="quote-statement">
-                            Courstrike gave me the foundation I needed in Artificial Intelligence.
+                            Courstrike gave me the foundation I needed in Business Intelligence.
                         </p>
 
                         <div class="quote-author-row">
@@ -5240,7 +5294,7 @@
                 
                 <!-- Title & Badge -->
                 <div class="card-header-row">
-                    <h3 class="card-main-title">Artificial Intelligence Certification (AIC™) Course Overview</h3>
+                    <h3 class="card-main-title">Business Intelligence Certification (AIC™) Course Overview</h3>
                     <span class="badge-version-pill">
                         <svg class="badge-check-icon" viewBox="0 0 16 16">
                             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -5442,7 +5496,7 @@
         <section class="why-certified-section">
             <div class="why-certified-container">
                 
-                <h2 class="why-certified-title">Why Get Certified in Artificial Intelligence</h2>
+                <h2 class="why-certified-title">Why Get Certified in Business Intelligence</h2>
 
                 <div class="why-certified-grid">
                     
@@ -5471,7 +5525,7 @@
                                 <line x1="10" y1="6" x2="10" y2="12"></line>
                             </svg>
                         </div>
-                        <h3>Build Your Artificial Intelligence Portfolio</h3>
+                        <h3>Build Your Business Intelligence Portfolio</h3>
                         <p>Build a portfolio that demonstrates your unique expertise and experience.</p>
                     </div>
 
@@ -5498,7 +5552,7 @@
         <section class="success-stories-section" id="testimonials">
             <div class="stories-container">
 
-                <h2 class="stories-main-title">Artificial Intelligence Success Stories</h2>
+                <h2 class="stories-main-title">Business Intelligence Success Stories</h2>
 
                 <div class="stories-content-wrap">
                     
@@ -5510,7 +5564,7 @@
                             </svg>
 
                             <div class="story-quote-text">
-                                <p>The nature of an in-person learning experience simply can't be replicated. The Artificial Intelligence course grounded me in the foundations to apply AI within my role and gave me the guiding principles to share back with my team to spark further discussions and drive efficiency.</p>
+                                <p>The nature of an in-person learning experience simply can't be replicated. The Business Intelligence course grounded me in the foundations to apply AI within my role and gave me the guiding principles to share back with my team to spark further discussions and drive efficiency.</p>
                             </div>
 
                             <div class="story-author-info">
@@ -5834,11 +5888,13 @@
         <section class="curriculum-section" id="curriculum">
             <div class="curriculum-container">
 
-                <h2 class="curriculum-main-title">Artificial Intelligence Course Curriculum</h2>
+                <h2 class="curriculum-main-title">Business Intelligence Course Curriculum</h2>
 
-                <div class="timeline-wrapper">
-                    <!-- Continuous Timeline Vertical Guide -->
+                <div class="timeline-wrapper" id="curriculumTimeline">
+                    <!-- Faint background track -->
                     <div class="timeline-vertical-line"></div>
+                    <!-- Active animated progress line -->
+                    <div class="timeline-progress-line" id="timelineProgress"></div>
 
                     <!-- ================= UNIT 1 ================= -->
                     <div class="timeline-unit-block">
@@ -5872,27 +5928,14 @@
                             </div>
 
                             <div class="isometric-diagram-col">
-                                <!-- Unit 1 Isometric Diagram Graphic -->
-                                <svg viewBox="0 0 400 380" fill="none">
-                                    <!-- Block 1 (Top) -->
-                                    <path d="M200 40 L310 100 L200 160 L90 100 Z" fill="#00b4d8" fill-opacity="0.3" stroke="#48cae4" stroke-width="2"/>
-                                    <path d="M90 100 L200 160 L200 200 L90 140 Z" fill="#0077b6" fill-opacity="0.5" stroke="#48cae4" stroke-width="2"/>
-                                    <path d="M310 100 L200 160 L200 200 L310 140 Z" fill="#023e8a" fill-opacity="0.6" stroke="#48cae4" stroke-width="2"/>
-
-                                    <!-- Block 2 (Middle Large Plate) -->
-                                    <path d="M200 130 L360 215 L200 300 L40 215 Z" fill="#00b4d8" fill-opacity="0.4" stroke="#48cae4" stroke-width="2.5"/>
-                                    <path d="M40 215 L200 300 L200 340 L40 255 Z" fill="#0077b6" fill-opacity="0.6" stroke="#48cae4" stroke-width="2.5"/>
-                                    <path d="M360 215 L200 300 L200 340 L360 255 Z" fill="#023e8a" fill-opacity="0.7" stroke="#48cae4" stroke-width="2.5"/>
-
-                                    <!-- Block 3 (Bottom Stepped) -->
-                                    <path d="M200 240 L300 295 L200 350 L100 295 Z" fill="#00b4d8" fill-opacity="0.3" stroke="#48cae4" stroke-width="2"/>
-                                    <path d="M100 295 L200 350 L200 380 L100 325 Z" fill="#0077b6" fill-opacity="0.5" stroke="#48cae4" stroke-width="2"/>
-                                    <path d="M300 295 L200 350 L200 380 L300 325 Z" fill="#023e8a" fill-opacity="0.6" stroke="#48cae4" stroke-width="2"/>
-                                </svg>
+                                <video class="unit-video-preview" autoplay muted loop playsinline>
+                                    <!-- Tamari downloaded video file no path ahiya muko -->
+                                    <source src="/images/animations/CERTIFICATE.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                         </div>
 
-                        <!-- Unit 1 Key Skills -->
                         <div class="unit-skills-group">
                             <span class="skills-label">KEY SKILLS:</span>
                             <div class="unit-skills-pills">
@@ -5908,7 +5951,6 @@
                             </div>
                         </div>
 
-                        <!-- Unit 1 Features Breakdown -->
                         <div class="unit-features-grid">
                             <div class="unit-feature-item">
                                 <div class="feature-icon-box">
@@ -5985,23 +6027,14 @@
                             </div>
 
                             <div class="isometric-diagram-col">
-                                <!-- Unit 2 Stepped Horizontal Diagonal Bars Graphic -->
-                                <svg viewBox="0 0 400 320" fill="none">
-                                    <!-- Bar 1 -->
-                                    <path d="M120 70 L220 120 L190 140 L90 90 Z" fill="#2a9d8f" stroke="#52b788" stroke-width="2"/>
-                                    <!-- Bar 2 -->
-                                    <path d="M150 110 L250 160 L220 180 L120 130 Z" fill="#0077b6" stroke="#48cae4" stroke-width="2"/>
-                                    <!-- Bar 3 -->
-                                    <path d="M180 150 L280 200 L250 220 L150 170 Z" fill="#1d3557" stroke="#457b9d" stroke-width="2"/>
-                                    <!-- Bar 4 -->
-                                    <path d="M210 190 L310 240 L280 260 L180 210 Z" fill="#0077b6" stroke="#48cae4" stroke-width="2"/>
-                                    <!-- Bar 5 -->
-                                    <path d="M240 230 L340 280 L310 300 L210 250 Z" fill="#2a9d8f" stroke="#52b788" stroke-width="2"/>
-                                </svg>
+                                <video class="unit-video-preview" autoplay muted loop playsinline>
+                                    <!-- Tamari downloaded video file no path ahiya muko -->
+                                    <source src="/images/animations/CERTIFICATE 3.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                         </div>
 
-                        <!-- Unit 2 Key Skills -->
                         <div class="unit-skills-group">
                             <span class="skills-label">KEY SKILLS:</span>
                             <div class="unit-skills-pills">
@@ -6015,7 +6048,6 @@
                             </div>
                         </div>
 
-                        <!-- Unit 2 Features Breakdown (4 Columns) -->
                         <div class="unit-features-grid">
                             <div class="unit-feature-item">
                                 <div class="feature-icon-box">
@@ -6112,42 +6144,14 @@
                             </div>
 
                             <div class="isometric-diagram-col">
-                                <!-- Unit 3 Connected Agentic Network Isometric Diagram -->
-                                <svg viewBox="0 0 420 380" fill="none">
-                                    <!-- Interconnecting Network Lines -->
-                                    <line x1="120" y1="110" x2="260" y2="190" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.8"/>
-                                    <line x1="260" y1="110" x2="160" y2="210" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.8"/>
-                                    <line x1="80" y1="210" x2="290" y2="300" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.8"/>
-                                    
-                                    <!-- Node Cubes -->
-                                    <g transform="translate(100, 70)">
-                                        <path d="M30 0 L60 15 L30 30 L0 15 Z" fill="#00b4d8" fill-opacity="0.5" stroke="#90e0ef" stroke-width="1.5"/>
-                                        <path d="M0 15 L30 30 L30 60 L0 45 Z" fill="#0077b6" fill-opacity="0.7" stroke="#90e0ef" stroke-width="1.5"/>
-                                        <path d="M60 15 L30 30 L30 60 L60 45 Z" fill="#03045e" fill-opacity="0.8" stroke="#90e0ef" stroke-width="1.5"/>
-                                    </g>
-
-                                    <g transform="translate(260, 70)">
-                                        <path d="M30 0 L60 15 L30 30 L0 15 Z" fill="#0077b6" fill-opacity="0.5" stroke="#90e0ef" stroke-width="1.5"/>
-                                        <path d="M0 15 L30 30 L30 60 L0 45 Z" fill="#023e8a" fill-opacity="0.7" stroke="#90e0ef" stroke-width="1.5"/>
-                                        <path d="M60 15 L30 30 L30 60 L60 45 Z" fill="#03045e" fill-opacity="0.8" stroke="#90e0ef" stroke-width="1.5"/>
-                                    </g>
-
-                                    <g transform="translate(70, 180)">
-                                        <path d="M30 0 L60 15 L30 30 L0 15 Z" fill="#00b4d8" fill-opacity="0.5" stroke="#90e0ef" stroke-width="1.5"/>
-                                        <path d="M0 15 L30 30 L30 60 L0 45 Z" fill="#0077b6" fill-opacity="0.7" stroke="#90e0ef" stroke-width="1.5"/>
-                                        <path d="M60 15 L30 30 L30 60 L60 45 Z" fill="#03045e" fill-opacity="0.8" stroke="#90e0ef" stroke-width="1.5"/>
-                                    </g>
-
-                                    <g transform="translate(230, 240)">
-                                        <path d="M30 0 L60 15 L30 30 L0 15 Z" fill="#2a9d8f" fill-opacity="0.6" stroke="#52b788" stroke-width="1.5"/>
-                                        <path d="M0 15 L30 30 L30 60 L0 45 Z" fill="#1b4332" fill-opacity="0.7" stroke="#52b788" stroke-width="1.5"/>
-                                        <path d="M60 15 L30 30 L30 60 L60 45 Z" fill="#081c15" fill-opacity="0.8" stroke="#52b788" stroke-width="1.5"/>
-                                    </g>
-                                </svg>
+                                <video class="unit-video-preview" autoplay muted loop playsinline>
+                                    <!-- Tamari downloaded video file no path ahiya muko -->
+                                    <source src="/images/animations/CERTIFICATE 2.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                         </div>
 
-                        <!-- Unit 3 Key Skills -->
                         <div class="unit-skills-group">
                             <span class="skills-label">KEY SKILLS:</span>
                             <div class="unit-skills-pills">
@@ -6160,7 +6164,6 @@
                             </div>
                         </div>
 
-                        <!-- Unit 3 Features Breakdown (2 Columns) -->
                         <div class="unit-features-grid">
                             <div class="unit-feature-item">
                                 <div class="feature-icon-box">
@@ -6199,13 +6202,13 @@
             <div class="earn-cert-container">
 
                 <h2 class="earn-cert-title">
-                    Earn Your Artificial Intelligence Certification<br>(AIC™)
+                    Earn Your Business Intelligence Certification<br>(AIC™)
                 </h2>
 
                 <div class="earn-cert-divider"></div>
 
                 <p class="earn-cert-desc">
-                    Successfully completing Courstrike's Artificial Intelligence Certification course will earn you the globally recognized Courstrike Artificial Intelligence Certification (AIC™), demonstrating your mastery of the latest cutting-edge skills and tools. Add this credential to your LinkedIn profile and resume or CV.
+                    Successfully completing Courstrike's Business Intelligence Certification course will earn you the globally recognized Courstrike Business Intelligence Certification (AIC™), demonstrating your mastery of the latest cutting-edge skills and tools. Add this credential to your LinkedIn profile and resume or CV.
                 </p>
 
                 <!-- Certificate Visual Mockup -->
@@ -6219,7 +6222,7 @@
                         <span>COURSTRIKE</span>
                     </div>
 
-                    <h3 class="cert-mock-title">Artificial Intelligence<br>Certification</h3>
+                    <h3 class="cert-mock-title">Business Intelligence<br>Certification</h3>
                     <div class="cert-mock-subtitle">(AIC™)</div>
                     <div class="cert-mock-type">CERTIFICATE</div>
 
@@ -6333,12 +6336,12 @@
             <div class="next-step-badge">
                 <img
                     src="images/aic-certificate.png"
-                    alt="Artificial Intelligence Certification"
+                    alt="Business Intelligence Certification"
                 >
             </div>
 
             <h2 class="next-step-title">
-                Get Certified in Artificial<br class="desktop-break">
+                Get Certified in Business<br class="desktop-break">
                 Intelligence
             </h2>
 
@@ -6686,7 +6689,7 @@
                     </h2>
 
                     <p class="alumni-network-desc">
-                        With a Courstrike certification, you'll join our global alumni network: a community of accomplished professionals across a range of critical tech skills, including Artificial Intelligence.
+                        With a Courstrike certification, you'll join our global alumni network: a community of accomplished professionals across a range of critical tech skills, including Business Intelligence.
                     </p>
 
                     <div class="alumni-network-stats">
@@ -6720,7 +6723,7 @@
         <!-- ================= INDUSTRY-LED CERTIFICATION LOGOS ================= -->
         <section class="industry-led-section">
             <div class="industry-led-container">
-                <h2 class="industry-led-title">Industry-Led Artificial Intelligence Certification</h2>
+                <h2 class="industry-led-title">Industry-Led Business Intelligence Certification</h2>
                 <div class="industry-led-rule"></div>
                 <p class="industry-led-desc">
                     Courstrike's globally recognized certifications are created by industry professionals, for industry professionals. Our network of experts from leading tech companies provide insights and guidance to ensure each certification demonstrates the latest cutting-edge skills and tools.
@@ -7018,7 +7021,7 @@
                     <!-- FAQ 9 -->
                     <div class="faq-accordion-item">
                         <button type="button" class="faq-trigger-btn">
-                            <span class="faq-question-text">How recognized is the Courstrike Artificial Intelligence Certification (AIC™)?</span>
+                            <span class="faq-question-text">How recognized is the Courstrike Business Intelligence Certification (AIC™)?</span>
                             <span class="faq-icon-toggle">&#43;</span>
                         </button>
                         <div class="faq-content-pane">
@@ -7535,6 +7538,54 @@ if (secondaryNav) {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const timelineWrapper = document.getElementById("curriculumTimeline");
+    const progressLine = document.getElementById("timelineProgress");
+    const unitBlocks = document.querySelectorAll(".timeline-unit-block");
+
+    if (!timelineWrapper || !progressLine) return;
+
+    function handleTimelineScroll() {
+        const wrapperRect = timelineWrapper.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Line viewport na center (center of screen) sudhi aave tyare grow thashe
+        const triggerPoint = windowHeight * 0.55; 
+
+        // Calculation: Timeline wrapper mathi ketlu scroll thayu
+        let scrollDistance = triggerPoint - wrapperRect.top;
+        const maxScrollHeight = wrapperRect.height - 40;
+
+        if (scrollDistance < 0) {
+            scrollDistance = 0;
+        } else if (scrollDistance > maxScrollHeight) {
+            scrollDistance = maxScrollHeight;
+        }
+
+        // Animated progress line ni height set karo
+        progressLine.style.height = `${scrollDistance}px`;
+
+        // Jem jem line dot sudhi pohche tem tem dot ne active/solid white banavo
+        unitBlocks.forEach(block => {
+            const node = block.querySelector(".timeline-node-circle");
+            if (!node) return;
+
+            const nodeRect = node.getBoundingClientRect();
+            // Jo screen scroll node thi aagal nikalyu hoi to circle ne active karo
+            if (nodeRect.top <= triggerPoint) {
+                block.classList.add("active-node");
+            } else {
+                block.classList.remove("active-node");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleTimelineScroll, { passive: true });
+    window.addEventListener("resize", handleTimelineScroll);
+    handleTimelineScroll(); // Initial load check
+});
+
     </script>
 </body>
 </html>
