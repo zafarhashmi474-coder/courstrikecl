@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("enterpriseSubnav");
 
     const whySection =
-        document.getElementById("why-brainstation");
+        document.getElementById("why-courstrike");
 
 
     /* =========================================
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = [
 
         document.getElementById(
-            "why-brainstation"
+            "why-courstrike"
         ),
 
         document.getElementById(

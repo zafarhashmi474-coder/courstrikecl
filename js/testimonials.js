@@ -16,7 +16,7 @@ const testimonials = [
         role: "Launch Consultant at Shopify",
         logo: "logos/shopify.svg",
         image: "images/testimonials/maxime-moyson-success-story-DbX-YwKw.avif",
-        quote: "BrainStation helped me build practical skills that I could apply directly to my work.",
+        quote: "Courstrike helped me build practical skills that I could apply directly to my work.",
         description: "Maxime shares his experience learning new digital skills."
     },
 
@@ -124,19 +124,19 @@ const testimonials = [
                     "I studied sociology in college and was a content marketing professional before my current role. But I have always had an appreciation for technology and the potential it has in helping people build generational wealth, especially for historically marginalized and low-income communities."
             },
             {
-                question: "What motivated you to start digital skills training at BrainStation?",
+                question: "What motivated you to start digital skills training at Courstrike?",
                 answer:
                     "The last few months of 2021 afforded me the opportunity to really tap into the world of big data. Data touches almost every industry. The ability to use it to solve the world’s toughest problems is limitless in the right hands for the right reasons."
             },
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "Honestly, I think that learning SQL for the first genuine time was the highlight of my time at BrainStation. I really liked how I got to work on real-time SQL exercises with my Educators and peers and that the material actually stuck this time. My relationship with prior programming languages left me discouraged because I didn’t have the patience or knowledge to correct my mistakes and ask for help. Not anymore."
+                    "Honestly, I think that learning SQL for the first genuine time was the highlight of my time at Courstrike. I really liked how I got to work on real-time SQL exercises with my Educators and peers and that the material actually stuck this time. My relationship with prior programming languages left me discouraged because I didn’t have the patience or knowledge to correct my mistakes and ask for help. Not anymore."
             },
             {
                 question: "What would you say were the most valuable skills you learned? How have you incorporated those skills in your current role?",
                 answer:
-                    "In my new role, I work with data professionals who code in SQL. It’s nice to have that vocabulary ready to go if I need to talk technically. I now have the confidence to tackle new side projects beyond my BrainStation course."
+                    "In my new role, I work with data professionals who code in SQL. It’s nice to have that vocabulary ready to go if I need to talk technically. I now have the confidence to tackle new side projects beyond my Courstrike course."
             },
             {
                 question: "What advice would you give women who are considering a career in the tech industry?",
@@ -167,7 +167,7 @@ const testimonials = [
                     "I’m originally from Sweden but moved to the US for college. I studied Economics, with a minor in Visual Arts, at Harvard University and started off my career in media in New York. <br><br> I started out working in strategy and analytics at various media agencies (Digitas, Huge) before I transitioned into more of a content strategy and operation’s roles (at BuzzFeed and then Culture Trip). <br><br> I love working at TikTok, which is at the intersection of content and product."
             },
             {
-                question: "What motivated you to start digital skills training at BrainStation?",
+                question: "What motivated you to start digital skills training at Courstrike?",
                 answer:
                     "Working at a tech company in hyper-growth mode, I wanted to ensure I stayed relevant and joined this course to learn the skills, tools, and processes needed to build killer products. <br><br> I have always had a passion for content, user experience design, and product innovation, and I wanted to grow my skills in those areas even further."
             },
@@ -179,15 +179,15 @@ const testimonials = [
             {
                 question: "What were your thoughts about the online learning experience? How did it compare to any others you might have participated in?",
                 answer:
-                    "This was my first online course and Brainstation really impressed me with their online program. You could tell everyone was there to learn and had a purpose for taking the course, which made it super engaging and collaborative. Lots of people from various backgrounds allowed for some very interesting discussions."
+                    "This was my first online course and Courstrike really impressed me with their online program. You could tell everyone was there to learn and had a purpose for taking the course, which made it super engaging and collaborative. Lots of people from various backgrounds allowed for some very interesting discussions."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation has given me a deeper understanding of all things product, which has been invaluable in my role as Program Manager at TikTok.<br><br> It’s enabled me to really support our teams, helping them build products and solutions in the best way possible that serves our amazing creator community."
+                    "Courstrike has given me a deeper understanding of all things product, which has been invaluable in my role as Program Manager at TikTok.<br><br> It’s enabled me to really support our teams, helping them build products and solutions in the best way possible that serves our amazing creator community."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
                     "Do the work and spend time exploring the concepts you learn."
             },
@@ -210,9 +210,9 @@ const testimonials = [
                     "I am passionate about working in entrepreneurial start-up environments, especially in the healthcare and biotech industries. My educational background is in Biology."
             },
             {
-                question: "Why did you choose to study at BrainStation?",
+                question: "Why did you choose to study at Courstrike?",
                 answer:
-                    "BrainStation has a reputation for delivering top-notch digital skills training. Their affordable prices and flexible schedules made my choice an easy one."
+                    "Courstrike has a reputation for delivering top-notch digital skills training. Their affordable prices and flexible schedules made my choice an easy one."
             },
             {
                 question: "What motivated you to start digital skills training?",
@@ -222,15 +222,15 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "Meeting and building connections with my classmates. My classmates came from different locations and backgrounds and brought their unique perspectives to class work and discussions. <br><br>BrainStation also offers a suite of resources that makes their students feel supported every step of the way. We were always encouraged to seek out one-on-one assistance if we encountered roadblocks. <br><br>I happened to have the same instructor for both of my courses, and she was extremely knowledgeable and knew how to make the class engaging and fun."
+                    "Meeting and building connections with my classmates. My classmates came from different locations and backgrounds and brought their unique perspectives to class work and discussions. <br><br>Courstrike also offers a suite of resources that makes their students feel supported every step of the way. We were always encouraged to seek out one-on-one assistance if we encountered roadblocks. <br><br>I happened to have the same instructor for both of my courses, and she was extremely knowledgeable and knew how to make the class engaging and fun."
             },
             {
                 question: "Was this your first online learning experience?",
                 answer:
-                    "I had taken a few courses in college that were online, but they were not as structured and engaging as the ones I took through BrainStation. Both courses that I took through BrainStation exceeded my expectations and proved to me that online learning can be just as engaging as in-person learning."
+                    "I had taken a few courses in college that were online, but they were not as structured and engaging as the ones I took through Courstrike. Both courses that I took through Courstrike exceeded my expectations and proved to me that online learning can be just as engaging as in-person learning."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
                     "Learning how to code has helped me in a number of ways. It has given me a unique perspective and understanding of the more technical aspects of my work. It has also given me the tools needed to conduct data analyses, run reports, and create visualizations."
             },
@@ -245,9 +245,9 @@ const testimonials = [
                     "Application is more important than technique. Being able to think through complex problems in class helped me rethink how to approach difficult and challenging tasks in my current role."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "I would recommend BrainStation to learners who are interested in building their technical skill sets, so speak to a learning advisor if you are considering a BrainStation course or have questions. <br><br>I would happily take another course if the opportunity arose."
+                    "I would recommend Courstrike to learners who are interested in building their technical skill sets, so speak to a learning advisor if you are considering a Courstrike course or have questions. <br><br>I would happily take another course if the opportunity arose."
             },
         ]
     },
@@ -273,9 +273,9 @@ const testimonials = [
                     "I studied mechanical engineering and started off my career at Hyundai Motors in India . I've always been very interested in technology and that's one of the main reasons why I wanted to explore a more technical role. After a fair bit of personal brand-building and advocacy for my skills, I had the opportunity to move into a more technology-focused role within manufacturing. This role concentrated on setting up our infrastructure, and ensuring that all the logic and frameworks were in place to deliver a smooth process. This role also allowed me to work with a lot of new products, some of which are out in the market today, being used by customers. <br> <br> After that role, I decided to pivot and move from being in a very technology-focused engineering role, into managing business products. After I completed my MBA, I wanted to explore what my next opportunity could be. After doing internships in both the healthcare and financial services industries, I decided to move into the financial services as it was more technology focused, and I've been working at Capital One ever since. <br> <br> When I initially joined, I started working on partnership products, building out capabilities for our partners to deliver seamless customer experiences, such as rewards, as well as making the process of applying for a new credit card as simple and efficient as possible. From there, I moved into my current role, which is managing transactions. It's been an interesting journey."
             },
             {
-                question: "What made you decide to study at BrainStation?",
+                question: "What made you decide to study at Courstrike?",
                 answer:
-                    "BrainStation came recommended from one of my peers at Capital One. They had taken the UX design course and highly recommended it. They really convinced me to try it out. I had also heard about BrainStation from a few other people who had taken a course there before. <br><br> Going into it I knew that I wanted to do a course on UX design. I would say it’s an area that I lacked expertise in and wanted to be better at. In most scenarios, I'm a technical person with a business background. But I certainly didn’t have much experience in UX design. That was an area that, although intuitively made a bunch of sense to me, I hadn’t had the opportunity to invest time into. That's why I decided to take the UX design course."
+                    "Courstrike came recommended from one of my peers at Capital One. They had taken the UX design course and highly recommended it. They really convinced me to try it out. I had also heard about Courstrike from a few other people who had taken a course there before. <br><br> Going into it I knew that I wanted to do a course on UX design. I would say it’s an area that I lacked expertise in and wanted to be better at. In most scenarios, I'm a technical person with a business background. But I certainly didn’t have much experience in UX design. That was an area that, although intuitively made a bunch of sense to me, I hadn’t had the opportunity to invest time into. That's why I decided to take the UX design course."
             },
             {
                 question: "What motivated you to start digital skills training?",
@@ -311,17 +311,17 @@ const testimonials = [
                     "I started in Communications and Media Studies and then went on to get an English degree with a minor in Journalism. After I finished school I wasn't really sure what I wanted to do. I worked in film a bit, for a management company. I worked in fashion which was not a fit and then finally landed a copywriting job. I was able to shift from copywriting into a UX writing job at Best Buy, where I was one of the first UX Writers there. I was there for about four years until I got recruited to work at Facebook."
             },
             {
-                question: "Why did you choose to study at BrainStation?",
+                question: "Why did you choose to study at Courstrike?",
                 answer:
-                    "I was curious about product design in general when I was at Best Buy, there were UX Designers and UI Designers, and I was just curious. I knew I didn't have the visual design skills, but I was curious about UX because I thought wireframing and understanding the user journey was something I was pretty passionate about – I loved working with the UX Designers at Best Buy. <br><br> I was curious if I would be interested in that and just wanted to learn more about it. I had a couple colleagues who actually taught at BrainStation and other colleagues who had taken courses with BrainStation and it seemed really accessible. I was able to dip my toes in the water and see what UX was all about."
+                    "I was curious about product design in general when I was at Best Buy, there were UX Designers and UI Designers, and I was just curious. I knew I didn't have the visual design skills, but I was curious about UX because I thought wireframing and understanding the user journey was something I was pretty passionate about – I loved working with the UX Designers at Best Buy. <br><br> I was curious if I would be interested in that and just wanted to learn more about it. I had a couple colleagues who actually taught at Courstrike and other colleagues who had taken courses with Courstrike and it seemed really accessible. I was able to dip my toes in the water and see what UX was all about."
             },
             {
-                question: "What would you say was the highlight of your learning experience at BrainStation?",
+                question: "What would you say was the highlight of your learning experience at Courstrike?",
                 answer:
                     "I really liked the class project. I liked being able to practice the skills we learned in class and figuring out what your product was doing, creating the wireframes, and getting feedback from the Instructors. <br><br> I created an app that helped people find apartments, and specifically, roommates. My project was like a dating app but for housing, where you could look for a roommate through mutual friends, or someone who you shared common interests with."
             },
             {
-                question: "How would you say that the BrainStation experience impacted your career?",
+                question: "How would you say that the Courstrike experience impacted your career?",
                 answer:
                     "I feel a lot more comfortable with the UX design language. I understand the process and I understand the values and how design is a key component in the UX writing field. <br><br> A lot of the time people coming into the UX writing or content strategy fields have a journalism or English background, or maybe they've worked in advertising as a copywriter. That UX piece is really valuable and the course really helped me gain a high-level understanding – It made me feel more competent in that area and that’s been really valuable in my career."
             },
@@ -356,12 +356,12 @@ const testimonials = [
             {
                 question: "Can you tell us about your education and career background? How did you get to where you are now?",
                 answer:
-                    "I went to university and got a degree in accounting. I did that for maybe a year and a half and then I realized that it definitely wasn’t for me. After that point I thought about the skills that I had and how I would be able to pivot into something more interesting. I used my skills and took on analytical and marketing roles following that. While taking on differing roles at various companies, I had discovered that I really enjoyed doing more creative work. I figured going to work for a digital agency would be an interesting challenge. <br><br> Once I began working at the agency as a Project Manager, I realized that I really enjoyed working on digital projects. I thought managing a product would be a great challenge so at that point, I decided to go to BrainStation; where I took the Product Management Certificate Course. <br><br> During that time I started working at telecommunications company as a Product Manager on their smart home product portfolio. I did that for a few years and really enjoyed it and that’s when I was approached by MasterCard to take on my current role. I didn’t have a background in fintech but my enthusiasm and curiosity really showed my employer that I was adaptable and I could learn on the go."
+                    "I went to university and got a degree in accounting. I did that for maybe a year and a half and then I realized that it definitely wasn’t for me. After that point I thought about the skills that I had and how I would be able to pivot into something more interesting. I used my skills and took on analytical and marketing roles following that. While taking on differing roles at various companies, I had discovered that I really enjoyed doing more creative work. I figured going to work for a digital agency would be an interesting challenge. <br><br> Once I began working at the agency as a Project Manager, I realized that I really enjoyed working on digital projects. I thought managing a product would be a great challenge so at that point, I decided to go to Courstrike; where I took the Product Management Certificate Course. <br><br> During that time I started working at telecommunications company as a Product Manager on their smart home product portfolio. I did that for a few years and really enjoyed it and that’s when I was approached by MasterCard to take on my current role. I didn’t have a background in fintech but my enthusiasm and curiosity really showed my employer that I was adaptable and I could learn on the go."
             },
             {
-                question: "Why did you choose to study at BrainStation?",
+                question: "Why did you choose to study at Courstrike?",
                 answer:
-                    "What I really liked about BrainStation was that I had a chance to meet with some of the Instructors. I felt like they had a lot of real world experience, and the content was very practical. That aspect of it really appealed to me. You were able to hit the ground running. When I took the course I was working a full-time job, so time was of the essence. I really wanted to upskill myself and try to be as efficient as possible. The scheduling options, the Instructors, and the overall community is what really led me to BrainStation. <br> <br> Once I had attended one of their Info Sessions I knew it was going to be a good fit."
+                    "What I really liked about Courstrike was that I had a chance to meet with some of the Instructors. I felt like they had a lot of real world experience, and the content was very practical. That aspect of it really appealed to me. You were able to hit the ground running. When I took the course I was working a full-time job, so time was of the essence. I really wanted to upskill myself and try to be as efficient as possible. The scheduling options, the Instructors, and the overall community is what really led me to Courstrike. <br> <br> Once I had attended one of their Info Sessions I knew it was going to be a good fit."
             },
         ]
     },
@@ -379,10 +379,10 @@ const testimonials = [
             {
                 question: "Can you tell us a bit more about your education and your career background?",
                 answer:
-                    "Like most UX designers and UX researchers, there isn’t always a straightforward path. I studied Psychology and Marketing. Upon graduating, I knew I wanted to do something in consumer behavior, so I could go into brand strategy at an ad agency. I was doing a lot of brand research and strategic thinking type of work, which I loved. I loved strategizing and developing powerful insights for our campaigns, but I felt like they could always be used for more than just an ad campaign. <br><br> I wanted to have a different output and be able to design something tangible. That's how I became interested in design strategy and service design. After attending some of the free introductory workshops I decided to sign up for BrainStation’s Part-Time UX Design Certificate Course to get some foundational design skills and knowledge. After completing the UX Design course, I got a better sense that I really do want to be part of the design world."
+                    "Like most UX designers and UX researchers, there isn’t always a straightforward path. I studied Psychology and Marketing. Upon graduating, I knew I wanted to do something in consumer behavior, so I could go into brand strategy at an ad agency. I was doing a lot of brand research and strategic thinking type of work, which I loved. I loved strategizing and developing powerful insights for our campaigns, but I felt like they could always be used for more than just an ad campaign. <br><br> I wanted to have a different output and be able to design something tangible. That's how I became interested in design strategy and service design. After attending some of the free introductory workshops I decided to sign up for Courstrike’s Part-Time UX Design Certificate Course to get some foundational design skills and knowledge. After completing the UX Design course, I got a better sense that I really do want to be part of the design world."
             },
             {
-                question: "What would you say was the highlight of your learning experience at BrainStation?",
+                question: "What would you say was the highlight of your learning experience at Courstrike?",
                 answer:
                     "As a Brand Researcher and Market Researcher, I had basic research skills, but I didn't have a lot of design foundations. Learning about things like affordance and usability, all this new knowledge was really valuable for me as someone without that basic design knowledge background."
             },
@@ -397,7 +397,7 @@ const testimonials = [
                     "Learning the foundations of design is what really helps me look at the world from a different lens. I see experiences, objects, and interactions from a user's perspective, I always ask: Is this enjoyable? Is it usable? Having that kind of lens is super important as a designer. That’s what I still carry forward today."
             },
             {
-                question: "What advice would you give to professionals that are considering a BrainStation course or program?",
+                question: "What advice would you give to professionals that are considering a Courstrike course or program?",
                 answer:
                     "I felt equipped after the part-time experience to start my new career in the design world. I still really needed to network and hustle, and really put in the work to break in. Taking the course will help you but you also need to network, go for coffee, sign up for hackathons, go to meetups, and show people that you're really passionate about the subject and willing to put in the effort."
             },
@@ -430,9 +430,9 @@ const testimonials = [
                     "I have a Bachelor of Arts and I worked primarily in the financial services industry in communications and marketing. I moved over into tech a few years ago. I went to a small startup and then joined Intuit after that. <br><br> I find that Intuit is the perfect place for me because I love the fast-paced, customer-obsessed and innovation-driven culture that you find working in a tech company, but I also get to support financial products, which I'm extremely interested in and passionate about. Intuit's vision is to be ‘the source of truth for your business' and we're working tirelessly to help small businesses more easily, quickly, and cost-effectively move and manage their money, which we know is absolutely critical to their success."
             },
             {
-                question: "What was it that led you to study at BrainStation?",
+                question: "What was it that led you to study at Courstrike?",
                 answer:
-                    "I was so amazed at the digital focus and I hadn't really seen any other schools like that. There were a lot of traditional institutions trying to jump into the digital space, but I didn't feel like it was hands-on enough, and instead focused mostly on theory. BrainStation was very hands-on and provided the real training that you’d need to have in the field. <br><br> I was working at a traditional financial institution and I was wanting to move into tech, but I didn't really know how. As a Marketer, I was interested in getting closer to product marketing and I was thinking about product management as well. I wasn't really sure. And so I took the Product Management Certificate Course as a way to just jump into product management and understand that area, but specifically for digital products. It was a really great course. I found that I learned the foundations of product management but also understood it with a digital-first mindset."
+                    "I was so amazed at the digital focus and I hadn't really seen any other schools like that. There were a lot of traditional institutions trying to jump into the digital space, but I didn't feel like it was hands-on enough, and instead focused mostly on theory. Courstrike was very hands-on and provided the real training that you’d need to have in the field. <br><br> I was working at a traditional financial institution and I was wanting to move into tech, but I didn't really know how. As a Marketer, I was interested in getting closer to product marketing and I was thinking about product management as well. I wasn't really sure. And so I took the Product Management Certificate Course as a way to just jump into product management and understand that area, but specifically for digital products. It was a really great course. I found that I learned the foundations of product management but also understood it with a digital-first mindset."
             },
             {
                 question: "What would you say was the highlight of your learning experience?",
@@ -450,9 +450,9 @@ const testimonials = [
                     "I was working on a fitness app and it would actually probably be huge because of the pandemic and work from home fitness surge! I’m a trained yoga instructor and my sister is a ballet teacher. She works at the National Ballet School. One of the biggest things that I've noticed is that individual teachers don't have much power. Loads of students get very attached to certain teachers. Often I want to specifically book my schedule around a specific teacher and there’s no way to connect one-on-one and just follow a teacher from studio to studio. So it was about trying to form that connection of giving more power to the teacher to student relationship."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "I would say it really helped. It prepared me for transitioning into the tech world, moving from Waterfall to Agile -- I had never worked in environments like that before. <br><br> Learning at BrainStation helped prepare me a lot for that. With SaaS products, you're just constantly iterating and learning and you're so much closer to the customer, I find, compared to the traditional way you create a product, where you launch it and you might not change it for two years."
+                    "I would say it really helped. It prepared me for transitioning into the tech world, moving from Waterfall to Agile -- I had never worked in environments like that before. <br><br> Learning at Courstrike helped prepare me a lot for that. With SaaS products, you're just constantly iterating and learning and you're so much closer to the customer, I find, compared to the traditional way you create a product, where you launch it and you might not change it for two years."
             },
             {
                 question: "Would you say those are the most valuable skills that you learned?",
@@ -460,9 +460,9 @@ const testimonials = [
                     "Just being able to build a product and understand how products are built in a tech environment. It’s something that I could have eventually learned on the job, but it was nice being able to already have a foundation before I made that switch, it's a pretty good way to fast track that kind of learning process."
             },
             {
-                question: "What advice would you give to other professionals who may be thinking about taking a BrainStation course or program?",
+                question: "What advice would you give to other professionals who may be thinking about taking a Courstrike course or program?",
                 answer:
-                    "I'd say do it – BrainStation was awesome. Something super special about BrainStation is the culture. There's a lot of testimonials about the technical skills learned, but the culture is so special and it had such a positive impact on me. I really enjoyed going to the class. I love all of the people I met and the Instructors were phenomenal."
+                    "I'd say do it – Courstrike was awesome. Something super special about Courstrike is the culture. There's a lot of testimonials about the technical skills learned, but the culture is so special and it had such a positive impact on me. I really enjoyed going to the class. I love all of the people I met and the Instructors were phenomenal."
             },
         ]
     },
@@ -485,10 +485,10 @@ const testimonials = [
             {
                 question: "Can you tell us a bit about your education and career background?",
                 answer:
-                    "Before the course at BrainStation, I got a Master’s degree from the University of Grenoble. After graduation, I quit my job at the bank, traveled around the world, and then landed in Canada to change careers."
+                    "Before the course at Courstrike, I got a Master’s degree from the University of Grenoble. After graduation, I quit my job at the bank, traveled around the world, and then landed in Canada to change careers."
             },
             {
-                question: "Why did you choose to study at BrainStation?",
+                question: "Why did you choose to study at Courstrike?",
                 answer:
                     "I wanted to expand my data skills. I started with the Data Analytics certificate and I recently took the Data Science Certificate Course."
             },
@@ -498,9 +498,9 @@ const testimonials = [
                     "My experience was great. The Instructors are very knowledgeable, but they’re also passionate about what they’re doing and that's the best way to share their knowledge and experience. <br><br> I also had the opportunity to get to know professionals who were working in different industries with different backgrounds and I really enjoyed that."
             },
             {
-                question: "What advice would you give professionals considering a BrainStation course or program?",
+                question: "What advice would you give professionals considering a Courstrike course or program?",
                 answer:
-                    "Everyone who wants to achieve a career goal, learn a new skill, or gain more knowledge in a certain field should not be afraid to take the next step. Taking a course at BrainStation is a great opportunity – the skills you’ll learn are very practical and the learning experience and environment are made for professionals who really want to learn."
+                    "Everyone who wants to achieve a career goal, learn a new skill, or gain more knowledge in a certain field should not be afraid to take the next step. Taking a course at Courstrike is a great opportunity – the skills you’ll learn are very practical and the learning experience and environment are made for professionals who really want to learn."
             },
         ]
     },
@@ -518,7 +518,7 @@ const testimonials = [
             {
                 question: "",
                 answer:
-                    "Meet Max Smillie, a recent alum of BrainStation’s Data Analytics Certificate Course. Shortly after finishing the course, Max was promoted to Regional Community Lead for lululemon. BrainStation sat down with Max to hear about his experience in the course, the role of data in retail, and how he plans to use data in his new role."
+                    "Meet Max Smillie, a recent alum of Courstrike’s Data Analytics Certificate Course. Shortly after finishing the course, Max was promoted to Regional Community Lead for lululemon. Courstrike sat down with Max to hear about his experience in the course, the role of data in retail, and how he plans to use data in his new role."
             },
             {
                 question: "You are the Regional Community Lead at lululemon, can you tell us about your role and what it entails?",
@@ -526,12 +526,12 @@ const testimonials = [
                     "At lululemon, we’re making a concerted push to be a brand that’s best in the world at events. With that goal, there are lots of large scale events happening, and so my role as the Regional Community Lead is to take on those big, head office-driven activations."
             },
             {
-                question: "What was your motivation behind taking the BrainStation Data Analytics Certificate Course?",
+                question: "What was your motivation behind taking the Courstrike Data Analytics Certificate Course?",
                 answer:
                     "The direction that we’re going is to be a brand that ties metrics and KPIs back to community events. The head office is pushing us to be more data-driven, to show results for events that are being created. <br><br> I could see that there was a bit of a gap in training, so my thought was that I would get ahead of the curve and take some time to study data, how it’s collected, how it can be displayed, and how data sets can be manipulated. This has been a great course to take and I think it definitely helped push me into the role I’m in now."
             },
             {
-                question: "Can you tell us about your experience at BrainStation?",
+                question: "Can you tell us about your experience at Courstrike?",
                 answer:
                     "The highlight was definitely the people. I met some new people, the instructors are really down-to-earth, and it felt like a family. The people who are in the classes are all working to better themselves and are real go-getters, I think that’s what makes the class so special."
             },
@@ -576,22 +576,22 @@ const testimonials = [
             {
                 question: "Can you tell us a bit about your education and career background?",
                 answer:
-                    "I have a bachelor’s degree in business administration. In order to make a smoother and easier transition into the tech sector, I completed the Product Management course at BrainStation in 2016. <br><br> Since then, I have worked in a number of companies and startups at different stages, developing different skill sets required for a Product Manager."
+                    "I have a bachelor’s degree in business administration. In order to make a smoother and easier transition into the tech sector, I completed the Product Management course at Courstrike in 2016. <br><br> Since then, I have worked in a number of companies and startups at different stages, developing different skill sets required for a Product Manager."
             },
             {
-                question: "What was the highlight of your learning experience at BrainStation?",
+                question: "What was the highlight of your learning experience at Courstrike?",
                 answer:
                     "The highlight of my learning experience was connecting with like-minded people in my class and helping each other to grow along the same path. It felt like we were all there, supporting each other to achieve our goals and dreams."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation gave me a very holistic view of a product management role, and as I grew in my career, I knew what areas to focus on to help me succeed."
+                    "Courstrike gave me a very holistic view of a product management role, and as I grew in my career, I knew what areas to focus on to help me succeed."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation is a great place to start working toward their career path but this is just a beginning. In order to be successful they should keep the curiosity alive in their hearts and their minds. <br><br> BrainStation is not just a course or program, but a community. That community stays in touch for years after they finish the course. I highly recommend that people stay in touch with the school by attending webinars and reading blogs. Your growth doesn't end when their course ends."
+                    "Courstrike is a great place to start working toward their career path but this is just a beginning. In order to be successful they should keep the curiosity alive in their hearts and their minds. <br><br> Courstrike is not just a course or program, but a community. That community stays in touch for years after they finish the course. I highly recommend that people stay in touch with the school by attending webinars and reading blogs. Your growth doesn't end when their course ends."
             },
             {
                 question: "From your perspective as an Instructor, how can students make the most of their learning?",
@@ -624,17 +624,17 @@ const testimonials = [
             {
                 question: "What made you decide to take a UX Certificate Course?",
                 answer:
-                    "I talked with a few connections of mine in the tech industry and they advised that if I was interested in digital and looking for my next career move, I needed to develop a digital skill set. They mentioned that being a User Experience Generalist is a good gateway into the digital world without obtaining a hard skill like coding, or even design. I didn’t really know where to take my skill set next, so I decided to take BrainStation’s Part-Time UX Design Certificate Course. I could do a little bit of everything, but this course was a good way for me to figure out if UX was something I could see myself doing long term."
+                    "I talked with a few connections of mine in the tech industry and they advised that if I was interested in digital and looking for my next career move, I needed to develop a digital skill set. They mentioned that being a User Experience Generalist is a good gateway into the digital world without obtaining a hard skill like coding, or even design. I didn’t really know where to take my skill set next, so I decided to take Courstrike’s Part-Time UX Design Certificate Course. I could do a little bit of everything, but this course was a good way for me to figure out if UX was something I could see myself doing long term."
             },
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The people! Coming from accounting and finance and jumping into the corporate world, you end up meeting similar types of people. We all came from business school, we all studied the same thing, and we all had very similar after-work interests and things like that. My perspective was very limited. When I joined BrainStation, it was really great being able to meet, learn, and gain perspective from other people that were in different parts of their lives. Some students were older, some just got out of an MBA, and others had really different diverse sets of experiences that I wouldn't have ever thought of. And just from a networking perspective, it’s great! When you're in a learning environment and you're learning together, you're going through a rigorous shared experience together. It’s great to be part of something with people that come from different backgrounds."
+                    "The people! Coming from accounting and finance and jumping into the corporate world, you end up meeting similar types of people. We all came from business school, we all studied the same thing, and we all had very similar after-work interests and things like that. My perspective was very limited. When I joined Courstrike, it was really great being able to meet, learn, and gain perspective from other people that were in different parts of their lives. Some students were older, some just got out of an MBA, and others had really different diverse sets of experiences that I wouldn't have ever thought of. And just from a networking perspective, it’s great! When you're in a learning environment and you're learning together, you're going through a rigorous shared experience together. It’s great to be part of something with people that come from different backgrounds."
             },
             {
                 question: "Tell us a bit about your education and your career background? Was this something you were always in or is this a big shift?",
                 answer:
-                    "I studied Accounting and Finance and at the University of Waterloo but I soon realized I didn't like either of them very much. I tried them both, graduated with a full degree in it and then thought, “What do I do now?”. I joined a program with a telecommunications company that assists graduates with finding their next steps by rotating them through a few different positions across the company. I was lucky enough to eventually work in production and application development. I got a little taste of everything; but, I like a fast-paced environment and I wanted to develop my skills a lot faster. The corporate life didn’t feel like it was for me either, and that’s around the time I decided to join BrainStation. I joined BrainStation with the thought of expanding my mindset. I wanted to dip my toes into something new without pulling the plug on my existing job and figuring out if it was something I wanted to do for a longer period of time."
+                    "I studied Accounting and Finance and at the University of Waterloo but I soon realized I didn't like either of them very much. I tried them both, graduated with a full degree in it and then thought, “What do I do now?”. I joined a program with a telecommunications company that assists graduates with finding their next steps by rotating them through a few different positions across the company. I was lucky enough to eventually work in production and application development. I got a little taste of everything; but, I like a fast-paced environment and I wanted to develop my skills a lot faster. The corporate life didn’t feel like it was for me either, and that’s around the time I decided to join Courstrike. I joined Courstrike with the thought of expanding my mindset. I wanted to dip my toes into something new without pulling the plug on my existing job and figuring out if it was something I wanted to do for a longer period of time."
             },
             {
                 question: "What was the most challenging part of your learning experience?",
@@ -644,10 +644,10 @@ const testimonials = [
             {
                 question: "What would you say are the most valuable skills that you learned in the program?",
                 answer:
-                    "It was the mental models which I still use today, and learning how to think about how to solve a problem. I'm a big fan of anything that’s cross-functional; for example, cross training in sports. Taking different principles from different areas and applying them to what I do. The UX design course gave me the foundation I needed to build my own model of how I think through a problem. I gained the perspective of seeing everyone as a user. Your boss is your user, your customer, our merchants, essentially anyone that you advocate for internally is a user. Anybody that you interact with is technically a user in some cases. When something goes wrong or something doesn't go the way that you think it should, you then have a mental model ready to break the problem down. You’re able to figure out exactly where the point was that we were trying to get to, and by how much we were off. Having the practice of applying that knowledge, in a digital sense, and having an open mind to apply it elsewhere is what really helped me. <br><br> When I left BrainStation, I joined a sales team and I built out a cold outreach campaign strategy by thinking about the user experience. I went through the user’s journey to build out the campaign. If the campaign didn't work, then I’d ask myself how could I adjust it. It’s an example of how something like sales can really be about the user experience too."
+                    "It was the mental models which I still use today, and learning how to think about how to solve a problem. I'm a big fan of anything that’s cross-functional; for example, cross training in sports. Taking different principles from different areas and applying them to what I do. The UX design course gave me the foundation I needed to build my own model of how I think through a problem. I gained the perspective of seeing everyone as a user. Your boss is your user, your customer, our merchants, essentially anyone that you advocate for internally is a user. Anybody that you interact with is technically a user in some cases. When something goes wrong or something doesn't go the way that you think it should, you then have a mental model ready to break the problem down. You’re able to figure out exactly where the point was that we were trying to get to, and by how much we were off. Having the practice of applying that knowledge, in a digital sense, and having an open mind to apply it elsewhere is what really helped me. <br><br> When I left Courstrike, I joined a sales team and I built out a cold outreach campaign strategy by thinking about the user experience. I went through the user’s journey to build out the campaign. If the campaign didn't work, then I’d ask myself how could I adjust it. It’s an example of how something like sales can really be about the user experience too."
             },
             {
-                question: "What advice would you give to professionals that are also considering a BrainStation course or program?",
+                question: "What advice would you give to professionals that are also considering a Courstrike course or program?",
                 answer:
                     "You get as much as you put into it. Learning something new in a post graduate phase in your life is pretty difficult. I've seen people, like myself, get out of their element, and I've seen people with tons of experience go back to their comfort zone and bring that experience into new opportunities. The course presents the core concepts and encourages you to use them however you want. Try broadening your perspective and pushing yourself beyond what you could use these skills for today, and think about what other aspects you can use them in because you will get a lot more out of the course that way. There's also tons of different minds in that classroom that can help you apply your skills in different ways. Learning from those people is super important. Apply what you learn in different ways and you’ll gain a diverse perspective."
             },
@@ -680,9 +680,9 @@ const testimonials = [
                     "I wanted to improve my coding skills. At the time I was working closely with very talented Developers. It was hard for me to keep up in meetings and product discussions with my limited understanding of iOS development. I thought if I could learn the basics of iOS development, then it would improve our discussions and the products we were working on."
             },
             {
-                question: "Why did you choose to study at BrainStation?",
+                question: "Why did you choose to study at Courstrike?",
                 answer:
-                    "The Instructors at BrainStation are very knowledgeable and are often practicing what they’re teaching in their full-time careers. I found this really helpful when considering how to apply my learnings to real-world scenarios. I also liked that BrainStation catered to working professionals, and that I could take the classes while still working my full time job."
+                    "The Instructors at Courstrike are very knowledgeable and are often practicing what they’re teaching in their full-time careers. I found this really helpful when considering how to apply my learnings to real-world scenarios. I also liked that Courstrike catered to working professionals, and that I could take the classes while still working my full time job."
             },
             {
                 question: "What was the highlight of your learning experience?",
@@ -690,12 +690,12 @@ const testimonials = [
                     "On top of gaining confidence in new skills, I enjoyed getting to know my classmates who were all passionate working professionals in a variety of different industries."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
                     "I quickly learned that I was not cut out to be a developer! Kidding aside, I did learn a lot of valuable skills; I now understand the development process and how I, as a designer, can best collaborate and communicate with the Developers. The course gave me confidence when hosting design handoffs to have the important conversations about technical scope and feasibility."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
                     "I’ve always valued the mindset of continuous learning. Especially working in tech, the workflows and the tools we use are always evolving - there will always be more to learn! <br><br> I’ve found it’s best to take these challenges head on, and embrace forever being a student. Approach your career with curiosity, and invest in your personal development."
             },
@@ -720,7 +720,7 @@ const testimonials = [
             {
                 question: "Can you tell us a bit more about what your day-to-day is like as a UX Writer?",
                 answer:
-                    "In my day-to-day, I tend to work with teams – sometimes it’s just a Designer and myself, sometimes I work with Writers, Designers, Product, Developers, etc. There is a lot of collaboration between our roles for this process, and that’s why I took the UX Design Certificate Course at BrainStation. <br><br> Work-wise, as a Content Designer I like to say I design words. A lot of people think a UX Writer is just like a Copywriter, but they are very different roles. UX Writers are more like Writers, Strategists, and Designers, all wrapped up into one creative role – you need to know how everything works. <br><br> My work entails an understanding of common language, brand voice, competitors, consumer behavior and expectations, and design principles. The question I’m always asking is, “can this experience be understood in three seconds or less?” I look at things like alliteration and the appearance of words; how does it look if the words are stacked? What do you do if it wraps? In the end, it’s all about developing brand trust and providing a frictionless, accessible experience."
+                    "In my day-to-day, I tend to work with teams – sometimes it’s just a Designer and myself, sometimes I work with Writers, Designers, Product, Developers, etc. There is a lot of collaboration between our roles for this process, and that’s why I took the UX Design Certificate Course at Courstrike. <br><br> Work-wise, as a Content Designer I like to say I design words. A lot of people think a UX Writer is just like a Copywriter, but they are very different roles. UX Writers are more like Writers, Strategists, and Designers, all wrapped up into one creative role – you need to know how everything works. <br><br> My work entails an understanding of common language, brand voice, competitors, consumer behavior and expectations, and design principles. The question I’m always asking is, “can this experience be understood in three seconds or less?” I look at things like alliteration and the appearance of words; how does it look if the words are stacked? What do you do if it wraps? In the end, it’s all about developing brand trust and providing a frictionless, accessible experience."
             },
             {
                 question: "Can you tell us a bit more about your career and education background?",
@@ -728,17 +728,17 @@ const testimonials = [
                     "My background is pretty interesting. When I was 18, I wanted to be on Broadway – I trained in classical, jazz, and musical voice for 8 years. Nearing the end of my studies I moved to France to finish my degree in French and Music, then moved to the Alps and worked as a middle school English Teacher. There, I was inspired by the culture and wrote my first book (unpublished), wrote an album, and performed with some local musicians. <br><br> When that opportunity wrapped up, I went back to the US and worked in nonprofits where I started acquiring more professional skills. Throughout college, I had studied program design and strategy for nonprofits, so this allowed me to begin designing and developing programs for nonprofit organizations. I wrote all the documentation, prepped the copy, designed the system, and essentially built the machine – then I’d give it back to them. I did that for a while until I was hired by a creative co-working space that introduced me to a whole new world of work. I ended up designing education programming, business incubator programming, and the start of a sustainability program for Freelancers. <br><br> I was exposed to UX for the first time at that co-working space because there was a UX design agency based there. A Designer friend of mine was able to pull me into a project as a UX Writer and that’s how I got my first taste. I remember asking, “how does a Writer become a UX Writer?” She replied, “I don’t know – just put the letters UX in front of Writer and learn about it.” As a scrappy non-profit professional I started doing UX, and found whatever opportunities I could to practice and improve."
             },
             {
-                question: "What made you decide to take a course at BrainStation?",
+                question: "What made you decide to take a course at Courstrike?",
                 answer:
-                    "I was a beginner in the field, and while I’d freelanced in UX design and UX writing, I needed a bit more support. Because the pandemic had caused me to lose a lot of my work, I decided now was the time that I needed to make a move. That’s when I decided to sign up for the UX Design course at BrainStation. I talked to my friends who work in UX, as well as my UX mentor, and I showed them BrainStation and a couple of competitors. My mentor noticed that BrainStation covered most of what I needed to know to get started in the field. That’s also when I saw that BrainStation had a scholarship for women in technology, and that helped me afford the course."
+                    "I was a beginner in the field, and while I’d freelanced in UX design and UX writing, I needed a bit more support. Because the pandemic had caused me to lose a lot of my work, I decided now was the time that I needed to make a move. That’s when I decided to sign up for the UX Design course at Courstrike. I talked to my friends who work in UX, as well as my UX mentor, and I showed them Courstrike and a couple of competitors. My mentor noticed that Courstrike covered most of what I needed to know to get started in the field. That’s also when I saw that Courstrike had a scholarship for women in technology, and that helped me afford the course."
             },
             {
                 question: "How did the Women in Technology Scholarship impact your professional development?",
                 answer:
-                    "Without it, I wouldn't have been able to enroll and I probably wouldn't have gotten the job I have now. It also gave me the confidence knowing that BrainStation cares about women in technology, and it really made me care more about BrainStation as a whole. I got a job a month after I finished my class, and I kept thinking to myself “wow, I can’t believe it worked.” Looking back though, I did the work. I freelanced, built up my portfolio, applied for at least 30 positions, and eventually got the call. I’m really grateful."
+                    "Without it, I wouldn't have been able to enroll and I probably wouldn't have gotten the job I have now. It also gave me the confidence knowing that Courstrike cares about women in technology, and it really made me care more about Courstrike as a whole. I got a job a month after I finished my class, and I kept thinking to myself “wow, I can’t believe it worked.” Looking back though, I did the work. I freelanced, built up my portfolio, applied for at least 30 positions, and eventually got the call. I’m really grateful."
             },
             {
-                question: "What would you say was the highlight of the learning experience at BrainStation?",
+                question: "What would you say was the highlight of the learning experience at Courstrike?",
                 answer:
                     "Definitely the Instructors. Their feedback, investment in the content, and industry experience really added to the course. <br><br> I find it very rare in educational institutions when Instructors are actually still working in the industry. I was so happy that I could ask questions and get realistic answers. They also helped break down what the most important concepts were to know throughout all the content, making sure we really focused on what mattered. That was so helpful. <br><br> You should know I came back to take a second class! I'm actually currently taking your product management class."
             },
@@ -753,17 +753,17 @@ const testimonials = [
                     "From my UX design course, I’d say learning how to design was the most valuable. Second to that is more of the why, why it matters. <br><br> With product management, I'm learning more about how to strategize on a business level. It’s really helping me internally, and it's been improving my communication with stakeholders exponentially. Working in the tech industry I found these courses essential to the understanding of my workplace. There's definitely benefits of taking a course before you get a job in tech and then also while you’re in the industry."
             },
             {
-                question: "What was the job search experience like after BrainStation?",
+                question: "What was the job search experience like after Courstrike?",
                 answer:
                     "It was hard, especially with the pandemic. But I put myself in a situation where opportunities would present themselves. Taking the UX design course, for example, gave me the validation to know that I can actually do the work. It was a big financial undertaking, but I knew that if I got a job from the class, I would be able to pay it off in less than a month – and that was enough motivation for me. <br><br> After I had built out my portfolio, I started applying to jobs and working with a Recruiter. And what happened was, a different unrelated Recruiter reached out to me on LinkedIn looking for a UX Writer position for Macy’s. I ended up having an interview a week later and was hired shortly after. I think that experience is pretty rare. After about a year, I went on to work at Addepar, as a Content Designer.s"
             },
             {
                 question: "Was this your first online learning experience? What were your thoughts about the online learning environment?",
                 answer:
-                    "I had my first online class in college actually. There was no live video with that class though, it was about reading the content on your own time and sending in your report. I also taught English online before BrainStation. The BrainStation course was a really different learning environment – I felt really satisfied. <br><br> I was very impressed with BrainStation's efforts to connect students in breakout rooms and ensuring they were engaged by asking interesting questions. They got the students excited to talk about the design field. Unless you have friends that work in tech, it's not something people tend to talk a lot about."
+                    "I had my first online class in college actually. There was no live video with that class though, it was about reading the content on your own time and sending in your report. I also taught English online before Courstrike. The Courstrike course was a really different learning environment – I felt really satisfied. <br><br> I was very impressed with Courstrike's efforts to connect students in breakout rooms and ensuring they were engaged by asking interesting questions. They got the students excited to talk about the design field. Unless you have friends that work in tech, it's not something people tend to talk a lot about."
             },
             {
-                question: "What advice would you give to other professionals that are out there that are maybe considering a BrainStation course or bootcamp?",
+                question: "What advice would you give to other professionals that are out there that are maybe considering a Courstrike course or bootcamp?",
                 answer:
                     "Use the course as a tool to set yourself up for success. Create a portfolio, get some freelance gigs or some sort of industry experience, and apply. <br><br> Talk to your friends and connections with people from different areas, and see what opportunities you can manifest for yourself. Also, be open to things that you might not have expected! Taking the course allowed me to realize I’m a UX Writer and that there's work in that space. The UX Design Certificate course is what gave me a unique advantage. Overall, genuinely, good luck to anyone switching into UX – I feel like I finally found my career."
             },
@@ -786,7 +786,7 @@ const testimonials = [
                     "I studied Accounting and Finance and worked in auditing at a public accounting firm."
             },
             {
-                question: "Why did you choose to study at BrainStation?",
+                question: "Why did you choose to study at Courstrike?",
                 answer:
                     "I had a really creative childhood and grew up wanting to be an Architect, but I ended up making a pivot to study business instead. But the more time I spent in my classes and co-op terms, the more I realized that this career path wasn't for me. <br><br> I reflected on what really brought me joy and considered going back to my creative roots. Some friends in tech recommended that I look into User Experience and User Interface Design. Since I knew nothing about the field, I decided to look for introductory courses to get a foundational understanding of it. I wanted to validate whether it was worth completely dropping my accounting designation to pursue design."
             },
@@ -798,12 +798,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -811,9 +811,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -846,12 +846,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -859,9 +859,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -894,12 +894,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -907,9 +907,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -942,12 +942,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -955,9 +955,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -990,12 +990,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1003,9 +1003,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1038,12 +1038,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1051,9 +1051,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1086,12 +1086,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1099,9 +1099,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1134,12 +1134,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1147,9 +1147,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1182,12 +1182,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1195,9 +1195,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1230,12 +1230,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1243,9 +1243,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1278,12 +1278,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1291,9 +1291,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1326,12 +1326,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1339,9 +1339,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1374,12 +1374,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1387,9 +1387,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1422,12 +1422,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1435,9 +1435,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1470,12 +1470,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1483,9 +1483,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     },
@@ -1518,12 +1518,12 @@ const testimonials = [
             {
                 question: "What was the highlight of your learning experience?",
                 answer:
-                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> BrainStation created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
+                    "The highlight for me was the moment when it clicked that I definitely wanted to pursue design – it was 3:00 AM, while I was sitting in my bed, furiously working away in Sketch on my final project. I realized I was doing all of this work purely out of my own free will because I was passionate about it. <br><br> Courstrike created their curriculum in a really digestible and effective way, where each class addressed a different step in the design process chronologically. Each week, we would be asked to apply learnings from class towards our final project. It was exciting to see my final project evolve, as well as my overall understanding of design, which developed much faster than I expected."
             },
             {
-                question: "How has your BrainStation experience impacted your career?",
+                question: "How has your Courstrike experience impacted your career?",
                 answer:
-                    "BrainStation made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
+                    "Courstrike made all the difference. It gave me the confidence I needed to seriously apply for jobs that could help me transition into design. I applied the same design framework we learned in class to multiple passion projects and freelance gigs for over a year after I finished the course. These projects helped me build a strong portfolio to land the job I dreamed of."
             },
             {
                 question: "What would you say were the most valuable skills you learned?",
@@ -1531,9 +1531,9 @@ const testimonials = [
                     "I would say user research. It was one of the first classes and it really emphasized the need to abstract away our personal bias in good design. To this day, the things I learned are still there: focusing on the user, getting impactful insights by asking the right questions, and creating a strong feedback loop."
             },
             {
-                question: "What advice would you give to professionals considering a BrainStation course?",
+                question: "What advice would you give to professionals considering a Courstrike course?",
                 answer:
-                    "BrainStation courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
+                    "Courstrike courses are a great way to learn new skills or begin a career switch. It adds an extra layer of accountability and it gave me the confidence that I was picking up all the right pieces to build a strong foundation. <br> <br> I think what you get out of the course is how much you put into it. Being fully engaged in the lectures, in-class exercises, group activities, the final project, and getting to know other students and instructors will really make this experience the most rewarding."
             },
         ]
     }
