@@ -3449,6 +3449,32 @@ a {
     flex-shrink: 0;
 }
 
+/* Badge Emblem Container */
+.cert-badge {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 64px;
+}
+
+.cert-badge .badge-img {
+    width: auto;
+    max-width: 68px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    transition: transform 0.2s ease;
+}
+
+/* Hover par thodo zoom effect */
+.cert-card:hover .cert-badge .badge-img {
+    transform: scale(1.08);
+}
+
 .badge-shield {
     width: 44px;
     height: 48px;
