@@ -8,6 +8,46 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enterprise-training.css">
+
+    <!-- intl-tel-input CSS for all countries dropdown -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+    <style>
+        /* intl-tel-input Custom Dark Theme Styling */
+        .iti {
+            width: 100%;
+        }
+
+        .iti__country-list {
+            background-color: #16181d !important;
+            border: 1px solid #2d333d !important;
+            color: #ffffff !important;
+            max-height: 220px !important;
+        }
+
+        .iti__country.iti__highlight {
+            background-color: #242932 !important;
+        }
+
+        .iti__country-name, .iti__dial-code {
+            color: #d1d5db !important;
+        }
+
+        .iti__search-input {
+            background-color: #242932 !important;
+            color: #ffffff !important;
+            border: 1px solid #2d333d !important;
+        }
+
+        .enterprise-form-card .iti input {
+            height: 45px;
+            padding-left: 90px !important;
+            background-color: #242932;
+            border: 1px solid #2d333d;
+            color: #ffffff;
+            border-radius: 6px;
+        }
+    </style>
 </head>
 
 <body class="enterprise-page">
@@ -103,18 +143,8 @@
                                 <input type="email" id="businessEmail" name="businessEmail" placeholder="Business Email" required>
                             </div>
 
-                            <div class="form-field phone-field">
-                                <div class="custom-flag-field">
-                                    <svg class="flag-icon" viewBox="0 0 640 480">
-                                        <path fill="#bd3d44" d="M0 0h640v480H0z"/>
-                                        <path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"/>
-                                        <path fill="#192f5d" d="M0 0h260v258.5H0z"/>
-                                    </svg>
-                                    <svg class="dropdown-chevron" viewBox="0 0 10 6">
-                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                    </svg>
-                                </div>
-                                <input type="tel" id="phone" name="phone" placeholder="(201) 555-0123" required>
+                            <div class="form-field">
+                                <input type="tel" id="phone" name="phone" class="phone-input" required>
                             </div>
 
                             <div class="form-field">
@@ -525,5 +555,20 @@
     <script src="js/components.js"></script>
     <script src="js/enterprise-training.js"></script>
     <script src="js/trusted-companies.js"></script>
+
+    <!-- intl-tel-input JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        // Init country selector for enterprise phone input
+        const phoneInputs = document.querySelectorAll(".phone-input");
+        phoneInputs.forEach(input => {
+            window.intlTelInput(input, {
+                initialCountry: "in",
+                preferredCountries: ["in", "us", "gb", "ca", "ae"],
+                separateDialCode: true,
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+            });
+        });
+    </script>
 </body>
 </html>

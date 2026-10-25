@@ -7,8 +7,43 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/workshop.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
     <!-- HERO BACKGROUND VIDEO STYLES -->
     <style>
+
+        .iti {
+            width: 100%;
+        }
+        .iti__country-list {
+            background-color: #1e2229 !important;
+            border: 1px solid #2d333d !important;
+            color: #ffffff !important;
+            max-height: 220px !important;
+            z-index: 99999 !important;
+            text-align: left !important;
+        }
+        .iti__country.iti__highlight {
+            background-color: #2a3032 !important;
+        }
+        .iti__country-name, .iti__dial-code {
+            color: #d1d5db !important;
+        }
+        .iti__search-input {
+            background-color: #2a3032 !important;
+            color: #ffffff !important;
+            border: 1px solid #5c6569 !important;
+        }
+        .hero-form-card .iti input,
+        .reserve-form-card .iti input {
+            height: 46px;
+            padding-left: 90px !important;
+            background: #2a2f33;
+            border: 1px solid #555d62;
+            color: #ffffff;
+            border-radius: 4px;
+        }
+
         .hero-section {
             position: relative;
             overflow: hidden;
@@ -184,7 +219,7 @@
     ======================================================== -->
     <section class="hero-section">
         <video class="hero-bg-video" autoplay muted loop playsinline>
-            <source src="../images/0_Business_Meeting_1280x720 (1).mp4" type="video/mp4">
+            <source src="/images/0_Business_Meeting_Applause_1280x672.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -278,12 +313,8 @@
                             <input type="email" id="businessEmail" name="businessEmail" placeholder="Business Email" required>
                         </div>
 
-                        <div class="form-group phone-group">
-                            <div class="phone-prefix">
-                                <span>🇺🇸</span>
-                                <span class="prefix-arrow">⌄</span>
-                            </div>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(201) 555-0123" required>
+                        <div class="form-group">
+                            <input type="tel" id="phoneNumber" name="phoneNumber" class="phone-input" required>
                         </div>
 
                         <div class="form-group">
@@ -1133,12 +1164,8 @@
                             <input type="email" id="reserveEmail" name="businessEmail" placeholder="Business Email" required>
                         </div>
 
-                        <div class="reserve-form-group reserve-phone-group">
-                            <div class="reserve-phone-prefix">
-                                <span>🇺🇸</span>
-                                <span class="prefix-arrow">▼</span>
-                            </div>
-                            <input type="tel" id="reservePhone" name="phoneNumber" placeholder="(201) 555-0123" required>
+                        <div class="reserve-form-group">
+                            <input type="tel" id="reservePhone" name="phoneNumber" class="phone-input" required>
                         </div>
 
                         <div class="reserve-form-group">
@@ -1235,6 +1262,21 @@
             window.addEventListener("resize", handleTimelineScroll);
             handleTimelineScroll(); // Initial load check
         });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const phoneInputs = document.querySelectorAll(".phone-input");
+                phoneInputs.forEach(input => {
+                    window.intlTelInput(input, {
+                        initialCountry: "in",
+                        preferredCountries: ["in", "us", "gb", "ca", "ae"],
+                        separateDialCode: true,
+                        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+                    });
+                });
+            });
         </script>
 </body>
 </html>

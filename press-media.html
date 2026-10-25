@@ -18,6 +18,9 @@
         href="css/style.css"
     >
 
+    <!-- intl-tel-input CSS for all countries dropdown -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
 
     <style>
 
@@ -250,52 +253,31 @@
 
 
         /* =========================================
-           PHONE
+           PHONE (intl-tel-input styling)
         ========================================= */
 
-        .phone-field {
+        .iti {
             width: 100%;
+        }
 
+        .iti__country-list {
+            background-color: #1e2229 !important;
+            border: 1px solid #5c6569 !important;
+            color: #ffffff !important;
+            max-height: 220px !important;
+        }
+
+        .iti__country.iti__highlight {
+            background-color: #2a3032 !important;
+        }
+
+        .iti__country-name, .iti__dial-code {
+            color: #d1d5db !important;
+        }
+
+        .press-form .iti input {
             height: 45px;
-
-            display: flex;
-
-            align-items: center;
-
-            background: #2a3032;
-
-            border: 1px solid #5c6569;
-
-            border-radius: 2px;
-        }
-
-
-        .country {
-            display: flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-            padding-left: 14px;
-
-            padding-right: 10px;
-        }
-
-
-        .country-flag {
-            font-size: 19px;
-        }
-
-
-        .phone-field input {
-            height: 100%;
-
-            flex: 1;
-
-            border: none;
-
-            padding-left: 3px;
+            padding-left: 90px !important;
         }
 
 
@@ -2432,27 +2414,13 @@
                         >
 
 
-                        <div class="phone-field">
-
-                            <div class="country">
-
-                                <span class="country-flag">
-                                    🇺🇸
-                                </span>
-
-                                <span>
-                                    ▼
-                                </span>
-
-                            </div>
-
-
+                        <!-- Updated Phone Input Field -->
+                        <div>
                             <input
                                 type="tel"
-                                placeholder="(201) 555-0123"
+                                class="phone-input"
                                 required
                             >
-
                         </div>
 
 
@@ -2853,27 +2821,13 @@
                         >
 
 
-                        <div class="phone-field">
-
-                            <div class="country">
-
-                                <span class="country-flag">
-                                    🇺🇸
-                                </span>
-
-                                <span>
-                                    ▼
-                                </span>
-
-                            </div>
-
-
+                        <!-- Updated Phone Input Field -->
+                        <div>
                             <input
                                 type="tel"
-                                placeholder="(201) 555-0123"
+                                class="phone-input"
                                 required
                             >
-
                         </div>
 
 
@@ -3241,6 +3195,21 @@
 
     <script src="js/components.js"></script>
     <script src="js/trusted-companies.js"></script>
+
+    <!-- intl-tel-input JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        // Init country selector for all phone input fields on press page
+        const phoneInputs = document.querySelectorAll(".phone-input");
+        phoneInputs.forEach(input => {
+            window.intlTelInput(input, {
+                initialCountry: "in",
+                preferredCountries: ["in", "us", "gb", "ca", "ae"],
+                separateDialCode: true,
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+            });
+        });
+    </script>
 
 
 </body>
